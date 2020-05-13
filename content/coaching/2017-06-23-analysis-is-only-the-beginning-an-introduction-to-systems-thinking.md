@@ -1,0 +1,25 @@
+---
+layout:  
+title: Analysis is Only the Beginning - An Introduction to Systems Thinking
+date: 2017-06-23  
+author: Jeff Russell
+categories: 
+- Coaching 
+tags: 
+- Mental Models
+- Systems
+---
+
+Let’s talk about systems. We’ve [touched](https://www.jeffrussellcoaching.com/coaching-blog/2017/4/10/designing-your-own-productivity-framework) [on](https://www.jeffrussellcoaching.com/coaching-blog/2017/5/11/super-combinations-from-tools-of-titans) them in [several](https://www.jeffrussellcoaching.com/coaching-blog/2017/5/11/super-combinations-from-tools-of-titans) [posts](https://www.jeffrussellcoaching.com/coaching-blog/2017/6/9/rethinking-risk-with-antifragile), and they provide an incredibly valuable tool for understanding a complex world. When we stop thinking about things as independent objects and start thinking about them as elements in a greater whole of interdependent parts, we recognize that they are systems. Today we’re going to talk about a method of inquiry custom designed for such highly complex entities: Systems Thinking.  
+
+Traditional analysis is just that - analytical - a word that comes from Greek roots meaning "to break apart". We [break down big problems](https://www.youtube.com/watch?v=oOS00ttAblQ) into smaller components to better understand them. You and I have both used this technique to solve hundreds, if not thousands, of problems in our lives, which pales in comparison to what this technique has given the world through the scientific revolution. We use analysis to figure out what matters and focus on it. Analysis allows us to deeply understand things by reducing cutting out the unnecessary and leaving only the essential. Analysis is fantastic.
+
+The trouble with the analytical approach is that almost everything that matters happens within an interdependent context. We pretend a piece of a problem is isolated from its surroundings. This [useful fiction](https://en.wikipedia.org/wiki/Heuristic) becomes less so as the complexity and importance of the interactions we’re ignoring increases. While there have always been complex systems that are better understood holistically than broken apart, in today’s connected world, there are more and more. Almost every challenge that matters today arises in a world of dependence, interdependence, and emergence.
+
+There is a supplementary method of problem solving developed especially for our complex world called [Systems Thinking](https://en.wikipedia.org/wiki/Systems_thinking). Like many concepts we talk about here, it’s easy to explain but difficult to apply. Systems thinking supplements traditional analysis with synthesis and inquiry. Synthesis is the opposite of analysis: once you better understand the parts, you put them back together and see how your knowledge of the parts has informed your understanding of the whole. Inquiry is the commitment to investigate systems as integrated wholes and to repeat the analysis and synthesis steps as needed to understand them.
+
+The more you can train yourself to think this way, the better you will be able to navigate complex, ambiguous, and chaotic situations. As you can see from the Wikipedia link, “system” is such a generic and useful word that it is difficult to define the approach simply and cleanly. [The Fifth Discipline](https://smile.amazon.com/Fifth-Discipline-Practice-Learning-Organization-ebook/dp/B000SEIFKK/ref=sr_1_1?s=books&ie=UTF8&qid=1498177025&sr=1-1&keywords=the+fifth+discipline) by Peter Senge introduced much of the business world to systems thinking. In this work, Senge pioneered the concept of a “learning organization,” which will revisit another time. For now, if you want a quick, free guide to the fundamentals of how to get started, I recommend [Systems Thinking Applied: a Primer.](https://www.anser.org/docs/systems_thinking_applied.pdf)
+
+Systems thinking can be applied to complex systems of any kind.. Some people split up “[hard](http://www.perflensburg.se/Privatsida/cp-web/capchsyt.htm)” systems thinking (like computer networks) and “[soft](https://en.wikipedia.org/wiki/Soft_systems_methodology)” systems thinking (like organizations or ecological regions). Dedicated professionals use these distinctions to formulate practical tools to understand and fix complex systems in their fields. For most of us, though, the commonalities are more useful: understanding that the behavior of every constituent element affects the whole, that those elements are interdependent, and that you cannot meaningful subdivide them into subgroups.  
+
+Today we’ve taken a very brief look at one of the most important mental models you can put into your toolbox. Systems thinking is a flexible tool that is used in many fields, so if you have an interest in a particular field, you can almost certainly find a dedicated resource for applying Systems Thinking within it. For now, just pause for a moment whenever you notice that something in your life is interdependent on other elements and think about the system that it - and you - are a part of.

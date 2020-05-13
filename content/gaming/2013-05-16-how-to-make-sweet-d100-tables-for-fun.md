@@ -1,0 +1,100 @@
+---
+layout:  
+title: How to Make Sweet D100 Tables for Fun and Profit
+date: '2013-05-16T03:00:00.000-07:00'
+author: Jeff Russell
+categories:
+- Gaming
+tags:
+- Damp;D
+- OSR
+- New Rules
+- RPGs
+- Rules
+modified_time: '2019-02-12T16:12:48.737-08:00'
+blogger_id: tag:blogger.com,1999:blog-7657840612384361644.post-8244829417238956198
+blogger_orig_url: https://blessingsofthedicegods.blogspot.com/2013/05/how-to-make-sweet-d100-tables-for-fun.html
+---
+
+ [UPDATE 2/12/19: I no longer support spending money on products that benefit Zak S, or giving him positive attention and connection. The short version is that I find credible claims that he has engaged in unacceptable behavior and not made up for it. For more detail, see [here](%7B%7B%20site.baseurl%20%7D%7D%7B%%20post_url%202019-02-12-removing-support-from-zak-smith%20%%7D). Please consider these claims and make your own decision on their validity, and the implications thereof, before supporting Zak in any way.]  
+  
+*Or: The **FINGER** system of faux-creativity*  
+  
+So, I’ve got a terrible confession to make.  As a self-described GM/Referee and creative person, I’m not actually that good at coming up with wacky creative ideas out of thin air.  I read stuff by [Greg Gorgonmilk](http://gorgonmilk.blogspot.com/) and [Zak S.](http://dndwithpornstars.blogspot.com/) and [Jeff Rients](http://jrients.blogspot.com/) and [so forth](http://osr.robertsongames.com/), and I’m always astounded by the raw awesome they seem to be able to pull out of the ether, and I greedily appropriate it for my own game.  
+  
+On the other hand, what I am good at, if I may say so myself, is in selectively recombining things to get something new(ish) with a coherent feel.  So, a pastiche artist, if you will.  This used to drive me into fits of self-questioning angst, or launch me into pretentious justification of the inherent creativity of fitting together other’s works, but now I just accept it and try to have fun with it.  And keep my ideas for Thing A + Thing B but in Place C fantasy/sci-fi novels/comics/movies to myself (or realize the setting would be better for games anyway).    [![darth_vader_riding_charizard__colored__by_smithaboy-d59f14o](https://dicegods.files.wordpress.com/2013/05/darth_vader_riding_charizard__colored__by_smithaboy-d59f14o.jpg)](http://dicegods.files.wordpress.com/2013/05/darth_vader_riding_charizard__colored__by_smithaboy-d59f14o.jpg) 
+  
+
+*You know, this sort of thing* 
+  
+Recently, this tendency has been combined with my immersion into the Old School Renaissance/DIY D&D/whatever you want to call it.  I’ve always liked to tinker and house rule and design games, but *specifically* the habit of reading gaming material with an eye to ruthlessly tear out, appropriate, and modify any rules that I find useful is one that I’ve developed to a higher degree the last few months than ever before.  I initially got a bunch of retroclones and versions of D&D with the idea of soberly comparing, weighing strengths and weaknesses, and then selecting the one I liked best.  But now I look at all of them with the dispassionate eye of a black market organ harvester.  One of these days, DCC RPG is going to wake up in a bathtub full of ice, missing its zero level “funnel” character creation rules.  
+  
+And then, last week, just as I was going to stat up some simple hydra teeth that turn into skeleton warriors, or a goat-legged Cyclops or something, I had a revelation.  I was reading the synopsis of “7<sup>th</sup> Voyage of Sinbad” and I realized how insanely D&D it was.  I checked other Harryhausen synopses and found that while the Sinbad movies were far and away the most D&D, everything had some stuff that was usable.  And I realized that I had started applying the pitiless scalpel of game material selection to creative stuff, fluff if you will, as well as to mechanics.  And the d100 table of random Harryhausenisms was born (by far my highest traffic post so far, so thanks folks).  
+  
+I was thinking about it, and I realized that the actual procedure I used is replicable, and is in fact quite simple.  And that if you’re willing to be a little pastichey, you can cover a lot of setting ground with it.  This one’s going to be a little long, but you can probably get most of what’s here with the following list and the two examples at the end. Without further ado:    ## ***Jeff’s Guide to Making a Dwhatever Map Stocking Chart for Fun and Profit*** 
+  
+***(Okay, more likely just fun, but let me know if you figure out the profit part)***    1.  ***1.    *** ***Find an inspiring piece of media*** 2.  ***2.    *** ***Identify the cool stuff in it*** 3.  ***3.    *** ***Noun that stuff*** 4.  ***4.    *** ***Genericize those nouns*** 5.  ***5.    *** ***Expand their uses*** 6.  ***6.    *** ***Ready your chart*** 
+  
+***(I figured out I could get a cute acronym about halfway through).***    ### ***Step One – Find an Inspiring Piece of Media*** 
+  
+***Select a piece of media that gets your motor going or that fits with the milieu you’re shooting for.  Alternatively, if you’re looking to spice things up, purposely select something *outside* of your usual genre/world tropes, but that is still inspiring to you.  That’s the main thing.  You think it’s cool, and it’s something creative.  This is easiest to do with things that tell stories: books, movies, comics.  But you can do it with pictures or music or whatever as well.  I’ve started using heavy metal song lyrics all the time.  Examples to follow the explanation.***    ### ***Step Two – Identify Cool Stuff in It*** 
+  
+***Go through this inspiring piece of media, and look for the cool stuff.  The easiest way to do this is to go to Wikipedia and read the plot synopsis (that’s what I did for the Harryhausen table), as this will by definition hit the highlights and moments of drama.  You could use back of book blurbs, internet reviews, whatever.  Or if you *really* like something, you can read through the actual source material and take notes or highlight or whatever.  Find the things that most scream “Gameable” and  “Awesome” to you. ***    ### ***Step Three – Noun that Stuff*** 
+  
+***Once you’ve identified elements from your source material that are cool, you want to Noun them.  This is the opposite of Verbing things.  You see, verbs are the province of Plot.  Plot is not what we want here, because we’re all good sandboxy/player agency oriented referees, right?  Notice that’s big “P” Plot.  Yes, you can have a lovely picaresque plot emerge from the processes of play, and it probably will.  That’s in the future.  Because for our purposes, verbs are what *player characters* do.  Sometimes NPCs get to do verbs in *reaction* to player characters or because of some internal game world logic, but that’s not what our stocking table is for.  If you have a bunch of verbs on your list, then you either have to run an entire clockwork world in the background, for which there are better tools, or else have the artificialness that the zany, interesting action the players just walked up on just so happens to be going on right as the players find it, no matter when or under what circumstances they roll up. ***  
+  
+***That’s why you don’t want to put the action in there, you want a person, a place, or a thing.  Maybe a scene or tableau if you want to push it.  The key here is that you present an element of the world, just like any other, that the players can act on and react to.  Making the scene into a noun makes it make more sense as a static feature, or even if it is a “this happens as you come upon it” (sometimes fun to include, I’ll admit) it doesn’t presume the player characters’ involvement.  It’s just there for them to interact with. None of this is to say that these nouns shouldn’t be ready to spring into appropriate action once the player characters poke it, just try to avoid things that are the other way around (that’s what random encounters are for).***    ### ***Step Four – Genericize those Nouns*** 
+  
+***Now, here’s the tricky part, but the part that will help you find way more ideas: you want to take the cool nouned elements from your inspiring piece of media, and then you want to file off the serial numbers.  Got a reference to Mentok the Mindtaker? Turn that into “an evil mentalist”.  There’s a balance to be struck here: too generic and stuff isn’t cool or gameable. Too specific and your table becomes less useful to others, and also less useful to you.  If you want to use a cool specific guy or monster, don’t put it in a stocking table! Put it where you want it in your world, or else on a random encounter table.  The only thing gained by putting a specific person or thing in a stocking table is you don’t know where he or she or it will end up, and you can just do that by rolling once for the thing. ***  
+  
+***Likewise, don’t get hung up on trappings or genre stuff too much.  For the Harryhausen table I made, even though most of the table came from the overtly fantasy Sinbad movies and Clash of the Titans, something like a quarter to a third of the entries (don’t quote me on that) are from movies set in modern America with fantastic elements (even aliens).  So, when you spot an evil wizard, consider thinking of him as just “an evil powerful guy” or “an evil guy with secret knowledge”.  Or if you find a story about hackers jacking some stuff in cyberspace (like the kids do), you can genericize it into “A highly skilled group of rogues pulls off an impressive heist.”  The key is not to lose the “character” of the person or thing you identify and make it so generic as to be boring, but to make it broadly useful and able to fit into whatever sort of world (unless the whole point is to introduce some gonzo weirdness or subvert genre tropes, in which case, have at it).***  
+  
+***A variation of this if you’re only concerned with your own campaign world is to ‘reskin’ rather than genericize.  That’s basically what I did with the Harryhausen results from the 20<sup>th</sup> century America movies (and even the caveman movie) – I recast it in D&D terms (science becomes magic, aliens become generic invaders, et cetera).  Again, try to keep what was cool or striking about the thing, the underlying reason it will be a potential source of danger or excitement, but then make it so you can recombine it with any other damn thing.***    ### ***Step 5 – Expand their Uses*** 
+  
+***Okay, I started stretching the names a little bit at this part so that I could make the acronym FINGER.  What I mean by “expand their uses” could also be described as analysis (from the Greek for “to chop up”, more or less).  So, you’ve got a cool thing, you’ve made sure it’s a noun, and you’ve made it so you can drop it into multiple places and situations in your world. You want to make sure that one entry on your chart isn’t being too greedy.  One of the chief values of charts is that like our old favorite sexual reproduction, you can recombine elements in novel and unexpected ways, and the end result might be a better fit for your environment than something you would have expected of planned.  The way to maximize the recombinatory potential of your chart is to try to make sure each entry is just “one thing”.  The way you get each entry to be “one thing” is to chop up an element you stole from your source.  So, if you find an awesome fight scene where a guy fights a wizard’s guard dragon by jerry rigging a ballista, and then the dragon falls on the wizard and kills him, you can turn that into 1) A wizard with a guard dragon, 2) A jerry rigged siege weapon, 3) A beast that kills its own master (that last one is a little verby, but hey). ***    ### ***Step 6 – Ready your Chart!*** 
+  
+***This one is easy and was mostly in order to get the full acronym.  Just take your entries and arrange them into a chart.  Usually you’ll do this as you go, and the fact that, say, you only have 89 will spur you to find those last 11 so you can make a d100.  And you’re done! ***  
+  
+Well, you’re done with this chart.  But as mentioned before, unless your only goal is to make something for other people, or a crutch to fall back on in some indeterminate future, the process of making this chart could just as easily have been used to think up a setting.  Zak S. talks about this in his thoughts on types of random generators.  What we have above is kind of an incomplete results generator to spur creativity, but by itself that’s not very useful to you, since you made the chart yourself.  So, unless going through and making the table was a useful exercise for you creatively, or you just want to have on hand stuff that will surprise even you when the players go somewhere new, you need a little more to make your new chart super awesome.  For that recombinatory goodness, you could make a second chart, and make any locations of interest be Chart 1 + Chart 2 (a mutational generator, to use the terminology from the above link).  Or you could just make a d1000 chart or some other madness, so that you end up with things you stole from the Poetic Edda rubbing shoulders with things you stole from a Dethklok album which are a few days voyage from things you yoinked from Hellboy.  
+  
+Connections are another good one: randomly determine two of the things you’ve placed on the map, and then make a connection.  You can either use a connection suggested by the nature of each entry, or you could randomize it.  Do enough of this, and there’s a lot of latent connections throughout your map that players can stumble across, and if you *do* need to do some background verbs, you know what they’ll be.  I think coming up with a good system to find relations between placed sites of interest is going to be my next big rules project after this one.  
+  
+For bonus points, you can put your new chart in Abulafia and combine it with the work of others and save yourself time all at once.  
+  
+With all that said, let’s do some examples! I probably should have just made the whole thing examples, but I’m a very verbal, explainy person, so there you go.    #### Example \#1 – Wikipedia Plot Synopsis 
+  
+
+[![HillsOfTheDead11](https://dicegods.files.wordpress.com/2013/05/hillsofthedead11.jpg?w=229)](http://dicegods.files.wordpress.com/2013/05/hillsofthedead11.jpg) 
+  
+I could just recap what I did with the Harryhausen movies, but that would be cheating, and I want to test out my method as explained.  So instead, let’s pick something else inspirational for D&D type stuff and go with everyone’s favorite hardass puritan, Solomon Kane! Let’s go with “Hills of the Dead” by Robert E. Howard.  Wikipedia has the following blurb:  
+  
+“First published in Weird Tales, August 1930.  In Africa again, Kane’s old friend N’Longa (the witch doctor from “Red Shadows”) gives the Puritan a magic wooden staff, the Staff of Solomon, which will protect him in his travels.  Kane enters the jungle and finds a city of vampires.”  
+  
+Step 1) ***F****ind an Inspiring Piece of Media*: Was pretty easily accomplished by finding an awesome story by Robert E. Howard.  
+  
+Step 2) ***I****dentify the Cool Stuff*: is also not too hard, because REH stories are dripping with D&Dable material, even when summarized in two sentences: Solomon Kane, The Hills of the Dead, Africa, N’Longa the witch doctor, the Staff of Solomon, a jungle, and a city of vampires.  
+  
+Step 3) ***N****oun that Stuff:* I kind of went ahead and identified the nouns in the process above, but if we had a more detailed synopsis and I wanted to pull an element out of a cool fight scene with the vampires in their city, this is where I would do it.  
+  
+Step 4) ***G****enericize those Nouns:* To genericize this stuff, we could turn Africa into “a mysterious continent” or “an unfamiliar land” or whatever.  The idea is to get at what made Africa an exciting place to set a story to a 1930’s Texan writing about a 17<sup>th</sup> century puritan and pull it out for D&D (exotic, unexplored, dangerous creatures, magic, unfamiliar cultures, “savagery”, et cetera).  The Hills of the Dead is a nicely evocative name that you can lift and then decide what it means.  It could be a place full of barrows, the burial grounds of ancient dynasties, a hell on earth ruled by the undead, whatever.  Sometimes you get generic by taking a specific cool name and then making its use generic, rather than stripping the name off of a specific cool thing.  Make N’Longa just “A witch doctor”, make the Staff of Solomon “A Powerful Magical staff” or even just “An ancient artifact”.  
+  
+Step 5) ***E****xpand their Uses:* Expanding/analyzing isn’t super necessary for most of these elements, but here’s a couple of examples: take N’Longa giving Kane the staff and change that into “A witch doctor with a useful magical item” and into “A powerful artifact from ancient times”.  Or take the city of vampires in the jungle and break it out into “A City of vampires” and “An ancient city in the jungle”.  
+  
+Step 6) ***R****eady your Chart!* :Take that cool stuff and slap it into a table! Here’s a lame tiny table smaller than is really worthwhile to make:    1.  A wandering religious warrior 2.  An exotic, unexplored land 3.  An old friend from a foreign land 4.  A witch doctor with a useful item 5.  A powerful artifact from ancient times 6.  An ancient city in the jungle 7.  A city of vampires 8.  The Hills of the Dead 
+  
+
+#### Example \#2 – Cover to Hellboy: Conqueror Worm 
+  
+Rather than go the easy route and use a plot synopsis of this comic, let’s just look at the artwork for inspiration (okay, I’m gonna probably rely on some of my Hellboy knowledge here to provide context, but that’s only because Hellboy is so awesome).  
+  
+Step 1) ***F****ind an Inspiring Piece of Media*: This picture:    [![250px-Hellboy_Conqueror_Worm](https://dicegods.files.wordpress.com/2013/05/250px-hellboy_conqueror_worm.jpg?w=194)](http://dicegods.files.wordpress.com/2013/05/250px-hellboy_conqueror_worm.jpg) 
+  
+Step 2 ***I****dentify the Cool Stuff*: Hellboy, gasmask guy, Lobster Johnson, giant worm, floating flame, golem, head in a jar, a saint, some skulls, the name “Conqueror Worm”  
+  
+Step 3) ***N****oun that Stuff*: A lot easier with a ‘posed’ picture, so not much to do here.  
+  
+Step 4) ***G****enericize those Nouns*: Hellboy becomes a half demon, or an investigator, or a hero fighting monsters (or in the next step, all of these).  Gasmask guy becomes the footsoldier of an evil regime.  The golem can stay a golem, the head in a jar can become a mad scientist, or an evil wizard, or a head in a jar, or a demi-lich, the conqueror worm can be a mundane giant worm, or a summoning gone wrong, or the avatar of an inhuman god, Lobster Johnson can be a vigilante, or a skilled warrior, or a man seeking revenge, the saint can be any old saint, or a painting of a saint, or the shrine to a saint.  
+  
+Step 5) ***E****xpand their Uses*: As mentioned above, Hellboy alone can give us three different people, and that’s without him even having any action to draw off of in this picture.  If we dig a little we can also say: the son of a witch, the possessor of a magical weapon, an artifact that is the key to the end of the world.  Our gasmask guy can be an evil footsoldier, undead menace, a faceless servant of darkness, a bug eyed, long snouted creature, whatever.  Sometimes you don’t necessarily want to completely parse out every aspect, or you’ll lose some of what makes that element cool to drop in.  You might prefer to have “a half demon who struggles to be good” rather than “a half demon” and “a warrior who struggles to do the right thing”.  
+  
+Step 6) ***R****eady your Chart!* :So, let’s do another d8 weak sauce table:    1.  A half demon son of a witch 2.  The incarnation of an alien god 3.  The head of an evil wizard kept alive in a jar of fluid 4.  Faceless shock troops of an evil regime 5.  A vigilante that leaves his mark on his victims 6.  The defiled shrine of a saint 7.  A golem with a sense of self 8.  An enormous, disgusting wormbeast 

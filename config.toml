@@ -1,0 +1,57 @@
+title = "Jeff Russell's Webstead"
+baseURL = "http://jpowellrussell.com"
+languageCode = "en-us"
+theme = "diary"
+# copyright = "&copy; {year} Jeff Russell"
+# themesDir = "../.."
+
+MetaDataFormat = "yaml"
+DefaultContentLanguage = "en"
+# SectionPagesMenu = "main"
+Paginate = 25
+googleAnalytics = ""
+enableRobotsTXT = true
+
+[[menu.main]]
+url = "/coaching"
+name = "Coaching"
+weight = 1
+[[menu.main]]
+url = "/books"
+name = "Books"
+weight = 2
+[[menu.main]]
+url = "/gaming"
+name = "Gaming"
+weight = 3
+[[menu.main]]
+url = "/leaves"
+name = "Leaves"
+weight = 4
+
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[params]
+  subtitle = "My little corner of the web"
+  favicon = ""
+  description = "Jeff Russell's little corner of the web"
+  facebook = ""
+  twitter = ""
+  instagram = ""
+  youtube = ""
+  github = "https://github.com/jpowellrussell/"
+  gitlab = ""
+  linkedin = "https://www.linkedin.com/in/jeffprussell/"
+  mastodon = ""
+  slack = ""
+  stackoverflow = ""
+  # choose a background color from any on this page: http://tachyons.io/docs/themes/skins/ and preface it with "bg-"
+  # background_color_class = "bg-black"
+  # featured_image = "/images/gohugo-default-sample-hero-image.jpg"
+  recent_posts_number = 5
+
+[comments]
+  disqusShortname = "Jeff"
