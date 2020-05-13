@@ -2,7 +2,7 @@
 layout: default
 title: About
 ---
-For a long time, I've had somewhat sundered "selves" on the web - I had a blog and social media account for gaming, another blog and webstead for coaching and thoughts on business and getting more work done and such, and I've lurked around reading but not putting out there my interests in things like philosophy, mysticism, and religion. After listening to Naval Ravikant [talk about]() why you want to welcome and make the most out of what you have that no one else does, and to Josh Waitzkin [talk about]() how greatness comes from "embracing your funk", I made up my mind to set that right - hence, here we are.  
+For a long time, I've had somewhat sundered "selves" on the web - I had a blog and social media account for gaming, another blog and webstead for coaching and thoughts on business and getting more work done and such, and I've lurked around reading but not putting out there my interests in things like philosophy, mysticism, and religion. After listening to Naval Ravikant [talk about](https://nav.al/rich) why you want to welcome and make the most out of what you have that no one else does, and to Josh Waitzkin [talk about](https://tim.blog/2018/06/19/the-tim-ferriss-show-transcripts-josh-waitzkin-distilled/) how greatness comes from "embracing your funk", I made up my mind to set that right - hence, here we are.  
 
 ## Webstead Leaves
 
