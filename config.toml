@@ -1,5 +1,5 @@
 title = "Jeff Russell's Webstead"
-baseURL = "https://github.com/jpowellrussell/jpowellrussell.github.io"
+# baseURL = "https://github.com/jpowellrussell/jpowellrussell.github.io"
 languageCode = "en-us"
 theme = "diary"
 # copyright = "&copy; {year} Jeff Russell"
