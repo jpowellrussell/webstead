@@ -1,6 +1,8 @@
 ---
 title: "Waking Up"
 date: "2017-09-07"
+categories:
+- Books
 ---
 
 **By Sam Harris**

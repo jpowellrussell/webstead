@@ -1,6 +1,8 @@
 ---
 title: "Antifragile"
 date: "2017-09-07"
+categories:
+- Books
 ---
 
 **By Nassim Taleb**

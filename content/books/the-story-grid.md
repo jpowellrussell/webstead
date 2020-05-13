@@ -1,6 +1,8 @@
 ---
 title: "The Story Grid"
 date: "2017-11-04"
+categories:
+- Books
 ---
 
 **By Shawn Coyne**

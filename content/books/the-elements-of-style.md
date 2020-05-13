@@ -1,6 +1,8 @@
 ---
 title: "The Elements of Style"
 date: "2017-12-11"
+categories:
+- Books
 ---
 
 **By William Strunk, Jr. and E.B. White**

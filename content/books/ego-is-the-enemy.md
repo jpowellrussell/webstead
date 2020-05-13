@@ -1,6 +1,8 @@
 ---
 title: "Ego is the Enemy"
 date: "2017-09-08"
+categories:
+- Books
 ---
 
 **By Ryan Holiday**

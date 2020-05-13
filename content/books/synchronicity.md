@@ -1,6 +1,8 @@
 ---
 title: "Synchronicity"
 date: "2017-10-05"
+categories:
+- Books
 ---
 
 **By Carl Gustav Jung, trans H.F.C. Hull**

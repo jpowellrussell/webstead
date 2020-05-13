@@ -1,6 +1,8 @@
 ---
 title: "Where Good Ideas Come From"
 date: "2017-09-07"
+categories:
+- Books
 ---
 
 **By Steven Johnson**

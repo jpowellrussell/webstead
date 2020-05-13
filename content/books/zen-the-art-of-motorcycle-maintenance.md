@@ -1,6 +1,8 @@
 ---
 title: "Zen & The Art of Motorcycle Maintenance"
 date: "2018-01-16"
+categories:
+- Books
 ---
 
 **By Robert Pirsig**

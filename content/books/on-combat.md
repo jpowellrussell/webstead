@@ -1,6 +1,8 @@
 ---
 title: "On Combat"
 date: "2017-09-07"
+categories:
+- Books
 ---
 
 **By Lt. Col. Dave Grossman**

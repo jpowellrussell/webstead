@@ -1,6 +1,8 @@
 ---
 title: "Strategy: A History"
 date: "2018-01-01"
+categories:
+- Books
 ---
 
 **By Lawrence Freedman**

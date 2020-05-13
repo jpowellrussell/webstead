@@ -1,6 +1,8 @@
 ---
 title: "The Rise and Fall of D.O.D.O."
 date: "2017-09-07"
+categories:
+- Books
 ---
 
 **By Neal Stephenson and Nicole Galland**

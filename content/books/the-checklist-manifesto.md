@@ -1,6 +1,8 @@
 ---
 title: "The Checklist Manifesto"
 date: "2017-09-07"
+categories:
+- Books
 ---
 
 **By Atul Gawande**

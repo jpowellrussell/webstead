@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div>
+  <p>
+    "Leaves" is just my old Englishy way of waying "Pages", in other words, all
+    of the not-blog things around here. To help you find them more readily, here
+    is a list.
+  </p>
+  <ul>
+    {{ range .Pages }}
+    <li>{{ .Title }}</li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}

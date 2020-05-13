@@ -1,6 +1,8 @@
 ---
 title: "Extreme Ownership"
 date: "2017-09-15"
+categories:
+- Books
 ---
 
 **By Jocko Willink and Leif Babin**  

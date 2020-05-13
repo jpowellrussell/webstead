@@ -1,6 +1,8 @@
 ---
 title: "Leonardo da Vinci"
 date: "2017-12-03"
+categories:
+- Books
 ---
 
 **By Walter Isaacson**

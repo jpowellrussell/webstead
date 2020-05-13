@@ -1,6 +1,8 @@
 ---
 title: "The One Minute Workout"
 date: "2017-09-07"
+categories:
+- Books
 ---
 
 **By Martin Gibala, Christopher Shulgan**  

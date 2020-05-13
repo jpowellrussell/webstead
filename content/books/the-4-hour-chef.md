@@ -1,6 +1,8 @@
 ---
 title: "The 4-Hour Chef"
 date: "2017-12-18"
+categories:
+- Books
 ---
 
 **By Tim Ferriss**

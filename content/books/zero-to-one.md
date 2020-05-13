@@ -1,6 +1,8 @@
 ---
 title: "Zero to One"
 date: "2017-09-07"
+categories:
+- Books
 ---
 
 **By Peter Thiel with Blake Masters**

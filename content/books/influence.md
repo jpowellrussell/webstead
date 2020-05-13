@@ -1,6 +1,8 @@
 ---
 title: "Influence"
 date: "2017-09-07"
+categories:
+- Books
 ---
 
 **By Robert B. Cialdini**

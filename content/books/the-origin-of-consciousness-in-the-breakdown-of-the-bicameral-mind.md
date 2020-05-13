@@ -1,6 +1,8 @@
 ---
 title: "The Origin of Consciousness in the Breakdown of the Bicameral Mind"
 date: "2017-09-21"
+categories:
+- Books
 ---
 
 **By Julian Jaynes**

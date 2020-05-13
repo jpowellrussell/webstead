@@ -1,6 +1,8 @@
 ---
 title: "Zhuangzi: Basic Writings"
 date: "2017-09-07"
+categories:
+- Books
 ---
 
 **By Zhuang Zi, trans. Burton Watson**

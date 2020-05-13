@@ -1,6 +1,8 @@
 ---
 title: "Simple Rules"
 date: "2017-10-19"
+categories:
+- Books
 ---
 
 By Donald Sull and Kathleen Eisenhardt

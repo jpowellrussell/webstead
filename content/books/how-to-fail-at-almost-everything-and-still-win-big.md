@@ -1,6 +1,8 @@
 ---
 title: "How to Fail at Almost Everything and Still Win Big"
 date: "2017-09-07"
+categories:
+- Books
 ---
 
 **By Scott Adams**

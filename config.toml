@@ -1,5 +1,10 @@
 title = "Jeff Russell's Webstead"
-# baseURL = "https://github.com/jpowellrussell/jpowellrussell.github.io"
+# Having a base url screwed up my theme for a a while, and getting rid of it
+# solved the problem. Unfortunately, it makes the sidebar navigation fail. I'm
+# going to try having the variable with no value to see how that works
+# If that doesn't work, next step will be to try the actual github.io address,
+# rather than jpowellrussell.com
+baseURL = ""
 languageCode = "en-us"
 theme = "diary"
 # copyright = "&copy; {year} Jeff Russell"

@@ -1,6 +1,8 @@
 ---
 title: "How We Got to Now"
 date: "2017-10-13"
+categories:
+- Books
 ---
 
 **By Steven Johnson**

@@ -1,6 +1,8 @@
 ---
 title: "The People Code: It's All About Your Innate Motive"
 date: "2017-09-07"
+categories:
+- Books
 ---
 
 **By Dr. Taylor Hartman, Ph.D.**

@@ -1,6 +1,8 @@
 ---
 title: "Show and Tell: How Everybody Can Make Extraordinary Presentation"
 date: "2017-11-04"
+categories:
+- Books
 ---
 
 **By Dan Roam**

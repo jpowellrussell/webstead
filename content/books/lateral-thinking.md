@@ -1,6 +1,8 @@
 ---
 title: "Lateral Thinking"
 date: "2017-09-07"
+categories:
+- Books
 ---
 
 **By Edward de Bono**

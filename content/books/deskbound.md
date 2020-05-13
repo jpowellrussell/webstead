@@ -1,6 +1,8 @@
 ---
 title: "Deskbound"
 date: "2017-09-07"
+categories:
+- Books
 ---
 
 **By Kelly Starrett and Juliet Starrett**

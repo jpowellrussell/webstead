@@ -1,6 +1,8 @@
 ---
 title: "The Power of Intuition"
 date: "2018-02-05"
+categories:
+- Books
 ---
 
 **By Gary Klein**

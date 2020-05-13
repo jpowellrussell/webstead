@@ -1,6 +1,8 @@
 ---
 title: "Graphic Storytelling and Visual Narrative"
 date: "2017-11-27"
+categories:
+- Books
 ---
 
 **By Will Eisner**

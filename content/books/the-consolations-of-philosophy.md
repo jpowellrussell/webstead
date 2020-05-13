@@ -1,6 +1,8 @@
 ---
 title: "The Consolations of Philosophy"
 date: "2018-01-22"
+categories:
+- Books
 ---
 
 **By Alain de Botton**

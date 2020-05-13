@@ -1,6 +1,8 @@
 ---
 title: "The Artist's Way"
 date: "2018-01-08"
+categories:
+- Books
 ---
 
 **By Julia Cameron**
