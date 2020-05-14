@@ -1,10 +1,10 @@
 title = "Jeff Russell's Webstead"
-# Having a base url screwed up my theme for a a while, and getting rid of it
-# solved the problem. Unfortunately, it makes the sidebar navigation fail. I'm
-# going to try having the variable with no value to see how that works
-# If that doesn't work, next step will be to try the actual github.io address,
-# rather than jpowellrussell.com
-baseURL = ""
+# Using jpowellrussell.com as my baseURL screwed up my theming before, but
+# having a null value makes the title link in the sidebar not work to take you
+# to the main page, which sucks. I'm going to try the github.io address, which
+# is undesirable, since I'll have to change it if/when I move to a new host, but
+# let's see how it works
+baseURL = "https://jpowellrussell.github.io"
 languageCode = "en-us"
 theme = "diary"
 # copyright = "&copy; {year} Jeff Russell"
@@ -33,6 +33,12 @@ weight = 3
 url = "/leaves"
 name = "Leaves"
 weight = 4
+
+# Not sure if the below will work, but worth trying out
+[[menu.main.leaves]]
+url = "/leaves/about"
+name = "About"
+weight = 1
 
 [sitemap]
   changefreq = "monthly"
