@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html><head>
+<title>&#34;You Have to Put in the Work&#34;</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    &#34;You Have to Put in the Work&#34;
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2012-09-20 11:46
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/osr">OSR</a>
+                                &nbsp;
+                            
+                                <a href="/tags/fellhold">Fellhold</a>
+                                &nbsp;
+                            
+                                <a href="/tags/fellhold-campaign">Fellhold Campaign</a>
+                                &nbsp;
+                            
+                                <a href="/tags/rpgs">RPGs</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>Let me tell you a little story about the path that led to my starting up an Old School D&amp;D Campaign. While having far too much time on my hands courtesy of the United States Government, I stumbled onto the indie RPG scene online. Amongst other things, I discovered Vincent Baker&rsquo;s <a href="http://theunstore.com/unstore/publisher/lumpley_games">games</a> and <a href="http://www.lumpley.com">blog</a>, and started reading and being inspired by both. One post that didn&rsquo;t particularly register at the time, but has since stuck with me was <a href="http://www.lumpley.com/comment.php?entry=602">I &lt;3 the OSR</a>, and especially comment number 8. by Vincent (from whence comes this post&rsquo;s title). Well, about a year later, I don&rsquo;t even remember how or why, but I stumbled onto <a href="http://grognardia.blogspot.com">Grognardia</a> and started reading all of the posts of the <a href="http://grognardia.blogspot.com/search/label/dwimmermount">Dwimmermount Campaign</a>. This is what really fired me up to actually get a D&amp;D game together over Google+ and led to Fellhold (as I&rsquo;ve discussed in pretty much all of the posts this last month). Now the game is underway, and yesterday I read a few posts by game designer Luke Crane (of <a href="http://www.burningwheel.org/">Burning Wheel</a> fame) regarding his experiences running Moldvay (Red Box) D&amp;D while hewing strictly to the rules: <a href="https://plus.google.com/111266966448135449970/posts/Q8qRhCw7az5">Moldvay D&amp;D Retrospective</a>, <a href="http://story-games.com/forums/discussion/15909/a-tale-of-two-maps/p1">A Tale of Two Maps</a>, <a href="http://www.burningwheel.org/forum/showthread.php?12395-Let-s-talk-about-Luke-s-D-amp-D-explorations&amp;highlight=moldvay">Let&rsquo;s Talk about Luke&rsquo;s D&amp;D Explorations</a>.  It was reading these posts that made an idea that&rsquo;s been floating around in my head as I&rsquo;ve prepped Fellhold really click.</p>
+<p>If you didn&rsquo;t check out the link to Mr. Baker&rsquo;s blog, he basically said that there is no book, no blog post, no single text that you can point to and say &ldquo;if you read this, you&rsquo;ll &lsquo;get&rsquo; the OSR&rdquo;. You have to put in the work. That work is following blogs, participating in discussions, wading through different retroclones in different versions, and most importantly <em>playing the games</em>. Sure, things like the <a href="http://www.lulu.com/shop/matthew-finch/quick-primer-for-old-school-gaming/ebook/product-3159558.html">Quick Primer for Old School Gaming</a> provide an excellent introduction, but in the end, to grok it in fullness, you have to immerse yourself in it. Just like any subculture/philosophy, really.</p>
+<p>Of course, all people everywhere want shortcuts to mastering things, that&rsquo;s human nature. But what has been valuable to me in exploring the Old School Renaissance has been that it is a wonderful antidote to the ubiquity of instant gratification. By way of example, after tearing through all of the Dwimmermount posts on Grognardia, I decided I was going to treat the archives like a &ldquo;campaign&rdquo; and read all of them. In many of the Dwimmermount posts, Mr. Maliszewski talks about the value of a long term campaign rather than jumping from interesting game to interesting game every few weeks. In particular he points out that part of a campaign is that some sessions are ho-hum but carry things along, and some drag a little bit, but these are <em>necessary</em> for the sessions that really pop to do so. You build up investment and commitment, and that&rsquo;s what makes the great stuff extra great.</p>
+<p>Sure enough, reading through the rest of the Grognardia archives (and this took me a solid month or two of spending most of my reading time reading blog posts), there were a lot of posts that I wasn&rsquo;t particularly interested in (like an extended review of Gamma World) but I read them. I read every single post, even when I got into it and was like &ldquo;I don&rsquo;t really care about this post&rdquo;. In the end, this had two chief benefits: for one, I discovered things I would have skipped otherwise. I thought I was well versed enough in Pulp Fantasy and wasn&rsquo;t looking for reviews on fiction, but I discovered numerous new authors and stories (more than I&rsquo;ve had a chance to check out yet). Secondly, when I did finally slog my way onto the front page, I had a sense of accomplishment. Sure, that&rsquo;s a silly feeling to have for reading through the archives of a blog about a hobby I enjoy, but I feel like I am a moderate expert on this one small thing.</p>
+<p>So, to bring this back to play, where it matters, Mr. Crane and Mr. Maliszewski both point out that what makes the rules of pre-AD&amp;D D&amp;D so great is that when you put in the time, a lot of the stuff that seems extraneous or stupid begins to make sense. When I was a kid learning D&amp;D (AD&amp;D 2nd Edition in my case), stuff like exact time keeping and movement rates and encumbrance seemed oh so horribly unnecessary. Ridiculous, even. Reading those posts about Mr. Crane&rsquo;s Moldvay games showed me exactly why they make for a good game. And I know this now, but I don&rsquo;t really get it in my gut yet, because my players haven&rsquo;t been at it that long.  But even the prep I&rsquo;ve done on my own has taught me a lot and been immensely satisfying. Watching the players figure out the puzzle door to get into Dwimmermount and not resorting to an intelligence check or the like, just having faith that they&rsquo;d figure something out was crazy satisfying.</p>
+<p>So, if you&rsquo;re interested in this OSR thing, but you don&rsquo;t know much about it, I say dive in. Hell, if you&rsquo;re interested in <em>any</em> large and diverse area of interest, dive in and do the work. It&rsquo;s worth it.</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2012-09-20</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2012-09-21-a-brief-sci-fi-aside/">
+                    Next<br>A Brief Sci-Fi Aside
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2012-09-18-fellhold-session-2-recap/">
+                    Previous<br>Fellhold Session 2 Recap
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

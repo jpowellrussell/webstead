@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html><head>
+<title>Vornheiming Middenheim XVI: Wrapping Up</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Vornheiming Middenheim XVI: Wrapping Up
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2014-01-21 22:51
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/sbvd">SBVD</a>
+                                &nbsp;
+                            
+                                <a href="/tags/osr">OSR</a>
+                                &nbsp;
+                            
+                                <a href="/tags/rules">Rules</a>
+                                &nbsp;
+                            
+                                <a href="/tags/wfrp">WFRP</a>
+                                &nbsp;
+                            
+                                <a href="/tags/middenheim">Middenheim</a>
+                                &nbsp;
+                            
+                                <a href="/tags/projects">Projects</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p><a href="http://2.bp.blogspot.com/-aIeidT2Xgbc/Ut9qdhK0fzI/AAAAAAAAAlY/o1HBoEZN3Js/s1600/densidade-540x271.jpg"><img src="https://2.bp.blogspot.com/-aIeidT2Xgbc/Ut9qdhK0fzI/AAAAAAAAAlY/o1HBoEZN3Js/s1600/densidade-540x271.jpg" alt=""></a></p>
+<p>[UPDATE 2/12/19: I no longer support spending money on products that benefit Zak S, or giving him positive attention and connection. The short version is that I find credible claims that he has engaged in unacceptable behavior and not made up for it. For more detail, see <a href="%7B%7B%20site.baseurl%20%7D%7D%7B%25%20post_url%202019-02-12-removing-support-from-zak-smith%20%25%7D">here</a>. Please consider these claims and make your own decision on their validity, and the implications thereof, before supporting Zak in any way.]</p>
+<p><em>[Don&rsquo;t forget about the <a href="http://blessingsofthedicegods.blogspot.com/2014/01/dungeon-dozen-mix-tape-contest.html">Dungeon Dozen Adventure Contest</a> . Deadline is Friday!]</em>  *   *  So, looking over my original proposed table of contents along with notes I developed over the course of the project, I think that I&rsquo;ve covered everything.  I considered coming up with some rules for alley/sewer/roof crawling to include, but I think I&rsquo;m good with saying use <a href="http://www.lastgaspgrimoire.com/this-place-is-crawling-with-tables/">these</a> by Logan Knight and tweak anything that doesn&rsquo;t fit your vision of Warhammer or Middenheim. So I want to do a brief retrospective on what I learned while doing this whole thing.</p>
+<p>For ease of reference, here&rsquo;s a summary of what I stated I wanted to accomplish in the <a href="http://blessingsofthedicegods.blogspot.com/2013/12/vornheiming-middenheim-part-i.html">first post in this series</a>:</p>
+<ul>
+<li><em>Err on the side of brevity</em></li>
+<li><em>System Neutral</em></li>
+<li><em>Focus on interesting/weird stuff, and take it to 11</em></li>
+<li><em>Canon? We don&rsquo;t need no stinking canon</em></li>
+<li><em>People</em></li>
+<li><em>Tools, not Reference</em></li>
+</ul>
+<p>Looking back, I&rsquo;d say that overall I met those goals pretty well.  I&rsquo;m glad that I stated them clearly up front, because the impulse to expand, embroider, provide all the details; that impulse was definitely there. Having these guiding principles worked as a sort of amulet against excess.  I&rsquo;m sure I still messed up some stuff in the posts, but I&rsquo;ll be exercising some editorial discretion in compiling a .pdf.</p>
+<p>Really, the only one of these goals I don&rsquo;t feel as great about is &ldquo;Focus on interesting/weird stuff, and take it to 11&rdquo;.  I think a lot of the content remained pretty mundane, due to the influence of the text itself continually reasserting its somewhat tame tone whenever I referenced it.  Fortunately, when it comes time to do something like this for my own fantasy cities, the only force for mundanity is my own predilection for cliches, and I have <a href="http://dndwithpornstars.blogspot.com/">plenty</a> of <a href="http://www.lastgaspgrimoire.com/">good</a> <a href="http://middenmurk.blogspot.com/">sources</a> to <a href="http://goblinpunch.blogspot.com/">help</a> <a href="http://gameswithothers.blogspot.com/">counter</a> that.</p>
+<p>Enough wishy-washy mumbo jumbo, here&rsquo;s some concrete lessons learned for anyone who wants to pursue a similar project:</p>
+<ul>
+<li>Define at the outset both style and substance goals. These will
+guide you when you are flipping through highlighted pages going
+&ldquo;what the hell am I doing with this?&rdquo;</li>
+<li>Good Highlighting is time-consuming, but really helps in the long
+run</li>
+<li>To achieve good highlighting, have a clear idea what you want to
+extract before you start highlighting (I highlighted a bunch of
+stuff that I ended up not using, and neglected to highlight some
+stuff I did)</li>
+<li>What stuff did I end up finding most useful? Odd or quirky NPC
+traits, scandalous/secret relationships, neat locations, and ideas
+for crime/investigation/fighting that make sense in the city</li>
+<li>Stuff that was least useful: stats, specific NPCs that weren&rsquo;t &ldquo;the
+powers that be&rdquo;, specific prices, encounter chances, that sort of
+thing</li>
+<li>Rumors are your friend.  A table of rumors (or better, multiple
+tables in different locales with some overlap) are now my very
+favorite way to convey adventure hooks or content. GMs can make
+their own decisions and take their own inspiration, but still have
+something reasonably concrete to go on in a pinch</li>
+<li>Well established aesthetics and concepts go a really long way to
+enable efficient use of words - I can say &ldquo;Warhammer&rsquo;s Old World&rdquo;
+and/or &ldquo;Nurgle&rdquo;, and almost all of the work is done for anyone
+familiar with those conceptual clusters.  If you&rsquo;re starting from
+scratch, you&rsquo;ll have to work harder, but focus more on getting your
+aesthetic/feel right and less on nailing down every detail of a
+fictional history</li>
+<li>Having an organizational framework is good, but it&rsquo;s okay to deviate
+from it halfway if you figure out something that works better. You
+can edit for consistency later (like my district write-ups)</li>
+<li>&ldquo;Roll one of each die&rdquo; type tables are a remarkably useful creative
+framework, but are not the answer to everything</li>
+</ul>
+<p>Now the only thing left besides collecting all of the content into a .pdf is that I&rsquo;d like to <em>use</em> the tools I&rsquo;ve created to write an urban adventure that is not plot-happy nor a dungeon with a good excuse to be in a city.  That&rsquo;ll be a sort of epilogue post, probably tomorrow, but possibly later depending on how much progress I make.</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2014-01-21</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2014-01-23-vornheiming-middenheim-epilogue/">
+                    Next<br>Vornheiming Middenheim: Epilogue - Building a Mystery
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2014-01-20-vornheiming-middenheim-part-xv/">
+                    Previous<br>Vornheiming Middenheim Part XV: Job/Mission Generator Options
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

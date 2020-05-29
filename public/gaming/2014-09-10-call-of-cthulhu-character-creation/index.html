@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html><head>
+<title>Call of Cthulhu Character Creation Resources</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#automated-character-sheet-and-character-creation-walkthrough--call-of-cthulhu-character-sheet-templatehttpsdocsgooglecomspreadsheetsd1auriqxdxztnsemz1_k-donqyay_y5g288uhqfxdbdyoedituspsharing" v-on:click="closeDrawer" id="automated-character-sheet-and-character-creation-walkthrough--call-of-cthulhu-character-sheet-templatehttpsdocsgooglecomspreadsheetsd1auriqxdxztnsemz1_k-donqyay_y5g288uhqfxdbdyoedituspsharing-nav">
+										 Automated Character Sheet and Character Creation Walkthrough Call of Cthulhu Character Sheet Template
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#automated-character-sheet-and-character-creation-walkthrough--call-of-cthulhu-character-sheet-templatehttpsdocsgooglecomspreadsheetsd1auriqxdxztnsemz1_k-donqyay_y5g288uhqfxdbdyoedituspsharing" v-on:click="closeDrawer" id="automated-character-sheet-and-character-creation-walkthrough--call-of-cthulhu-character-sheet-templatehttpsdocsgooglecomspreadsheetsd1auriqxdxztnsemz1_k-donqyay_y5g288uhqfxdbdyoedituspsharing-nav">
+										 Automated Character Sheet and Character Creation Walkthrough Call of Cthulhu Character Sheet Template
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Call of Cthulhu Character Creation Resources
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2014-09-10 21:46
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/call-of-cthulhu">Call of Cthulhu</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p><a href="http://4.bp.blogspot.com/-k-YuZu2W80k/VBEorXK2HVI/AAAAAAAABQk/sdH4F_-RXxY/s1600/July-1-Smackover-roughnecks-AOGHS-e1357569547667.jpg">http://4.bp.blogspot.com/-k-YuZu2W80k/VBEorXK2HVI/AAAAAAAABQk/sdH4F_-RXxY/s1600/July-1-Smackover-roughnecks-AOGHS-e1357569547667.jpg</a></p>
+<p>So, I&rsquo;m going to be running a Call of Cthulhu scenario for the next three weeks as a kick off to my group&rsquo;s Halloween season horror game anthology (3 games of 3 weeks each). I&rsquo;ll be posting the scenario here once I finish writing it (I need something playable by Monday, so don&rsquo;t expect too much of a wait), but in the meantime, here are a couple of resources I&rsquo;ve put together for my players to get started with the character creation process.</p>
+<h3 id="automated-character-sheet-and-character-creation-walkthrough--call-of-cthulhu-character-sheet-templatehttpsdocsgooglecomspreadsheetsd1auriqxdxztnsemz1_k-donqyay_y5g288uhqfxdbdyoedituspsharing">Automated Character Sheet and Character Creation Walkthrough  <a href="https://docs.google.com/spreadsheets/d/1AURiqxdxZTNSEmz1_K-DoNQyAY_Y5g288UHqfXdBDYo/edit?usp=sharing">Call of Cthulhu Character Sheet Template</a></h3>
+<p>I made an excel character sheet and have uploaded it to Google Docs for ease of access and sharing. If you want to make use of this, I recommend you copy it to a Google docs folder of your own or download it as an excel file. The formulas are based on the <a href="http://www.rpgnow.com/product/101292/Call-of-Cthulhu-QuickStart-Rules">free Call of Cthulhu quickstart rules</a> and the skill list comes from <a href="http://www.rpgnow.com/product/55567/Trail-of-Cthulhu">Trail of Cthulhu</a> with a couple of additions for my setting. The occupations list is from Trail of Cthulhu with a few additions from <a href="http://www.rpgnow.com/product/120260/tremulus">Tremulus</a> and of my own creation for the setting. I think it should retain all the cool conditional formatting and formulas and what not. There&rsquo;s a few setting-specific notes for my 1930&rsquo;s Texas boomtown game, but those are pretty easy to change or ignore.   ### Name List Weighted for 1933 Texas Demographics  <a href="">Random 1933 Texas Man and Woman</a>  <a href="https://docs.google.com/spreadsheets/d/1Dk5uMk5X7NQrOYN7XZDa67r9Z_iWn_OzxWK-riBwYok/edit?usp=sharing">1933 Texas Name Lists</a></p>
+<p>So, I needed a name list for my game and I maybe went a little over the top. I found the top 100 US given names for the decades of the 1890&rsquo;s, 1900&rsquo;s, and 1910&rsquo;s, so that I&rsquo;d have the most common American given names for adults in the 1930&rsquo;s. I eliminated duplicates and made a list of male and female names(a little over 200 names). You can use the top 100 if you want a D100 list, or use the generator link if you want all of them involved. </p>
+<p>For surnames, I went even crazier. I found a Texas Almanac from 1933 and found the ethnic mix of the Texas population by percent. Then I found surnames from the representative ethnicities&rsquo; countries. So, for example, I found English, Welsh, and Scottish surnames for &ldquo;whites&rdquo; and I found another statistic for what portion of Texas whites were German in origin and used that percent for German surnames. I had to use modern most common surnames in most cases, but I figure there&rsquo;s probably less variation there than given names and I had to work with what I had. Anyhow, I took all this craziness, and I used the percent of population to figure out how many names on a d100 list should come from that nationality. For example, by assuming a little over half of the 73.5% white population were English/Welsh by descent, I picked the top 36 names from the English/Welsh surname list. Then I repeated the process for the top however many names for each ethnic group (I used &ldquo;English/Welsh, Scottish, Black, Latin American, and German&rdquo; which neglected Czechs, Irish, and any other Ethnic groups, but I think worked out pretty well). Sure, an oil boomtown would probably have more immigrants from other states than the rest of Texas, but I figured too much realism isn&rsquo;t that necessary. I probably already got more involved than necessary, but you can reap the fruit of my labors.</p>
+<p>Overall this should work pretty well as an &ldquo;American Name&rdquo; generator for most of the 20th century, but you&rsquo;ll be missing out on some of the diversity of later times and/or other regions. If you get a result that doesn&rsquo;t seem to make sense like &ldquo;Juan Schmidtt&rdquo; either figure out a cool backstory or roll again.</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2014-09-10</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2014-10-07-how-to-business-primer-for-gamers/">
+                    Next<br>How to Business: a Primer for Gamers
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2014-08-17-adventuring-companies-expeditions-and/">
+                    Previous<br>Adventuring Companies Expeditions and Sites of Interest
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

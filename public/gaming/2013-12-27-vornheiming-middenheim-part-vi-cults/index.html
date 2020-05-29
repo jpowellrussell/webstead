@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html><head>
+<title>Vornheiming Middenheim Part VI: Cults and Intrigue</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#chaos-cult-generator--procedure" v-on:click="closeDrawer" id="chaos-cult-generator--procedure-nav">
+										 Chaos Cult Generator Procedure
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#chaos-cult-generator--procedure" v-on:click="closeDrawer" id="chaos-cult-generator--procedure-nav">
+										 Chaos Cult Generator Procedure
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Vornheiming Middenheim Part VI: Cults and Intrigue
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2013-12-27 15:47
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/sbvd">SBVD</a>
+                                &nbsp;
+                            
+                                <a href="/tags/osr">OSR</a>
+                                &nbsp;
+                            
+                                <a href="/tags/rules">Rules</a>
+                                &nbsp;
+                            
+                                <a href="/tags/wfrp">WFRP</a>
+                                &nbsp;
+                            
+                                <a href="/tags/middenheim">Middenheim</a>
+                                &nbsp;
+                            
+                                <a href="/tags/projects">Projects</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p><a href="http://1.bp.blogspot.com/-LmHLeRbJ858/Ur3_h9SwRgI/AAAAAAAAAc8/3-PNeN1nFAs/s1600/Tome_of_Corruption_by_RalphHorsley.jpg"><img src="https://1.bp.blogspot.com/-LmHLeRbJ858/Ur3_h9SwRgI/AAAAAAAAAc8/3-PNeN1nFAs/s320/Tome_of_Corruption_by_RalphHorsley.jpg" alt=""></a></p>
+<p>[UPDATE 2/12/19: I no longer support spending money on products that benefit Zak S, or giving him positive attention and connection. The short version is that I find credible claims that he has engaged in unacceptable behavior and not made up for it. For more detail, see <a href="%7B%7B%20site.baseurl%20%7D%7D%7B%25%20post_url%202019-02-12-removing-support-from-zak-smith%20%25%7D">here</a>. Please consider these claims and make your own decision on their validity, and the implications thereof, before supporting Zak in any way.]</p>
+<p>Today we get to the stuff I&rsquo;m most excited about: the Chaos Cult and Intrigue generators! These are the parts that are most original and least a reworking of other people&rsquo;s stuff.  Obviously I think the reworking has value too, or I wouldn&rsquo;t be doing it, but coming up with these got me fired up in a way working on district write-ups or adapting the Powers that Be did not.  </p>
+<p>So, a few words on each of the generators.  First of all, I can&rsquo;t help the feeling that they&rsquo;re overly simplistic, but I think in practice the complexity will come from interactions.  That being said, even more so than the other things, these are a draft, and I&rsquo;d appreciate any suggestions for changes or additions.</p>
+<p>The intrigue generator essentially works as a mad libs.  If you don&rsquo;t already have a person or group in mind, you can randomly generate the players involved, or you can just roll the other columns and plug in the groups you want to find a relationship for.  The wants and beliefs are left fairly vague so they can fit a variety of different people and situations.  If an intrigue seems weak, either a) pick one you like better, b) roll again until something gets your motor going, or c) layer on other sources of complexity like generating specific NPCs, tying in the Powers that Be, pulling in a Chaos cult, or what have you.</p>
+<p>The Chaos cult generator&rsquo;s format is inspired by Logan Knight&rsquo;s excellent <a href="http://www.lastgaspgrimoire.com/how-to-make-friends-and-imagine-people/">NPC Birthing Sacs</a>.  I&rsquo;ve added the feature that you can roll 1d4 and get a &ldquo;standard&rdquo; cult by reading straight across, and each cult is assumed to have an enmity/rivalry with the next one down.  Which Chaos God is generated does a lot of the heavy lifting for the flavor of the cult, as the rest of the columns were made to generically fit any one of the Chaos gods.  I figure I&rsquo;ll never be as evocative as the Realms of Chaos books, so I won&rsquo;t try.  I feel like the &ldquo;quirks&rdquo; could be more interesting, but it was hard to come up with ideas that worked equally well for followers of every ruinous power.  After the break is the actual rules.  ## Intrigue Generator  <strong>Procedure</strong></p>
+<ul>
+<li>To find relationship between two people or groups, simply roll on
+column 2</li>
+<li>To create a new basic intrigue, roll on columns 1, 2, and 3</li>
+<li>To create an intermediate intrigue, add column 4</li>
+<li>To create a complex intrigue, add column 5</li>
+<li>For maximum complexity, add column 6</li>
+<li>Repeat the process with already established groups or people in one
+or more columns in order to create a web of conflicting and
+interconnecting plots</li>
+<li>If the same group or person comes up in multiple columns, attempt to
+interpret it in a way that makes sense, such as a smaller factions
+within a larger group, or complex internal psychology of an
+individual, but if it flat out does not work, re-roll</li>
+<li>If using column 6, try to interpret the other columns in light of
+the district rumor to create a coherent whole</li>
+<li>Finally, the headings can be used as an ad lib to be filled in any
+way you like: &ldquo;(Person/Group) wants (a thing) from (Person/Group)
+because of a lack of (a thing) that they blame on (Person/Group)
+because they are secretly behind (a random rumor) in (a random
+district).&rdquo;</li>
+</ul>
+<p>Basic  Intermediate  Complex  Extra Complex  Roll  (Person/Group)  Wants (thing)  From (Person/Group)  Because of a lack of (thing)  That they blame on (person/group)  Because they are secretly behind (a random rumor) in (random district)  1  A random Power  Sex  A random NPC  Safety  A random Chaos Cult  Roll district, roll rumor  2  A random NPC  Money  A random Power  Marriage  The Graf  Roll district, roll rumor  3  A random Chaos Cult  Connections  The Law Lords  Protection  The Merchant Guild  Roll district, roll rumor  4  The Graf  Power  The Midden Marshalls  Intimidation  The Law Lords  Roll district, roll rumor  5  The Merchant Guild  Marriage  The Law Lords  Submission  The Midden Marshalls  Roll district, roll rumor  6  The Law Lords  Safety  The Merchant Guild  Sex  The Cult of Ulrich  Roll district, roll rumor  7  The Midden Marshalls  Intimidation  The Cult of Ulrich  Connections  The Cult of Sigmar  Roll district, roll rumor  8  The Cult of Ulrich  Submission  The Cult of Sigmar  Power  Komission for Commerce, Trade, and Taxation  Roll district, roll rumor  9  The Cult of Sigmar  Protection  Komission for Commerce, Trade, and Taxation  Money  The Worshipful Guild of Legalists  Roll district, roll rumor  10  Komission for Commerce, Trade, and Taxation  Violence  The Worshipful Guild of Legalists  Cooperation  The Komission for Elven, Dwarven, and Halfling Interests  Roll district, roll rumor  11  The Worshipful Guild of Legalists  Cooperation  The Komission for Elven, Dwarven, and Halfling Interests  Violence  The Komission for Health, Education, and Welfare  Roll district, roll rumor  12  The Komission for Elven, Dwarven, and Halfling Interests  An object  The Komission for Health, Education, and Welfare  Political Support  The Komission for Public Works  Roll district, roll rumor  13  The Komission for Health, Education, and Welfare  Political Support  The Komission for Public Works  Discretion  A random Labor Guild  Roll district, roll rumor  14  The Komission for Public Works  Discretion  A random Labor Guild  Publicity  A random Craft Guild  Roll district, roll rumor  15  A random Labor Guild  Publicity  A random Craft Guild  Indulgence  The Wizard and Alchemists Guild  Roll district, roll rumor  16  A random Craft Guild  Indulgence  The Wizard and Alchemists Guild  Favors  The Physicians Guild  Roll district, roll rumor  17  The Wizard and Alchemists Guild  Favors  The Physicians Guild  Participation  A random district Burgerlich Komission  Roll district, roll rumor  18  The Physicians Guild  Participation  A random district Burgerlich Komission  Influence  A random company  Roll district, roll rumor  19  A random district Burgerlich Komission  Influence  A random company  Approval  A random Power  Roll district, roll rumor  20  A random company  Approval  A random Chaos Cult  An object  A random NPC  Roll district, roll rumor</p>
+<h2 id="chaos-cult-generator--procedure">Chaos Cult Generator  <strong>Procedure</strong></h2>
+<ul>
+<li>Step 1: Roll on the table</li>
+<li>Step 2: Adapt the name as necessary (such as by adding &ldquo;The
+Brotherhood of&rdquo; or &ldquo;The ____ Order&rdquo; or the like) </li>
+<li>Step 3: Determine size of the cult by rolling 2d6, with 6&rsquo;s
+&ldquo;exploding&rdquo; (roll again and add on any 6&rsquo;s) to find the number of
+members</li>
+<li>Step 4: Find at least one Chaos Cult to be an enemy or rival</li>
+<li>For a quick cult, roll 1d4 and read straight across for step 1, and
+for step 4, use the next cult down in the table (wrapping around for
+Nurgle)</li>
+<li>For a more involved cult, roll 1 each of d4, d6, d8, d10, d12, and a
+d20</li>
+<li>Optional: For more involved goals, roll twice each for short and
+long term goals and use the first roll to determine the verb from
+and the other roll for the object</li>
+<li>Optional: Plug the newly created cult into columns 1, 3, or 5 of the
+intrigue generator and create one or more plots for the cult to be
+involved in that may or may not relate to their short and long term
+goals</li>
+<li>Optional: Use the NPC generator to create any members of the cult as
+they are needed</li>
+</ul>
+<!-- raw HTML omitted -->
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2013-12-27</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2013-12-29-saturday-special-weird-taboo-generator/">
+                    Next<br>Sunday Special: Weird Taboo Generator
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2013-12-26-vornheiming-middenheim-part-v-powers/">
+                    Previous<br>Vornheiming Middenheim Part V: The Powers that Be
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

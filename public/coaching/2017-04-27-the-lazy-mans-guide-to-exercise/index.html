@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html><head>
+<title>The Lazy Man&#39;s Guide to Exercise</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    The Lazy Man&#39;s Guide to Exercise
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2017-04-27 00:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Coaching]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/wellness">Wellness</a>
+                                &nbsp;
+                            
+                                <a href="/tags/exercise">Exercise</a>
+                                &nbsp;
+                            
+                                <a href="/tags/personal">Personal</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>As I’m sure you’re sick of hearing, exercise is the single best thing you can do to make every other area of your life better and easier. We all know this, but damn if getting started doesn&rsquo;t suck. Especially if you didn’t take to exercise early in life, it’s hard to motivate yourself to endure such unpleasantness. You end up with the same vague feeling of guilt you feel when you realize you haven’t flossed since right after your last dentist appointment. Fortunately, there are reliable ways to make it easier to get started and to practice in a way that sticks, and I’m going to share some of those techniques today - from one lazy bum to another.</p>
+<p><img src="https://images.squarespace-cdn.com/content/v1/588fac99f5e231608e25ebd0/1493327437289-HIRYFJZYMSWBQXROPELT/ke17ZwdGBToddI8pDm48kB7jRAXYnud1GpUQmNttyhJZw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVFT9fKV5OBz3MYceo3y5RVgjOOxuiKzLoeSJGRqF5pxSYk6F1R1CriF8Yes9BWbW6c/Alternate+Skinny+Jeff.jpg" alt="Does this look like someone who works out to you?"></p>
+<p>Does this look like someone who works out to you?</p>
+<p>Some people just seem to “get&rdquo; exercise and enjoy it with zero effort. Maybe you’re one of them - if so, there’s not much here for you - go for a nice jog or put someone in a triangle choke while the rest of us hash this out. Still with me? Okay, so you know how it is. Check out that skinny nerd above - that’s me. For years I was lazy - as a kid little league was boring, in high school I barely took enough PE to graduate, and in college the most strenuous thing I did was the occasional racquetball game. So what? I wasn’t fat, I was young and full of energy and more interested in reading stuff than “being outside.” Any of this sound familiar?</p>
+<p><img src="https://images.squarespace-cdn.com/content/v1/588fac99f5e231608e25ebd0/1493327502146-NJXE7MVQ2DJ85YPRE48M/ke17ZwdGBToddI8pDm48kCjAVTnxV7Zc3q25r02TGhhZw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVEKRFIcgH6JZXmMmFiJ-qn4R08S60Jw4LG_0GwAMX6I0O4sk1tdgEkQsVzLuuaVaBo/Basic+Training+Running.jpg" alt="That&rsquo;s me on the right, thoroughly enjoying a run, obviously"></p>
+<p>That&rsquo;s me on the right, thoroughly enjoying a run, obviously</p>
+<p>Well, somewhere along the way of reading about hardass <a href="https://smile.amazon.com/Gates-Fire-Steven-Pressfield-ebook/dp/B000NJL7QO/ref=sr_1_1?ie=UTF8&amp;qid=1493227655&amp;sr=8-1&amp;keywords=gates+of+fire">Spartans</a> and <a href="https://smile.amazon.com/Meditations-New-Translation-Modern-Library-ebook/dp/B000FC1JAI/ref=sr_1_5?s=books&amp;ie=UTF8&amp;qid=1493227708&amp;sr=1-5&amp;keywords=meditations+marcus+aurelius">Stoics</a> and <a href="https://smile.amazon.com/Starship-Troopers-Robert-Heinlein-ebook/dp/B004EYTK2C/ref=tmm_kin_swatch_0?_encoding=UTF8&amp;qid=&amp;sr=">too</a> <a href="https://smile.amazon.com/Moon-Harsh-Mistress-Robert-Heinlein/dp/0312863551/ref=sr_1_2?s=books&amp;ie=UTF8&amp;qid=1493227741&amp;sr=1-2&amp;keywords=heinlein">much</a> <a href="http://www.elise.com/quotes/heinlein_-_specialization_is_for_insects">Robert Heinlein</a>, it finally sunk in that I was missing out on being a complete human being, and that fitness was necessary for true <a href="https://en.wikipedia.org/wiki/Arete_(moral_virtue)">excellence</a>. So I start working out a little bit - doing some pushups in my room, laps in the pool, that kind of thing, but pretty sporadically. Then a good friend of mine helps give me the crazy idea to join the Army. Being a good nerd, I found a <a href="https://smile.amazon.com/Ultimate-Basic-Training-Guidebook-Surviving-ebook/dp/B004HW6AGK/ref=sr_1_2?s=digital-text&amp;ie=UTF8&amp;qid=1493227986&amp;sr=1-2&amp;keywords=survival+guide+basic+training">book</a> on how to prepare for Basic Training, and guess what the top recommendation was? Get in shape before you get there. So I did, and sure enough, Basic was a lot easier than I expected, the expression on my face in the above photo notwithstanding. I mean, sure, there were still hours-long sessions of doing <a href="https://www.youtube.com/watch?v=yk7yXdzabxY">ski jumpers</a> and <a href="https://www.youtube.com/watch?v=De3Gl-nC7IQ">mountain climbers</a> to the <a href="https://www.youtube.com/watch?v=oQwNN-0AgWc">Bee Gees</a>, but for the first time in my life I was in pretty good shape.</p>
+<p><img src="https://images.squarespace-cdn.com/content/v1/588fac99f5e231608e25ebd0/1493327549961-OVNLRV8I0F3AF6PSM2AE/ke17ZwdGBToddI8pDm48kPZjswWEEM1xUlE2nw_1gDZZw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVFEypcWtVdAnmHnO4a1hPNGKftICS8WvBaaDvL8dARr2lYCOBSuh7_iz0ZUXSA5sds/Buff+Jeff.jpg" alt="Look at that, muscles!"></p>
+<p>Look at that, muscles!</p>
+<p>I stayed that way throughout my five years in the Army, and you know what I discovered that was slightly shocking? It felt great being in shape. Not just the obvious stuff, like picking up heavy stuff with ease or getting checked out when I wore a sweater - don’t get me wrong, those were great. Even more so than that, I felt a sort of ease and confidence all the time. I knew that whatever came up, I could handle it, physical, mental, whatever. Not to mention I could get away with eating garbage and drinking beer and not sleeping nearly enough and still feel fine. Over those five years, I totally shifted my identity from a bookish nerd to a fit guy.</p>
+<p>The trouble with static self-identity, though, is that it can get out of date if you’re not careful. When I got out of the Army, I discovered an ugly truth: the group dynamics and the yelling and the threat of punishment all had more to do with me staying fit than I would have liked to admit. Now without a platoon sergeant and 6:30 Physical Training formation, I kept some things the same. I kept eating garbage. I kept drinking beer. But other stuff I changed. I stopped running. I stopped <a href="http://www.goruck.com/how-to-ruck">ruck marching</a>. I stopped doing any exercise. No prizes if you guess happened: I got fat. Not morbidly obese or anything, but my pants didn’t fit any more, and I was  staring in the mirror going “what the hell happened? I&rsquo;m a fit guy. I thought I was invincible.” Turns out I was <a href="https://www.youtube.com/watch?v=wtBc5ABgYEM">vincible</a>. Like we all are. So I had to figure it out.</p>
+<p><img src="https://images.squarespace-cdn.com/content/v1/588fac99f5e231608e25ebd0/1493327619307-ARXOSE5LEYU1HRYUXXA4/ke17ZwdGBToddI8pDm48kMaDaKi2epkHuSAS8ZI0rbpZw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVExRf72fONj3xACAiDmTquLvbdrmxSnqZEb9JSyoV0DlcY7l6Ms67beKNYVsWU6vCc/Sad%2C+Fat+Jeff.jpg" alt="This is my &ldquo;before&rdquo; picture I took when I got serious about getting back in shape. And the last picture of me shirtless, I promise."></p>
+<p>This is my &ldquo;before&rdquo; picture I took when I got serious about getting back in shape. And the last picture of me shirtless, I promise.</p>
+<p>But I’ve succeeded in overcoming that and making exercise a priority every single day, and I want to share what works for me. To make it work for you, you may have to tweak some stuff - for example, many people benefit from having a workout buddy or scheduled classes on the calendar. However you make it work, the three principles below will be the foundation that makes it easy to start and easy to sustain: </p>
+<ol>
+<li>Systems, Not Goals - I discovered this <a href="http://blog.dilbert.com/post/102964992706/goals-vs-systems">maxim</a> of Scott Adams’s via <a href="https://smile.amazon.com/Tools-Titans-Billionaires-World-Class-Performers-ebook/dp/B01HSMRWNU/ref=sr_1_1?s=digital-text&amp;ie=UTF8&amp;qid=1493229267&amp;sr=1-1&amp;keywords=tools+of+titans">Tools of Titans</a>, and it is pure gold. Forget about fixating on a target weight. You want to focus on the process, and turn it into something automatic that never goes away. Goals can be great for reminding yourself why you’re doing something when you don’t feel like it, or for getting you motivated in the beginning, but in the long haul, you want to systematize your behavior. That means having a set routine or approach that you follow. In my case that currently means doing one workout every morning from <a href="https://www.gymnasticbodies.com/">Gymnastic Bodies</a> - which I track that in my <a href="https://www.jeffrussellcoaching.com/coaching-blog/2017/4/14/get-outta-my-head-and-into-my-">task capture sys</a><a href="https://www.jeffrussellcoaching.com/coaching-blog/2017/4/14/get-outta-my-head-and-into-my-">tem</a>.</li>
+<li>Micro-habits - The key to building your system is ridiculously easy regular behaviors. For that you want to take advantage of <a href="http://jamesclear.com/small-habits">micro-habits</a>. These are habits so tiny that you can’t possibly find a way to rationalize not doing them. A classic example is to commit to yourself to <a href="http://www.iwillteachyoutoberich.com/blog/how-to-change-a-habit-video/">flossing just</a> <a href="http://www.iwillteachyoutoberich.com/blog/how-to-change-a-habit-video/">one</a><a href="http://www.iwillteachyoutoberich.com/blog/how-to-change-a-habit-video/"> tooth</a>. It sounds preposterous, but the science <a href="https://link.springer.com/chapter/10.1007%2F978-3-642-13226-1_13">backs it up</a>. Micro-habits serve two key functions: they keep you consistent (see below), and they help you overcome <a href="https://www.youtube.com/watch?v=RH5B2j843WU">resistance</a>. When you don’t feel like working out, if you can tell yourself that you only have to do this super easy micro-habit, then you get started, and next thing you know, inertia pulls you into doing the rest of your workout.</li>
+<li>Do something every single day - Micro-habits help your consistency not just by getting you to workout when you don’t want to, they also give you a way to keep your habit going even when something really does gotta give. Picture a cave man hunched against a blizzard, marching with his tribe cradling a tiny, tiny spark and occasionally blowing on it to keep it going, the seed of the fire that will keep them all alive when they reach shelter. Your micro-habit is keeping that spark going. I think the very best way to keep your habit alive is to do <a href="http://tim.blog/2017/03/16/jerzy-gregorek/">a little bit of something every day</a>. I was skeptical for a long time, having had some success with working out two or three times a week, but I eventually lost those habits - now I’ve done at least a micro-habit every single day for over a year.</li>
+</ol>
+<p>Okay, enough theorizing, right? We’re talking about exercise here, so let’s get hands-on and practical! If you don’t already have some ideas of your own, here is my specific recommendation for the absolute novice:</p>
+<ol>
+<li>Commit to a system of doing some exercise everyday, no matter how small - exercise can be as simple as walking and stretching, btw</li>
+<li>Make it a part of your morning or evening routine, whichever you are doing consistently. If you don’t have either, go with the morning, so there’s less chance you decide to skip it later</li>
+<li>Pick a single exercise that you know you can do right now that is too easy to skip - maybe a single push up or squat, maybe touching your toes, maybe walking around for two minutes</li>
+<li>Keep track of whether you do or don’t do this somehow (if you have a <a href="https://www.jeffrussellcoaching.com/coaching-blog/2017/4/14/get-outta-my-head-and-into-my-">task capture system</a> going, use that, or you could just use the Seinfeld <a href="http://jamesclear.com/stop-procrastinating-seinfeld-strategy">“Don’t Break the Chain” Method</a>)</li>
+</ol>
+<p>If you feel motivated and excited to do more, go right ahead! But remember, you still win if you only do your micro-habit - everything else is special bonus exercise. Does this sound like it will never do any good? Perhaps. But we’re working gradually here - I’m not recommending you only do one push up a day for the rest of your life. The goal of this is not to make you a bodybuilding champion. The goal is to help you see yourself as someone who works out every day. This kind of identity shift is super <a href="http://jamesclear.com/identity-based-habits">useful for habit formation</a>. Down the road, once this is automatic, we can talk about how to build on it. Just remind yourself that even ten seconds of exercise is better than no exercise.</p>
+<p><img src="https://images.squarespace-cdn.com/content/v1/588fac99f5e231608e25ebd0/1493327667053-R7NH7I5PJ9PAJOU2SKM1/ke17ZwdGBToddI8pDm48kPZjswWEEM1xUlE2nw_1gDZZw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVFEypcWtVdAnmHnO4a1hPNGKftICS8WvBaaDvL8dARr2lYCOBSuh7_iz0ZUXSA5sds/image-asset.jpeg" alt="Here I am today, looking good and feeling good"></p>
+<p>Here I am today, looking good and feeling good</p>
+<p>Getting started with exercise definitely sucks, I know. Even though I like how I feel when I work out regularly, there are days where I catch myself thinking “do I really have to?” But then my micro-habit steps in to the rescue. A system like this is really just the beginning. Once you start finding it easy to exercise and notice how good you feel, you can expand your daily exercise and get more ambitious (keeping that micro-habit in your back pocket!). Hell, you may even find something physical that you truly enjoy, like bike riding or martial arts. Then you’ll start sneaking in even more exercise and not notice. One day you’ll wake up and realize you’re not actually that lazy anymore - and that’s a great feeling.</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2017-04-27</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/coaching/2017-05-12-super-combinations-from-tools-of-titans/">
+                    Next<br>“Super” Combinations from Tools of Titans
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/coaching/2017-04-21-float-on-my-first-experience-with-a-flotation-tank/">
+                    Previous<br>Float On - My First Experience with a Flotation Tank
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

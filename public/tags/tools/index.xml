@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tools on Jeff Russell&#39;s Webstead</title>
+    <link>/tags/tools/</link>
+    <description>Recent content in Tools on Jeff Russell&#39;s Webstead</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 22 Sep 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Virtual Mentors</title>
+      <link>/coaching/2017-09-22-virtual-mentors/</link>
+      <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/coaching/2017-09-22-virtual-mentors/</guid>
+      <description>High performers frequently emphasize the importance of quality mentors, and we’ve all experienced the value of learning from people who have been there and done that. Finding a great mentor can be a big challenge, though. Luckily, you can benefit from the wisdom of impressive people with “virtual mentors”.
+Let’s talk about why to bother with this technique: finding and building a relationship with a top notch mentor is a big challenge.</description>
+    </item>
+    
+  </channel>
+</rss>

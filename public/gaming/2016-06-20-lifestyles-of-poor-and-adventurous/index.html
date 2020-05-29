@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html><head>
+<title>Lifestyles of the Poor and Adventurous</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Lifestyles of the Poor and Adventurous
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2016-06-20 11:19
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/fellhold-reboot">Fellhold Reboot</a>
+                                &nbsp;
+                            
+                                <a href="/tags/urbancrawl">Urbancrawl</a>
+                                &nbsp;
+                            
+                                <a href="/tags/osr">OSR</a>
+                                &nbsp;
+                            
+                                <a href="/tags/fellhold">Fellhold</a>
+                                &nbsp;
+                            
+                                <a href="/tags/dd">D&amp;D</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p><a href="https://ajcarlisle.files.wordpress.com/2014/02/hobbit-chroniclesdosartdesigng4.jpg">https://ajcarlisle.files.wordpress.com/2014/02/hobbit-chroniclesdosartdesigng4.jpg</a></p>
+<p>One of the major &ldquo;themes&rdquo; of my Fellhold reboot (if that&rsquo;s not too grand a word) is the idea of place being important. Factions have turf, demons have loci they are tied to, and some powers only work in certain places. A frequent hole in the sense of place in D&amp;D games is a place for the characters to live - hence all the murderhoboery. I contend that one contributing reason for this is that most cost of living or lifestyle rules suck and are boring. You inject some fun when you start playing the domain game, but before that, it tends to either be total handwaving or else tedious bean counting.</p>
+<p>So here&rsquo;s my stab at making some relatively portable, modular lifestyle rules that can be bolted on to the D&amp;D-alike of your choice. The currencies given assume a silver standard, and the amounts are totally untested, so feel free to adjust. Anywhere you see a reference to &ldquo;an Urbancrawl action&rdquo;, you can substitute in &ldquo;a week&rdquo; or &ldquo;one period of downtime.&rdquo; More on what I&rsquo;m up to with Urbancrawl actions soon (hopefully)</p>
+<p>The actual hard and fast rules are kept pretty brief, because I want this to work well regardless of system intricacies, and so I&rsquo;ve avoided creating too much interconnectedness or dependency with the other urbancrawl rules. I&rsquo;ve used rate of healing as the main factor affected, but I&rsquo;ve also thrown in guidelines on what stuff that can just be assumed to be &ldquo;taken care of&rdquo; for a given lifestyle. I&rsquo;m considering easing up on the &ldquo;stick&rdquo; of homeless and poor, and adding more &ldquo;carrot&rdquo; for comfortable and above, since I see &ldquo;poor&rdquo; as pretty normal for characters for a while.</p>
+<p><strong>Lifestyle</strong>  How a player character lives impacts their ability conduct business in the city. Filthy hobos tend not to heal so fast, while those living in the lap of luxury might be more tempting targets for burglars. In addition to the specific rules below, here are some general guidelines for PC lifestyle:</p>
+<ul>
+<li>Everyone should live <em>somewhere</em> on the map - when a player selects
+or changes lifestyle, figure out where on the map the place they
+stay is - even if they’re homeless, they should have a locale they
+tend to stay in</li>
+<li>Lifestyle might provide a small modifier (+/- 1) to the urbancrawl
+action, if it seems relevant - for example, a smelly homeless person
+trying to investigate a conspiracy playing out in a bog mummy’s
+court is going to have a harder time than a sophisticated socialite.</li>
+<li>Likewise, when complications arise from the Urbancrawl action,
+consider the player’s lifestyle in applying them - it’s a very
+different matter if a rival faction pushes past a watchman and
+trashes your luxury apartment than if a petty street gang stomps
+your shanty apart with their boots</li>
+<li>Try to make lifestyle something besides a transaction to pay more
+for better healing - see what details players focus on and find
+interesting, and incorporate those into play</li>
+<li>Lifestyle should influence the nature of the contacts a player makes
+<ul>
+<li>richer characters will tend to have higher class contacts. This
+isn’t a hard and fast rule, as sometimes the upper crust need some
+shady types to get stuff done for them, but if players want more
+access to higher social class, they should make efforts to join it</li>
+</ul>
+</li>
+</ul>
+<p><strong>Lifestyle Options</strong>  Players may choose any of the options below that they can afford. By default, the cost is paid per urbancrawl action (one week is the standard), but the amount or frequency can be adjusted as desired.</p>
+<p><a href="http://2.bp.blogspot.com/-Yr_zc1QjjJE/UvHup_n7z2I/AAAAAAAABXI/Kxua8q2OPes/s1600/MattRhodes_KvotheInTarbean_Detail.jpg">http://2.bp.blogspot.com/-Yr_zc1QjjJE/UvHup_n7z2I/AAAAAAAABXI/Kxua8q2OPes/s1600/MattRhodes_KvotheInTarbean_Detail.jpg</a></p>
+<p><em>Homeless</em>  You are a street person. You eat garbage and your clothes are filthy, probably tattered. You have to constantly watch any belongings you have, or other bums will steal them to sell for food or drugs. Those little items that it sure would be nice if you had? You have to buy those specifically, or you don’t have them. Some cigarettes are a big deal. You are constantly cold, wet, and uncomfortable, so healing doesn’t work out so great. You heal at 1/4 the normal rate. Check constitution once an urbancrawl action - if you fail, you have some kind of minor, persistent, but rather unpleasant disease, like the flu or itchy boils all over. Either use your preferred disease rules, or else take -1 on rolls until you heal.</p>
+<p>Example accommodations: crates, tarps, abandoned tunnels, doorways, under bridges. </p>
+<p>Cost: Free</p>
+<p><a href="https://www.revivalgame.com/blog_images/2015/6/26/blog_062615_01.jpg">https://www.revivalgame.com/blog_images/2015/6/26/blog_062615_01.jpg</a></p>
+<p><em>Poor</em>  You have somewhere tiny and uncomfortable to stay, but it’s dry and reasonably safe. You eat a lot of bread, vegetables when you can get them, and meat is a rare treat. You can put a lock between your stuff and the ravenous outside world, and most folks in your neighborhood don’t have anything worth stealing, so you and your stuff sleep pretty securely, but if you have a lot of it, you might have to figure out where to put all of it. Your clothes are likely second hand or just extremely well worn. You can assume you have a few small, everyday items if it becomes relevant, and you can probably barely afford to smoke and buy coffee, but nothing fancy. Due to poor nutrition, you heal at 1/2 the normal rate. </p>
+<p>Example accommodations: tenement apartment, guild dormitory, alms house, attic apartment, shady boarding house.</p>
+<p>Cost: 5 Silver Skillings</p>
+<p><a href="http://fantasy-faction.com/wp-content/uploads/2013/03/2013-MAR-Conflict-An-Inn-Across-The-Mountains-by-JonHodgson-263x300.jpg">http://fantasy-faction.com/wp-content/uploads/2013/03/2013-MAR-Conflict-An-Inn-Across-The-Mountains-by-JonHodgson-263x300.jpg</a></p>
+<p><em>Comfortable</em>  Whether it’s a private apartment or a room at a comfortable inn, you have somewhere neat, pleasant, and warm to stay. The food is filling and good for you, if not especially fine. You can occasionally indulge in treats like a good cup of coffee or a pastry. Your clothes are well made and sturdy, and they don’t look terrible. You have enough space for a reasonable amount of stuff, a good solid door with a lock, and people would probably notice if someone was trying to break in. You can go out for drinks or buy your friends coffee pretty regularly, and if you smoke (or indulge in other drugs) you can afford your habit no problem. Any small, everyday item that you could reasonably assume you would have, you have. Since you eat well and rest comfortably, you heal at the normal rate.</p>
+<p>Example accommodations: Reputable boarding house, an inn, private apartment, faction quarters</p>
+<p>Cost: 1 Gold Mark  *   *  <a href="http://www.candlekeep.com/images/gallery/beholder.jpg">http://www.candlekeep.com/images/gallery/beholder.jpg</a>  *   *  <em>Luxurious</em>  You live extremely well - comfortable bed, nice furniture, delicious food. You have plenty of stuff, and room for plenty more. You have servants to take care of the cooking and cleaning, and maybe the occasional small errand. There might even be dedicated watchmen to keep an eye on the door and keep the riffraff out. Your clothes are tailored and high quality, likely of the latest fashions, and you can indulge in ridiculous habits like only buying witch-grown coffee. Not only can you assume you have any small, everyday items you might need, once per session, you can declare that you have any one non-magical item that you happen to need right now, since you bought it on a whim at some point. If you could reasonably be carrying it, you are. If it’s large, you’ll have to head back to your place to get it. Due to good food, comfortable rest, and attentive care, you heal at 1.5 times the normal rate. You are somewhat more likely to be the target of burglary, since you have stuff worth stealing. </p>
+<p>Example accommodations: Luxury apartment, high quality inn, townhouse, faction leadership quarters</p>
+<p>Cost: 10 Gold Marks</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2016-06-20</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2016-06-22-what-do-you-do-in-city-default/">
+                    Next<br>What Do you Do in the City? Default Urbancrawl Actions
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2016-06-16-some-fellhold-random-encounter-tables/">
+                    Previous<br>Some Fellhold Random Encounter Tables
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

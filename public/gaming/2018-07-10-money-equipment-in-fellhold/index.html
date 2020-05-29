@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html><head>
+<title>Money &amp; Equipment in Fellhold</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Money &amp; Equipment in Fellhold
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2018-07-10 12:25
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/fellhold-reboot">Fellhold Reboot</a>
+                                &nbsp;
+                            
+                                <a href="/tags/osr">OSR</a>
+                                &nbsp;
+                            
+                                <a href="/tags/fellhold">Fellhold</a>
+                                &nbsp;
+                            
+                                <a href="/tags/rpgs">RPGs</a>
+                                &nbsp;
+                            
+                                <a href="/tags/rules">Rules</a>
+                                &nbsp;
+                            
+                                <a href="/tags/dd">D&amp;D</a>
+                                &nbsp;
+                            
+                                <a href="/tags/projects">Projects</a>
+                                &nbsp;
+                            
+                                <a href="/tags/world-building">World Building</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>I don&rsquo;t know about you, but I find coming up with equipment lists a <em>huge</em> pain in the ass. Coming up with starting equipment packages? Even harder. So why don&rsquo;t I just use one of the perfectly serviceable equipment lists already out there? Because I definitely buy into the thought that equipment lists are a great way to convey implicit setting and approaches to the game. So I bit the bullet and cranked the below out. It could definitely use some work, and the equipment packs owe a great deal to Brendan&rsquo;s <a href="http://www.necropraxis.com/2012/07/20/odd-equipment/">excellent OD&amp;D ones</a>. </p>
+<p>Any and all thoughts on how to spice this up are welcome, but I&rsquo;m especially looking to make an evocative random item table so that everybody gets at least one interesting but not-obviously-useful piece of kit.</p>
+<p><a href="https://2.bp.blogspot.com/-9TnQWVbR4kU/W0UEgZ7ZeFI/AAAAAAAAG7o/c2WNKXmSW98AeT953_bmgwvPb52GyYDMgCLcBGAs/s1600/The_potion_seller.jpg"><img src="https://2.bp.blogspot.com/-9TnQWVbR4kU/W0UEgZ7ZeFI/AAAAAAAAG7o/c2WNKXmSW98AeT953_bmgwvPb52GyYDMgCLcBGAs/s320/The_potion_seller.jpg" alt=""></a></p>
+<p>Coins of Fellhold  Fellhold has three kinds of coins, issued by the Soul Banks based on the Soul Standard (theoretically, you can take your coins into a bank and demand the current market rate for bottled souls in exchange for your cash, but why would you want to?)</p>
+<p>Copper Pennings: The common coin used in most business in Fellhold - a triangle about an inch on a side with a hole in the middle. One copper penning equals one experience point. (CP)  Silver Skillings: 100 Copper Pennings make up one Silver Skilling, so they are used for settling contracts and loans, day to day business between merchants, and the like. A thin, rectangular piece of silver, both sides show fine old-dwarven knotwork.  (SP)  Gold Marks: Worth 100 Silver Skillings, Marks are rarely seen outside of large business deals or the hoards of the wealthy. These fat gold hexagons have a raised outer lip and show a leering devil face on one side and the mark of the bank that stamped it on the other.</p>
+<p>Starting Cash &amp; Gear  Player characters begin with 3d6x10 CP, or else can roll for a starting equipment pack by class. Either of these can be supplemented by loans as seen shown below. All characters begin with a backpack, blanket, a waterskin, three helpings of pack food, one torch, and a tinder box.</p>
+<p>Taking Out Loans  During character creation, PCs may take out one or more loans to secure additional gear. To do so, create a random specialist NPC - this is the PCs creditor. The PC receives a loan of 3d6x10 copper pieces to be used however they see fit. Assign the PC a d4 Loan Usage die. For every week that goes by that the PC does not pay their loan, roll the die. On a maximum result, step the die <em>up</em> one step. The PC can move the Loan Die down one step by paying the original loan amount. If it every reaches a d10, their creditor has lost patience and sends out goons to collect.</p>
+<p>Sellers  If you wish to make finding the right place to buy goods as much a part of your game as where to fence adventuring loot, you may create a seller using the Merchant Table in the Specialist NPCs section for each category of gear below. Adjust prices accordingly. The first seller generated carries the entire category of gear. If a player wants to buy something at character generation, they must use the first seller generated - but if players are unhappy with this particular seller, they may search out others by using urbancrawl actions during play. Every new seller has a 50% chance of carrying each item when visited (this can change on future visits, or items can be special ordered for a fee). Every new seller should be added to the game master’s list of NPCs and placed in a neighborhood.</p>
+<p>Equipment Packs   To speed up character creation, players can elect to roll for a starting equipment pack rather than “shopping” with starting money. This method is especially recommended for new players and when adding a new character to an existing game. Specific items can be substituted with the Game Master’s permission. Players can also step down one or more steps and take 10 CP per step down. All characters begin with a backpack, blanket, a waterskin, three helpings of pack food, one torch, and a tinder box. To generate an equipment pack, roll 3d6 and look in the column for your class. </p>
+<!-- raw HTML omitted -->
+<p>Equipment List  The lists below give a good flavor of what adventurous types might be most interested in buying in Fellhold, but just about anything can be had in the vast city. Talk to the Game Master about anything you’d like to buy that you don’t see below. All characters begin with a backpack, blanket, a waterskin, three helpings of pack food, one torch, and a tinder box.</p>
+<p><a href="http://blessingsofthedicegods.blogspot.com/2016/06/lifestyles-of-poor-and-adventurous.html">Lifestyle</a>  Homeless (0) Free  Poor (d4) 20 CP  Comfortable (d6) 50 CP  Luxurious (d8) 1000 CP</p>
+<p>Weapons  Axe, Hand (Cleave) 30 CP  Axe, Lumberjack (Heavy) 40 CP  Axe, Tomahawk (Ranged, Light) 20 CP  Blackjack (Close, Light, Knockout) 5 CP  Blunderbuss (Firearm, Spread) 200 CP  Bow (Ranged) 30 CP  Brass Knuckles (Close, Knockout) 20 CP  Club (Knockout) 10 CP  Knife/Dagger (Close) 10 CP  Musket (Ranged, Firearm) 240 CP  Pistol (Ranged, Reactive, Firearm) 160 CP  Spear (Reach) 40 CP  Sword (Smooth) 30 CP  Throwing Knives/Stars (Close, Ranged, Light) 30 CP  War Shovel (Reach, Heavy) 50 CP  Warcrow (Crush, Cleave) 60 CP  Warhammer (Crush) 40 CP</p>
+<p>Armor  Light (AC 7) 75 CP  Medium (AC 5) 500 CP  Heavy (AC 3) 1500 CP  Shield (-1 AC, Sunder) 50 CP</p>
+<p>Gear  Acid (vial) 20 CP  Arrows (per usage die) 5 CP  Ball Bearings 10 CP  Barrel 20 CP  Bell 5 CP  Blanket 2 CP  Blasting Stick 50 CP  Block and Tackle 10 CP  Bucket 5 CP  Caltrops 10 CP  Camp Blanket 5 CP  Candle 2 CP  Cards, Playing 1 CP  Chain, 10’ 5 CP  Chalk 1 CP  Cooking Kit 15 CP  Crowbar 10 CP  Dice 1 CP  Disguise Kit 20 CP  Fuse (1 usage die) 30 CP  Galdrabok 30 CP  Grappling Hook 10 CP  Hammer 10 CP  Iron Spikes 5 CP  Ladder, 10’ 10 CP  Lantern 20 CP  Mirror 2 CP  Oil Flask 5 CP  Pack 30 CP  Pickaxe 10 CP  Pipe 5 CP  Pole, 10’ 2 CP  Rope, 50’ 15 CP  Sack 10 CP  Shot &amp; Powder (1 usage die) 10 CP  Shovel 10 CP  Sledgehammer 10 CP  Thieve’s Tools 30 CP  Tinder Box 5 CP  Torch 5 CP  Water Skin, quart 2 CP  Wheelbarrow 40 CP</p>
+<p>Food, Drink, and Drugs  Beer, pint 3 CP  Lard, quart 5 CP  Pack Food, Meal 15 CP  Roasted Coffee Beans 10 CP  Seaweed Cigar 10 CP  Seaweed Cigarettes (per usage die) 10 CP  Seaweed, Loose (per usage die) 10 CP  Whiskey, quart 40 CP</p>
+<p>Critters  Cat 10 CP  Chicken 10 CP  Crab, Pack 60 CP  Crow 10 CP  Dog 30 CP  Goat, Pack 40 CP  Pig 30 CP</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2018-07-10</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2018-07-11-player-character-races-in-fellhold/">
+                    Next<br>Player Character Races in Fellhold
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2018-06-29-the-soul-economy-in-fellhold/">
+                    Previous<br>The Soul Economy in Fellhold
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html><head>
+<title>Conspiracy Generator for Fellhold</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Conspiracy Generator for Fellhold
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2016-07-08 09:36
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/fellhold-reboot">Fellhold Reboot</a>
+                                &nbsp;
+                            
+                                <a href="/tags/urbancrawl">Urbancrawl</a>
+                                &nbsp;
+                            
+                                <a href="/tags/osr">OSR</a>
+                                &nbsp;
+                            
+                                <a href="/tags/fellhold">Fellhold</a>
+                                &nbsp;
+                            
+                                <a href="/tags/dd">D&amp;D</a>
+                                &nbsp;
+                            
+                                <a href="/tags/projects">Projects</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p><a href="http://farm3.static.flickr.com/2782/5805833979_8c7b781b53_o.jpg">http://farm3.static.flickr.com/2782/5805833979_8c7b781b53_o.jpg</a></p>
+<p>I was pretty skeptical of myself when I set out to write this section. Initially, I just planned on including some guidance that basically said &ldquo;go read the section of <em>Night&rsquo;s Black Agents</em> about conspiracies and make something up for your city. But with all of the other generators I&rsquo;ve been writing, it just seemed to go against the ethos I&rsquo;ve been following of &ldquo;make tools that people can use or ignore as they like&rdquo;.</p>
+<p>Initially, I was at a bit of a loss on how conspiracies fit into my conception of Fellhold: it&rsquo;s a pretty anarchic place with no real government and where fairly awful people and things openly do their business - so why would a group with a crackpot idea be a conspiracy and not just a faction? But then I realized there&rsquo;s always somebody who would find secrecy useful, and that spurred me on to think of a number of different reasons the conspiracy might want to stay secret.</p>
+<p>So I ended up with a few tables I&rsquo;m pretty happy with. I think that many of the results are easily adaptable outside of Fellhold, and if nothing else the column headers provide a pretty good blue print for what you need to define for a conspiracy. And the name generator is gleefully abstract and obtuse, so I think it should work in just about any setting.</p>
+<p><a href="http://67.media.tumblr.com/d1ffd0f0ff3601882bd986adea7075ad/tumblr_mgw1eyQQa41qg8i80o7_r1_1280.jpg">http://67.media.tumblr.com/d1ffd0f0ff3601882bd986adea7075ad/tumblr_mgw1eyQQa41qg8i80o7_r1_1280.jpg</a></p>
+<p><strong>Conspiracies</strong>  With all the demons, undead, ratmen, and factional conniving going on, Fellhold has several conspiracies. A conspiracy is any group of people (and/or monsters) pursuing its goals in secret. Where the power structure, overall goals, and membership in factions is generally open knowledge, conspiracies are purposely hidden. They may be entirely undertaken by members of a faction, such as pursuing that faction’s secret goals or plotting a coup, or they may be unrelated to the normal factional power structure, such as a secret cult to the dead gods.</p>
+<p>Players cannot choose to target conspiracies with the investigate urbancrawl action until they have some way of knowing that the conspiracy exists. Once they have encountered NPCs or clues that suggest the existence of some kind of conspiracy, they can begin to investigate it. Ask players the methods they are using and the kind of information they’re seeking, but investigating conspiracies will usually reveal either someone connected to a known conspirator (use the rules for contacts to create, with any tweaks to fit the conspiracy), the structure of the conspiracy (e.g. “Well, if this guy is an assassin, he has to have someone paying him, and there’d usually be a go-between as well”), or clues to its general purpose or aim. </p>
+<p>Note also that conspiracies can hire PCs just as readily as any other NPC or organization, so the “short term plots” column of the table below can double as an additional job generator.</p>
+<p>With all of the other levels of intrigue going on in Fellhold (districts, factions, et cetera), it is recommended that you begin with somewhere between zero and two conspiracies.</p>
+<p><a href="http://killsixbilliondemons.com/wp-content/uploads/2013/12/ksbd33.jpg">http://killsixbilliondemons.com/wp-content/uploads/2013/12/ksbd33.jpg</a></p>
+<p><strong>Generating a Conspiracy</strong>  While conspiracies provide an excellent opportunity for a truly customized piece of the city that receives loving and detailed attention from the referee, sometimes we do not have that luxury. As such, the below tables and guidance are provided for generating a conspiracy. Even more so than the NPC, location, and district tables, you are encouraged to use this section as a starting point and source of inspiration, rather than “the whole answer”. The results in the table are necessarily open-ended and flexible so that they can fit a wide variety of combinations and tie into other material you have generated elsewhere, such as factions, major NPCs, and districts.</p>
+<p><a href="https://picturebookreport.files.wordpress.com/2010/02/the-hobbit-piece-11.png">https://picturebookreport.files.wordpress.com/2010/02/the-hobbit-piece-11.png</a></p>
+<p><em>Conspiracy Traits</em>  Use the following table to generate the basic traits for your conspiracy. Most of the columns may be rolled multiple times for additional complexity if desired.  <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->Roll<!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->Type/ Leader<!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->Reason for Secrecy<!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->Long Term Goal<!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->Short Term Plot<!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->Size<!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->Resources<!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 1 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Within a single faction <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Threatens a powerful faction’s leadership <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Destroy one of the major factions <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Steal an important book from a faction library <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Tiny <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Tiny <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 2 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Multiple factions <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Threatens the very system of factions <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Take over or replace one of the major factions <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Kidnap a prominent patron <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Tiny <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Tiny <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 3 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Demon <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Purpose abhorred even by Fellholders <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> The personal political power of their leader <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Assassinate a faction leader <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Small <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Poor <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 4 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Witch <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Threatens the Soul Economy <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Complete and utter re-organization of society <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Steal a valuable shipment from a merchant <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Small <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Poor <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 5 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Lich <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Could expose a weakness of powerful leaders <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> The revival of the dead gods <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Collect a large number of children <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Small <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Poor <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 6 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Mummy <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Involves cooperation from unexpected sources <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> The elevation of their leader to godhood <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Blow up a well-known building or landmark <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Middling <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Average <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 7 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Half Dwarf <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Leader acting contrary to the general goals of their group <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> The elimination of all demons <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Recruit new members in positions of influence <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Middling <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Average <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 8 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Ratman <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Methods are antithetical to the type/leader’s norm <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> To find somewhere to live besides Fellhold <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Blackmail a powerful wizard <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Middling <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Average <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 9 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Crabman <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Declared enemies of the “state” by one of the Witch Kings <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> To take control of all of Fellhold <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Rob a soul bank <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Middling <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Average <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 10 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Human <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Don’t want their opponents to know the truth about their resources <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> The political and social supremacy of the leader’s type  <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Steal a powerful bound demon from a faction <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Large <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Plentiful <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 11 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Tiefling <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Their members don’t know the true purpose of their activities <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> The elimination of one of the races <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Collect money through a front organization <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Large <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Plentiful <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 12 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Troll <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Surprise is crucial to the success of their long term goals <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Amassing ridiculously huge amounts of wealth <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Establish a base of operations in a hostile district <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Large <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Plentiful <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 13 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Merchant <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Their leadership is unnecessarily paranoid <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Binding all demons to their will <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Wreak havoc in a random district - loot, kill, and burn <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Large <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Plentiful <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 14 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Patron <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> A magically binding oath to secrecy that may or may not be needed anymore <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Establishing a new legitimate major faction <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Secure the unwitting support of a person or group opposed to their aims <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Large <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Plentiful <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 15 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Sage <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Operate deep within hostile territory/ institutions <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Restore the glory of the old Witch Kingdom <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> A false flag operation to discredit their foes <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Huge <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Extensive <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 16 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Fence <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Believe themselves the legitimate remnant of an ancient institution or group no longer recognized <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Establish a real government with actual laws for all of Fellhold <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Convince the world that they are not real or have been eliminated <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Huge <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Extensive <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 17 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Criminal <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Methods are abhorrent even to Fellholders <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> The destruction of all Undead <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Hold a faction leader’s child for ransom <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Huge <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Extensive <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 18 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Beggars <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Everyone involved just thinks its cooler to be a secret society <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> The resurrection of the true Dwarven Empire <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Disrupt the leadership of a major faction <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Huge <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Extensive <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 19 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Wizard <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Inflated sense of significance and how much people would care about their purpose &amp; methods <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> The comfort and safety of their leader <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Bankrupt a powerful merchant <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Sprawling <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Vast <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 20 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Artist <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Leader actually pursuing multiple ends, doesn’t want different groups to catch on to the others <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> To build a monument that will last for all time <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Feed the poor and indoctrinatethem <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Sprawling <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Vast <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --></p>
+<p><a href="http://orig03.deviantart.net/f79c/f/2015/144/e/d/the_alley_by_zinph1212-d8uky96.jpg">http://orig03.deviantart.net/f79c/f/2015/144/e/d/the_alley_by_zinph1212-d8uky96.jpg</a></p>
+<p><em>District  &amp; Faction Relationships</em>  As with NPCs and Factions, conspiracies should be placed somewhere on the map. While it is possible that they will have multiple bases, at a minimum their leader should have a specific place. The placement of these bases will both depend on and help to clarify the nature of the conspiracy. Somewhere between D3 and D6 bases are recommended, as these locations provide another possible avenue for discovery by players in addition to rumors and contacts. Treat them as places of interest for the districts that contain them, and they may be discovered in the same way as other places of interest.</p>
+<p>Depending on the results of the above table, various Faction relationships will be important to identify as well. Some conspiracies operate entirely within the bounds of one faction, acting against its “legitimate” interests, while others are faction agnostic and will take members from any faction. Additionally, many results in the above table point towards factions, and these will need to be determined. As with districts, these may be obvious from other traits, or they may help to clarify the nature of the conspiracy if randomly generated.</p>
+<p><a href="http://www.thealexandrian.net/images/20150126d.jpg">http://www.thealexandrian.net/images/20150126d.jpg</a></p>
+<p><em>Conspiracy Structure</em>  Every conspiracy has a structure of control and secrecy. It may be organized into cells where only one member knows and is known by the next level up, or it may be a very traditional hierarchical pyramid. Where relationship maps are recommended for NPCs in general, for a conspiracy they are essential. You do not have to generate the NPCs for the entire conspiracy immediately, but you should at least know how many leaders there are, what the lines of reporting to them are, and who supplies money or weapons to the front line agents of the conspiracy. In play, players might be able to figure out the structure before they identify individuals, which will help direct them in where to investigate more closely.</p>
+<p>For further help with the structure side of things, I encourage you to check out Kenneth Hite’s excellent treatment of conspiracies in <em>Night’s Black Agents</em> and especially the “conspyramid” therein. Also helpful are the series of posts on <em>Node Based Adventure Design</em> on the Alexandrian blog, as well as real world information on social network analysis.</p>
+<p><a href="http://phictures.co/wp-content/uploads/2013/10/8555434483_bb00f27bdb_o.jpg">http://phictures.co/wp-content/uploads/2013/10/8555434483_bb00f27bdb_o.jpg</a></p>
+<p><em>Conspiracy Rumor Tables</em>  Rumor tables provide the chance for player characters to be randomly exposed to the potential existence of conspiracies. They should be contradictory and have more misinformation than most rumor tables, but should have enough nuggets of truth that players can begin to investigate. Unlike rumors about a dungeon, where the information is primarily a resource to help in making more informed decisions, for a conspiracy, investigating the truth or falsity of the rumors <em>is the adventure,</em> so it’s okay to have wackier rumors, so long as they do not point the players towards totally useless avenues of investigation.</p>
+<p>Since conspiracy rumors are less likely to come up than others and their primary purpose is to get players onto the scent, shorter tables than other types of rumors are probably sufficient. The sample conspiracies provided have d8 rumors each, for example.</p>
+<p>Below is provided a “fill in the blank” table of rumors that can be used with the table of characteristics above as a starting point. It will not produce especially interesting rumors on its own, but should do in a pinch and can serve as a starting point for crafting more specific rumors. It is meant to provide a mix of true and mistaken information, so where it notes “random”, roll again on the conspiracy traits table. If it does not say “random”, use the information you generated for the conspiracy. You may decide the truth or falsity of any rumors so generated.</p>
+<p><strong>Generic Conspiracy Rumor Table</strong>  <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->Roll<!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->Rumor<!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 1 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> They’re pursuing (Long Term Goal) in (random district) <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 2 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Someone quit when they found out about (short term plot) <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 3 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Suspected members have been seen coming and going in (base district) <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 4 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> They’re supported by (random faction) <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 5 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> They’re going to try (random short term plot) <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 6 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> They say they’re about (real long term goal), but they’re really after (random long term goal) <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 7 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> (Important NPC or Leader) has been seen associating with them <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 8 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> (Type) is pursuing (random long term goal) because of (reason for secrecy) <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --></p>
+<p><a href="http://astrobasego.com/graphics/guild/g_3.jpg">http://astrobasego.com/graphics/guild/g_3.jpg</a></p>
+<p><em>Conspiracy Name</em>  After you have generated the details and relationships for the conspiracy, you will need a suitably grandiose or radical name. If at a loss, the following should be generic enough to apply to almost any sort of conspiracy, but more specific and descriptive names may be more fun if you can think of them, such as “The Esoteric Order for the Restoration of Dwarven Greatness” or some such.</p>
+<p>For the table below, start with “The”, and if desired, insert some sort of organizational term (“order of”, “band”, “guild”, and so forth) where it fits, and elaborate with any further words that describe the conspiracy (or don’t).</p>
+<!-- raw HTML omitted -->
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2016-07-08</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2016-07-11-fine-dining-carousing-table/">
+                    Next<br>Fine Dining Carousing Table
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2016-07-05-vendors-and-merchants-of-fellhold/">
+                    Previous<br>Vendors and Merchants of Fellhold
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

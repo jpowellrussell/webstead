@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html><head>
+<title>Quirks and Sanity</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#introduction--i-began-down-this-path-working-on-my-heresies-without-number-kitbash-of-stars-without-numberhttprpgdrivethrustuffcomproduct86467stars-without-number-free-edition-and-dark-heresyhttpswwwfantasyflightgamescomenproductsdark-heresy-i-wanted-a-fairly-simple-but-still-play-affecting-sanity-system-as-well-as-a-way-to-inject-some-40k-flavor-into-characters-from-the-get-go-so-i-turned-to-two-sources-darkest-dungeonhttpwwwdarkestdungeoncom-and-arnold-khttpgoblinpunchblogspotcom" v-on:click="closeDrawer" id="introduction--i-began-down-this-path-working-on-my-heresies-without-number-kitbash-of-stars-without-numberhttprpgdrivethrustuffcomproduct86467stars-without-number-free-edition-and-dark-heresyhttpswwwfantasyflightgamescomenproductsdark-heresy-i-wanted-a-fairly-simple-but-still-play-affecting-sanity-system-as-well-as-a-way-to-inject-some-40k-flavor-into-characters-from-the-get-go-so-i-turned-to-two-sources-darkest-dungeonhttpwwwdarkestdungeoncom-and-arnold-khttpgoblinpunchblogspotcom-nav">
+										 Introduction I began down this path working on my Heresies Without Number kitbash of Stars Without Number and Dark Heresy. I wanted a fairly simple but still play-affecting sanity system, as well as a way to inject some 40k flavor into characters from the get go. So I turned to two sources: Darkest Dungeon and Arnold K.
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#how-to-use-this-blog-post--now-of-course-you-can-do-whatever-the-hell-you-want-with-this-blog-post-but-here-is-what-i-see-as-the-most-likely-ways-to-make-use-of-it" v-on:click="closeDrawer" id="how-to-use-this-blog-post--now-of-course-you-can-do-whatever-the-hell-you-want-with-this-blog-post-but-here-is-what-i-see-as-the-most-likely-ways-to-make-use-of-it-nav">
+										 How to Use This Blog Post Now, of course, you can do whatever the hell you want with this blog post, but here is what I see as the most likely ways to make use of it:
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#stress-and-madness--many-of-the-things-acolytes-face-are-not-meant-to-be-experienced-or-understood-by-humanity-and-these-are-represented-by-stress-points-and-negative-quirks----------gaining-stress-points--whenever-characters-see-something-terrible-or-confront-an-awful-truth-they-gain-stress-points-generally-stress-points-will-be-between-1-and-4-for-a-single-event-characters-gain-1-fewer-point-when-theyve-encountered-something-similar-before---------stress-points-may-be-gained-from-prolonged-or-especially-extreme-exposure-to-more-mundane-stressors-like-hunger-darkness-or-danger---------testing-for-breakdowns--every-time-characters-gain-new-stress-points-they-roll-1d20--willpower-modifier-if-the-result-is-is-equal-to-or-under-their-new-stress-point-total-they-suffer-a-breakdown-the-nature-of-the-freakout-may-be-determined-by-existing-character-quirks-but-by-default-assume-catatonia-or-a-weeping-fit-if-the-result-is-higher-they-face-no-negative-consequences-beyond-being-slightly-shaken-or-disturbed-but-the-points-remain---------gaining-new-negative-quirks--when-characters-complete-their-breakdown-they-make-a-willpower-test-if-successful-they-face-no-further-negative-consequences-but-the-stress-points-remain-if-failed-they-gain-a-new-negative-quirk-which-can-either-be-determined-randomly-or-worked-out-with-the-gm-to-fit-the-character-and-the-circumstances-of-the-breakdown---------recovering-stress-points--stress-points-may-be-recovered-by-doing-normal-human-things---like-getting-drunk-relaxing-enjoying-good-meals-visiting-family-or-the-like-the-effectiveness-of-different-activities-should-be-based-on-what-the-character-would-find-cathartic-or-relieving-one-point-may-be-recovered-per-week----------minimum-stress--half-the-value-of-a-characters-historic-high-stress-point-score-becomes-their-new-minimum-value---their-stress-can-never-drop-below-this-as-they-have-been-permanently-damaged-by-their-experience" v-on:click="closeDrawer" id="stress-and-madness--many-of-the-things-acolytes-face-are-not-meant-to-be-experienced-or-understood-by-humanity-and-these-are-represented-by-stress-points-and-negative-quirks----------gaining-stress-points--whenever-characters-see-something-terrible-or-confront-an-awful-truth-they-gain-stress-points-generally-stress-points-will-be-between-1-and-4-for-a-single-event-characters-gain-1-fewer-point-when-theyve-encountered-something-similar-before---------stress-points-may-be-gained-from-prolonged-or-especially-extreme-exposure-to-more-mundane-stressors-like-hunger-darkness-or-danger---------testing-for-breakdowns--every-time-characters-gain-new-stress-points-they-roll-1d20--willpower-modifier-if-the-result-is-is-equal-to-or-under-their-new-stress-point-total-they-suffer-a-breakdown-the-nature-of-the-freakout-may-be-determined-by-existing-character-quirks-but-by-default-assume-catatonia-or-a-weeping-fit-if-the-result-is-higher-they-face-no-negative-consequences-beyond-being-slightly-shaken-or-disturbed-but-the-points-remain---------gaining-new-negative-quirks--when-characters-complete-their-breakdown-they-make-a-willpower-test-if-successful-they-face-no-further-negative-consequences-but-the-stress-points-remain-if-failed-they-gain-a-new-negative-quirk-which-can-either-be-determined-randomly-or-worked-out-with-the-gm-to-fit-the-character-and-the-circumstances-of-the-breakdown---------recovering-stress-points--stress-points-may-be-recovered-by-doing-normal-human-things---like-getting-drunk-relaxing-enjoying-good-meals-visiting-family-or-the-like-the-effectiveness-of-different-activities-should-be-based-on-what-the-character-would-find-cathartic-or-relieving-one-point-may-be-recovered-per-week----------minimum-stress--half-the-value-of-a-characters-historic-high-stress-point-score-becomes-their-new-minimum-value---their-stress-can-never-drop-below-this-as-they-have-been-permanently-damaged-by-their-experience-nav">
+										 Stress and Madness Many of the things acolytes face are not meant to be experienced or understood by humanity, and these are represented by Stress points and negative quirks. ** ** Gaining Stress Points Whenever characters see something terrible or confront an awful truth, they gain stress points. Generally stress points will be between 1 and 4 for a single event. Characters gain 1 fewer point when they’ve encountered something similar before. ** ** Stress points may be gained from prolonged or especially extreme exposure to more mundane stressors like hunger, darkness, or danger. ** ** Testing for Breakdowns Every time characters gain new stress points, they roll 1d20 &#43; willpower modifier. If the result is is equal to or under their new stress point total, they suffer a breakdown. The nature of the freakout may be determined by existing character quirks, but by default assume catatonia or a weeping fit. If the result is higher, they face no negative consequences beyond being slightly shaken or disturbed, but the points remain. ** ** Gaining New Negative Quirks When characters complete their breakdown, they make a willpower test. If successful, they face no further negative consequences, but the stress points remain. If failed, they gain a new negative quirk, which can either be determined randomly, or worked out with the GM to fit the character and the circumstances of the breakdown. ** ** Recovering Stress Points Stress points may be recovered by doing normal, human things - like getting drunk, relaxing, enjoying good meals, visiting family, or the like. The effectiveness of different activities should be based on what the character would find cathartic or relieving. One point may be recovered per week. ** ** Minimum Stress Half the value of a character’s historic high stress point score becomes their new minimum value - their stress can never drop below this, as they have been permanently damaged by their experience.
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#quirks--gaining-quirks--character-creation--at-character-creation-characters-gain-three-quirks-one-from-their-background-one-positive-from-the-starting-quirks-list-and-one-negative-from-the-starting-quirks-list-the-default-method-is-to-randomly-determine-all-quirks-but-at-the-gms-discretion-they-can-instead-be-chosen-by-the-players-in-order-to-meet-a-particular-character-concept---------stress-and-breakdowns--after-characters-suffer-a-breakdown-they-must-test-their-willpower-to-see-if-they-gain-a-new-negative-quirk-from-their-experience-if-they-fail-their-willpower-test-they-either-roll-a-new-random-negative-quirk-form-the-negative-quirks-in-the-in-play-quirks-list-or-agree-on-a-specific-negative-quirk-with-the-gm-that-fits-the-circumstances-and-character-such-as-gaining-a-fear-of-xenoi-after-a-breakdown-causing-encounter-with-a-tyranid---------levelling-up--every-3rd-level-3rd-6th-9th-et-cetera-a-character-may-gain-a-new-positive-quirk-from-the-in-play-quirks-list-either-randomly-or-based-on-their-actions-and-character-since-the-last-positive-quirk-was-gained-the-player-in-question-and-the-gm-should-come-to-a-mutually-agreeable-decision-on-this-if-its-not-obvious----------duplicate-quirks--if-characters-gain-the-same-quirk-more-than-once-either-increase-its-severity-or-re-roll-as-makes-the-most-sense-in-the-circumstances----------losing-quirks--at-the-gms-discretion-certain-quirks-may-be-lost-whether-intentionally-or-not-through-the-course-of-play-generally-speaking-the-system-is-meant-to-reflect-slow-breakdown-in-the-face-of-unrelenting-horror-and-stress-but-if-a-more-heroic-campaign-is-desired-or-if-circumstances-are-particularly-apt-both-positive-and-negative-quirks-can-be-overcome-and-removed-from-a-character-this-is-left-as-an-exercise-in-gm-judgement-though-players-can-of-course-make-clear-which-quirks-they-may-wish-to-explore-in-depth-and-potentially-overcome---------creating-new-quirks--the-quirks-lists-both-positive-and-negative-are-far-from-exhaustive-and-players-should-feel-free-to-suggest-new-quirks-to-their-gms-to-fit-the-things-that-have-happened-to-their-characters-while-gms-should-create-any-quirks-that-better-reflect-the-particular-challenges-and-triumphs-of-their-campaigns-the-perks-flaws-or-traits-rules-of-other-games-especially-those-dealing-with-horror-and-insanity-should-be-invaluable-sources-of-inspiration-quirks-would-also-be-an-excellent-way-to-define-a-xenos-player-character-or-npc---------alternate-approaches--if-you-like-the-idea-of-quirks-but-not-how-they-are-presented-here-are-some-alternate-approaches-to-consider" v-on:click="closeDrawer" id="quirks--gaining-quirks--character-creation--at-character-creation-characters-gain-three-quirks-one-from-their-background-one-positive-from-the-starting-quirks-list-and-one-negative-from-the-starting-quirks-list-the-default-method-is-to-randomly-determine-all-quirks-but-at-the-gms-discretion-they-can-instead-be-chosen-by-the-players-in-order-to-meet-a-particular-character-concept---------stress-and-breakdowns--after-characters-suffer-a-breakdown-they-must-test-their-willpower-to-see-if-they-gain-a-new-negative-quirk-from-their-experience-if-they-fail-their-willpower-test-they-either-roll-a-new-random-negative-quirk-form-the-negative-quirks-in-the-in-play-quirks-list-or-agree-on-a-specific-negative-quirk-with-the-gm-that-fits-the-circumstances-and-character-such-as-gaining-a-fear-of-xenoi-after-a-breakdown-causing-encounter-with-a-tyranid---------levelling-up--every-3rd-level-3rd-6th-9th-et-cetera-a-character-may-gain-a-new-positive-quirk-from-the-in-play-quirks-list-either-randomly-or-based-on-their-actions-and-character-since-the-last-positive-quirk-was-gained-the-player-in-question-and-the-gm-should-come-to-a-mutually-agreeable-decision-on-this-if-its-not-obvious----------duplicate-quirks--if-characters-gain-the-same-quirk-more-than-once-either-increase-its-severity-or-re-roll-as-makes-the-most-sense-in-the-circumstances----------losing-quirks--at-the-gms-discretion-certain-quirks-may-be-lost-whether-intentionally-or-not-through-the-course-of-play-generally-speaking-the-system-is-meant-to-reflect-slow-breakdown-in-the-face-of-unrelenting-horror-and-stress-but-if-a-more-heroic-campaign-is-desired-or-if-circumstances-are-particularly-apt-both-positive-and-negative-quirks-can-be-overcome-and-removed-from-a-character-this-is-left-as-an-exercise-in-gm-judgement-though-players-can-of-course-make-clear-which-quirks-they-may-wish-to-explore-in-depth-and-potentially-overcome---------creating-new-quirks--the-quirks-lists-both-positive-and-negative-are-far-from-exhaustive-and-players-should-feel-free-to-suggest-new-quirks-to-their-gms-to-fit-the-things-that-have-happened-to-their-characters-while-gms-should-create-any-quirks-that-better-reflect-the-particular-challenges-and-triumphs-of-their-campaigns-the-perks-flaws-or-traits-rules-of-other-games-especially-those-dealing-with-horror-and-insanity-should-be-invaluable-sources-of-inspiration-quirks-would-also-be-an-excellent-way-to-define-a-xenos-player-character-or-npc---------alternate-approaches--if-you-like-the-idea-of-quirks-but-not-how-they-are-presented-here-are-some-alternate-approaches-to-consider-nav">
+										 Quirks Gaining Quirks Character Creation At character creation, characters gain three quirks: one from their background, one positive from the starting quirks list, and one negative from the starting quirks list. The default method is to randomly determine all quirks, but at the GM’s discretion they can instead be chosen by the players in order to meet a particular character concept. ** ** Stress and Breakdowns After characters suffer a breakdown, they must test their willpower to see if they gain a new negative quirk from their experience. If they fail their willpower test, they either roll a new random negative quirk form the negative quirks in the In Play Quirks list, or agree on a specific negative quirk with the GM that fits the circumstances and character (such as gaining a Fear of Xenoi after a breakdown causing encounter with a Tyranid). ** ** Levelling Up Every 3rd level (3rd, 6th, 9th, et cetera) a character may gain a new positive quirk from the In Play Quirks list, either randomly, or based on their actions and character since the last positive quirk was gained. The player in question and the GM should come to a mutually agreeable decision on this if it’s not obvious. ** ** Duplicate Quirks If characters gain the same quirk more than once, either increase its severity or re-roll, as makes the most sense in the circumstances. ** ** Losing Quirks At the GM’s discretion, certain quirks may be lost, whether intentionally or not, through the course of play. Generally speaking, the system is meant to reflect slow breakdown in the face of unrelenting horror and stress, but if a more heroic campaign is desired or if circumstances are particularly apt, both positive and negative quirks can be overcome and removed from a character. This is left as an exercise in GM judgement, though players can of course make clear which quirks they may wish to explore in depth and potentially overcome. ** ** Creating New Quirks The quirks lists, both positive and negative, are far from exhaustive, and players should feel free to suggest new quirks to their GMs to fit the things that have happened to their characters, while GMs should create any quirks that better reflect the particular challenges and triumphs of their campaigns. The perks, flaws, or traits rules of other games, especially those dealing with horror and insanity, should be invaluable sources of inspiration. Quirks would also be an excellent way to define a Xenos player character or NPC. ** ** Alternate Approaches If you like the idea of quirks, but not how they are presented, here are some alternate approaches to consider:
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#introduction--i-began-down-this-path-working-on-my-heresies-without-number-kitbash-of-stars-without-numberhttprpgdrivethrustuffcomproduct86467stars-without-number-free-edition-and-dark-heresyhttpswwwfantasyflightgamescomenproductsdark-heresy-i-wanted-a-fairly-simple-but-still-play-affecting-sanity-system-as-well-as-a-way-to-inject-some-40k-flavor-into-characters-from-the-get-go-so-i-turned-to-two-sources-darkest-dungeonhttpwwwdarkestdungeoncom-and-arnold-khttpgoblinpunchblogspotcom" v-on:click="closeDrawer" id="introduction--i-began-down-this-path-working-on-my-heresies-without-number-kitbash-of-stars-without-numberhttprpgdrivethrustuffcomproduct86467stars-without-number-free-edition-and-dark-heresyhttpswwwfantasyflightgamescomenproductsdark-heresy-i-wanted-a-fairly-simple-but-still-play-affecting-sanity-system-as-well-as-a-way-to-inject-some-40k-flavor-into-characters-from-the-get-go-so-i-turned-to-two-sources-darkest-dungeonhttpwwwdarkestdungeoncom-and-arnold-khttpgoblinpunchblogspotcom-nav">
+										 Introduction I began down this path working on my Heresies Without Number kitbash of Stars Without Number and Dark Heresy. I wanted a fairly simple but still play-affecting sanity system, as well as a way to inject some 40k flavor into characters from the get go. So I turned to two sources: Darkest Dungeon and Arnold K.
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#how-to-use-this-blog-post--now-of-course-you-can-do-whatever-the-hell-you-want-with-this-blog-post-but-here-is-what-i-see-as-the-most-likely-ways-to-make-use-of-it" v-on:click="closeDrawer" id="how-to-use-this-blog-post--now-of-course-you-can-do-whatever-the-hell-you-want-with-this-blog-post-but-here-is-what-i-see-as-the-most-likely-ways-to-make-use-of-it-nav">
+										 How to Use This Blog Post Now, of course, you can do whatever the hell you want with this blog post, but here is what I see as the most likely ways to make use of it:
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#stress-and-madness--many-of-the-things-acolytes-face-are-not-meant-to-be-experienced-or-understood-by-humanity-and-these-are-represented-by-stress-points-and-negative-quirks----------gaining-stress-points--whenever-characters-see-something-terrible-or-confront-an-awful-truth-they-gain-stress-points-generally-stress-points-will-be-between-1-and-4-for-a-single-event-characters-gain-1-fewer-point-when-theyve-encountered-something-similar-before---------stress-points-may-be-gained-from-prolonged-or-especially-extreme-exposure-to-more-mundane-stressors-like-hunger-darkness-or-danger---------testing-for-breakdowns--every-time-characters-gain-new-stress-points-they-roll-1d20--willpower-modifier-if-the-result-is-is-equal-to-or-under-their-new-stress-point-total-they-suffer-a-breakdown-the-nature-of-the-freakout-may-be-determined-by-existing-character-quirks-but-by-default-assume-catatonia-or-a-weeping-fit-if-the-result-is-higher-they-face-no-negative-consequences-beyond-being-slightly-shaken-or-disturbed-but-the-points-remain---------gaining-new-negative-quirks--when-characters-complete-their-breakdown-they-make-a-willpower-test-if-successful-they-face-no-further-negative-consequences-but-the-stress-points-remain-if-failed-they-gain-a-new-negative-quirk-which-can-either-be-determined-randomly-or-worked-out-with-the-gm-to-fit-the-character-and-the-circumstances-of-the-breakdown---------recovering-stress-points--stress-points-may-be-recovered-by-doing-normal-human-things---like-getting-drunk-relaxing-enjoying-good-meals-visiting-family-or-the-like-the-effectiveness-of-different-activities-should-be-based-on-what-the-character-would-find-cathartic-or-relieving-one-point-may-be-recovered-per-week----------minimum-stress--half-the-value-of-a-characters-historic-high-stress-point-score-becomes-their-new-minimum-value---their-stress-can-never-drop-below-this-as-they-have-been-permanently-damaged-by-their-experience" v-on:click="closeDrawer" id="stress-and-madness--many-of-the-things-acolytes-face-are-not-meant-to-be-experienced-or-understood-by-humanity-and-these-are-represented-by-stress-points-and-negative-quirks----------gaining-stress-points--whenever-characters-see-something-terrible-or-confront-an-awful-truth-they-gain-stress-points-generally-stress-points-will-be-between-1-and-4-for-a-single-event-characters-gain-1-fewer-point-when-theyve-encountered-something-similar-before---------stress-points-may-be-gained-from-prolonged-or-especially-extreme-exposure-to-more-mundane-stressors-like-hunger-darkness-or-danger---------testing-for-breakdowns--every-time-characters-gain-new-stress-points-they-roll-1d20--willpower-modifier-if-the-result-is-is-equal-to-or-under-their-new-stress-point-total-they-suffer-a-breakdown-the-nature-of-the-freakout-may-be-determined-by-existing-character-quirks-but-by-default-assume-catatonia-or-a-weeping-fit-if-the-result-is-higher-they-face-no-negative-consequences-beyond-being-slightly-shaken-or-disturbed-but-the-points-remain---------gaining-new-negative-quirks--when-characters-complete-their-breakdown-they-make-a-willpower-test-if-successful-they-face-no-further-negative-consequences-but-the-stress-points-remain-if-failed-they-gain-a-new-negative-quirk-which-can-either-be-determined-randomly-or-worked-out-with-the-gm-to-fit-the-character-and-the-circumstances-of-the-breakdown---------recovering-stress-points--stress-points-may-be-recovered-by-doing-normal-human-things---like-getting-drunk-relaxing-enjoying-good-meals-visiting-family-or-the-like-the-effectiveness-of-different-activities-should-be-based-on-what-the-character-would-find-cathartic-or-relieving-one-point-may-be-recovered-per-week----------minimum-stress--half-the-value-of-a-characters-historic-high-stress-point-score-becomes-their-new-minimum-value---their-stress-can-never-drop-below-this-as-they-have-been-permanently-damaged-by-their-experience-nav">
+										 Stress and Madness Many of the things acolytes face are not meant to be experienced or understood by humanity, and these are represented by Stress points and negative quirks. ** ** Gaining Stress Points Whenever characters see something terrible or confront an awful truth, they gain stress points. Generally stress points will be between 1 and 4 for a single event. Characters gain 1 fewer point when they’ve encountered something similar before. ** ** Stress points may be gained from prolonged or especially extreme exposure to more mundane stressors like hunger, darkness, or danger. ** ** Testing for Breakdowns Every time characters gain new stress points, they roll 1d20 &#43; willpower modifier. If the result is is equal to or under their new stress point total, they suffer a breakdown. The nature of the freakout may be determined by existing character quirks, but by default assume catatonia or a weeping fit. If the result is higher, they face no negative consequences beyond being slightly shaken or disturbed, but the points remain. ** ** Gaining New Negative Quirks When characters complete their breakdown, they make a willpower test. If successful, they face no further negative consequences, but the stress points remain. If failed, they gain a new negative quirk, which can either be determined randomly, or worked out with the GM to fit the character and the circumstances of the breakdown. ** ** Recovering Stress Points Stress points may be recovered by doing normal, human things - like getting drunk, relaxing, enjoying good meals, visiting family, or the like. The effectiveness of different activities should be based on what the character would find cathartic or relieving. One point may be recovered per week. ** ** Minimum Stress Half the value of a character’s historic high stress point score becomes their new minimum value - their stress can never drop below this, as they have been permanently damaged by their experience.
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#quirks--gaining-quirks--character-creation--at-character-creation-characters-gain-three-quirks-one-from-their-background-one-positive-from-the-starting-quirks-list-and-one-negative-from-the-starting-quirks-list-the-default-method-is-to-randomly-determine-all-quirks-but-at-the-gms-discretion-they-can-instead-be-chosen-by-the-players-in-order-to-meet-a-particular-character-concept---------stress-and-breakdowns--after-characters-suffer-a-breakdown-they-must-test-their-willpower-to-see-if-they-gain-a-new-negative-quirk-from-their-experience-if-they-fail-their-willpower-test-they-either-roll-a-new-random-negative-quirk-form-the-negative-quirks-in-the-in-play-quirks-list-or-agree-on-a-specific-negative-quirk-with-the-gm-that-fits-the-circumstances-and-character-such-as-gaining-a-fear-of-xenoi-after-a-breakdown-causing-encounter-with-a-tyranid---------levelling-up--every-3rd-level-3rd-6th-9th-et-cetera-a-character-may-gain-a-new-positive-quirk-from-the-in-play-quirks-list-either-randomly-or-based-on-their-actions-and-character-since-the-last-positive-quirk-was-gained-the-player-in-question-and-the-gm-should-come-to-a-mutually-agreeable-decision-on-this-if-its-not-obvious----------duplicate-quirks--if-characters-gain-the-same-quirk-more-than-once-either-increase-its-severity-or-re-roll-as-makes-the-most-sense-in-the-circumstances----------losing-quirks--at-the-gms-discretion-certain-quirks-may-be-lost-whether-intentionally-or-not-through-the-course-of-play-generally-speaking-the-system-is-meant-to-reflect-slow-breakdown-in-the-face-of-unrelenting-horror-and-stress-but-if-a-more-heroic-campaign-is-desired-or-if-circumstances-are-particularly-apt-both-positive-and-negative-quirks-can-be-overcome-and-removed-from-a-character-this-is-left-as-an-exercise-in-gm-judgement-though-players-can-of-course-make-clear-which-quirks-they-may-wish-to-explore-in-depth-and-potentially-overcome---------creating-new-quirks--the-quirks-lists-both-positive-and-negative-are-far-from-exhaustive-and-players-should-feel-free-to-suggest-new-quirks-to-their-gms-to-fit-the-things-that-have-happened-to-their-characters-while-gms-should-create-any-quirks-that-better-reflect-the-particular-challenges-and-triumphs-of-their-campaigns-the-perks-flaws-or-traits-rules-of-other-games-especially-those-dealing-with-horror-and-insanity-should-be-invaluable-sources-of-inspiration-quirks-would-also-be-an-excellent-way-to-define-a-xenos-player-character-or-npc---------alternate-approaches--if-you-like-the-idea-of-quirks-but-not-how-they-are-presented-here-are-some-alternate-approaches-to-consider" v-on:click="closeDrawer" id="quirks--gaining-quirks--character-creation--at-character-creation-characters-gain-three-quirks-one-from-their-background-one-positive-from-the-starting-quirks-list-and-one-negative-from-the-starting-quirks-list-the-default-method-is-to-randomly-determine-all-quirks-but-at-the-gms-discretion-they-can-instead-be-chosen-by-the-players-in-order-to-meet-a-particular-character-concept---------stress-and-breakdowns--after-characters-suffer-a-breakdown-they-must-test-their-willpower-to-see-if-they-gain-a-new-negative-quirk-from-their-experience-if-they-fail-their-willpower-test-they-either-roll-a-new-random-negative-quirk-form-the-negative-quirks-in-the-in-play-quirks-list-or-agree-on-a-specific-negative-quirk-with-the-gm-that-fits-the-circumstances-and-character-such-as-gaining-a-fear-of-xenoi-after-a-breakdown-causing-encounter-with-a-tyranid---------levelling-up--every-3rd-level-3rd-6th-9th-et-cetera-a-character-may-gain-a-new-positive-quirk-from-the-in-play-quirks-list-either-randomly-or-based-on-their-actions-and-character-since-the-last-positive-quirk-was-gained-the-player-in-question-and-the-gm-should-come-to-a-mutually-agreeable-decision-on-this-if-its-not-obvious----------duplicate-quirks--if-characters-gain-the-same-quirk-more-than-once-either-increase-its-severity-or-re-roll-as-makes-the-most-sense-in-the-circumstances----------losing-quirks--at-the-gms-discretion-certain-quirks-may-be-lost-whether-intentionally-or-not-through-the-course-of-play-generally-speaking-the-system-is-meant-to-reflect-slow-breakdown-in-the-face-of-unrelenting-horror-and-stress-but-if-a-more-heroic-campaign-is-desired-or-if-circumstances-are-particularly-apt-both-positive-and-negative-quirks-can-be-overcome-and-removed-from-a-character-this-is-left-as-an-exercise-in-gm-judgement-though-players-can-of-course-make-clear-which-quirks-they-may-wish-to-explore-in-depth-and-potentially-overcome---------creating-new-quirks--the-quirks-lists-both-positive-and-negative-are-far-from-exhaustive-and-players-should-feel-free-to-suggest-new-quirks-to-their-gms-to-fit-the-things-that-have-happened-to-their-characters-while-gms-should-create-any-quirks-that-better-reflect-the-particular-challenges-and-triumphs-of-their-campaigns-the-perks-flaws-or-traits-rules-of-other-games-especially-those-dealing-with-horror-and-insanity-should-be-invaluable-sources-of-inspiration-quirks-would-also-be-an-excellent-way-to-define-a-xenos-player-character-or-npc---------alternate-approaches--if-you-like-the-idea-of-quirks-but-not-how-they-are-presented-here-are-some-alternate-approaches-to-consider-nav">
+										 Quirks Gaining Quirks Character Creation At character creation, characters gain three quirks: one from their background, one positive from the starting quirks list, and one negative from the starting quirks list. The default method is to randomly determine all quirks, but at the GM’s discretion they can instead be chosen by the players in order to meet a particular character concept. ** ** Stress and Breakdowns After characters suffer a breakdown, they must test their willpower to see if they gain a new negative quirk from their experience. If they fail their willpower test, they either roll a new random negative quirk form the negative quirks in the In Play Quirks list, or agree on a specific negative quirk with the GM that fits the circumstances and character (such as gaining a Fear of Xenoi after a breakdown causing encounter with a Tyranid). ** ** Levelling Up Every 3rd level (3rd, 6th, 9th, et cetera) a character may gain a new positive quirk from the In Play Quirks list, either randomly, or based on their actions and character since the last positive quirk was gained. The player in question and the GM should come to a mutually agreeable decision on this if it’s not obvious. ** ** Duplicate Quirks If characters gain the same quirk more than once, either increase its severity or re-roll, as makes the most sense in the circumstances. ** ** Losing Quirks At the GM’s discretion, certain quirks may be lost, whether intentionally or not, through the course of play. Generally speaking, the system is meant to reflect slow breakdown in the face of unrelenting horror and stress, but if a more heroic campaign is desired or if circumstances are particularly apt, both positive and negative quirks can be overcome and removed from a character. This is left as an exercise in GM judgement, though players can of course make clear which quirks they may wish to explore in depth and potentially overcome. ** ** Creating New Quirks The quirks lists, both positive and negative, are far from exhaustive, and players should feel free to suggest new quirks to their GMs to fit the things that have happened to their characters, while GMs should create any quirks that better reflect the particular challenges and triumphs of their campaigns. The perks, flaws, or traits rules of other games, especially those dealing with horror and insanity, should be invaluable sources of inspiration. Quirks would also be an excellent way to define a Xenos player character or NPC. ** ** Alternate Approaches If you like the idea of quirks, but not how they are presented, here are some alternate approaches to consider:
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Quirks and Sanity
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2015-03-15 21:29
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/osr">OSR</a>
+                                &nbsp;
+                            
+                                <a href="/tags/swn">SWN</a>
+                                &nbsp;
+                            
+                                <a href="/tags/rules">Rules</a>
+                                &nbsp;
+                            
+                                <a href="/tags/dd">D&amp;D</a>
+                                &nbsp;
+                            
+                                <a href="/tags/hwn">HWN</a>
+                                &nbsp;
+                            
+                                <a href="/tags/40k">40K</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p><a href="http://4.bp.blogspot.com/-nZn8_uP1B5I/VQZHjXTsyoI/AAAAAAAAD7c/Fyv-oqHlPSg/s1600/OrdoHereticus.jpg">http://4.bp.blogspot.com/-nZn8_uP1B5I/VQZHjXTsyoI/AAAAAAAAD7c/Fyv-oqHlPSg/s1600/OrdoHereticus.jpg</a></p>
+<h2 id="introduction--i-began-down-this-path-working-on-my-heresies-without-number-kitbash-of-stars-without-numberhttprpgdrivethrustuffcomproduct86467stars-without-number-free-edition-and-dark-heresyhttpswwwfantasyflightgamescomenproductsdark-heresy-i-wanted-a-fairly-simple-but-still-play-affecting-sanity-system-as-well-as-a-way-to-inject-some-40k-flavor-into-characters-from-the-get-go-so-i-turned-to-two-sources-darkest-dungeonhttpwwwdarkestdungeoncom-and-arnold-khttpgoblinpunchblogspotcom">Introduction  I began down this path working on my <em>Heresies Without Number</em> kitbash of <a href="http://rpg.drivethrustuff.com/product/86467/Stars-Without-Number-Free-Edition">Stars Without Number</a> and <a href="https://www.fantasyflightgames.com/en/products/dark-heresy/">Dark Heresy</a>. I wanted a fairly simple but still play-affecting sanity system, as well as a way to inject some 40k flavor into characters from the get go. So I turned to two sources: <a href="http://www.darkestdungeon.com/">Darkest Dungeon</a> and <a href="http://goblinpunch.blogspot.com/">Arnold K.</a></h2>
+<p>The sanity rules are pretty much a reskin of <a href="http://goblinpunch.blogspot.com/2013/05/stark-staring-mad.html">this post</a> by Arnold. I changed the name of &ldquo;insanity points&rdquo; to &ldquo;stress points&rdquo; because I like the inclusive nature of covering everything from cosmic horror to extreme or constant mundane stress.</p>
+<p>Quirks are meant to be a simple way to impart unique character to the acolytes, as well as to differentiate them more than merely their skills and careers. Quirks are gained at character creation, at certain levels, and as the result of breakdowns. They have a rules impact so that players and GMs will remember them and pay attention to them, but their primary goal is to be create a sense of character. They should not be used as an attempt to optimize or game the system - there are much better rules systems for that sort of play than this one.</p>
+<p>I got a list of Darkest Dungeon quirks from the <a href="http://darkestdungeon.gamepedia.com/Quirks">Darkest Dungeon Wiki</a>, many of the quirks are Talents from Dark Heresy, and I supplemented with some traits from <a href="http://www.mouseguard.net/books/role-playing-game/">Mouse Guard</a> and <a href="http://www.torchbearerrpg.com/">Torchbearer</a>, as well as some disorders from Dark Heresy and the D20 version of Call of Cthluhu.</p>
+<p>I think quirks and the sanity rules link up reasonably well, and there are some different ways you could use one, the other, or both together.</p>
+<h3 id="how-to-use-this-blog-post--now-of-course-you-can-do-whatever-the-hell-you-want-with-this-blog-post-but-here-is-what-i-see-as-the-most-likely-ways-to-make-use-of-it">How to Use This Blog Post  Now, of course, you can do whatever the hell you want with this blog post, but here is what I see as the most likely ways to make use of it:</h3>
+<ul>
+<li>Use as one piece of the more-or-less complete <em>Heresies Without Number</em> rules I&rsquo;m putting together. This is what I intend to do, and lots of the specific quirk rules refer to rules changes I&rsquo;m using there (like having HP split into &ldquo;blood&rdquo; and &ldquo;guts&rdquo;)</li>
+<li>Use as a reasonably drop-in ready set of sanity rules for any D&amp;D-alike game, or really any game with a &ldquo;Willpower&rdquo; equivalent type stat. If using this, please note that the stress points are scaled to a D20 roll and relevant stats - you might want to multiply everything by 5 if you use a D100 system like BRP</li>
+<li>Use just Arnold&rsquo;s awesome sanity rules and a more freeform system for the effects</li>
+<li>Use just the quirks for more interesting character creation</li>
+<li>Use the names of quirks without the rules as a resource for either positive or negative character traits in combination with some other rules (potions, spells, NPCs, whatever)</li>
+</ul>
+<h2 id="stress-and-madness--many-of-the-things-acolytes-face-are-not-meant-to-be-experienced-or-understood-by-humanity-and-these-are-represented-by-stress-points-and-negative-quirks----------gaining-stress-points--whenever-characters-see-something-terrible-or-confront-an-awful-truth-they-gain-stress-points-generally-stress-points-will-be-between-1-and-4-for-a-single-event-characters-gain-1-fewer-point-when-theyve-encountered-something-similar-before---------stress-points-may-be-gained-from-prolonged-or-especially-extreme-exposure-to-more-mundane-stressors-like-hunger-darkness-or-danger---------testing-for-breakdowns--every-time-characters-gain-new-stress-points-they-roll-1d20--willpower-modifier-if-the-result-is-is-equal-to-or-under-their-new-stress-point-total-they-suffer-a-breakdown-the-nature-of-the-freakout-may-be-determined-by-existing-character-quirks-but-by-default-assume-catatonia-or-a-weeping-fit-if-the-result-is-higher-they-face-no-negative-consequences-beyond-being-slightly-shaken-or-disturbed-but-the-points-remain---------gaining-new-negative-quirks--when-characters-complete-their-breakdown-they-make-a-willpower-test-if-successful-they-face-no-further-negative-consequences-but-the-stress-points-remain-if-failed-they-gain-a-new-negative-quirk-which-can-either-be-determined-randomly-or-worked-out-with-the-gm-to-fit-the-character-and-the-circumstances-of-the-breakdown---------recovering-stress-points--stress-points-may-be-recovered-by-doing-normal-human-things---like-getting-drunk-relaxing-enjoying-good-meals-visiting-family-or-the-like-the-effectiveness-of-different-activities-should-be-based-on-what-the-character-would-find-cathartic-or-relieving-one-point-may-be-recovered-per-week----------minimum-stress--half-the-value-of-a-characters-historic-high-stress-point-score-becomes-their-new-minimum-value---their-stress-can-never-drop-below-this-as-they-have-been-permanently-damaged-by-their-experience">Stress and Madness  Many of the things acolytes face are not meant to be experienced or understood by humanity, and these are represented by Stress points and negative quirks.   **   **    Gaining Stress Points  Whenever characters see something terrible or confront an awful truth, they gain stress points. Generally stress points will be between 1 and 4 for a single event. Characters gain 1 fewer point when they’ve encountered something similar before.  **   **    Stress points may be gained from prolonged or especially extreme exposure to more mundane stressors like hunger, darkness, or danger.  **   **    Testing for Breakdowns  Every time characters gain new stress points, they roll 1d20 + willpower modifier. If the result is is equal to or under their new stress point total, they suffer a breakdown. The nature of the freakout may be determined by existing character quirks, but by default assume catatonia or a weeping fit. If the result is higher, they face no negative consequences beyond being slightly shaken or disturbed, but the points remain.  **   **    Gaining New Negative Quirks  When characters complete their breakdown, they make a willpower test. If successful, they face no further negative consequences, but the stress points remain. If failed, they gain a new negative quirk, which can either be determined randomly, or worked out with the GM to fit the character and the circumstances of the breakdown.  **   **    Recovering Stress Points  Stress points may be recovered by doing normal, human things - like getting drunk, relaxing, enjoying good meals, visiting family, or the like. The effectiveness of different activities should be based on what the character would find cathartic or relieving. One point may be recovered per week.   **   **    Minimum Stress  Half the value of a character’s historic high stress point score becomes their new minimum value - their stress can never drop below this, as they have been permanently damaged by their experience.</h2>
+<h2 id="quirks--gaining-quirks--character-creation--at-character-creation-characters-gain-three-quirks-one-from-their-background-one-positive-from-the-starting-quirks-list-and-one-negative-from-the-starting-quirks-list-the-default-method-is-to-randomly-determine-all-quirks-but-at-the-gms-discretion-they-can-instead-be-chosen-by-the-players-in-order-to-meet-a-particular-character-concept---------stress-and-breakdowns--after-characters-suffer-a-breakdown-they-must-test-their-willpower-to-see-if-they-gain-a-new-negative-quirk-from-their-experience-if-they-fail-their-willpower-test-they-either-roll-a-new-random-negative-quirk-form-the-negative-quirks-in-the-in-play-quirks-list-or-agree-on-a-specific-negative-quirk-with-the-gm-that-fits-the-circumstances-and-character-such-as-gaining-a-fear-of-xenoi-after-a-breakdown-causing-encounter-with-a-tyranid---------levelling-up--every-3rd-level-3rd-6th-9th-et-cetera-a-character-may-gain-a-new-positive-quirk-from-the-in-play-quirks-list-either-randomly-or-based-on-their-actions-and-character-since-the-last-positive-quirk-was-gained-the-player-in-question-and-the-gm-should-come-to-a-mutually-agreeable-decision-on-this-if-its-not-obvious----------duplicate-quirks--if-characters-gain-the-same-quirk-more-than-once-either-increase-its-severity-or-re-roll-as-makes-the-most-sense-in-the-circumstances----------losing-quirks--at-the-gms-discretion-certain-quirks-may-be-lost-whether-intentionally-or-not-through-the-course-of-play-generally-speaking-the-system-is-meant-to-reflect-slow-breakdown-in-the-face-of-unrelenting-horror-and-stress-but-if-a-more-heroic-campaign-is-desired-or-if-circumstances-are-particularly-apt-both-positive-and-negative-quirks-can-be-overcome-and-removed-from-a-character-this-is-left-as-an-exercise-in-gm-judgement-though-players-can-of-course-make-clear-which-quirks-they-may-wish-to-explore-in-depth-and-potentially-overcome---------creating-new-quirks--the-quirks-lists-both-positive-and-negative-are-far-from-exhaustive-and-players-should-feel-free-to-suggest-new-quirks-to-their-gms-to-fit-the-things-that-have-happened-to-their-characters-while-gms-should-create-any-quirks-that-better-reflect-the-particular-challenges-and-triumphs-of-their-campaigns-the-perks-flaws-or-traits-rules-of-other-games-especially-those-dealing-with-horror-and-insanity-should-be-invaluable-sources-of-inspiration-quirks-would-also-be-an-excellent-way-to-define-a-xenos-player-character-or-npc---------alternate-approaches--if-you-like-the-idea-of-quirks-but-not-how-they-are-presented-here-are-some-alternate-approaches-to-consider"><strong>Quirks</strong>  Gaining Quirks  Character Creation  At character creation, characters gain three quirks: one from their background, one positive from the starting quirks list, and one negative from the starting quirks list. The default method is to randomly determine all quirks, but at the GM’s discretion they can instead be chosen by the players in order to meet a particular character concept.  **   **    Stress and Breakdowns  After characters suffer a breakdown, they must test their willpower to see if they gain a new negative quirk from their experience. If they fail their willpower test, they either roll a new random negative quirk form the negative quirks in the In Play Quirks list, or agree on a specific negative quirk with the GM that fits the circumstances and character (such as gaining a Fear of Xenoi after a breakdown causing encounter with a Tyranid).  **   **    Levelling Up  Every 3rd level (3rd, 6th, 9th, et cetera) a character may gain a new positive quirk from the In Play Quirks list, either randomly, or based on their actions and character since the last positive quirk was gained. The player in question and the GM should come to a mutually agreeable decision on this if it’s not obvious.   **   **    Duplicate Quirks  If characters gain the same quirk more than once, either increase its severity or re-roll, as makes the most sense in the circumstances.   **   **    Losing Quirks  At the GM’s discretion, certain quirks may be lost, whether intentionally or not, through the course of play. Generally speaking, the system is meant to reflect slow breakdown in the face of unrelenting horror and stress, but if a more heroic campaign is desired or if circumstances are particularly apt, both positive and negative quirks can be overcome and removed from a character. This is left as an exercise in GM judgement, though players can of course make clear which quirks they may wish to explore in depth and potentially overcome.  **   **    Creating New Quirks  The quirks lists, both positive and negative, are far from exhaustive, and players should feel free to suggest new quirks to their GMs to fit the things that have happened to their characters, while GMs should create any quirks that better reflect the particular challenges and triumphs of their campaigns. The perks, flaws, or traits rules of other games, especially those dealing with horror and insanity, should be invaluable sources of inspiration. Quirks would also be an excellent way to define a Xenos player character or NPC.  **   **    Alternate Approaches  If you like the idea of quirks, but not how they are presented, here are some alternate approaches to consider:</h2>
+<ul>
+<li>
+<p>Use the names of quirks, but not rules. Simply treat them as reminders to player and GM about how that character should be played and might react to situations</p>
+</li>
+<li>
+<p>Use the names of the quirks, but instead of a specific rule for every quirk, simply grant advantage on related rolls for positive quirks, and disadvantage for negative quirks. This will take some interpretation for the less obviously applicable quirks, and in practice might end up more like the first approach above.</p>
+</li>
+<li>
+<p>Combine positive and negative quirks into one list, and use one or both methods for gaining new quirks to represent differing reactions to stress or ongoing experience in the dark underbelly of the Imperium. For example, combining lists and only gaining quirks from stress might represent a game where some people respond positively to stress rather than negatively, and differently depending on circumstances, while combining lists and only gaining quirks every 3rd level would show that experience is a double edged sword that provides benefits as well as debilities</p>
+</li>
+</ul>
+<p>**   **    Starting Quirks  Positive  **   **    Positive  Roll  Name  Effect  1  Clotter  -1 to all Blood damage taken  2  Clutch Hitter  When guts reduced to 0, increase critical hit range by 1  3  Deadly  +1 to Critical hit range on all attacks  4  Eagle Eye  +1 to Critical hit range on ranged attacks  5  Evasive  +1 Guts  6  Fated  Once per session, reroll a missed to hit roll  7  Gift of the Healer  Recover 2 extra blood per day of complete rest  8  Hard Noggin  -2 damage from stun attacks  9  Hard Skinned  -1 damage from all attacks  10  Improved Balance  Advantage on any Dexterity rolls for balance  11  Last Gasp  When Guts equal to zero, +1 initiative  12  Light Sleeper  No penalties for being woken up  13  Lurker  Do +2 damage on melee attacks made from the dark  14  Meditator  Recover 1 extra stress point per week if significant time spent meditating  15  Natural Eye  +1 to hit on ranged attacks  16  Natural Swing  +1 to hit on melee attacks  17  On Guard  +1 initiative and +1 AC for first round when surprised  18  Precision Striker  +1 to critical hit range on melee attacks  19  Quick Reflexes  +1 initiative at all times  20  Quickdraw  +4 initiative first round of combat  21  Resilient  Recover 1 extra stress per week  22  Robust  Advantage on toughness checks to resist disease  23  Second Wind  +2 Damage when Guts equals zero  24  Slugger  +2 Damage in Melee  25  Steady  Advantage on Breakdown Checks  26  Stout  Recover 1 extra Blood per day  27  Thick Blooded  Advantage on Toughness checks against poison  28  Tough  +1 Blood  29  Unerring  +1 Damage to Ranged Attacks  30  Unyielding  +2 to Toughness checks against death  **   **    Negative  **   **    Negative  Roll  Name  Effect  1  Bilious Personality  Suspicious, angry yet very watchful and aware.  2  Cardinal Personality  Seeks balance in all things, yet often cannot choose a path forward.  3  Choleric Personality  Active, takes charge, yet easy to anger.  4  Fixed Personality  Solid, unyielding and definitive in all things.  5  Melancholic Personality  Thoughtful, introspective and prone to depression.  6  Mutable Personality  Unpredictable, undisciplined and rebellious.  7  Phlegmatic Personality  Practical, careful, yet very reserved.  8  Sanguine Personality  Confident, optimistic, yet prone to dreams and whimsy.  9  Supine Personality  Loyal, devout yet easily led.  10  Anemic  Take 1 extra blood damage whenever blood damaged  11  Bad Humours  -1 Blood  12  Calm  -1 Damage first round of combat  13  Clumsy  -1 Guts  14  Curious  Obsessed with the acquisition of knowledge.  15  Diurnal  -1 Initiative in the dark  16  Emperor Fearing  Can only relieve stress through prayer and religious activity  17  Flawed Release  -1 to critical hit range on ranged attacks  18  Fragile  -1 Blood  19  Gambler  Can only relieve stress by gambling  20  Hagiomania  Obsessed with achieving sainthood.  21  Hemophilia  #ERROR!  22  Lazy Eye  -1 to hit with ranged attacks  23  Light Sensitive  -1 damage in bright light  24  Love Interest  Can only relieve stress making romantic overtures to your love interest  25  Nocturnal  -1 initiative in bright light  26  Sickly  Disadvantage on toughness checks against disease  27  Slow Reflexes  -1 initiative  28  Slowdraw  -2 initiative first round of combat  29  Soft  -1 Guts  30  Thin Blooded  Disadvantage on toughness checks against poison  **   **    In Play Quirks  Positive  **   **    Positive  Roll  Name  Effect  1  Air of Authority  Advantage on Command tests  2  Armour of Contempt  Advantage on malignancy tests from gaining corruption points  3  Berserk Charge  Advantage on melee to hit rolls in first round of combat if you were able to charge  4  Bitter  Advantage to resist persuade rolls  5  Close-Minded  You are unswayed by new or heretical thoughts. Advantage on willpower tests against those espousing them.  6  Clotter  -1 to all Blood damage taken  7  Clutch Hitter  When guts reduced to 0, increase critical hit range by 1  8  Crack Shot  Add +1 Blood damage when damaging Blood with ranged attacks  9  Crippling Strike  Option to take disadvantage on a melee to hit roll, if attack hits, counts as critical  10  Crushing Blow  Add +1 damage to melee attacks  11  Dark Soul  Add willpower modifier to malignancy tests  12  Deadeye Shot  You may take disadvantage on ranged attacks, and if attack hits, it counts as critical  13  Deadly  +1 to Critical hit range on all attacks  14  Decadence  You are extremely resistant to the ill effects of drugs and alcohol  15  Die Hard  Advantage on Death Saves  16  Disturbing Voice  Advantage on Intimidate rolls, disadvantage on friendly persuade rolls  17  Eagle Eye  +1 to Critical hit range on ranged attacks  18  Evasive  +1 Guts  19  Extrovert  Advantage on persuade rolls with strangers  20  Fated  Once per session, reroll a missed to hit roll  21  Favoured by the Warp  Advantage on Perils of the Warp Tests  22  Fearless  Immune to fear effects  23  Foresight  Once per session, gain advantage on any Lore test.  24  Frenzy  Enter a psychotic rage to gain an extra melee attack per round, but with some chance to attack unintended targets  25  Gift of the Healer  Recover 2 extra blood per day of complete rest  26  Good Reputation†  You are well thought of within a certain, specific group. This may grant bonuses to certain rolls  27  Hard Noggin  -2 damage from stun attacks  28  Hard Skinned  -1 damage from all attacks  29  Hard Target  Opponents have disadvantage on ranged attacks against you when you run  30  Hardy  Heal 1 extra Blood per day  31  Hatred of Chaos  +2 Damage and Advantage on Breakdown checks caused by Chaotic Creatures  32  Hatred of Heretics  +2 Damage and Advantage on Breakdown checks caused by Heretics  33  Hatred of Mankind  +2 Damage and Advantage on Breakdown checks caused by Humans  34  Hatred of Xenoi  +2 Damage and Advantage on Breakdown checks caused by Xenoi  35  Hidden Depths  You are surprisingly insightful. Once per session, automatically succeed in a Lore test  36  Hip Shooting  You may run and shoot with disadavantage  37  Honorable  Advantage on Breakdown checks if breaking down would endanger a promise you have made  38  Improved Balance  Advantage on any Dexterity rolls for balance  39  Insanely Faithful  Advantage on breakdown rolls against heretics and chaotic beings  40  Into the Jaws of Hell  Subordinates have +1 morale  41  Iron Discipline  Advantage on command tests with subordinates  42  Iron Jaw  May make a toughness check to overcome stunning  43  Jaded  Take no stress from mundane, non-supernatural situations or horrors  44  Keen Hearing  Your hearing is extremely sharp. Hear things others can&rsquo;t, and advantage for any hearing-based awareness tests  45  Keen Smell  You can smell things others can&rsquo;t. Advantage on smell based awareness tests. Extremely sensitive to unpleasant smells.  46  Last Gasp  When Guts equal to zero, +1 initiative  47  Light Sleeper  No penalties for being woken up  48  Lightning Attack  Gain an additional melee attack per round  49  Lightning Reflexes  Add +2 to initiative rolls  50  Litany of Hate  Extend the benefits of a Hatred effect to all friendly characters within earshot  51  Lurker  Do +2 damage on melee attacks made from the dark  52  Marksman  Advantage on extremely long range to hit rolls  53  Master Orator  Advantage on persuade rolls when you have a large audience  54  Meditator  Recover 1 extra stress point per week if significant time spent meditating  55  Mental Fortress  Advantage to resist mental attacks and interrogation  56  Mimic  You can copy voices you havce heard  57  Natural Bearings  You always know the cardinal directions (or other fixed point of reference) and are almost never lost  58  Natural Eye  +1 to hit on ranged attacks  59  Natural Swing  +1 to hit on melee attacks  60  Nerves of Steel  Advantage on breakdown tests where stress is caused by physical danger  61  Nymphomania  Recover 1 extra stress per week if you can engage in sexual activity  62  On Guard  +1 initiative and +1 AC for first round when surprised  63  Photomania  Instantly calm down from breakdowns if brought into bright light and out of immediate danger  64  Precise Blow  Increase melee critical hit range by 1  65  Precision Striker  +1 to critical hit range on melee attacks  66  Quick Reflexes  +1 initiative at all times  67  Quickdraw  +4 initiative first round of combat  68  Rapid Reaction  Make a willpower check to avoid being surprised  69  Rapid Reload  Reduce time to reload weapons  70  Resilient  Recover 1 extra stress per week  71  Robust  Advantage on toughness checks to resist disease  72  Second Wind  +2 Damage when Guts equals zero  73  Sharpshooter  Extend the critical hit range by 1 on ranged attacks  74  Slayer of Chaos  +2 to hit and increase critical range by 1 against chaotic beings  75  Slayer of Heretics  +2 to hit and increase critical range by 1 against heretics  76  Slayer of Mankind  +2 to hit and increase critical range by 1 against humans  77  Slayer of Xenoi  +2 to hit and increase critical range by 1 against Xenoi  78  Slugger  +2 Damage in Melee  79  Sound Constitution  +1 Blood  80  Sprint  You can run faster than normal for short periods of time  81  Steady  Advantage on Breakdown Checks  82  Step Aside  Improve AC by 2 in Melee if you forgo attacking  83  Stoic  Advantage on breakdown rolls brought about by mundane stressors  84  Stout  Recover 1 extra Blood per day  85  Street Fighting  Advantage on melee to hit rolls involving knives or improvised weapons  86  Strong Minded  Advantage on willpower tests to resist psychic powers  87  Sure Strike  Modify critical hit rolls up or down by 1, your choice.  88  Suspicious  Advantage on willpower tests to resist persuasion.  89  Swift Attack  You can attack twice in melee  90  Takedown  You can choose to replace all damage from a melee attack to knock your opponent prone  91  Thick Blooded  Advantage on Toughness checks against poison  92  Total Recall  You can remember trivial facts and minor details with uncanny accuracy  93  Tough  +1 Blood  94  True Grit  Critical hit injury rolls against you take -1  95  Unerring  +1 Damage to Ranged Attacks  96  Unremarkable  You are easily forgettable  97  Unshakeable Faith  Advantage on stress rolls that involve fear  98  Unyielding  +2 to Toughness checks against death  99  Wall of Steel  Improve AC by an extra 2 if you fight defensively in Melee  100  Warrior of Light  +2 Melee damage in bright light  **   **    Negative  Negative  Roll  Name  Effect  1  Ablutomania  Obsessed with cleanliness. Disadvantage on Breakdown checks involving filth  2  Alcoholism  Heavy drinker. Can only recover stress by getting very drunk.  3  Anemic  Take 1 extra blood damage whenever blood damaged  4  Anxious  Suffer anxiety over even minor stresses. More likely to gain stress than normal  5  Automatonophobia  Believe humans are actually soulless robots. Take 1 extra stress in stress inducing situations involving human enemies  6  Bad Gambler  Disadvantage on gambling rolls  7  Bad Humours  -1 Blood  8  Bloodthirsty  Fascinated with injury, wounds, and torture.  9  Bulimic  Heal 1 fewer Blood per day, and half Guts from eating  10  Callous  Lack of empathy and feeling for fellow man  11  Calm  -1 Damage first round of combat  12  Chemical Addiction  Addicted to some drug stronger than alcohol  13  Claustrophobia  Severe fear of enclosed spaces.  14  Clumsy  -1 Guts  15  Compulsion  Character must frequently perform some action and becomes extremely agitated if prevented  16  Compulsive  Suffers intense need to do specific actions.  17  Curious  Obsessed with the acquisition of knowledge.  18  Dacnomania  Obsessed with killing.  19  Dark Temptation  Prone to investigating Forbidden Lore  20  Dead Comrade  Hears and/or sees a dead comrade, who often offers rebukes and criticism  21  Delusion  Holds and acts on an erroneous belief about self or the world  22  Demonomania  Believes self possessed by demons  23  Demonophobia  Disadvantage on breakdown checks caused by demons  24  Deviant Tastes  Socially unacceptable appetites, not welcome in brothels  25  Dispomania  Intense craving for alcohol. Will go to great lengths to seek it out.  26  Diurnal  -1 Initiative in the dark  27  Egomania  Obsessed with self-worship.  28  Emperor Fearing  Can only relieve stress through prayer and religious activity  29  Enlightened  Will only relieve stress through meditation  30  Explosive  Frequent outbursts of violence and aggression  31  Faithless  Cannot relieve stress through prayer or other religious action  32  Fear Of Chaos  Disadvantage on breakdown checks caused by chaotic beings  33  Fear of Heretics  Disadvantage on breakdown checks caused by heretics  34  Fear Of Insects  Extereme fear of insects, arthropods, and those alien creatures reminiscent of them  35  Fear of Mankind  Disadvantage on breakdown checks caused by humans  36  Fear Of The Dead  Extreme fear of corpses and death  37  Fear of Xenos  Disadvantage on breakdown checks caused by Xenoi  38  Flagellant  Can only relieve stress by self flaggellation  39  Flashbacks  Vivid hallucinations of past traumatic events  40  Flawed Release  -1 to critical hit range on ranged attacks  41  Fragile  -1 Blood  42  Gambler  Can only relieve stress by gambling  43  Guilty Conscience  Bears the crushing guilt of deeds real and imagined.  44  Hagiomania  Obsessed with achieving sainthood.  45  Hemophilia  +1 to all blood damage taken  46  Hieromania  Experiences religious visions and delusions.  47  Horrific Nightmares  Terrible dreams, trouble sleeping  48  Hylomania  Obsessed with material things.  49  Hypochondria  Often suffer from imagined illnesses in order to gain attention. Follow rules for disease, without risk of actual death  50  Invulnerability  Believes self unable to suffer harm, either from a specific source, or at all  51  Kleptomaniac  Prone to stealing Items  52  Known Cheat  Not welcome with gamblers that know your reputation  53  Lazy Eye  -1 to hit with ranged attacks  54  Light Sensitive  -1 damage in bright light  55  Love Interest  Can only relieve stress making romantic overtures to your love interest  56  Lygophobia  Disadvantage on Breakdown Checks in the dark  57  Megalomania  Delusion of own&rsquo;s power and superiority, obsessed with exercise of power over others  58  Mercurial  You frequently change your mind and have a hard time sticking to a consistent plan of action  59  Misses the Spot  -1 to critical hit range  60  Monophobia  Fear of being alone. Disadvantage on breakdown checks while alone  61  Necromania  Fascinated with corpses.  62  Nervous  Disadvantage on all breakdown checks  63  Nervous Tic  When stressed or nervous, suffer a specific involuntary twitch  64  Nocturnal  -1 initiative in bright light  65  Obsession  Character fixates on particular topic and has difficulty not thinking or referring to it  66  Off Guard  -2 initiative and -2 AC first round when surprised  67  Panicky  Disadvantage on willpower checks to remain calm  68  Paranoia  Delusions of hostile attention and action from specific or general entities  69  Paranormania  Obsessed with the paranormal.  70  Pathological Liar  Will frequently lie, even when it is disadvantageous. Advantage on Persuade rolls involving lies, must pass willpower check to avoid lying when under stress  71  Phengophobia  Disadvantage on breakdown checks made in direct sunlight  72  Plutomania  Manic for money.  73  Resolution  Will not drink and cannot relieve stress by doing so  74  Righteousness  Believes in rightness of own actions no matter what actual compromises are made or costs are paid  75  Ruins Phobe  Disadvantage on breakdown checks in ruins  76  Ruminator  Relieve 1 point of stress every other week of stress relieving activity  77  Selective Amnesia  Cannot remember traumatic events, will not believe others about them  78  Self-Mortification  Character compulsively damages own flesh  79  Shaky  -1 Damage to ranged attacks  80  Shell Shock  Distant, emotionally deadened, nightmares. More likely to take stress from going into dangerous situations  81  Shocker  +1 damage taken from stun attacks  82  Sickly  Disadvantage on toughness checks against disease  83  Sleep Walking  While sleeping, will occasionally get up and move around, even in potentially dangerous situations  84  Slow Reflexes  -1 initiative  85  Slowdraw  -2 initiative first round of combat  86  Soft  -1 Guts  87  Stress Eater  When stress is over minimum value, eat compulsively  88  Thanatophobia  Disadvantage on breakdown checks when Guts equals 0  89  The Flesh Is Weak!  Character blames flesh for failings and weakness, and will desire to replace it with improvements like cybernetics  90  The Yips  -1 to hit ranged attacks  91  Thin Blooded  Disadvantage on toughness checks against poison  92  Tippler  Can only relieve stress by drinking  93  Tither  Donates large amounts of money to the church. -1 to all Patronage checks  94  Tuckered Out  -1 Damage when Guts equals 0  95  Unquiet Mind  Cannot relieve stress by contemplation or meditation  96  Weak Grip  -1 to critical hit range in melee  97  Weak Grip on Life  Disadvantage on Death Saves  98  Winded  -1 Initiative when Guts equals 0  99  Witness  Cannot relieve stress by prayer or religious activity after seeing disturbing behavior  100  Zoophobia  Disadvantage on breakdown checks caused by animalistic creatures</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2015-03-15</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2015-03-29-factions-reputation-and-acquisition-for/">
+                    Next<br>Factions, Reputation, and Acquisition for Heresies Without Number
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2015-01-27-red-pleasant-land-layout-review/">
+                    Previous<br>Red &amp; Pleasant Land Layout Review
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

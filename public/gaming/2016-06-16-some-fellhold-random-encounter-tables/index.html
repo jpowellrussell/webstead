@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html><head>
+<title>Some Fellhold Random Encounter Tables</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Some Fellhold Random Encounter Tables
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2016-06-16 07:28
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/fellhold-reboot">Fellhold Reboot</a>
+                                &nbsp;
+                            
+                                <a href="/tags/urbancrawl">Urbancrawl</a>
+                                &nbsp;
+                            
+                                <a href="/tags/osr">OSR</a>
+                                &nbsp;
+                            
+                                <a href="/tags/fellhold">Fellhold</a>
+                                &nbsp;
+                            
+                                <a href="/tags/dd">D&amp;D</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p><a href="http://uo-planescape.wdfiles.com/local--files/quartiere-gilde/Bazaar_by_Tony_Diterlizzi-02620_(1996)_TSR_AD&amp;D_2ed_Planescape-The_Planewalker's_Handbook.jpg">http://uo-planescape.wdfiles.com/local--files/quartiere-gilde/Bazaar_by_Tony_Diterlizzi-02620_(1996)_TSR_AD&amp;D_2ed_Planescape-The_Planewalker's_Handbook.jpg</a></p>
+<p>Today we continue with some more Fellhold Reboot content - in this case a couple of random encounter tables. There&rsquo;s reference to some district and faction encounters - those are still under developed. The first here is a list of situations you could find your contacts in when you go to find them or bump into them on the street. It&rsquo;s part of a series of rules I&rsquo;m putting together to try to enhance the role contacts play for players in the game.</p>
+<p>The second is a &ldquo;generic&rdquo; encounter table, meaning it&rsquo;s not linked to a particular district or faction - you can encounter these anywhere in the city, ruined or inhabited, friendly or hostile. Hopefully it gives a view of the weird &ldquo;normal&rdquo; life of Fellhold. I&rsquo;m not really doing any new with the formatting or application of these tables, so the main &ldquo;hard problem&rdquo; I&rsquo;m trying to solve here is getting the aesthetics right - I have a very strong but vague idea of what I want Fellhold to &ldquo;feel&rdquo; like, but I don&rsquo;t know how to inject that into other people&rsquo;s brains. These tables are a start at trying to figure it out.</p>
+<p>I&rsquo;ve taken inspiration from Arnold K&rsquo;s post <a href="http://goblinpunch.blogspot.com/2016/05/game-design-when-to-be-random.html">here</a>, where he encourages randomer random tables - the goal is not verismilitude so much as it is creating something interesting and imagination provoking that gives the referee and the players levers to pull and tools to exploit. If I start playtesting these more and find out that a walk down the street is bonkers crazy in a not-fun way, then maybe I&rsquo;ll adjust some.</p>
+<p>By the way, let me apologize for the terribly formatted table below - I know InDesign, but web layout is not my strong suit.   **   **<strong>Urban Encounters</strong></p>
+<p><strong>Type of Encounter Roll</strong>  <em>1-2 District Encounter</em>  Roll on the district specific encounter table for the current district. If the district lacks its own encounter table, roll on the generic urban encounters table below. If an encounter is called for and its not clear in which district it would happen, either randomize or use the generic encounter table.</p>
+<p><em>3-4  Faction Encounter</em>  Roll on the encounter table for the faction that controls the current district as turf. If a faction encounter is called for and its not clear which district it would occur in, either select randomly, select the faction that controls the district that a random PC lives in, or pick the one that seems most interesting or relevant in the current situation.  *   *  <em>5 Contact Encounter</em>  Randomly determine a contact from a randomly determined PC, or else select one that makes the most sense given where the PCs are and what they’re doing. Use the table below to determine what situation they find their contact in. Some referee discretion, as always, may be called for - if the encounter occurs in an overtly hostile part of Fellhold, some of the situations below may not apply, or may apply in a modified way.</p>
+<p>1) Dead  2) Fighting desperately with a district encounter  3) Fleeing from something, they press a small package into the PC’s hands   4) Running from watchmen  5) Deep in conversation with someone from a faction hostile to the PC  6) Chatting up an attractive young person  7) Buying something  8) Deep in conversation with someone from one of the PC’s factions  9) Stumbling around disoriented and confused- are they drunk? Or something else?  10) On their way to a broker to act on a sweet tip for the soul market  11) Supervising moving a large amount of material relevant to their career  12) Standing in the middle of the road with a shocked look on their face  13) Examining a structure with great interest  14) Moving furtively, trying to hide their appearance  15) Doing something that seems remarkably out of character, opposite their usual character in fact  16) Wild eyes, crazy hair, frantic  17) Whistling happily, largely oblivious to their surroundings  18) Eating or drinking something  19) In a furious shouting match with someone, possibly about to come to blows  20) Passed out in the gutter  *   *  <em>6 Generic Encounter</em>  The generic Fellhold encounters table may be used just about anywhere in Fellhold if a more a specific encounter is not available or desired. If a more “mundane” encounter is desired, simply use the contact generation rules and the contact encounter table, but assume that the person so generated is a stranger to the PCs unless otherwise indicated. As always, make use of reaction rolls and interpret in light of the district’s status of friendly, neutral, or hostile. Modify as appropriate to the situation - if the characters are deep in an abandoned dwarven hall, they are unlikely to encounter a wealthy merchant, and if they do, it is likely to be a far different circumstance than bumping into him in the market. The default assumption is that each entry will be encountered alone unless otherwise indicated, but if you like you may generate d3 or d6 of a type if it makes more sense. If needed, consult the random faction table to assign the encounter a faction. As always, use only those columns that make sense and are necessary. Likewise, feel free to ignore any results that don’t fit the situation.</p>
+<p><strong>Generic Fellhold Encounters</strong>  When no more specific encounter table is applicable, this encounter table may be used. This table may also be used to generate slightly more “exotic” NPCs than the default NPC generation chart for use outside of random encounters.</p>
+<p>As usual, this table may be used either by rolling once and reading straight across, or rolling for each column separately. If an entry refers to another encounter, you may roll again or simply use the next line if speed is desired. Note that as with the NPC table, the columns proceed in roughly the order of most obvious to least obvious, so that you may roll only on those columns necessary, if desired. Location may be ignored if the placement of the encounter has already been determined.</p>
+<!-- raw HTML omitted -->
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2016-06-16</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2016-06-20-lifestyles-of-poor-and-adventurous/">
+                    Next<br>Lifestyles of the Poor and Adventurous
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2016-06-13-places-of-interest-in-fellhold/">
+                    Previous<br>Places of Interest in Fellhold
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

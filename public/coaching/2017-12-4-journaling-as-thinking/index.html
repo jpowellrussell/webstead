@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html><head>
+<title>Journaling as Thinking</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#recall" v-on:click="closeDrawer" id="recall-nav">
+										 Recall
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#figuring-things-out" v-on:click="closeDrawer" id="figuring-things-out-nav">
+										 Figuring Things Out
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#making-connections" v-on:click="closeDrawer" id="making-connections-nav">
+										 Making Connections
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#journaling-tools" v-on:click="closeDrawer" id="journaling-tools-nav">
+										 Journaling Tools
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#analog" v-on:click="closeDrawer" id="analog-nav">
+										 Analog
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#digital" v-on:click="closeDrawer" id="digital-nav">
+										 Digital
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#conclusion" v-on:click="closeDrawer" id="conclusion-nav">
+										 Conclusion
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#recall" v-on:click="closeDrawer" id="recall-nav">
+										 Recall
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#figuring-things-out" v-on:click="closeDrawer" id="figuring-things-out-nav">
+										 Figuring Things Out
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#making-connections" v-on:click="closeDrawer" id="making-connections-nav">
+										 Making Connections
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#journaling-tools" v-on:click="closeDrawer" id="journaling-tools-nav">
+										 Journaling Tools
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#analog" v-on:click="closeDrawer" id="analog-nav">
+										 Analog
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#digital" v-on:click="closeDrawer" id="digital-nav">
+										 Digital
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#conclusion" v-on:click="closeDrawer" id="conclusion-nav">
+										 Conclusion
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Journaling as Thinking
+                    
+                    <div class="post-meta">
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Coaching]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/thinking-tools">Thinking Tools</a>
+                                &nbsp;
+                            
+                                <a href="/tags/creativity">Creativity</a>
+                                &nbsp;
+                            
+                                <a href="/tags/journaling">Journaling</a>
+                                &nbsp;
+                            
+                                <a href="/tags/writing">Writing</a>
+                                &nbsp;
+                            
+                                <a href="/tags/learning">Learning</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>Journaling doesn’t just mean recording your life for when you become super famous, you can accomplish a lot of different things by journaling. Sure, you absolutely can <a href="https://www.artofmanliness.com/2009/06/07/30-days-to-a-better-man-day-8-start-a-journal/">create a record</a> for yourself and your family (and future biographers). You might instead want to get the neurotic and depressed thoughts <a href="https://tim.blog/2015/01/15/morning-pages/">out of your head and onto paper</a> so that you can get on with business. Or perhaps you want to reinforce habits, like <a href="https://greatergood.berkeley.edu/article/item/tips_for_keeping_a_gratitude_journal">being grateful</a> or <a href="https://jamesaltucher.com/2014/05/the-ultimate-guide-for-becoming-an-idea-machine/">generating ideas</a>. These are great things to do, and I regularly practice all of them, but today I want to focus on journaling to understand and internalize complex material. In other words, using journaling as a tool for thinking and learning. For these purposes, journaling helps in three main ways: improving recall, figuring stuff out, and improving your chances of making connections.</p>
+<h2 id="recall">Recall</h2>
+<p>First off, combining active recall with physical activity creates a <a href="http://www.medicaldaily.com/why-using-pen-and-paper-not-laptops-boosts-memory-writing-notes-helps-recall-concepts-ability-268770">stronger memory</a> than either alone. So, from a memorization perspective, we want to try to journal from memory unless we absolutely have to look something up - active, unassisted recall is far and away <a href="https://www.scotthyoung.com/blog/2013/03/31/learning-methods/">the best way to make information stick</a>. Likewise, unless you are trying to capture a turn of phrase or a technical argument, you are better off writing down your impressions and thoughts than copying. You practice a kind of active recall whenever you put things in your own words. To do so, I recommend an incredibly flexible tool that Scott Young dubs “<a href="https://www.scotthyoung.com/learnonsteroids/grab/TranscriptFeynman.pdf">The Feynman Technique</a>”. Named after the famous physicist, who was known for explaining complex ideas simply. To try it yourself, explain the thing you are trying to learn to an audience that knows nothing about it. The beautiful thing about this technique is that you can use your journal as your &ldquo;audience.&rdquo;</p>
+<h2 id="figuring-things-out">Figuring Things Out</h2>
+<p>Now, once you remember something and explain it in your own words, you’re probably pretty close to actually understanding it. Talking or writing something out forces you to get very specific. When you get specific, you start to spot where you want to hand wave and get vague, which highlights the gaps in your current understanding. There are several useful tools that will help you fill those gaps: <a href="http://theelearningcoach.com/learning/analogies-for-learning/">analogies</a> bridge the distance between what you know and what’s new, whereas <a href="https://www.scotthyoung.com/blog/2008/03/04/learn-more-study-less-diagraming/">diagrams</a> explore the structure of an idea and its relationship to others. I often find that something only “clicks” when I try to explain it, so in the absence of someone to talk to, I incorporate freeform explanatory writing into any learning project I start - book reviews, self-generated glossaries, that kind of thing.</p>
+<h2 id="making-connections">Making Connections</h2>
+<p>So far, we’ve discussed getting concepts <em>into</em> your head, but remembering and figuring stuff out also lay the groundwork for getting ideas <em>out</em> of your head. The most effective journaling techniques make a point of <a href="https://www.jeffrussellcoaching.com/coaching-blog/2017/8/11/creativity-part-1-defining-creativity">connecting insights and concepts</a> from different times and sources. For a masterclass in this, check out Ryan Holiday’s take on a <a href="https://ryanholiday.net/how-and-why-to-keep-a-commonplace-book/">commonplace book</a>. The ability to physically re-arrange the cards encourages finding connections by allowing you to impose different structures on them, which generates new connections each time. At the far less intense end of the spectrum, simply writing down interesting and conceptual material allows you to go “hey, this reminds me of something. . .” down the road when you read something new, making a connection across time and subject matter. As such, however you decide to journal, make it a habit to actively look for connections to previous journal entries and make future reference easy. Even if you don’t connect material as you go, recording concepts and thoughts allows you to revisit them later, when your brain and life are in an all <a href="https://stevenberlinjohnson.com/the-glass-box-and-the-commonplace-book-639b16c4f3bb">new context</a>, and you may realize new things.</p>
+<h2 id="journaling-tools">Journaling Tools</h2>
+<p>Other than Ryan Holiday’s cards in a box above, I’ve been intentionally quiet on what your journal looks like. There are a lot of different options, but the biggest decision you have is analog or digital. Each has pros and cons for the kind of journaling we’re talking about . For the reasons I’ll outline below, I currently prefer a digital journal for helping me think and an analog journal for the other kinds of journaling we talked about.</p>
+<h3 id="analog">Analog</h3>
+<p><strong>Pros</strong>: Extremely flexible, better supports recall, potential for structural organization (e.g. using cards in a box), remarkably resilient if taken care of, looks and feels pleasant</p>
+<p><strong>Cons</strong>: Takes up a lot of space, non-searchable, dependent on indexing/reference system that imposes limitations, harder to share and back up, might not be able to read rushed handwriting, have to carry around with you</p>
+<p><strong>Examples</strong>: <a href="https://us.moleskine.com/notebooks">Moleskine</a> or <a href="https://www.leuchtturm1917.us/notebooks/">Leuchtturm</a>, <a href="https://ryanholiday.net/the-notecard-system-the-key-for-remembering-organizing-and-using-everything-you-read/">Index Card Commonplace book</a>, <a href="http://gettingthingsdone.com/wp-content/uploads/2014/10/Filing.pdf">GTD Style Reference file</a>, <a href="https://www.youtube.com/watch?v=WKHIT6BtDzg">Three Ring Binders with tabs</a></p>
+<h3 id="digital">Digital</h3>
+<p><strong>Pros</strong>: Searchable, ease of storage and retrieval, takes up little space, can use a variety of indexing and organizational methods (tags, folders, etc), easy to share and back up, everything is in one “place”, can attach source and reference material in full</p>
+<p><strong>Cons</strong>: Lack of physical stimulus, less aesthetically pleasing, ease of use encourages more collection and less thought, susceptible to digital shortcomings (version changes, proprietary data, hacking, data loss, and so forth)</p>
+<p><strong>Examples</strong>: <a href="https://evernote.com/">Evernote</a>, <a href="https://www.onenote.com/">Microsoft Onenote</a>, <a href="https://www.google.com/drive/">Google Drive/Docs</a>, <a href="https://www.blogger.com/">Blogger</a>, <a href="https://wordpress.com/">Wordpress</a></p>
+<h2 id="conclusion">Conclusion</h2>
+<p>I haven’t shared a lot of prescription here, because anyway you journal will benefit you greatly. The main take away is that we’re not talking about anything that hard - just write down the thoughts you’re thinking anyway. You might be surprised how useful putting them in front of you is versus keeping them in your head.</p>
+
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/coaching/2017-06-2-first-aid-for-stress/">
+                    Next<br>First Aid for Stress - Self Care Part 3
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/coaching/2017-09-8-maximize-the-value-of-your-creative-inputs-creativity-part-4/">
+                    Previous<br>Maximize the Value of Your Creative Inputs - Creativity Part 5
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

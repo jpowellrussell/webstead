@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html><head>
+<title>Crapsack Goblin Game Idea</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#character-creation--everyone-is-a-goblin--attributes-3d6-2-in-order--hit-points-are-1d6-1-if-you-get-zero-you-were-killed-growing-up-roll-a-new-character1d6-hp-per-level--treat-as-lotfp-halflings-but-with-the-following-exceptions--the-5-in-6-sneak-ability-applies-in-natural-caverns-and-goblin-settlements--instead-of-bushcraft-goblins-have-dungeoncavemountain-craft-depending-on-where-theyre-from--players-pick-one-of-the-following-classes" v-on:click="closeDrawer" id="character-creation--everyone-is-a-goblin--attributes-3d6-2-in-order--hit-points-are-1d6-1-if-you-get-zero-you-were-killed-growing-up-roll-a-new-character1d6-hp-per-level--treat-as-lotfp-halflings-but-with-the-following-exceptions--the-5-in-6-sneak-ability-applies-in-natural-caverns-and-goblin-settlements--instead-of-bushcraft-goblins-have-dungeoncavemountain-craft-depending-on-where-theyre-from--players-pick-one-of-the-following-classes-nav">
+										 Character Creation Everyone is a goblin Attributes: 3d6-2 in order Hit points are 1d6-1. If you get zero, you were killed growing up, roll a new character. &#43;1d6 HP per level Treat as LotFP Halflings, but with the following exceptions: The 5 in 6 sneak ability applies in natural caverns and goblin settlements Instead of bushcraft, goblins have dungeon/cave/mountain craft depending on where they’re from Players pick one of the following classes:
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#equipment" v-on:click="closeDrawer" id="equipment-nav">
+										 Equipment
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#inventory" v-on:click="closeDrawer" id="inventory-nav">
+										 Inventory
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#armor-and-weapons" v-on:click="closeDrawer" id="armor-and-weapons-nav">
+										 Armor and Weapons
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#survival-and-experience--yes-in-that-order--goblins-are-voracious-eaters-and-must-eat-1-hp-worth-of-food-per-max-hp-they-have-every-day-or-save-vs-death" v-on:click="closeDrawer" id="survival-and-experience--yes-in-that-order--goblins-are-voracious-eaters-and-must-eat-1-hp-worth-of-food-per-max-hp-they-have-every-day-or-save-vs-death-nav">
+										 Survival and Experience (Yes, in that order) Goblins are voracious eaters and must eat 1 HP worth of food per max HP they have every day or save vs death
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#character-creation--everyone-is-a-goblin--attributes-3d6-2-in-order--hit-points-are-1d6-1-if-you-get-zero-you-were-killed-growing-up-roll-a-new-character1d6-hp-per-level--treat-as-lotfp-halflings-but-with-the-following-exceptions--the-5-in-6-sneak-ability-applies-in-natural-caverns-and-goblin-settlements--instead-of-bushcraft-goblins-have-dungeoncavemountain-craft-depending-on-where-theyre-from--players-pick-one-of-the-following-classes" v-on:click="closeDrawer" id="character-creation--everyone-is-a-goblin--attributes-3d6-2-in-order--hit-points-are-1d6-1-if-you-get-zero-you-were-killed-growing-up-roll-a-new-character1d6-hp-per-level--treat-as-lotfp-halflings-but-with-the-following-exceptions--the-5-in-6-sneak-ability-applies-in-natural-caverns-and-goblin-settlements--instead-of-bushcraft-goblins-have-dungeoncavemountain-craft-depending-on-where-theyre-from--players-pick-one-of-the-following-classes-nav">
+										 Character Creation Everyone is a goblin Attributes: 3d6-2 in order Hit points are 1d6-1. If you get zero, you were killed growing up, roll a new character. &#43;1d6 HP per level Treat as LotFP Halflings, but with the following exceptions: The 5 in 6 sneak ability applies in natural caverns and goblin settlements Instead of bushcraft, goblins have dungeon/cave/mountain craft depending on where they’re from Players pick one of the following classes:
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#equipment" v-on:click="closeDrawer" id="equipment-nav">
+										 Equipment
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#inventory" v-on:click="closeDrawer" id="inventory-nav">
+										 Inventory
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#armor-and-weapons" v-on:click="closeDrawer" id="armor-and-weapons-nav">
+										 Armor and Weapons
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#survival-and-experience--yes-in-that-order--goblins-are-voracious-eaters-and-must-eat-1-hp-worth-of-food-per-max-hp-they-have-every-day-or-save-vs-death" v-on:click="closeDrawer" id="survival-and-experience--yes-in-that-order--goblins-are-voracious-eaters-and-must-eat-1-hp-worth-of-food-per-max-hp-they-have-every-day-or-save-vs-death-nav">
+										 Survival and Experience (Yes, in that order) Goblins are voracious eaters and must eat 1 HP worth of food per max HP they have every day or save vs death
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Crapsack Goblin Game Idea
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2014-01-02 20:02
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/sbvd">SBVD</a>
+                                &nbsp;
+                            
+                                <a href="/tags/osr">OSR</a>
+                                &nbsp;
+                            
+                                <a href="/tags/crapsack-goblins">Crapsack Goblins</a>
+                                &nbsp;
+                            
+                                <a href="/tags/rules">Rules</a>
+                                &nbsp;
+                            
+                                <a href="/tags/dd">D&amp;D</a>
+                                &nbsp;
+                            
+                                <a href="/tags/lotfp">LotFP</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p><a href="http://2.bp.blogspot.com/-w9LJQ_vMS78/UsYcBREk5iI/AAAAAAAAAe0/ufRLp4qxzP8/s1600/river-goblin.jpg"><img src="http://2.bp.blogspot.com/-w9LJQ_vMS78/UsYcBREk5iI/AAAAAAAAAe0/ufRLp4qxzP8/s320/river-goblin.jpg" alt=""></a></p>
+<p>So, reading some blog entries and some Google+ posts has given me an idea for a game that I&rsquo;d like to run, but I don&rsquo;t know if/when I ever will.  Basically, I want to combine the &ldquo;dung ages&rdquo; <a href="http://middenmurk.blogspot.com/2011/03/copper-standard.html">crapsack</a> vibe from <a href="http://plus.google.com/114084765636968777246">+Thomas Fitzgerald</a> &lsquo;s <a href="http://middenmurk.blogspot.com/">Middenmurk</a> posts, the <a href="http://goblinpunch.blogspot.com/2013/12/down-down-to-yoblin-town.html">super-grungy goblin city-crawling</a> of <a href="http://plus.google.com/107059341533698976884">+Arnold K.</a> &lsquo;s <a href="http://goblinpunch.blogspot.com/2013/12/running-through-yoblintown-while-caked.html">Escape from Yoblin Town</a>, and the &ldquo;everything is scavenged, everything is precious&rdquo; vibe of <a href="http://plus.google.com/105331009051043561119">+Jack Mack</a> &lsquo;s <a href="http://rottenpulp.blogspot.com/2013/05/neanderthal.html">Neanderthal post</a>, along with <a href="http://rottenpulp.blogspot.com/2012/06/matt-rundles-anti-hammerspace-item.html">a lot</a> of <a href="http://goblinpunch.blogspot.com/2013/11/armor-and-inventory.html">encumbrance</a> and <a href="http://goblinpunch.blogspot.com/2013/11/omfg-weapons.html">equipment</a> wear <a href="http://www.lastgaspgrimoire.com/this-is-weighing-me-down/">stuff</a> that Arnold K, Jack Mack, <a href="http://plus.google.com/100745879253388987656">+Logan Knight</a>  and others have been talking about a lot recently.  I think all of this stuff combines nicely into a game about Goblins.  So, here&rsquo;s the rough outline for what I&rsquo;d do (I think) for running this.  Details after the break.</p>
+<h2 id="character-creation--everyone-is-a-goblin--attributes-3d6-2-in-order--hit-points-are-1d6-1-if-you-get-zero-you-were-killed-growing-up-roll-a-new-character1d6-hp-per-level--treat-as-lotfp-halflings-but-with-the-following-exceptions--the-5-in-6-sneak-ability-applies-in-natural-caverns-and-goblin-settlements--instead-of-bushcraft-goblins-have-dungeoncavemountain-craft-depending-on-where-theyre-from--players-pick-one-of-the-following-classes">Character Creation  Everyone is a goblin  Attributes: 3d6-2 in order  Hit points are 1d6-1. If you get zero, you were killed growing up, roll a new character. +1d6 HP per level  Treat as LotFP Halflings, but with the following exceptions:  The 5 in 6 sneak ability applies in natural caverns and goblin settlements  Instead of bushcraft, goblins have dungeon/cave/mountain craft depending on where they&rsquo;re from  Players pick one of the following classes:</h2>
+<ul>
+<li>Bashers - Attack bonus as fighters</li>
+<li>Sneakers - Starts with 2 skill points and gets +2 per level</li>
+<li>Weirdos - start with 1d3-1 random first level spells, spell
+progression as magic user, find new spells by eating fungi, smoking
+weird plants, and examining grungy stuff</li>
+</ul>
+<h2 id="equipment">Equipment</h2>
+<ul>
+<li>You start with nothing. Nada. Zip. Okay, maybe a stinky rag around
+your waste, if you&rsquo;re lucky</li>
+<li>Almost everything must be crafted, but goblins treat pottery shards,
+shiny or interesting shaped rocks, and the occasional copper groat
+like money</li>
+<li>When you buy something, determine its quality rating by rolling
+1d6-1 </li>
+<li>When you craft something, determine its quality rating by rolling
+1d6 + int modifier + modifier for materials</li>
+<li>When you find something already usable, if it&rsquo;s not clear how good
+it is, roll 1d6 to find its quality</li>
+<li>Every time an item would be stressed or damaged, roll 1d6: if it is
+higher than quality, the item breaks, if it is equal or lower, the
+item is fine, but reduce its quality by 1</li>
+</ul>
+<h2 id="inventory">Inventory</h2>
+<ul>
+<li>By default, you can carry one thing in each hand, and stuff one
+thing in the rope you call a belt</li>
+<li>With pouches, sacks, and packs, you can have up to 6 slots to put
+things in. Say where those things are. Some things are bigger than
+one slot and might have to be strapped on in specific places besides
+in a pack</li>
+<li>Remember, you&rsquo;ll have to find a or make a pack somehow if you want
+one</li>
+<li>By default armor doesn&rsquo;t count for slots, but if it&rsquo;s heavy or
+clunky, it might</li>
+<li>Any more than 6 slots, and you&rsquo;re encumbered, move at half speed</li>
+<li>More than 9 and you stagger around like an open invitation to stab
+you and take your over abundance of stuff</li>
+</ul>
+<h2 id="armor-and-weapons">Armor and Weapons</h2>
+<ul>
+<li>Goblins start with 1 better than normal unarmored AC when not
+surprised, due to lots of practice dodging casual murder</li>
+<li>Goblins also modify their AC by Dexterity modifier</li>
+<li>Any more than a 3 point improvement in AC from armor negates the
+native goblin bonus and any Dexterity bonuses</li>
+<li>Any piece of armor (including shields) can be sacrificed to negate
+the damage from one attack, but the decision to sacrifice it must be
+made before damage is rolled</li>
+<li>Goblins can&rsquo;t use two handed or large weapons</li>
+<li>Fists do 1d4 + str modifier damage</li>
+<li>Since a lot of weapons will be crude or improvised, try to keep in
+mind the nature of the thing and how it will interact with the
+environment/other goblins&rsquo; skulls</li>
+</ul>
+<h2 id="survival-and-experience--yes-in-that-order--goblins-are-voracious-eaters-and-must-eat-1-hp-worth-of-food-per-max-hp-they-have-every-day-or-save-vs-death">Survival and Experience  (Yes, in that order)  Goblins are voracious eaters and must eat 1 HP worth of food per max HP they have every day or save vs death</h2>
+<ul>
+<li>You can&rsquo;t &ldquo;store&rdquo; HP from day to day, you have to eat the full
+amount per day</li>
+<li>Failure indicates a temporary loss of 1 constitution point</li>
+<li>1 constitution point per day can be recovered by eating double
+necessary food</li>
+</ul>
+<p>Quality human rations (or a comparable meal) are worth 6 HP  Monsters, goblins, people, and other creatures can be eaten for sustenance equal to their max HP (if you weren&rsquo;t keeping track of individuals, assume 4 HP per HD)  Goblins gain experience from the HP they consume on a one for one basis  Goblins don&rsquo;t need much water, and it&rsquo;s less fun to keep track of than things to eat, so don&rsquo;t worry about it unless you really want an excuse to encourage goblins to drink their own piss even more than usual  Goblins also get experience for bossing around other sentient beings. Multiply the number of HD of people, goblins, or intelligent monsters bossed around by 100 for experience   This experience can be lost, and levels can be be lost if and when you can no longer boss those goblins around, so probably make a special note of it  Maybe some treasure is worth experience on its own, but more likely it helps you boss around other goblins, getting experience that way  ## Running Crapsack Goblin Games</p>
+<ul>
+<li>I can&rsquo;t recommend <a href="http://goblinpunch.blogspot.com/2013/12/down-down-to-yoblin-town.html">this
+post</a>
+about doing a citycrawl in a grungy goblin settlement enough for
+what&rsquo;s going on inside any goblin settlements</li>
+<li>Use any other refereeing/D&amp;D rules you like, obviously, like
+alternate HP or wound rules or the like.  Any emphasis on grisly
+injuries and crippling blows will fit in nicely</li>
+<li>Traditional adventurers ought to be terrifying opponents as well as
+sources of pretty great loot</li>
+<li>I&rsquo;m not really sure why the player characters would cooperate,
+unless maybe there&rsquo;s a rotation of the currently meanest goblin
+bossing the others around.  Backstabbing should probably be accepted
+and normal, but not, you know, the only thing happening all the time</li>
+<li>Hopefully survival will be a good enough driver without as strong an
+emphasis on finding treasure as usual</li>
+<li>Be sure to have a really clear idea of the environment, so that the
+player characters can improvise and craft and do all sorts of grungy
+cool stuff</li>
+</ul>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2014-01-02</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2014-01-03-vornheiming-middenheim-part-ix/">
+                    Next<br>Vornheiming Middenheim Part IX: Grafsmund-Nordgarten and the Law
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2014-01-01-keeping-habit/">
+                    Previous<br>Keeping the Habit
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

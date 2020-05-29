@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html><head>
+<title>High Level Fighters, What&#39;s Going On?</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    High Level Fighters, What&#39;s Going On?
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2013-12-11 12:01
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/fellhold">Fellhold</a>
+                                &nbsp;
+                            
+                                <a href="/tags/rules">Rules</a>
+                                &nbsp;
+                            
+                                <a href="/tags/dd">D&amp;D</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p><a href="http://2.bp.blogspot.com/-aufnweCZlYA/UqjEaQcG_ZI/AAAAAAAAAZI/OCLEaWYR0Hs/s1600/he_man_said_hey_by_cottommy-d48epne.jpg"><img src="http://2.bp.blogspot.com/-aufnweCZlYA/UqjEaQcG_ZI/AAAAAAAAAZI/OCLEaWYR0Hs/s320/he_man_said_hey_by_cottommy-d48epne.jpg" alt=""></a></p>
+<p>So, after being shamed by the accurate description at Charles Akin&rsquo;s <a href="http://dyverscampaign.blogspot.com/2013/12/the-great-blog-roll-call.html">Great Blog Roll Call</a> of my posting habits (ridiculously infrequent), I&rsquo;ve decided to put up a quick post with some thoughts from a recent Google+ conversation, and to work on my concision to boot.</p>
+<p>I solicited some ideas about how much damage higher-level fighters should do in older types of D&amp;D.  In OD&amp;D and the various flavors of Basic-derived D&amp;D, fighters don&rsquo;t really get a bunch of attacks or damage bonuses beyond whatever they start with (okay, except against 1HD foes). This is a problem for one of my players, probably because his character is currently facing off against a Lava Golem worshiped as a god, and it has a fat stack of hit points.</p>
+<p>I&rsquo;m torn.  On the one hand, the exact thing I was thinking when I statted up this bad boy was that A) previous attempts at &ldquo;tough&rdquo; monsters were a cakewalk, and B) a slug fest would probably not be the most effective tactic.  So it has excellent AC and buckets of hit points, but some vulnerabilities both combat-wise and fictionally (I don&rsquo;t want to go into it in case any of my players read this - the fight is still going).  Also, more generally, I like the idea that fighters are really good at killing people and people-like things, but they aren&rsquo;t super-powered death machines.</p>
+<p>On the other hand, fighting is the one schtick fighters get.  If their ability to fight doesn&rsquo;t change as the challenges they face do, they might end up bringing nothing mechanical to the table.  It&rsquo;s all well and good to put the focus on player creativity, shenanigans, and operating at different scales, but if those are options available to all classes and those classes <strong>also</strong> can cast spells, then that sucks for fighter players.  So I have some sympathy for the idea that no matter how badass you get at hitting, at some point maxing out at 8-10 damage per round is going to limit your effectiveness.</p>
+<p>I still haven&rsquo;t decided, but in the meantime, here are some suggestions from the Googlesphere, put here so I can find them later (if the authors take issue with me sharing their thoughts or linking to their G+ profile, let me know and I&rsquo;ll take it down):</p>
+<p>From <a href="http://gloomtrain.blogspot.com/">M. Diaz</a>:   &ldquo;1) fighters can make any number of attacks in a round, so long as the sum of the HD of the targets do not exceed the fighter&rsquo;s level   2) fighters deal +d6 damage every other level   3) fighters can make an additional attack per round every other level   4) fighters add their level to weapon damage rolls﻿&rdquo;</p>
+<p>From <a href="http://google.com/+JasonHobbs">Jason Hobbs</a>:   &ldquo;Deed Die, a la DCC!﻿&rdquo;</p>
+<p>and</p>
+<p>&ldquo;I can&rsquo;t say I&rsquo;ve actually done it, but I think that is the direction I would lean. Without using a table or simply doing a multiplier of the damage, I might consider doing something that fits the fiction of the deed die the player used. No fiction, no extra damage. With fiction, you could damage a sword arm or something more specific to whatever fiction the player described. Could add some dynamic aspects to the combat.﻿&rdquo;</p>
+<p>And <a href="http://google.com/+DaveDunaway">Dave Dunaway</a> has a pretty creative solution:  &ldquo;One idea I&rsquo;m kicking around in my head is to have fighter&rsquo;s weapons get a small chance of acquiring the powers of the monster&rsquo;s it kills. So, after killing a dragon there&rsquo;s a possibility that it gains a bonus to hit or damage or gets a flame or acid effect. In theory, this allows the weapon to &ldquo;gain levels&rdquo; along side the fighter and increase damage organically as they acquire experience.   At the same time, I&rsquo;d hope that this makes the sword&rsquo;s lineage and history more important. Aragorn&rsquo;s sword wasn&rsquo;t cool because is was a +2 longsword (although it may have been), but because it has a story behind it.﻿&rdquo;</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2013-12-11</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2013-12-12-the-granularity-of-megadungeons/">
+                    Next<br>The Granularity of Megadungeons
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2013-12-05-occult-magic-for-fellhold/">
+                    Previous<br>[UPDATE] Occult Magic for Fellhold
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

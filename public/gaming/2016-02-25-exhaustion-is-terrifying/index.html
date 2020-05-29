@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html><head>
+<title>Exhaustion is Terrifying</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#the-awesome-power-of-modular-mechanics-to-the-rescue--im-already-a-fan-of-arnolds-sanity-ruleshttpgoblinpunchblogspotcom201305stark-staring-madhtml-and-you-can-find-my-slight-modification-of-them-with-darkest-dungeon-style-quirks-herehttpblessingsofthedicegodsblogspotcom201503quirks-and-sanityhtml-im-also-already-a-big-fan-of-guss-encumbrance-and-exhaustion-rules-you-can-find-herehttpdungeonofsignsblogspotcom201505dungeon-viddles-hms-apollyon-playershtml-and-brendans-overloaded-encounter-diehttpwwwnecropraxiscom20140203overloading-the-encounter-die-as-filtered-through-guss-exploration-diehttpdungeonofsignsblogspotcom201410hms-apollyon-exploration-rules-and-myhtml-while-i-was-thinking-of-the-rules-ideas-below-it-suddenly-came-to-me-that-combining-these-gives-us-damn-near-everything-we-need-with-very-few-tweaks" v-on:click="closeDrawer" id="the-awesome-power-of-modular-mechanics-to-the-rescue--im-already-a-fan-of-arnolds-sanity-ruleshttpgoblinpunchblogspotcom201305stark-staring-madhtml-and-you-can-find-my-slight-modification-of-them-with-darkest-dungeon-style-quirks-herehttpblessingsofthedicegodsblogspotcom201503quirks-and-sanityhtml-im-also-already-a-big-fan-of-guss-encumbrance-and-exhaustion-rules-you-can-find-herehttpdungeonofsignsblogspotcom201505dungeon-viddles-hms-apollyon-playershtml-and-brendans-overloaded-encounter-diehttpwwwnecropraxiscom20140203overloading-the-encounter-die-as-filtered-through-guss-exploration-diehttpdungeonofsignsblogspotcom201410hms-apollyon-exploration-rules-and-myhtml-while-i-was-thinking-of-the-rules-ideas-below-it-suddenly-came-to-me-that-combining-these-gives-us-damn-near-everything-we-need-with-very-few-tweaks-nav">
+										 The Awesome Power of Modular Mechanics to the Rescue I’m already a fan of Arnold’s sanity rules, and you can find my slight modification of them, with Darkest Dungeon style Quirks here. I’m also already a big fan of Gus’s encumbrance and exhaustion rules you can find here, and Brendan’s Overloaded encounter die, as filtered through Gus’s Exploration Die. While I was thinking of the rules ideas below, it suddenly came to me that combining these gives us damn near everything we need, with very few tweaks.
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#exhaustion-and-stress--characters-that-are-exhausted-apply-the--4-exhaustion-penalty-to-rolls-testing-for-a-breakdown-upon-receiving-stress-points-exhausted-characters-breaking-down-are-more-likely-to-drop-excess-weight-and-run-than-other-kinds-of-breakdowns-some-situations-that-would-not-normally-subject-a-character-to-stress-will-do-so-for-exhausted-characters-at-the-referees-discretion" v-on:click="closeDrawer" id="exhaustion-and-stress--characters-that-are-exhausted-apply-the--4-exhaustion-penalty-to-rolls-testing-for-a-breakdown-upon-receiving-stress-points-exhausted-characters-breaking-down-are-more-likely-to-drop-excess-weight-and-run-than-other-kinds-of-breakdowns-some-situations-that-would-not-normally-subject-a-character-to-stress-will-do-so-for-exhausted-characters-at-the-referees-discretion-nav">
+										 Exhaustion and Stress Characters that are exhausted apply the -4 exhaustion penalty to rolls testing for a breakdown upon receiving stress points. Exhausted characters breaking down are more likely to drop excess weight and run than other kinds of breakdowns. Some situations that would not normally subject a character to stress will do so for exhausted characters, at the referee’s discretion.
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#some-alternative-or-supplementary-approaches--and-i-think-thats-it-for-some-alternate-ideas-on-making-exhaustion-count-for-psychology-if-you-dont-use-the-exploration-die-exhaustion-or-sanity-rules-or-if-you-just-want-a-different-approach-check-these-out-that-i-brainstormed-before-settling-on-the-above-as-my-favorite" v-on:click="closeDrawer" id="some-alternative-or-supplementary-approaches--and-i-think-thats-it-for-some-alternate-ideas-on-making-exhaustion-count-for-psychology-if-you-dont-use-the-exploration-die-exhaustion-or-sanity-rules-or-if-you-just-want-a-different-approach-check-these-out-that-i-brainstormed-before-settling-on-the-above-as-my-favorite-nav">
+										 Some Alternative or Supplementary Approaches And I think that’s it! For some alternate ideas on making exhaustion count for psychology if you don’t use the exploration die, exhaustion, or sanity rules, or if you just want a different approach check these out that I brainstormed before settling on the above as my favorite:
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#the-awesome-power-of-modular-mechanics-to-the-rescue--im-already-a-fan-of-arnolds-sanity-ruleshttpgoblinpunchblogspotcom201305stark-staring-madhtml-and-you-can-find-my-slight-modification-of-them-with-darkest-dungeon-style-quirks-herehttpblessingsofthedicegodsblogspotcom201503quirks-and-sanityhtml-im-also-already-a-big-fan-of-guss-encumbrance-and-exhaustion-rules-you-can-find-herehttpdungeonofsignsblogspotcom201505dungeon-viddles-hms-apollyon-playershtml-and-brendans-overloaded-encounter-diehttpwwwnecropraxiscom20140203overloading-the-encounter-die-as-filtered-through-guss-exploration-diehttpdungeonofsignsblogspotcom201410hms-apollyon-exploration-rules-and-myhtml-while-i-was-thinking-of-the-rules-ideas-below-it-suddenly-came-to-me-that-combining-these-gives-us-damn-near-everything-we-need-with-very-few-tweaks" v-on:click="closeDrawer" id="the-awesome-power-of-modular-mechanics-to-the-rescue--im-already-a-fan-of-arnolds-sanity-ruleshttpgoblinpunchblogspotcom201305stark-staring-madhtml-and-you-can-find-my-slight-modification-of-them-with-darkest-dungeon-style-quirks-herehttpblessingsofthedicegodsblogspotcom201503quirks-and-sanityhtml-im-also-already-a-big-fan-of-guss-encumbrance-and-exhaustion-rules-you-can-find-herehttpdungeonofsignsblogspotcom201505dungeon-viddles-hms-apollyon-playershtml-and-brendans-overloaded-encounter-diehttpwwwnecropraxiscom20140203overloading-the-encounter-die-as-filtered-through-guss-exploration-diehttpdungeonofsignsblogspotcom201410hms-apollyon-exploration-rules-and-myhtml-while-i-was-thinking-of-the-rules-ideas-below-it-suddenly-came-to-me-that-combining-these-gives-us-damn-near-everything-we-need-with-very-few-tweaks-nav">
+										 The Awesome Power of Modular Mechanics to the Rescue I’m already a fan of Arnold’s sanity rules, and you can find my slight modification of them, with Darkest Dungeon style Quirks here. I’m also already a big fan of Gus’s encumbrance and exhaustion rules you can find here, and Brendan’s Overloaded encounter die, as filtered through Gus’s Exploration Die. While I was thinking of the rules ideas below, it suddenly came to me that combining these gives us damn near everything we need, with very few tweaks.
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#exhaustion-and-stress--characters-that-are-exhausted-apply-the--4-exhaustion-penalty-to-rolls-testing-for-a-breakdown-upon-receiving-stress-points-exhausted-characters-breaking-down-are-more-likely-to-drop-excess-weight-and-run-than-other-kinds-of-breakdowns-some-situations-that-would-not-normally-subject-a-character-to-stress-will-do-so-for-exhausted-characters-at-the-referees-discretion" v-on:click="closeDrawer" id="exhaustion-and-stress--characters-that-are-exhausted-apply-the--4-exhaustion-penalty-to-rolls-testing-for-a-breakdown-upon-receiving-stress-points-exhausted-characters-breaking-down-are-more-likely-to-drop-excess-weight-and-run-than-other-kinds-of-breakdowns-some-situations-that-would-not-normally-subject-a-character-to-stress-will-do-so-for-exhausted-characters-at-the-referees-discretion-nav">
+										 Exhaustion and Stress Characters that are exhausted apply the -4 exhaustion penalty to rolls testing for a breakdown upon receiving stress points. Exhausted characters breaking down are more likely to drop excess weight and run than other kinds of breakdowns. Some situations that would not normally subject a character to stress will do so for exhausted characters, at the referee’s discretion.
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#some-alternative-or-supplementary-approaches--and-i-think-thats-it-for-some-alternate-ideas-on-making-exhaustion-count-for-psychology-if-you-dont-use-the-exploration-die-exhaustion-or-sanity-rules-or-if-you-just-want-a-different-approach-check-these-out-that-i-brainstormed-before-settling-on-the-above-as-my-favorite" v-on:click="closeDrawer" id="some-alternative-or-supplementary-approaches--and-i-think-thats-it-for-some-alternate-ideas-on-making-exhaustion-count-for-psychology-if-you-dont-use-the-exploration-die-exhaustion-or-sanity-rules-or-if-you-just-want-a-different-approach-check-these-out-that-i-brainstormed-before-settling-on-the-above-as-my-favorite-nav">
+										 Some Alternative or Supplementary Approaches And I think that’s it! For some alternate ideas on making exhaustion count for psychology if you don’t use the exploration die, exhaustion, or sanity rules, or if you just want a different approach check these out that I brainstormed before settling on the above as my favorite:
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Exhaustion is Terrifying
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2016-02-25 19:26
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>A while back, I read this really fascinating book:</p>
+<!-- raw HTML omitted -->
+<p>So what&rsquo;s this got to do with the D&amp;Ds? I think it would be interesting to link up encumbrance and psychology, specifically fear.</p>
+<h3 id="the-awesome-power-of-modular-mechanics-to-the-rescue--im-already-a-fan-of-arnolds-sanity-ruleshttpgoblinpunchblogspotcom201305stark-staring-madhtml-and-you-can-find-my-slight-modification-of-them-with-darkest-dungeon-style-quirks-herehttpblessingsofthedicegodsblogspotcom201503quirks-and-sanityhtml-im-also-already-a-big-fan-of-guss-encumbrance-and-exhaustion-rules-you-can-find-herehttpdungeonofsignsblogspotcom201505dungeon-viddles-hms-apollyon-playershtml-and-brendans-overloaded-encounter-diehttpwwwnecropraxiscom20140203overloading-the-encounter-die-as-filtered-through-guss-exploration-diehttpdungeonofsignsblogspotcom201410hms-apollyon-exploration-rules-and-myhtml-while-i-was-thinking-of-the-rules-ideas-below-it-suddenly-came-to-me-that-combining-these-gives-us-damn-near-everything-we-need-with-very-few-tweaks">The Awesome Power of Modular Mechanics to the Rescue  I&rsquo;m already a fan of Arnold&rsquo;s <a href="http://goblinpunch.blogspot.com/2013/05/stark-staring-mad.html">sanity rules</a>, and you can find my slight modification of them, with Darkest Dungeon style Quirks <a href="http://blessingsofthedicegods.blogspot.com/2015/03/quirks-and-sanity.html">here</a>. I&rsquo;m also already a big fan of Gus&rsquo;s encumbrance and exhaustion rules you can find <a href="http://dungeonofsigns.blogspot.com/2015/05/dungeon-viddles-hms-apollyon-players.html">here</a>, and Brendan&rsquo;s <a href="http://www.necropraxis.com/2014/02/03/overloading-the-encounter-die/">Overloaded encounter die</a>, as filtered through Gus&rsquo;s <a href="http://dungeonofsigns.blogspot.com/2014/10/hms-apollyon-exploration-rules-and-my.html">Exploration Die</a>. While I was thinking of the rules ideas below, it suddenly came to me that combining these gives us damn near everything we need, with very few tweaks.</h3>
+<p>Tweak 1 is that instead of &ldquo;exhausted&rdquo; and &ldquo;encumbered&rdquo; being two separate conditions (as Gus does it), I instead have encumbered characters add an extra exhaustion pip when the exploration die comes up &ldquo;Exhausted&rdquo;.</p>
+<p>The next addition is for Exhausted characters to be more likely to freak out if subjected to stress, and this one&rsquo;s easy: just apply the exhaustion penalty (-4 to all rolls) to the test to avoid a breakdown. If failed, flavor the breakdown more as terror/running away, and less as going nuts.</p>
+<p>I toyed with the idea of increasing the number of stress points gained if a character is exhausted, but it seems to make more sense that people are more likely to freak out when exhausted, but not more likely to receive permanent trauma than they otherwise would be. You might consider a lower bar for inflicting a single stress point on exhausted characters, though - those bandits or hobgoblins might not normally cause your steely eyed heroes to flee, but he&rsquo;s too tired to deal with it or think clearly right now. Anyhow here&rsquo;s the rule itself</p>
+<h3 id="exhaustion-and-stress--characters-that-are-exhausted-apply-the--4-exhaustion-penalty-to-rolls-testing-for-a-breakdown-upon-receiving-stress-points-exhausted-characters-breaking-down-are-more-likely-to-drop-excess-weight-and-run-than-other-kinds-of-breakdowns-some-situations-that-would-not-normally-subject-a-character-to-stress-will-do-so-for-exhausted-characters-at-the-referees-discretion">Exhaustion and Stress  Characters that are exhausted apply the -4 exhaustion penalty to rolls testing for a breakdown upon receiving stress points. Exhausted characters breaking down are more likely to drop excess weight and run than other kinds of breakdowns. Some situations that would not normally subject a character to stress will  do so for exhausted characters, at the referee&rsquo;s discretion.</h3>
+<h3 id="some-alternative-or-supplementary-approaches--and-i-think-thats-it-for-some-alternate-ideas-on-making-exhaustion-count-for-psychology-if-you-dont-use-the-exploration-die-exhaustion-or-sanity-rules-or-if-you-just-want-a-different-approach-check-these-out-that-i-brainstormed-before-settling-on-the-above-as-my-favorite">Some Alternative or Supplementary Approaches  And I think that&rsquo;s it! For some alternate ideas on making exhaustion count for psychology if you don&rsquo;t use the exploration die, exhaustion, or sanity rules, or if you just want a different approach check these out that I brainstormed before settling on the above as my favorite:</h3>
+<ul>
+<li>For hirelings, every level of encumbrance penalizes morale checks by
+-1 (alternately, if using a binary encumbrance system, go with -2
+for encumbered)</li>
+<li>For PC&rsquo;s - you might give monsters that normally wouldn&rsquo;t have them
+&ldquo;fear&rdquo; effects, and intensify the effects of already fear-causing
+monsters (like the Warhammer progression from Fear to Terror).</li>
+<li>Exhausted or encumbered PCs become subjected to morale checks.
+Adjudicating what failed morale means for PCs might be a bit
+challenging, but should probably require a retreat (not necessarily
+a panicked one) until a major change in situation (get somewhere
+safe or allies show up or whatever). Since PCs don&rsquo;t normally have
+morale scores,  calculate it with the following: 6 + Level/3,
+rounded up, with a max of 10 - or use this table:</li>
+</ul>
+<p>Level 1-3: Morale 7  Level 4-6: Morale 8  Level 7-9: Morale 9  Level 10+: Morale 10</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2016-02-25</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2016-06-13-places-of-interest-in-fellhold/">
+                    Next<br>Places of Interest in Fellhold
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2016-01-31-how-to-make-anything-gameable-ask-what/">
+                    Previous<br>How to Make Anything Gameable: Ask What Three Times
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

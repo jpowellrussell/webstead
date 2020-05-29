@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html><head>
+<title>Fellhold Session 31 Recap (and rules for clerics of Hrokr)</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Fellhold Session 31 Recap (and rules for clerics of Hrokr)
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2013-05-22 15:39
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/dampd">Damp;D</a>
+                                &nbsp;
+                            
+                                <a href="/tags/osr">OSR</a>
+                                &nbsp;
+                            
+                                <a href="/tags/fellhold">Fellhold</a>
+                                &nbsp;
+                            
+                                <a href="/tags/fellhold-campaign">Fellhold Campaign</a>
+                                &nbsp;
+                            
+                                <a href="/tags/rpgs">RPGs</a>
+                                &nbsp;
+                            
+                                <a href="/tags/recap">Recap</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>This will be a fairly bare bones recap, as I&rsquo;ve been busier than anticipated this week.</p>
+<p>Yllgrad managed to escape the temple, and he even did so without murdering the initiates that he held hostage.  Of course, shortly after leaving, they told the high priest what had happened, and the priesthood of Gurgu decided to pursue the crazed dwarf.  When the characters who had undergone the initiation into the belief of Gurgu reached the shrine again, they found the priests and initiates looking agitated.  They disavowed knowing the dwarf well, claiming he had only just joined them on the voyage, and they agreed to help search him out.</p>
+<p>When they reached the town, Varian slipped away to try to warn Yllgrad, but Yllgrad&rsquo;s player had concocted a devious plan after his first reaction, which was to suit up in his armor and get ready for a fight.  Instead, he went out openly to the crowd and claimed that he had been overtaken by a madness, the same madness which had brought him to seek out the healing power of Gurgu.  The priests believed him, and agreed to perform a ritual to cleanse him of his madness, assuming he agreed to profess his faith in Gurgu and to be confined until the ritual was complete (for his own safety and that of everyone else, of course).  While they wait out the night, Dag (Bryni&rsquo;s henchman and former bandit sergeant) and Kieghl (fighter belonging to a new addition to the play group) stumble down some stairs under the semi-plausible excuse of looking for towels after bathing.  When they start finding fancy statues and floors, they head back before running into trouble.</p>
+<p>So they lock him in the very same robe closet from which he stole an oversized robe earlier in the day, and say that they will hold him until dawn to perform the ritual, as that is a time especially holy to Gurgu.  The rest of the party, having admitted to knowing him somewhat, are allowed to stay at the temple and to participate in the ritual to cleanse him.  Yllgrad is admitted into the faith by the same ritual undergone by the other characters previously.  After being initiated into the faith, the whole group (and a number of priests/initiates) were led to the lowest level of the temple in the volcano for the summoning of the avatar of Gurgu.</p>
+<p><a href="http://dicegods.files.wordpress.com/2013/05/dd_preview.jpg">http://dicegods.files.wordpress.com/2013/05/dd_preview.jpg</a>    <em>Gurgu looked something like this, but made of lava</em></p>
+<p>With everyone&rsquo;s head bowed, Bjergmund retrieves the Heart of the Mountain from a secret room, and it really is a giant ruby, as big as two fists held together.  He tosses it into the lava and the imposing but passive figure of Gurgu rises from the magma.  Seeing the form, and hearing the priest talking about &ldquo;cleansing this&rdquo; and &ldquo;power that&rdquo;, Yllgrad decides to flee. The priests, initiates, and other PCs all go to tackle him so that the ritual can go forward.  Kieghl succeeds (with a critical) and Yllgrad is handily wrestled down to the ground and returned to the ritual.  Bjergmund beseeches Gurgu to outstretch his hand, take away the madness, and return to the fiery heart of the world to burn it away, and sure enough, Gurgu stretches out one hand (burning Bjergmund and Yllgrad from his proximity), and then returns into the magma.  After sinking back into the lava, the Heart of the Mountain pops back out onto the platform.  Yllgrad is declared healed, and everyone is asked to leave.</p>
+<p>The party agrees and heads back to town, though now they&rsquo;re wondering why Gurgu didn&rsquo;t notice the lack of any real madness, and why he appeared so passive in the face of someone who was faking belief in him.  Back in the inn, they decided to investigate more and try to find their way to the temple&rsquo;s library to learn more about Gurgu and the volcano, and that&rsquo;s where we left them.    <em><strong>For rules, I&rsquo;m going to have to cop out and just post the new spell lists I came up with for Clerics of Hrokr (trickster god of magic and hospitality and such like).  The main thing is that even though I left cure light wounds (mostly cos we had already used that a lot), clerics of Hrokr aren&rsquo; t so good at healing later on.  But they get some magic user spells, and they get to learn runes by prayer (instead of study).  So hopefully this will help to differentiate the from Clerics of Dwyn (our other cleric in the party is a cleric of Dwyn) who have some druid type spells.  I&rsquo;ll post that another time.</strong></em></p>
+<p><em><strong>Cleric of Hrokr</strong></em></p>
+<p><em><strong>Spells</strong></em></p>
+<p><em><strong>Level 1</strong></em></p>
+<p><em><strong>1.     Cure Light Wounds</strong></em></p>
+<p><em><strong>2.     Detect Chaos (Law)</strong></em></p>
+<p><em><strong>3.     Detect Magic</strong></em></p>
+<p><em><strong>4.     Light (Dark)</strong></em></p>
+<p><em><strong>5.     Protection from Chaos</strong></em></p>
+<p><em><strong>6.     Purify Food and Drink</strong></em></p>
+<p><em><strong>Level 2</strong></em></p>
+<p><em><strong>1.     Bless (Curse)</strong></em></p>
+<p><em><strong>2.     Find Traps</strong></em></p>
+<p><em><strong>3.     Hold Person</strong></em></p>
+<p><em><strong>4.     Speak with Animals</strong></em></p>
+<p><em><strong>Level 3</strong></em></p>
+<p><em><strong>1.     Detect Invisibility</strong></em></p>
+<p><em><strong>2.     Light (Dark), Continual</strong></em></p>
+<p><em><strong>3.     Locate Object</strong></em></p>
+<p><em><strong>4.     Mirror Image</strong></em></p>
+<p><em><strong>5.     Read Languages</strong></em></p>
+<p><em><strong>6.     Remove Curse</strong></em></p>
+<p><em><strong>Level 4</strong></em></p>
+<p><em><strong>1.     Invisibility</strong></em></p>
+<p><em><strong>2.     Neutralize Poison</strong></em></p>
+<p><em><strong>3.     Phantasmal Force</strong></em></p>
+<p><em><strong>4.     Protection from Chaos, 10 ft Radius</strong></em></p>
+<p><em><strong>5.     Sticks to Snakes</strong></em></p>
+<p><em><strong>Level 5</strong></em></p>
+<p><em><strong>1.     Commune</strong></em></p>
+<p><em><strong>2.     Confusion</strong></em></p>
+<p><em><strong>3.     Create Food and Drink</strong></em></p>
+<p><em><strong>4.     Dispel Chaos</strong></em></p>
+<p><em><strong>5.     Suggestion</strong></em></p>
+<p><em><strong>Level 6</strong></em></p>
+<p><em><strong>1.     Charm Monster</strong></em></p>
+<p><em><strong>2.     Confusion</strong></em></p>
+<p><em><strong>3.     Hallucinatory Terrain</strong></em></p>
+<p><em><strong>4.     Massmorph</strong></em></p>
+<p><em><strong>5.     Polymorph</strong></em></p>
+<p><em><strong>6.     Wizard Eye</strong></em></p>
+<p><em><strong>Runes</strong></em></p>
+<p><em><strong>Whenever a Cleric of Hrokr gains a new spell “slot”, he may opt to pray to Hrokr to teach him a new rune.  Once a rune is learned in this fashion, it permanently takes up one spell slot of any level (make a note on your character sheet what level slot the rune replaced). For example, a cleric of Hrokr advances to 4th level, and opts to learn a rune.  He decides to replace one of his two 1st level slots with a rune.  He survives many adventures and reaches 9th level. At this point, he will have 2 level one spells available, because one of the 3 listed is still taken up by a rune. If a cleric learns a rune through study or a tutor, it does not take up a spell slot.</strong></em></p>
+<p><em><strong>When a cleric of Hrokr gains a rune through prayer, he will receive one randomly determined rune.  Roll on the following table.  If the character already possesses the rune rolled, he gains special insight into his god’s secrets, and may instead choose freely.</strong></em></p>
+<p><em><strong>1.     Victory Rune</strong></em></p>
+<p><em><strong>2.     Opening Rune</strong></em></p>
+<p><em><strong>3.     Ale Rune</strong></em></p>
+<p><em><strong>4.     Wave Rune</strong></em></p>
+<p><em><strong>5.     Heal Rune</strong></em></p>
+<p><em><strong>6.     Curse Rune</strong></em></p>
+<p><em><strong>7.     Ward Rune</strong></em></p>
+<p><em><strong>8.     Fear Rune</strong></em></p>
+<p><em><strong>9.     Berserk Rune</strong></em></p>
+<p><em><strong>10.  Fire Rune</strong></em></p>
+<p><em><strong>11.  Dead Rune</strong></em></p>
+<p><em><strong>12.  Disease Rune</strong></em></p>
+<p><em><strong>13.  Strength Rune</strong></em></p>
+<p><em><strong>14.  Water Rune</strong></em></p>
+<p><em><strong>15.  Earth Rune</strong></em></p>
+<p><em><strong>16.  Air Rune</strong></em></p>
+<p><em><strong>17.  Iron Can’t Bite Rune</strong></em></p>
+<p><em><strong>18.  Fortune Rune</strong></em></p>
+<p><em><strong>19.  Shield Rune</strong></em></p>
+<p><em><strong>20.  Sealing Rune</strong></em></p>
+<p>*** ***</p>
+<p>*** ***</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2013-05-22</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2013-05-28-rpg-may-blog-carnival-campaigns-i-like/">
+                    Next<br>RPG May Blog Carnival: Campaigns I&#39;d Like to Run
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2013-05-16-runic-magic-in-fellhold/">
+                    Previous<br>Runic Magic in Fellhold
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

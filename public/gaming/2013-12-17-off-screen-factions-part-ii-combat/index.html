@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html><head>
+<title>Off Screen Factions Part II: Combat</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#combat--when-a-factions-action-indicates-attackflee-with-another-faction-check-their-relative-strengths-if-the-acting-factions-strength-is-higher-they-will-attack-if-it-is-lower-they-will-flee-more-on-what-fleeing-as-an-action-looks-like-in-a-bit-if-a-faction-attacks-then-follow-the-following-procedure" v-on:click="closeDrawer" id="combat--when-a-factions-action-indicates-attackflee-with-another-faction-check-their-relative-strengths-if-the-acting-factions-strength-is-higher-they-will-attack-if-it-is-lower-they-will-flee-more-on-what-fleeing-as-an-action-looks-like-in-a-bit-if-a-faction-attacks-then-follow-the-following-procedure-nav">
+										 Combat When a faction’s action indicates “Attack/Flee” with another faction, check their relative strengths. If the acting faction’s strength is higher, they will attack. If it is lower, they will flee. More on what fleeing as an action looks like in a bit. If a faction attacks, then follow the following procedure:
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#territory-and-resources--so-heres-a-way-to-do-territory-for-factions-that-doesnt-require-an-actual-map-though-you-can-superimpose-this-on-a-real-map-if-you-like-this-draws-inspiration-from-the-node-based-megadungeon-articles-by-keith-davies-and-i-thinkwould-integrate-well-with-that-school-of-adventurelocation-design-but-ive-yet-to-try-it-out-to-work-out-the-kinks-" v-on:click="closeDrawer" id="territory-and-resources--so-heres-a-way-to-do-territory-for-factions-that-doesnt-require-an-actual-map-though-you-can-superimpose-this-on-a-real-map-if-you-like-this-draws-inspiration-from-the-node-based-megadungeon-articles-by-keith-davies-and-i-thinkwould-integrate-well-with-that-school-of-adventurelocation-design-but-ive-yet-to-try-it-out-to-work-out-the-kinks--nav">
+										 Territory and Resources So, here’s a way to do territory for factions that doesn’t require an actual map (though you can superimpose this on a real map if you like). This draws inspiration from the Node-Based Megadungeon articles by Keith Davies, and I think would integrate well with that school of adventure/location design, but I’ve yet to try it out to work out the kinks. 
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#taking-and-losing-territory--if-a-faction-attacks-another-and-wins-the-losing-faction-loses-an-amount-of-strength-equal-to-the-margin-of-victory-as-described-above-if-that-margin-is-great-enough-to-equal-or-beat-the-resources-provided-by-the-node-directly-connected-the-attacking-faction-takes-control-of-that-node-if-it-is-less-than-the-resources-the-losing-side-simply-loses-the-strength-but-not-the-location" v-on:click="closeDrawer" id="taking-and-losing-territory--if-a-faction-attacks-another-and-wins-the-losing-faction-loses-an-amount-of-strength-equal-to-the-margin-of-victory-as-described-above-if-that-margin-is-great-enough-to-equal-or-beat-the-resources-provided-by-the-node-directly-connected-the-attacking-faction-takes-control-of-that-node-if-it-is-less-than-the-resources-the-losing-side-simply-loses-the-strength-but-not-the-location-nav">
+										 Taking and Losing Territory If a faction attacks another and wins, the losing faction loses an amount of strength equal to the margin of victory, as described above. If that margin is great enough to equal or beat the resources provided by the node directly connected, the attacking faction takes control of that node. If it is less than the resources, the losing side simply loses the strength, but not the location.
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#some-optional-embellishments" v-on:click="closeDrawer" id="some-optional-embellishments-nav">
+										 Some Optional Embellishments
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#combat--when-a-factions-action-indicates-attackflee-with-another-faction-check-their-relative-strengths-if-the-acting-factions-strength-is-higher-they-will-attack-if-it-is-lower-they-will-flee-more-on-what-fleeing-as-an-action-looks-like-in-a-bit-if-a-faction-attacks-then-follow-the-following-procedure" v-on:click="closeDrawer" id="combat--when-a-factions-action-indicates-attackflee-with-another-faction-check-their-relative-strengths-if-the-acting-factions-strength-is-higher-they-will-attack-if-it-is-lower-they-will-flee-more-on-what-fleeing-as-an-action-looks-like-in-a-bit-if-a-faction-attacks-then-follow-the-following-procedure-nav">
+										 Combat When a faction’s action indicates “Attack/Flee” with another faction, check their relative strengths. If the acting faction’s strength is higher, they will attack. If it is lower, they will flee. More on what fleeing as an action looks like in a bit. If a faction attacks, then follow the following procedure:
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#territory-and-resources--so-heres-a-way-to-do-territory-for-factions-that-doesnt-require-an-actual-map-though-you-can-superimpose-this-on-a-real-map-if-you-like-this-draws-inspiration-from-the-node-based-megadungeon-articles-by-keith-davies-and-i-thinkwould-integrate-well-with-that-school-of-adventurelocation-design-but-ive-yet-to-try-it-out-to-work-out-the-kinks-" v-on:click="closeDrawer" id="territory-and-resources--so-heres-a-way-to-do-territory-for-factions-that-doesnt-require-an-actual-map-though-you-can-superimpose-this-on-a-real-map-if-you-like-this-draws-inspiration-from-the-node-based-megadungeon-articles-by-keith-davies-and-i-thinkwould-integrate-well-with-that-school-of-adventurelocation-design-but-ive-yet-to-try-it-out-to-work-out-the-kinks--nav">
+										 Territory and Resources So, here’s a way to do territory for factions that doesn’t require an actual map (though you can superimpose this on a real map if you like). This draws inspiration from the Node-Based Megadungeon articles by Keith Davies, and I think would integrate well with that school of adventure/location design, but I’ve yet to try it out to work out the kinks. 
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#taking-and-losing-territory--if-a-faction-attacks-another-and-wins-the-losing-faction-loses-an-amount-of-strength-equal-to-the-margin-of-victory-as-described-above-if-that-margin-is-great-enough-to-equal-or-beat-the-resources-provided-by-the-node-directly-connected-the-attacking-faction-takes-control-of-that-node-if-it-is-less-than-the-resources-the-losing-side-simply-loses-the-strength-but-not-the-location" v-on:click="closeDrawer" id="taking-and-losing-territory--if-a-faction-attacks-another-and-wins-the-losing-faction-loses-an-amount-of-strength-equal-to-the-margin-of-victory-as-described-above-if-that-margin-is-great-enough-to-equal-or-beat-the-resources-provided-by-the-node-directly-connected-the-attacking-faction-takes-control-of-that-node-if-it-is-less-than-the-resources-the-losing-side-simply-loses-the-strength-but-not-the-location-nav">
+										 Taking and Losing Territory If a faction attacks another and wins, the losing faction loses an amount of strength equal to the margin of victory, as described above. If that margin is great enough to equal or beat the resources provided by the node directly connected, the attacking faction takes control of that node. If it is less than the resources, the losing side simply loses the strength, but not the location.
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#some-optional-embellishments" v-on:click="closeDrawer" id="some-optional-embellishments-nav">
+										 Some Optional Embellishments
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Off Screen Factions Part II: Combat
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2013-12-17 08:33
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/osr">OSR</a>
+                                &nbsp;
+                            
+                                <a href="/tags/fellhold">Fellhold</a>
+                                &nbsp;
+                            
+                                <a href="/tags/rules">Rules</a>
+                                &nbsp;
+                            
+                                <a href="/tags/dd">D&amp;D</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p><a href="http://2.bp.blogspot.com/-0w3iFNu1Tu4/UrB-MCG_rfI/AAAAAAAAAbE/wbjMCbMAPW8/s1600/640x453_5942_Orcs_vs_Beastmen_Woodland_Rumble_2d_fantasy_army_fight_duel_orcs_woodland_beast_picture_image_digital_art.jpg"><img src="http://2.bp.blogspot.com/-0w3iFNu1Tu4/UrB-MCG_rfI/AAAAAAAAAbE/wbjMCbMAPW8/s320/640x453_5942_Orcs_vs_Beastmen_Woodland_Rumble_2d_fantasy_army_fight_duel_orcs_woodland_beast_picture_image_digital_art.jpg" alt=""></a></p>
+<p>In <a href="http://blessingsofthedicegods.blogspot.com/2013/12/a-procedure-for-off-screen-faction.html">yesterday&rsquo;s post</a> I gave a brief outline of factional goings on off-screen using <a href="http://hackslashmaster.blogspot.com/">Courtney Campbell&rsquo;s</a> rules from <a href="http://www.lulu.com/shop/courtney-campbell/on-the-non-player-character/paperback/product-21094131.html;jsessionid=5E6228A65B03389CC4A5C7EC78844758">&ldquo;On the NPC&rdquo;</a> as a starting point.  Today I&rsquo;m going to lay out one way to handle combat between factions, though it&rsquo;s abstract enough that you could use it to handle non-combat rivalry as well.  I&rsquo;m also going to touch briefly on an idea about taking and losing territory.  Yesterday&rsquo;s post was about getting an idea of what the factions think of each other so that when players run into them, there will be rivalries and alliances to learn and manipulate.  Today I want to cover how powerful factions are and what territory they control.</p>
+<p>So, you&rsquo;ll remember the Stat Block from yesterday, that looked something like this</p>
+<p><strong>Faction</strong>   <em>Bond with Other Faction A:</em>   <em>Bond with Other Faction B:</em>   <em>Morale:</em>   *   *Well, we&rsquo;re going to change <em>Morale</em> to <em>Strength</em>.  Strength is now a catch-all term for how powerful the faction is.  In a megadungeon, it&rsquo;s some combination of numbers, fierceness, resources, and the defensibility of their home turf.  In an intrigue situation, it might be favors, money, and political clout. Strength is still on a scale of 2 to 12, and should have some connection to the morale of individuals in a faction when they are encountered by the players. This comes in handy for:</p>
+<h2 id="combat--when-a-factions-action-indicates-attackflee-with-another-faction-check-their-relative-strengths-if-the-acting-factions-strength-is-higher-they-will-attack-if-it-is-lower-they-will-flee-more-on-what-fleeing-as-an-action-looks-like-in-a-bit-if-a-faction-attacks-then-follow-the-following-procedure">Combat  When a faction&rsquo;s action indicates &ldquo;Attack/Flee&rdquo; with another faction, check their relative strengths.  If the acting faction&rsquo;s strength is higher, they will attack.  If it is lower, they will flee.  More on what fleeing as an action looks like in a bit.  If a faction attacks, then follow the following procedure:</h2>
+<ul>
+<li>Roll 1d20 per faction and add strength</li>
+<li>Compare scores</li>
+<li>Loser loses an amount of strength equal to the difference</li>
+<li>Being reduced to zero strength means a faction is utterly routed -
+either destroyed, scattered, or absorbed by the other faction</li>
+</ul>
+<p>Factions recover strength at a rate of 1 point per faction round that is not spent fighting or fleeing.  If you aren&rsquo;t using the territory and resources rules below, factions have a maximum strength determined by the referee (the base creature/character type&rsquo;s morale is probably a good rule of thumb, but take into account space, resources, defensibility, fierceness, numbers, et cetera).</p>
+<h2 id="territory-and-resources--so-heres-a-way-to-do-territory-for-factions-that-doesnt-require-an-actual-map-though-you-can-superimpose-this-on-a-real-map-if-you-like-this-draws-inspiration-from-the-node-based-megadungeon-articles-by-keith-davies-and-i-thinkwould-integrate-well-with-that-school-of-adventurelocation-design-but-ive-yet-to-try-it-out-to-work-out-the-kinks-">Territory and Resources  So, here&rsquo;s a way to do territory for factions that doesn&rsquo;t require an actual map (though you can superimpose this on a real map if you like).  This draws inspiration from the Node-Based Megadungeon articles by Keith Davies, and I <em>think</em> would integrate well with that school of adventure/location design, but I&rsquo;ve yet to try it out to work out the kinks.  </h2>
+<p>Basically, each faction occupies one or more nodes.  These can be the same nodes you use to design an adventure or dungeon or whatever, or they can be sub-nodes of those.  The only qualification is that each node has to have the actual physical space to hold a faction with a strength equal to its resources. Each node has a certain maximum strength it can support which is called &ldquo;resources&rdquo;.  A faction should occupy nodes with at least enough resources for its current strength. You can represent nodes however you like, but if you use a polygon (like a square or a hex) instead of a circle or oval, it can be easier to visually represent some of the optional rules later.</p>
+<p>Draw a line between a node and any other nodes with which it can interact without going through another node.  In a physical space, this means people can actually walk from one to another.  I haven&rsquo;t quite worked out how to use this system for non-physical nodes, but I have a hunch it would work.</p>
+<p>These lines tell you which factions will make action rolls towards one another in a faction turn, and in the event of attacking, where the combat takes place.  In the example below, I&rsquo;ve used lines with arrows to show a line of interaction between two factions, and a blank line to show connected nodes that are currently occupied by the same faction.  </p>
+<p><a href="http://4.bp.blogspot.com/-xgCjBxfLAZg/UrB4d7f6YYI/AAAAAAAAAaw/YRL_uneASzE/s1600/FactionNodes.jpg"><img src="http://4.bp.blogspot.com/-xgCjBxfLAZg/UrB4d7f6YYI/AAAAAAAAAaw/YRL_uneASzE/s400/FactionNodes.jpg" alt=""></a></p>
+<h4 id="taking-and-losing-territory--if-a-faction-attacks-another-and-wins-the-losing-faction-loses-an-amount-of-strength-equal-to-the-margin-of-victory-as-described-above-if-that-margin-is-great-enough-to-equal-or-beat-the-resources-provided-by-the-node-directly-connected-the-attacking-faction-takes-control-of-that-node-if-it-is-less-than-the-resources-the-losing-side-simply-loses-the-strength-but-not-the-location">Taking and Losing Territory  If a faction attacks another and wins, the losing faction loses an amount of strength equal to the margin of victory, as described above. If that margin is great enough to equal or beat the resources provided by the node directly connected, the attacking faction takes control of that node.  If it is less than the resources, the losing side simply loses the strength, but not the location.</h4>
+<p>If a faction flees as its action, it abandons the node closest to the faction from which it fled, and that faction claims the node.  If the fleeing faction&rsquo;s current strength is higher than their new resource total, their strength is reduced to their new resource total.</p>
+<p>So, an example: If the bandits roll a &ldquo;2&rdquo; on their interaction with the Spear Clan and attack, and if they win by 3 or more, the Spear clan will lose 3 strength and be pushed out of the center-top node, splitting their territory in two. The bandits will have to commit some amount of strength (up to 3) to the new node to take it. </p>
+<h2 id="some-optional-embellishments">Some Optional Embellishments</h2>
+<ul>
+<li>Give each side of a node a strength modifier to use in combat to
+represent defenses and traps and such (shown in the example picture
+above). These only modify combat rolls, they don&rsquo;t actually increase
+a faction&rsquo;s strength and don&rsquo;t count against resources</li>
+<li>Rather than zero-sum territory, make fleeing territory and seizing
+territory separate actions.  Assume a wandering monster &ldquo;faction&rdquo;,
+or even just an &ldquo;empty territory&rdquo; faction with strength equal to the
+node&rsquo;s resources. A faction will only take it over if it rolls an
+&ldquo;attack&rdquo; action and succeeds, or alternatively, hires the neutral
+faction</li>
+<li>Make the &ldquo;trade&rdquo; action have some benefits besides changing bond,
+like increasing both side&rsquo;s resources by 1 in the adjacent nodes, or
+in the &lsquo;central&rsquo; node</li>
+<li>Use actual hexes or squares on a map as your nodes, so that there is
+a 1-1 correspondence between physical and factional territory</li>
+<li>Replace Bond with &ldquo;attitude&rdquo; or &ldquo;stance&rdquo;, so that you can have
+asymmetrical relationships, indicate it with two directional lines
+for each interaction, with a &ldquo;stance&rdquo; for each</li>
+<li>Rather than one catch all for &ldquo;strength&rdquo; stat up each faction as a
+monster and fight one or more rounds between them to determine how
+combats go  - you could get as involved with this as you like, with
+HD, powers, &ldquo;weapons&rdquo; and so on</li>
+</ul>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2013-12-17</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2013-12-18-summoning-up-courage/">
+                    Next<br>Summoning Up the Courage
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2013-12-16-a-procedure-for-off-screen-faction/">
+                    Previous<br>A Procedure for Off-Screen Faction Interaction
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

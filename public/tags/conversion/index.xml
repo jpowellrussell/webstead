@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Conversion on Jeff Russell&#39;s Webstead</title>
+    <link>/tags/conversion/</link>
+    <description>Recent content in Conversion on Jeff Russell&#39;s Webstead</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 13 Nov 2012 22:05:00 -0800</lastBuildDate>
+    
+	<atom:link href="/tags/conversion/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Porting Dungeon World&#39;s GMing Rules, Part 4</title>
+      <link>/gaming/2012-11-13-porting-dungeon-world-gming-rules-part-4/</link>
+      <pubDate>Tue, 13 Nov 2012 22:05:00 -0800</pubDate>
+      
+      <guid>/gaming/2012-11-13-porting-dungeon-world-gming-rules-part-4/</guid>
+      <description>So, for this post I&amp;rsquo;m taking a bit of a departure from the campaign and domain play rules that I&amp;rsquo;ve been kitbashing from Dungeon World and An Echo, Resounding. This is mostly because it&amp;rsquo;s been awhile, and I&amp;rsquo;m having to reconstruct all the stuff I had figured out from what are now opaque notes, and instead of figuring all that out tonight, I went instead for a simpler problem and decided to tackle some planning/layout issues, and then to address equipment tags.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html><head>
+<title>Vornheiming Middenheim Part V: The Powers that Be</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#powers-that-be--table-tbody-tr-classodd-tdrolltd-tdlast-nametd-tdfirst-nametd-tdpositiontd-tdphysical-featuretd-tdcharacter-traittd-tdrelationship-totd-tr-tr-classeven-td1td-tdhelsehertd-tdalbrechttd-tdhigh-wizardtd-tdgaunt-and-ascetictd-tdmore-concerned-with-abstractions-than-real-lifetd-tdsuspects-the-worst-oftd-tr-tr-classodd-td2td-tdhoflichtd-tdjoachimtd-tdlaw-lordtd-tdquiet-and-dignifiedtd-tdwry-sense-of-humortd-tdholding-ransom-a-relative-oftd-tr-tr-classeven-td3td-tdehrlichtd-tdreinertd-tdlaw-lordtd-tdquiet-and-unassumingtd-tdmelancholictd-tddesperately-trying-to-secretly-communicate-withtd-tr-tr-classodd-td4td-tdschutzmantd-tdulrichtd-tdcommander-of-the-watchtd-tdtall-and-imposingtd-tdharsh-and-unbendingtd-tdseeks-guidance-fromtd-tr-tr-classeven-td5td-tdstolztd-tdwernertd-tdchief-priest-of-sigmartd-tdtd-tdcautiously-ambitioustd-tdwants-to-humiliatetd-tr-tr-classodd-td6td-tdtd-tdar-ulrictd-tdhigh-priest-of-ulrichtd-tdtall-and-rangytd-tdkindly-but-ambitioustd-tdhaving-an-affair-withtd-tr-tr-classeven-td7td-tdschlagentd-tdemmanuelletd-tdlady-at-courttd-tdtall-and-willowytd-tdcrafty-and-manipulativetd-tdlover-oftd-tr-tr-classodd-td8td-tdtodbringertd-tdboristd-tdgraftd-tdpowerful-build-going-to-seedtd-tdcrippled-by-grieftd-tdcant-stand-the-sight-oftd-tr-tr-classeven-td9td-tdprunkvolltd-tdsiegfriedtd-tdknight-eternaltd-tdwears-armor-on-all-public-occasionstd-tdpompous-apalling-boretd-tdturned-down-a-proposition-fromtd-tr-tr-classodd-td10td-tdliebkosentd-tdpetratd-tdlady-at-courttd-tddark-curly-hairtd-tdgold-diggertd-tdhaving-a-fling-with-the-son-oftd-tr-tr-classeven-td11td-tdvon-genschertd-tdmaximilliantd-tdmidden-marshalltd-tdfacial-scartd-tdcourageous-and-magnanimoustd-tdsuspicious-of-the-rise-to-power-oftd-tr-tr-classodd-td12td-tdgoebbelstd-tdgotthardtd-tdkomission-convenor-and-chairman-of-the-merchants-guildtd-tdpremature-grey-hairtd-tdvain-and-graspingtd-tdsecretly-working-fortd-tr-tr-classeven-td13td-tdwasmeiertd-tdkarl-heinztd-tdlaw-lordtd-tdunremarkabletd-tdcruel-and-avaricioustd-tddangerously-underestimatestd-tr-tr-classodd-td14td-tdschwermutttd-tdjohanntd-tdgarrison-commandertd-tdlight-buildtd-tdhuman-and-approachabletd-tdsmitten-bytd-tr-tr-classeven-td15td-tdeberhauertd-tdjannatd-tddeputy-high-wizardtd-tdfrecklestd-tdintelligent-and-friendlytd-tdterrifiestd-tr-tr-classodd-td16td-tdsparsamtd-tdjoseftd-tdchancellortd-tdwalks-with-a-limptd-tdenthusiastic-collector-of-antique-arttd-tdirrationally-despisestd-tr-tr-classeven-td17td-tdzimberlichtd-tdhildegardetd-tdchaperone-to-the-grafs-daughtertd-tdfrail-but-sprightlytd-tdgood-character-not-easily-fooledtd-tdfiercely-devoted-totd-tr-tr-classodd-td18td-tdtodbringertd-tdkatarinatd-tdquotprincessquottd-tdbeautifultd-tddelicate-and-refinedtd-tdinfatuated-withtd-tr-tr-classeven-td19td-tdlafareltd-tdrallanetd-tdcourt-minstreltd-tdsilvery-blonde-hairtd-tdhopeless-romantictd-tdbest-friend-oftd-tr-tr-classodd-td20td-tdfanmaristd-tdallavandreltd-tdmaster-of-the-hunttd-tdstartling-green-eyestd-tdenjoys-the-good-things-in-lifetd-tddrinking-buddies-withtd-tr-tr-classeven-td21td-tdschmiedehammertd-tddietertd-tdgrafs-championtd-tdbroken-nosetd-tdbright-friendly-and-helpfultd-tdengaged-totd-tr-tr-classodd-td22td-tdjungtd-tdkirstentd-tdlady-at-courttd-tdsimple-classically-stylishtd-tdkeen-intuitiontd-tdstrongly-dislikestd-tr-tr-classeven-td23td-tdsinnlichtd-tdnatashatd-tdlady-at-courttd-tdice-blue-eyestd-tdworships-powertd-tdregrets-a-fling-withtd-tr-tr-classodd-td24td-tdpavarottitd-tdluigitd-tdbaronial-physiciantd-tdfat-and-flamboyanttd-tdgood-hearted-with-a-lust-for-lifetd-tdprovides-care-fortd-tr-tr-classeven-td25td-tdtodbringertd-tdstefantd-tdbarontd-tdsickly-and-droolingtd-tdfeeble-minded-idiotictd-tdcan-only-get-help-fromtd-tr-tbody-table" v-on:click="closeDrawer" id="powers-that-be--table-tbody-tr-classodd-tdrolltd-tdlast-nametd-tdfirst-nametd-tdpositiontd-tdphysical-featuretd-tdcharacter-traittd-tdrelationship-totd-tr-tr-classeven-td1td-tdhelsehertd-tdalbrechttd-tdhigh-wizardtd-tdgaunt-and-ascetictd-tdmore-concerned-with-abstractions-than-real-lifetd-tdsuspects-the-worst-oftd-tr-tr-classodd-td2td-tdhoflichtd-tdjoachimtd-tdlaw-lordtd-tdquiet-and-dignifiedtd-tdwry-sense-of-humortd-tdholding-ransom-a-relative-oftd-tr-tr-classeven-td3td-tdehrlichtd-tdreinertd-tdlaw-lordtd-tdquiet-and-unassumingtd-tdmelancholictd-tddesperately-trying-to-secretly-communicate-withtd-tr-tr-classodd-td4td-tdschutzmantd-tdulrichtd-tdcommander-of-the-watchtd-tdtall-and-imposingtd-tdharsh-and-unbendingtd-tdseeks-guidance-fromtd-tr-tr-classeven-td5td-tdstolztd-tdwernertd-tdchief-priest-of-sigmartd-tdtd-tdcautiously-ambitioustd-tdwants-to-humiliatetd-tr-tr-classodd-td6td-tdtd-tdar-ulrictd-tdhigh-priest-of-ulrichtd-tdtall-and-rangytd-tdkindly-but-ambitioustd-tdhaving-an-affair-withtd-tr-tr-classeven-td7td-tdschlagentd-tdemmanuelletd-tdlady-at-courttd-tdtall-and-willowytd-tdcrafty-and-manipulativetd-tdlover-oftd-tr-tr-classodd-td8td-tdtodbringertd-tdboristd-tdgraftd-tdpowerful-build-going-to-seedtd-tdcrippled-by-grieftd-tdcant-stand-the-sight-oftd-tr-tr-classeven-td9td-tdprunkvolltd-tdsiegfriedtd-tdknight-eternaltd-tdwears-armor-on-all-public-occasionstd-tdpompous-apalling-boretd-tdturned-down-a-proposition-fromtd-tr-tr-classodd-td10td-tdliebkosentd-tdpetratd-tdlady-at-courttd-tddark-curly-hairtd-tdgold-diggertd-tdhaving-a-fling-with-the-son-oftd-tr-tr-classeven-td11td-tdvon-genschertd-tdmaximilliantd-tdmidden-marshalltd-tdfacial-scartd-tdcourageous-and-magnanimoustd-tdsuspicious-of-the-rise-to-power-oftd-tr-tr-classodd-td12td-tdgoebbelstd-tdgotthardtd-tdkomission-convenor-and-chairman-of-the-merchants-guildtd-tdpremature-grey-hairtd-tdvain-and-graspingtd-tdsecretly-working-fortd-tr-tr-classeven-td13td-tdwasmeiertd-tdkarl-heinztd-tdlaw-lordtd-tdunremarkabletd-tdcruel-and-avaricioustd-tddangerously-underestimatestd-tr-tr-classodd-td14td-tdschwermutttd-tdjohanntd-tdgarrison-commandertd-tdlight-buildtd-tdhuman-and-approachabletd-tdsmitten-bytd-tr-tr-classeven-td15td-tdeberhauertd-tdjannatd-tddeputy-high-wizardtd-tdfrecklestd-tdintelligent-and-friendlytd-tdterrifiestd-tr-tr-classodd-td16td-tdsparsamtd-tdjoseftd-tdchancellortd-tdwalks-with-a-limptd-tdenthusiastic-collector-of-antique-arttd-tdirrationally-despisestd-tr-tr-classeven-td17td-tdzimberlichtd-tdhildegardetd-tdchaperone-to-the-grafs-daughtertd-tdfrail-but-sprightlytd-tdgood-character-not-easily-fooledtd-tdfiercely-devoted-totd-tr-tr-classodd-td18td-tdtodbringertd-tdkatarinatd-tdquotprincessquottd-tdbeautifultd-tddelicate-and-refinedtd-tdinfatuated-withtd-tr-tr-classeven-td19td-tdlafareltd-tdrallanetd-tdcourt-minstreltd-tdsilvery-blonde-hairtd-tdhopeless-romantictd-tdbest-friend-oftd-tr-tr-classodd-td20td-tdfanmaristd-tdallavandreltd-tdmaster-of-the-hunttd-tdstartling-green-eyestd-tdenjoys-the-good-things-in-lifetd-tddrinking-buddies-withtd-tr-tr-classeven-td21td-tdschmiedehammertd-tddietertd-tdgrafs-championtd-tdbroken-nosetd-tdbright-friendly-and-helpfultd-tdengaged-totd-tr-tr-classodd-td22td-tdjungtd-tdkirstentd-tdlady-at-courttd-tdsimple-classically-stylishtd-tdkeen-intuitiontd-tdstrongly-dislikestd-tr-tr-classeven-td23td-tdsinnlichtd-tdnatashatd-tdlady-at-courttd-tdice-blue-eyestd-tdworships-powertd-tdregrets-a-fling-withtd-tr-tr-classodd-td24td-tdpavarottitd-tdluigitd-tdbaronial-physiciantd-tdfat-and-flamboyanttd-tdgood-hearted-with-a-lust-for-lifetd-tdprovides-care-fortd-tr-tr-classeven-td25td-tdtodbringertd-tdstefantd-tdbarontd-tdsickly-and-droolingtd-tdfeeble-minded-idiotictd-tdcan-only-get-help-fromtd-tr-tbody-table-nav">
+										 Powers that Be RollLast NameFirst NamePositionPhysical FeatureCharacter TraitRelationship to1HelseherAlbrechtHigh WizardGaunt and asceticMore concerned with abstractions than real lifeSuspects the worst of2HoflichJoachimLaw LordQuiet and DignifiedWry sense of humorHolding ransom a relative of3EhrlichReinerLaw LordQuiet and UnassumingMelancholicDesperately trying to secretly communicate with4SchutzmanUlrichCommander of the WatchTall and imposingHarsh and UnbendingSeeks guidance from5StolzWernerChief Priest of SigmarCautiously ambitiousWants to humiliate6Ar-UlricHigh Priest of UlrichTall and RangyKindly but AmbitiousHaving an affair with7SchlagenEmmanuelleLady at CourtTall and willowyCrafty and ManipulativeLover of8TodbringerBorisGrafPowerful build going to seedCrippled by griefCan’t stand the sight of9PrunkvollSiegfriedKnight EternalWears armor on all public occasionsPompous, apalling boreTurned down a proposition from10LiebkosenPetraLady at CourtDark, curly hairGold diggerHaving a fling with the son of11Von GenscherMaximillianMidden MarshallFacial ScarCourageous and magnanimousSuspicious of the rise to power of12GoebbelsGotthardKomission Convenor and Chairman of the Merchants’ GuildPremature grey hairVain and graspingSecretly working for13WasmeierKarl-HeinzLaw LordUnremarkableCruel and avariciousDangerously underestimates14SchwermuttJohannGarrison CommanderLight buildHuman and approachableSmitten by15EberhauerJannaDeputy High WizardFrecklesIntelligent and FriendlyTerrifies16SparsamJosefChancellorWalks with a limpEnthusiastic collector of antique artIrrationally despises17ZimberlichHildegardeChaperone to the Graf’s DaughterFrail but SprightlyGood character, not easily fooledFiercely devoted to18TodbringerKatarina&#34;Princess&#34;BeautifulDelicate and refinedInfatuated with19LafarelRallaneCourt MinstrelSilvery blonde hairHopeless romanticBest friend of20FanmarisAllavandrelMaster of the HuntStartling Green EyesEnjoys the good things in lifeDrinking buddies with21SchmiedehammerDieterGraf’s ChampionBroken noseBright, friendly, and helpfulEngaged to22JungKirstenLady at CourtSimple, classically stylishKeen IntuitionStrongly dislikes23SinnlichNatashaLady at CourtIce blue eyesWorships powerRegrets a fling with24PavarottiLuigiBaronial PhysicianFat and flamboyantGood hearted with a lust for lifeProvides care for25TodbringerStefanBaronSickly and droolingFeeble minded, idioticCan only get help from
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#powers-that-be--table-tbody-tr-classodd-tdrolltd-tdlast-nametd-tdfirst-nametd-tdpositiontd-tdphysical-featuretd-tdcharacter-traittd-tdrelationship-totd-tr-tr-classeven-td1td-tdhelsehertd-tdalbrechttd-tdhigh-wizardtd-tdgaunt-and-ascetictd-tdmore-concerned-with-abstractions-than-real-lifetd-tdsuspects-the-worst-oftd-tr-tr-classodd-td2td-tdhoflichtd-tdjoachimtd-tdlaw-lordtd-tdquiet-and-dignifiedtd-tdwry-sense-of-humortd-tdholding-ransom-a-relative-oftd-tr-tr-classeven-td3td-tdehrlichtd-tdreinertd-tdlaw-lordtd-tdquiet-and-unassumingtd-tdmelancholictd-tddesperately-trying-to-secretly-communicate-withtd-tr-tr-classodd-td4td-tdschutzmantd-tdulrichtd-tdcommander-of-the-watchtd-tdtall-and-imposingtd-tdharsh-and-unbendingtd-tdseeks-guidance-fromtd-tr-tr-classeven-td5td-tdstolztd-tdwernertd-tdchief-priest-of-sigmartd-tdtd-tdcautiously-ambitioustd-tdwants-to-humiliatetd-tr-tr-classodd-td6td-tdtd-tdar-ulrictd-tdhigh-priest-of-ulrichtd-tdtall-and-rangytd-tdkindly-but-ambitioustd-tdhaving-an-affair-withtd-tr-tr-classeven-td7td-tdschlagentd-tdemmanuelletd-tdlady-at-courttd-tdtall-and-willowytd-tdcrafty-and-manipulativetd-tdlover-oftd-tr-tr-classodd-td8td-tdtodbringertd-tdboristd-tdgraftd-tdpowerful-build-going-to-seedtd-tdcrippled-by-grieftd-tdcant-stand-the-sight-oftd-tr-tr-classeven-td9td-tdprunkvolltd-tdsiegfriedtd-tdknight-eternaltd-tdwears-armor-on-all-public-occasionstd-tdpompous-apalling-boretd-tdturned-down-a-proposition-fromtd-tr-tr-classodd-td10td-tdliebkosentd-tdpetratd-tdlady-at-courttd-tddark-curly-hairtd-tdgold-diggertd-tdhaving-a-fling-with-the-son-oftd-tr-tr-classeven-td11td-tdvon-genschertd-tdmaximilliantd-tdmidden-marshalltd-tdfacial-scartd-tdcourageous-and-magnanimoustd-tdsuspicious-of-the-rise-to-power-oftd-tr-tr-classodd-td12td-tdgoebbelstd-tdgotthardtd-tdkomission-convenor-and-chairman-of-the-merchants-guildtd-tdpremature-grey-hairtd-tdvain-and-graspingtd-tdsecretly-working-fortd-tr-tr-classeven-td13td-tdwasmeiertd-tdkarl-heinztd-tdlaw-lordtd-tdunremarkabletd-tdcruel-and-avaricioustd-tddangerously-underestimatestd-tr-tr-classodd-td14td-tdschwermutttd-tdjohanntd-tdgarrison-commandertd-tdlight-buildtd-tdhuman-and-approachabletd-tdsmitten-bytd-tr-tr-classeven-td15td-tdeberhauertd-tdjannatd-tddeputy-high-wizardtd-tdfrecklestd-tdintelligent-and-friendlytd-tdterrifiestd-tr-tr-classodd-td16td-tdsparsamtd-tdjoseftd-tdchancellortd-tdwalks-with-a-limptd-tdenthusiastic-collector-of-antique-arttd-tdirrationally-despisestd-tr-tr-classeven-td17td-tdzimberlichtd-tdhildegardetd-tdchaperone-to-the-grafs-daughtertd-tdfrail-but-sprightlytd-tdgood-character-not-easily-fooledtd-tdfiercely-devoted-totd-tr-tr-classodd-td18td-tdtodbringertd-tdkatarinatd-tdquotprincessquottd-tdbeautifultd-tddelicate-and-refinedtd-tdinfatuated-withtd-tr-tr-classeven-td19td-tdlafareltd-tdrallanetd-tdcourt-minstreltd-tdsilvery-blonde-hairtd-tdhopeless-romantictd-tdbest-friend-oftd-tr-tr-classodd-td20td-tdfanmaristd-tdallavandreltd-tdmaster-of-the-hunttd-tdstartling-green-eyestd-tdenjoys-the-good-things-in-lifetd-tddrinking-buddies-withtd-tr-tr-classeven-td21td-tdschmiedehammertd-tddietertd-tdgrafs-championtd-tdbroken-nosetd-tdbright-friendly-and-helpfultd-tdengaged-totd-tr-tr-classodd-td22td-tdjungtd-tdkirstentd-tdlady-at-courttd-tdsimple-classically-stylishtd-tdkeen-intuitiontd-tdstrongly-dislikestd-tr-tr-classeven-td23td-tdsinnlichtd-tdnatashatd-tdlady-at-courttd-tdice-blue-eyestd-tdworships-powertd-tdregrets-a-fling-withtd-tr-tr-classodd-td24td-tdpavarottitd-tdluigitd-tdbaronial-physiciantd-tdfat-and-flamboyanttd-tdgood-hearted-with-a-lust-for-lifetd-tdprovides-care-fortd-tr-tr-classeven-td25td-tdtodbringertd-tdstefantd-tdbarontd-tdsickly-and-droolingtd-tdfeeble-minded-idiotictd-tdcan-only-get-help-fromtd-tr-tbody-table" v-on:click="closeDrawer" id="powers-that-be--table-tbody-tr-classodd-tdrolltd-tdlast-nametd-tdfirst-nametd-tdpositiontd-tdphysical-featuretd-tdcharacter-traittd-tdrelationship-totd-tr-tr-classeven-td1td-tdhelsehertd-tdalbrechttd-tdhigh-wizardtd-tdgaunt-and-ascetictd-tdmore-concerned-with-abstractions-than-real-lifetd-tdsuspects-the-worst-oftd-tr-tr-classodd-td2td-tdhoflichtd-tdjoachimtd-tdlaw-lordtd-tdquiet-and-dignifiedtd-tdwry-sense-of-humortd-tdholding-ransom-a-relative-oftd-tr-tr-classeven-td3td-tdehrlichtd-tdreinertd-tdlaw-lordtd-tdquiet-and-unassumingtd-tdmelancholictd-tddesperately-trying-to-secretly-communicate-withtd-tr-tr-classodd-td4td-tdschutzmantd-tdulrichtd-tdcommander-of-the-watchtd-tdtall-and-imposingtd-tdharsh-and-unbendingtd-tdseeks-guidance-fromtd-tr-tr-classeven-td5td-tdstolztd-tdwernertd-tdchief-priest-of-sigmartd-tdtd-tdcautiously-ambitioustd-tdwants-to-humiliatetd-tr-tr-classodd-td6td-tdtd-tdar-ulrictd-tdhigh-priest-of-ulrichtd-tdtall-and-rangytd-tdkindly-but-ambitioustd-tdhaving-an-affair-withtd-tr-tr-classeven-td7td-tdschlagentd-tdemmanuelletd-tdlady-at-courttd-tdtall-and-willowytd-tdcrafty-and-manipulativetd-tdlover-oftd-tr-tr-classodd-td8td-tdtodbringertd-tdboristd-tdgraftd-tdpowerful-build-going-to-seedtd-tdcrippled-by-grieftd-tdcant-stand-the-sight-oftd-tr-tr-classeven-td9td-tdprunkvolltd-tdsiegfriedtd-tdknight-eternaltd-tdwears-armor-on-all-public-occasionstd-tdpompous-apalling-boretd-tdturned-down-a-proposition-fromtd-tr-tr-classodd-td10td-tdliebkosentd-tdpetratd-tdlady-at-courttd-tddark-curly-hairtd-tdgold-diggertd-tdhaving-a-fling-with-the-son-oftd-tr-tr-classeven-td11td-tdvon-genschertd-tdmaximilliantd-tdmidden-marshalltd-tdfacial-scartd-tdcourageous-and-magnanimoustd-tdsuspicious-of-the-rise-to-power-oftd-tr-tr-classodd-td12td-tdgoebbelstd-tdgotthardtd-tdkomission-convenor-and-chairman-of-the-merchants-guildtd-tdpremature-grey-hairtd-tdvain-and-graspingtd-tdsecretly-working-fortd-tr-tr-classeven-td13td-tdwasmeiertd-tdkarl-heinztd-tdlaw-lordtd-tdunremarkabletd-tdcruel-and-avaricioustd-tddangerously-underestimatestd-tr-tr-classodd-td14td-tdschwermutttd-tdjohanntd-tdgarrison-commandertd-tdlight-buildtd-tdhuman-and-approachabletd-tdsmitten-bytd-tr-tr-classeven-td15td-tdeberhauertd-tdjannatd-tddeputy-high-wizardtd-tdfrecklestd-tdintelligent-and-friendlytd-tdterrifiestd-tr-tr-classodd-td16td-tdsparsamtd-tdjoseftd-tdchancellortd-tdwalks-with-a-limptd-tdenthusiastic-collector-of-antique-arttd-tdirrationally-despisestd-tr-tr-classeven-td17td-tdzimberlichtd-tdhildegardetd-tdchaperone-to-the-grafs-daughtertd-tdfrail-but-sprightlytd-tdgood-character-not-easily-fooledtd-tdfiercely-devoted-totd-tr-tr-classodd-td18td-tdtodbringertd-tdkatarinatd-tdquotprincessquottd-tdbeautifultd-tddelicate-and-refinedtd-tdinfatuated-withtd-tr-tr-classeven-td19td-tdlafareltd-tdrallanetd-tdcourt-minstreltd-tdsilvery-blonde-hairtd-tdhopeless-romantictd-tdbest-friend-oftd-tr-tr-classodd-td20td-tdfanmaristd-tdallavandreltd-tdmaster-of-the-hunttd-tdstartling-green-eyestd-tdenjoys-the-good-things-in-lifetd-tddrinking-buddies-withtd-tr-tr-classeven-td21td-tdschmiedehammertd-tddietertd-tdgrafs-championtd-tdbroken-nosetd-tdbright-friendly-and-helpfultd-tdengaged-totd-tr-tr-classodd-td22td-tdjungtd-tdkirstentd-tdlady-at-courttd-tdsimple-classically-stylishtd-tdkeen-intuitiontd-tdstrongly-dislikestd-tr-tr-classeven-td23td-tdsinnlichtd-tdnatashatd-tdlady-at-courttd-tdice-blue-eyestd-tdworships-powertd-tdregrets-a-fling-withtd-tr-tr-classodd-td24td-tdpavarottitd-tdluigitd-tdbaronial-physiciantd-tdfat-and-flamboyanttd-tdgood-hearted-with-a-lust-for-lifetd-tdprovides-care-fortd-tr-tr-classeven-td25td-tdtodbringertd-tdstefantd-tdbarontd-tdsickly-and-droolingtd-tdfeeble-minded-idiotictd-tdcan-only-get-help-fromtd-tr-tbody-table-nav">
+										 Powers that Be RollLast NameFirst NamePositionPhysical FeatureCharacter TraitRelationship to1HelseherAlbrechtHigh WizardGaunt and asceticMore concerned with abstractions than real lifeSuspects the worst of2HoflichJoachimLaw LordQuiet and DignifiedWry sense of humorHolding ransom a relative of3EhrlichReinerLaw LordQuiet and UnassumingMelancholicDesperately trying to secretly communicate with4SchutzmanUlrichCommander of the WatchTall and imposingHarsh and UnbendingSeeks guidance from5StolzWernerChief Priest of SigmarCautiously ambitiousWants to humiliate6Ar-UlricHigh Priest of UlrichTall and RangyKindly but AmbitiousHaving an affair with7SchlagenEmmanuelleLady at CourtTall and willowyCrafty and ManipulativeLover of8TodbringerBorisGrafPowerful build going to seedCrippled by griefCan’t stand the sight of9PrunkvollSiegfriedKnight EternalWears armor on all public occasionsPompous, apalling boreTurned down a proposition from10LiebkosenPetraLady at CourtDark, curly hairGold diggerHaving a fling with the son of11Von GenscherMaximillianMidden MarshallFacial ScarCourageous and magnanimousSuspicious of the rise to power of12GoebbelsGotthardKomission Convenor and Chairman of the Merchants’ GuildPremature grey hairVain and graspingSecretly working for13WasmeierKarl-HeinzLaw LordUnremarkableCruel and avariciousDangerously underestimates14SchwermuttJohannGarrison CommanderLight buildHuman and approachableSmitten by15EberhauerJannaDeputy High WizardFrecklesIntelligent and FriendlyTerrifies16SparsamJosefChancellorWalks with a limpEnthusiastic collector of antique artIrrationally despises17ZimberlichHildegardeChaperone to the Graf’s DaughterFrail but SprightlyGood character, not easily fooledFiercely devoted to18TodbringerKatarina&#34;Princess&#34;BeautifulDelicate and refinedInfatuated with19LafarelRallaneCourt MinstrelSilvery blonde hairHopeless romanticBest friend of20FanmarisAllavandrelMaster of the HuntStartling Green EyesEnjoys the good things in lifeDrinking buddies with21SchmiedehammerDieterGraf’s ChampionBroken noseBright, friendly, and helpfulEngaged to22JungKirstenLady at CourtSimple, classically stylishKeen IntuitionStrongly dislikes23SinnlichNatashaLady at CourtIce blue eyesWorships powerRegrets a fling with24PavarottiLuigiBaronial PhysicianFat and flamboyantGood hearted with a lust for lifeProvides care for25TodbringerStefanBaronSickly and droolingFeeble minded, idioticCan only get help from
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Vornheiming Middenheim Part V: The Powers that Be
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2013-12-26 19:11
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/sbvd">SBVD</a>
+                                &nbsp;
+                            
+                                <a href="/tags/osr">OSR</a>
+                                &nbsp;
+                            
+                                <a href="/tags/rules">Rules</a>
+                                &nbsp;
+                            
+                                <a href="/tags/wfrp">WFRP</a>
+                                &nbsp;
+                            
+                                <a href="/tags/middenheim">Middenheim</a>
+                                &nbsp;
+                            
+                                <a href="/tags/projects">Projects</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p><a href="http://2.bp.blogspot.com/-eEGaahbuf7A/UrzqNy38exI/AAAAAAAAAcs/DcqibyxjA5s/s1600/Graf_Boris.jpg"><img src="https://2.bp.blogspot.com/-eEGaahbuf7A/UrzqNy38exI/AAAAAAAAAcs/DcqibyxjA5s/s320/Graf_Boris.jpg" alt=""></a></p>
+<p>[UPDATE 2/12/19: I no longer support spending money on products that benefit Zak S, or giving him positive attention and connection. The short version is that I find credible claims that he has engaged in unacceptable behavior and not made up for it. For more detail, see <a href="%7B%7B%20site.baseurl%20%7D%7D%7B%25%20post_url%202019-02-12-removing-support-from-zak-smith%20%25%7D">here</a>. Please consider these claims and make your own decision on their validity, and the implications thereof, before supporting Zak in any way.]</p>
+<p>So, it ended up taking me a little longer than I expected to get the &ldquo;Powers that Be&rdquo; table set up.  Turns out that it&rsquo;s pretty tough to satisfyingly emulate the innovation to have each entry show a relationship with the next entry from  Zak S.&lsquo;s Vornheim Aristocrats table.  As it is, I ended up with only 25 entries.  This should probably be chopped down to 20 or increased to 30, so that it corresponds to an actual die.</p>
+<p>For those unfamiliar with Zak&rsquo;s table, the idea is that you can randomly pick an aristocrat/powerful person by rolling once, and he or she will have all of the traits from left to right, with the relationship indicated by the last entry with the next person on the table.  I&rsquo;ve built this so that it can act as a quick reference or relationship map if you want to play Middenheim &ldquo;by the book&rdquo;, or you can randomize new aristocrats by rolling once for each column and getting totally new NPCs.</p>
+<p>So, for example, say you roll a 15 and you&rsquo;re doing it the simple way.  You get Janna Eberhauer, Deputy High Wizard, an intelligent and friendly wizard with freckles.  She terrifies Josef Sparsam the Chancellor.  Or, if you want to go the complicated route, you could roll a 6, 10, 11, 15, 16, 7, 25, which gives you the following: Petra (no last name), the Midden Marshal, who has freckles and is an enthusiastic collector of antique art.  She is a lover of Baron Stefan Todbringer.</p>
+<p>If you want to get really complex, repeat a few times rather than having the &ldquo;relationship to&rdquo; column point to a fully developed &ldquo;book&rdquo; NPC.</p>
+<p>I&rsquo;d say that if I were writing an adventure, rather than creating a toolkit, I&rsquo;d take about this level of information and put it into a visual relationship map, and I&rsquo;d add in a few more of the plots given in Warhammer City and in &ldquo;Power Behind the Throne&rdquo; to suggest ways for PCs to get involved.  As it is, I&rsquo;m hoping that the intrigue generator will do most of the heavy lifting, and I&rsquo;m going to parse the stuff in the supplement and adventure for material to put in that.</p>
+<h2 id="powers-that-be--table-tbody-tr-classodd-tdrolltd-tdlast-nametd-tdfirst-nametd-tdpositiontd-tdphysical-featuretd-tdcharacter-traittd-tdrelationship-totd-tr-tr-classeven-td1td-tdhelsehertd-tdalbrechttd-tdhigh-wizardtd-tdgaunt-and-ascetictd-tdmore-concerned-with-abstractions-than-real-lifetd-tdsuspects-the-worst-oftd-tr-tr-classodd-td2td-tdhoflichtd-tdjoachimtd-tdlaw-lordtd-tdquiet-and-dignifiedtd-tdwry-sense-of-humortd-tdholding-ransom-a-relative-oftd-tr-tr-classeven-td3td-tdehrlichtd-tdreinertd-tdlaw-lordtd-tdquiet-and-unassumingtd-tdmelancholictd-tddesperately-trying-to-secretly-communicate-withtd-tr-tr-classodd-td4td-tdschutzmantd-tdulrichtd-tdcommander-of-the-watchtd-tdtall-and-imposingtd-tdharsh-and-unbendingtd-tdseeks-guidance-fromtd-tr-tr-classeven-td5td-tdstolztd-tdwernertd-tdchief-priest-of-sigmartd-tdtd-tdcautiously-ambitioustd-tdwants-to-humiliatetd-tr-tr-classodd-td6td-tdtd-tdar-ulrictd-tdhigh-priest-of-ulrichtd-tdtall-and-rangytd-tdkindly-but-ambitioustd-tdhaving-an-affair-withtd-tr-tr-classeven-td7td-tdschlagentd-tdemmanuelletd-tdlady-at-courttd-tdtall-and-willowytd-tdcrafty-and-manipulativetd-tdlover-oftd-tr-tr-classodd-td8td-tdtodbringertd-tdboristd-tdgraftd-tdpowerful-build-going-to-seedtd-tdcrippled-by-grieftd-tdcant-stand-the-sight-oftd-tr-tr-classeven-td9td-tdprunkvolltd-tdsiegfriedtd-tdknight-eternaltd-tdwears-armor-on-all-public-occasionstd-tdpompous-apalling-boretd-tdturned-down-a-proposition-fromtd-tr-tr-classodd-td10td-tdliebkosentd-tdpetratd-tdlady-at-courttd-tddark-curly-hairtd-tdgold-diggertd-tdhaving-a-fling-with-the-son-oftd-tr-tr-classeven-td11td-tdvon-genschertd-tdmaximilliantd-tdmidden-marshalltd-tdfacial-scartd-tdcourageous-and-magnanimoustd-tdsuspicious-of-the-rise-to-power-oftd-tr-tr-classodd-td12td-tdgoebbelstd-tdgotthardtd-tdkomission-convenor-and-chairman-of-the-merchants-guildtd-tdpremature-grey-hairtd-tdvain-and-graspingtd-tdsecretly-working-fortd-tr-tr-classeven-td13td-tdwasmeiertd-tdkarl-heinztd-tdlaw-lordtd-tdunremarkabletd-tdcruel-and-avaricioustd-tddangerously-underestimatestd-tr-tr-classodd-td14td-tdschwermutttd-tdjohanntd-tdgarrison-commandertd-tdlight-buildtd-tdhuman-and-approachabletd-tdsmitten-bytd-tr-tr-classeven-td15td-tdeberhauertd-tdjannatd-tddeputy-high-wizardtd-tdfrecklestd-tdintelligent-and-friendlytd-tdterrifiestd-tr-tr-classodd-td16td-tdsparsamtd-tdjoseftd-tdchancellortd-tdwalks-with-a-limptd-tdenthusiastic-collector-of-antique-arttd-tdirrationally-despisestd-tr-tr-classeven-td17td-tdzimberlichtd-tdhildegardetd-tdchaperone-to-the-grafs-daughtertd-tdfrail-but-sprightlytd-tdgood-character-not-easily-fooledtd-tdfiercely-devoted-totd-tr-tr-classodd-td18td-tdtodbringertd-tdkatarinatd-tdquotprincessquottd-tdbeautifultd-tddelicate-and-refinedtd-tdinfatuated-withtd-tr-tr-classeven-td19td-tdlafareltd-tdrallanetd-tdcourt-minstreltd-tdsilvery-blonde-hairtd-tdhopeless-romantictd-tdbest-friend-oftd-tr-tr-classodd-td20td-tdfanmaristd-tdallavandreltd-tdmaster-of-the-hunttd-tdstartling-green-eyestd-tdenjoys-the-good-things-in-lifetd-tddrinking-buddies-withtd-tr-tr-classeven-td21td-tdschmiedehammertd-tddietertd-tdgrafs-championtd-tdbroken-nosetd-tdbright-friendly-and-helpfultd-tdengaged-totd-tr-tr-classodd-td22td-tdjungtd-tdkirstentd-tdlady-at-courttd-tdsimple-classically-stylishtd-tdkeen-intuitiontd-tdstrongly-dislikestd-tr-tr-classeven-td23td-tdsinnlichtd-tdnatashatd-tdlady-at-courttd-tdice-blue-eyestd-tdworships-powertd-tdregrets-a-fling-withtd-tr-tr-classodd-td24td-tdpavarottitd-tdluigitd-tdbaronial-physiciantd-tdfat-and-flamboyanttd-tdgood-hearted-with-a-lust-for-lifetd-tdprovides-care-fortd-tr-tr-classeven-td25td-tdtodbringertd-tdstefantd-tdbarontd-tdsickly-and-droolingtd-tdfeeble-minded-idiotictd-tdcan-only-get-help-fromtd-tr-tbody-table">Powers that Be  <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->Roll<!-- raw HTML omitted --> <!-- raw HTML omitted -->Last Name<!-- raw HTML omitted --> <!-- raw HTML omitted -->First Name<!-- raw HTML omitted --> <!-- raw HTML omitted -->Position<!-- raw HTML omitted --> <!-- raw HTML omitted -->Physical Feature<!-- raw HTML omitted --> <!-- raw HTML omitted -->Character Trait<!-- raw HTML omitted --> <!-- raw HTML omitted -->Relationship to<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->1<!-- raw HTML omitted --> <!-- raw HTML omitted -->Helseher<!-- raw HTML omitted --> <!-- raw HTML omitted -->Albrecht<!-- raw HTML omitted --> <!-- raw HTML omitted -->High Wizard<!-- raw HTML omitted --> <!-- raw HTML omitted -->Gaunt and ascetic<!-- raw HTML omitted --> <!-- raw HTML omitted -->More concerned with abstractions than real life<!-- raw HTML omitted --> <!-- raw HTML omitted -->Suspects the worst of<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->2<!-- raw HTML omitted --> <!-- raw HTML omitted -->Hoflich<!-- raw HTML omitted --> <!-- raw HTML omitted -->Joachim<!-- raw HTML omitted --> <!-- raw HTML omitted -->Law Lord<!-- raw HTML omitted --> <!-- raw HTML omitted -->Quiet and Dignified<!-- raw HTML omitted --> <!-- raw HTML omitted -->Wry sense of humor<!-- raw HTML omitted --> <!-- raw HTML omitted -->Holding ransom a relative of<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->3<!-- raw HTML omitted --> <!-- raw HTML omitted -->Ehrlich<!-- raw HTML omitted --> <!-- raw HTML omitted -->Reiner<!-- raw HTML omitted --> <!-- raw HTML omitted -->Law Lord<!-- raw HTML omitted --> <!-- raw HTML omitted -->Quiet and Unassuming<!-- raw HTML omitted --> <!-- raw HTML omitted -->Melancholic<!-- raw HTML omitted --> <!-- raw HTML omitted -->Desperately trying to secretly communicate with<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->4<!-- raw HTML omitted --> <!-- raw HTML omitted -->Schutzman<!-- raw HTML omitted --> <!-- raw HTML omitted -->Ulrich<!-- raw HTML omitted --> <!-- raw HTML omitted -->Commander of the Watch<!-- raw HTML omitted --> <!-- raw HTML omitted -->Tall and imposing<!-- raw HTML omitted --> <!-- raw HTML omitted -->Harsh and Unbending<!-- raw HTML omitted --> <!-- raw HTML omitted -->Seeks guidance from<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->5<!-- raw HTML omitted --> <!-- raw HTML omitted -->Stolz<!-- raw HTML omitted --> <!-- raw HTML omitted -->Werner<!-- raw HTML omitted --> <!-- raw HTML omitted -->Chief Priest of Sigmar<!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->Cautiously ambitious<!-- raw HTML omitted --> <!-- raw HTML omitted -->Wants to humiliate<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->6<!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->Ar-Ulric<!-- raw HTML omitted --> <!-- raw HTML omitted -->High Priest of Ulrich<!-- raw HTML omitted --> <!-- raw HTML omitted -->Tall and Rangy<!-- raw HTML omitted --> <!-- raw HTML omitted -->Kindly but Ambitious<!-- raw HTML omitted --> <!-- raw HTML omitted -->Having an affair with<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->7<!-- raw HTML omitted --> <!-- raw HTML omitted -->Schlagen<!-- raw HTML omitted --> <!-- raw HTML omitted -->Emmanuelle<!-- raw HTML omitted --> <!-- raw HTML omitted -->Lady at Court<!-- raw HTML omitted --> <!-- raw HTML omitted -->Tall and willowy<!-- raw HTML omitted --> <!-- raw HTML omitted -->Crafty and Manipulative<!-- raw HTML omitted --> <!-- raw HTML omitted -->Lover of<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->8<!-- raw HTML omitted --> <!-- raw HTML omitted -->Todbringer<!-- raw HTML omitted --> <!-- raw HTML omitted -->Boris<!-- raw HTML omitted --> <!-- raw HTML omitted -->Graf<!-- raw HTML omitted --> <!-- raw HTML omitted -->Powerful build going to seed<!-- raw HTML omitted --> <!-- raw HTML omitted -->Crippled by grief<!-- raw HTML omitted --> <!-- raw HTML omitted -->Can&rsquo;t stand the sight of<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->9<!-- raw HTML omitted --> <!-- raw HTML omitted -->Prunkvoll<!-- raw HTML omitted --> <!-- raw HTML omitted -->Siegfried<!-- raw HTML omitted --> <!-- raw HTML omitted -->Knight Eternal<!-- raw HTML omitted --> <!-- raw HTML omitted -->Wears armor on all public occasions<!-- raw HTML omitted --> <!-- raw HTML omitted -->Pompous, apalling bore<!-- raw HTML omitted --> <!-- raw HTML omitted -->Turned down a proposition from<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->10<!-- raw HTML omitted --> <!-- raw HTML omitted -->Liebkosen<!-- raw HTML omitted --> <!-- raw HTML omitted -->Petra<!-- raw HTML omitted --> <!-- raw HTML omitted -->Lady at Court<!-- raw HTML omitted --> <!-- raw HTML omitted -->Dark, curly hair<!-- raw HTML omitted --> <!-- raw HTML omitted -->Gold digger<!-- raw HTML omitted --> <!-- raw HTML omitted -->Having a fling with the son of<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->11<!-- raw HTML omitted --> <!-- raw HTML omitted -->Von Genscher<!-- raw HTML omitted --> <!-- raw HTML omitted -->Maximillian<!-- raw HTML omitted --> <!-- raw HTML omitted -->Midden Marshall<!-- raw HTML omitted --> <!-- raw HTML omitted -->Facial Scar<!-- raw HTML omitted --> <!-- raw HTML omitted -->Courageous and magnanimous<!-- raw HTML omitted --> <!-- raw HTML omitted -->Suspicious of the rise to power of<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->12<!-- raw HTML omitted --> <!-- raw HTML omitted -->Goebbels<!-- raw HTML omitted --> <!-- raw HTML omitted -->Gotthard<!-- raw HTML omitted --> <!-- raw HTML omitted -->Komission Convenor and Chairman of the Merchants&rsquo; Guild<!-- raw HTML omitted --> <!-- raw HTML omitted -->Premature grey hair<!-- raw HTML omitted --> <!-- raw HTML omitted -->Vain and grasping<!-- raw HTML omitted --> <!-- raw HTML omitted -->Secretly working for<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->13<!-- raw HTML omitted --> <!-- raw HTML omitted -->Wasmeier<!-- raw HTML omitted --> <!-- raw HTML omitted -->Karl-Heinz<!-- raw HTML omitted --> <!-- raw HTML omitted -->Law Lord<!-- raw HTML omitted --> <!-- raw HTML omitted -->Unremarkable<!-- raw HTML omitted --> <!-- raw HTML omitted -->Cruel and avaricious<!-- raw HTML omitted --> <!-- raw HTML omitted -->Dangerously underestimates<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->14<!-- raw HTML omitted --> <!-- raw HTML omitted -->Schwermutt<!-- raw HTML omitted --> <!-- raw HTML omitted -->Johann<!-- raw HTML omitted --> <!-- raw HTML omitted -->Garrison Commander<!-- raw HTML omitted --> <!-- raw HTML omitted -->Light build<!-- raw HTML omitted --> <!-- raw HTML omitted -->Human and approachable<!-- raw HTML omitted --> <!-- raw HTML omitted -->Smitten by<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->15<!-- raw HTML omitted --> <!-- raw HTML omitted -->Eberhauer<!-- raw HTML omitted --> <!-- raw HTML omitted -->Janna<!-- raw HTML omitted --> <!-- raw HTML omitted -->Deputy High Wizard<!-- raw HTML omitted --> <!-- raw HTML omitted -->Freckles<!-- raw HTML omitted --> <!-- raw HTML omitted -->Intelligent and Friendly<!-- raw HTML omitted --> <!-- raw HTML omitted -->Terrifies<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->16<!-- raw HTML omitted --> <!-- raw HTML omitted -->Sparsam<!-- raw HTML omitted --> <!-- raw HTML omitted -->Josef<!-- raw HTML omitted --> <!-- raw HTML omitted -->Chancellor<!-- raw HTML omitted --> <!-- raw HTML omitted -->Walks with a limp<!-- raw HTML omitted --> <!-- raw HTML omitted -->Enthusiastic collector of antique art<!-- raw HTML omitted --> <!-- raw HTML omitted -->Irrationally despises<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->17<!-- raw HTML omitted --> <!-- raw HTML omitted -->Zimberlich<!-- raw HTML omitted --> <!-- raw HTML omitted -->Hildegarde<!-- raw HTML omitted --> <!-- raw HTML omitted -->Chaperone to the Graf&rsquo;s Daughter<!-- raw HTML omitted --> <!-- raw HTML omitted -->Frail but Sprightly<!-- raw HTML omitted --> <!-- raw HTML omitted -->Good character, not easily fooled<!-- raw HTML omitted --> <!-- raw HTML omitted -->Fiercely devoted to<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->18<!-- raw HTML omitted --> <!-- raw HTML omitted -->Todbringer<!-- raw HTML omitted --> <!-- raw HTML omitted -->Katarina<!-- raw HTML omitted --> <!-- raw HTML omitted -->&quot;Princess&quot;<!-- raw HTML omitted --> <!-- raw HTML omitted -->Beautiful<!-- raw HTML omitted --> <!-- raw HTML omitted -->Delicate and refined<!-- raw HTML omitted --> <!-- raw HTML omitted -->Infatuated with<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->19<!-- raw HTML omitted --> <!-- raw HTML omitted -->Lafarel<!-- raw HTML omitted --> <!-- raw HTML omitted -->Rallane<!-- raw HTML omitted --> <!-- raw HTML omitted -->Court Minstrel<!-- raw HTML omitted --> <!-- raw HTML omitted -->Silvery blonde hair<!-- raw HTML omitted --> <!-- raw HTML omitted -->Hopeless romantic<!-- raw HTML omitted --> <!-- raw HTML omitted -->Best friend of<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->20<!-- raw HTML omitted --> <!-- raw HTML omitted -->Fanmaris<!-- raw HTML omitted --> <!-- raw HTML omitted -->Allavandrel<!-- raw HTML omitted --> <!-- raw HTML omitted -->Master of the Hunt<!-- raw HTML omitted --> <!-- raw HTML omitted -->Startling Green Eyes<!-- raw HTML omitted --> <!-- raw HTML omitted -->Enjoys the good things in life<!-- raw HTML omitted --> <!-- raw HTML omitted -->Drinking buddies with<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->21<!-- raw HTML omitted --> <!-- raw HTML omitted -->Schmiedehammer<!-- raw HTML omitted --> <!-- raw HTML omitted -->Dieter<!-- raw HTML omitted --> <!-- raw HTML omitted -->Graf&rsquo;s Champion<!-- raw HTML omitted --> <!-- raw HTML omitted -->Broken nose<!-- raw HTML omitted --> <!-- raw HTML omitted -->Bright, friendly, and helpful<!-- raw HTML omitted --> <!-- raw HTML omitted -->Engaged to<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->22<!-- raw HTML omitted --> <!-- raw HTML omitted -->Jung<!-- raw HTML omitted --> <!-- raw HTML omitted -->Kirsten<!-- raw HTML omitted --> <!-- raw HTML omitted -->Lady at Court<!-- raw HTML omitted --> <!-- raw HTML omitted -->Simple, classically stylish<!-- raw HTML omitted --> <!-- raw HTML omitted -->Keen Intuition<!-- raw HTML omitted --> <!-- raw HTML omitted -->Strongly dislikes<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->23<!-- raw HTML omitted --> <!-- raw HTML omitted -->Sinnlich<!-- raw HTML omitted --> <!-- raw HTML omitted -->Natasha<!-- raw HTML omitted --> <!-- raw HTML omitted -->Lady at Court<!-- raw HTML omitted --> <!-- raw HTML omitted -->Ice blue eyes<!-- raw HTML omitted --> <!-- raw HTML omitted -->Worships power<!-- raw HTML omitted --> <!-- raw HTML omitted -->Regrets a fling with<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->24<!-- raw HTML omitted --> <!-- raw HTML omitted -->Pavarotti<!-- raw HTML omitted --> <!-- raw HTML omitted -->Luigi<!-- raw HTML omitted --> <!-- raw HTML omitted -->Baronial Physician<!-- raw HTML omitted --> <!-- raw HTML omitted -->Fat and flamboyant<!-- raw HTML omitted --> <!-- raw HTML omitted -->Good hearted with a lust for life<!-- raw HTML omitted --> <!-- raw HTML omitted -->Provides care for<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->25<!-- raw HTML omitted --> <!-- raw HTML omitted -->Todbringer<!-- raw HTML omitted --> <!-- raw HTML omitted -->Stefan<!-- raw HTML omitted --> <!-- raw HTML omitted -->Baron<!-- raw HTML omitted --> <!-- raw HTML omitted -->Sickly and drooling<!-- raw HTML omitted --> <!-- raw HTML omitted -->Feeble minded, idiotic<!-- raw HTML omitted --> <!-- raw HTML omitted -->Can only get help from<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --></h2>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2013-12-26</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2013-12-27-vornheiming-middenheim-part-vi-cults/">
+                    Next<br>Vornheiming Middenheim Part VI: Cults and Intrigue
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2013-12-25-self-indulgent-year-end-post/">
+                    Previous<br>Self Indulgent Year-End Post
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

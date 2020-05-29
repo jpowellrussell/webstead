@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html><head>
+<title>The Building Blocks of Creativity - Creativity Part 2</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    The Building Blocks of Creativity - Creativity Part 2
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2017-08-18 00:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Coaching]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/creativity">Creativity</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>Last time we came up with a <a href="https://www.jeffrussellcoaching.com/coaching-blog/2017/8/11/creativity-part-1-defining-creativity">definition of creativity</a>, and today we’re going to talk about some of its core building blocks, from deferring judgment to the inputs you take in. These fundamental concepts will give you the raw materials you need to understand and undertake specific exercises to be more creative yourself - some of which we’ll detail in our next installment of the series.</p>
+<p>The first and most important concept you need for better creativity comes from Edward De Bono’s <a href="https://smile.amazon.com/Lateral-Thinking-Creativity-Step-ebook/dp/B003V1WTLI/ref=sr_1_1?ie=UTF8&amp;qid=1502986629&amp;sr=8-1&amp;keywords=lateral+thinking">Lateral Thinking</a>: sometimes to get to a good idea, you have to go through a bad idea. Everything else we’ll talk about grows from this small seed. You can grasp this simple idea in moments, but like <a href="https://en.wikipedia.org/wiki/Reversi">Othello</a>, you can spend a lifetime truly mastering it. For your first challenge, the entire tradition of western thought has focused on <a href="http://www.andyeklund.com/is-linear-thinking-bad/">Linear Thinking</a>, which de Bono contrasts with <a href="https://en.wikipedia.org/wiki/Lateral_thinking">Lateral Thinking</a> in his book of the same name. Our education and culture reinforce linear thinking relentlessly. It requires every step make sense and build to the next. It’s how you make <a href="https://en.wikipedia.org/wiki/Argument#Deductive">an argument that doesn’t suck</a>. It’s how you prove things in math or map out a promising theory in science. If one step is wrong, every step after it is wrong, end of story. So when you operate in a linear thinking mode, you carefully check every step of progress to make sure you’re still on firm ground.</p>
+<p>Don’t get me wrong: linear thinking is extremely important, despite being less sexy than lateral thinking. At some point, you have to figure out if your brilliant idea actually works. The trouble is that linear thinking can hamper you from having the good idea in the first place. Sometimes something silly or wrong gets you to look at a problem in a new way, which produces genuine insight. You give yourself permission to have bad ideas that can get to good ideas later with a habit of thought called <a href="https://blog.basadur.com/2015/02/04/does-deferring-judgment-really-impact-creativity-or-does-immediate-judgement-save-a-lot-of-time-and-provide-the-hard-nosed-focus-that-real-world-innovation-demands/">Active Deferral of Judgement</a>.  Simply catch yourself whenever you go “that was silly” or “that will never work” while you are trying to think up ideas. We’ll talk more in the next part of the series about techniques to build this habit.</p>
+<p>Deferring judgment lets us properly separate thinking into its two flavors: <a href="https://www.cleverism.com/idea-generation-divergent-vs-convergent-thinking/">divergent</a> <a href="https://www.cleverism.com/idea-generation-divergent-vs-convergent-thinking/">and</a> <a href="https://www.cleverism.com/idea-generation-divergent-vs-convergent-thinking/">convergent</a>. Divergent thinking is maximizing the number of ideas on the table - it is often referred to as ideation or idea generation. Convergent thinking is looking at previously created ideas and deciding which ones are relevant - it is often called evaluation. Both kinds of thinking are equally important and equally necessary - remember that my definition of creativity requires things be both new and useful.</p>
+<p>Turns out most of us find it easier to do one or the other, and if we don’t learn about these differences, we get puzzled by other people’s challenges. For example, I have a friend who can fill a page with brand new ideas while I’m still struggling to break 10. On the other hand, ask him to take 100 things and group them based on similarity and he’ll be agonizing while I’m happily clustering sticky notes. The important thing is <a href="https://melanism.files.wordpress.com/2013/09/cropped-header2013.jpg">don’t cross the streams</a>. Unlike chocolate and peanut butter, these two flavors are not better together. Prematurely converging hinders your ability to produce ideas, and coming up with ideas distracts you from evaluating what you already have. Again, we’ll go into some tools next time for how to successfully separate these.</p>
+<p>Even though I’m sure you will start applying the above concepts all over the place already, there’s another step for maximum effectiveness. If you point a group of people at a problem and say “Diverge then converge and come back to me with something great!” they’re probably going to spend a lot of time spinning their wheels. To get around that, you need a process or framework that gives guidance on what to diverge on, and what criteria to use for convergence.</p>
+<p>One of the best frameworks for teams is <a href="http://www.basadur.com/">Basadur Applied Creativity</a>. It consists of an eight part problem solving cycle with divergence and convergence in each phase. It’s remarkably effective for surfacing the best stuff from a group and generating creative solutions to problems with buy in from everyone on the team. I use it at work all the time, and I’m consistently amazed by what we we get when we use the process versus when we don’t.</p>
+<p>For individual creative pursuit, though, I find the Basadur approach a bit heavyweight. Instead, I prefer the framework laid out in <a href="https://smile.amazon.com/Technique-Producing-Ideas-James-Young-ebook/dp/B00N33OYPI/ref=sr_1_1?ie=UTF8&amp;qid=1502990296&amp;sr=8-1&amp;keywords=a+technique+for+producing+ideas">A Technique for Producing Ideas</a>. It is straightforward, actionable, and consistently produces individual insights when followed. Plus, you want to talk about bang for buck? This 42 page book will revolutionize how you work on your own creative projects. We’ll talk through how to apply both of these frameworks next time.</p>
+<p>We often overlook the last concept I want to talk about when we are thinking of creativity as an active pursuit: our <a href="https://danielmiessler.com/blog/creative-output-requires-quality-inputs/#gs.WY=bvIM">inputs</a>. If you want to think well, you need things to think about, and those come from what you read, watch, hear, and do. Remember that our definition from last time emphasized the role of finding new connections between existing material in creativity. Your inputs determine both the existing material and the ideas for new connections you have to work with. We live in an age of near unlimited informational options, so next time I’ll discuss some of the ways I like to make decisions about what inputs to seek out and experience.</p>
+<p>As we talked about, creativity is a much discussed topic, so I’ve left out a number of interesting ideas and focused on the most essential. You could do worse than to check out the <a href="https://en.wikipedia.org/wiki/Creativity">Wikipedia article</a> on creativity if you want to check out some stuff not covered here. I found the discussion of <a href="https://en.wikipedia.org/wiki/Creativity#Affect">Affect</a> and <a href="https://en.wikipedia.org/wiki/Creativity#REM_sleep">Sleep</a> especially thought provoking. I was also fascinated by <a href="https://smile.amazon.com/Where-Good-Ideas-Come-Innovation/dp/1594485380/ref=sr_1_1?ie=UTF8&amp;qid=1502991782&amp;sr=8-1&amp;keywords=where+good+ideas+come+from">Where Good Ideas Come From</a>, but it looks more at cultural and strategic ways to foster creativity - how does a society end up creative or what can someone do over the course of their life to cultivate creative insights, rather than “what can I do when I sit down with a specific problem today?” There’s a lot of high quality thinking out there on creativity, and I look forward to revisiting the topic for a long time to come.</p>
+<p>Okay, so I’ve laid out why Active Deferral of Judgement, Divergence/Convergence, Framework, and Inputs are the basic components of creativity. Next time we’ll go through examples of how to actually apply each of these concepts, but even without that, you now how a powerful toolbox for thinking about and working with creativity.</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2017-08-18</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/coaching/2017-08-25-practicing-divergent-convergent-thinking-creativity-part-3/">
+                    Next<br>Practicing Divergent &amp; Convergent Thinking - Creativity Part 3
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/coaching/2017-08-11-creativity-part-1-defining-creativity/">
+                    Previous<br>Creativity Part 1 - Defining Creativity
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

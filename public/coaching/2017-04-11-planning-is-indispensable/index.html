@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html><head>
+<title>Planning is Indispensable</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Planning is Indispensable
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2017-04-11 00:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Coaching]</a>
+                                &nbsp;
+                        
+
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <blockquote>
+<p>“In preparing for battle, I have always found that plans are useless but planning is indispensable”</p>
+</blockquote>
+<p>— Dwight D. Eisenhower</p>
+<p>Planning is something that I resisted for a long time. I thought it would be stifling and a pain in the ass, with no real benefit. Oh how wrong I was. Now that I have made planning a major part of how I work, I find myself far less stressed, I rarely feel overwhelmed, and I have made significant progress on personal and professional goals.  In addition to simply thinking about what to do ahead of time, I have found a powerful “force multiplier” in the form of prioritizing work with a method called “Three to Thrive.” Many of us avoid getting started with planning and prioritization because it feels a bit intimidating, but I’m going to share a couple of simple, lightweight ways to introduce them into your life pain free, so that you too can enjoy the clarity and flexibility they bring.</p>
+<p>The first point to keep in mind is that Planning is about the process, not the output. You will rarely (if ever) follow a plan exactly, and that&rsquo;s a good thing. A lot of us avoid planning out of an intuitive sense that circumstances will quickly stop us from following our intended course of action. As the Prussian Chief of Staff <a href="https://smile.amazon.com/Moltke-Art-War-Selected-Writings-ebook/dp/B002DMZ9PO/ref=sr_1_1?ie=UTF8&amp;qid=1491517449&amp;sr=8-1&amp;keywords=von+moltke">Helmuth von Moltke</a> said, “<a href="https://en.wikiquote.org/wiki/Helmuth_von_Moltke_the_Elder">no plan of operations extends with any certainty beyond the first contact with the main hostile force</a>” (you&rsquo;ve probably heard the catchier paraphrase, “no plan survives contact with the enemy”, but we believe in accuracy here at Jeffco Industries). We get nervous thinking about this inevitability. I know that I sometimes catch myself feeling anxious when I start to deviate from the plan. Fortunately for me, <a href="http://calnewport.com/blog/">Cal Newport</a> has offered the antidote to that particular poison. He describes the way that planning is <a href="http://calnewport.com/blog/2015/08/14/deep-habits-process-trumps-results-for-daily-planning/">a valuable mental <em>practice</em></a>, and that exactly following your schedule to the minute matters far less than the mental workout. Planning trains your brain to actually think about what matters, to realize you have to make trade offs between what you can and can’t try to accomplish in one day, and to not constantly operate in reactive mode.</p>
+<p>The simplest form of planning is the traditional &ldquo;to do&rdquo; list or <a href="https://www.scotthyoung.com/learnonsteroids/SJCI93jfks9ijuquougjksnd908b89djijDr2-Feb/WeeklyDailyGoals.pdf">a list of goals</a>. Even this small step is a giant leap ahead of most people. Let&rsquo;s take a look at what&rsquo;s become typical. You come into work and immediately check your email. Maybe you don&rsquo;t make it to the office, or even out of bed, before you check. As soon as your day begins, you&rsquo;re reacting to what others need or want, and you spend the rest of the day putting out fires and <a href="https://bunkstrutts.files.wordpress.com/2015/01/kitty-whack-a-mole1.gif">whacking moles</a>. Sound familiar? Now I want you to imagine a different day. You have a plan not to check email until you’ve had an hour or two of high quality work. You come in, you knock it out. Then, when you open up your inbox, it’s because you&rsquo;ve <em>decided</em> you’re ready to field new challenges and help other people out. How empowering would that feel?</p>
+<p>Your goal list doesn&rsquo;t need to be excessively detailed or even very complete - maybe you just write down a handful of things <a href="http://img.memecdn.com/to-do-list_o_153739.gif">you want to be sure of</a> and <a href="https://az616578.vo.msecnd.net/files/2016/04/02/635951676205537820-681818248_tumblr_inline_nzkxu6xAxL1qcq7oa_500.gif">wing the rest</a>. If you find yourself allergic to &ldquo;to do&rdquo; lists or daily goals, another simple but effective method is to block off parts of your day for working on specific projects. For example, you fire up Outlook, find an open hour, and create an appointment that says &ldquo;Novel&rdquo;. During that time, you do whatever you need to make progress on your novel, but you&rsquo;re free to decide in the moment. Set up a few of these, and you start to have a pretty robust plan for your day, with &ldquo;open&rdquo; space in between left for the reactive stuff we all have to deal with. Whichever method you choose, a time will come when you have to change your plan. Maybe your boss dumps something urgent in your lap, or you wildly overestimate how much you can get done today (I’m especially prone to this one), but as you adjust your plan, you get even more practice at assessing what to do, and your brain <a href="https://www.scotthyoung.com/blog/2017/03/23/neurosci-of-expertise/">strengthens the connections</a> you&rsquo;re trying to build.</p>
+<p>You can really power up your planning when you add in <strong>Prioritization</strong>. It forces you to make strategic judgements about how you use your time and brain power. All strategy means trade offs - <a href="http://www.businessinsider.com/questions-successful-managers-ask-employees-2016-3">choosing to do one thing instead of other things</a>. Well, perhaps I should say all <a href="http://gifrific.com/wp-content/uploads/2012/07/Buttermilk-the-Goat-knocks-down-other-goat.gif"><em>effective</em> strategy does</a>. As Peter Drucker argues in <a href="https://smile.amazon.com/Effective-Executive-Definitive-Harperbusiness-Essentials-ebook/dp/B01F1WZGNC/ref=sr_1_1?ie=UTF8&amp;qid=1491518662&amp;sr=8-1&amp;keywords=effective+executive"><em>The Effective Executive</em></a>, it is far more important to figure out <em>what</em> to do than it is to figure out <em>how</em> to do it efficiently. Efficiency is a wonderful thing, and all of us here certainly love it and seek it out, but effectiveness has to come first. Prioritization is the point of contact between your judgment of effectiveness and the world. Many people who make use of some kind of task capture tool fall into the common trap of checking off all the easy things and then saying “look how much I got done!” (I certainly don&rsquo;t know that from personal experience, I assure you). Prioritization forces you to confront your tendency to shy away from the hard stuff that matters and put it in check by identifying what’s important to you in a moment of calm and foresight. Tim Ferriss likes to ask himself “<a href="http://tim.blog/2013/11/03/productivity-hacks/">what would make all of my other tasks easier or not matter?</a>” This is an incredibly powerful question, and I frequently use it to help clients select a goal to pursue in coaching, but you can apply it at any scale.</p>
+<p>When it comes to day to day planning, though, my favorite prioritization method is to choose &ldquo;Three to Thrive” for the day. I’ve adopted <a href="http://www.huffingtonpost.com/entry/tony-robbins-morning-ritual_us_57c4ae57e4b09cd22d922f78">this method</a> from Tony Robbins. It’s very simple: look over your list of things you’re planning to do today, and pick three of them as your “Three to Thrive” (I draw a little <a href="https://s-media-cache-ak0.pinimg.com/564x/b4/dd/3a/b4dd3a0b3396580057090e4ed7731791.jpg">triforce</a> next to the actions in my <a href="http://bulletjournal.com/">Bullet Journal</a>). If you complete these three things, you “win” the day. And there you are, you’ve just prioritized your day. A more extreme version of prioritization is to identify <a href="https://smile.amazon.com/ONE-Thing-Surprisingly-Extraordinary-Results-ebook/dp/B00C1BHQXK/ref=sr_1_1?ie=UTF8&amp;qid=1491536340&amp;sr=8-1&amp;keywords=the+one+thing"><em>The One Thing</em></a> that is most important today and do that. I prefer Three to Thrive for myself and my clients for a few reasons. First, it’s reasonably constrained - three things are not that many things. On the other hand, if you are new to prioritization, the pressure of choosing just <em>one</em> most important thing can make your brain <a href="https://www.researchgate.net/publication/221992388_Training_in_creative_problem_solving_Effects_on_ideation_and_problem_finding_and_solving_in_an_industrial_research_organization">seize up</a>. Ever tried to answer the question “what’s your favorite movie?” and been at a loss for words? Same deal. Having three things gives your brain a bit of breathing room to worry a little less about getting it “right”, which paradoxically <a href="http://digitalcommons.buffalostate.edu/cgi/viewcontent.cgi?article=1158&amp;context=creativeprojects">makes it easier to do</a>. Finally, if you are hustling to get multiple projects done, this gives you a way to balance that out. Let’s say you’ve got a day job and are building an online business on the side. You can set a little rule for yourself that every day one of your three to thrive has to be for your day job and another for your business, with your third one as a “flex” priority.</p>
+<p>Daily planning and prioritization is your first step in taking strategic control of your life. Once you build the habit of thinking about your day and making choices about what to focus on ahead of time, it becomes much easier to apply the same logic to your week, or your quarter. Plans are also valuable after the fact - with a written plan, you can look back and compare it against what really happened. This reflection will let you learn some valuable things about what you were assuming, what you thought would be important, and what actually happened. For example, I recently reviewed my “three to thrive” for each day of the past quarter and had some powerful insights about what had and hadn’t helped move my life in the direction I wanted it to go that weren&rsquo;t obvious when I was making my daily plan. The most unexpected benefit of having a plan,and possibly the best one, is that it actually gives you <em>more</em> flexibility to improvise rather than less, because everything else is assessed and under control.</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2017-04-11</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/coaching/2017-04-11-jeffs-recommended-self-improvement-reading/">
+                    Next<br>Jeff&#39;s Recommended Self-Improvement Reading
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/coaching/2017-04-10-designing-your-own-productivity-framework/">
+                    Previous<br>Designing Your Own Productivity Framework
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html><head>
+<title>A Quick Start Guide for Your Brain’s User Interface</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    A Quick Start Guide for Your Brain’s User Interface
+                    
+                    <div class="post-meta">
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Coaching]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/mental-models">Mental Models</a>
+                                &nbsp;
+                            
+                                <a href="/tags/systems">Systems</a>
+                                &nbsp;
+                            
+                                <a href="/tags/psychology">Psychology</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>Note: This post might get your hackles up a bit. You might find it especially surprising in a space dedicated to agency and self improvement - but stick with me and you might learn something extremely useful.</p>
+<p>We overestimate our control over what we think, how we feel, and even what we do. We assume that every moment of every day we are rationally picking and choosing what to do. It turns out this is an extremely inadequate view of how we operate. We actually take most of our actions on autopilot with little or no conscious thought. Even when we are exercising conscious thought, it is shaped and influenced by mysterious factors under the surface and in our environment. This all sounds somewhat depressing until we realize that we have the power to shape these factors and build the systems that drive our behavior. Our brain has a user interface and we can access it if we know where to look.</p>
+<p>I got the idea of accessing your user interface from Scott Adams, who likes to refer to people as “<a href="http://blog.dilbert.com/post/102627971721/programming-the-moist-robot">moist robots</a>.” He argues that a lot of what determines our behavior comes down not to some ineffable  agency, but concrete elements of our environment and repeated behavior, like what we eat, who we surround ourselves with, or how active we choose to be. We can treat those elements as programmable variables that we can tweak to get the results we want.</p>
+<p>Now, I’m not sure I buy the idea that we are really meaty automatons, but it&rsquo;s a remarkably useful paradigm. Paradoxically, it gives you greater agency, because you are not only the robot, you are also the programmer. Once you accept that tweaking your “inputs” can have predictable outcomes, you can experiment until you get the results you want, rather than accepting “that’s just the way I am” or “I don’t have the willpower for that.&rdquo;</p>
+<p>So, what are some of the elements of this user interface? A lot of what we’ve covered before applies, especially the material on sleep, exercise, and stress management. These are some of the simplest and most effective ways to get the outcomes you’re looking for, and there’s a ton of <a href="https://smile.amazon.com/Power-Full-Engagement-Managing-Performance-ebook/dp/B000FC0SWS/ref=sr_1_1?ie=UTF8&amp;qid=1498855200&amp;sr=8-1&amp;keywords=the+power+of+full+engagement">good literature</a> on those subjects. Starting with physical elements is also helpful because we are used to thinking in terms of a <a href="https://en.wikipedia.org/wiki/Mind%E2%80%93body_dualism">Cartesian Duality</a> - my mind is “me” and my body just drags the real me around and has bizarre urges of its own. With that view, it&rsquo;s a little easier to accept that your body is a thing that <a href="https://smile.amazon.com/4-Hour-Body-Uncommon-Incredible-Superhuman-ebook/dp/B003EI2EH2/ref=sr_1_1?ie=UTF8&amp;qid=1498855399&amp;sr=8-1&amp;keywords=four+hour+body">you can experiment with and get repeatable outcomes from</a>.</p>
+<p>Here’s three simple experiments to get you started: 1) Buy a <a href="https://www.wareable.com/fitness-trackers/the-best-fitness-tracker">fitness tracker</a>, 2) Get a 1 quart/1 liter water bottle and <a href="http://jewelpie.com/sure-way-to-get-8-glasses-of-water-diy-water-bottle-marked-with-time/">write times next to the level markers</a>, 3) <a href="http://re-timer.com/app/uploads/2015/07/Chapter9.pdf?dad806">Spend some time in sunlight immediately after waking</a>. Just pick one of these, try it, and notice the effects.</p>
+<p>Once you’ve gotten used to “programming” your body, you might be ready to work on your mental and emotional inputs. As we’ve discussed in <a href="https://www.jeffrussellcoaching.com/coaching-blog/2017/4/27/the-lazy-mans-guide-to-exercise">previous</a> <a href="https://www.jeffrussellcoaching.com/coaching-blog/2017/5/26/preventative-maintenance-self-care-part-2">posts</a>, the division between mental and physical is not very clean, and if you’ve been eating better, sleeping more, and exercising more effectively, you’ve certainly noticed mental and emotional benefits. On the other hand, there are also some purely mental and emotional knobs you can fiddle with.</p>
+<p>One big one is the kind of media you engage with - if you spend all your time on downer movies and depressing novels, you’re just not gonna be a happy, energetic person. Obviously I don’t want you to completely cut out material with “negative” emotions. But dealing with heartache, depression, fear, and other challenging emotions is a source of stress for your mind the same way picking up heavy stuff is a source of stress for your body. Pushing yourself in a controlled way builds strength and capacity for more. Overdoing it will knock you on your ass.</p>
+<p>The more practical branches of philosophy offer another method for programming our own operating system. My personal favorite is <a href="https://en.wikipedia.org/wiki/Stoicism">Stoicism</a> because it provides a global framework for how you engage with the unexpected intellectually and emotionally, but it’s far from the only answer out there. <a href="https://smile.amazon.com/Consolations-Philosophy-Vintage-International-ebook/dp/B00ATLA8RU/ref=sr_1_1?ie=UTF8&amp;qid=1498859677&amp;sr=8-1&amp;keywords=consolations+of+philosophy">The Consolations of Philosophy</a> by Alain de Botton provides a wonderful sampler of different philosophers and why they are useful if you have never considered philosophy worthwhile. More recent work can also present helpful approaches: Kamal Ravikant’s <a href="https://smile.amazon.com/Love-Yourself-Like-Your-Depends-ebook/dp/B0086BX8UE/ref=sr_1_1?ie=UTF8&amp;qid=1498859767&amp;sr=8-1&amp;keywords=love+yourself+like+your+life+depends+on+it">Love Yourself Like Your Life Depends On It</a> packs the best bang for the buck in its tight 54 pages.</p>
+<p>Besides media and our internal frame for viewing the world, the biggest impact on how we think and feel about things are the people around us. As highly social beings, <a href="http://www.businessinsider.com/jim-rohn-youre-the-average-of-the-five-people-you-spend-the-most-time-with-2012-7">we are the average of the five people we spend the most time with</a>. Toxic or excessively negative people in your life will rub off on you - but so will caring, energetic people. So make sure you’re spending time with people that build you up more than they tear you down.</p>
+<p>My favorite way to program my own behavior, though, is to tweak the environment. It sounds too dumb to work, but is extremely effective. The goal is to make the right thing too easy not to do. I was first introduced to this idea in <a href="https://smile.amazon.com/House-That-Cleans-Itself-ebook/dp/B00BFH3UX6/ref=sr_1_1?ie=UTF8&amp;qid=1498860305&amp;sr=8-1&amp;keywords=the+house+that+cleans+itself">The House that Cleans Itself</a>, but it underlies all <a href="https://smile.amazon.com/Design-Everyday-Things-Revised-Expanded-ebook/dp/B00E257T6C/ref=sr_1_1?ie=UTF8&amp;qid=1498860351&amp;sr=8-1&amp;keywords=design+of+everyday+things">good design</a>: any object, system, or organization is perfectly designed for the outcomes it’s getting. There are many simple things you can do. Want to be more active? Get a standing desk. Want to stop eating garbage foods? Throw them away and keep them out of your pantry. Want to read more? Put the Kindle app on your phone.</p>
+<p>Here’s a more illustrative example. My mail used to pile up next to the front door. My wife and I would both look through it and figure the other person would deal with it. We tried talking about it, made vows to be better, and even got into fights about it. Still a huge pile of mail. Finally I read this book and talked about it with my wife. She ordered a <a href="https://target.scene7.com/is/image/Target/15023403?wid=360&amp;hei=360&amp;qlt=80&amp;fmt=pjpeg">two basket wire inbox</a>. We labeled one with my name and one with hers and put it on the credenza next to the door. There was one more crucial step - we put a little recycling bin right next to it. Pile of mail: <a href="https://www.youtube.com/watch?v=J0XbcNcNJgQ">straight killt</a>. It is now trivially easy to sort the mail and throw out the junk - all because we decided to change our living room instead of our behavior.</p>
+<p>So, there we have it: an intro to the physical, mental, and environmental ways we can access our user interface to change behavior. I’m not gonna lie - when I first heard this concept, I bristled at the lack of agency it implied. By actually giving it a shot, I have discovered where I really do have agency versus where I don’t and how to more effectively direct my efforts. The realization that major changes can be easier than you ever suspected turns out to be incredibly empowering.</p>
+
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/coaching/2018-01-8-groundwork-for-strategy/">
+                    Next<br>
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/leaves/about/">
+                    Previous<br>About
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

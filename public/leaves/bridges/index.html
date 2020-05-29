@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<html><head>
+<title>Bridge Folks</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#how-to-learn-from-these-folks" v-on:click="closeDrawer" id="how-to-learn-from-these-folks-nav">
+										 How to Learn from These Folks
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#ways-these-folks-are-alike" v-on:click="closeDrawer" id="ways-these-folks-are-alike-nav">
+										 Ways These Folks Are Alike
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#not-only-book-writers" v-on:click="closeDrawer" id="not-only-book-writers-nav">
+										 Not Only Book Writers
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#edges-of-networks" v-on:click="closeDrawer" id="edges-of-networks-nav">
+										 Edges of Networks
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#wise-in-one-field" v-on:click="closeDrawer" id="wise-in-one-field-nav">
+										 Wise In One Field
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#but-love-learning-in-many-fields" v-on:click="closeDrawer" id="but-love-learning-in-many-fields-nav">
+										 But Love Learning in Many Fields
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#willingness-to-hear-others-out" v-on:click="closeDrawer" id="willingness-to-hear-others-out-nav">
+										 Willingness to Hear Others Out
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#can-tell-you-not-only-what-but-why" v-on:click="closeDrawer" id="can-tell-you-not-only-what-but-why-nav">
+										 Can Tell You Not Only What, But Why
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#strongly-held-weird-beliefs" v-on:click="closeDrawer" id="strongly-held-weird-beliefs-nav">
+										 Strongly Held Weird Beliefs
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#getting-something-out-of-the-way" v-on:click="closeDrawer" id="getting-something-out-of-the-way-nav">
+										 Getting Something Out of The Way
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#the-bridge-folks" v-on:click="closeDrawer" id="the-bridge-folks-nav">
+										 The Bridge Folks
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#scott-adams" v-on:click="closeDrawer" id="scott-adams-nav">
+										 Scott Adams
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#scott-alexander" v-on:click="closeDrawer" id="scott-alexander-nav">
+										 Scott Alexander
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#greg-cochran" v-on:click="closeDrawer" id="greg-cochran-nav">
+										 Greg Cochran
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#tim-ferriss" v-on:click="closeDrawer" id="tim-ferriss-nav">
+										 Tim Ferriss
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#john-michael-greer" v-on:click="closeDrawer" id="john-michael-greer-nav">
+										 John Michael Greer
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#cal-newport" v-on:click="closeDrawer" id="cal-newport-nav">
+										 Cal Newport
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#shane-parrish" v-on:click="closeDrawer" id="shane-parrish-nav">
+										 Shane Parrish
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#jordan-b-peterson" v-on:click="closeDrawer" id="jordan-b-peterson-nav">
+										 Jordan B. Peterson
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#eric-s-raymond" v-on:click="closeDrawer" id="eric-s-raymond-nav">
+										 Eric S. Raymond
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#joe-rogan" v-on:click="closeDrawer" id="joe-rogan-nav">
+										 Joe Rogan
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#nassim-nicholas-taleb" v-on:click="closeDrawer" id="nassim-nicholas-taleb-nav">
+										 Nassim Nicholas Taleb
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#eric-weinstein" v-on:click="closeDrawer" id="eric-weinstein-nav">
+										 Eric Weinstein
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#scott-young" v-on:click="closeDrawer" id="scott-young-nav">
+										 Scott Young
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#how-to-learn-from-these-folks" v-on:click="closeDrawer" id="how-to-learn-from-these-folks-nav">
+										 How to Learn from These Folks
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#ways-these-folks-are-alike" v-on:click="closeDrawer" id="ways-these-folks-are-alike-nav">
+										 Ways These Folks Are Alike
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#not-only-book-writers" v-on:click="closeDrawer" id="not-only-book-writers-nav">
+										 Not Only Book Writers
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#edges-of-networks" v-on:click="closeDrawer" id="edges-of-networks-nav">
+										 Edges of Networks
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#wise-in-one-field" v-on:click="closeDrawer" id="wise-in-one-field-nav">
+										 Wise In One Field
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#but-love-learning-in-many-fields" v-on:click="closeDrawer" id="but-love-learning-in-many-fields-nav">
+										 But Love Learning in Many Fields
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#willingness-to-hear-others-out" v-on:click="closeDrawer" id="willingness-to-hear-others-out-nav">
+										 Willingness to Hear Others Out
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#can-tell-you-not-only-what-but-why" v-on:click="closeDrawer" id="can-tell-you-not-only-what-but-why-nav">
+										 Can Tell You Not Only What, But Why
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#strongly-held-weird-beliefs" v-on:click="closeDrawer" id="strongly-held-weird-beliefs-nav">
+										 Strongly Held Weird Beliefs
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#getting-something-out-of-the-way" v-on:click="closeDrawer" id="getting-something-out-of-the-way-nav">
+										 Getting Something Out of The Way
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#the-bridge-folks" v-on:click="closeDrawer" id="the-bridge-folks-nav">
+										 The Bridge Folks
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#scott-adams" v-on:click="closeDrawer" id="scott-adams-nav">
+										 Scott Adams
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#scott-alexander" v-on:click="closeDrawer" id="scott-alexander-nav">
+										 Scott Alexander
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#greg-cochran" v-on:click="closeDrawer" id="greg-cochran-nav">
+										 Greg Cochran
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#tim-ferriss" v-on:click="closeDrawer" id="tim-ferriss-nav">
+										 Tim Ferriss
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#john-michael-greer" v-on:click="closeDrawer" id="john-michael-greer-nav">
+										 John Michael Greer
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#cal-newport" v-on:click="closeDrawer" id="cal-newport-nav">
+										 Cal Newport
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#shane-parrish" v-on:click="closeDrawer" id="shane-parrish-nav">
+										 Shane Parrish
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#jordan-b-peterson" v-on:click="closeDrawer" id="jordan-b-peterson-nav">
+										 Jordan B. Peterson
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#eric-s-raymond" v-on:click="closeDrawer" id="eric-s-raymond-nav">
+										 Eric S. Raymond
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#joe-rogan" v-on:click="closeDrawer" id="joe-rogan-nav">
+										 Joe Rogan
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#nassim-nicholas-taleb" v-on:click="closeDrawer" id="nassim-nicholas-taleb-nav">
+										 Nassim Nicholas Taleb
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#eric-weinstein" v-on:click="closeDrawer" id="eric-weinstein-nav">
+										 Eric Weinstein
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#scott-young" v-on:click="closeDrawer" id="scott-young-nav">
+										 Scott Young
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Bridge Folks
+                    
+                    <div class="post-meta">
+                        
+
+                        
+
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>When you are first getting started learning a new field, it can be hard to thresh out the wheat from the chaff. Finding out the groundwork in a field is not too hard these days, what with <a href="wikipedia.org">wikipedia</a> and <a href="https://amzn.to/2TCBxlD">nearly unending books at your finger tips</a>, but if you can find someone with a way of looking at things that is very much their own, maybe even a bit weird - as long as they&rsquo;re not a full-on crank - <em>that</em> is a great boon. I am always looking for such folks, and I hoard them like a wyrm on his heap of gold. Luckily, unlike gold, I can share my wealth with y&rsquo;all and lose nothing, so may you learn from these folks as I have. Likewise, if you know of someone like those I talk about below, please share them with me so that we might both build up our lorehoard.</p>
+<p><a href="#how-to-learn-from-these-folks">How to Learn from These Folks</a><br>
+<a href="#ways-these-folks-are-alike">Ways These Folks Are Alike</a><br>
+<a href="#getting-something-out-of-the-way">Getting Something Out of The Way</a><br>
+<a href="#the-bridge-folks">The Bridge Folks</a></p>
+<h2 id="how-to-learn-from-these-folks">How to Learn from These Folks</h2>
+<p>My great goal in choosing these folks is to get a breadth of unalike views. It is not hard at all to get sucked into reading and listening only to things from one outlook, which not only means you&rsquo;re missing out on other things that you might find worthwhile, it might sometimes <em>blind</em> you to things that you would otherwise see. Thus, while any one of these folks will show you new ways of thinking about things, they are even more helpful when pitted against one another (well, there views, anyhow). If you don&rsquo;t know where to start, might I put forward that you give a shot whoever seems farthest from what you already know and like.</p>
+<h2 id="ways-these-folks-are-alike">Ways These Folks Are Alike</h2>
+<p>Though these folks are very unalike to each other (that being one of the things that makes them helpful), they do share some broad hallmarks that I&rsquo;ve laid out below.</p>
+<p><a href="#not-only-book-writers">Not Only Book Writers</a><br>
+<a href="#edges-of-networks">Edges of Networks</a><br>
+<a href="#wise-in-one-field">Wise in One Field</a><br>
+<a href="#but-love-learning-in-many-fields">But Love Learning in Many Fields</a><br>
+<a href="#willingness-to-hear-others-out">Willingness to Hear Others Out</a><br>
+<a href="#can-tell-you-not-only-what,-but-why">Can Tell You Not Only What, But Why</a><br>
+<a href="#strongly-held-weird-beliefs">Strongly Held Weird Beliefs</a></p>
+<h3 id="not-only-book-writers">Not Only Book Writers</h3>
+<p>Though some of these folks have written books, I have held off from bringing in folks whose main or only output is books. <a href="/books/">Books</a> are such a big deal to me that I have a whole other bit of the site for them. Instead, here I have held to folks who put out worthwhile stuff in other ways: videos, podcasts, short to middling writings, and most of all, blogs. For myself, I look to these kinds of outlets for new things to dig into, or for further thought and talking around things that I&rsquo;ve read about and want to get some other outlooks on. Also, if I listed every book-writer who otherwise hit all the marks for being a bridge, it&rsquo;d be a long list indeed.</p>
+<h3 id="edges-of-networks">Edges of Networks</h3>
+<p>In <a href="https://en.wikipedia.org/wiki/Network_theory">Network Theory</a>, the links between vertices are called &ldquo;edges&rdquo;. While the narrow meaning of this word is put on <em>any</em> link in a network, it&rsquo;s rather helpful to look most of all at those edges that are least shared, that link up what you might see as two wholly unalike networks. To see what I mean, take <a href="https://www.joerogan.com/#home-2-section">Joe Rogan</a> - we tend to think of stand up comedians and MMA fighters as rather unalike groups, but here&rsquo;s Mr. Rogan spanning the gap between them. Folks on this list tend to be like Joe Rogan - they link together groups that are not often linked, which makes them very good at making known new things to each group, and often gives them insights that folks wholly rooted in one field or another. It&rsquo;s too bad the name &ldquo;edgelord&rdquo; means something wholly other, for it would be a good name for these folks otherwise.</p>
+<h3 id="wise-in-one-field">Wise In One Field</h3>
+<p>To have something weighty to say, you have to put in some amount of hard work, most often in one field moreso than others. Each of the folks below is rather good in one field of knowledge or craft. Besides letting you learn from the know-how of these folks in their given field, another boon is that it helps weed out the cranks - truly mad folks tend not to get good at <em>anything</em>, at least in fields that must prove some truths in the world. You can more readily move up in a field lacking such ties with thoughts and beliefs that are somewhat bonkers.</p>
+<h3 id="but-love-learning-in-many-fields">But Love Learning in Many Fields</h3>
+<p>Even though these folks have put in the work in one field to get very good, they also have a thirst for knowledge in other fields, often far afield from what they know best. This is tightly linked with the first thing above, about edges - their heed of other fields leads to them getting to know folks in that field, which leads to two-way learning, making both groups better off insofar as they listen to each other. For you, this means that folks like this can be a gateway from one field you already know and love into others, as they show you what is worth getting to know over there from where the outlook of where you are now. A further boon is that folks who learn in more than one field tend to be better at finding hidden insights into how they are alike, or at bringing thinking tools from one field and putting them to work in a slightly new way elsewhere, which is one of the big ways fields get new insights and growth.</p>
+<h3 id="willingness-to-hear-others-out">Willingness to Hear Others Out</h3>
+<p>Everyone below has their own strongly held beliefs (see <a href="#strongly-held-weird-beliefs">Strongly Held Weird Beliefs</a>), but almost all of them are very open to at least listening to other ways of looking at the world. There&rsquo;s a few grounds for why this is worth looking for. First off, it&rsquo;s a mark of overall good mindly health if you are willing to hear other beliefs and change your own if it&rsquo;s right to do so - it shows that someone cares more for truth than for already being right. Next, working through the outlook of those who don&rsquo;t share your way of thinking makes you get sharper on your own thinking, so folks willing to do this tend to be better at &ldquo;<a href="#can-tell-you-not-only-what,-but-why">Can Tell You Not Only What, But Why</a>&quot;. Lastly, it helps with <a href="#edges-of-networks">linking up with other networks</a> and <a href="#but-love-learning-in-many-fields">learning from new fields</a>, as they are less likely to spurn something only since it doesn&rsquo;t fit with how see things today.</p>
+<h3 id="can-tell-you-not-only-what-but-why">Can Tell You Not Only What, But Why</h3>
+<p>These folks have well-thought-out beliefs and often one or more spelled out ways of &ldquo;meta-thinking&rdquo; - they think about how they think things through, tweak it, put it to work, and see what it gets them. So not only are they good at walking you through the steps in their thinking, those steps often bring <a href="https://fs.blog/mental-models/">mental models</a> to bear - named tools that can be brought out again and again for better thinking. Not only does this mean these folks have better insights to share with you, you can also <em>learn how to get insights of your own</em> from them.</p>
+<h3 id="strongly-held-weird-beliefs">Strongly Held Weird Beliefs</h3>
+<p>Though I&rsquo;ve held this one for last in this list, in many ways it is the most weighty thing for putting someone on this list. &ldquo;Strongly held&rdquo; beliefs are not that great in-and-of themselves - I know I&rsquo;ve met lots of folks with very strongly held beliefs that maybe ought not hold them. Likewise, having &ldquo;weird beliefs&rdquo; is not that great on its own either - there are plenty of loons out there with pretty weird beliefs. Put them together, and you might think &ldquo;strongly held weird beliefs&rdquo; is not only not helpful, but downright harmful. Often, that&rsquo;s true, but when someone has strongly held weird beliefs <em>even though</em> they have all of the other hallmarks above, that tells me that maybe they&rsquo;re on to something that is murky to the rest of us. This is also why I have a <em>list</em> of folks, and not one guru only - by triangulating among many <em>unalike</em> weird beliefs, I have a better chance of finding truths outside of the mainstream that are nonetheless worthwhile.</p>
+<h2 id="getting-something-out-of-the-way">Getting Something Out of The Way</h2>
+<p>I oughtn&rsquo;t need to say this, but it&rsquo;s the web, so I will: as I said above, these folks all have at least some beliefs that are &ldquo;weird&rdquo; or &ldquo;out there&rdquo;, so my putting someone on this list does not mean I like them or see eye-to-eye with them on all things. Yes, some of these folks have shaped me for the good, but others have &ldquo;only&rdquo; sparked my thoughts and shown me new ways of looking at things - that&rsquo;s worthwhile even if I can&rsquo;t get behind everything they say or do. I&rsquo;ll do my best to spell out below why each man or woman is on the list, but if I don&rsquo;t talk about something they have done or said that has upset you, please don&rsquo;t take a lack of words as giving my blessing.</p>
+<h2 id="the-bridge-folks">The Bridge Folks</h2>
+<p><a href="#scott-adams">Scott Adams</a><br>
+<a href="#scott-alexander">Scott Alexander</a><br>
+<a href="#greg-cochran">Greg Cochran</a><br>
+<a href="#tim-ferriss">Tim Ferriss</a>
+<a href="#john-michael-greer">John Michael Greer</a><br>
+<a href="#cal-newport">Cal Newport</a><br>
+<a href="#shane-parrish">Shane Parrish</a><br>
+<a href="#jordan-b.-peterson">Jordan B. Peterson</a><br>
+<a href="#eric-s.-raymond">Eric S. Raymond</a><br>
+<a href="#joe-rogan">Joe Rogan</a><br>
+<a href="#nassim-nicholas-taleb">Nassim Nicholas Taleb</a><br>
+<a href="#eric-weinstein">Eric Weinstein</a><br>
+<a href="#scott-young">Scott Young</a></p>
+<h3 id="scott-adams">Scott Adams</h3>
+<p><strong>Where to Find Them Online</strong>: <a href="https://www.scottadamssays.com/">Scott Adams Says</a><br>
+<strong>Who They Are</strong>: Best known for coming up with the comic &ldquo;Dilbert&rdquo; about the day-to-day silliness of working for a big business, of late he has been writing more and more on the ways of getting folks to change their minds or do what you want (persuasion), and has written about politics as a way to talk about the field - markedly, he foresaw Trump&rsquo;s election early and laid out why he thought so, and has kept on with saying what he thinks is likely to happen ahead of time and then setting that next to what truly comes about. He has written many books, the one I like best being <a href="https://amzn.to/31Oh8gw"><em>How to Fail At Almost Everything and Still Win Big</em></a>. Of late he has switched from blogging to making videos on <a href="https://www.pscp.tv/ScottAdamsSays/1vOxwqrbeOqGB">Periscope</a>, I believe so that he can do more with the persuasive freedoms of spoken word and seeing his likeness.
+<strong>What I Get From Them</strong>: Adams is good for giving a way of looking at things often wholly unlike that given by others. He talks about the <a href="https://www.scottadamssays.com/2010/06/10/programming-the-moist-robot/">&ldquo;moist robot hypothesis&rdquo;</a>, the thought that more or less when you give folks given inputs you get the looked-for outputs (whether those outputs are thoughts or deeds or feelings). While I don&rsquo;t know if I hold with this way of looking at folks, it can be a helpful tool for looking at what you might change about what you do or look for from other folks. He&rsquo;s also where I got the thought of a <a href="https://www.scottadamssays.com/2016/11/28/the-trump-talent-stack/">&ldquo;Talent Stack&rdquo;</a> from: you can far more readily get pretty good at more than one skill and put them together than you can become the <em>best</em> at any given skill by itself. Lastly, the few times I dip my toe into political waters, I find his ways of looking at things handy to set against what others think (for one thing, he thinks Trump might be doing some stuff well, which is <em>very</em> unlike what I hear from most political talkers).</p>
+<h3 id="scott-alexander">Scott Alexander</h3>
+<p><strong>Where to Find Them Online</strong>: <a href="https://slatestarcodex.com/">Slate Star Codex</a><br>
+<strong>Who They Are</strong>: Scott Alexander is a psychiatrist and belongs to the Rationalist crowd - the kind of folks who read and write on <a href="https://www.lesswrong.com/">LessWrong</a>. He also spends some time doing &ldquo;conworlding&rdquo; and &ldquo;conlanging&rdquo; (&ldquo;constructed world&rdquo; and &ldquo;constructed language&rdquo; for short)- the making up of your own worlds and spoken/written tongues with a group of other folks for fun. He also wrote a long novel put out online in little bits about alternate history American Cabalists called <a href="http://unsongbook.com/">Unsong</a> that I frankly found too weird and hard to get into, but I think well of him for writing it nonetheless.<br>
+<strong>What I Get From Them</strong>: Though I don&rsquo;t wholly hold with &ldquo;Rationalism&rdquo; as an end-all, be-all outlook, &ldquo;rationality&rdquo; (little &lsquo;r&rsquo;) is one of the handiest tools in my mindly toolkit, and Alexander helps me think about sharpening and broadening that tool. He also puts out very in-depth write ups on books that I have found truly helpful: they&rsquo;re the kind that you read and get enough of a feel for the book that you&rsquo;re fired up to read it, but then you go &ldquo;wait, do I really need to after reading that?&rdquo; The two I&rsquo;ve liked the best are the one on <a href="https://slatestarcodex.com/2017/09/05/book-review-surfing-uncertainty/"><em>Surfing Uncertainty</em></a>, the one that led me to his blog firstly, and the one on <a href="https://slatestarcodex.com/2016/04/27/book-review-albions-seed/"><em>Albion&rsquo;s Seed</em></a>. Maybe most helpful thing he does is to very carefully break down how and why he has thought things out, and to be willing to grapple with thoughts that he thinks are wrong to start with, but he wants to see if that&rsquo;s well-grounded or not.</p>
+<h3 id="greg-cochran">Greg Cochran</h3>
+<p><strong>Where to Find Them Online</strong>: <a href="https://westhunt.wordpress.com/">West Hunter</a><br>
+<strong>Who They Are</strong>: One of two writers of <a href="https://amzn.to/2Zm8owE"><em>The 10,000 Year Explosion</em></a> and genetics researcher who was first taught as a physicist and overall crotchety old man with his own strongly held beliefs.<br>
+<strong>What I Get From Them</strong>: Dr. Cochran has, to put it mildly, strongly held ways of looking at the world that he&rsquo;s not frightened of putting forth boldly. That being said, they are strongly held since he has thought them through carefully and read widely and deeply on them. Maybe even more helpful than his book-learning is his readiness to link whatever he might be talking about with day-to-day happenings. He has done a lot for helping me to understand where mankind came from and how we got to be the way we are. He is minded to look at most things as best understood through genetics unless we have grounds to do otherwise, which is a helpful mark to reckon against when working through manifold ways of understanding something. He&rsquo;s also rather well-read in fighting and wars through the years, which is another field I happen to be keen on.</p>
+<h3 id="tim-ferriss">Tim Ferriss</h3>
+<p><strong>Where to Find Them Online</strong>: <a href="https://tim.blog/">The Blog of Author Tim Ferriss</a><br>
+<strong>Who They Are</strong>:<br>
+<strong>What I Get From Them</strong>:</p>
+<h3 id="john-michael-greer">John Michael Greer</h3>
+<p><strong>Where to Find Them Online</strong>: <a href="https://www.ecosophia.net/">Ecosophia</a><br>
+<strong>Who They Are</strong>:<br>
+<strong>What I Get From Them</strong>:</p>
+<h3 id="cal-newport">Cal Newport</h3>
+<p><strong>Where to Find Them Online</strong>: <a href="http://calnewport.com/">Cal Newport</a><br>
+<strong>Who They Are</strong>:<br>
+<strong>What I Get From Them</strong>:</p>
+<h3 id="shane-parrish">Shane Parrish</h3>
+<p><strong>Where to Find Them Online</strong>: <a href="https://fs.blog/">Farnam Street</a><br>
+<strong>Who They Are</strong>:<br>
+<strong>What I Get From Them</strong>:</p>
+<h3 id="jordan-b-peterson">Jordan B. Peterson</h3>
+<p><strong>Where to Find Them Online</strong>: <a href="https://www.jordanbpeterson.com/">Jordan Peterson</a><br>
+<strong>Who They Are</strong>:<br>
+<strong>What I Get From Them</strong>:</p>
+<h3 id="eric-s-raymond">Eric S. Raymond</h3>
+<p><strong>Where to Find Them Online</strong>: <a href="http://esr.ibiblio.org/">Armed &amp; Dangerous</a><br>
+<strong>Who They Are</strong>: ESR is a hacker of the old school who helped build a lot of the tools that make the world work the way we take as given. Does your phone use GPS? Yeah, he helped build that. He also led much of the work to make &ldquo;open source&rdquo; the name for software that shared its underlying code instead of &ldquo;Free Software&rdquo; to help big businesses more readily swallow that way of doing things. This seemingly small tweak helped take that way of doing things from a small weird thing done by hardcore hackers on the bleeding edges of tech knowhow to the benchmark for running the systems that make the tech world of today go round. He also has a thirst for learning across very many fields and talks knowledgeably about politics, economics, psychology, evolution, and philosophy. He&rsquo;s also a pretty earnest libertarian and stands up for the right to bear arms as one of the needed grounds for free folk.<br>
+<strong>What I Get From Them</strong>: I&rsquo;ve been reading ESR&rsquo;s blog for near twenty years now, and it always helps to spark new thoughts in one field or another. It also helps keep me somewhat tied to the world of hackers that I once dreamed of finding my way into, before going other ways. He also first linked me to many of the folks on this list, at least to <a href="#scott-alexander">Scott Alexander</a>, <a href="#greg-cochran">Greg Cochran</a>, and <a href="#jordan-b.-peterson">Jordan Peterson</a>, maybe to others that I can&rsquo;t call to mind. His writing on how science fiction came to be and what makes it the way it is has also made a big mark on my thinking, not only about sci-fi, but about all stories. He has shown me the first steps toward higher thinking in by-the-book reason, philosophy, and mathematics. Lastly, he&rsquo;s never been frightened of saying what he thinks and putting his own name on it, even when that has brought threats to his life and livelihood.</p>
+<h3 id="joe-rogan">Joe Rogan</h3>
+<p><strong>Where to Find Them Online</strong>: <a href="https://www.joerogan.com/">Joe Rogan</a><br>
+<strong>Who They Are</strong>:<br>
+<strong>What I Get From Them</strong>:</p>
+<h3 id="nassim-nicholas-taleb">Nassim Nicholas Taleb</h3>
+<p><strong>Where to Find Them Online</strong>: <a href="https://www.fooledbyrandomness.com/">Fooled By Randomness</a> - or on Twitter<br>
+<strong>Who They Are</strong>:<br>
+<strong>What I Get From Them</strong>: Of the folks on this list, Taleb is the one from whom I&rsquo;ve gotten the most out of books and the least from things done online, as I don&rsquo;t truly do Twitter.</p>
+<h3 id="eric-weinstein">Eric Weinstein</h3>
+<p><strong>Where to Find Them Online</strong>: <a href="https://podcasts.apple.com/us/podcast/the-portal/id1469999563">The Portal Podcast</a>, <a href="https://www.edge.org/memberbio/eric_r_weinstein">Eric Weinstein&rsquo;s Edge.org Answers</a>, <a href="https://bigthink.com/u/eric-weinstein">Big Think Articles</a>, <a href="http://www.eric-weinstein.net/">Official Website</a><br>
+<strong>Who They Are</strong>:<br>
+<strong>What I Get From Them</strong>:</p>
+<h3 id="scott-young">Scott Young</h3>
+<p><strong>Where to Find Them Online</strong>: <a href="https://www.scotthyoung.com/blog/">Scott H. Young Blog</a><br>
+<strong>Who They Are</strong>:<br>
+<strong>What I Get From Them</strong>:</p>
+
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/leaves/backing/">
+                    Next<br>Back This Blog
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/thinking/2020-05-26-khs_series_intro/">
+                    Previous<br>Building a Knowledge Handling Set Up - Part 1 - Introduction
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DW on Jeff Russell&#39;s Webstead</title>
+    <link>/tags/dw/</link>
+    <description>Recent content in DW on Jeff Russell&#39;s Webstead</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 19 Nov 2012 15:06:00 -0800</lastBuildDate>
+    
+	<atom:link href="/tags/dw/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>First Fellhold Rules Post</title>
+      <link>/gaming/2012-11-19-first-fellhold-rules-post/</link>
+      <pubDate>Mon, 19 Nov 2012 15:06:00 -0800</pubDate>
+      
+      <guid>/gaming/2012-11-19-first-fellhold-rules-post/</guid>
+      <description>Howdy folks. The bulk of this post will be the first actual rules I have written for Fellhold coming out of my reading &amp;ldquo;An Echo, Resounding&amp;rdquo; and &amp;ldquo;Dungeon World&amp;rdquo;. I was initially afraid I would simply be using pieces from each with no original material whatsoever, but in the process of figuring out what I really wanted to do, I ended up coming up with something more different than I expected, though the influences are obvious.</description>
+    </item>
+    
+    <item>
+      <title>Porting Dungeon World&#39;s GMing Rules, Part 4</title>
+      <link>/gaming/2012-11-13-porting-dungeon-world-gming-rules-part-4/</link>
+      <pubDate>Tue, 13 Nov 2012 22:05:00 -0800</pubDate>
+      
+      <guid>/gaming/2012-11-13-porting-dungeon-world-gming-rules-part-4/</guid>
+      <description>So, for this post I&amp;rsquo;m taking a bit of a departure from the campaign and domain play rules that I&amp;rsquo;ve been kitbashing from Dungeon World and An Echo, Resounding. This is mostly because it&amp;rsquo;s been awhile, and I&amp;rsquo;m having to reconstruct all the stuff I had figured out from what are now opaque notes, and instead of figuring all that out tonight, I went instead for a simpler problem and decided to tackle some planning/layout issues, and then to address equipment tags.</description>
+    </item>
+    
+    <item>
+      <title>Porting Dungeon World&#39;s GM Rules, Part 3</title>
+      <link>/gaming/2012-10-15-porting-dungeon-world-gm-rules-part-3/</link>
+      <pubDate>Mon, 15 Oct 2012 10:18:00 -0700</pubDate>
+      
+      <guid>/gaming/2012-10-15-porting-dungeon-world-gm-rules-part-3/</guid>
+      <description>Though the title of this post shortchanges the role An Echo, Resounding is playing in my development of the referee rules in my campaign, I figured it was best to stay consistent.
+As an example of the role AER is playing, though I&amp;rsquo;m working my way up to the domain rules, rather than down, I am broadly using the categories and concepts from AER&amp;rsquo;s domain play, so that most of the framework for reconciling Dungeon World style GMing tools with the AER domain play should already be there.</description>
+    </item>
+    
+  </channel>
+</rss>

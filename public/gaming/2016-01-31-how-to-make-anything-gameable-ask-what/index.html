@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html><head>
+<title>How to Make Anything Gameable: Ask What Three Times</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#ask-what-three-times--the-name-of-this-procedure-is-ask-what-three-times-its-inspired-by-the-concept-of-ask-why-three-times-which-motivational-types-use-to-determine-underlying-beliefs-so-were-going-to-adapt-it-to-being-a-useful-textualvisual-analytical-tool" v-on:click="closeDrawer" id="ask-what-three-times--the-name-of-this-procedure-is-ask-what-three-times-its-inspired-by-the-concept-of-ask-why-three-times-which-motivational-types-use-to-determine-underlying-beliefs-so-were-going-to-adapt-it-to-being-a-useful-textualvisual-analytical-tool-nav">
+										 Ask What Three Times The name of this procedure is “Ask What Three Times”. It’s inspired by the concept of “Ask Why Three Times”, which motivational types use to determine underlying beliefs. So we’re going to adapt it to being a useful textual/visual analytical tool.
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#example--okay-since-that-was-all-rather-abstract-and-vague-lets-run-through-an-example-using-this-tool" v-on:click="closeDrawer" id="example--okay-since-that-was-all-rather-abstract-and-vague-lets-run-through-an-example-using-this-tool-nav">
+										 Example Okay, since that was all rather abstract and vague, let’s run through an example using this tool.
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#ask-what-three-times--the-name-of-this-procedure-is-ask-what-three-times-its-inspired-by-the-concept-of-ask-why-three-times-which-motivational-types-use-to-determine-underlying-beliefs-so-were-going-to-adapt-it-to-being-a-useful-textualvisual-analytical-tool" v-on:click="closeDrawer" id="ask-what-three-times--the-name-of-this-procedure-is-ask-what-three-times-its-inspired-by-the-concept-of-ask-why-three-times-which-motivational-types-use-to-determine-underlying-beliefs-so-were-going-to-adapt-it-to-being-a-useful-textualvisual-analytical-tool-nav">
+										 Ask What Three Times The name of this procedure is “Ask What Three Times”. It’s inspired by the concept of “Ask Why Three Times”, which motivational types use to determine underlying beliefs. So we’re going to adapt it to being a useful textual/visual analytical tool.
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#example--okay-since-that-was-all-rather-abstract-and-vague-lets-run-through-an-example-using-this-tool" v-on:click="closeDrawer" id="example--okay-since-that-was-all-rather-abstract-and-vague-lets-run-through-an-example-using-this-tool-nav">
+										 Example Okay, since that was all rather abstract and vague, let’s run through an example using this tool.
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    How to Make Anything Gameable: Ask What Three Times
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2016-01-31 11:41
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/fellhold-reboot">Fellhold Reboot</a>
+                                &nbsp;
+                            
+                                <a href="/tags/osr">OSR</a>
+                                &nbsp;
+                            
+                                <a href="/tags/fellhold">Fellhold</a>
+                                &nbsp;
+                            
+                                <a href="/tags/dd">D&amp;D</a>
+                                &nbsp;
+                            
+                                <a href="/tags/game-design">game design</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>So, I like to get into procedures, techniques, and tactics in a lot of aspects of my life: the nitty gritty, detailed ways to <em>exactly</em> do a particular thing. For some gaming related examples, check out these previous posts: <a href="http://blessingsofthedicegods.blogspot.com/2013/05/how-to-make-sweet-d100-tables-for-fun.html">creating d100 tables from media</a>, and <a href="http://blessingsofthedicegods.blogspot.com/2013/12/the-granularity-of-megadungeons.html">various</a> <a href="http://blessingsofthedicegods.blogspot.com/2013/12/a-procedure-for-off-screen-faction.html">procedures</a> in the <a href="http://blessingsofthedicegods.blogspot.com/2013/12/off-screen-factions-part-ii-combat.html">megadungeon</a>.  </p>
+<p>What I want to talk about today is how to get the most out of mining a book, comic, picture, or whatever for gameable stuff. So, to follow along at home, I’d recommend a cool picture or comic as the easiest to get started with, or you can just read the example I used for myself below.</p>
+<h3 id="ask-what-three-times--the-name-of-this-procedure-is-ask-what-three-times-its-inspired-by-the-concept-of-ask-why-three-times-which-motivational-types-use-to-determine-underlying-beliefs-so-were-going-to-adapt-it-to-being-a-useful-textualvisual-analytical-tool">Ask What Three Times  The name of this procedure is “Ask What Three Times”. It’s inspired by the concept of “Ask Why Three Times”, which motivational types use to determine underlying beliefs. So we’re going to adapt it to being a useful textual/visual analytical tool.</h3>
+<p><strong>Step 1</strong>: <em>Find a cool piece of inspirational source material.</em> It doesn’t matter what makes it cool, just something that you like and have an intuition might be applicable to your game/setting/whatever.</p>
+<p><strong>Step 2</strong>: “<em>What is a cool thing in this material</em>?” This is the first “what” - here, you look at your source and ask yourself what thing grabbed you that you want to analyze more. For me, it’s usually easiest to identify the “nouns” - people, places, or giant robot apes, but you can also find plots, actions, motivations, or what have you. If you’re using a longer form work like a book or a movie, it might be helpful to narrow down your field of inquiry to just one chapter or page or the like.</p>
+<p><strong>Step 3</strong>: “<em>What makes this thing cool</em>?” Now, take your isolated cool thing and ask yourself what about it is cool. The idea here is to start digging into what was aesthetically appealing to you, and start breaking it down into digestible chunks. It&rsquo;s mostly about verbalizing what you&rsquo;re  responding to about it, without trying to go any &ldquo;deeper&rdquo; into it yet - we&rsquo;ll do that in the next step.</p>
+<p><strong>Step 4:</strong> “<em>What are the bones of this coolness</em>?” Finally, take the results of step 3 and ask yourself what makes those identified pieces cool. What are they doing functionally? This is where we get a little bit vague, but stick with me. What we want to do here is to look at the structure of the <em>particular</em> cool thing we’ve been analyzing and get to the more <em>universal</em> bones of coolness inherent in it. </p>
+<p><strong>Step 5</strong>: <em>Flesh out your own cool thing</em>. Take your newly discovered bones and build up an in-game-world flesh and blood creation on top of it.</p>
+<h3 id="example--okay-since-that-was-all-rather-abstract-and-vague-lets-run-through-an-example-using-this-tool"><strong>Example</strong>  Okay, since that was all rather abstract and vague, let’s run through an example using this tool.</h3>
+<p>**Step 1: **First off, to find my source material, I went to my <a href="https://www.pinterest.com/jeffpowellrusse/fellhold/">Pinterest page</a> where I keep inspirational pictures for Fellhold. Then I found this picture, using a wonderful Google plugin called “<a href="https://chrome.google.com/webstore/detail/roll-m/noljjhcdpkdlkjbmfkoilmhmhncelolm?hl=en-US">Roll M</a>” by Joshua Macy, which will randomly select one thing from within a table on a webpage.</p>
+<p><a href="http://2.bp.blogspot.com/-mpGnaq7kudU/Vq5hN06yJ9I/AAAAAAAAFo8/2pg9VF75hAw/s1600/646fec3d0df11df93dc3bdbf87847e98.jpg"><img src="https://2.bp.blogspot.com/-mpGnaq7kudU/Vq5hN06yJ9I/AAAAAAAAFo8/2pg9VF75hAw/s320/646fec3d0df11df93dc3bdbf87847e98.jpg" alt=""></a></p>
+<p><strong>Step 2</strong>: What is cool in this picture? Obviously it’s the sweet lava demons, so let’s analyze them. You’ll note that I could have also gone with the action of the painting - giant forms looming over a lone person, or with the architecture, or even the colors. Whatever strikes me about it.</p>
+<p><strong>Step 3</strong>: “What is cool about the sweet lava demons?” Well, they’re giant demons, they’re made of lava, there’s lava flowing into the top of their heads and out of their open mouths, and they have bright lines of molten magma forming intricate patterns in their cooled lava colored skin and horns.</p>
+<p><strong>Step 4</strong>: As mentioned, this is where it gets a little more challenging. So we have the specific pieces of the lava demon picture picked apart in step 3, and now we want to go a layer deeper. So, let’s pick each one apart. Why are giant demons cool? They are huge supernatural powers with implicit malicious intent and a place in some kind of cosmic/supernatural structure. Being made of lava is cool because it’s an element, and it’s fiery and dangerous and bright. Plus it’s cool and weird that it’s a material that’s changed state in an uncommon way - liquid rock. The lava flowing into them and out of their mouths is cool because at the same time it suggests they are vessels of some external power and require an external power source, while also visually showing them literally overflowing with that power. It’s uncontained. Finally, the intricate patterns of bright magma on dark cooled-lava skin. The inherent contrast of orange and dark, cool gray is a pleasing complementary color, but also, the patterns themselves look artificial, like something consciously created. So to see them on a “living” being makes it look unnatural and magical. And patterns might imply some kind of control or binding.</p>
+<p><strong>Step 5</strong>: The really easy cheat for this particular step would be to say “wow, now that I know more about these lava demons, I’ll happily use them in my game!”  There’s nothing wrong with this method, and in many ways it is the heart of D&amp;D from the earliest days, but that would make for a poor example, so instead, lets take those bones from step 4 and flesh them out. To summarize, here are our bones:  - Huge malicious supernatural power  - Tied to some larger cosmic/supernatural structure  - Dangerous, visually striking element  - Uncommon state change  - Vessels overflowing with external source of power  - Intricate intentional patterns on a living thing</p>
+<p>In Fellhold, there are demons everywhere, and they vary wildly in size and power. All of them are willing to bargain, but fundamentally alien to humans and at least borderline hostile. Some are former servants of the dead gods, others the primordial outsiders that incited the murder of the gods, and some are the ghosts of people who won’t let go of their lifetime obsessions. (Supernatural structure).</p>
+<p>The Bear King is an especially powerful one of these demons. A nature spirit, it was warped and twisted by the godsdeath, and now it views humanity as arrogant meddlers and dangerous loose cannons. (Malicious supernatural power). It takes the form of an enormous gray grizzly (dangerous, visual striking element) covered in moss, but strangely elongated and sinuous (uncommon state change). From it’s head grows a crown of the broken bones of the people it has eaten, covered in an endless knotwork design of blood (intricate patterns). It’s maw is constantly covered in gore, and the more it eats, the more powerful it becomes (overflowing with external source of power).  ###    <strong>Conclusion</strong>  So, there you have it. Not the world’s best monster by any means, but it only took me about 20 minutes to break down and build up something more original that feels like it has a home in my world, while still capturing what grabbed me about the picture in the first place. If you want to play around with this technique, here’s some advanced variations:</p>
+<ul>
+<li>Go through Steps 1-4 on two or more things, and then combine some or
+all of the bones in Step 5</li>
+<li>Purposely select a genre/source wildly outside of your game world’s
+feel and milieu - use sci-fi or a romance novel or something for
+your fantasy world</li>
+<li>Choose a different criteria than “cool” for doing your analysis -
+maybe scary, or weird, or sad or whatever.</li>
+</ul>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2016-01-31</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2016-02-25-exhaustion-is-terrifying/">
+                    Next<br>Exhaustion is Terrifying
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2015-11-14-fellhold-reboot-in-25-words/">
+                    Previous<br>Fellhold Reboot in 25 Words
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

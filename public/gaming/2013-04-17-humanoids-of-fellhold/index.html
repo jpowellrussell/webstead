@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html><head>
+<title>Humanoids of Fellhold</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Humanoids of Fellhold
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2013-04-17 01:30
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/osr">OSR</a>
+                                &nbsp;
+                            
+                                <a href="/tags/fellhold">Fellhold</a>
+                                &nbsp;
+                            
+                                <a href="/tags/fellhold-campaign">Fellhold Campaign</a>
+                                &nbsp;
+                            
+                                <a href="/tags/rpgs">RPGs</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>[UPDATE 2/12/19: I no longer support spending money on products that benefit Zak S, or giving him positive attention and connection. The short version is that I find credible claims that he has engaged in unacceptable behavior and not made up for it. For more detail, see <a href="%7B%7B%20site.baseurl%20%7D%7D%7B%25%20post_url%202019-02-12-removing-support-from-zak-smith%20%25%7D">here</a>. Please consider these claims and make your own decision on their validity, and the implications thereof, before supporting Zak in any way.]</p>
+<p><strong>Player Spoilers!  This post might spoil some stuff if you’re playing in my Fellhold game!</strong></p>
+<p>Okay, so, with that out of the way, today we’re going to talk about the humanoid races we’ve encountered so far, with associated rules.  Rules stuff is in bold italic:</p>
+<p>The currently playable races:</p>
+<p><strong>Men</strong></p>
+<p><a href="http://dicegods.files.wordpress.com/2013/04/wizardsmall.jpg"><img src="https://dicegods.files.wordpress.com/2013/04/wizardsmall.jpg?w=171" alt="Image"></a></p>
+<p>Men are pretty much what you’d expect.  Vaguely Germanic (Anglo-Saxon names by default), scattered settlements, one largish town outside of Fellhold, one big city a few days away on the coast.  There are probably more and different cultures farther away, but those haven&rsquo;t come up yet.</p>
+<p>Rules:</p>
+<p><em><strong>All playable classes (Fighting Men, Magic Users, and Clerics).</strong></em></p>
+<p><em><strong>Languages: By default, all men speak Mannish, and may choose additional languages in the usual manner.</strong></em></p>
+<p><strong>Dwarves</strong></p>
+<p><a href="http://dicegods.files.wordpress.com/2013/04/dwarvessmall.jpg"><img src="https://dicegods.files.wordpress.com/2013/04/dwarvessmall.jpg?w=300" alt="Image"></a></p>
+<p>Dwarves are a mostly insular race, though they once had many mighty holds dug into mountains across the land.  The greatest of these was Fellhold, conquered by sorcerors, now overrun with all manner of foul beasts.  Dwarves are pretty stereotypical super-nordic dwarves: hard working, expert craftsmen and miners, live in giant cities carved from the living rock, tendencies towards rampant greed, et cetera.  Know ancient secrets of weaponsmithing that men do not. Pretty much all magic weapons come from the dwarves, and most of those from long ago.  I’ve been pretty inspired by Burning Wheel and Warhammer’s versions of dwarves, but ultimately they come from the Norse myth (and Tolkien’s take on them, of course).  While their skill is better than humans, they don’t have any advanced technology like steam or clockwork or guns, because I don’t want it.  This may change in the future, who knows.</p>
+<p><em><strong>Rules:</strong></em></p>
+<p><em><strong>Character Advancement: The only character class available to Dwarves is that of the Fighter, but they have no level limits.</strong></em></p>
+<p><em><strong>Weapon and Armor Restrictions: Like human Fighters, Dwarves have been trained in warfare and have no restrictions on the weapons or armor they may use.</strong></em></p>
+<p><em><strong>Fighting Giants: Giants, ogres, and similar giant-type creatures such as trolls are not good at fighting dwarves, and only inflict half the normal damage against them.</strong></em></p>
+<p><em><strong>Keen Detection: Dwarves are good at spotting traps, slanting passages, and construction while underground.</strong></em></p>
+<p><em><strong>Saving Throw: Dwarves do not use magic and, as such, are somewhat immune to its effects; they receive a +4 bonus on saving throws vs. magic (whether or not the alternate “Saving Throw Matrix” is used).</strong></em></p>
+<p><em><strong>Languages: Dwarves are able to speak Mannish, Dwarvish, Goblinic, and Trollish.</strong></em></p>
+<p>Those encountered by the party</p>
+<p><strong>Trollkin</strong></p>
+<p><a href="http://dicegods.files.wordpress.com/2013/04/planescapegoblin.jpeg"><img src="https://dicegods.files.wordpress.com/2013/04/planescapegoblin.jpeg?w=390" alt="Image"></a></p>
+<p>Trollkin are a group of related tribes of humanoids, with a fairly wide range of technological sophistication, physical size, and characteristics.  Men tend to refer to them based on size as “goblins” and “hobgoblins”, and there are rumors from the dwarves of even larger and more sophisticated Trollkin that dwell almost exclusively underground.</p>
+<p>Okay, so, stats-wise, I’ve to this point used standard goblin and hobgoblin stats, which is pretty boring and generic, I know.  Where I’ve tried to bring in some interest is to make Trollkin more than just two dimensional walking XP sacs guarding treasure.  The PCs even ended up as chiefs of a Trollkin tribe for a while, but then messed up their sacred rites and started a tribal war, and who knows how that turned out.</p>
+<p>So, act what later versions of D&amp;D would probably call “lawful evil” despite being dedicated to the forces of Chaos (demons).  They take their traditions and religious values seriously – but those traditions and values are kind of, you know, evil.  So, for example, when the PCs challenged the chief of the Sword clan to single combat, a champion fought him, and that champion became the chief (despite being a dwarf).  All the trollkin were like “them’s the breaks” and acknowledged him as chief, even though they thought it was pretty weird.  When the PCs tried the same stunt on another tribe and cheated, however, they made the mistake of telling their shaman, assuming that an evil guy would be all about cheating and backstabbing.  But to him (a demon worshipping cannibal), breaking the trust of the blood rite was a horrible blasphemy and could not be borne.  So, he summoned a demon as he was killed by the PCs, the tribe dissolved into Chaos, and that’s the last we heard of them.</p>
+<p>Oh, except for his assistant that the PCs captured, who adamantly refuses to go along with them, because he’s a devout believer in Mustakrakish, demon lord of trolls (yes, from the Dethklok song).</p>
+<p>Because you’ve waded through all of that, here’s my quick and dirty blood magic rules (I want to find and/or come up with better ones, but this is simple and makes hordes of otherwise useless guys scary):</p>
+<p><em><strong>Trollkin Blood Magic:</strong></em></p>
+<p>***A Trollkin shaman can invoke the powers of demonic patrons with appropriate sacrifice.  For every 1HD of sentient creature killed by a shaman, he can attack any target within sight for 1d6 damage.  If he begins a ritual, chanting and remaining stationary, drawing grotesque symbols with the blood of his sacrificial victims, he can “store” HD for an attack or a summoning. ***</p>
+<p><em><strong>Summoning</strong></em></p>
+<p><em><strong>As stated, a shaman may perform a ritual, slaying a sacrificial victim each round and storing up the victim’s HD.  At any point he may finish the ritual to attempt to summon a demonic being with HD up to sacrificed HD -1.  Chances of success are 1 in 6 for every HD stored above the target demon’s HD. Damaging the shaman mid-ritual will disrupt the ritual.  Consider any fun “interrupted summoning” consequences you like.</strong></em></p>
+<p><em>Example: Odo the head shaman of the sword tribe wants to punish the unbelieving upworlders for their blasphemous ways.  He begins chanting and grabbing nearby members of his tribe and viciously cutting their throats.  He can do that, because he’s the shaman.  The PCs hear his disturbing chant and see smoke starting to gather around him, so they direct their attacks his way, but are stopped by his bodyguards.  Each round, he sacrifices another hapless tribe member, until after 6 rounds, he announces he has completed the ritual and is attempting to summon a 4 HD demonic being (Erishkaltu, the sword clan’s totem demon and servant of Mustakrakish). He has a 2 in 6 chance (6 sacrifices – 4 demon HD = 2 in 6).  The PCs finally land a telling blow, killing Odo, but he had initiative and completed the ritual.  The referee rolls a 1, and the smoke begins to congeal into a tangible form. . .</em></p>
+<p><strong>Trolls</strong>    <a href="http://dicegods.files.wordpress.com/2013/04/troll.jpeg"><img src="https://dicegods.files.wordpress.com/2013/04/troll.jpeg?w=444" alt="Image"></a></p>
+<p>So, in the world of Fellhold, Trolls are related to trollkin (goblins, hobgoblins, bugbears) but are their own race.  They’re sort of a mash up of ogres and trolls and look more like the guy above than like the classic green rubbery dude.  They’re size L, but smaller than giants (basically, think Warhammer scale Ogres). But they still regenerate.  Here’s a “normal” troll’s stats:</p>
+<p><em><strong>Troll</strong></em></p>
+<p><em><strong>HD: 6+3</strong></em></p>
+<p><em><strong>AC: 4 [15]</strong></em></p>
+<p><em><strong>HD: 6+3</strong></em></p>
+<p><em><strong>Attack: Weapon (1d10) or Berzerk (claw/claw/bite for 1d4/1d4/1d8)</strong></em></p>
+<p><em><strong>Saving Throw: 11</strong></em></p>
+<p><em><strong>Special: Regenerates</strong></em></p>
+<p><em><strong>Move: 12</strong></em></p>
+<p><em><strong>Alignment: Chaos</strong></em></p>
+<p><em><strong>Number Encountered: 2d6</strong></em></p>
+<p><em><strong>Challenge Level/XP: 8/8000</strong></em></p>
+<p><em><strong>Trolls regenerate 3 hp every round. They do not regenerate damage by fire or acid.  When below 10 HP, they go “berserk” and attack with claws and teeth instead of their weapon. Berserk fury ends when troll reaches 0 HP or the fight is over and he cools down, but not if he regenerates to over 10 HP.</strong></em></p>
+<p>I haven’t decided yet if Trolls regenerate from decapitation or total bodily destruction by means other than fire or acid.  The party has a mostly charred headless troll body in their caravan right now, and I’m really tempted to have it wake up in a few days, but we’ll see.</p>
+<p>Like Trollkin, trolls are intelligent and have a society with rules and values, and also like trollkin, they’re evil and worship demons.  They’re just rigidly principled about it.  Trolls are super transactional.  They see all interactions as exchanges of value for value.  They are extremely “letter of the law” sorts of people.  Probably from a long history of asking for things from demons.  Normally they are very calm and terse, but when severely injured or pushed too far, they go berserk and attack in a blind rage with their bare claws and teeth.  So, they can be dealt with as any other intelligent species, but their rules of behavior might be strange and unsettling.</p>
+<p>Major sources of inspiration visually are Paul Bonner’s stuff for Drakar och Demoner, along with every Warhammer ogre ever.  Behavior-wise, I gleaned some stuff from Magic: the Gathering’s Kamigawa (one of the few good things to come out of a misguided decision to read the novel that came in a “fat pack” of cards for the block), and now that I think about it, I’m ashamed to admit, from “Sword of Shannara” with its stoic, noble troll guys in thrall to the evil lord.  But my trolls <em>are</em> evil, just stoic and honorable.</p>
+<p><strong>Giants</strong>    <a href="http://dicegods.files.wordpress.com/2013/04/web-wb-cover-art.jpg"><img src="https://dicegods.files.wordpress.com/2013/04/web-wb-cover-art.jpg?w=240" alt="Image"></a></p>
+<p>Unlike Trolls and Trollkin, giants much more closely resemble men and dwarves.  The way I figure it, trolls and trollkin are one “genus”, and men, dwarves, and giants are another.  Not that I want to get too naturalistic with the ecology here, but I like folk lore giants that are just big, ugly, kinda dumb humans.  I’m keeping the scale of hill giant on up to fire giants and titans and the like pretty much the same, with a comparable ascending scale of sophistication.  Unfortunately for me, besides dishing out tons of damage, Hill Giants have proven to be kind of pushovers for well-equipped PCs and their army of hirelings.  I really need to rock the morale rules more carefully.  And it turns out that dwarves’ “half damage from giant type creatures” rule is <em>insanely</em> useful.</p>
+<p>Giants speak a crude dialect of mannish (hill giants = mostly grunts and 1 syllable words, frost and fire giants = normal conversational skill, but sound like, well, monstery giants).  Giants aren&rsquo;t <em>evil</em> per se, just greedy, selfish, and prone to violence.  So, like I said, big, dumb people.  I’m thinking that the frost giants have a big ass keep up north and that they have the Trolls in unwilling serfdom, but we’ll see.</p>
+<p><strong>Elves?</strong></p>
+<p><a href="http://dicegods.files.wordpress.com/2013/04/whiteelvessmall.jpg"><img src="https://dicegods.files.wordpress.com/2013/04/whiteelvessmall.jpg?w=223" alt="Image"></a></p>
+<p>So, I put this way down at the bottom to make it even less likely that my players will read it (shame on you if you’re here!), but I’m considering putting elves back into the mix.  Initially, I was so sick of ‘elf-bloat’ and I wanted to stick to a sword &amp; sorcery kind of Germania that I thought elves wouldn’t fit (yes, I know elves come from Germanic myth, even Tolkien’s, but they’ve been so D&amp;D-ified that I was sick of them).  Now, though, reading about Zak S.’s pitiless white elves, I’m thinking there might be a place for them as sort of Others-cum-Melniboneans living up in frozen palaces in the icy wastes, probably only a few decadent remnants of apathetic, cruel, graceful aristocrats.  Maybe with armies of frost wights, I dunno.  I’m still pretty torn.</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2013-04-17</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2013-04-17-swords-wizardry-appreciation-day/">
+                    Next<br>Swords &amp; Wizardry Appreciation Day!
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2013-04-10-the-long-recap/">
+                    Previous<br>The Long Recap
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

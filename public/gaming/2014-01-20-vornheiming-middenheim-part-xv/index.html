@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html><head>
+<title>Vornheiming Middenheim Part XV: Job/Mission Generator Options</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#detailed-job-generator" v-on:click="closeDrawer" id="detailed-job-generator-nav">
+										 Detailed Job Generator
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#quick-job-table--based-on-who-is-offering-a-job-roll-1d4-for-a-regular-citizen-1d6-for-a-business-ownerartisan-1d8-for-a-criminal-1d10-for-a-crime-boss-1d12-for-a-noble-and-1d20-for-a-merchant--table-tbody-tr-classodd-tddxtd-tdjobtd-tr-tr-classeven-td1td-tdsteal-a-recently-acquired-nekharan-necklace-from-a-merchanttd-tr-tr-classodd-td2td-tdrecover-a-ring-from-a-grave---you-can-keep-the-resttd-tr-tr-classeven-td3td-tdtunnel-into-a-wealthy-merchants-vaulttd-tr-tr-classodd-td4td-tdmurder-a-gang-leadertd-tr-tr-classeven-td5td-tdrid-a-slum-building-of-an-infestation-of-especially-vicious-ratstd-tr-tr-classodd-td6td-tdstake-out-a-warehouse-to-catch-a-thieftd-tr-tr-classeven-td7td-tdrough-up-a-shopkeeper-who-wont-pay-his-protection-moneytd-tr-tr-classodd-td8td-tdbreak-an-associate-out-of-the-watchs-jailtd-tr-tr-classeven-td9td-tdsmuggle-drugs-into-the-city-from-a-nearby-inntd-tr-tr-classodd-td10td-tdcase-a-merchants-house-for-a-gang-of-cat-burglars---get-a-percentagetd-tr-tr-classeven-td11td-tddiscover-and-infiltrate-a-suspected-chaos-culttd-tr-tr-classodd-td12td-tdfind-the-herdstone-for-a-group-of-beastmen-and-report-it-to-the-templarstd-tr-tr-classeven-td13td-tdrid-a-slum-building-of-an-infestation-of-especially-vicious-squatterstd-tr-tr-classodd-td14td-tdcollect-blackmail-information-on-a-komission-konvenortd-tr-tr-classeven-td15td-tdparticipate-in-illegal-pit-fightingtd-tr-tr-classodd-td16td-tdjoin-an-expedition-to-an-abandoned-dwarf-fortresstd-tr-tr-classeven-td17td-tdinvestigate-a-cults-use-of-the-sewerstd-tr-tr-classodd-td18td-tdfind-the-remains-of-a-wizard-thrown-off-the-cliff-of-sighstd-tr-tr-classeven-td19td-tdprotect-a-local-noble-during-the-carnival-from-an-assassintd-tr-tr-classodd-td20td-tdburn-down-a-rivals-warehousetd-tr-tbody-table--------is-this-job-still-available" v-on:click="closeDrawer" id="quick-job-table--based-on-who-is-offering-a-job-roll-1d4-for-a-regular-citizen-1d6-for-a-business-ownerartisan-1d8-for-a-criminal-1d10-for-a-crime-boss-1d12-for-a-noble-and-1d20-for-a-merchant--table-tbody-tr-classodd-tddxtd-tdjobtd-tr-tr-classeven-td1td-tdsteal-a-recently-acquired-nekharan-necklace-from-a-merchanttd-tr-tr-classodd-td2td-tdrecover-a-ring-from-a-grave---you-can-keep-the-resttd-tr-tr-classeven-td3td-tdtunnel-into-a-wealthy-merchants-vaulttd-tr-tr-classodd-td4td-tdmurder-a-gang-leadertd-tr-tr-classeven-td5td-tdrid-a-slum-building-of-an-infestation-of-especially-vicious-ratstd-tr-tr-classodd-td6td-tdstake-out-a-warehouse-to-catch-a-thieftd-tr-tr-classeven-td7td-tdrough-up-a-shopkeeper-who-wont-pay-his-protection-moneytd-tr-tr-classodd-td8td-tdbreak-an-associate-out-of-the-watchs-jailtd-tr-tr-classeven-td9td-tdsmuggle-drugs-into-the-city-from-a-nearby-inntd-tr-tr-classodd-td10td-tdcase-a-merchants-house-for-a-gang-of-cat-burglars---get-a-percentagetd-tr-tr-classeven-td11td-tddiscover-and-infiltrate-a-suspected-chaos-culttd-tr-tr-classodd-td12td-tdfind-the-herdstone-for-a-group-of-beastmen-and-report-it-to-the-templarstd-tr-tr-classeven-td13td-tdrid-a-slum-building-of-an-infestation-of-especially-vicious-squatterstd-tr-tr-classodd-td14td-tdcollect-blackmail-information-on-a-komission-konvenortd-tr-tr-classeven-td15td-tdparticipate-in-illegal-pit-fightingtd-tr-tr-classodd-td16td-tdjoin-an-expedition-to-an-abandoned-dwarf-fortresstd-tr-tr-classeven-td17td-tdinvestigate-a-cults-use-of-the-sewerstd-tr-tr-classodd-td18td-tdfind-the-remains-of-a-wizard-thrown-off-the-cliff-of-sighstd-tr-tr-classeven-td19td-tdprotect-a-local-noble-during-the-carnival-from-an-assassintd-tr-tr-classodd-td20td-tdburn-down-a-rivals-warehousetd-tr-tbody-table--------is-this-job-still-available-nav">
+										 Quick Job Table Based on who is offering a job, roll 1d4 for a regular citizen, 1d6 for a business owner/artisan, 1d8 for a criminal, 1d10 for a crime boss, 1d12 for a noble, and 1d20 for a merchant. DxJob1Steal a recently acquired Nekharan necklace from a merchant2Recover a ring from a grave - you can keep the rest3Tunnel into a wealthy merchant’s vault4Murder a gang leader5Rid a slum building of an infestation of especially vicious rats6Stake out a warehouse to catch a thief7Rough up a shopkeeper who won’t pay his protection money8Break an associate out of the watch’s jail9Smuggle drugs into the city from a nearby inn10Case a merchant’s house for a gang of cat burglars - get a percentage11Discover and infiltrate a suspected Chaos Cult12Find the herdstone for a group of beastmen and report it to the templars13Rid a slum building of an infestation of especially vicious squatters14Collect blackmail information on a Komission Konvenor15Participate in illegal pit fighting16Join an expedition to an abandoned Dwarf Fortress17Investigate a cult’s use of the sewers18Find the remains of a wizard thrown off the cliff of sighs19Protect a local noble during the carnival from an assassin20Burn down a rival’s warehouse## ## Is this Job Still Available?
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#inn-and-tavern-generator--table-tbody-tr-classodd-tdd4td-tdavailabilitytd-tdd6td-tdqualitytd-tdd8td-tdbest-featuretd-tdd10td-tdquirktd-tdd12td-tddistricttd-tdd20td-tdadjectivetd-tdnountd-tr-tr-classeven-td1td-tdopen-roomstd-td1td-tdluxurytd-td1td-tdthe-food-is-greattd-td1td-tdfrequented-by-people-you-wouldnt-expect-given-the-qualitytd-td1td-tdcity-gatestd-td1td-tdgrafstd-tdreposetd-tr-tr-classodd-td2td-tdshared-roomstd-td2td-tdgoodtd-td2td-tdthe-bedbugs-hardly-bitetd-td2td-tdruns-some-kind-of-game-or-gamblingtd-td2td-tdpalasttd-td2td-tddiceytd-tdprospecttd-tr-tr-classeven-td3td-tdcan-sleep-in-the-stablestd-td3td-tdaveragetd-td3td-tdyou-can-hear-more-rumors-than-usualtd-td3td-tdextremely-surly-servicetd-td3td-tdthe-great-parktd-td3td-tdsmilingtd-tdfooltd-tr-tr-classodd-td4td-tdkick-someone-out-to-get-a-roomtd-td4td-tdspartantd-td4td-tdits-easy-to-find-jobs-heretd-td4td-tdset-up-customers-for-a-gang-of-footpads-split-the-loottd-td4td-tdgrafsmund-nordgartentd-td4td-tdtemplarstd-tdarmstd-tr-tr-classeven-tdtd-tdtd-td5td-tdcheaptd-td5td-tdthe-drinks-are-cheaptd-td5td-tdproprietor-requires-guests-to-attend-sermons-to-get-breakfasttd-td5td-tdulricsmundtd-td5td-tddwarfstd-tdstoneholmtd-tr-tr-classodd-tdtd-tdtd-td6td-tdjust-awfultd-td6td-tdthe-owners-dont-tolerate-fightingtd-td6td-tdinn-is-a-safe-house-for-a-crime-ringtd-td6td-tdaltmarkt-altquartiertd-td6td-tdhogstd-tdheadtd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-td7td-tdthe-rooms-are-cheap-for-long-staystd-td7td-tda-political-action-group-uses-the-inn-for-meetingstd-td7td-tdsouthgate-ostwaldtd-td7td-tdhungrytd-tdhalflingtd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-td8td-tdif-you-tip-well-the-staff-will-do-a-lot-for-youtd-td8td-tdowner-refuses-to-pay-protection-moneytd-td8td-tdneumarkt-osttortd-td8td-tdbrokentd-tdanviltd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td9td-tdwont-serve-a-randomly-determined-demi-human-racetd-td9td-tdthe-freiburgtd-td9td-tdspinningtd-tdwheeltd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td10td-tdproprietor-wont-stop-with-the-storiesconspiracy-theoriesobservations-on-the-weathertd-td10td-tdthe-wyndtd-td10td-tddrunkentd-tdjourneymantd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td11td-tdwesttor-sudgartentd-td11td-tdregentstd-tdhousetd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td12td-tdgeldmund-kaufseit-brotkopfstd-td12td-tddrownedtd-tdrattd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td13td-tdlasttd-tddroptd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td14td-tdlaughingtd-tdjackasstd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td15td-tdmightytd-tdman-o-wartd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td16td-tdsingingtd-tdshowboattd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td17td-tdheavenstd-tdlamenttd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td18td-tdredtd-tdmoontd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td19td-tdvicioustd-tddogtd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td20td-tdnonetd-tdscholarstd-tr-tbody-table" v-on:click="closeDrawer" id="inn-and-tavern-generator--table-tbody-tr-classodd-tdd4td-tdavailabilitytd-tdd6td-tdqualitytd-tdd8td-tdbest-featuretd-tdd10td-tdquirktd-tdd12td-tddistricttd-tdd20td-tdadjectivetd-tdnountd-tr-tr-classeven-td1td-tdopen-roomstd-td1td-tdluxurytd-td1td-tdthe-food-is-greattd-td1td-tdfrequented-by-people-you-wouldnt-expect-given-the-qualitytd-td1td-tdcity-gatestd-td1td-tdgrafstd-tdreposetd-tr-tr-classodd-td2td-tdshared-roomstd-td2td-tdgoodtd-td2td-tdthe-bedbugs-hardly-bitetd-td2td-tdruns-some-kind-of-game-or-gamblingtd-td2td-tdpalasttd-td2td-tddiceytd-tdprospecttd-tr-tr-classeven-td3td-tdcan-sleep-in-the-stablestd-td3td-tdaveragetd-td3td-tdyou-can-hear-more-rumors-than-usualtd-td3td-tdextremely-surly-servicetd-td3td-tdthe-great-parktd-td3td-tdsmilingtd-tdfooltd-tr-tr-classodd-td4td-tdkick-someone-out-to-get-a-roomtd-td4td-tdspartantd-td4td-tdits-easy-to-find-jobs-heretd-td4td-tdset-up-customers-for-a-gang-of-footpads-split-the-loottd-td4td-tdgrafsmund-nordgartentd-td4td-tdtemplarstd-tdarmstd-tr-tr-classeven-tdtd-tdtd-td5td-tdcheaptd-td5td-tdthe-drinks-are-cheaptd-td5td-tdproprietor-requires-guests-to-attend-sermons-to-get-breakfasttd-td5td-tdulricsmundtd-td5td-tddwarfstd-tdstoneholmtd-tr-tr-classodd-tdtd-tdtd-td6td-tdjust-awfultd-td6td-tdthe-owners-dont-tolerate-fightingtd-td6td-tdinn-is-a-safe-house-for-a-crime-ringtd-td6td-tdaltmarkt-altquartiertd-td6td-tdhogstd-tdheadtd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-td7td-tdthe-rooms-are-cheap-for-long-staystd-td7td-tda-political-action-group-uses-the-inn-for-meetingstd-td7td-tdsouthgate-ostwaldtd-td7td-tdhungrytd-tdhalflingtd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-td8td-tdif-you-tip-well-the-staff-will-do-a-lot-for-youtd-td8td-tdowner-refuses-to-pay-protection-moneytd-td8td-tdneumarkt-osttortd-td8td-tdbrokentd-tdanviltd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td9td-tdwont-serve-a-randomly-determined-demi-human-racetd-td9td-tdthe-freiburgtd-td9td-tdspinningtd-tdwheeltd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td10td-tdproprietor-wont-stop-with-the-storiesconspiracy-theoriesobservations-on-the-weathertd-td10td-tdthe-wyndtd-td10td-tddrunkentd-tdjourneymantd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td11td-tdwesttor-sudgartentd-td11td-tdregentstd-tdhousetd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td12td-tdgeldmund-kaufseit-brotkopfstd-td12td-tddrownedtd-tdrattd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td13td-tdlasttd-tddroptd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td14td-tdlaughingtd-tdjackasstd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td15td-tdmightytd-tdman-o-wartd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td16td-tdsingingtd-tdshowboattd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td17td-tdheavenstd-tdlamenttd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td18td-tdredtd-tdmoontd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td19td-tdvicioustd-tddogtd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td20td-tdnonetd-tdscholarstd-tr-tbody-table-nav">
+										 Inn and Tavern Generator D4AvailabilityD6QualityD8Best FeatureD10QuirkD12DistrictD20AdjectiveNoun1Open Rooms1Luxury1The food is great1Frequented by people you wouldn’t expect given the quality1City Gates1Graf’sRepose2Shared Rooms2Good2The bedbugs hardly bite2Runs some kind of game or gambling2Palast2DiceyProspect3Can sleep in the stables3Average3You can hear more rumors than usual3Extremely surly service3The Great Park3SmilingFool4Kick someone out to get a room4Spartan4It’s easy to find jobs here4Set up customers for a gang of footpads, split the loot4Grafsmund-Nordgarten4Templar’sArms5Cheap5The drinks are cheap5Proprietor requires guests to attend sermons to get breakfast5Ulricsmund5Dwarf’sStoneholm6Just Awful6The owners don’t tolerate fighting6Inn is a safe house for a crime ring6Altmarkt-Altquartier6Hog’sHead7The rooms are cheap for long stays7A political action group uses the inn for meetings7Southgate-Ostwald7HungryHalfling8If you tip well, the staff will do a lot for you8Owner refuses to pay protection money8Neumarkt-Osttor8BrokenAnvil9Won’t serve a randomly determined demi-human race9The Freiburg9SpinningWheel10Proprietor won’t stop with the stories/conspiracy theories/observations on the weather10The Wynd10DrunkenJourneyman11Westtor-Sudgarten11Regent’sHouse12Geldmund-Kaufseit-Brotkopfs12DrownedRat13LastDrop14LaughingJackass15MightyMan O’ War16SingingShowboat17Heaven’sLament18RedMoon19ViciousDog20NoneScholar’s
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#detailed-job-generator" v-on:click="closeDrawer" id="detailed-job-generator-nav">
+										 Detailed Job Generator
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#quick-job-table--based-on-who-is-offering-a-job-roll-1d4-for-a-regular-citizen-1d6-for-a-business-ownerartisan-1d8-for-a-criminal-1d10-for-a-crime-boss-1d12-for-a-noble-and-1d20-for-a-merchant--table-tbody-tr-classodd-tddxtd-tdjobtd-tr-tr-classeven-td1td-tdsteal-a-recently-acquired-nekharan-necklace-from-a-merchanttd-tr-tr-classodd-td2td-tdrecover-a-ring-from-a-grave---you-can-keep-the-resttd-tr-tr-classeven-td3td-tdtunnel-into-a-wealthy-merchants-vaulttd-tr-tr-classodd-td4td-tdmurder-a-gang-leadertd-tr-tr-classeven-td5td-tdrid-a-slum-building-of-an-infestation-of-especially-vicious-ratstd-tr-tr-classodd-td6td-tdstake-out-a-warehouse-to-catch-a-thieftd-tr-tr-classeven-td7td-tdrough-up-a-shopkeeper-who-wont-pay-his-protection-moneytd-tr-tr-classodd-td8td-tdbreak-an-associate-out-of-the-watchs-jailtd-tr-tr-classeven-td9td-tdsmuggle-drugs-into-the-city-from-a-nearby-inntd-tr-tr-classodd-td10td-tdcase-a-merchants-house-for-a-gang-of-cat-burglars---get-a-percentagetd-tr-tr-classeven-td11td-tddiscover-and-infiltrate-a-suspected-chaos-culttd-tr-tr-classodd-td12td-tdfind-the-herdstone-for-a-group-of-beastmen-and-report-it-to-the-templarstd-tr-tr-classeven-td13td-tdrid-a-slum-building-of-an-infestation-of-especially-vicious-squatterstd-tr-tr-classodd-td14td-tdcollect-blackmail-information-on-a-komission-konvenortd-tr-tr-classeven-td15td-tdparticipate-in-illegal-pit-fightingtd-tr-tr-classodd-td16td-tdjoin-an-expedition-to-an-abandoned-dwarf-fortresstd-tr-tr-classeven-td17td-tdinvestigate-a-cults-use-of-the-sewerstd-tr-tr-classodd-td18td-tdfind-the-remains-of-a-wizard-thrown-off-the-cliff-of-sighstd-tr-tr-classeven-td19td-tdprotect-a-local-noble-during-the-carnival-from-an-assassintd-tr-tr-classodd-td20td-tdburn-down-a-rivals-warehousetd-tr-tbody-table--------is-this-job-still-available" v-on:click="closeDrawer" id="quick-job-table--based-on-who-is-offering-a-job-roll-1d4-for-a-regular-citizen-1d6-for-a-business-ownerartisan-1d8-for-a-criminal-1d10-for-a-crime-boss-1d12-for-a-noble-and-1d20-for-a-merchant--table-tbody-tr-classodd-tddxtd-tdjobtd-tr-tr-classeven-td1td-tdsteal-a-recently-acquired-nekharan-necklace-from-a-merchanttd-tr-tr-classodd-td2td-tdrecover-a-ring-from-a-grave---you-can-keep-the-resttd-tr-tr-classeven-td3td-tdtunnel-into-a-wealthy-merchants-vaulttd-tr-tr-classodd-td4td-tdmurder-a-gang-leadertd-tr-tr-classeven-td5td-tdrid-a-slum-building-of-an-infestation-of-especially-vicious-ratstd-tr-tr-classodd-td6td-tdstake-out-a-warehouse-to-catch-a-thieftd-tr-tr-classeven-td7td-tdrough-up-a-shopkeeper-who-wont-pay-his-protection-moneytd-tr-tr-classodd-td8td-tdbreak-an-associate-out-of-the-watchs-jailtd-tr-tr-classeven-td9td-tdsmuggle-drugs-into-the-city-from-a-nearby-inntd-tr-tr-classodd-td10td-tdcase-a-merchants-house-for-a-gang-of-cat-burglars---get-a-percentagetd-tr-tr-classeven-td11td-tddiscover-and-infiltrate-a-suspected-chaos-culttd-tr-tr-classodd-td12td-tdfind-the-herdstone-for-a-group-of-beastmen-and-report-it-to-the-templarstd-tr-tr-classeven-td13td-tdrid-a-slum-building-of-an-infestation-of-especially-vicious-squatterstd-tr-tr-classodd-td14td-tdcollect-blackmail-information-on-a-komission-konvenortd-tr-tr-classeven-td15td-tdparticipate-in-illegal-pit-fightingtd-tr-tr-classodd-td16td-tdjoin-an-expedition-to-an-abandoned-dwarf-fortresstd-tr-tr-classeven-td17td-tdinvestigate-a-cults-use-of-the-sewerstd-tr-tr-classodd-td18td-tdfind-the-remains-of-a-wizard-thrown-off-the-cliff-of-sighstd-tr-tr-classeven-td19td-tdprotect-a-local-noble-during-the-carnival-from-an-assassintd-tr-tr-classodd-td20td-tdburn-down-a-rivals-warehousetd-tr-tbody-table--------is-this-job-still-available-nav">
+										 Quick Job Table Based on who is offering a job, roll 1d4 for a regular citizen, 1d6 for a business owner/artisan, 1d8 for a criminal, 1d10 for a crime boss, 1d12 for a noble, and 1d20 for a merchant. DxJob1Steal a recently acquired Nekharan necklace from a merchant2Recover a ring from a grave - you can keep the rest3Tunnel into a wealthy merchant’s vault4Murder a gang leader5Rid a slum building of an infestation of especially vicious rats6Stake out a warehouse to catch a thief7Rough up a shopkeeper who won’t pay his protection money8Break an associate out of the watch’s jail9Smuggle drugs into the city from a nearby inn10Case a merchant’s house for a gang of cat burglars - get a percentage11Discover and infiltrate a suspected Chaos Cult12Find the herdstone for a group of beastmen and report it to the templars13Rid a slum building of an infestation of especially vicious squatters14Collect blackmail information on a Komission Konvenor15Participate in illegal pit fighting16Join an expedition to an abandoned Dwarf Fortress17Investigate a cult’s use of the sewers18Find the remains of a wizard thrown off the cliff of sighs19Protect a local noble during the carnival from an assassin20Burn down a rival’s warehouse## ## Is this Job Still Available?
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#inn-and-tavern-generator--table-tbody-tr-classodd-tdd4td-tdavailabilitytd-tdd6td-tdqualitytd-tdd8td-tdbest-featuretd-tdd10td-tdquirktd-tdd12td-tddistricttd-tdd20td-tdadjectivetd-tdnountd-tr-tr-classeven-td1td-tdopen-roomstd-td1td-tdluxurytd-td1td-tdthe-food-is-greattd-td1td-tdfrequented-by-people-you-wouldnt-expect-given-the-qualitytd-td1td-tdcity-gatestd-td1td-tdgrafstd-tdreposetd-tr-tr-classodd-td2td-tdshared-roomstd-td2td-tdgoodtd-td2td-tdthe-bedbugs-hardly-bitetd-td2td-tdruns-some-kind-of-game-or-gamblingtd-td2td-tdpalasttd-td2td-tddiceytd-tdprospecttd-tr-tr-classeven-td3td-tdcan-sleep-in-the-stablestd-td3td-tdaveragetd-td3td-tdyou-can-hear-more-rumors-than-usualtd-td3td-tdextremely-surly-servicetd-td3td-tdthe-great-parktd-td3td-tdsmilingtd-tdfooltd-tr-tr-classodd-td4td-tdkick-someone-out-to-get-a-roomtd-td4td-tdspartantd-td4td-tdits-easy-to-find-jobs-heretd-td4td-tdset-up-customers-for-a-gang-of-footpads-split-the-loottd-td4td-tdgrafsmund-nordgartentd-td4td-tdtemplarstd-tdarmstd-tr-tr-classeven-tdtd-tdtd-td5td-tdcheaptd-td5td-tdthe-drinks-are-cheaptd-td5td-tdproprietor-requires-guests-to-attend-sermons-to-get-breakfasttd-td5td-tdulricsmundtd-td5td-tddwarfstd-tdstoneholmtd-tr-tr-classodd-tdtd-tdtd-td6td-tdjust-awfultd-td6td-tdthe-owners-dont-tolerate-fightingtd-td6td-tdinn-is-a-safe-house-for-a-crime-ringtd-td6td-tdaltmarkt-altquartiertd-td6td-tdhogstd-tdheadtd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-td7td-tdthe-rooms-are-cheap-for-long-staystd-td7td-tda-political-action-group-uses-the-inn-for-meetingstd-td7td-tdsouthgate-ostwaldtd-td7td-tdhungrytd-tdhalflingtd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-td8td-tdif-you-tip-well-the-staff-will-do-a-lot-for-youtd-td8td-tdowner-refuses-to-pay-protection-moneytd-td8td-tdneumarkt-osttortd-td8td-tdbrokentd-tdanviltd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td9td-tdwont-serve-a-randomly-determined-demi-human-racetd-td9td-tdthe-freiburgtd-td9td-tdspinningtd-tdwheeltd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td10td-tdproprietor-wont-stop-with-the-storiesconspiracy-theoriesobservations-on-the-weathertd-td10td-tdthe-wyndtd-td10td-tddrunkentd-tdjourneymantd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td11td-tdwesttor-sudgartentd-td11td-tdregentstd-tdhousetd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td12td-tdgeldmund-kaufseit-brotkopfstd-td12td-tddrownedtd-tdrattd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td13td-tdlasttd-tddroptd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td14td-tdlaughingtd-tdjackasstd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td15td-tdmightytd-tdman-o-wartd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td16td-tdsingingtd-tdshowboattd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td17td-tdheavenstd-tdlamenttd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td18td-tdredtd-tdmoontd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td19td-tdvicioustd-tddogtd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td20td-tdnonetd-tdscholarstd-tr-tbody-table" v-on:click="closeDrawer" id="inn-and-tavern-generator--table-tbody-tr-classodd-tdd4td-tdavailabilitytd-tdd6td-tdqualitytd-tdd8td-tdbest-featuretd-tdd10td-tdquirktd-tdd12td-tddistricttd-tdd20td-tdadjectivetd-tdnountd-tr-tr-classeven-td1td-tdopen-roomstd-td1td-tdluxurytd-td1td-tdthe-food-is-greattd-td1td-tdfrequented-by-people-you-wouldnt-expect-given-the-qualitytd-td1td-tdcity-gatestd-td1td-tdgrafstd-tdreposetd-tr-tr-classodd-td2td-tdshared-roomstd-td2td-tdgoodtd-td2td-tdthe-bedbugs-hardly-bitetd-td2td-tdruns-some-kind-of-game-or-gamblingtd-td2td-tdpalasttd-td2td-tddiceytd-tdprospecttd-tr-tr-classeven-td3td-tdcan-sleep-in-the-stablestd-td3td-tdaveragetd-td3td-tdyou-can-hear-more-rumors-than-usualtd-td3td-tdextremely-surly-servicetd-td3td-tdthe-great-parktd-td3td-tdsmilingtd-tdfooltd-tr-tr-classodd-td4td-tdkick-someone-out-to-get-a-roomtd-td4td-tdspartantd-td4td-tdits-easy-to-find-jobs-heretd-td4td-tdset-up-customers-for-a-gang-of-footpads-split-the-loottd-td4td-tdgrafsmund-nordgartentd-td4td-tdtemplarstd-tdarmstd-tr-tr-classeven-tdtd-tdtd-td5td-tdcheaptd-td5td-tdthe-drinks-are-cheaptd-td5td-tdproprietor-requires-guests-to-attend-sermons-to-get-breakfasttd-td5td-tdulricsmundtd-td5td-tddwarfstd-tdstoneholmtd-tr-tr-classodd-tdtd-tdtd-td6td-tdjust-awfultd-td6td-tdthe-owners-dont-tolerate-fightingtd-td6td-tdinn-is-a-safe-house-for-a-crime-ringtd-td6td-tdaltmarkt-altquartiertd-td6td-tdhogstd-tdheadtd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-td7td-tdthe-rooms-are-cheap-for-long-staystd-td7td-tda-political-action-group-uses-the-inn-for-meetingstd-td7td-tdsouthgate-ostwaldtd-td7td-tdhungrytd-tdhalflingtd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-td8td-tdif-you-tip-well-the-staff-will-do-a-lot-for-youtd-td8td-tdowner-refuses-to-pay-protection-moneytd-td8td-tdneumarkt-osttortd-td8td-tdbrokentd-tdanviltd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td9td-tdwont-serve-a-randomly-determined-demi-human-racetd-td9td-tdthe-freiburgtd-td9td-tdspinningtd-tdwheeltd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td10td-tdproprietor-wont-stop-with-the-storiesconspiracy-theoriesobservations-on-the-weathertd-td10td-tdthe-wyndtd-td10td-tddrunkentd-tdjourneymantd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td11td-tdwesttor-sudgartentd-td11td-tdregentstd-tdhousetd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td12td-tdgeldmund-kaufseit-brotkopfstd-td12td-tddrownedtd-tdrattd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td13td-tdlasttd-tddroptd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td14td-tdlaughingtd-tdjackasstd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td15td-tdmightytd-tdman-o-wartd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td16td-tdsingingtd-tdshowboattd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td17td-tdheavenstd-tdlamenttd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td18td-tdredtd-tdmoontd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td19td-tdvicioustd-tddogtd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td20td-tdnonetd-tdscholarstd-tr-tbody-table-nav">
+										 Inn and Tavern Generator D4AvailabilityD6QualityD8Best FeatureD10QuirkD12DistrictD20AdjectiveNoun1Open Rooms1Luxury1The food is great1Frequented by people you wouldn’t expect given the quality1City Gates1Graf’sRepose2Shared Rooms2Good2The bedbugs hardly bite2Runs some kind of game or gambling2Palast2DiceyProspect3Can sleep in the stables3Average3You can hear more rumors than usual3Extremely surly service3The Great Park3SmilingFool4Kick someone out to get a room4Spartan4It’s easy to find jobs here4Set up customers for a gang of footpads, split the loot4Grafsmund-Nordgarten4Templar’sArms5Cheap5The drinks are cheap5Proprietor requires guests to attend sermons to get breakfast5Ulricsmund5Dwarf’sStoneholm6Just Awful6The owners don’t tolerate fighting6Inn is a safe house for a crime ring6Altmarkt-Altquartier6Hog’sHead7The rooms are cheap for long stays7A political action group uses the inn for meetings7Southgate-Ostwald7HungryHalfling8If you tip well, the staff will do a lot for you8Owner refuses to pay protection money8Neumarkt-Osttor8BrokenAnvil9Won’t serve a randomly determined demi-human race9The Freiburg9SpinningWheel10Proprietor won’t stop with the stories/conspiracy theories/observations on the weather10The Wynd10DrunkenJourneyman11Westtor-Sudgarten11Regent’sHouse12Geldmund-Kaufseit-Brotkopfs12DrownedRat13LastDrop14LaughingJackass15MightyMan O’ War16SingingShowboat17Heaven’sLament18RedMoon19ViciousDog20NoneScholar’s
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Vornheiming Middenheim Part XV: Job/Mission Generator Options
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2014-01-20 16:32
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/sbvd">SBVD</a>
+                                &nbsp;
+                            
+                                <a href="/tags/osr">OSR</a>
+                                &nbsp;
+                            
+                                <a href="/tags/rules">Rules</a>
+                                &nbsp;
+                            
+                                <a href="/tags/wfrp">WFRP</a>
+                                &nbsp;
+                            
+                                <a href="/tags/middenheim">Middenheim</a>
+                                &nbsp;
+                            
+                                <a href="/tags/projects">Projects</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p><a href="http://2.bp.blogspot.com/-n70Kl2Gcw5I/Ut2b1CljpSI/AAAAAAAAAk4/NG0Sc2XRwKU/s1600/tumblr_mh6uo3gu2r1r4ni7eo1_1280.jpg"><img src="https://2.bp.blogspot.com/-n70Kl2Gcw5I/Ut2b1CljpSI/AAAAAAAAAk4/NG0Sc2XRwKU/s1600/tumblr_mh6uo3gu2r1r4ni7eo1_1280.jpg" alt=""></a></p>
+<p>[UPDATE 2/12/19: I no longer support spending money on products that benefit Zak S, or giving him positive attention and connection. The short version is that I find credible claims that he has engaged in unacceptable behavior and not made up for it. For more detail, see <a href="%7B%7B%20site.baseurl%20%7D%7D%7B%25%20post_url%202019-02-12-removing-support-from-zak-smith%20%25%7D">here</a>. Please consider these claims and make your own decision on their validity, and the implications thereof, before supporting Zak in any way.]</p>
+<p><em>[Don&rsquo;t forget about the <a href="http://blessingsofthedicegods.blogspot.com/2014/01/dungeon-dozen-mix-tape-contest.html">Dungeon Dozen Adventure Contest</a> . Deadline is Friday!]</em>   *   *So, intrigues and complicated personal relationships are great to keep play going, but it helps to have something to jump start the action either at the beginning of play, or when you hit a lull.  This was driven home to me when my players asked a long-time contact for whom they&rsquo;ve done work before &ldquo;do you have anything you&rsquo;d like us to do?&rdquo; and I completely flubbed it.  So, in that spirit, I decided to include a job/mission generator.  Now, these sorts of things have been done before, so I had a few models to go on.  First up are Mike Evans&rsquo; excellent <a href="http://wrathofzombie.files.wordpress.com/2012/06/vornhack-complete-firefly-and-sci-fi-kit.pdf">Firefly</a> and <a href="http://wrathofzombie.files.wordpress.com/2013/06/shadowrun-city-kit.pdf">Shadowrun</a> hacks of <a href="http://rpg.drivethrustuff.com/product/91110/Vornheim-The-Complete-City-Kit?term=vornheim">Vornheim</a>, which include some great job generators.  I&rsquo;ve made one that is almost an exact copy of the Firefly job generator, but with a few of the jobs and people involved changed.  I like this one a lot, but the fact that it&rsquo;s damn near identical to Mike&rsquo;s work makes me want to come up with something a little more original.</p>
+<p>Then there&rsquo;s a format presented in Dark Heart of the Dreamer, a World of Dungeons supplement.  You roll a D6 to determine type of employer, another for type of job, and another for location.  Then you roll the specific employer under the type of employer. I think the re-roll could be rolled into a single roll, like on a D20 or D100, and the nature and target could be other columns, but then you end up with basically a variation of the Firefly/Shadowrun one discussed above, but with one column removed.  One thing I do really like from Dark Heart of the Dreamer&rsquo;s job system is a roll to see what happened to a job while you ignored it.  So, the players get offered a job, then run off and do something else, this tells you what happened if they later ask &ldquo;hey, what about that offer to bump off a guy, is that still available?&quot;.  So I came up with something similar, but made it a 2d6 roll instead of 1d6.</p>
+<p>Courtney Campbell&rsquo;s <a href="http://hackslashmaster.blogspot.com/2013/09/on-generator-of-missions.html">Mission Generator</a> is nicely comprehensive, and I like what it does, but it strikes me as more suited to adventure generation than to on-the-fly job generation (but maybe I&rsquo;m just slow).  I figured for something extra fast I should have a chart of complete jobs you can get with one roll, but I couldn&rsquo;t resist noodling a little bit.  So I made it a nested table: you roll a die size based on who the job is offered by (if you want, you can always roll the full d20 for anyone if you want).  The idea is that you roll a d4 for an average joe, a d6 for a business owner/artisan, a d8 for a criminal, a d10 for a crime boss, a d12 for a noble, and a d20 for a merchant.  You can randomize who&rsquo;s offering the job with the career list, roll 1d6 to pick what category, base it off of who or where the characters ask, or however else you want to decide.</p>
+<p>Finally, I figure jobs need a place to be offered and discussed, so it&rsquo;s about time for the Inn generator. Once again, the generator in Green Devil Face 4 is probably a better comprehensive preparation-based inn generator than I can make, and there are plenty of inns and taverns detailed in the write-ups, so I think the most useful thing here is an answer to &ldquo;where&rsquo;s the nearest available inn?&quot;.  I ended up going with another pop-o-matic special (oh how I love them), but even moreso than the NPC generator, the idea is to use only the categories you want or need.  I broke down and put an &ldquo;availability&rdquo; category in for completeness, but there&rsquo;s no hard and fast &ldquo;no rooms here&rdquo; result, because I think that&rsquo;s a boring result.  The names can be used as one d20 roll or two, depending on the variety you want.</p>
+<p>All these tables are after the break.  As always, recommendations for improvement are welcome. I apologize for not being able to get the Inn generator entirely into the main column, the layout will be taken care of in the .pdf.</p>
+<h2 id="detailed-job-generator">Detailed Job Generator</h2>
+<!-- raw HTML omitted -->
+<h2 id="quick-job-table--based-on-who-is-offering-a-job-roll-1d4-for-a-regular-citizen-1d6-for-a-business-ownerartisan-1d8-for-a-criminal-1d10-for-a-crime-boss-1d12-for-a-noble-and-1d20-for-a-merchant--table-tbody-tr-classodd-tddxtd-tdjobtd-tr-tr-classeven-td1td-tdsteal-a-recently-acquired-nekharan-necklace-from-a-merchanttd-tr-tr-classodd-td2td-tdrecover-a-ring-from-a-grave---you-can-keep-the-resttd-tr-tr-classeven-td3td-tdtunnel-into-a-wealthy-merchants-vaulttd-tr-tr-classodd-td4td-tdmurder-a-gang-leadertd-tr-tr-classeven-td5td-tdrid-a-slum-building-of-an-infestation-of-especially-vicious-ratstd-tr-tr-classodd-td6td-tdstake-out-a-warehouse-to-catch-a-thieftd-tr-tr-classeven-td7td-tdrough-up-a-shopkeeper-who-wont-pay-his-protection-moneytd-tr-tr-classodd-td8td-tdbreak-an-associate-out-of-the-watchs-jailtd-tr-tr-classeven-td9td-tdsmuggle-drugs-into-the-city-from-a-nearby-inntd-tr-tr-classodd-td10td-tdcase-a-merchants-house-for-a-gang-of-cat-burglars---get-a-percentagetd-tr-tr-classeven-td11td-tddiscover-and-infiltrate-a-suspected-chaos-culttd-tr-tr-classodd-td12td-tdfind-the-herdstone-for-a-group-of-beastmen-and-report-it-to-the-templarstd-tr-tr-classeven-td13td-tdrid-a-slum-building-of-an-infestation-of-especially-vicious-squatterstd-tr-tr-classodd-td14td-tdcollect-blackmail-information-on-a-komission-konvenortd-tr-tr-classeven-td15td-tdparticipate-in-illegal-pit-fightingtd-tr-tr-classodd-td16td-tdjoin-an-expedition-to-an-abandoned-dwarf-fortresstd-tr-tr-classeven-td17td-tdinvestigate-a-cults-use-of-the-sewerstd-tr-tr-classodd-td18td-tdfind-the-remains-of-a-wizard-thrown-off-the-cliff-of-sighstd-tr-tr-classeven-td19td-tdprotect-a-local-noble-during-the-carnival-from-an-assassintd-tr-tr-classodd-td20td-tdburn-down-a-rivals-warehousetd-tr-tbody-table--------is-this-job-still-available">Quick Job Table  Based on who is offering a job, roll 1d4 for a regular citizen, 1d6 for a business owner/artisan, 1d8 for a criminal, 1d10 for a crime boss, 1d12 for a noble, and 1d20 for a merchant.  <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->Dx<!-- raw HTML omitted --> <!-- raw HTML omitted -->Job<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->1<!-- raw HTML omitted --> <!-- raw HTML omitted -->Steal a recently acquired Nekharan necklace from a merchant<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->2<!-- raw HTML omitted --> <!-- raw HTML omitted -->Recover a ring from a grave - you can keep the rest<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->3<!-- raw HTML omitted --> <!-- raw HTML omitted -->Tunnel into a wealthy merchant&rsquo;s vault<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->4<!-- raw HTML omitted --> <!-- raw HTML omitted -->Murder a gang leader<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->5<!-- raw HTML omitted --> <!-- raw HTML omitted -->Rid a slum building of an infestation of especially vicious rats<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->6<!-- raw HTML omitted --> <!-- raw HTML omitted -->Stake out a warehouse to catch a thief<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->7<!-- raw HTML omitted --> <!-- raw HTML omitted -->Rough up a shopkeeper who won&rsquo;t pay his protection money<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->8<!-- raw HTML omitted --> <!-- raw HTML omitted -->Break an associate out of the watch&rsquo;s jail<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->9<!-- raw HTML omitted --> <!-- raw HTML omitted -->Smuggle drugs into the city from a nearby inn<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->10<!-- raw HTML omitted --> <!-- raw HTML omitted -->Case a merchant&rsquo;s house for a gang of cat burglars - get a percentage<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->11<!-- raw HTML omitted --> <!-- raw HTML omitted -->Discover and infiltrate a suspected Chaos Cult<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->12<!-- raw HTML omitted --> <!-- raw HTML omitted -->Find the herdstone for a group of beastmen and report it to the templars<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->13<!-- raw HTML omitted --> <!-- raw HTML omitted -->Rid a slum building of an infestation of especially vicious squatters<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->14<!-- raw HTML omitted --> <!-- raw HTML omitted -->Collect blackmail information on a Komission Konvenor<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->15<!-- raw HTML omitted --> <!-- raw HTML omitted -->Participate in illegal pit fighting<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->16<!-- raw HTML omitted --> <!-- raw HTML omitted -->Join an expedition to an abandoned Dwarf Fortress<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->17<!-- raw HTML omitted --> <!-- raw HTML omitted -->Investigate a cult&rsquo;s use of the sewers<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->18<!-- raw HTML omitted --> <!-- raw HTML omitted -->Find the remains of a wizard thrown off the cliff of sighs<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->19<!-- raw HTML omitted --> <!-- raw HTML omitted -->Protect a local noble during the carnival from an assassin<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->20<!-- raw HTML omitted --> <!-- raw HTML omitted -->Burn down a rival&rsquo;s warehouse<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->  ##     ## Is this Job Still Available?</h2>
+<p>Is that old job still available? Add +1 to the roll for every week since the job became available</p>
+<p>2: Someone else attempted it and did a terrible job, now there’s fallout to deal with</p>
+<p>3-5: Someone else took it, but they haven’t finished yet  6-8: Yes, it’s still available  9-11: Someone else finished the job, but there’s probably other work available  12: Someone else finished the job, and now associates of the target have a counter-job to offer</p>
+<h2 id="inn-and-tavern-generator--table-tbody-tr-classodd-tdd4td-tdavailabilitytd-tdd6td-tdqualitytd-tdd8td-tdbest-featuretd-tdd10td-tdquirktd-tdd12td-tddistricttd-tdd20td-tdadjectivetd-tdnountd-tr-tr-classeven-td1td-tdopen-roomstd-td1td-tdluxurytd-td1td-tdthe-food-is-greattd-td1td-tdfrequented-by-people-you-wouldnt-expect-given-the-qualitytd-td1td-tdcity-gatestd-td1td-tdgrafstd-tdreposetd-tr-tr-classodd-td2td-tdshared-roomstd-td2td-tdgoodtd-td2td-tdthe-bedbugs-hardly-bitetd-td2td-tdruns-some-kind-of-game-or-gamblingtd-td2td-tdpalasttd-td2td-tddiceytd-tdprospecttd-tr-tr-classeven-td3td-tdcan-sleep-in-the-stablestd-td3td-tdaveragetd-td3td-tdyou-can-hear-more-rumors-than-usualtd-td3td-tdextremely-surly-servicetd-td3td-tdthe-great-parktd-td3td-tdsmilingtd-tdfooltd-tr-tr-classodd-td4td-tdkick-someone-out-to-get-a-roomtd-td4td-tdspartantd-td4td-tdits-easy-to-find-jobs-heretd-td4td-tdset-up-customers-for-a-gang-of-footpads-split-the-loottd-td4td-tdgrafsmund-nordgartentd-td4td-tdtemplarstd-tdarmstd-tr-tr-classeven-tdtd-tdtd-td5td-tdcheaptd-td5td-tdthe-drinks-are-cheaptd-td5td-tdproprietor-requires-guests-to-attend-sermons-to-get-breakfasttd-td5td-tdulricsmundtd-td5td-tddwarfstd-tdstoneholmtd-tr-tr-classodd-tdtd-tdtd-td6td-tdjust-awfultd-td6td-tdthe-owners-dont-tolerate-fightingtd-td6td-tdinn-is-a-safe-house-for-a-crime-ringtd-td6td-tdaltmarkt-altquartiertd-td6td-tdhogstd-tdheadtd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-td7td-tdthe-rooms-are-cheap-for-long-staystd-td7td-tda-political-action-group-uses-the-inn-for-meetingstd-td7td-tdsouthgate-ostwaldtd-td7td-tdhungrytd-tdhalflingtd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-td8td-tdif-you-tip-well-the-staff-will-do-a-lot-for-youtd-td8td-tdowner-refuses-to-pay-protection-moneytd-td8td-tdneumarkt-osttortd-td8td-tdbrokentd-tdanviltd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td9td-tdwont-serve-a-randomly-determined-demi-human-racetd-td9td-tdthe-freiburgtd-td9td-tdspinningtd-tdwheeltd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td10td-tdproprietor-wont-stop-with-the-storiesconspiracy-theoriesobservations-on-the-weathertd-td10td-tdthe-wyndtd-td10td-tddrunkentd-tdjourneymantd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td11td-tdwesttor-sudgartentd-td11td-tdregentstd-tdhousetd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td12td-tdgeldmund-kaufseit-brotkopfstd-td12td-tddrownedtd-tdrattd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td13td-tdlasttd-tddroptd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td14td-tdlaughingtd-tdjackasstd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td15td-tdmightytd-tdman-o-wartd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td16td-tdsingingtd-tdshowboattd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td17td-tdheavenstd-tdlamenttd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td18td-tdredtd-tdmoontd-tr-tr-classeven-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td19td-tdvicioustd-tddogtd-tr-tr-classodd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-tdtd-td20td-tdnonetd-tdscholarstd-tr-tbody-table">Inn and Tavern Generator  <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->D4<!-- raw HTML omitted --> <!-- raw HTML omitted -->Availability<!-- raw HTML omitted --> <!-- raw HTML omitted -->D6<!-- raw HTML omitted --> <!-- raw HTML omitted -->Quality<!-- raw HTML omitted --> <!-- raw HTML omitted -->D8<!-- raw HTML omitted --> <!-- raw HTML omitted -->Best Feature<!-- raw HTML omitted --> <!-- raw HTML omitted -->D10<!-- raw HTML omitted --> <!-- raw HTML omitted -->Quirk<!-- raw HTML omitted --> <!-- raw HTML omitted -->D12<!-- raw HTML omitted --> <!-- raw HTML omitted -->District<!-- raw HTML omitted --> <!-- raw HTML omitted -->D20<!-- raw HTML omitted --> <!-- raw HTML omitted -->Adjective<!-- raw HTML omitted --> <!-- raw HTML omitted -->Noun<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->1<!-- raw HTML omitted --> <!-- raw HTML omitted -->Open Rooms<!-- raw HTML omitted --> <!-- raw HTML omitted -->1<!-- raw HTML omitted --> <!-- raw HTML omitted -->Luxury<!-- raw HTML omitted --> <!-- raw HTML omitted -->1<!-- raw HTML omitted --> <!-- raw HTML omitted -->The food is great<!-- raw HTML omitted --> <!-- raw HTML omitted -->1<!-- raw HTML omitted --> <!-- raw HTML omitted -->Frequented by people you wouldn&rsquo;t expect given the quality<!-- raw HTML omitted --> <!-- raw HTML omitted -->1<!-- raw HTML omitted --> <!-- raw HTML omitted -->City Gates<!-- raw HTML omitted --> <!-- raw HTML omitted -->1<!-- raw HTML omitted --> <!-- raw HTML omitted -->Graf&rsquo;s<!-- raw HTML omitted --> <!-- raw HTML omitted -->Repose<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->2<!-- raw HTML omitted --> <!-- raw HTML omitted -->Shared Rooms<!-- raw HTML omitted --> <!-- raw HTML omitted -->2<!-- raw HTML omitted --> <!-- raw HTML omitted -->Good<!-- raw HTML omitted --> <!-- raw HTML omitted -->2<!-- raw HTML omitted --> <!-- raw HTML omitted -->The bedbugs hardly bite<!-- raw HTML omitted --> <!-- raw HTML omitted -->2<!-- raw HTML omitted --> <!-- raw HTML omitted -->Runs some kind of game or gambling<!-- raw HTML omitted --> <!-- raw HTML omitted -->2<!-- raw HTML omitted --> <!-- raw HTML omitted -->Palast<!-- raw HTML omitted --> <!-- raw HTML omitted -->2<!-- raw HTML omitted --> <!-- raw HTML omitted -->Dicey<!-- raw HTML omitted --> <!-- raw HTML omitted -->Prospect<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->3<!-- raw HTML omitted --> <!-- raw HTML omitted -->Can sleep in the stables<!-- raw HTML omitted --> <!-- raw HTML omitted -->3<!-- raw HTML omitted --> <!-- raw HTML omitted -->Average<!-- raw HTML omitted --> <!-- raw HTML omitted -->3<!-- raw HTML omitted --> <!-- raw HTML omitted -->You can hear more rumors than usual<!-- raw HTML omitted --> <!-- raw HTML omitted -->3<!-- raw HTML omitted --> <!-- raw HTML omitted -->Extremely surly service<!-- raw HTML omitted --> <!-- raw HTML omitted -->3<!-- raw HTML omitted --> <!-- raw HTML omitted -->The Great Park<!-- raw HTML omitted --> <!-- raw HTML omitted -->3<!-- raw HTML omitted --> <!-- raw HTML omitted -->Smiling<!-- raw HTML omitted --> <!-- raw HTML omitted -->Fool<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->4<!-- raw HTML omitted --> <!-- raw HTML omitted -->Kick someone out to get a room<!-- raw HTML omitted --> <!-- raw HTML omitted -->4<!-- raw HTML omitted --> <!-- raw HTML omitted -->Spartan<!-- raw HTML omitted --> <!-- raw HTML omitted -->4<!-- raw HTML omitted --> <!-- raw HTML omitted -->It&rsquo;s easy to find jobs here<!-- raw HTML omitted --> <!-- raw HTML omitted -->4<!-- raw HTML omitted --> <!-- raw HTML omitted -->Set up customers for a gang of footpads, split the loot<!-- raw HTML omitted --> <!-- raw HTML omitted -->4<!-- raw HTML omitted --> <!-- raw HTML omitted -->Grafsmund-Nordgarten<!-- raw HTML omitted --> <!-- raw HTML omitted -->4<!-- raw HTML omitted --> <!-- raw HTML omitted -->Templar&rsquo;s<!-- raw HTML omitted --> <!-- raw HTML omitted -->Arms<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->5<!-- raw HTML omitted --> <!-- raw HTML omitted -->Cheap<!-- raw HTML omitted --> <!-- raw HTML omitted -->5<!-- raw HTML omitted --> <!-- raw HTML omitted -->The drinks are cheap<!-- raw HTML omitted --> <!-- raw HTML omitted -->5<!-- raw HTML omitted --> <!-- raw HTML omitted -->Proprietor requires guests to attend sermons to get breakfast<!-- raw HTML omitted --> <!-- raw HTML omitted -->5<!-- raw HTML omitted --> <!-- raw HTML omitted -->Ulricsmund<!-- raw HTML omitted --> <!-- raw HTML omitted -->5<!-- raw HTML omitted --> <!-- raw HTML omitted -->Dwarf&rsquo;s<!-- raw HTML omitted --> <!-- raw HTML omitted -->Stoneholm<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->6<!-- raw HTML omitted --> <!-- raw HTML omitted -->Just Awful<!-- raw HTML omitted --> <!-- raw HTML omitted -->6<!-- raw HTML omitted --> <!-- raw HTML omitted -->The owners don&rsquo;t tolerate fighting<!-- raw HTML omitted --> <!-- raw HTML omitted -->6<!-- raw HTML omitted --> <!-- raw HTML omitted -->Inn is a safe house for a crime ring<!-- raw HTML omitted --> <!-- raw HTML omitted -->6<!-- raw HTML omitted --> <!-- raw HTML omitted -->Altmarkt-Altquartier<!-- raw HTML omitted --> <!-- raw HTML omitted -->6<!-- raw HTML omitted --> <!-- raw HTML omitted -->Hog&rsquo;s<!-- raw HTML omitted --> <!-- raw HTML omitted -->Head<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->7<!-- raw HTML omitted --> <!-- raw HTML omitted -->The rooms are cheap for long stays<!-- raw HTML omitted --> <!-- raw HTML omitted -->7<!-- raw HTML omitted --> <!-- raw HTML omitted -->A political action group uses the inn for meetings<!-- raw HTML omitted --> <!-- raw HTML omitted -->7<!-- raw HTML omitted --> <!-- raw HTML omitted -->Southgate-Ostwald<!-- raw HTML omitted --> <!-- raw HTML omitted -->7<!-- raw HTML omitted --> <!-- raw HTML omitted -->Hungry<!-- raw HTML omitted --> <!-- raw HTML omitted -->Halfling<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->8<!-- raw HTML omitted --> <!-- raw HTML omitted -->If you tip well, the staff will do a lot for you<!-- raw HTML omitted --> <!-- raw HTML omitted -->8<!-- raw HTML omitted --> <!-- raw HTML omitted -->Owner refuses to pay protection money<!-- raw HTML omitted --> <!-- raw HTML omitted -->8<!-- raw HTML omitted --> <!-- raw HTML omitted -->Neumarkt-Osttor<!-- raw HTML omitted --> <!-- raw HTML omitted -->8<!-- raw HTML omitted --> <!-- raw HTML omitted -->Broken<!-- raw HTML omitted --> <!-- raw HTML omitted -->Anvil<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->9<!-- raw HTML omitted --> <!-- raw HTML omitted -->Won&rsquo;t serve a randomly determined demi-human race<!-- raw HTML omitted --> <!-- raw HTML omitted -->9<!-- raw HTML omitted --> <!-- raw HTML omitted -->The Freiburg<!-- raw HTML omitted --> <!-- raw HTML omitted -->9<!-- raw HTML omitted --> <!-- raw HTML omitted -->Spinning<!-- raw HTML omitted --> <!-- raw HTML omitted -->Wheel<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->10<!-- raw HTML omitted --> <!-- raw HTML omitted -->Proprietor won&rsquo;t stop with the stories/conspiracy theories/observations on the weather<!-- raw HTML omitted --> <!-- raw HTML omitted -->10<!-- raw HTML omitted --> <!-- raw HTML omitted -->The Wynd<!-- raw HTML omitted --> <!-- raw HTML omitted -->10<!-- raw HTML omitted --> <!-- raw HTML omitted -->Drunken<!-- raw HTML omitted --> <!-- raw HTML omitted -->Journeyman<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->11<!-- raw HTML omitted --> <!-- raw HTML omitted -->Westtor-Sudgarten<!-- raw HTML omitted --> <!-- raw HTML omitted -->11<!-- raw HTML omitted --> <!-- raw HTML omitted -->Regent&rsquo;s<!-- raw HTML omitted --> <!-- raw HTML omitted -->House<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->12<!-- raw HTML omitted --> <!-- raw HTML omitted -->Geldmund-Kaufseit-Brotkopfs<!-- raw HTML omitted --> <!-- raw HTML omitted -->12<!-- raw HTML omitted --> <!-- raw HTML omitted -->Drowned<!-- raw HTML omitted --> <!-- raw HTML omitted -->Rat<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->13<!-- raw HTML omitted --> <!-- raw HTML omitted -->Last<!-- raw HTML omitted --> <!-- raw HTML omitted -->Drop<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->14<!-- raw HTML omitted --> <!-- raw HTML omitted -->Laughing<!-- raw HTML omitted --> <!-- raw HTML omitted -->Jackass<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->15<!-- raw HTML omitted --> <!-- raw HTML omitted -->Mighty<!-- raw HTML omitted --> <!-- raw HTML omitted -->Man O&rsquo; War<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->16<!-- raw HTML omitted --> <!-- raw HTML omitted -->Singing<!-- raw HTML omitted --> <!-- raw HTML omitted -->Showboat<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->17<!-- raw HTML omitted --> <!-- raw HTML omitted -->Heaven&rsquo;s<!-- raw HTML omitted --> <!-- raw HTML omitted -->Lament<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->18<!-- raw HTML omitted --> <!-- raw HTML omitted -->Red<!-- raw HTML omitted --> <!-- raw HTML omitted -->Moon<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->19<!-- raw HTML omitted --> <!-- raw HTML omitted -->Vicious<!-- raw HTML omitted --> <!-- raw HTML omitted -->Dog<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->20<!-- raw HTML omitted --> <!-- raw HTML omitted -->None<!-- raw HTML omitted --> <!-- raw HTML omitted -->Scholar&rsquo;s<!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --></h2>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2014-01-20</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2014-01-21-vornheiming-middenheim-xvi-wrapping-up/">
+                    Next<br>Vornheiming Middenheim XVI: Wrapping Up
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2014-01-17-pretty-pretty-picture-friday/">
+                    Previous<br>Pretty Pretty Picture Friday
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

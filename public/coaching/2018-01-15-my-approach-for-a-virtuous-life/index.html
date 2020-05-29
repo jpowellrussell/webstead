@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html><head>
+<title>My Approach for a Virtuous Life</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#head" v-on:click="closeDrawer" id="head-nav">
+										 Head
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#chest" v-on:click="closeDrawer" id="chest-nav">
+										 Chest
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#belly" v-on:click="closeDrawer" id="belly-nav">
+										 Belly
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#head" v-on:click="closeDrawer" id="head-nav">
+										 Head
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#chest" v-on:click="closeDrawer" id="chest-nav">
+										 Chest
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#belly" v-on:click="closeDrawer" id="belly-nav">
+										 Belly
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    My Approach for a Virtuous Life
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2018-01-15 00:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Coaching]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/worth">Worth</a>
+                                &nbsp;
+                            
+                                <a href="/tags/personal">Personal</a>
+                                &nbsp;
+                            
+                                <a href="/tags/philosophy">Philosophy</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>Today I run the risk of sounding  a bit preachy. Let me state for the first (but not last) time that I don&rsquo;t want to tell you how to live your life or what “being good” means. We all want to be good people, but many of us have different perspectives on what that means. Even worse, almost every terrible ethical lapse you read about in the news began years ago with a gradual slip. We can all fall prey to this, so it helps to clearly spell out our code of behavior. That’s why I’ve laid out below the process I followed to settle on my own virtues, and the steps I take to try to live up to them. I hope that you get some ideas on how you might think about and reinforce your own principles.</p>
+<p>A little over a year ago, I was struck by something <a href="http://jockopodcast.com/">Jocko Willink</a> said about needing to know what your values are so that you can be sure you are living up to them. He further suggested that it was a good idea to periodically check in and confirm that your stated principles really are what you believe and want to uphold. This struck me as quite good advice, and so I decided to figure out what virtues were important to me along with a way to keep track of how I was doing. Obviously this is an ongoing struggle, and I make no claims on being particularly virtuous. Rather than trying to convince you to live by my virtues, I hope that I provide a model of how you might identify and live by your virtues.</p>
+<p>To begin with, I realized with some horror that I had no identifiable virtues of my own, just a lot of vague moral intuitions and behavioral codes I had followed in the past. Since I do not follow any of the major religions, going by one of their lists was out, so I reckoned I had to define my own. I sought out sources which spoke to what I thought was right: everything from the <a href="https://www.army.mil/values/">Army Values</a> to the <a href="https://en.wikipedia.org/wiki/Stoicism#Ethics_and_virtues">Stoic Virtues</a> to <a href="https://smile.amazon.com/Awaken-Giant-Within-Immediate-Emotional-ebook/dp/B001EM101Q/ref=sr_1_3?ie=UTF8&amp;qid=1516034506&amp;sr=8-3&amp;keywords=awaken+the+giant+within">Tony Robbins</a> to <a href="http://www.angelfire.com/nc/broomcloset/aetheling.html">Anglo-Saxon Thews</a> and more. From each of these sources, I created a mindmap on <a href="https://realtimeboard.com/">Realtime Board</a> with each separate virtue as a node, first grouped by their sources. I then created connections between the virtues that seemed to be related to each other somehow, and then I clumped together those that seemed to reflect similar concepts - <a href="http://asq.org/learn-about-quality/idea-creation-tools/overview/affinity.html">affinity mapping</a>, basically. The end result was something my friend described as an “Ant’s Nest” and looked like a crazy person’s <a href="https://i1.wp.com/www.weirdshitpodcast.net/wp-content/uploads/2017/03/download-1.jpg?resize=672%2C372">conspiracy board</a>. I did not create a visual that would help other people, but the process of building it forced me to look very closely at dozens of potential virtues, figure out what I believed in and how they were similar or different, and otherwise deeply immerse myself in them. The end result was a deep internalization of the values put forward in all of the sources I chose as well as my own understanding of how they fit together.</p>
+<p>After all that work, I ended up with nine virtues in three groups. As I said, I do not say that these are the right virtues for anyone but myself, but for the sake of example, here they are:</p>
+<h2 id="head">Head</h2>
+<p>All of these virtues involve thinking and using your head. They are related to humanity’s innate capacity for reason, as separate from the animals.</p>
+<p><strong>Groundedness</strong>: Presence, humility, moderation. The ability to pause and step outside of emotions and impressions and remain calm. In many ways, this virtue enables all of the others when they would otherwise be hard.</p>
+<p><strong>Truth</strong>: Dedication to facing the world as it truly is and reflecting that in word and deed. Besides speaking the truth, it includes curiosity, rationality, and the willingness to accept hard truths.</p>
+<p><strong>Wisdom</strong>: Applied smarts. Wisdom is both the love of knowledge and the active application of that knowledge to living a good life. Many of the virtues tell me what to do, but wisdom usually encompasses how to achieve that.</p>
+<h2 id="chest">Chest</h2>
+<p>These virtues are the higher sort of emotional virtues - the kind of thing that makes you shed a tear at a powerful scene in a movie. They provide the bridge between the colder virtues of the Head and the heated virtues of the Belly.</p>
+<p><strong>Love</strong>: Kindness, generosity, humor, and cheerfulness. Treating everyone well, not just those close to you. Without this virtue, all of the others might turn overly inward or selfish.</p>
+<p><strong>Troth</strong>: Loyalty, hospitality, duty, and respect. An old timey word now mostly only seen in the word betroth. This virtue covers my obligations to others as a social animal. Somewhat more formal and less warm than Love, but still rooted in a sense of shared humanity and dignity.</p>
+<p><strong>Worth</strong>: Excellence, honor, virtue. In many ways, this is the master virtue. If you are familiar with the Greek concept of <a href="https://en.wikipedia.org/wiki/Arete_(moral_virtue)">arete</a>, that comes close to hitting the mark. The virtue of living and acting well, of doing things the very best you can, because it is worthwhile in and of itself.</p>
+<h2 id="belly">Belly</h2>
+<p>These are the fiery virtues of primal life. They are the least distinguished from animals, but are still necessary to provide the drive and power to make the other virtues possible.</p>
+<p><strong>Hunger</strong>: Ambition, decisiveness, energy. Hunger is the desire to strive and do and achieve. By itself, it can become a vice, but absolutely necessary to make achieving the other virtues possible.</p>
+<p><strong>Guts</strong>: Bravery, courage. Just as you need Hunger to desire to do better, you need Guts to do the right thing even when its hard. Includes physical and moral bravery, which are more closely linked than many suppose.</p>
+<p><strong>Grit</strong>: Discipline, industriousness, persistence, toughness. Grit is the virtue of sticking with things and pushing through when it gets hard through sheer stubbornness. Many great things only exist on the other side of pain - Hunger and Guts start you on the path there, but Grit carries you through.</p>
+<p>Now that you’ve seen an example list of virtues, what might you do to make them real in your life? I was inspired by Benjamin Franklin’s method of <a href="http://www.thirteenvirtues.com/">keeping track of his virtues</a>, and I have adapted it to my daily journal. At the top of the page on each new day, I draw a little box with my nine virtues in three columns of three rows, each with space next to them for a mark. At the end of the day, I reflect and ask myself how I did. To make it as easy as possible to evaluate, I assume I followed my virtue unless I can think of an example where I failed. If I can think of no examples, I put a happy face next to the virtue. If I failed, I put a sad face.</p>
+<p>This has the advantage of making me think about my virtues at the beginning of the day (when I lay out my page) and at the end (when I ask how I did), and provides me a record of which virtues I might be struggling with the most. Something I’m considering is coming up with more clear criteria for each virtue about what constitutes failing in it, because I don’t want to give myself a pass for things I need to recognize. Even still, I believe there’s value in continuously reinforcing that I am the kind of person who acts in those ways - making it easier to act in accordance with that self-perception.</p>
+<p>One last thing: each day, I pick a challenge for one of the virtues. I move through them in sequence, rotating around when I get to the end. Where my default is to look out for failures of each virtue, the point here is to encourage me to actively improve in that virtue. So, for example, a common challenge for days where “Guts” is the focus virtue is “Do something that scares you”, or for Love I might have “Perform an unexpected act of generosity for a stranger.&rdquo;</p>
+<p>As I’ve said many times already, I do not expect my nine virtues will match your values, but I’ve provided a model of how you might incorporate your own virtues into your life. By thinking about what sources you want to inform your approach, selecting qualities from them, and finding links and clumping them together, you can arrive at your own manageable list of virtues. Once you have them, you can keep track of them with an “assumed pass” system plus a challenge to keep you from getting comfortable. Whether you use any of these techniques or not, I encourage you to think about what your values, principles, or virtues are, and to make a conscious effort every day to live up to them.</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2018-01-15</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/reading/zen-the-art-of-motorcycle-maintenance/">
+                    Next<br>Zen &amp; The Art of Motorcycle Maintenance
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/reading/the-artists-way/">
+                    Previous<br>The Artist&#39;s Way
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

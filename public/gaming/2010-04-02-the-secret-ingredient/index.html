@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html><head>
+<title>The Secret Ingredient</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    The Secret Ingredient
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2010-04-02 11:12
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/social-gaming">Social Gaming</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>Is love, dammit.</p>
+<p>And love I have in spades. Love of games, love of game design, love of theorizing and pontificating. But it in all seriousness, I worry that I lack a no less crucial secret ingredient for my design plans: actual play. I&rsquo;ve been reading through the archive at <a href="http://www.lumpley.com">anyway</a>, the blog of D. Vincent Baker, author of &ldquo;Dogs in the Vineyard&rdquo; and &ldquo;In a Wicked Age&rdquo;, and he points out, correctly I think, that without real game play to ground your theories in, it&rsquo;s all too easy to build sand castles of wonderful intricacy but no lasting substance or usefulness. I haven&rsquo;t played in an actual, live on going RPG for ten years now! Ten years! Oof. I&rsquo;m getting some good online play, and I&rsquo;ve played in various one-off games or abortive attempts at starting up a game over the years, not since I moved away from my adolescent gaming group have I played RPGs as often as I&rsquo;d like. So, what to do about this? I have in mind three potential solutions to not only enjoy my favorite hobby, but also to get the gaming experience I need to solidly frame my designs with things that actually come up in real game play. So here they are:</p>
+<p><strong>Technology</strong>: Through the power of the vast and multifarious internets, all kinds of communication options exist that never did before. I have maintained friendships over vast distances through frequent communication, and perhaps gaming is another application of this connectivity. I am currently playing in such a game, and it&rsquo;s been going smoothly and enjoyably for a good 6 months or so now. But, at least as played, it is a different creature from roleplaying at the table, and doesn&rsquo;t wholly satisfy my inclinations. For one, being forum based, it takes place somewhat &lsquo;in slow motion&rsquo;, with GM and player interaction usually being via private messages, which are then clumped together in &lsquo;scenes&rsquo; posted for everyone to read. The GM is excellent, so it&rsquo;s making for some creative story and character moments, but thus far there&rsquo;s quite limited character/player interaction. That would be easier with scheduled &lsquo;live&rsquo; chats, and perhaps even better would be some sort of audio and/or video live chat. I don&rsquo;t have the capability for that just now, but I will in the near future, and that might bear looking into. That being said, there&rsquo;s something to gathering in one physical place, eating the same snacks, seeing each other&rsquo;s faces, and shooting the breeze before and after that even the most advanced online options lack.</p>
+<p><strong>Converts</strong>: Here, my idea is to take my friends and bring them into the hobby. Obviously, this is a huge motivation for my whole &lsquo;Starter RPG&rsquo; project. The benefits here are pretty obvious: not only do I get to roleplay in person and increase the number of roleplayers I know, I already know that I like them and get along with them and will want to spend valuable social time with them. Unfortunately, the negatives are almost as obvious: roleplaying is not for everyone, no matter how amazing a group/game/rules/gamemaster/etc you introduce them to, many of my friends that would be interested in trying RPGs are scattered across vast geographical distances (the same issue with my friends that already do game), and even if they do find they like it, it will have to compete with all of their other social plans to become something that happens regularly. They might see it as a fun once in a while thing, but not something you spend a few hours at every week. So, I&rsquo;m going to pursue this plan, but not count on making any huge strides in my mission work.</p>
+<p><strong>The Hobby</strong>: Finally, I&rsquo;m going to discuss what many might consider the most obvious plan, but one that I&rsquo;m a bit leery of. There is a local game store where I live (better than some, but worse than others) that hosts gaming of all sorts every weekend and is generally a meeting place for hobbyists in the town. So, the plus sides are that these are people who are already invested in roleplaying and may be just as interested in a chance to game more than me, I might meet new, cool people that I otherwise would not, and those people I do find are most likely to be interested in playing regularly and perhaps even in playtesting rules of my design or such like. The down sides are a little more subtle. I&rsquo;m growing curmudgeonly, and though I&rsquo;ve made some great friends in my life through gaming, for some reason, at this point in my life, I&rsquo;m not enthused about the idea of meeting people via gaming. I&rsquo;d rather play games with people I already know and like otherwise. But alas, that&rsquo;s not working out satisfactorily so far. The trouble is twofold. For one, despite my firm belief that there is nothing inherently awkward, nerdy, or weird about roleplaying, a lot of roleplayers are in fact, well, awkward, nerdy, or weird. I have a pretty high tolerance for all of these qualities, but it makes it harder to weave new friends into my existing social life and so forth. Secondly, while there are certain personality and character traits that tend to go with people who enjoy roleplaying, the single fact of a strong shared interest does not necessarily make for compatible people. Obviously, this is part of the benefit of having shared interests: it exposes you to people different from yourself and your friends, sometimes to create new friendships, but it can also lead to getting stuck with someone you don&rsquo;t really want to spend time with, but you keep around because without him you won&rsquo;t have a group. And that&rsquo;s not a situation I&rsquo;m eager to try again. All that as it is, I think I&rsquo;m going to have to bite the bullet and start hanging around the game store more and try to find some new gamer buddies.</p>
+<p>Does anybody have any recommendations that I&rsquo;ve missed out on?</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2010-04-02</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2010-04-04-social-contract/">
+                    Next<br>Social Contract
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2010-03-29-magic-and-obligations/">
+                    Previous<br>Magic and Obligations
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

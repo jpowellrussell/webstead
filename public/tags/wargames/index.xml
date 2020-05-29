@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wargames on Jeff Russell&#39;s Webstead</title>
+    <link>/tags/wargames/</link>
+    <description>Recent content in Wargames on Jeff Russell&#39;s Webstead</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Jun 2010 14:40:00 -0700</lastBuildDate>
+    
+	<atom:link href="/tags/wargames/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Shootin&#39; Stuff</title>
+      <link>/gaming/2010-06-10-shootin-stuff/</link>
+      <pubDate>Thu, 10 Jun 2010 14:40:00 -0700</pubDate>
+      
+      <guid>/gaming/2010-06-10-shootin-stuff/</guid>
+      <description>So, the first topic I&amp;rsquo;d like to address here with regard to my skirmish rules is of central importance to a modern/sci-fi wargame: shooting stuff. I&amp;rsquo;m going to start out a little theoretical and then move into some practicalities as they relate to those theories.
+So, the way I see it, in a skirmish wargame, shooting has two main intentions: to control movement and to remove enemy fighters. The second is fairly obvious, but there are some implications to it I want to discuss, so I&amp;rsquo;ll start with &amp;ldquo;controlling movement&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>Necromunda Skirmish Redux</title>
+      <link>/gaming/2010-06-10-necromunda-skirmish-redux/</link>
+      <pubDate>Thu, 10 Jun 2010 05:00:00 -0700</pubDate>
+      
+      <guid>/gaming/2010-06-10-necromunda-skirmish-redux/</guid>
+      <description>So, awhile back I started on the somewhat ambitious project of coming up with some miniature skirmish rules that would be extremely customizable but still balanced for competitive play. I started with the notion of wanting to play &amp;ldquo;Necromunda&amp;rdquo; but with more individuality and perhaps a heavier story focus.
+So, a few months back, I went through the Necromunda, Mordheim, and Inquisitor rules and looked for ideas to modify, incorporating ideas from a WWII skirmish game my friend Lance and I developed a few years back (initially based on Games Workshop&amp;rsquo;s Lord of the Rings game, but since modified beyond recognition).</description>
+    </item>
+    
+  </channel>
+</rss>

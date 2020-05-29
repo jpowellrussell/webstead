@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html><head>
+<title>Fine Dining Carousing Table</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Fine Dining Carousing Table
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2016-07-11 00:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/fellhold-reboot">Fellhold Reboot</a>
+                                &nbsp;
+                            
+                                <a href="/tags/urbancrawl">Urbancrawl</a>
+                                &nbsp;
+                            
+                                <a href="/tags/osr">OSR</a>
+                                &nbsp;
+                            
+                                <a href="/tags/fellhold">Fellhold</a>
+                                &nbsp;
+                            
+                                <a href="/tags/rules">Rules</a>
+                                &nbsp;
+                            
+                                <a href="/tags/dd">D&amp;D</a>
+                                &nbsp;
+                            
+                                <a href="/tags/projects">Projects</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p><a href="http://i2.cdn.turner.com/cnnnext/dam/assets/151104103018-asia-instagram-chefs-lennardy3-super-169.jpeg">http://i2.cdn.turner.com/cnnnext/dam/assets/151104103018-asia-instagram-chefs-lennardy3-super-169.jpeg</a></p>
+<p>One of the things I enjoy the most about living in a big city, and look forward to the most when visiting another city, is the food. Honestly, I&rsquo;d say most of my enjoyment of a vacation comes down to how good the food I get to eat on it is. What&rsquo;s the point of going somewhere beautiful or culturally important if you&rsquo;re eating bland crap while you&rsquo;re there?</p>
+<p><a href="https://www.zagat.com/proxy/v1.4?m=image&amp;a=resize&amp;url=https%3A//storage.googleapis.com/zgt-user/LK_Alstadt_edit.JPG&amp;width=640&amp;height=360&amp;key=abbc09b7c840c10937a4db331422c98b">https://www.zagat.com/proxy/v1.4?m=image&amp;a=resize&amp;url=https%3A//storage.googleapis.com/zgt-user/LK_Alstadt_edit.JPG&amp;width=640&amp;height=360&amp;key=abbc09b7c840c10937a4db331422c98b</a></p>
+<p>So for me, an important aspect of getting Fellhold to feel like a city is to make food matter. When it comes to dungeon crawling or traditional exploration, I like approaches like <a href="http://dungeonofsigns.blogspot.com/2015/05/dungeon-viddles-hms-apollyon-players.html">Gus&rsquo;s on the HMS Apollyon</a> or <a href="http://goblinpunch.blogspot.com/2015/03/narrative-wounds-and-fast-hp-refreshment.html">Arnold&rsquo;s</a>where you link eating rations to recovery of HP or exhaustion - it makes intuitive sense, and it ties food into something that players already deeply care about, and does so in a way that meshes with the core rhythm of the game (exploration rounds, fights, et cetera).</p>
+<p><a href="http://farm9.staticflickr.com/8062/8180534579_3e7dc6615f.jpg">http://farm9.staticflickr.com/8062/8180534579_3e7dc6615f.jpg</a></p>
+<p>Where I see a bit of a gap in these excellent rules, though, is in linking food with the experience of living in a place (Gus has some mention of food in his <a href="http://dungeonofsigns.blogspot.com/2014/07/hms-appolyon-living-costs-and-basic.html">living cost rules here</a> which I had totally forgotten about when I wrote my <a href="http://blessingsofthedicegods.blogspot.com/2016/06/lifestyles-of-poor-and-adventurous.html">own lifestyle rules</a>). I tried to work in some mention of food in those lifestyle rules, but it didn&rsquo;t provide much flavor (pun definitely intended). And then I had a wonderful realization: carousing tables.</p>
+<p><a href="http://images2.phoenixnewtimes.com/imager/u/original/6540779/monti_carlo_wine_kegs.jpg">http://images2.phoenixnewtimes.com/imager/u/original/6540779/monti_carlo_wine_kegs.jpg</a></p>
+<p>See, I had already come up with the idea of having several different carousing tables for players to choose from, with different costs and effects.  As I started building them out, I realized they are a great way to convey &ldquo;fluff&rdquo; about the city without boring exposition or description. And I decided that going out and eating well ought to be one of the ways you can carouse. So I present to you the Fine Dining carousing table.</p>
+<p><a href="https://s-media-cache-ak0.pinimg.com/236x/71/6f/b1/716fb1a8f6c4086595f3890a9b8b0589.jpg">https://s-media-cache-ak0.pinimg.com/236x/71/6f/b1/716fb1a8f6c4086595f3890a9b8b0589.jpg</a></p>
+<p>(Rules note: it works like standard carousing rules - players commit to carouse before they roll the cost, they make some kind of test to see if they have to roll on the mishap table, and they gain XP equal to the cost regardless. The mishap table is full of wacky shenanigans and adventure hooks.)</p>
+<p><a href="https://media-cdn.tripadvisor.com/media/photo-s/07/30/d7/b1/junction.jpg">https://media-cdn.tripadvisor.com/media/photo-s/07/30/d7/b1/junction.jpg</a></p>
+<p><strong>Fine Dining</strong>  Seeking out the best food and drink the city has to offer and enjoying it immensely. Risks primarily include stumbling into unwanted situations, eating something questionable, or offending influential cooks.  Cost: D4 x 100 Silver Skillings  Test: Constitution Check       <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->Roll<!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->Mishap<!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 1 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Man, ratmen really do deserve their reputation as the finest cooks. Your meal was perfectly cooked, delicately seasoned, and the portions were just right. On the way to the bathroom, though, you accidentally looked into the kitchen. The owners don’t want word getting out the secret ingredient is human children, and they’re after you. <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 2 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Really, the pork chop <!-- raw HTML omitted -->was<!-- raw HTML omitted --> a bit dry, and you didn’t come here for dry pork chops, so you sent it back. Now one of the city’s most prominent chefs has sworn a blood feud with you. <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 3 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> After the pre-dinner cocktail, the bottle of wine with the meal (excellent, really), and the chef’s recommended aperitif, the suggestion to head to a bar sounds <!-- raw HTML omitted -->great<!-- raw HTML omitted -->. Roll on the drinking mishaps table. <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 4 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> People have been telling you to try half dwarf food for ages, and man are you glad you did, it was spicy and delicious. But you’re not so happy the next day, or the day after. -1 to all rolls due to gastro-intenstinal difficulties for two days. <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 5 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Your first foray into crabmen food was a great success! Beautifully plated, and despite your initial skepticism, the raw, aged meat was quite flavorful, and their noodles are to die for. But apparently it didn’t sit so well with you. -1 to all rolls for two days from food poisoning. <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 6 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> While eating at the nicest Ratmen restaurant in the city, you overhear two prominent members of a major faction discussing their plans over dinner, and they notice you noticing. You’re not <!-- raw HTML omitted -->sure<!-- raw HTML omitted --> that people have been following you since, but you definitely think so. <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 7 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Tieflings don’t really have their own food culture, but damn they are good at fusion. Unfortunately, they must literally do something magical, as you now have some minor mutation. <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 8 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> This quaint little lumberjack restaurant is so <!-- raw HTML omitted -->authentic<!-- raw HTML omitted -->. So authentic, in fact, that a fight breaks out in the middle of the dining room! Roll on the violence mishaps table.  <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 9 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Those were the best pancakes you’ve ever had in your life! When you excitedly bring your friends back to check it out, you find nobody there and the place is all smashed up. <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 10 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> No, no, it can’t be! Your favorite restaurant, it’s closed! The owner and cook just couldn’t afford the rent payments any more, and he doesn’t think he can start over somewhere without a loan. <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 11 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> You unwisely decided to take on the monster melt - three feet and four pounds of meat, cheese, and bread, with all the fixins. The good news is, your next meal is free, because you finished. The bad news is that can’t fit into any of your clothes comfortably for a week. -1 to any dexterity related tasks due to lingering discomfort. <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 12 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> In order to get a table at that secret pop-up restaurant, you had to promise a major favor to someone shady. You owe a job to a random NPC. Oh, and the food was alright, but the privilege of telling everyone that couldn’t get in how great it was was definitely worth it. <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 13 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Turns out you’re terribly allergic to something that was in that meal. Your max HP is reduced by 1 for a week as you recover. <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 14 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> You send your compliments to the chef, and when they come out to personally thank you, well, your mutual passion for food turns into plain old mutual passion. Roll on the Sex mishaps table, but you have a new contact that is totally into you. <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 15 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> On a whim, you try a new place, and it is absolutely amazing. Your new favorite restaurant. Ask the referee to place it in one of the districts as a place of interest and detail the owner/cook as an NPC. <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 16 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> You overhear some mighty interesting things at that street food cart you love so much. Roll a rumor from the city-wide rumor table. <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 17 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> A casual conversation over dinner turns into a disagreement, which turns into a fierce debate, and you just <!-- raw HTML omitted -->know<!-- raw HTML omitted --> you’re right, but you need proof. Roll on the Study mishaps table. <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 18 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Ugh, that was disgusting, how can these people eat this? Randomly determine one of the races of Fellhold - you can’t stomach their food, and you’ll even have trouble keeping it down to stave off starvation. <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 19 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> Your palate has become too refined and jaded, and plain food just won’t do it for you anymore. Receive half the benefit from normal rations, or spend 1.5 times as much for fancy rations that meet your standards. This effect is cumulative if rolled again. <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> 20 <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --> What the hell is going on in the back room? Turns out this noodle shop is a front for a random conspiracy.  <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --></p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2016-07-11</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2016-07-19-why-ive-been-quiet-on-google/">
+                    Next<br>Why I&#39;ve Been Quiet on Google&#43;
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2016-07-08-conspiracy-generator-for-fellhold/">
+                    Previous<br>Conspiracy Generator for Fellhold
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html><head>
+<title>Designing Your Own Productivity Framework</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Designing Your Own Productivity Framework
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2017-04-10 00:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Coaching]</a>
+                                &nbsp;
+                        
+
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>There is an unimaginably huge amount of material out there on productivity, self-improvement, and achievement. Books, blogs, podcasts, online courses: the works. Some of it is amazing, some of it is crap, but most of it is specific and narrowly focused - which is awesome when you are tackling a particular challenge that it addresses. The material that goes broader tends to be presented as a total, self-contained package. The trouble with the former is that you need a way to organize your ever-widening array of tools, and the problem with the latter is that the only person any productivity system works perfectly for is the one who invented it.</p>
+<p>Obviously, productivity is only one piece of building a kickass life for yourself, but it is the motor that drives the rest, and getting good at it will accelerate your progress in developing all of the others. If you’ve heard me speak, you know how excited I get about this stuff. So today I’m going to share how I think about breaking down productivity frameworks into their constituent building blocks, so that you can construct your own custom-built system, Lego style.</p>
+<p>Building this productivity system will help you kick ass in lots of ways. First and most obviously, you will get more work done. The great thing about being productive, though, is that <em>you</em> get to decide what to do the time you’re using more efficiently, whether that is building your own business or doing <a href="https://en.wikipedia.org/wiki/Macram%C3%A9">macrame</a>. Really, whatever works for you. Without time pressuring you into making mistakes or accepting a shallow understanding of what you’re doing, whatever work you decide to do will also be <a href="http://calnewport.com/blog/2012/11/21/knowledge-workers-are-bad-at-working-and-heres-what-to-do-about-it/">higher quality</a>. The coolest and most surprising benefit I have found is the tremendous <a href="http://cogprints.org/6289/">mental clarity</a>, which lets me indulge in strategic and creative thought, unimpeded by nagging worries and trivial to dos.</p>
+<p>The first element you need is a big picture reason to put up with the effort it’ll take to build these new habits. Once they’re established, the whole thing becomes much easier, that’s the whole point of habits, after all. Initially, though, there will be some times where you ask yourself “<a href="http://www.stevenpressfield.com/2013/11/resistance-and-self-loathing/">why am I putting myself through all this crap?</a>” Having a clear goal to achieve or an overarching purpose for getting more work done will also help lay the groundwork for <a href="https://www.scotthyoung.com/blog/2006/03/24/living-up-to-our-full-potential/">balancing achievement with fulfillment</a>. Just like money or possessions, though, self-improvement can fall prey to the “<a href="https://qz.com/931385/youre-probably-searching-for-a-better-life-but-what-if-you-already-have-it/?utm_source=qzfb">Disease of More</a>”, where it becomes its own goal, never satisfied. One piece of the puzzle is to enjoy the journey for its own sake, but you’ll also want to take Ferris Bueller’s <a href="https://www.youtube.com/watch?v=vsYBtfQ3QDo">advice</a> by having some milestones to savor once you get to them. So right now, while you’re fired up and motivated, I recommend you settle on a tangible, external goal that you can clearly point to when it’s achieved, such as “land my dream job” or “get three paying clients” or the like, and then write it down somewhere you’ll see it every day. No really - that last part is important.</p>
+<p>With your goal settled, the next thing you&rsquo;ll need is a way to keep track of what to do - a way to <strong>Capture</strong> work. As David Allen has <a href="http://www.thedolectures.com/david-allen-the-mind-is-for-having-ideas-not-holding-them/#.WN08NxLysQ8">put it</a>, &ldquo;your brain is for having ideas, not storing them.&rdquo; The more you try to keep holed up there, the less bandwidth for valuable creative and strategic thinking. An effective Capture tool has two essential elements: it is as complete as possible and you trust it. Most of us are pretty good at staying on top of what we have to do at work, but if you’ve ever felt the frustration of suddenly realizing you have an important personal matter that <a href="https://www.youtube.com/watch?v=Zi-7KwM4GWI">fell off your radar</a>, then you know why it is important to have as <em>complete</em> a capture tool as possible. Ideally, you want a home in that system for everything you need to do.</p>
+<p>For you to get any use out of your complete capture system, you need to <em>trust</em> it. Ever written something down on a sticky note and then found that note months later, task utterly forgotten? Or how about that time you bought a fancy new planner and put it away after a week?  Those are systems you don’t trust. To really get those tasks out of your head, you have to believe deep down in your gut that everything you need to do is in your system and if it’s not in your system you don’t need to do it. An often overlooked piece of building trust in your capture system is to find one that you actually <em>enjoy</em> using and find pleasant. It sounds a bit silly, but when it comes to behavioral modification, we already have so much <a href="https://smile.amazon.com/War-Art-Steven-Pressfield-ebook/dp/B007A4SDCG/ref=sr_1_1?ie=UTF8&amp;qid=1490894007&amp;sr=8-1&amp;keywords=war+of+art">resistance</a> that we need to remove as many sources of <a href="https://www.clausewitz.com/readings/OnWar1873/BK1ch07.html">friction</a> as possible. An easy way to do that is to find something that feels less like a chore and more like a hobby. Maybe it’s the little “ding!” in <a href="https://www.wunderlist.com/">Wunderlist</a> or a carefully hand drawn calendar in a <a href="http://bulletjournal.com/">Bullet Journal</a> - the important part is that <em>you</em> like it.</p>
+<p>A good chunk of the tasks that you’ll need to capture won’t just pop into your brain. We get requests, invitations, directives, and opportunities. So we have to figure out how to sort through these incoming message and identify what actions to take. The trouble is that the valuable items come all mixed in with a lot of other “stuff” - <a href="https://www.youtube.com/watch?v=anwy2MPT5RE">spam</a>, <a href="http://www.duffelblog.com/">news</a>, <a href="https://o.aolcdn.com/images/dims?quality=100&amp;image_uri=http%3A%2F%2Fo.aolcdn.com%2Fdims-shared%2Fdims3%2FGLOB%2Fcrop%2F5184x3456%2B0%2B0%2Fresize%2F1600x1067%21%2Fformat%2Fjpg%2Fquality%2F85%2Fhttp%3A%2F%2Fo.aolcdn.com%2Fhss%2Fstorage%2Fmidas%2Fdc494cc630ee35fd092a3f790234db95%2F201793312%2FphprvBP3o&amp;client=cbc79c14efcebee57402&amp;signature=d6858270b410c030e93053330e7319af122dec9b">facebook updates</a>, <a href="https://storage.googleapis.com/imgfave/image_cache/1293855946963071.png">holiday cards</a>, <a href="http://www.saddlebackleather.com/">catalogs</a> - you get the idea. In order to separate the wheat from the chaff, you have to <strong>Process</strong> these various inboxes. The reason you don’t want to just leave your actions mixed in with all the other stuff is that your brain is <a href="https://en.wikipedia.org/wiki/Cognitive_miser">fundamentally lazy</a>. We have a <a href="https://www.apa.org/helpcenter/willpower-limited-resource.pdf">finite amount</a> of mental processing power in any given day, and every time you have to sort through a pile of undifferentiated stuff, you have to use some of it up. If you process your inboxes effectively, you only do the sorting once, and you pull out the actions and put them into that capture system we just detailed. To accomplish this, I again draw heavily on David Allen, who has an <a href="http://facaffairs.med.wayne.edu/pdfs-new/for_gtd_sessions_-_workflow_diagram.pdf">ugly but comprehensive flow chart</a> for processing your inbox. The gist of it is that you have two main decisions with a couple of branches below them: Is there an action here? Do I care about keeping this? If there is an action, and it’s yours, you put it into your capture system. Whether there’s an action or not, if you care about keeping it, you put it into some sort of reference system, like saving it in <a href="https://evernote.com/">Evernote</a> or an Archive folder in your email.</p>
+<p>So far, we’ve focused on the fairly tactical exercises of getting tasks out of your head and out of your inbox. Remember that extra <a href="http://tim.blog/2016/11/27/tools-of-titans-josh-waitzkin-distilled/">mental bandwidth</a> I mentioned? Here is where we talk about using it to get more strategic. You do so by <strong>Planning &amp; Reflecting</strong>. This can start small, such as simply writing a few things you hope to accomplish today and then checking in how you did at the end of the day. Another easy way to build some planning and reflecting into your life is to use the <a href="https://www.intelligentchange.com/products/the-five-minute-journal">Five Minute Journal</a>. When you start expanding your horizon to the next week or month or quarter, though, you really start to take control of your life and begin to steer it in the direction you want to go. Most folks know the importance of planning and do so to some degree, but reflection is rarer in our future-focused culture and is <a href="https://ryanholiday.net/an-exercise-in-self-reflection/">absolutely vital</a>. The only way you can get better is to look back and assess what worked, what didn’t, and to what degree. Doing so consciously and purposefully will allow you to accelerate your improvement process far past what you can get by only occasionally, passively looking back. The <a href="https://www.scrumalliance.org/why-scrum">Scrum</a> methodology incorporates this concept into its very DNA, holding a retrospective at the end of each 1-3 week block of work. During this <a href="https://www.scrumalliance.org/community/articles/2014/april/key-elements-of-sprint-retrospective">retrospective</a>, the team talks about what went well and what didn’t and selects one process improvement to focus on for the next sprint. I’ve recently adopted the practice of asking myself the same questions as applied to my personal processes at the end of each week, and I’m already seeing big benefits.</p>
+<p>One of the most overlooked components of a highly effective personal productivity system is <strong>Focus</strong>. While you will see major benefits from writing down what you need to do, emptying your inboxes, and taking time to look both backward and forward, you will dramatically increase both the quality and quantity of your output once you really learn to focus. Focus is the skill and habit of doing one thing at a time. That’s it. It’s a simple concept, but remember that <a href="https://www.optimize.me/inspiring-quotes/leadership-is-simple-but-not-easy/">simple does not mean easy</a>. We live in a world of distraction full of pop ups, push notifications, and twenty four hour news. The expert on this topic is <a href="http://calnewport.com/blog/">Cal Newport</a> - he even wrote the <a href="https://smile.amazon.com/Deep-Work-Focused-Success-Distracted-ebook/dp/B00X47ZVXM/ref=sr_1_1?ie=UTF8&amp;qid=1490896395&amp;sr=8-1&amp;keywords=deep+work">book</a> on it. In <em>Deep Work</em>, he talks about how we literally become <a href="https://www.wrike.com/blog/addicted-multitasking-scientific-reasons-you-cant-stop-juggling-work/">addicted</a> to task switching and the disastrous effect it has on our ability to think deeply and make things that matter. The good news is that rehabbing your focus muscle is actually pretty easy - you just have to <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique">track the time you focus</a> on one thing until its done. I like to use an app called <a href="http://www.blockandflowapp.com/">Block &amp; Flow</a> to do so. It tracks 25 minute focus “blocks” and lets you keep track of your history and categorize different sorts of focus. I have gotten hugely more productive since I started using it.</p>
+<p>With those four building blocks - <strong>Capture</strong>, <strong>Process</strong>, <strong>Plan &amp; Reflect</strong>, and <strong>Focus</strong> - you have everything you need to dramatically improve your productivity. We opened discussing a big picture goal for building this system, and I’d like to close by once again stepping back to get a wider view. People talk a lot about work/life balance, but really, <em>everything</em> you do is your life, and it’s all an interconnected system. So while you might start out adopting some of these practices in the workplace to get that raise or to get up to speed after your new promotion, once you start getting your system working, you’ll start to notice benefits in other areas as well. You’ll be able to devote your full attention to your spouse on date night, you’ll take less time to run errands as you systematize your grocery list, and as you achieve goals, you’ll realize you can set even more ambitious ones. Or perhaps you’ll discover that the procrastination you were trying to fight was <a href="https://www.scotthyoung.com/blog/2006/09/24/procrastination-introduction-series/">masking a deeper dissatisfaction</a> with your current path and its time to make a major change. Whatever the case, the seemingly straightforward act of improving your productivity will have unexpected and valuable ripple effects throughout your whole life.</p>
+<p>Overall, the components of a personal productivity system are fairly simple, but you can dig in to any of these subjects in infinite detail - and digging into a small piece of that infinite detail is exactly what I do here! Do you have questions? I answer every email I get, and I look forward to hearing from you. If you’re looking for more specific tips and advice, I’ve got an email-based Productivity Boot Camp that will step you through building the habits for each of these building blocks using proven effective techniques. If you <a href="mailto:jeff.powell.russell@gmail.com">sign up</a>, you’ll receive a free Productivity Field Manual .pdf immediately, along with specific instructions every week for a month to build these habits and help keep you accountable.</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2017-04-10</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/coaching/2017-04-11-planning-is-indispensable/">
+                    Next<br>Planning is Indispensable
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/coaching/2017-04-10-welcome-and-hello/">
+                    Previous<br>Welcome and Hello
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

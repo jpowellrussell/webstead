@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html><head>
+<title>Memory: Some World Building Notes</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#oral-traditions--by-oral-traditions-i-mean-the-larger-cultural-contexts-in-which-stories-law-religion-et-cetera-are-transmitted-as-distinct-from-the-techniques-practiced-by-individuals-clearly-those-members-of-a-culture-tasked-with-retaining-and-transmitting-the-important-stuff-will-make-use-of-various-mnemonic-techniques-and-some-of-those-are-covered-later-as-for-gameability-any-one-of-these-could-make-for-an-interesting-cultural-feature-or-might-inspire-you-to-think-up-even-weirder-ones" v-on:click="closeDrawer" id="oral-traditions--by-oral-traditions-i-mean-the-larger-cultural-contexts-in-which-stories-law-religion-et-cetera-are-transmitted-as-distinct-from-the-techniques-practiced-by-individuals-clearly-those-members-of-a-culture-tasked-with-retaining-and-transmitting-the-important-stuff-will-make-use-of-various-mnemonic-techniques-and-some-of-those-are-covered-later-as-for-gameability-any-one-of-these-could-make-for-an-interesting-cultural-feature-or-might-inspire-you-to-think-up-even-weirder-ones-nav">
+										 Oral Traditions By “oral traditions”, I mean the larger cultural contexts in which stories, law, religion, et cetera are transmitted, as distinct from the techniques practiced by individuals. Clearly those members of a culture tasked with retaining and transmitting the important stuff will make use of various mnemonic techniques, and some of those are covered later. As for gameability, any one of these could make for an interesting cultural feature, or might inspire you to think up even weirder ones.
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#spokenaural-methods--song--if-youve-ever-had-a-jingle-stuck-in-your-head-then-you-know-the-power-of-song-to-cement-words-into-memory-its-not-entirely-clear-why-this-is-but-research-seems-to-indicate-that-it-has-something-to-do-with-it-being-multi-modal---you-get-pitch-rhythm-emotive-content-and-semantic-content-all-at-the-same-time-so-you-form-a-rich-web-of-associations-that-your-brain-can-store-easily-songs-are-not-only-easy-for-individuals-to-remember-they-show-remarkable-stability-over-time-as-well-provided-they-continue-to-be-performed-and-enjoyed" v-on:click="closeDrawer" id="spokenaural-methods--song--if-youve-ever-had-a-jingle-stuck-in-your-head-then-you-know-the-power-of-song-to-cement-words-into-memory-its-not-entirely-clear-why-this-is-but-research-seems-to-indicate-that-it-has-something-to-do-with-it-being-multi-modal---you-get-pitch-rhythm-emotive-content-and-semantic-content-all-at-the-same-time-so-you-form-a-rich-web-of-associations-that-your-brain-can-store-easily-songs-are-not-only-easy-for-individuals-to-remember-they-show-remarkable-stability-over-time-as-well-provided-they-continue-to-be-performed-and-enjoyed-nav">
+										 Spoken/Aural Methods Song - if you’ve ever had a jingle stuck in your head, then you know the power of song to cement words into memory. It’s not entirely clear why this is, but research seems to indicate that it has something to do with it being multi-modal - you get pitch, rhythm, emotive content, and semantic content all at the same time, so you form a rich web of associations that your brain can store easily. Songs are not only easy for individuals to remember, they show remarkable stability over time as well, provided they continue to be performed and enjoyed.
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#spatialvisual-methods--method-of-loci---this-is-the-granddaddy-of-formal-memory-techniques-in-western-civlization-its-the-source-of-the-rhetorical-conceit-in-the-first-place-in-the-second-place---basically-a-practitioner-visualizes-a-location-whether-real-like-his-house-or-imagined-like-a-fabulous-palace-as-he-memorizes-something-each-chunk-of-whatever-hers-memorizing-gets-associated-with-a-particular-place-in-his-mind-palace-when-he-needs-to-recall-it-he-simply-imagines-walking-through-the-place-in-the-same-order-this-takes-advantage-of-the-fact-that-human-brains-are-rather-good-at-processing-spatial-relationships-along-with-the-earlier-mentioned-multi-modality-this-may-be-the-most-practical-and-trainable-technique-here-for-use-in-real-life-as-a-side-note-the-tradition-of-songlinesmade-me-realize-theres-nothing-stopping-you-from-using-this-technique-in-the-flesh-rather-than-your-imagination-if-you-can-repetitively-travel-a-particular-path-this-would-be-excellent-for-rituals-in-a-game-or-in-real-life-you-could-consciously-associate-the-things-you-need-to-remember-in-the-morning-with-different-places-along-your-route-through-your-place-say-dresser--remember-watch-and-wallet-kitchen-door--remember-to-pack-lunch-front-door--remember-keys-and-sunglasses-or-what-have-you" v-on:click="closeDrawer" id="spatialvisual-methods--method-of-loci---this-is-the-granddaddy-of-formal-memory-techniques-in-western-civlization-its-the-source-of-the-rhetorical-conceit-in-the-first-place-in-the-second-place---basically-a-practitioner-visualizes-a-location-whether-real-like-his-house-or-imagined-like-a-fabulous-palace-as-he-memorizes-something-each-chunk-of-whatever-hers-memorizing-gets-associated-with-a-particular-place-in-his-mind-palace-when-he-needs-to-recall-it-he-simply-imagines-walking-through-the-place-in-the-same-order-this-takes-advantage-of-the-fact-that-human-brains-are-rather-good-at-processing-spatial-relationships-along-with-the-earlier-mentioned-multi-modality-this-may-be-the-most-practical-and-trainable-technique-here-for-use-in-real-life-as-a-side-note-the-tradition-of-songlinesmade-me-realize-theres-nothing-stopping-you-from-using-this-technique-in-the-flesh-rather-than-your-imagination-if-you-can-repetitively-travel-a-particular-path-this-would-be-excellent-for-rituals-in-a-game-or-in-real-life-you-could-consciously-associate-the-things-you-need-to-remember-in-the-morning-with-different-places-along-your-route-through-your-place-say-dresser--remember-watch-and-wallet-kitchen-door--remember-to-pack-lunch-front-door--remember-keys-and-sunglasses-or-what-have-you-nav">
+										 Spatial/Visual Methods Method of Loci - This is the granddaddy of formal memory techniques in Western civlization. It’s the source of the rhetorical conceit “in the first place, in the second place. . .” Basically, a practitioner visualizes a location (whether real, like his house, or imagined, like a fabulous palace) as he memorizes something. Each chunk of whatever her’s memorizing gets associated with a particular place in his “mind palace”. When he needs to recall it, he simply imagines walking through the place in the same order. This takes advantage of the fact that human brains are rather good at processing spatial relationships, along with the earlier mentioned multi-modality. This may be the most practical and trainable technique here for use in real life. As a side note, the tradition of songlines made me realize there’s nothing stopping you from using this technique in the flesh, rather than your imagination, if you can repetitively travel a particular path. This would be excellent for rituals in a game, or in real life you could consciously associate the things you need to remember in the morning with different places along your route through your place (say, dresser = remember watch and wallet, kitchen door = remember to pack lunch, front door = remember keys and sunglasses, or what have you).
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#kinesthetic-methods--http2bpblogspotcom-vyby3ruj6juvlxke0pnejiaaaaaaaadcgqx2jl6qib4es1600gesturesoftheoratorjpg-------specific-gestures---multiple-traditions-make-use-of-this-technique-including-hula-kathak-buddhist-mudras-and-christian-iconography-who-inherited-it-from-greek-and-roman-orators-considering-how-closely-hands-and-language-are-linked-everybody-talks-with-their-hands-and-hand-sign-language-is-the-universal-method-of-communication-among-people-who-cant-use-voice-developed-independently-and-organically-in-multiple-places-its-not-a-huge-surprise-that-you-could-make-the-connection-go-the-other-way---associate-certain-words-with-certain-gestures-and-performing-both-reinforces-each-a-more-common-example-is-when-kids-learn-songs-richard-grenvillehttpslurkerablogwordpresscom-mentioned-his-kids-learning-the-12-days-of-christmas-with-associated-hand-gestures-or-dance-moves-hokey-pokey-anybody-the-virtues-of-song-and-of-associating-gestures-once-again-reinforce-each-other-in-a-game-you-could-have-characters-that-could-navigate-via-gestures-keyed-to-certain-directions-or-wizards-who-know-more-spells-but-have-to-use-somatic-components-for-all-of-them---------table-tbody-tr-classodd-tda-hrefhttp1bpblogspotcom-m90di8ftwcmvlxkooa0w6iaaaaaaaadcoro2o3qqzwsus160011-koodiyattamjpgimg-srchttp1bpblogspotcom-m90di8ftwcmvlxkooa0w6iaaaaaaaadcoro2o3qqzwsus160011-koodiyattamjpg-width320-height212-atd-tr-tr-classeven-tdin-angika-abhinaya-the-hand-talks-to-emyouemtd-tr-tbody-table-------stock-expressions-and-poses---in-india-theres-a-whole-tradition-about-this-its-called-angika-abhinaya-and-it-associates-very-specific-facial-expression-or-body-poses-with-certain-emotional-or-story-elements-i-figure-you-see-a-much-less-developed-version-in-the-kinds-of-faces-parents-make-when-reading-scary-stories-to-their-kids-doing-the-expression-helps-to-encode-the-semantic-content-of-the-story-i-imagine-a-sophisticated-version-of-this-could-take-advantage-of-the-fact-that-its-easier-to-remember-things-when-youre-in-the-same-emotional-state-as-when-it-happened-a-skilled-practitioner-could-maybe-learn-to-associate-the-feeling-of-making-a-particular-face-with-the-emotion-that-caused-it-and-then-make-the-face-on-purpose-to-remember-things-that-happened-in-that-emotional-state-------body-part-association---stuff-like-the-story-bones-above-comes-to-mind-here-another-example-is-from-my-own-experience-in-9th-grade-i-had-to-memorize-all-the-bones-in-the-human-body-and-i-kept-getting-the-radius-and-ulna-forearm-bones-mixed-up-so-when-testing-my-recall-i-started-wiggling-my-thumb-for-radius-and-my-pinkie-for-ulna-now-i-have-trouble-telling-them-apart-unless-i-wiggle-my-thumb-and-pinkie-then-i-know-instantly-thats-actually-the-thing-that-got-me-started-wanting-to-investigate-kinesthetic-memory-techniques-another-method-thats-pretty-cool-is-a-korean-way-to-do-simple-arithmetic-with-your-fingers-called-chisanbop-itd-take-too-long-to-go-into-it-here-but-check-out-the-wikipedia-entryhttpenwikipediaorgwikichisanbop-on-it-to-see-how-it-works-when-you-get-good-at-it-your-fingers-dont-just-help-you-through-the-calculation-in-your-head-instead-you-just-move-them-and-then-you-know-the-answer-its-really-wild-the-first-time-it-works-like-that" v-on:click="closeDrawer" id="kinesthetic-methods--http2bpblogspotcom-vyby3ruj6juvlxke0pnejiaaaaaaaadcgqx2jl6qib4es1600gesturesoftheoratorjpg-------specific-gestures---multiple-traditions-make-use-of-this-technique-including-hula-kathak-buddhist-mudras-and-christian-iconography-who-inherited-it-from-greek-and-roman-orators-considering-how-closely-hands-and-language-are-linked-everybody-talks-with-their-hands-and-hand-sign-language-is-the-universal-method-of-communication-among-people-who-cant-use-voice-developed-independently-and-organically-in-multiple-places-its-not-a-huge-surprise-that-you-could-make-the-connection-go-the-other-way---associate-certain-words-with-certain-gestures-and-performing-both-reinforces-each-a-more-common-example-is-when-kids-learn-songs-richard-grenvillehttpslurkerablogwordpresscom-mentioned-his-kids-learning-the-12-days-of-christmas-with-associated-hand-gestures-or-dance-moves-hokey-pokey-anybody-the-virtues-of-song-and-of-associating-gestures-once-again-reinforce-each-other-in-a-game-you-could-have-characters-that-could-navigate-via-gestures-keyed-to-certain-directions-or-wizards-who-know-more-spells-but-have-to-use-somatic-components-for-all-of-them---------table-tbody-tr-classodd-tda-hrefhttp1bpblogspotcom-m90di8ftwcmvlxkooa0w6iaaaaaaaadcoro2o3qqzwsus160011-koodiyattamjpgimg-srchttp1bpblogspotcom-m90di8ftwcmvlxkooa0w6iaaaaaaaadcoro2o3qqzwsus160011-koodiyattamjpg-width320-height212-atd-tr-tr-classeven-tdin-angika-abhinaya-the-hand-talks-to-emyouemtd-tr-tbody-table-------stock-expressions-and-poses---in-india-theres-a-whole-tradition-about-this-its-called-angika-abhinaya-and-it-associates-very-specific-facial-expression-or-body-poses-with-certain-emotional-or-story-elements-i-figure-you-see-a-much-less-developed-version-in-the-kinds-of-faces-parents-make-when-reading-scary-stories-to-their-kids-doing-the-expression-helps-to-encode-the-semantic-content-of-the-story-i-imagine-a-sophisticated-version-of-this-could-take-advantage-of-the-fact-that-its-easier-to-remember-things-when-youre-in-the-same-emotional-state-as-when-it-happened-a-skilled-practitioner-could-maybe-learn-to-associate-the-feeling-of-making-a-particular-face-with-the-emotion-that-caused-it-and-then-make-the-face-on-purpose-to-remember-things-that-happened-in-that-emotional-state-------body-part-association---stuff-like-the-story-bones-above-comes-to-mind-here-another-example-is-from-my-own-experience-in-9th-grade-i-had-to-memorize-all-the-bones-in-the-human-body-and-i-kept-getting-the-radius-and-ulna-forearm-bones-mixed-up-so-when-testing-my-recall-i-started-wiggling-my-thumb-for-radius-and-my-pinkie-for-ulna-now-i-have-trouble-telling-them-apart-unless-i-wiggle-my-thumb-and-pinkie-then-i-know-instantly-thats-actually-the-thing-that-got-me-started-wanting-to-investigate-kinesthetic-memory-techniques-another-method-thats-pretty-cool-is-a-korean-way-to-do-simple-arithmetic-with-your-fingers-called-chisanbop-itd-take-too-long-to-go-into-it-here-but-check-out-the-wikipedia-entryhttpenwikipediaorgwikichisanbop-on-it-to-see-how-it-works-when-you-get-good-at-it-your-fingers-dont-just-help-you-through-the-calculation-in-your-head-instead-you-just-move-them-and-then-you-know-the-answer-its-really-wild-the-first-time-it-works-like-that-nav">
+										 Kinesthetic Methods http://2.bp.blogspot.com/-VYBY3rUJ6JU/VLXkE0pNEJI/AAAAAAAADCg/qx2JL6QIB4E/s1600/gesturesoftheorator.jpg ** ** Specific Gestures - Multiple traditions make use of this technique, including Hula, Kathak, Buddhist mudras, and Christian iconography (who inherited it from Greek and Roman orators). Considering how closely hands and language are linked (everybody “talks with their hands”, and hand sign language is the universal method of communication among people who can’t use voice, developed independently and organically in multiple places) it’s not a huge surprise that you could make the connection go the other way - associate certain words with certain gestures, and performing both reinforces each. A more common example is when kids learn songs (Richard Grenville mentioned his kids learning The 12 Days of Christmas) with associated hand gestures or dance moves (hokey pokey, anybody?). The virtues of song and of associating gestures once again reinforce each other. In a game, you could have characters that could navigate via gestures keyed to certain directions or wizards who know more spells, but have to use somatic components for all of them. ** ** In Angika Abhinaya, the hand talks to you** ** Stock Expressions and Poses - In India, there’s a whole tradition about this: it’s called Angika Abhinaya and it associates very specific facial expression or body poses with certain emotional or story elements. I figure you see a much less developed version in the kinds of faces parents make when reading scary stories to their kids. Doing the expression helps to encode the semantic content of the story. I imagine a sophisticated version of this could take advantage of the fact that it’s easier to remember things when you’re in the same emotional state as when it happened. A skilled practitioner could maybe learn to associate the feeling of making a particular face with the emotion that caused it, and then make the face on purpose to remember things that happened in that emotional state. ** ** Body Part Association - Stuff like the story bones above comes to mind here. Another example is from my own experience. In 9th grade, I had to memorize all the bones in the human body, and I kept getting the radius and ulna (forearm bones) mixed up. So when testing my recall, I started wiggling my thumb for radius and my pinkie for ulna. Now I have trouble telling them apart, unless i wiggle my thumb and pinkie, then I know instantly. That’s actually the thing that got me started wanting to investigate kinesthetic memory techniques. Another method that’s pretty cool is a Korean way to do simple arithmetic with your fingers called Chisanbop. It’d take too long to go into it here, but check out the Wikipedia entry on it to see how it works. When you get good at it, your fingers don’t just help you through the calculation in your head, instead you just move them and then you know the answer. It’s really wild the first time it works like that.
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#smelltaste-methods--smell-and-taste-are-powerful-cues-to-memory-and-emotion-both-and-i-have-to-assume-thats-why-incense-food-and-drink-have-long-played-important-roles-in-ritual-ive-heard-of-people-doing-experiments-where-they-purposely-match-a-flavor-or-smell-to-particular-information-matthew-aaron-over-on-g-said-he-used-candy-while-studying-and-when-he-got-to-the-relevant-part-of-the-test-he-popped-in-the-same-candy-he-had-when-he-was-studying-that-part-the-only-issue-with-smell-is-that-it-can-be-hard-to-filter-out-unwanted-smells-or-to-control-what-smells-get-associated-with-what-for-example-post-offices-powerfullyremind-me-of-the-friendly-local-game-store-i-spent-most-of-my-young-adolescence-in-not-because-theyre-fun-or-full-of-games-but-because-both-were-full-of-things-made-of-paper-and-glue-comics-games-and-boxes-in-one-and-letters-envelopes-and-boxes-in-the-other-so-without-knowing-what-i-was-smelling-at-the-time-the-smell-of-paper-and-glue-created-a-really-strong-memory-and-emotional-response-in-me-for-a-game-maybe-a-villain-could-condition-the-characters-to-associate-a-certain-subtle-smell-with-fear-or-anger-or-compliance-and-then-release-a-magically-enhanced-version-when-the-time-is-right-to-strike" v-on:click="closeDrawer" id="smelltaste-methods--smell-and-taste-are-powerful-cues-to-memory-and-emotion-both-and-i-have-to-assume-thats-why-incense-food-and-drink-have-long-played-important-roles-in-ritual-ive-heard-of-people-doing-experiments-where-they-purposely-match-a-flavor-or-smell-to-particular-information-matthew-aaron-over-on-g-said-he-used-candy-while-studying-and-when-he-got-to-the-relevant-part-of-the-test-he-popped-in-the-same-candy-he-had-when-he-was-studying-that-part-the-only-issue-with-smell-is-that-it-can-be-hard-to-filter-out-unwanted-smells-or-to-control-what-smells-get-associated-with-what-for-example-post-offices-powerfullyremind-me-of-the-friendly-local-game-store-i-spent-most-of-my-young-adolescence-in-not-because-theyre-fun-or-full-of-games-but-because-both-were-full-of-things-made-of-paper-and-glue-comics-games-and-boxes-in-one-and-letters-envelopes-and-boxes-in-the-other-so-without-knowing-what-i-was-smelling-at-the-time-the-smell-of-paper-and-glue-created-a-really-strong-memory-and-emotional-response-in-me-for-a-game-maybe-a-villain-could-condition-the-characters-to-associate-a-certain-subtle-smell-with-fear-or-anger-or-compliance-and-then-release-a-magically-enhanced-version-when-the-time-is-right-to-strike-nav">
+										 Smell/Taste Methods Smell and taste are powerful cues to memory and emotion both, and I have to assume that’s why incense, food, and drink have long played important roles in ritual. I’ve heard of people doing experiments where they purposely match a flavor or smell to particular information (Matthew Aaron over on G&#43; said he used candy while studying, and when he got to the relevant part of the test, he popped in the same candy he had when he was studying that part). The only issue with smell is that it can be hard to filter out unwanted smells or to control what smells get associated with what. For example, post offices powerfully remind me of the Friendly Local Game Store I spent most of my young adolescence in. Not because they’re fun or full of games, but because both were full of things made of paper and glue (comics, games, and boxes in one, and letters, envelopes, and boxes in the other). So, without knowing what I was smelling at the time, the smell of paper and glue created a really strong memory and emotional response in me. For a game, maybe a villain could condition the characters to associate a certain subtle smell with fear or anger or compliance, and then release a magically enhanced version when the time is right to strike. 
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#other-sources--a-couple-of-books-that-got-me-started-on-all-this-stuff" v-on:click="closeDrawer" id="other-sources--a-couple-of-books-that-got-me-started-on-all-this-stuff-nav">
+										 Other Sources A couple of books that got me started on all this stuff:
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#oral-traditions--by-oral-traditions-i-mean-the-larger-cultural-contexts-in-which-stories-law-religion-et-cetera-are-transmitted-as-distinct-from-the-techniques-practiced-by-individuals-clearly-those-members-of-a-culture-tasked-with-retaining-and-transmitting-the-important-stuff-will-make-use-of-various-mnemonic-techniques-and-some-of-those-are-covered-later-as-for-gameability-any-one-of-these-could-make-for-an-interesting-cultural-feature-or-might-inspire-you-to-think-up-even-weirder-ones" v-on:click="closeDrawer" id="oral-traditions--by-oral-traditions-i-mean-the-larger-cultural-contexts-in-which-stories-law-religion-et-cetera-are-transmitted-as-distinct-from-the-techniques-practiced-by-individuals-clearly-those-members-of-a-culture-tasked-with-retaining-and-transmitting-the-important-stuff-will-make-use-of-various-mnemonic-techniques-and-some-of-those-are-covered-later-as-for-gameability-any-one-of-these-could-make-for-an-interesting-cultural-feature-or-might-inspire-you-to-think-up-even-weirder-ones-nav">
+										 Oral Traditions By “oral traditions”, I mean the larger cultural contexts in which stories, law, religion, et cetera are transmitted, as distinct from the techniques practiced by individuals. Clearly those members of a culture tasked with retaining and transmitting the important stuff will make use of various mnemonic techniques, and some of those are covered later. As for gameability, any one of these could make for an interesting cultural feature, or might inspire you to think up even weirder ones.
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#spokenaural-methods--song--if-youve-ever-had-a-jingle-stuck-in-your-head-then-you-know-the-power-of-song-to-cement-words-into-memory-its-not-entirely-clear-why-this-is-but-research-seems-to-indicate-that-it-has-something-to-do-with-it-being-multi-modal---you-get-pitch-rhythm-emotive-content-and-semantic-content-all-at-the-same-time-so-you-form-a-rich-web-of-associations-that-your-brain-can-store-easily-songs-are-not-only-easy-for-individuals-to-remember-they-show-remarkable-stability-over-time-as-well-provided-they-continue-to-be-performed-and-enjoyed" v-on:click="closeDrawer" id="spokenaural-methods--song--if-youve-ever-had-a-jingle-stuck-in-your-head-then-you-know-the-power-of-song-to-cement-words-into-memory-its-not-entirely-clear-why-this-is-but-research-seems-to-indicate-that-it-has-something-to-do-with-it-being-multi-modal---you-get-pitch-rhythm-emotive-content-and-semantic-content-all-at-the-same-time-so-you-form-a-rich-web-of-associations-that-your-brain-can-store-easily-songs-are-not-only-easy-for-individuals-to-remember-they-show-remarkable-stability-over-time-as-well-provided-they-continue-to-be-performed-and-enjoyed-nav">
+										 Spoken/Aural Methods Song - if you’ve ever had a jingle stuck in your head, then you know the power of song to cement words into memory. It’s not entirely clear why this is, but research seems to indicate that it has something to do with it being multi-modal - you get pitch, rhythm, emotive content, and semantic content all at the same time, so you form a rich web of associations that your brain can store easily. Songs are not only easy for individuals to remember, they show remarkable stability over time as well, provided they continue to be performed and enjoyed.
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#spatialvisual-methods--method-of-loci---this-is-the-granddaddy-of-formal-memory-techniques-in-western-civlization-its-the-source-of-the-rhetorical-conceit-in-the-first-place-in-the-second-place---basically-a-practitioner-visualizes-a-location-whether-real-like-his-house-or-imagined-like-a-fabulous-palace-as-he-memorizes-something-each-chunk-of-whatever-hers-memorizing-gets-associated-with-a-particular-place-in-his-mind-palace-when-he-needs-to-recall-it-he-simply-imagines-walking-through-the-place-in-the-same-order-this-takes-advantage-of-the-fact-that-human-brains-are-rather-good-at-processing-spatial-relationships-along-with-the-earlier-mentioned-multi-modality-this-may-be-the-most-practical-and-trainable-technique-here-for-use-in-real-life-as-a-side-note-the-tradition-of-songlinesmade-me-realize-theres-nothing-stopping-you-from-using-this-technique-in-the-flesh-rather-than-your-imagination-if-you-can-repetitively-travel-a-particular-path-this-would-be-excellent-for-rituals-in-a-game-or-in-real-life-you-could-consciously-associate-the-things-you-need-to-remember-in-the-morning-with-different-places-along-your-route-through-your-place-say-dresser--remember-watch-and-wallet-kitchen-door--remember-to-pack-lunch-front-door--remember-keys-and-sunglasses-or-what-have-you" v-on:click="closeDrawer" id="spatialvisual-methods--method-of-loci---this-is-the-granddaddy-of-formal-memory-techniques-in-western-civlization-its-the-source-of-the-rhetorical-conceit-in-the-first-place-in-the-second-place---basically-a-practitioner-visualizes-a-location-whether-real-like-his-house-or-imagined-like-a-fabulous-palace-as-he-memorizes-something-each-chunk-of-whatever-hers-memorizing-gets-associated-with-a-particular-place-in-his-mind-palace-when-he-needs-to-recall-it-he-simply-imagines-walking-through-the-place-in-the-same-order-this-takes-advantage-of-the-fact-that-human-brains-are-rather-good-at-processing-spatial-relationships-along-with-the-earlier-mentioned-multi-modality-this-may-be-the-most-practical-and-trainable-technique-here-for-use-in-real-life-as-a-side-note-the-tradition-of-songlinesmade-me-realize-theres-nothing-stopping-you-from-using-this-technique-in-the-flesh-rather-than-your-imagination-if-you-can-repetitively-travel-a-particular-path-this-would-be-excellent-for-rituals-in-a-game-or-in-real-life-you-could-consciously-associate-the-things-you-need-to-remember-in-the-morning-with-different-places-along-your-route-through-your-place-say-dresser--remember-watch-and-wallet-kitchen-door--remember-to-pack-lunch-front-door--remember-keys-and-sunglasses-or-what-have-you-nav">
+										 Spatial/Visual Methods Method of Loci - This is the granddaddy of formal memory techniques in Western civlization. It’s the source of the rhetorical conceit “in the first place, in the second place. . .” Basically, a practitioner visualizes a location (whether real, like his house, or imagined, like a fabulous palace) as he memorizes something. Each chunk of whatever her’s memorizing gets associated with a particular place in his “mind palace”. When he needs to recall it, he simply imagines walking through the place in the same order. This takes advantage of the fact that human brains are rather good at processing spatial relationships, along with the earlier mentioned multi-modality. This may be the most practical and trainable technique here for use in real life. As a side note, the tradition of songlines made me realize there’s nothing stopping you from using this technique in the flesh, rather than your imagination, if you can repetitively travel a particular path. This would be excellent for rituals in a game, or in real life you could consciously associate the things you need to remember in the morning with different places along your route through your place (say, dresser = remember watch and wallet, kitchen door = remember to pack lunch, front door = remember keys and sunglasses, or what have you).
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#kinesthetic-methods--http2bpblogspotcom-vyby3ruj6juvlxke0pnejiaaaaaaaadcgqx2jl6qib4es1600gesturesoftheoratorjpg-------specific-gestures---multiple-traditions-make-use-of-this-technique-including-hula-kathak-buddhist-mudras-and-christian-iconography-who-inherited-it-from-greek-and-roman-orators-considering-how-closely-hands-and-language-are-linked-everybody-talks-with-their-hands-and-hand-sign-language-is-the-universal-method-of-communication-among-people-who-cant-use-voice-developed-independently-and-organically-in-multiple-places-its-not-a-huge-surprise-that-you-could-make-the-connection-go-the-other-way---associate-certain-words-with-certain-gestures-and-performing-both-reinforces-each-a-more-common-example-is-when-kids-learn-songs-richard-grenvillehttpslurkerablogwordpresscom-mentioned-his-kids-learning-the-12-days-of-christmas-with-associated-hand-gestures-or-dance-moves-hokey-pokey-anybody-the-virtues-of-song-and-of-associating-gestures-once-again-reinforce-each-other-in-a-game-you-could-have-characters-that-could-navigate-via-gestures-keyed-to-certain-directions-or-wizards-who-know-more-spells-but-have-to-use-somatic-components-for-all-of-them---------table-tbody-tr-classodd-tda-hrefhttp1bpblogspotcom-m90di8ftwcmvlxkooa0w6iaaaaaaaadcoro2o3qqzwsus160011-koodiyattamjpgimg-srchttp1bpblogspotcom-m90di8ftwcmvlxkooa0w6iaaaaaaaadcoro2o3qqzwsus160011-koodiyattamjpg-width320-height212-atd-tr-tr-classeven-tdin-angika-abhinaya-the-hand-talks-to-emyouemtd-tr-tbody-table-------stock-expressions-and-poses---in-india-theres-a-whole-tradition-about-this-its-called-angika-abhinaya-and-it-associates-very-specific-facial-expression-or-body-poses-with-certain-emotional-or-story-elements-i-figure-you-see-a-much-less-developed-version-in-the-kinds-of-faces-parents-make-when-reading-scary-stories-to-their-kids-doing-the-expression-helps-to-encode-the-semantic-content-of-the-story-i-imagine-a-sophisticated-version-of-this-could-take-advantage-of-the-fact-that-its-easier-to-remember-things-when-youre-in-the-same-emotional-state-as-when-it-happened-a-skilled-practitioner-could-maybe-learn-to-associate-the-feeling-of-making-a-particular-face-with-the-emotion-that-caused-it-and-then-make-the-face-on-purpose-to-remember-things-that-happened-in-that-emotional-state-------body-part-association---stuff-like-the-story-bones-above-comes-to-mind-here-another-example-is-from-my-own-experience-in-9th-grade-i-had-to-memorize-all-the-bones-in-the-human-body-and-i-kept-getting-the-radius-and-ulna-forearm-bones-mixed-up-so-when-testing-my-recall-i-started-wiggling-my-thumb-for-radius-and-my-pinkie-for-ulna-now-i-have-trouble-telling-them-apart-unless-i-wiggle-my-thumb-and-pinkie-then-i-know-instantly-thats-actually-the-thing-that-got-me-started-wanting-to-investigate-kinesthetic-memory-techniques-another-method-thats-pretty-cool-is-a-korean-way-to-do-simple-arithmetic-with-your-fingers-called-chisanbop-itd-take-too-long-to-go-into-it-here-but-check-out-the-wikipedia-entryhttpenwikipediaorgwikichisanbop-on-it-to-see-how-it-works-when-you-get-good-at-it-your-fingers-dont-just-help-you-through-the-calculation-in-your-head-instead-you-just-move-them-and-then-you-know-the-answer-its-really-wild-the-first-time-it-works-like-that" v-on:click="closeDrawer" id="kinesthetic-methods--http2bpblogspotcom-vyby3ruj6juvlxke0pnejiaaaaaaaadcgqx2jl6qib4es1600gesturesoftheoratorjpg-------specific-gestures---multiple-traditions-make-use-of-this-technique-including-hula-kathak-buddhist-mudras-and-christian-iconography-who-inherited-it-from-greek-and-roman-orators-considering-how-closely-hands-and-language-are-linked-everybody-talks-with-their-hands-and-hand-sign-language-is-the-universal-method-of-communication-among-people-who-cant-use-voice-developed-independently-and-organically-in-multiple-places-its-not-a-huge-surprise-that-you-could-make-the-connection-go-the-other-way---associate-certain-words-with-certain-gestures-and-performing-both-reinforces-each-a-more-common-example-is-when-kids-learn-songs-richard-grenvillehttpslurkerablogwordpresscom-mentioned-his-kids-learning-the-12-days-of-christmas-with-associated-hand-gestures-or-dance-moves-hokey-pokey-anybody-the-virtues-of-song-and-of-associating-gestures-once-again-reinforce-each-other-in-a-game-you-could-have-characters-that-could-navigate-via-gestures-keyed-to-certain-directions-or-wizards-who-know-more-spells-but-have-to-use-somatic-components-for-all-of-them---------table-tbody-tr-classodd-tda-hrefhttp1bpblogspotcom-m90di8ftwcmvlxkooa0w6iaaaaaaaadcoro2o3qqzwsus160011-koodiyattamjpgimg-srchttp1bpblogspotcom-m90di8ftwcmvlxkooa0w6iaaaaaaaadcoro2o3qqzwsus160011-koodiyattamjpg-width320-height212-atd-tr-tr-classeven-tdin-angika-abhinaya-the-hand-talks-to-emyouemtd-tr-tbody-table-------stock-expressions-and-poses---in-india-theres-a-whole-tradition-about-this-its-called-angika-abhinaya-and-it-associates-very-specific-facial-expression-or-body-poses-with-certain-emotional-or-story-elements-i-figure-you-see-a-much-less-developed-version-in-the-kinds-of-faces-parents-make-when-reading-scary-stories-to-their-kids-doing-the-expression-helps-to-encode-the-semantic-content-of-the-story-i-imagine-a-sophisticated-version-of-this-could-take-advantage-of-the-fact-that-its-easier-to-remember-things-when-youre-in-the-same-emotional-state-as-when-it-happened-a-skilled-practitioner-could-maybe-learn-to-associate-the-feeling-of-making-a-particular-face-with-the-emotion-that-caused-it-and-then-make-the-face-on-purpose-to-remember-things-that-happened-in-that-emotional-state-------body-part-association---stuff-like-the-story-bones-above-comes-to-mind-here-another-example-is-from-my-own-experience-in-9th-grade-i-had-to-memorize-all-the-bones-in-the-human-body-and-i-kept-getting-the-radius-and-ulna-forearm-bones-mixed-up-so-when-testing-my-recall-i-started-wiggling-my-thumb-for-radius-and-my-pinkie-for-ulna-now-i-have-trouble-telling-them-apart-unless-i-wiggle-my-thumb-and-pinkie-then-i-know-instantly-thats-actually-the-thing-that-got-me-started-wanting-to-investigate-kinesthetic-memory-techniques-another-method-thats-pretty-cool-is-a-korean-way-to-do-simple-arithmetic-with-your-fingers-called-chisanbop-itd-take-too-long-to-go-into-it-here-but-check-out-the-wikipedia-entryhttpenwikipediaorgwikichisanbop-on-it-to-see-how-it-works-when-you-get-good-at-it-your-fingers-dont-just-help-you-through-the-calculation-in-your-head-instead-you-just-move-them-and-then-you-know-the-answer-its-really-wild-the-first-time-it-works-like-that-nav">
+										 Kinesthetic Methods http://2.bp.blogspot.com/-VYBY3rUJ6JU/VLXkE0pNEJI/AAAAAAAADCg/qx2JL6QIB4E/s1600/gesturesoftheorator.jpg ** ** Specific Gestures - Multiple traditions make use of this technique, including Hula, Kathak, Buddhist mudras, and Christian iconography (who inherited it from Greek and Roman orators). Considering how closely hands and language are linked (everybody “talks with their hands”, and hand sign language is the universal method of communication among people who can’t use voice, developed independently and organically in multiple places) it’s not a huge surprise that you could make the connection go the other way - associate certain words with certain gestures, and performing both reinforces each. A more common example is when kids learn songs (Richard Grenville mentioned his kids learning The 12 Days of Christmas) with associated hand gestures or dance moves (hokey pokey, anybody?). The virtues of song and of associating gestures once again reinforce each other. In a game, you could have characters that could navigate via gestures keyed to certain directions or wizards who know more spells, but have to use somatic components for all of them. ** ** In Angika Abhinaya, the hand talks to you** ** Stock Expressions and Poses - In India, there’s a whole tradition about this: it’s called Angika Abhinaya and it associates very specific facial expression or body poses with certain emotional or story elements. I figure you see a much less developed version in the kinds of faces parents make when reading scary stories to their kids. Doing the expression helps to encode the semantic content of the story. I imagine a sophisticated version of this could take advantage of the fact that it’s easier to remember things when you’re in the same emotional state as when it happened. A skilled practitioner could maybe learn to associate the feeling of making a particular face with the emotion that caused it, and then make the face on purpose to remember things that happened in that emotional state. ** ** Body Part Association - Stuff like the story bones above comes to mind here. Another example is from my own experience. In 9th grade, I had to memorize all the bones in the human body, and I kept getting the radius and ulna (forearm bones) mixed up. So when testing my recall, I started wiggling my thumb for radius and my pinkie for ulna. Now I have trouble telling them apart, unless i wiggle my thumb and pinkie, then I know instantly. That’s actually the thing that got me started wanting to investigate kinesthetic memory techniques. Another method that’s pretty cool is a Korean way to do simple arithmetic with your fingers called Chisanbop. It’d take too long to go into it here, but check out the Wikipedia entry on it to see how it works. When you get good at it, your fingers don’t just help you through the calculation in your head, instead you just move them and then you know the answer. It’s really wild the first time it works like that.
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#smelltaste-methods--smell-and-taste-are-powerful-cues-to-memory-and-emotion-both-and-i-have-to-assume-thats-why-incense-food-and-drink-have-long-played-important-roles-in-ritual-ive-heard-of-people-doing-experiments-where-they-purposely-match-a-flavor-or-smell-to-particular-information-matthew-aaron-over-on-g-said-he-used-candy-while-studying-and-when-he-got-to-the-relevant-part-of-the-test-he-popped-in-the-same-candy-he-had-when-he-was-studying-that-part-the-only-issue-with-smell-is-that-it-can-be-hard-to-filter-out-unwanted-smells-or-to-control-what-smells-get-associated-with-what-for-example-post-offices-powerfullyremind-me-of-the-friendly-local-game-store-i-spent-most-of-my-young-adolescence-in-not-because-theyre-fun-or-full-of-games-but-because-both-were-full-of-things-made-of-paper-and-glue-comics-games-and-boxes-in-one-and-letters-envelopes-and-boxes-in-the-other-so-without-knowing-what-i-was-smelling-at-the-time-the-smell-of-paper-and-glue-created-a-really-strong-memory-and-emotional-response-in-me-for-a-game-maybe-a-villain-could-condition-the-characters-to-associate-a-certain-subtle-smell-with-fear-or-anger-or-compliance-and-then-release-a-magically-enhanced-version-when-the-time-is-right-to-strike" v-on:click="closeDrawer" id="smelltaste-methods--smell-and-taste-are-powerful-cues-to-memory-and-emotion-both-and-i-have-to-assume-thats-why-incense-food-and-drink-have-long-played-important-roles-in-ritual-ive-heard-of-people-doing-experiments-where-they-purposely-match-a-flavor-or-smell-to-particular-information-matthew-aaron-over-on-g-said-he-used-candy-while-studying-and-when-he-got-to-the-relevant-part-of-the-test-he-popped-in-the-same-candy-he-had-when-he-was-studying-that-part-the-only-issue-with-smell-is-that-it-can-be-hard-to-filter-out-unwanted-smells-or-to-control-what-smells-get-associated-with-what-for-example-post-offices-powerfullyremind-me-of-the-friendly-local-game-store-i-spent-most-of-my-young-adolescence-in-not-because-theyre-fun-or-full-of-games-but-because-both-were-full-of-things-made-of-paper-and-glue-comics-games-and-boxes-in-one-and-letters-envelopes-and-boxes-in-the-other-so-without-knowing-what-i-was-smelling-at-the-time-the-smell-of-paper-and-glue-created-a-really-strong-memory-and-emotional-response-in-me-for-a-game-maybe-a-villain-could-condition-the-characters-to-associate-a-certain-subtle-smell-with-fear-or-anger-or-compliance-and-then-release-a-magically-enhanced-version-when-the-time-is-right-to-strike-nav">
+										 Smell/Taste Methods Smell and taste are powerful cues to memory and emotion both, and I have to assume that’s why incense, food, and drink have long played important roles in ritual. I’ve heard of people doing experiments where they purposely match a flavor or smell to particular information (Matthew Aaron over on G&#43; said he used candy while studying, and when he got to the relevant part of the test, he popped in the same candy he had when he was studying that part). The only issue with smell is that it can be hard to filter out unwanted smells or to control what smells get associated with what. For example, post offices powerfully remind me of the Friendly Local Game Store I spent most of my young adolescence in. Not because they’re fun or full of games, but because both were full of things made of paper and glue (comics, games, and boxes in one, and letters, envelopes, and boxes in the other). So, without knowing what I was smelling at the time, the smell of paper and glue created a really strong memory and emotional response in me. For a game, maybe a villain could condition the characters to associate a certain subtle smell with fear or anger or compliance, and then release a magically enhanced version when the time is right to strike. 
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#other-sources--a-couple-of-books-that-got-me-started-on-all-this-stuff" v-on:click="closeDrawer" id="other-sources--a-couple-of-books-that-got-me-started-on-all-this-stuff-nav">
+										 Other Sources A couple of books that got me started on all this stuff:
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Memory: Some World Building Notes
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2015-01-14 11:22
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/world-building">World Building</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p><a href="http://2.bp.blogspot.com/--q6aXMxAWGI/VLXhzFJ_U6I/AAAAAAAADB0/dDEMCuIA5jY/s1600/es5s-mage-robe.jpg">http://2.bp.blogspot.com/--q6aXMxAWGI/VLXhzFJ_U6I/AAAAAAAADB0/dDEMCuIA5jY/s1600/es5s-mage-robe.jpg</a></p>
+<p>Okay, so this may or may not be game-related, though I&rsquo;ve tried to provide a few suggestions, but it&rsquo;s what I&rsquo;ve been thinking about recently, and it&rsquo;s definitely game <em>adjacent</em> if nothing else. I figure smart folks can use interesting stuff in all kinds of ways for games that I can&rsquo;t even think of.</p>
+<p>So, I&rsquo;ve had a long fascination with memory and learning. As part of that, I&rsquo;ve more-or-less idly poked around at methods of improving my performance in both, but other than a few abortive experiments, I&rsquo;ve never gotten anywhere spectacular. A while back, though, I had an idea for some world building, and since then I&rsquo;ve been researching it with a (very) little more rigor.</p>
+<p>The basic idea for the world in question is a post-literate world. Something bad happened that made this society not trust writing anymore - I&rsquo;m thinking something along the lines of the burning of the Library of Alexandria times 1000. External memory is great for how much it allows us to extend and fix our knowledge, but it&rsquo;s fragile - reproducing written knowledge is a long, expensive process, and it&rsquo;s stored on stuff that can burn, disintegrate, or rot.</p>
+<p>So in this world, an order of monks (maybe wizards? I haven&rsquo;t decided yet) has arisen to safeguard and preserve world knowledge <em>without</em> writing. They&rsquo;re like an anti-library. Where libraries are fixed, they wander, where centralized, they&rsquo;re dispersed, where external, they&rsquo;re all about internal. So, naturally, I&rsquo;ve wanted to look for real world examples of cultures that have preserved and transmitted large amounts of information with pretty good fidelity over time, as well as how individuals have increased their ability to store and recall information individually.</p>
+<p>At any rate, here are some highlights from my research, some of which has been generously shared by Google + folks. I think a lot of this stuff could add some real flavor to either magic users or clerics in your games, and heck, you might be able to make use of some of this stuff yourself.</p>
+<h3 id="oral-traditions--by-oral-traditions-i-mean-the-larger-cultural-contexts-in-which-stories-law-religion-et-cetera-are-transmitted-as-distinct-from-the-techniques-practiced-by-individuals-clearly-those-members-of-a-culture-tasked-with-retaining-and-transmitting-the-important-stuff-will-make-use-of-various-mnemonic-techniques-and-some-of-those-are-covered-later-as-for-gameability-any-one-of-these-could-make-for-an-interesting-cultural-feature-or-might-inspire-you-to-think-up-even-weirder-ones">Oral Traditions  By &ldquo;oral traditions&rdquo;, I mean the larger cultural contexts in which stories, law, religion, et cetera are transmitted, as distinct from the techniques practiced by individuals. Clearly those members of a culture tasked with retaining and transmitting the important stuff will make use of various mnemonic techniques, and some of those are covered later. As for gameability, any one of these could make for an interesting cultural feature, or might inspire you to think up even weirder ones.</h3>
+<!-- raw HTML omitted -->
+<p><strong>Epic Poetry</strong> - In cultures that haven&rsquo;t written their epics down yet, the way they seem to work is that the tellers know some general story frameworks or themes, and also know specific sequences of actions that go together (like, if you&rsquo;re describing a duel, you start with the hero getting kitted up, then they talk trash, then they throw spears, then they close to fight, for example). The poets flesh out these skeletons with poetic language that fits a specific meter and/or rhyme. The combination of basic framework, rhythm, and sound apparently allows for on-the-fly production of compelling poetry that tells an exciting story. In other words, <em>rhapsodes</em> and their ilk didn&rsquo;t actually memorize most of their poetry, they memorized a procedure for creating poetry. Pretty rad.</p>
+<p><strong>Ballads and Counting Out Rhymes</strong> - For &ldquo;Counting Out Rhymes&rdquo; think &ldquo;Eenie Meenie Miney Moe&rdquo;. I haven&rsquo;t gotten to these sections in the book I&rsquo;m reading yet, but apparently there are certain phonetic qualities that are especially &ldquo;sticky&rdquo; to memory. These probably vary by language, but also have something to to do with physiology (like what part of the throat/mouth you use to produce the sounds, and in what order). What&rsquo;s really wacky is that even where precise wording isn&rsquo;t remembered, recall of the semantic content is improved by it being heard and recalled as verse. In other words, a balladeer might hear a poem, and then later on think he&rsquo;s telling/singing the &ldquo;same&rdquo; poem, but he actually changes some of the words - while still telling the same basic story and still keeping to the same general poetic form.</p>
+<p><a href="http://4.bp.blogspot.com/-MByn6gEcAEg/VLXi5i8FXlI/AAAAAAAADCE/3l8IxM1tz4I/s1600/w_hula_198_aa_i_ka_hula_waiho_ka_hilahila_i_ka_hale_600x480.jpg">http://4.bp.blogspot.com/-MByn6gEcAEg/VLXi5i8FXlI/AAAAAAAADCE/3l8IxM1tz4I/s1600/w_hula_198_aa_i_ka_hula_waiho_ka_hilahila_i_ka_hale_600x480.jpg</a>  **   **  <strong>Hula -</strong> Though originally for religious purposes, it looks like Hula had become primarily an entertainment thing by the time white folks showed up, and they promptly forbade it (presumably because the ladies were topless). I haven&rsquo;t done a ton of research here yet, but specific hand and foot positions were/are associated with different parts of the stories/myths/worship being performed, and I suspect that they performed a similar role to the poetic structures above, by associating movement and rhythm with specific semantic content.</p>
+<p><a href="http://4.bp.blogspot.com/-kbnqYtpiGGI/VLXjFCGe01I/AAAAAAAADCM/2RiBKrgJFYQ/s1600/Kathak2.jpeg">http://4.bp.blogspot.com/-kbnqYtpiGGI/VLXjFCGe01I/AAAAAAAADCM/2RiBKrgJFYQ/s1600/Kathak2.jpeg</a></p>
+<p><strong>Kathak</strong> - is a form of Indian dance that means &ldquo;storytell(er/ing)&rdquo; that originated as Vedic temple worship and then was influenced by Persian styles when it became court entertainment to the Mughals. What I found intriguing about it is that like Hula, it has specific hand and foot motions associated with certain representational elements. Also, dancers make use of syllables called <em>bol</em> that act as memory cues as to what move to do. Finally, like other artists in India, some Kathak dancers make use of <em>Abhinaya</em>, which is the art of conveying emotions and internal states to the audience, and includes stock body positions, facial expressions, tones of voice and that kind of thing. I have to imagine that being good at that would help to remember the semantic content of a story that involved emotions.</p>
+<p><strong>Songlines</strong> - this one was one of the coolest to me, for being the least familiar. Australian Aboriginal people have a pretty complex (to whitey, anyway) way of looking at the world and its relation to the spiritual. I won&rsquo;t try to summarize, because I don&rsquo;t totally understand it, and if anyone knows better, please correct me on whatever I get wrong. But one aspect is that it&rsquo;s highly spatial - different gods/spirits belong to a place, and the people who live in a place have a special relationship with the stories about those beings - particular people &ldquo;own&rdquo; particular stories, and that ownership comes with responsibilities to tell the stories when appropriate and not to mess them up. One specific instance of this spatial-ness coming through is in <em>songlines</em>. Different tribes of people will have paths across the land - sometimes very long paths - and certain places along that path are associated with different stories, and someone setting out on the path needs to sing the right song at the right place. I realized that it&rsquo;s like the method of loci (see below) in real life, and that&rsquo;s pretty cool. </p>
+<p><strong>Vedic Chanting</strong> - Apparently recitations of the Vedas of the Hindu religion are pretty hardcore. A number of complex mnemonic devices that you might call poetic are used to make sure that not only the meanings but also the pronunciations of words are remembered, since the qualities of the sound are believed to be part of the spiritual power in the mantras. Apparently it has resulted in remarkable fidelity, so far as the oldest written records of the Vedas can say. My one question is to what degree this oral tradition is dependent on/symbiotic with the written record. In other oral traditions that lack any writing, there&rsquo;s no evidence of such a thing as &ldquo;an authoritative correct version&rdquo; - what matters is that the semantic content is right and the poetic forms are right, not specific word choice or order. Still, a remarkable example of what individuals and a tradition can do. </p>
+<p><strong>Story Bones</strong> - An acquaintance who wished to remain anonymous told me about a relative of Northwest American Indian descent who conceptualized stories as made up of &ldquo;bones&rdquo;, and then related those to her own bones as a method of following the different connections and associations of different stories. Very cool and totally gameable - maybe <em>actual</em> bones can be imbued with stories, or each bone could hold a different spell or some such. </p>
+<!-- raw HTML omitted -->
+<p><strong>Anthropomorphization -</strong> If you&rsquo;ve ever read <em>Cryptonomicon</em> by Neal Stephenson, this will sound familiar. Basically, people are wired to devote a lot of mental horsepower to other people - thinking about them, figuring out what they want, how to sleep with them, whether they want to kill you, et cetera. Mythology does some cool stuff with this deep and intuitive understanding by embodying abstract concepts as people, and then having those people interact in very human ways. Consider Hephaestus and Athena. Hephaestus was the god of the forge - making stuff out of metal, a kind of technology. Athena was the goddess of generalship, the citystate as a political institution, and <em>techne</em> (craft, but we got the word &ldquo;technology&rdquo; from it for a reason). All examples of applied smarts. Well, one day Hephaestus sees the virgin goddess and gets randy, so he starts chasing her. After keeping away for awhile, he catches Athena, but since he is continuously cuckolded by his wife Aphrodite, he gets prematurely excited, and he blows his load all over Athena&rsquo;s thigh (I know, yuck). Well, she goes &ldquo;gross&rdquo; and wipes it off with a rag and throws it in the dirt outside of what is to be Athens. Being god-semen, it impregnates even the dirt, and a weird snaky baby named Erichthonius is born. Among other things, as the first king of Athens, he invents coined money. What&rsquo;s the point? When you put together the god of making stuff with metal and the goddess of how to run a society by law and applied smarts <em>you get money</em>. This very sophisticated conclusion involving pretty abstract concepts is conveyed with remarkable clarity and nuance in the form of a concrete, even crude, story about (super) people acting badly. Neat, huh?</p>
+<h3 id="spokenaural-methods--song--if-youve-ever-had-a-jingle-stuck-in-your-head-then-you-know-the-power-of-song-to-cement-words-into-memory-its-not-entirely-clear-why-this-is-but-research-seems-to-indicate-that-it-has-something-to-do-with-it-being-multi-modal---you-get-pitch-rhythm-emotive-content-and-semantic-content-all-at-the-same-time-so-you-form-a-rich-web-of-associations-that-your-brain-can-store-easily-songs-are-not-only-easy-for-individuals-to-remember-they-show-remarkable-stability-over-time-as-well-provided-they-continue-to-be-performed-and-enjoyed">Spoken/Aural Methods  <strong>Song</strong> - if you&rsquo;ve ever had a jingle stuck in your head, then you know the power of song to cement words into memory. It&rsquo;s not entirely clear why this is, but research seems to indicate that it has something to do with it being multi-modal - you get pitch, rhythm, emotive content, and semantic content all at the same time, so you form a rich web of associations that your brain can store easily. Songs are not only easy for individuals to remember, they show remarkable stability over time as well, provided they continue to be performed and enjoyed.</h3>
+<p><strong>Poetry</strong> - Pretty much all the same reasons that song works except for accompanying music, poetry is apparently a little easier to produce on the fly if you&rsquo;re trained in certain meters and have an arsenal of stock phrases. This makes it fantastically useful for long-form performance art like Epics. For games, I could see this having a cool application to magic: different metrical units modify the spell in different ways (stronger, weaker, bigger, smaller, etc), and the word content determines the actual effect. For added fun, make players <em>actually</em> compose spells in dactylic hexameter or the like (and don&rsquo;t let them prewrite any!)</p>
+<p><strong>Bol</strong> - As mentioned under <em>kathak</em> above, certain Indian performing arts make use of <em>bol</em>, which are single syllables with specific associations. Drummers use them in conjunction with certain strikes, and dancers use them for different steps. The movement and the spoken syllables reinforce each other, and remembering the rhythm of the spoken syllables helps to remember the proper movements.</p>
+<h3 id="spatialvisual-methods--method-of-loci---this-is-the-granddaddy-of-formal-memory-techniques-in-western-civlization-its-the-source-of-the-rhetorical-conceit-in-the-first-place-in-the-second-place---basically-a-practitioner-visualizes-a-location-whether-real-like-his-house-or-imagined-like-a-fabulous-palace-as-he-memorizes-something-each-chunk-of-whatever-hers-memorizing-gets-associated-with-a-particular-place-in-his-mind-palace-when-he-needs-to-recall-it-he-simply-imagines-walking-through-the-place-in-the-same-order-this-takes-advantage-of-the-fact-that-human-brains-are-rather-good-at-processing-spatial-relationships-along-with-the-earlier-mentioned-multi-modality-this-may-be-the-most-practical-and-trainable-technique-here-for-use-in-real-life-as-a-side-note-the-tradition-of-songlinesmade-me-realize-theres-nothing-stopping-you-from-using-this-technique-in-the-flesh-rather-than-your-imagination-if-you-can-repetitively-travel-a-particular-path-this-would-be-excellent-for-rituals-in-a-game-or-in-real-life-you-could-consciously-associate-the-things-you-need-to-remember-in-the-morning-with-different-places-along-your-route-through-your-place-say-dresser--remember-watch-and-wallet-kitchen-door--remember-to-pack-lunch-front-door--remember-keys-and-sunglasses-or-what-have-you">Spatial/Visual Methods  <strong>Method of Loci -</strong> This is the granddaddy of formal memory techniques in Western civlization. It&rsquo;s the source of the rhetorical conceit &ldquo;in the first place, in the second place. . .&rdquo; Basically, a practitioner visualizes a location (whether real, like his house, or imagined, like a fabulous palace) as he memorizes something. Each chunk of whatever her&rsquo;s memorizing gets associated with a particular place in his &ldquo;mind palace&rdquo;. When he needs to recall it, he simply imagines walking through the place in the same order. This takes advantage of the fact that human brains are rather good at processing spatial relationships, along with the earlier mentioned multi-modality. This may be the most practical and trainable technique here for use in real life. As a side note, the tradition of <em>songlines</em> made me realize there&rsquo;s nothing stopping you from using this technique in the flesh, rather than your imagination, if you can repetitively travel a particular path. This would be excellent for rituals in a game, or in real life you could consciously associate the things you need to remember in the morning with different places along your route through your place (say, dresser = remember watch and wallet, kitchen door = remember to pack lunch, front door = remember keys and sunglasses, or what have you).</h3>
+<p><a href="http://4.bp.blogspot.com/-Sw0FVZEsgcc/VLXkwTaUkNI/AAAAAAAADC0/cKz-W-M9sIA/s1600/1151105-Making-a-sand-mandala-0.jpg">http://4.bp.blogspot.com/-Sw0FVZEsgcc/VLXkwTaUkNI/AAAAAAAADC0/cKz-W-M9sIA/s1600/1151105-Making-a-sand-mandala-0.jpg</a></p>
+<p><strong>Mandala -</strong> I haven&rsquo;t looked into this one as much, and I&rsquo;m not sure to what degree mandalas serve as memory aids rather than being the visual equivalent of the spontaneous production of Epic through combined framework and procedure. In any case, it&rsquo;s not too big a stretch to imagine that following a procedure to lay down colored sand could trigger the associations trying to be recalled, or even to allow them to be interpreted in a different way than purely verbal memory.   **   **  <strong>Pegs</strong> - This technique is somewhat closely related to the method of loci, in that it involves associating vivid visualization with what is to be remembered. These vary in complexity from the relatively simple to the very complex. The basic idea is that you come up with some set of &lsquo;pegs&rsquo; which are vivid mental images - preferably incorporating other senses too. Stuff that is funny or shocking is more vivid, so that&rsquo;s even better. In the simple case, you just make a set of images, say images of words that rhyme with the numbers one through ten (e.g. gun, shoe, tree, etc), and then you associate a list you want to remember with those images, preferably by visualizing something about what you want to remember interacting with the peg. When you need to recall, you just go through the peg images and they should remind you of the stuff to remember. It works well with lists, but you sometimes have to &ldquo;rest&rdquo; pegs to get rid of associations you don&rsquo;t need to remember any more (like if you used it for a grocery list, you&rsquo;d have a hard time using the same pegs for a list of people to invite to a party immediately after). A more complicated form involves a matrix. You make pegs for a string of numbers, and another set for a string of letters (you can pick a famous person with that letter starting their name). Then you assign things you want to memorize to a &ldquo;spot&rdquo; in the matrix, say A3. If your peg for A was &ldquo;Adam&rdquo; and your peg for 3 is a bicycle, you would imagine a dude with a fig leaf riding a bicycle, grimacing from the discomfort of the seat on his naked butt (remember, funny/shocking is easier to recall). Whatever you&rsquo;re trying to memorize, you associate with that image, with as many senses as possible. Memory competitors (yes, they exist) use methods like this to memorize whole decks of cards <em>really</em> fast. It&rsquo;s crazy.</p>
+<h3 id="kinesthetic-methods--http2bpblogspotcom-vyby3ruj6juvlxke0pnejiaaaaaaaadcgqx2jl6qib4es1600gesturesoftheoratorjpg-------specific-gestures---multiple-traditions-make-use-of-this-technique-including-hula-kathak-buddhist-mudras-and-christian-iconography-who-inherited-it-from-greek-and-roman-orators-considering-how-closely-hands-and-language-are-linked-everybody-talks-with-their-hands-and-hand-sign-language-is-the-universal-method-of-communication-among-people-who-cant-use-voice-developed-independently-and-organically-in-multiple-places-its-not-a-huge-surprise-that-you-could-make-the-connection-go-the-other-way---associate-certain-words-with-certain-gestures-and-performing-both-reinforces-each-a-more-common-example-is-when-kids-learn-songs-richard-grenvillehttpslurkerablogwordpresscom-mentioned-his-kids-learning-the-12-days-of-christmas-with-associated-hand-gestures-or-dance-moves-hokey-pokey-anybody-the-virtues-of-song-and-of-associating-gestures-once-again-reinforce-each-other-in-a-game-you-could-have-characters-that-could-navigate-via-gestures-keyed-to-certain-directions-or-wizards-who-know-more-spells-but-have-to-use-somatic-components-for-all-of-them---------table-tbody-tr-classodd-tda-hrefhttp1bpblogspotcom-m90di8ftwcmvlxkooa0w6iaaaaaaaadcoro2o3qqzwsus160011-koodiyattamjpgimg-srchttp1bpblogspotcom-m90di8ftwcmvlxkooa0w6iaaaaaaaadcoro2o3qqzwsus160011-koodiyattamjpg-width320-height212-atd-tr-tr-classeven-tdin-angika-abhinaya-the-hand-talks-to-emyouemtd-tr-tbody-table-------stock-expressions-and-poses---in-india-theres-a-whole-tradition-about-this-its-called-angika-abhinaya-and-it-associates-very-specific-facial-expression-or-body-poses-with-certain-emotional-or-story-elements-i-figure-you-see-a-much-less-developed-version-in-the-kinds-of-faces-parents-make-when-reading-scary-stories-to-their-kids-doing-the-expression-helps-to-encode-the-semantic-content-of-the-story-i-imagine-a-sophisticated-version-of-this-could-take-advantage-of-the-fact-that-its-easier-to-remember-things-when-youre-in-the-same-emotional-state-as-when-it-happened-a-skilled-practitioner-could-maybe-learn-to-associate-the-feeling-of-making-a-particular-face-with-the-emotion-that-caused-it-and-then-make-the-face-on-purpose-to-remember-things-that-happened-in-that-emotional-state-------body-part-association---stuff-like-the-story-bones-above-comes-to-mind-here-another-example-is-from-my-own-experience-in-9th-grade-i-had-to-memorize-all-the-bones-in-the-human-body-and-i-kept-getting-the-radius-and-ulna-forearm-bones-mixed-up-so-when-testing-my-recall-i-started-wiggling-my-thumb-for-radius-and-my-pinkie-for-ulna-now-i-have-trouble-telling-them-apart-unless-i-wiggle-my-thumb-and-pinkie-then-i-know-instantly-thats-actually-the-thing-that-got-me-started-wanting-to-investigate-kinesthetic-memory-techniques-another-method-thats-pretty-cool-is-a-korean-way-to-do-simple-arithmetic-with-your-fingers-called-chisanbop-itd-take-too-long-to-go-into-it-here-but-check-out-the-wikipedia-entryhttpenwikipediaorgwikichisanbop-on-it-to-see-how-it-works-when-you-get-good-at-it-your-fingers-dont-just-help-you-through-the-calculation-in-your-head-instead-you-just-move-them-and-then-you-know-the-answer-its-really-wild-the-first-time-it-works-like-that">Kinesthetic Methods  <a href="http://2.bp.blogspot.com/-VYBY3rUJ6JU/VLXkE0pNEJI/AAAAAAAADCg/qx2JL6QIB4E/s1600/gesturesoftheorator.jpg">http://2.bp.blogspot.com/-VYBY3rUJ6JU/VLXkE0pNEJI/AAAAAAAADCg/qx2JL6QIB4E/s1600/gesturesoftheorator.jpg</a>  **   **  <strong>Specific Gestures -</strong> Multiple traditions make use of this technique, including Hula, Kathak, Buddhist mudras, and Christian iconography (who inherited it from Greek and Roman orators). Considering how closely hands and language are linked (everybody &ldquo;talks with their hands&rdquo;, and hand sign language is the universal method of communication among people who can&rsquo;t use voice, developed independently and organically in multiple places) it&rsquo;s not a huge surprise that you could make the connection go the other way - associate certain words with certain gestures, and performing both reinforces each. A more common example is when kids learn songs (<a href="https://lurkerablog.wordpress.com/">Richard Grenville</a> mentioned his kids learning <em>The 12 Days of Christmas</em>) with associated hand gestures or dance moves (hokey pokey, anybody?). The virtues of song and of associating gestures once again reinforce each other. In a game, you could have characters that could navigate via gestures keyed to certain directions or wizards who know more spells, but have to use somatic components for all of them.  **   **    <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->In Angika Abhinaya, the hand talks to <!-- raw HTML omitted -->you<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted --> <!-- raw HTML omitted -->  **   **  <strong>Stock Expressions and Poses -</strong> In India, there&rsquo;s a whole tradition about this: it&rsquo;s called Angika Abhinaya and it associates very specific facial expression or body poses with certain emotional or story elements. I figure you see a much less developed version in the kinds of faces parents make when reading scary stories to their kids. Doing the expression helps to encode the semantic content of the story. I imagine a sophisticated version of this could take advantage of the fact that it&rsquo;s easier to remember things when you&rsquo;re in the same emotional state as when it happened. A skilled practitioner could maybe learn to associate the feeling of making a particular face with the emotion that caused it, and then make the face on purpose to remember things that happened in that emotional state.   **   **  <strong>Body Part Association -</strong> Stuff like the story bones above comes to mind here. Another example is from my own experience. In 9th grade, I had to memorize all the bones in the human body, and I kept getting the radius and ulna (forearm bones) mixed up. So when testing my recall, I started wiggling my thumb for radius and my pinkie for ulna. Now I have trouble telling them apart, unless i wiggle my thumb and pinkie, then I know instantly. That&rsquo;s actually the thing that got me started wanting to investigate kinesthetic memory techniques. Another method that&rsquo;s pretty cool is a Korean way to do simple arithmetic with your fingers called Chisanbop. It&rsquo;d take too long to go into it here, but check out the <a href="http://en.wikipedia.org/wiki/Chisanbop">Wikipedia entry</a> on it to see how it works. When you get good at it, your fingers don&rsquo;t just help you through the calculation in your head, instead you just move them and then you know the answer. It&rsquo;s really wild the first time it works like that.</h3>
+<h3 id="smelltaste-methods--smell-and-taste-are-powerful-cues-to-memory-and-emotion-both-and-i-have-to-assume-thats-why-incense-food-and-drink-have-long-played-important-roles-in-ritual-ive-heard-of-people-doing-experiments-where-they-purposely-match-a-flavor-or-smell-to-particular-information-matthew-aaron-over-on-g-said-he-used-candy-while-studying-and-when-he-got-to-the-relevant-part-of-the-test-he-popped-in-the-same-candy-he-had-when-he-was-studying-that-part-the-only-issue-with-smell-is-that-it-can-be-hard-to-filter-out-unwanted-smells-or-to-control-what-smells-get-associated-with-what-for-example-post-offices-powerfullyremind-me-of-the-friendly-local-game-store-i-spent-most-of-my-young-adolescence-in-not-because-theyre-fun-or-full-of-games-but-because-both-were-full-of-things-made-of-paper-and-glue-comics-games-and-boxes-in-one-and-letters-envelopes-and-boxes-in-the-other-so-without-knowing-what-i-was-smelling-at-the-time-the-smell-of-paper-and-glue-created-a-really-strong-memory-and-emotional-response-in-me-for-a-game-maybe-a-villain-could-condition-the-characters-to-associate-a-certain-subtle-smell-with-fear-or-anger-or-compliance-and-then-release-a-magically-enhanced-version-when-the-time-is-right-to-strike">Smell/Taste Methods  Smell and taste are powerful cues to memory and emotion both, and I have to assume that&rsquo;s why incense, food, and drink have long played important roles in ritual. I&rsquo;ve heard of people doing experiments where they purposely match a flavor or smell to particular information (Matthew Aaron over on G+ said he used candy while studying, and when he got to the relevant part of the test, he popped in the same candy he had when he was studying that part). The only issue with smell is that it can be hard to filter out unwanted smells or to control what smells get associated with what. For example, post offices <em>powerfully</em> remind me of the Friendly Local Game Store I spent most of my young adolescence in. Not because they&rsquo;re fun or full of games, but because both were full of things made of paper and glue (comics, games, and boxes in one, and letters, envelopes, and boxes in the other). So, without knowing what I was smelling at the time, the smell of paper and glue created a really strong memory and emotional response in me. For a game, maybe a villain could condition the characters to associate a certain subtle smell with fear or anger or compliance, and then release a magically enhanced version when the time is right to strike. </h3>
+<h3 id="other-sources--a-couple-of-books-that-got-me-started-on-all-this-stuff">Other Sources  A couple of books that got me started on all this stuff:</h3>
+<p><strong>Mind Performance Hacks</strong> by Ron Hale-Evans  <a href="http://www.amazon.com/Mind-Performance-Hacks-Tools-Overclocking/dp/0596101538">Amazon Link</a></p>
+<p>This book has the self-described goal of helping  people &ldquo;develop the mental arts&rdquo; and &ldquo;become real life mentats&rdquo;. It&rsquo;s builds on another O&rsquo;Reilly book called <em>Mind Hacks</em>, but takes the interesting cognitive quirks revealed there and uses them to focus on practical methods. This has &ldquo;how tos&rdquo; on everything from constructing a memory palace to mindfulness meditation. If you don&rsquo;t find at least one thing immediately useful and relevant to your life, I&rsquo;d be surprised.</p>
+<p><strong>Memory in Oral Traditions: The Cognitive Psychology of Epics, Ballads, and Counting Out Rhymes</strong> by David C. Rubin  <a href="http://www.amazon.com/Memory-Oral-Traditions-Psychology-Counting-out/dp/0195120329/ref=sr_1_1?ie=UTF8&amp;qid=1421169793&amp;sr=8-1&amp;keywords=memory+in+oral+traditions">Amazon Link</a></p>
+<p>Patrick Stuart over at False machine <a href="http://falsemachine.blogspot.com/2013/04/this-post-is-less-good.html">talked</a> <a href="http://falsemachine.blogspot.com/2013/04/eenie-meenie-miney-mo.html">about</a> this book and my ears immediately perked up. I&rsquo;ve now (like a year or two later) finally started reading it, and it&rsquo;s simply delicious to someone with my particular proclivities (Homeric epic? <em>Check</em>. Memory and Cognitive Psychology? <em>Check</em>. Cultural concepts and institutions behaving in an evolutionary manner? <em>Check</em>). My reading is going somewhat slow because I am underlying and taking notes in the margin for future reference, but it&rsquo;s not dense at all for an academic work, and I suspect it will be enormously valuable with respect to the stuff covered in this post.</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2015-01-14</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2015-01-27-red-pleasant-land-layout-review/">
+                    Next<br>Red &amp; Pleasant Land Layout Review
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2014-12-15-how-to-business-part-iv-strategery/">
+                    Previous<br>How to Business Part IV: Strategery
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

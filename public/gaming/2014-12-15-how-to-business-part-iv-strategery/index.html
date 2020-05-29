@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html><head>
+<title>How to Business Part IV: Strategery</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    How to Business Part IV: Strategery
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2014-12-15 09:33
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/how-to-business">How to Business</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <!-- raw HTML omitted -->
+<p>Why Strategy  “Strategy” is one of those words that gets used so much that it becomes almost meaningless, especially in the business world. It gets used in completely different contexts and means different things depending (as in Magic: the Gathering versus business school versus Clausewitz). In a past life, though, I was a classicist, so I’m going to go with the literal Greek meaning of “Stuff that a General Does”.</p>
+<p>So, what does a General do? He coordinates the efforts of disparate units to achieve a higher-level unified goal. Where the lieutenant only sees his platoon, the general sees the entire battlefield. To be successful, he needs the strengths of all of his units, and he needs to put them together just right. Now, chances are, you’re probably not going to be running a huge gaming empire anytime soon (hey, if so, congratulations!) but since you are likely deciding the fate of your own gaming business independently, I felt like some thoughts on how to put together everything we’ve covered in this series might come in handy.</p>
+<p>Growing  Probably where strategy will be most useful to the hobby entrepreneur is in growing thoughtfully. Lamentations of the Flame Princess has gone from being a label Jim Raggi put on his own adventures into a bona fide game publisher. Goodman Games has gone from a few adventures with an old school feel for official D&amp;D to a complete game line with boxed campaign settings and rabidly enthusiastic fans. These people and others have only been able to do what they’ve done by making sure all the elements we’ve discussed previously worked together, whether they thought of it in the terms we’ve discussed or not.</p>
+<p>Being Thoughtful About Where You Fit In  So, as we’ve talked about before, this is a niche market (and if you’re talking OSR, a niche of a niche), so it’s extremely important to think about where you fit in. Your success will be limited if you are hard to distinguish, if you bring nothing new to the table, or if you aren’t fulfilling some unmet need in the hobby space. Now, I want to re-emphasize that I’m talking from a business standpoint here.  If making stuff really similar to what other people put out makes you happy, and that’s all you want out of it, go nuts, my friend! But if you want other people to pay you for it, you need to think about what your strengths are, and how you can apply them towards underserved areas of the hobby.</p>
+<p>Moving from “Hobby Business” to “Business in Hobbies”  These strategic concerns become more important the bigger emphasis you put on the “business” side of things. If I put out my super-vanilla megadungeon with an uninspiring format and completely derivative rules, maybe my friends will buy a copy, but it isn’t likely to make me commercially successful, no matter how carefully I price or track my sales or negotiate my art deals. Which might be fine if all I really want is a nice-looking product and a few dollars for my trouble. But if I want to make enough money that my hobby is self-funding, or to supplement my day job, or even for it to become my day job, I’ll need to think about things a little more rigorously.</p>
+<p>Strategy Diamond  This brings us to the Strategy Diamond. This is just a model, not a required way of doing things (business school professors loves them some models). You can use it to assess the effectiveness of your strategy, or to help you in your thinking when coming up with a new strategy. Here are the elements and an illustration:  Arenas  This is effectively “What business am I in?”  This is where you can really hone in on where your business fits into the gaming hobby – do you write adventures? Sell game rules/supplements? Make maps? Create art for others? Provide tools to other people to make content? You want to get a clear idea of what you do and for whom here.</p>
+<p>Vehicles  This one is a little less relevant in the one-man shop approach, as it usually involves whether you’re going to internally develop capabilities or acquire other companies or the like. But basically it’s about what business structure you’re going to use to do what you said you’d do in the arenas section. On an individual scale, this might be questions like:  Do you want to go it totally alone? Have a full partner or two? Buy contributors’ work or profit share? Find a publisher or self-publish? Fulfill your own orders?  Differentiation  Given the arena(s) you’re competing in, how will you do better than other people? Higher production value? Lower price? More imaginative content? Notorious online presence? Whatever you choose to do, you want to do it somehow differently from everyone else so that people have a reason to give you business over others doing more or less the same thing. Look back to the marketing section for more on differentiation.</p>
+<p>Staging  This is how fast you act and in what order. Do you start writing a blog for free for a few months, then put out some pay what you want .pdfs, then start publishing physical books? Or do you work quietly on a magnum opus behind the scenes and release it into the wild with a big splash? There’s a variety of right answers, but you want to be thoughtful about it and not just do stuff whenever and in whatever order.</p>
+<p>Economic Logic  After you’ve defined those four areas, if you’ve made good choices, then a certain apparent logic should just “fall out” of the combination that speaks to why your plan makes sense and will make money. If there is no economic logic behind your combination (“I’m going to compete in the heavy metal scene by hiring a mediocre Beatles cover band, and we’ll book a show just as soon as I can figure out where heavy metal bands play”) then it is a bad strategy. At least it’s a bad business strategy. It might be a good art or community strategy, depending, but it won’t make you money.</p>
+<p><a href="http://1.bp.blogspot.com/-hk0Nci5IuTo/VI4ra3FzrrI/AAAAAAAACng/E1o1GtyEHsE/s1600/Strategy%2BDiamond.png">http://1.bp.blogspot.com/-hk0Nci5IuTo/VI4ra3FzrrI/AAAAAAAACng/E1o1GtyEHsE/s1600/Strategy%2BDiamond.png</a></p>
+<p>Tying it All Together  Earlier I mentioned the fact that strategy is all about putting together the different pieces you’ve learned, and I wanted to take a moment here at the end to explicitly do that, more so than the strategy diamond above.</p>
+<p>All of These Things Fit Together  So, of the major topics we’ve covered (cash accounting, marketing and pricing, and negotiations) everything informs everything else. Strategy is the art of making sure those interdependencies reinforce and strengthen each other rather than undermine and weaken each other. Carefully tracking your sales information allows you to make better economic decisions about your pricing, your success at building a brand makes negotiations easier, and negotiating well can get you top talent that lets you charge higher prices, and so forth.</p>
+<p>An Extended Example of Interdependence  So, you’ve decided that you’re going to publish a campaign setting compatible with any OSR rules set. That’s your arena.</p>
+<p>You’re going to do the writing on your own, hire a friend at a discount to do layout, and hire one freelance artist to give the whole thing a unified look. That’s your vehicle.</p>
+<p>With professional layout and art, and the fact that you’re familiar with a cultural tradition rarely seen in gaming materials, or at least not done justice, you’re confident you’ll have a stand-out product with really high production values. There’s your differentiation.</p>
+<p>As for staging, you’re going to develop the setting piece by piece on your blog over the course of a year. Since you’ve already got an outline, you’re commissioning the art now to make sure there are no delays there. Over the year you’ll be engaging in Google+ conversations and making connections in the community. Once the year is up and the material is written and art is in, you’ll do a kickstarter with only layout left to do, so you can have the money to professionally publish. There’s your staging.</p>
+<p>So, with the outlines of your strategy figured out, you can start thinking about how everything we’ve gone over interacts. You’re going to want to keep track of the money you’re spending on art since you’ve decided to get it before bringing in any money, and you’re going to want to think about how many copies of your setting you’ll likely sell when you think about price and what art and layout costs you can cover. You’ll be able to use that information to set contribution levels in the kickstarter and retail prices after.</p>
+<p>But while you’re setting prices, you also want to think about their interaction with your brand. You’ve chosen to spend this money on high production value, and you want your setting to come off as a professional product, so bargain basement pricing might work against that. Since you’re getting the artwork before the content is finished with lots of lead time, you’re taking a risk. You’ll want to mitigate that risk by taking the time to negotiate with a few different artists to see which one can work on your schedule at a price you can accept, but still does work that matches the professional image you’re shooting for. In order to convince the artists that you’re serious, and to start building your brand in public, you’ll want to make sure your blog is pretty sharp looking, and you’ll want the content you put up to be pretty close to polished, and in your interactions online, you’ll want to emphasize the unique viewpoint you can bring.</p>
+<p>With all these elements working together (tracking your money, building a brand, negotiating good deals that form solid working relationships, and making thoughtful, strategic decisions about how to proceed) you’ve ended up with an economic logic that makes sense – by the time anything goes on sale, you’ll have a built in customer base, a kickstarter will help you better judge final interest, and you’ll be able to make money by charging a reasonably high price for your top quality work. People will be interested in buying it because you’ve picked an underserved area and made something different that plays to your strengths.</p>
+<p>Conclusion  Even though I’ve put strategy last, so that you can see how the other pieces fit into it, it’s really something that you should be thinking about from the get go. Ideally, any major business related decisions you make should fit into a coherent strategic picture that produces a compelling economic logic. “Strategy” in business is less about outfoxing your competitors (though in big industries that can sometimes be the case) and more about maintaining a clear vision of what you do that is worth money to your customers, and responding to a changing environment by being flexible in order to keep it that way.</p>
+<p>Finally, as I stressed at the beginning, this is ultimately a hobby that we participate in because we love it. If following any of this advice seems cold, or calculating, or in any way sucks the joy out of something you love, then forget that noise. Apply this stuff somewhere else (like your day job) where it won’t have that effect. I personally don’t feel like there’s anything inherently wrong with this business stuff, or combining it with the silly elfgames I love, but you may feel differently, and that’s cool. If you have made it this far, though, I hope that you feel better equipped to turn your gaming content into products and more comfortable letting people compensate you for your cool stuff.</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2014-12-15</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2015-01-14-memory-some-world-building-notes/">
+                    Next<br>Memory: Some World Building Notes
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2014-11-03-how-to-business-part-iii-negotiations/">
+                    Previous<br>How to Business Part III: Negotiations
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

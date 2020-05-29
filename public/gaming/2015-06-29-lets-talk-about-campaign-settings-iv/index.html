@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html><head>
+<title>Let&#39;s Talk About Campaign Settings IV: What Can We Learn For Our Own Settings?</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#previous-posts--lets-talk-about-campaign-settings-i-introductionhttpblessingsofthedicegodsblogspotcom201506lets-talk-about-campaign-settings-ihtml--lets-talk-about-campaign-settings-ii-second-edition-settings-analysishttpblessingsofthedicegodsblogspotcom201506lets-talk-about-campaign-settings-iihtml--lets-talk-about-campaign-settings-iii-osr-settingshttpblessingsofthedicegodsblogspotcom201506lets-talk-about-campaign-settings-iiihtml" v-on:click="closeDrawer" id="previous-posts--lets-talk-about-campaign-settings-i-introductionhttpblessingsofthedicegodsblogspotcom201506lets-talk-about-campaign-settings-ihtml--lets-talk-about-campaign-settings-ii-second-edition-settings-analysishttpblessingsofthedicegodsblogspotcom201506lets-talk-about-campaign-settings-iihtml--lets-talk-about-campaign-settings-iii-osr-settingshttpblessingsofthedicegodsblogspotcom201506lets-talk-about-campaign-settings-iiihtml-nav">
+										 Previous Posts Let’s Talk About Campaign Settings I: Introduction Let’s Talk About Campaign Settings II: Second Edition Settings Analysis Let’s Talk About Campaign Settings III: OSR Settings
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#introduction--first-off-i-made-a-few-absolutely-shameful-omissions-in-talking-about-osr-settings-last-time-i-totally-forgot-to-give-a-shout-out-to-mateo-diaz-torreshttpsplusgooglecom107363765497271284541and-the-pernicious-albionhttpgloomtrainblogspotcomsearchlabelpernicious20albion-setting-which-is-just-awful-since-im-helping-with-layout-on-its-upcoming-publication-really-its-fantastic-stuffi-also-neglected-to-mentioncourtney-campbellhttpsplusgooglecom103464603741728371942s-numenhallahttphackslashmasterblogspotcomsearchlabelnumenhallaor-upcoming-perditionhttphackslashmasterblogspotcomsearchlabelperditionsettings-even-though-ive-read-lots-of-numenhalla-posts-for-megadungeon-inspiration-and-perdition-sounds-like-it-will-be-pretty-rocking-finally-in-the-published-space-i-forgot-to-direct-your-attention-to-the-very-fine-red-tidehttpwwwdrivethrurpgcomproduct89888red-tide-campaign-sourcebook-and-sandbox-toolkitbykevin-crawfordhttpsplusgooglecom115055273425645223134-as-with-all-of-his-stuff-it-is-chock-full-of-material-that-has-its-own-strong-flavor-but-is-easily-modified-to-any-genre-or-setting-go-check-all-of-those-out-if-you-arent-already-familiar" v-on:click="closeDrawer" id="introduction--first-off-i-made-a-few-absolutely-shameful-omissions-in-talking-about-osr-settings-last-time-i-totally-forgot-to-give-a-shout-out-to-mateo-diaz-torreshttpsplusgooglecom107363765497271284541and-the-pernicious-albionhttpgloomtrainblogspotcomsearchlabelpernicious20albion-setting-which-is-just-awful-since-im-helping-with-layout-on-its-upcoming-publication-really-its-fantastic-stuffi-also-neglected-to-mentioncourtney-campbellhttpsplusgooglecom103464603741728371942s-numenhallahttphackslashmasterblogspotcomsearchlabelnumenhallaor-upcoming-perditionhttphackslashmasterblogspotcomsearchlabelperditionsettings-even-though-ive-read-lots-of-numenhalla-posts-for-megadungeon-inspiration-and-perdition-sounds-like-it-will-be-pretty-rocking-finally-in-the-published-space-i-forgot-to-direct-your-attention-to-the-very-fine-red-tidehttpwwwdrivethrurpgcomproduct89888red-tide-campaign-sourcebook-and-sandbox-toolkitbykevin-crawfordhttpsplusgooglecom115055273425645223134-as-with-all-of-his-stuff-it-is-chock-full-of-material-that-has-its-own-strong-flavor-but-is-easily-modified-to-any-genre-or-setting-go-check-all-of-those-out-if-you-arent-already-familiar-nav">
+										 Introduction First off, I made a few absolutely shameful omissions in talking about OSR settings last time. I totally forgot to give a shout out to &#43;Mateo Diaz Torres and the Pernicious Albion setting, which is just awful, since I’m helping with layout on its upcoming publication. Really, it’s fantastic stuff. I also neglected to mention &#43;Courtney Campbell ‘s Numenhalla or upcoming Perdition settings, even though I’ve read lots of Numenhalla posts for megadungeon inspiration, and Perdition sounds like it will be pretty rocking. Finally, in the published space, I forgot to direct your attention to the very fine Red Tide by &#43;Kevin Crawford . As with all of his stuff, it is chock full of material that has its own strong flavor, but is easily modified to any genre or setting. Go check all of those out if you aren’t already familiar.
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#what-to-do--http3bpblogspotcom-na7rji5mliivx-rtuxmewiaaaaaaaaemurvuesrewbhys320rikusjpghttp3bpblogspotcom-na7rji5mliivx-rtuxmewiaaaaaaaaemurvuesrewbhys1600rikusjpg--have-a-strong-guiding-aesthetic-a-lot-of-what-made-the-2e-settings-great-boils-down-to-having-a-really-clear-aesthetic-and-communicating-it-effectively-the-theme-art-direction-and-even-focusing-play-on-different-things-all-revolve-around-the-setting-doing-something-to-your-imagination-that-standard-dd-doesnt-do-dark-sun-lives-in-a-different-part-of-my-brain-than-orcs-and-goblins-and-such-like-it-evokes-a-different-emotional-response-and-encourages-different-adventures-and-different-player-decisions-to-fit-into-this-different-aesthetic-this-point-is-at-once-the-most-obvious-and-probably-the-hardest-to-follow-well" v-on:click="closeDrawer" id="what-to-do--http3bpblogspotcom-na7rji5mliivx-rtuxmewiaaaaaaaaemurvuesrewbhys320rikusjpghttp3bpblogspotcom-na7rji5mliivx-rtuxmewiaaaaaaaaemurvuesrewbhys1600rikusjpg--have-a-strong-guiding-aesthetic-a-lot-of-what-made-the-2e-settings-great-boils-down-to-having-a-really-clear-aesthetic-and-communicating-it-effectively-the-theme-art-direction-and-even-focusing-play-on-different-things-all-revolve-around-the-setting-doing-something-to-your-imagination-that-standard-dd-doesnt-do-dark-sun-lives-in-a-different-part-of-my-brain-than-orcs-and-goblins-and-such-like-it-evokes-a-different-emotional-response-and-encourages-different-adventures-and-different-player-decisions-to-fit-into-this-different-aesthetic-this-point-is-at-once-the-most-obvious-and-probably-the-hardest-to-follow-well-nav">
+										 What to Do  Have a Strong Guiding Aesthetic: A lot of what made the 2E settings great boils down to having a really clear aesthetic and communicating it effectively. The theme, art direction, and even focusing play on different things all revolve around the setting doing something to your imagination that standard D&amp;D doesn’t do. Dark Sun lives in a different part of my brain than orcs and goblins and such like. It evokes a different emotional response and encourages different adventures and different player decisions to fit into this different aesthetic. This point is at once the most obvious and probably the hardest to follow well.
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#what-to-avoid--http3bpblogspotcom-ymhzydk7qlwvx-tutdzn6iaaaaaaaaem0othoqqg3jvss1600546987-mjpg-------padding-this-one-is-easy-to-say-but-hard-to-do-the-only-real-guideline-to-what-you-should-include-and-what-you-should-cut-out-is-taste-but-there-are-a-few-questions-you-can-ask-yourself-when-casting-a-critical-eye-over-your-work-does-this-contribute-to-the-central-aesthetic-is-this-new-or-different-in-some-way-can-i-find-almost-exactly-the-same-thing-somewhere-else-can-smart-readers-figure-this-outmake-their-own-decision-is-it-something-that-players-are-likely-to-find-out-and-act-on-if-not-is-it-something-that-will-excite-the-dm-enough-to-come-up-with-things-that-the-players-will-find-out-and-act-on-is-it-something-that-provides-players-with-choicesdoes-this-enhance-or-detract-from-player-agency" v-on:click="closeDrawer" id="what-to-avoid--http3bpblogspotcom-ymhzydk7qlwvx-tutdzn6iaaaaaaaaem0othoqqg3jvss1600546987-mjpg-------padding-this-one-is-easy-to-say-but-hard-to-do-the-only-real-guideline-to-what-you-should-include-and-what-you-should-cut-out-is-taste-but-there-are-a-few-questions-you-can-ask-yourself-when-casting-a-critical-eye-over-your-work-does-this-contribute-to-the-central-aesthetic-is-this-new-or-different-in-some-way-can-i-find-almost-exactly-the-same-thing-somewhere-else-can-smart-readers-figure-this-outmake-their-own-decision-is-it-something-that-players-are-likely-to-find-out-and-act-on-if-not-is-it-something-that-will-excite-the-dm-enough-to-come-up-with-things-that-the-players-will-find-out-and-act-on-is-it-something-that-provides-players-with-choicesdoes-this-enhance-or-detract-from-player-agency-nav">
+										 What to Avoid http://3.bp.blogspot.com/-YmHZYDK7Qlw/VX-tuTdZN6I/AAAAAAAAEm0/oTHOqqg3JVs/s1600/546987-M.jpg ** ** Padding: This one is easy to say, but hard to do. The only real guideline to what you should include and what you should cut out is taste, but there are a few questions you can ask yourself when casting a critical eye over your work: Does this contribute to the central aesthetic? Is this new or different in some way? Can I find almost exactly the same thing somewhere else? Can smart readers figure this out/make their own decision? Is it something that players are likely to find out and act on? If not, is it something that will excite the DM enough to come up with things that the players will find out and act on? Is it something that provides players with choices?﻿ Does this enhance or detract from player agency?
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#conclusion--http2bpblogspotcom-wlzjqkrm_9uvx-v6jko6uiaaaaaaaaenczgfxyk7odzus320entry1jpghttp2bpblogspotcom-wlzjqkrm_9uvx-v6jko6uiaaaaaaaaenczgfxyk7odzus1600entry1jpg" v-on:click="closeDrawer" id="conclusion--http2bpblogspotcom-wlzjqkrm_9uvx-v6jko6uiaaaaaaaaenczgfxyk7odzus320entry1jpghttp2bpblogspotcom-wlzjqkrm_9uvx-v6jko6uiaaaaaaaaenczgfxyk7odzus1600entry1jpg-nav">
+										 Conclusion 
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#previous-posts--lets-talk-about-campaign-settings-i-introductionhttpblessingsofthedicegodsblogspotcom201506lets-talk-about-campaign-settings-ihtml--lets-talk-about-campaign-settings-ii-second-edition-settings-analysishttpblessingsofthedicegodsblogspotcom201506lets-talk-about-campaign-settings-iihtml--lets-talk-about-campaign-settings-iii-osr-settingshttpblessingsofthedicegodsblogspotcom201506lets-talk-about-campaign-settings-iiihtml" v-on:click="closeDrawer" id="previous-posts--lets-talk-about-campaign-settings-i-introductionhttpblessingsofthedicegodsblogspotcom201506lets-talk-about-campaign-settings-ihtml--lets-talk-about-campaign-settings-ii-second-edition-settings-analysishttpblessingsofthedicegodsblogspotcom201506lets-talk-about-campaign-settings-iihtml--lets-talk-about-campaign-settings-iii-osr-settingshttpblessingsofthedicegodsblogspotcom201506lets-talk-about-campaign-settings-iiihtml-nav">
+										 Previous Posts Let’s Talk About Campaign Settings I: Introduction Let’s Talk About Campaign Settings II: Second Edition Settings Analysis Let’s Talk About Campaign Settings III: OSR Settings
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#introduction--first-off-i-made-a-few-absolutely-shameful-omissions-in-talking-about-osr-settings-last-time-i-totally-forgot-to-give-a-shout-out-to-mateo-diaz-torreshttpsplusgooglecom107363765497271284541and-the-pernicious-albionhttpgloomtrainblogspotcomsearchlabelpernicious20albion-setting-which-is-just-awful-since-im-helping-with-layout-on-its-upcoming-publication-really-its-fantastic-stuffi-also-neglected-to-mentioncourtney-campbellhttpsplusgooglecom103464603741728371942s-numenhallahttphackslashmasterblogspotcomsearchlabelnumenhallaor-upcoming-perditionhttphackslashmasterblogspotcomsearchlabelperditionsettings-even-though-ive-read-lots-of-numenhalla-posts-for-megadungeon-inspiration-and-perdition-sounds-like-it-will-be-pretty-rocking-finally-in-the-published-space-i-forgot-to-direct-your-attention-to-the-very-fine-red-tidehttpwwwdrivethrurpgcomproduct89888red-tide-campaign-sourcebook-and-sandbox-toolkitbykevin-crawfordhttpsplusgooglecom115055273425645223134-as-with-all-of-his-stuff-it-is-chock-full-of-material-that-has-its-own-strong-flavor-but-is-easily-modified-to-any-genre-or-setting-go-check-all-of-those-out-if-you-arent-already-familiar" v-on:click="closeDrawer" id="introduction--first-off-i-made-a-few-absolutely-shameful-omissions-in-talking-about-osr-settings-last-time-i-totally-forgot-to-give-a-shout-out-to-mateo-diaz-torreshttpsplusgooglecom107363765497271284541and-the-pernicious-albionhttpgloomtrainblogspotcomsearchlabelpernicious20albion-setting-which-is-just-awful-since-im-helping-with-layout-on-its-upcoming-publication-really-its-fantastic-stuffi-also-neglected-to-mentioncourtney-campbellhttpsplusgooglecom103464603741728371942s-numenhallahttphackslashmasterblogspotcomsearchlabelnumenhallaor-upcoming-perditionhttphackslashmasterblogspotcomsearchlabelperditionsettings-even-though-ive-read-lots-of-numenhalla-posts-for-megadungeon-inspiration-and-perdition-sounds-like-it-will-be-pretty-rocking-finally-in-the-published-space-i-forgot-to-direct-your-attention-to-the-very-fine-red-tidehttpwwwdrivethrurpgcomproduct89888red-tide-campaign-sourcebook-and-sandbox-toolkitbykevin-crawfordhttpsplusgooglecom115055273425645223134-as-with-all-of-his-stuff-it-is-chock-full-of-material-that-has-its-own-strong-flavor-but-is-easily-modified-to-any-genre-or-setting-go-check-all-of-those-out-if-you-arent-already-familiar-nav">
+										 Introduction First off, I made a few absolutely shameful omissions in talking about OSR settings last time. I totally forgot to give a shout out to &#43;Mateo Diaz Torres and the Pernicious Albion setting, which is just awful, since I’m helping with layout on its upcoming publication. Really, it’s fantastic stuff. I also neglected to mention &#43;Courtney Campbell ‘s Numenhalla or upcoming Perdition settings, even though I’ve read lots of Numenhalla posts for megadungeon inspiration, and Perdition sounds like it will be pretty rocking. Finally, in the published space, I forgot to direct your attention to the very fine Red Tide by &#43;Kevin Crawford . As with all of his stuff, it is chock full of material that has its own strong flavor, but is easily modified to any genre or setting. Go check all of those out if you aren’t already familiar.
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#what-to-do--http3bpblogspotcom-na7rji5mliivx-rtuxmewiaaaaaaaaemurvuesrewbhys320rikusjpghttp3bpblogspotcom-na7rji5mliivx-rtuxmewiaaaaaaaaemurvuesrewbhys1600rikusjpg--have-a-strong-guiding-aesthetic-a-lot-of-what-made-the-2e-settings-great-boils-down-to-having-a-really-clear-aesthetic-and-communicating-it-effectively-the-theme-art-direction-and-even-focusing-play-on-different-things-all-revolve-around-the-setting-doing-something-to-your-imagination-that-standard-dd-doesnt-do-dark-sun-lives-in-a-different-part-of-my-brain-than-orcs-and-goblins-and-such-like-it-evokes-a-different-emotional-response-and-encourages-different-adventures-and-different-player-decisions-to-fit-into-this-different-aesthetic-this-point-is-at-once-the-most-obvious-and-probably-the-hardest-to-follow-well" v-on:click="closeDrawer" id="what-to-do--http3bpblogspotcom-na7rji5mliivx-rtuxmewiaaaaaaaaemurvuesrewbhys320rikusjpghttp3bpblogspotcom-na7rji5mliivx-rtuxmewiaaaaaaaaemurvuesrewbhys1600rikusjpg--have-a-strong-guiding-aesthetic-a-lot-of-what-made-the-2e-settings-great-boils-down-to-having-a-really-clear-aesthetic-and-communicating-it-effectively-the-theme-art-direction-and-even-focusing-play-on-different-things-all-revolve-around-the-setting-doing-something-to-your-imagination-that-standard-dd-doesnt-do-dark-sun-lives-in-a-different-part-of-my-brain-than-orcs-and-goblins-and-such-like-it-evokes-a-different-emotional-response-and-encourages-different-adventures-and-different-player-decisions-to-fit-into-this-different-aesthetic-this-point-is-at-once-the-most-obvious-and-probably-the-hardest-to-follow-well-nav">
+										 What to Do  Have a Strong Guiding Aesthetic: A lot of what made the 2E settings great boils down to having a really clear aesthetic and communicating it effectively. The theme, art direction, and even focusing play on different things all revolve around the setting doing something to your imagination that standard D&amp;D doesn’t do. Dark Sun lives in a different part of my brain than orcs and goblins and such like. It evokes a different emotional response and encourages different adventures and different player decisions to fit into this different aesthetic. This point is at once the most obvious and probably the hardest to follow well.
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#what-to-avoid--http3bpblogspotcom-ymhzydk7qlwvx-tutdzn6iaaaaaaaaem0othoqqg3jvss1600546987-mjpg-------padding-this-one-is-easy-to-say-but-hard-to-do-the-only-real-guideline-to-what-you-should-include-and-what-you-should-cut-out-is-taste-but-there-are-a-few-questions-you-can-ask-yourself-when-casting-a-critical-eye-over-your-work-does-this-contribute-to-the-central-aesthetic-is-this-new-or-different-in-some-way-can-i-find-almost-exactly-the-same-thing-somewhere-else-can-smart-readers-figure-this-outmake-their-own-decision-is-it-something-that-players-are-likely-to-find-out-and-act-on-if-not-is-it-something-that-will-excite-the-dm-enough-to-come-up-with-things-that-the-players-will-find-out-and-act-on-is-it-something-that-provides-players-with-choicesdoes-this-enhance-or-detract-from-player-agency" v-on:click="closeDrawer" id="what-to-avoid--http3bpblogspotcom-ymhzydk7qlwvx-tutdzn6iaaaaaaaaem0othoqqg3jvss1600546987-mjpg-------padding-this-one-is-easy-to-say-but-hard-to-do-the-only-real-guideline-to-what-you-should-include-and-what-you-should-cut-out-is-taste-but-there-are-a-few-questions-you-can-ask-yourself-when-casting-a-critical-eye-over-your-work-does-this-contribute-to-the-central-aesthetic-is-this-new-or-different-in-some-way-can-i-find-almost-exactly-the-same-thing-somewhere-else-can-smart-readers-figure-this-outmake-their-own-decision-is-it-something-that-players-are-likely-to-find-out-and-act-on-if-not-is-it-something-that-will-excite-the-dm-enough-to-come-up-with-things-that-the-players-will-find-out-and-act-on-is-it-something-that-provides-players-with-choicesdoes-this-enhance-or-detract-from-player-agency-nav">
+										 What to Avoid http://3.bp.blogspot.com/-YmHZYDK7Qlw/VX-tuTdZN6I/AAAAAAAAEm0/oTHOqqg3JVs/s1600/546987-M.jpg ** ** Padding: This one is easy to say, but hard to do. The only real guideline to what you should include and what you should cut out is taste, but there are a few questions you can ask yourself when casting a critical eye over your work: Does this contribute to the central aesthetic? Is this new or different in some way? Can I find almost exactly the same thing somewhere else? Can smart readers figure this out/make their own decision? Is it something that players are likely to find out and act on? If not, is it something that will excite the DM enough to come up with things that the players will find out and act on? Is it something that provides players with choices?﻿ Does this enhance or detract from player agency?
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#conclusion--http2bpblogspotcom-wlzjqkrm_9uvx-v6jko6uiaaaaaaaaenczgfxyk7odzus320entry1jpghttp2bpblogspotcom-wlzjqkrm_9uvx-v6jko6uiaaaaaaaaenczgfxyk7odzus1600entry1jpg" v-on:click="closeDrawer" id="conclusion--http2bpblogspotcom-wlzjqkrm_9uvx-v6jko6uiaaaaaaaaenczgfxyk7odzus320entry1jpghttp2bpblogspotcom-wlzjqkrm_9uvx-v6jko6uiaaaaaaaaenczgfxyk7odzus1600entry1jpg-nav">
+										 Conclusion 
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Let&#39;s Talk About Campaign Settings IV: What Can We Learn For Our Own Settings?
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2015-06-29 09:07
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/osr">OSR</a>
+                                &nbsp;
+                            
+                                <a href="/tags/dd">D&amp;D</a>
+                                &nbsp;
+                            
+                                <a href="/tags/lets-talk-about-campaign-settings">Let&#39;s Talk About Campaign Settings</a>
+                                &nbsp;
+                            
+                                <a href="/tags/world-building">World Building</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p><a href="http://1.bp.blogspot.com/-_dZHOyyyDHQ/VX-r3MpJiAI/AAAAAAAAEmc/PXLHygURvzk/s1600/c7nwUfq.jpg"><img src="http://1.bp.blogspot.com/-_dZHOyyyDHQ/VX-r3MpJiAI/AAAAAAAAEmc/PXLHygURvzk/s320/c7nwUfq.jpg" alt=""></a></p>
+<h3 id="previous-posts--lets-talk-about-campaign-settings-i-introductionhttpblessingsofthedicegodsblogspotcom201506lets-talk-about-campaign-settings-ihtml--lets-talk-about-campaign-settings-ii-second-edition-settings-analysishttpblessingsofthedicegodsblogspotcom201506lets-talk-about-campaign-settings-iihtml--lets-talk-about-campaign-settings-iii-osr-settingshttpblessingsofthedicegodsblogspotcom201506lets-talk-about-campaign-settings-iiihtml">Previous Posts  <a href="http://blessingsofthedicegods.blogspot.com/2015/06/lets-talk-about-campaign-settings-i.html">Let&rsquo;s Talk About Campaign Settings I: Introduction</a>  <a href="http://blessingsofthedicegods.blogspot.com/2015/06/lets-talk-about-campaign-settings-ii.html">Let&rsquo;s Talk About Campaign Settings II: Second Edition Settings Analysis</a>  <a href="http://blessingsofthedicegods.blogspot.com/2015/06/lets-talk-about-campaign-settings-iii.html">Let&rsquo;s Talk About Campaign Settings III: OSR Settings</a></h3>
+<h2 id="introduction--first-off-i-made-a-few-absolutely-shameful-omissions-in-talking-about-osr-settings-last-time-i-totally-forgot-to-give-a-shout-out-to-mateo-diaz-torreshttpsplusgooglecom107363765497271284541and-the-pernicious-albionhttpgloomtrainblogspotcomsearchlabelpernicious20albion-setting-which-is-just-awful-since-im-helping-with-layout-on-its-upcoming-publication-really-its-fantastic-stuffi-also-neglected-to-mentioncourtney-campbellhttpsplusgooglecom103464603741728371942s-numenhallahttphackslashmasterblogspotcomsearchlabelnumenhallaor-upcoming-perditionhttphackslashmasterblogspotcomsearchlabelperditionsettings-even-though-ive-read-lots-of-numenhalla-posts-for-megadungeon-inspiration-and-perdition-sounds-like-it-will-be-pretty-rocking-finally-in-the-published-space-i-forgot-to-direct-your-attention-to-the-very-fine-red-tidehttpwwwdrivethrurpgcomproduct89888red-tide-campaign-sourcebook-and-sandbox-toolkitbykevin-crawfordhttpsplusgooglecom115055273425645223134-as-with-all-of-his-stuff-it-is-chock-full-of-material-that-has-its-own-strong-flavor-but-is-easily-modified-to-any-genre-or-setting-go-check-all-of-those-out-if-you-arent-already-familiar">Introduction  First off, I made a few absolutely shameful omissions in talking about OSR settings last time. I totally forgot to give a shout out to <a href="https://plus.google.com/107363765497271284541">+Mateo Diaz Torres</a> and the <a href="http://gloomtrain.blogspot.com/search/label/Pernicious%20Albion"><em>Pernicious Albion</em></a> setting, which is just awful, since I&rsquo;m helping with layout on its upcoming publication. Really, it&rsquo;s fantastic stuff. I also neglected to mention <a href="https://plus.google.com/103464603741728371942">+Courtney Campbell</a> &lsquo;s <em><a href="http://hackslashmaster.blogspot.com/search/label/Numenhalla">Numenhalla</a></em> or upcoming <em><a href="http://hackslashmaster.blogspot.com/search/label/Perdition">Perdition</a></em> settings, even though I&rsquo;ve read lots of Numenhalla posts for megadungeon inspiration, and Perdition sounds like it will be pretty rocking. Finally, in the published space, I forgot to direct your attention to the very fine <em><a href="http://www.drivethrurpg.com/product/89888/Red-Tide-Campaign-Sourcebook-and-Sandbox-Toolkit">Red Tide</a></em> by <a href="https://plus.google.com/115055273425645223134">+Kevin Crawford</a> . As with all of his stuff, it is chock full of material that has its own strong flavor, but is easily modified to any genre or setting. Go check all of those out if you aren&rsquo;t already familiar.</h2>
+<p>So, now that we have my foolishness out of the way, let&rsquo;s get back to the topic at hand. We’ve gone through the second edition campaign settings and a handful of OSR settings and figured out what makes them compelling (or at least, elements of what makes them compelling). So now I want to take the descriptive stuff we’ve identified and turn it into prescriptive advice on how to create a campaign setting that grabs people.</p>
+<h2 id="what-to-do--http3bpblogspotcom-na7rji5mliivx-rtuxmewiaaaaaaaaemurvuesrewbhys320rikusjpghttp3bpblogspotcom-na7rji5mliivx-rtuxmewiaaaaaaaaemurvuesrewbhys1600rikusjpg--have-a-strong-guiding-aesthetic-a-lot-of-what-made-the-2e-settings-great-boils-down-to-having-a-really-clear-aesthetic-and-communicating-it-effectively-the-theme-art-direction-and-even-focusing-play-on-different-things-all-revolve-around-the-setting-doing-something-to-your-imagination-that-standard-dd-doesnt-do-dark-sun-lives-in-a-different-part-of-my-brain-than-orcs-and-goblins-and-such-like-it-evokes-a-different-emotional-response-and-encourages-different-adventures-and-different-player-decisions-to-fit-into-this-different-aesthetic-this-point-is-at-once-the-most-obvious-and-probably-the-hardest-to-follow-well">What to Do  <a href="http://3.bp.blogspot.com/-Na7RjI5mLII/VX-rtUXMeWI/AAAAAAAAEmU/rvuesrEwbhY/s1600/Rikus.jpg"><img src="http://3.bp.blogspot.com/-Na7RjI5mLII/VX-rtUXMeWI/AAAAAAAAEmU/rvuesrEwbhY/s320/Rikus.jpg" alt=""></a>  <strong>Have a Strong Guiding Aesthetic</strong>: A lot of what made the 2E settings great boils down to having a really clear aesthetic and communicating it effectively. The theme, art direction, and even focusing play on different things all revolve around the setting doing something to your imagination that standard D&amp;D doesn’t do. Dark Sun lives in a different part of my brain than orcs and goblins and such like. It evokes a different emotional response and encourages different adventures and different player decisions to fit into this different aesthetic. This point is at once the most obvious and probably the hardest to follow well.</h2>
+<p>I think the way to make this advice practical is to use the different lenses we identified in previous posts, but consciously think about how to link them. Does your setting have a theme? What about some distinctly different play style? Art and art direction? Look at these separately, but then come back to “what ties all of these together?” It’s hard to articulate, but I think you can probably go pretty far with “do these go together?”  Trust your tastes.</p>
+<p><a href="http://1.bp.blogspot.com/-qwZdIdwljkc/VX-sNI9wiSI/AAAAAAAAEmk/TTSC6P-V89I/s1600/Harmonium_Patrol_by_Tony_Diterlizzi-2611_%25281995%2529_TSR_Planescape_-_The_Factol%2527s_Manifesto.jpg"><img src="http://1.bp.blogspot.com/-qwZdIdwljkc/VX-sNI9wiSI/AAAAAAAAEmk/TTSC6P-V89I/s320/Harmonium_Patrol_by_Tony_Diterlizzi-2611_%25281995%2529_TSR_Planescape_-_The_Factol%2527s_Manifesto.jpg" alt=""></a></p>
+<p><strong>Use the Right Mechanics</strong>: So, I struggled a bit here with the right wording, but the idea is that you need some mechanical differentiation, but not a whole new game. In the Clone-crowded world of the OSR, it might be difficult to select an official rule system with which to be compatible, but the good news is that most OSR folks are well aware of the inter-operability of the wide variety of clones and rules sets. So honestly, if most of your mechanics can slot into “basically D&amp;D” you’ll be alright.</p>
+<p>When I say “the Right Mechanics” I mean that you need some rules that reinforce the aesthetic you’ve developed (like a Crab People Race/Class for <em>Yoon-Suin</em>), but that aren’t so wild and involved that you’re pitching a whole new game. I suspect there are a couple of dials and knobs you can play around with here. For example, you can probably include a lot more new DM-facing rules than player-facing rules, because DMs are crazy people who hoard rules like Scrooge McDuck does coins. Likewise, the more central a thing is to answering “what’s new and exciting about this setting?”, the more you can probably introduce new rules. Super involved social conflict rules would make sense in a world of exaggerated courtly intrigue, but would be annoying extra-fiddliness in a world of large scale military command.</p>
+<p><a href="http://3.bp.blogspot.com/-I34xDkp3adU/VX-tOtdN2BI/AAAAAAAAEms/aB_xME7qG5E/s1600/TSR3100_Birthright_Campaign_Setting.jpg"><img src="http://3.bp.blogspot.com/-I34xDkp3adU/VX-tOtdN2BI/AAAAAAAAEms/aB_xME7qG5E/s320/TSR3100_Birthright_Campaign_Setting.jpg" alt=""></a></p>
+<p><strong>Make the World a Canvas</strong>: You’ll note that I didn’t say a blank canvas. The idea here is that you want DMs and players to feel like they make a difference on the world. Or at a minimum that if they aren’t going to change the world, they’ll have agency to make their own decisions that matter. The difficulty is in striking a balance between details that give people something to latch onto and drowning them in padding that feels like a straight jacket. One traditional approach is to just go sparse. To make up for the sparseness, many settings spread out and give you a lot of minimal details over a wide area. This bigness is one way to leave lots of blank space for DMs to exercise their creativity and for players to make their mark on. I imagine you can still make a world that feels open to player agency with lots of tightly packed detail, but it might be harder.</p>
+<p>In the comments on the second post, <a href="https://plus.google.com/108797699252182219631">+George S Hammond</a>  asked a question that made me think harder about the distinction between &ldquo;stuff&rdquo; in the world and people and events in the world, and why detail in one is more likely to be better than in the other. What I realized is that places, things, and cultures in the world are much less likely to impact the agency of PCs than people or events. The worst risk they run is being boring or overly detailed. People and events, though, they act <em>on</em> PCs, rather than being static things <em>on which</em> the PCs can act. So it&rsquo;s certainly not that you shouldn&rsquo;t have people or events, it&rsquo;s just that they have a higher risk of constraining PC agency, and so should be used with care.</p>
+<p>So, for the events and people of the world, I think that settings do better to limit themselves to history and the current state and to strictly avoid intentions and what “will” happen. Getting into plans and intentions for NPCs and factions is probably better handled in adventures, where the players’ involvement is assumed, and changes to the NPCs’ plans are expected. I think that the creators of a lot of settings have felt the need to fill it in with a bunch of proto-adventures. This makes sense on first blush, but I think creators do better to instead focus on making an interesting world full of interesting stuff chock full of potential without committing any of it to a particular expected course of interesting events. Rather than <em>intentions</em>, I&rsquo;d argue it&rsquo;s best to prepare <em>interests</em> for NPCs. Not the actions the NPC will take, but rather the things that they want. That way, how those interests translate into action, and more importantly, how that action interacts with the PCs, is more flexible and more in the hands of the GM and the party.</p>
+<p><a href="http://4.bp.blogspot.com/-txLgtMZLNhE/VX-uBN9RKpI/AAAAAAAAEm8/LdiNI5-0KC0/s1600/SpelljammerAdventuresInSpaceBox.jpg">http://4.bp.blogspot.com/-txLgtMZLNhE/VX-uBN9RKpI/AAAAAAAAEm8/LdiNI5-0KC0/s1600/SpelljammerAdventuresInSpaceBox.jpg</a></p>
+<p><strong>Get Your Jam On</strong>: As an independent creator, you are in a unique position to get the best of “jamming” and ignore the evils of “design by committee”. You have access to blogs, Google+, Fora, and an enormous back catalog of inspirational material. So you can pull in good ideas from other people, bounce your own ideas off of other people and see how they come back different, and even solicit entirely new contributions. On the other hand, you’re running your own show, so you don’t have to worry about corporate telling you what they think will sell best or Steve over in accounting saying that you can’t afford that art you love. All of the access to multiple creative minds, none of the obligation to water down your vision.</p>
+<h2 id="what-to-avoid--http3bpblogspotcom-ymhzydk7qlwvx-tutdzn6iaaaaaaaaem0othoqqg3jvss1600546987-mjpg-------padding-this-one-is-easy-to-say-but-hard-to-do-the-only-real-guideline-to-what-you-should-include-and-what-you-should-cut-out-is-taste-but-there-are-a-few-questions-you-can-ask-yourself-when-casting-a-critical-eye-over-your-work-does-this-contribute-to-the-central-aesthetic-is-this-new-or-different-in-some-way-can-i-find-almost-exactly-the-same-thing-somewhere-else-can-smart-readers-figure-this-outmake-their-own-decision-is-it-something-that-players-are-likely-to-find-out-and-act-on-if-not-is-it-something-that-will-excite-the-dm-enough-to-come-up-with-things-that-the-players-will-find-out-and-act-on-is-it-something-that-provides-players-with-choicesdoes-this-enhance-or-detract-from-player-agency">What to Avoid  <a href="http://3.bp.blogspot.com/-YmHZYDK7Qlw/VX-tuTdZN6I/AAAAAAAAEm0/oTHOqqg3JVs/s1600/546987-M.jpg">http://3.bp.blogspot.com/-YmHZYDK7Qlw/VX-tuTdZN6I/AAAAAAAAEm0/oTHOqqg3JVs/s1600/546987-M.jpg</a>  **   **  <strong>Padding</strong>: This one is easy to say, but hard to do. The only real guideline to what you should include and what you should cut out is taste, but there are a few questions you can ask yourself when casting a critical eye over your work: Does this contribute to the central aesthetic? Is this new or different in some way? Can I find almost exactly the same thing somewhere else? Can smart readers figure this out/make their own decision? Is it something that players are likely to find out and act on? If not, is it something that will excite the DM enough to come up with things that the players will find out and act on? Is it something that provides players with choices?﻿ Does this enhance or detract from player agency?</h2>
+<p>Essentially, you should try to filter every sentence you write through the guidelines to a good and interesting campaign setting. I have found in my own editing work that it usually pays to be harsher than you think necessary and cut out more than you think you can. I always just remind myself that I’m writing for a smart audience, and if something is unclear or mysterious, DMs are good at making stuff up to fill in gaps.</p>
+<p><a href="http://3.bp.blogspot.com/-FW9HkprlmJg/VX-vYvTURDI/AAAAAAAAEnU/aygHIldlViQ/s1600/DLC1_TSR9291_Dragonlance_Classics_Volume_1.jpg"><img src="http://3.bp.blogspot.com/-FW9HkprlmJg/VX-vYvTURDI/AAAAAAAAEnU/aygHIldlViQ/s320/DLC1_TSR9291_Dragonlance_Classics_Volume_1.jpg" alt=""></a></p>
+<p><strong>Calling Adventure Hooks Setting</strong>: This one is more of a hunch of mine I’ve come to while writing this series, but I think I’m on to something. For the reasons outlined above, adventure hooks imply a certain presumption on the DM’s prep, and even a bit of presumption on the player’s agency. I think including adventure hooks in a setting is fine - provided they’re clearly labeled and separate from “this is how the world is”. But when you start presenting the world as a series of “when the players do this, then X happens. . .” style prompts, it stops being a campaign <em>setting</em> and starts turning into just a <em>campaign</em>.</p>
+<p><a href="http://2.bp.blogspot.com/-IM3QMKq6tFI/VX-vGzLKLwI/AAAAAAAAEnM/W32d9k3YVec/s1600/birthrightcsboxset.jpg"><img src="http://2.bp.blogspot.com/-IM3QMKq6tFI/VX-vGzLKLwI/AAAAAAAAEnM/W32d9k3YVec/s320/birthrightcsboxset.jpg" alt=""></a></p>
+<p><strong>Over-Specialization of Rules</strong>: This one is another balancing act with elements you definitely do want. You just don’t want to effectively write a new game tied to your setting that shares certain basic similarities with D&amp;D. I mean, unless writing a new game is what you want to do. But if you want to take advantage of the learnings from this series to write a <em>setting</em>, then only keep those new/changed rules that do the most to advance your desired aesthetic.</p>
+<h2 id="conclusion--http2bpblogspotcom-wlzjqkrm_9uvx-v6jko6uiaaaaaaaaenczgfxyk7odzus320entry1jpghttp2bpblogspotcom-wlzjqkrm_9uvx-v6jko6uiaaaaaaaaenczgfxyk7odzus1600entry1jpg">Conclusion  <a href="http://2.bp.blogspot.com/-wlZJQKRm_9U/VX-v6JKO6uI/AAAAAAAAEnc/ZGFXyk7ODZU/s1600/entry1.jpg"><img src="http://2.bp.blogspot.com/-wlZJQKRm_9U/VX-v6JKO6uI/AAAAAAAAEnc/ZGFXyk7ODZU/s320/entry1.jpg" alt=""></a></h2>
+<p>Writing a campaign setting that anyone actually wants to read, much less run a game in, is a pretty tall order. The kinds of people who might even be interested in an OSR campaign setting are also very often the kinds of people who would rather make up their own world. To make it worse, setting ideas tend to be less portable than new mechanics: I can tack Gus’s exhaustion rules onto Small But Vicious Dog much more easily than I can figure out how to incorporate the Passenger Class or the Ship Spirits into Warhammer’s Old World.</p>
+<p>That being said, I think there’s a place for it. In the last three years that I’ve closely followed OSR stuff, I’ve seen a hell of a lot of discussion and innovation around rules. I’ve also seen a hell of a lot of creativity around settings, but it’s been in a less shareable way than the rules stuff. That’s really what this series is about: how can we figure out a way to share the messy, “fluffy” side of our creativity as easily and successfully as we’ve shared rules and adventures and tools. If this has been at all helpful to you, I can’t wait to see what you make.</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2015-06-29</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2015-07-13-review-of-pale-lady-and-squid-cabal-and/">
+                    Next<br>&#34;Review of The Pale Lady&#34; and &#34;The Squid, the Cabal, and the Old Man&#34;
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2015-06-22-lets-talk-about-campaign-settings-iii/">
+                    Previous<br>Let&#39;s Talk About Campaign Settings III: OSR Settings
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

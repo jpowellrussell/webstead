@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html><head>
+<title>A Procedure for Off-Screen Faction Interaction</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    A Procedure for Off-Screen Faction Interaction
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2013-12-16 06:58
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/osr">OSR</a>
+                                &nbsp;
+                            
+                                <a href="/tags/fellhold">Fellhold</a>
+                                &nbsp;
+                            
+                                <a href="/tags/rules">Rules</a>
+                                &nbsp;
+                            
+                                <a href="/tags/dd">D&amp;D</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <!-- raw HTML omitted -->
+<p>So, I wanted to try a little experiment.  I got &ldquo;<a href="http://www.lulu.com/us/en/shop/courtney-campbell/on-the-non-player-character/paperback/product-21094131.html">On the Non-Player Character</a>&rdquo; back when it first came out, skimmed it, read some reviews, but then didn&rsquo;t read it fully until the last few days.  I&rsquo;m not sure how I feel about using it for regular encounters and the like, but I was struck with the idea to use it to do off-screen faction interactions, like in a mega-dungeon.  So I&rsquo;m going to do the experiment here (I&rsquo;m also trying out the &ldquo;After the Break&rdquo; feature, which I just learned how to use).  So, after the break, <a href="http://hackslashmaster.blogspot.com/">Courtney Campbell</a>&lsquo;s Encounter rules used for faction interactions:</p>
+<p>So, for this experiment, we&rsquo;re gonna use the Skull Clan Goblins, Spear Clan Hobgoblins, and a Group of Human Bandits that have all taken up residence in adjoining areas of Fellhold.  I&rsquo;ve given each group a little &ldquo;stat block&rdquo;.  For simplicity, I&rsquo;m ignoring things like Leader&rsquo;s Charisma, the stance options towards each other or individual reactions to different stances.  I&rsquo;m keeping Bond in there for modifying rolls, so if you wanted to use more factors, you could just make a &ldquo;modifier with X&rdquo; category and roll bond into those other modifiers, or have a &ldquo;base modifier&rdquo; that applies to all interactions.  When it comes to &ldquo;if monsters feel weaker or stronger&rdquo;, I&rsquo;m using the morale value as a measure of felt strength. Starting Bonds and Morale ratings were assigned by me based on my characterization of the factions.</p>
+<p><strong>Skull Clan</strong>   <em>Reaction Roll: 4</em>   <em>Bond with Spear Clan: 6 (0)</em>   <em>Bond with Bandits: 3 (-2)</em>   <em>Morale: 5</em>   *   *<strong>Spear Clan</strong>   <em>Reaction Roll: 12</em>   <em>Bond with Skull Clan: 6 (0)</em>   <em>Bond with Bandits: 5 (-2)</em>   <em>Morale: 7</em>   *   *<strong>Bandits</strong>   <em>Reaction Roll: 9</em>   <em>Bond with Spear Clan: 5 (-2)</em>   <em>Bond with Skull Clan: 3 (-2)</em>   <em>Morale: 8</em>   *   *So, here&rsquo;s how I&rsquo;m thinking about proceeding from here.  I&rsquo;m only rolling once per faction to keep things simple, since even with only 3 factions interacting with each other, things are already getting complex.  So, each faction applies its bond with the other faction to its one reaction roll to see what their action this round is.</p>
+<p>Reaction Table   (Roll: Action (Effect on Bond))   2: Attack/Flee (Bond -2)   3-5: Threaten (Bond -1)   6-8: Converse (Bond +0)   9-11: Trade (Bond +1)   12: Hire/Ally (Bond +2)</p>
+<p>So, the Skull clan ends up with a 4 with the spear clan and a 2 with the Bandits.  The Spear Clan&rsquo;s results are a 12 with the Skull Clan and a 10 with the Bandits, and the Bandits got a 7 with the Spear Clan and a 7 with the Skull Clan.  The results are the following:</p>
+<p><strong>Skull Clan</strong>   Spear Clan: Threaten (Bond -1)   Bandits: Attack/Flee (Bond -2)</p>
+<p><strong>Spear Clan</strong>   Skull Clan: Hire/Ally (Bond +2)   Bandits: Trade (Bond +1)   **   Bandits**   Spear Clan: Converse (Bond +0)   Skull Clan: Converse (Bond +0)</p>
+<p>Now, to keep things simple, rather than the roll being a reaction from the other party, it will be the action taken by the rolling side.  So, the &ldquo;Attack/Flee&rdquo; result between the skull clan and Bandits means that the Skull Clan will attack or flee the bandits, rather than the other way around.  Since the Skull Clan has lower morale (feels weaker) they flee.</p>
+<p>To make everything make sense, I&rsquo;ll throw in some interpretation.  It looks like the Spear Clan was the real mover and shaker this &ldquo;round&rdquo;.  After some threats from the Skull Clan motivated by their retreat from the Bandits, the Spear Clan hires them as goons.  Feeling more secure, they&rsquo;re willing to trade with the Bandits, who are feeling fairly neutral towards everybody.</p>
+<p>After these actions, with a few more modifications, we get the new &ldquo;stat blocks&rdquo;.  I&rsquo;ve decided that &ldquo;fleeing&rdquo; a stronger opponent lowers your morale by 1, whereas either a successful attack or hiring/allying raises it by 1.  I&rsquo;ve also capped Bond at 2-12</p>
+<p><strong>Skull Clan</strong>   <em>Bond with Spear Clan: 7 (0)</em>   <em>Bond with Bandits: 2 (-4)</em>   <em>Morale: 4</em>   **   Spear Clan**   *Bond with Skull Clan: 7 (0)*   *Bond with Bandits: 4 (-2)*   *Morale: 6*   **   Bandits**   *Bond with Skull Clan: 2 (-4)*   *Bond with Spear Clan: 4 (0)*   *Morale: 5*</p>
+<p>So, I like this because it&rsquo;s an aid to creating some dynamism, the probability distribution plus modifiers creates some trends that will hopefully over time suggest power dynamics, but it&rsquo;s pretty simple with just one roll per faction.</p>
+<p>Some ideas for greater complexity that I considered and decided against (for now) that you can try if you&rsquo;re into:</p>
+<ul>
+<li>Each faction has a modifier towards each other - bond is not shared,
+which could create some more asymmetries</li>
+<li>Use initial reaction roll as for a regular encounter and that&rsquo;s the
+number of actions the faction can take with the other faction (this
+makes for more of a solitaire mini-game)</li>
+<li>Create a d20 list of almost all of the actions from &ldquo;On the NPC&rdquo; and
+use them with the above to randomly determine what action each
+faction takes per action (this would be more swingy but possibly
+create more adventure hooks)</li>
+<li>Give each faction hit points (subdual or otherwise) and work out
+combat/social encounters using those</li>
+</ul>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2013-12-16</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2013-12-17-off-screen-factions-part-ii-combat/">
+                    Next<br>Off Screen Factions Part II: Combat
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2013-12-13-some-spells/">
+                    Previous<br>Some Spells
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>
