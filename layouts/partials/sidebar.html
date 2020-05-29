@@ -1,8 +1,8 @@
 <div ref="sideContainer" class="side-container">
     {{ if eq .Title .Site.Title}}
-    <a class="a-block nav-head active" href="{{.Site.BaseURL}}">
+    <a class="a-block nav-head active" href="{{.Site.Home.RelPermalink}}">
     {{ else }}
-    <a class="a-block nav-head false" href="{{.Site.BaseURL}}">
+    <a class="a-block nav-head false" href="{{.Site.Home.RelPermalink}}">
     {{ end }}
         <div class="nav-title">
             {{.Site.Title}}
@@ -37,10 +37,10 @@
         {{ end }}
     </div>
 
-    
+
 
     <div class="nav-footer">
         {{partial "copyright.html" .}}
     </div>
-    
+
 </div>

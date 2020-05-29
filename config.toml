@@ -1,11 +1,13 @@
 title = "Jeff Russell's Webstead"
-# Using jpowellrussell.com as my baseURL screwed up my theming before, but
-# having a null value makes the title link in the sidebar not work to take you
-# to the main page, which sucks. I'm going to try the github.io address, which
-# is undesirable, since I'll have to change it if/when I move to a new host, but
-# let's see how it works
-baseURL = "https://jpowellrussell.github.io"
+# Okay, including any baseurl variable seems to throw off the theming. My
+# current best guess is that there's a mismatch between the url's Hugo puts
+# together when it builds the site and the URLs github generates through its IO
+# page. To get desired behavior from title link, I'll have to modify the layout
+# for the sidebar.
+baseURL = ""
 languageCode = "en-us"
+# With the 'theme' variable, the -t 'theme' argument is not needed when building
+# the site
 theme = "diary"
 # copyright = "&copy; {year} Jeff Russell"
 # themesDir = "../.."
@@ -18,23 +20,27 @@ googleAnalytics = ""
 enableRobotsTXT = true
 
 [[menu.main]]
-url = "/coaching"
-name = "Coaching"
+url = "/thinking"
+name = "Thinking"
 weight = 1
 [[menu.main]]
-url = "/books"
-name = "Books"
+url = "/reading"
+name = "Reading"
 weight = 2
 [[menu.main]]
 url = "/gaming"
 name = "Gaming"
 weight = 3
 [[menu.main]]
+url = "/coaching"
+name = "Coaching"
+weight = 4
+[[menu.main]]
 url = "/leaves"
 name = "Leaves"
-weight = 4
+weight = 5
 
-# Not sure if the below will work, but worth trying out
+# In current form, the below doesn't add anything to the sidebar
 [[menu.main.leaves]]
 url = "/leaves/about"
 name = "About"

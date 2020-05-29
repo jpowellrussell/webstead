@@ -1,4 +1,5 @@
 ---
 title: "Leaves"
-layout: "Leaves.html"
+layout: leaf
 ---
+
