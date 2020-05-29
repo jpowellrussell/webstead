@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html><head>
+<title>Return of Conflict Resolution</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Return of Conflict Resolution
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2010-05-10 10:50
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/the-book-of-threes">The Book of Threes</a>
+                                &nbsp;
+                            
+                                <a href="/tags/rpgs">RPGs</a>
+                                &nbsp;
+                            
+                                <a href="/tags/theory">Theory</a>
+                                &nbsp;
+                            
+                                <a href="/tags/projects">Projects</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>So, in an earlier post I talked about some sticking points with conflict resolution as it currently stands in &ldquo;The Book of Threes&rdquo;. Right now, I&rsquo;m having some more fundamental questions about the system than just the number of dice that should be put forward by participants in a round. I&rsquo;m wondering how much the current conflict resolution rules contribute to what I want the game to be and how players will actually, you know, play the game.</p>
+<p>I have a couple concerns in this area, which I want to discuss, and then I&rsquo;m going to outline what I <em>do</em> like about the rules as they stand. I would love to get comments both on the rules as written, and any suggestions for ways to better achieve my aims.</p>
+<p>So, first off, &ldquo;The Book of Threes&rdquo; is supposed to be about creating story. That is the main goal of the rules. I don&rsquo;t want a tactical game that might happen to produce story, or a simulation of fictional physics that also might happen to come up with stories. If you play the rules as written, you should get fun, compelling stories that hit issues the players are interested in and put their characters into situations that provoke thought and emotional response from the players.</p>
+<p>A word about what I mean when I say &ldquo;story&rdquo; since it is a marvelously vague word. I don&rsquo;t just mean &ldquo;a sequence of events logically connected&rdquo;, nor do I mean something that can or necessarily should be transcribed into fiction. There&rsquo;s no point in trying to out-fiction fiction with a game. Any player could just write a short story or a novel to scratch that particular itch.</p>
+<p>I discuss what I mean by &ldquo;story&rdquo; in the &ldquo;Running the Game&rdquo; chapter (which I&rsquo;m afraid might be a horrible mess right now). I&rsquo;m using a theory of story from Lajos Egri via various game designers, primarily Ron Edwards (Sorceror, Trollbabe, and more) and Vincent Baker (Dogs in the Vineyard, In a Wicked Age, Poison&rsquo;d, et cetera). As defined by these guys, story has three elements: fit characters, dynamic situations, and premise.</p>
+<p>Fit characters are characters that can and will cope with the situations they come into in ways that address the premise. It&rsquo;s not much of a story to have a peasant wander around and get stomped on by a dragon. A peasant trying to fight a dragon, discovering he&rsquo;s in no way fit to do that, then pursuing various goals to become able to fight that dragon, though, would be a story.</p>
+<p>Dynamic situations are situations that by their nature have to change. They&rsquo;re not stable. When the characters are introduced to them, they will have to make choices and/or come into conflict. The peasant knowing there&rsquo;s a dragon out there somewhere isn&rsquo;t a dynamic situation, necessarily. Learning that the dragon is working his way from village to village towards the peasant&rsquo;s home village probably would be, though.</p>
+<p>Finally, you have premise, which ties the other two together and gives them their meaning. In the sense I&rsquo;m using it here, premise is the parent of theme. Theme is what you get when premise is addressed. So, if a theme is a statement of some sort of judgement or value (like, say, &ldquo;ordinary people will do extraordinary things in the face of great danger&rdquo;), a premise is a pointed question that leads to such statements (&ldquo;what will ordinary people do when faced with great danger?&quot;). Theme is what you want to work with in a solo work, cos you make all the decisions that will illustrate that theme. In a collaborative work like an RPG, though, part of the fun is not knowing for sure what conclusions you will come to about the story your characters are involved in. But you can select a premise that forces you and your characters to drive towards some kind of answer. As an example, in &ldquo;Dogs in the Vineyard&rdquo; the premise encouraged by the rules is &ldquo;when is violence an appropriate solution to moral issues?&quot;, and the whole game is set up to put the characters in situations where they can do violence to try to sort out moral issues, but to throw up complications that make that question interesting.</p>
+<p>So, I went through this little overview here to frame my current concerns about the game. I wrote the rules with the intention of pushing the characters (the creation of which should make them fit) to come up with difficult questions (premises) regarding loyalty, duty, and friendship, and to strongly encourage the GM and players to put them into difficult spots that require making tough choices (dynamic situation). I pulled a lot of what I&rsquo;ve learned from reading some really impressive games together to try to arrive at these goals.</p>
+<p>Right now, though, as I mentioned above, I&rsquo;m afraid that the conflict resolution rules as such don&rsquo;t push these goals specifically enough. I like the way that oaths, grudges, and loyalty points give incentives to work with other people, and how the personal interests, family interests, and clan interests create unstable situations that generate conflict, and how the acquisition of glory points is an incentive to get into trouble with other people. But as for the actual conflict resolution rules, do they do enough to force you to make difficult choices and to be used to address the kind of conflicts that the other rules encourage. The tension between getting what you want and risking injury is good, I think, but I worry that the conflict rules themselves are just something that are there because I felt like I should have them.</p>
+<p>Ideally, I don&rsquo;t want the rules just to be something that doesn&rsquo;t get in the way of fun, exciting play, but rather something that <em>creates</em> fun, exciting play. I want them to push the players in directions they might not go on their own, because if they don&rsquo;t, you might as well just be doing group improv.</p>
+<p>Related to this is an issue that Vincent Baker talks about a lot on his blog <a href="http://www.lumpley.com">anyway</a> a lot, which is the rules meaningfully addressing the shared fiction of the game. The canonical example is &ldquo;+1 bonus for height advantage&rdquo;. The only way this rule makes any sense at all is if the players around the table have a clear picture in their head which characters could be said to be &lsquo;on the high ground&rsquo;, which you only really get when everybody is communicating and paying attention. In this instance, the fictional situation that everybody is imagining actually has bearing on the game rules, rather than it only going the other way (you rolled a 19, so that orc just got hit with your sword).</p>
+<p>I worry that my rules as written don&rsquo;t do enough to reinforce a connection with the in-game fiction. Sure, the traits are supposed to be used based on how your character is doing something, and abilities based on what specifically he&rsquo;s doing, but if a player can just go &ldquo;I&rsquo;ll use D8s since I want to get glory vs his D12s, and my ability &lsquo;Expert Swordsman&rsquo; because it has the highest rating&rdquo; and then just roll the dice and not pay attention to what the actions in the fiction are, then I haven&rsquo;t done my job. The rule that each rounds described events are decided and done at the end of the round is an attempt to force the players to have some idea of what&rsquo;s going on fictionally before rolling into the next round, but a rule that just says &ldquo;do this&rdquo; without anything else depending on you doing it isn&rsquo;t very helpful.</p>
+<p>So, if you take a look at the rules, or already have done so, I would like to hear back two main points: do the conflict resolution rules as written (or with tweaks major or minor) a) contribute to addressing premise and otherwise creating an engaging story, and b) require the players to be paying attention to the fictional environment and actions of the characters? If not, please tell me why so I can fix them!</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2010-05-10</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2010-05-10-otherkind-dice/">
+                    Next<br>Otherkind Dice
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2010-05-08-conflict-resolution/">
+                    Previous<br>Conflict Resolution
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

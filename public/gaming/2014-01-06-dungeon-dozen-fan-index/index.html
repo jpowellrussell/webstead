@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html><head>
+<title>Dungeon Dozen Fan Index</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Dungeon Dozen Fan Index
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2014-01-06 11:43
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/osr">OSR</a>
+                                &nbsp;
+                            
+                                <a href="/tags/dd">D&amp;D</a>
+                                &nbsp;
+                            
+                                <a href="/tags/projects">Projects</a>
+                                &nbsp;
+                            
+                                <a href="/tags/dungeon-dozen">Dungeon Dozen</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p><a href="http://1.bp.blogspot.com/-6mCru7ZTpxI/UssFQiSoTOI/AAAAAAAAAfY/yIS7Li2NzTM/s1600/solids5.jpg">http://1.bp.blogspot.com/-6mCru7ZTpxI/UssFQiSoTOI/AAAAAAAAAfY/yIS7Li2NzTM/s1600/solids5.jpg</a></p>
+<p><a href="http://blessingsofthedicegods.blogspot.com/p/dungeon-dozen-fan-index.html">Dungeon Dozen Fan Index</a></p>
+<p>Don&rsquo;t worry, folks, we&rsquo;ll be getting back to Middenheim soon (possibly even later today, depending on what I can get done).  But I wanted to take a minute to talk about a mini-project I&rsquo;m maybe one third to half way through: the <a href="http://blessingsofthedicegods.blogspot.com/p/dungeon-dozen-fan-index.html">Dungeon Dozen Fan Index</a>.  First off, if you aren&rsquo;t familiar with <a href="http://roll1d12.blogspot.com/">the Dungeon Dozen</a>, you&rsquo;re missing out.  Jason Sholtis creates <a href="http://roll1d12.blogspot.com/2014/01/the-giants-are-up-to-something.html">totally</a> <a href="http://roll1d12.blogspot.com/2014/01/someone-tipped-off-humanoids.html">amazing</a> D12 tables of just about anything you can imagine: <a href="http://roll1d12.blogspot.com/2012/04/why-is-there-underworld.html">dungeon building</a>, <a href="http://roll1d12.blogspot.com/2013/10/npc-encounters-dungeon-level-five.html">encounters</a>, <a href="http://roll1d12.blogspot.com/2012/03/weird-dragon-breath.html">monster abilities</a>, <a href="http://roll1d12.blogspot.com/2012/04/before-first-level-magic-users.html">character backgrounds</a>, and <a href="http://roll1d12.blogspot.com/2012/04/dms-emergency-dodecahedron-outcomes.html">more</a>.  They really are just stupidly good.  Reading them makes me want to run a campaign with nothing but his tables as referee rules.</p>
+<p>At any rate, <a href="http://dndwithpornstars.blogspot.com/">Zak S</a> pointed out on G+ that referencing the tables quickly was difficult.  Now, we&rsquo;re all looking forward to when a good book collecting these comes out, but in the meantime, I figured I&rsquo;d do a little community service. See, I had read and enjoyed the occasional post, and I always thought &ldquo;I should go through and read the archives over at Dungeon Dozen&rdquo;, but I hadn&rsquo;t started until this last week.  Then I saw Zak&rsquo;s comment, and I thought &ldquo;Well, I&rsquo;m already reading all of these anyway, so I could do that.&rdquo;  And so I&rsquo;ve started.  You can see the link to &ldquo;<a href="http://blessingsofthedicegods.blogspot.com/p/dungeon-dozen-fan-index.html">Dungeon Dozen Fan Index</a>&rdquo; on the right sidebar, but in case you&rsquo;re in mobile mode or something, I&rsquo;ve linked it a few times in this post as well.</p>
+<p>The idea is to organize the posts in a way that makes sense for quickly finding something when you need it during a game.  I&rsquo;m just making up the categories as I come across stuff that doesn&rsquo;t seem like it fits in other categories, so the process is open to some flaws.  Any feedback or suggestions on organization are greatly appreciated.  I&rsquo;m already thinking that &ldquo;Dungeon Dressing&rdquo; needs to be split up.  But there is a danger in that I absolutely love nested, hierarchical organization. Like, probably way too much.  For example: to get to, say, my pdf copy of Basic D&amp;D from my home folder on my computer I go Home -&gt; Gaming -&gt; RPGs -&gt; Old School Renaissance -&gt; D&amp;D -&gt; Basic -&gt; File.  I was informed that this is kind of crazy pants when I started sharing files for the Fellhold campaign with my players.</p>
+<p>So, I need some outside eyes to make sure I don&rsquo;t succumb to my urge to categorize, sub categorize, sub-sub-categorize, and so on.  My current thinking is that <strong>Large Size Broad Categories</strong> with <strong>Normal Sized Bold Sub Categories Where Necessary</strong> will be about right.  The main trouble will be in making myself not create one-entry sub-categories. I just have a thing for not mixing &ldquo;folders&rdquo; and &ldquo;files&rdquo; at the same tier.  Like I said, weird.</p>
+<p>Anyway, enjoy and let me know what to fix!</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2014-01-06</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2014-01-07-vornheiming-middenheim-x-ulricsmund/">
+                    Next<br>Vornheiming Middenheim X: Ulricsmund
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2014-01-03-vornheiming-middenheim-part-ix/">
+                    Previous<br>Vornheiming Middenheim Part IX: Grafsmund-Nordgarten and the Law
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

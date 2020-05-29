@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Admin on Jeff Russell&#39;s Webstead</title>
+    <link>/tags/admin/</link>
+    <description>Recent content in Admin on Jeff Russell&#39;s Webstead</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Apr 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/admin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Welcome and Hello</title>
+      <link>/coaching/2017-04-10-welcome-and-hello/</link>
+      <pubDate>Mon, 10 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/coaching/2017-04-10-welcome-and-hello/</guid>
+      <description>Welcome to my blog! I use this space to share the very best self-improvement material I come across and my own thoughts and insights based on my experiences coaching highly driven top performers. I believe we’d all be better off if more people adopted the kinds of habits, practices, and ways of thought that are featured here - happier, more accomplished, and tackling bigger and harder problems.
+The material on this blog will help you to get more work done, feel less stressed, and to take conscious control of where you’re headed with your career.</description>
+    </item>
+    
+  </channel>
+</rss>

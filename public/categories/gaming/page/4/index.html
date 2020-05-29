@@ -1,0 +1,3428 @@
+<!DOCTYPE html>
+<html><head>
+<title>Gaming</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<style>
+  .toc{
+    display: none !important;
+  }
+</style>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+        
+            <div class="pagination-indicator">
+                <span style="text-align: center">
+                    4<br><div style="display: inline-block; transform: rotate(-28deg)">-</div><br>9
+                </span>
+            </div>
+            
+            
+            <a class="pagination-action" href="/categories/gaming/page/3/">
+                <i class="material-icons pagination-action-icon">
+                    chevron_left
+                </i>
+            </a>
+            
+
+            
+            <a class="pagination-action" href="/categories/gaming/page/5/">
+                <i class="material-icons pagination-action-icon">
+                    chevron_right
+                </i>
+            </a>
+            
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post-item-wrapper post-item-wrapper-no-hover">
+            <div class="post-item post-item-no-gaps">
+                <div class="post-item-info-wrapper">
+                    <div class="post-item-title  post-item-title-small">
+                        <a href="/">Home</a> / Gaming
+                    </div>
+                </div>
+            </div>
+        </div><a href="/gaming/2019-06-12-best-spam-comment-ever/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Best Spam Comment Ever
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 12, 2019
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2019-02-12-removing-support-from-zak-smith/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Removing Support from Zak Smith
+                        </div>
+                        <div class="post-item-meta">
+                            Feb 12, 2019
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2018-08-23-fiends-in-fellhold/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Fiend Race, Class, and Magic
+                        </div>
+                        <div class="post-item-meta">
+                            Aug 23, 2018
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2018-08-22-managing-living-world-with-flexible/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Managing a Living World with Flexible Reaction Rolls
+                        </div>
+                        <div class="post-item-meta">
+                            Aug 22, 2018
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2018-08-20-glog-instant-character-generator/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            GLOG Instant Character Generator
+                        </div>
+                        <div class="post-item-meta">
+                            Aug 20, 2018
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2018-08-09-creative-problem-solving-types-in-d/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Creative Problem Solving Types in D&amp;D
+                        </div>
+                        <div class="post-item-meta">
+                            Aug 9, 2018
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2018-08-06-the-sages-say-monster-generator/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            &#34;The Sages Say&#34; Monster Generator
+                        </div>
+                        <div class="post-item-meta">
+                            Aug 6, 2018
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2018-07-18-osr-classes-mastermind-and-rook/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            OSR Classes: The Mastermind and the Rook
+                        </div>
+                        <div class="post-item-meta">
+                            Jul 18, 2018
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2018-07-16-flexible-reaction-rolls/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Flexible Reaction Rolls
+                        </div>
+                        <div class="post-item-meta">
+                            Jul 16, 2018
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2018-07-11-player-character-races-in-fellhold/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Player Character Races in Fellhold
+                        </div>
+                        <div class="post-item-meta">
+                            Jul 11, 2018
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2018-07-10-money-equipment-in-fellhold/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Money &amp; Equipment in Fellhold
+                        </div>
+                        <div class="post-item-meta">
+                            Jul 10, 2018
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2018-06-29-the-soul-economy-in-fellhold/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            The Soul Economy in Fellhold
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 29, 2018
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2017-12-12-russell-house-rules-core/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Russell House Rules Core
+                        </div>
+                        <div class="post-item-meta">
+                            Dec 12, 2017
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2016-10-03-d100-d-from-princess-mononoke/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            D100 D&amp;Dables from Princess Mononoke
+                        </div>
+                        <div class="post-item-meta">
+                            Oct 3, 2016
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2016-09-19-by-our-powers-combined-fellhold-has/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            By Our Powers Combined: Fellhold has an Artist!
+                        </div>
+                        <div class="post-item-meta">
+                            Sep 19, 2016
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2016-08-11-call-for-fellhold-artist-to-conquer-diy/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Call for Fellhold Artist to Conquer the DIY D&amp;D World
+                        </div>
+                        <div class="post-item-meta">
+                            Aug 11, 2016
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2016-07-31-uncaged-faces-of-sigil-review-and/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Uncaged: Faces of Sigil Review and Rework Part 1
+                        </div>
+                        <div class="post-item-meta">
+                            Jul 31, 2016
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2016-07-26-restaurant-and-coffee-house-generators/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Restaurant and Coffee House Generators
+                        </div>
+                        <div class="post-item-meta">
+                            Jul 26, 2016
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2016-07-19-why-ive-been-quiet-on-google/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Why I&#39;ve Been Quiet on Google&#43;
+                        </div>
+                        <div class="post-item-meta">
+                            Jul 19, 2016
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2016-07-11-fine-dining-carousing-table/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fine Dining Carousing Table
+                        </div>
+                        <div class="post-item-meta">
+                            Jul 11, 2016
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2016-07-08-conspiracy-generator-for-fellhold/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Conspiracy Generator for Fellhold
+                        </div>
+                        <div class="post-item-meta">
+                            Jul 8, 2016
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2016-07-05-vendors-and-merchants-of-fellhold/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Vendors and Merchants of Fellhold
+                        </div>
+                        <div class="post-item-meta">
+                            Jul 5, 2016
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2016-06-28-books-and-libraries-in-fellhold/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Books and Libraries in Fellhold
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 28, 2016
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2016-06-27-sages-and-their-petty-rivalries-in/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Sages and Their Petty Rivalries in Fellhold
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 27, 2016
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2016-06-22-what-do-you-do-in-city-default/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            What Do you Do in the City? Default Urbancrawl Actions
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 22, 2016
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2016-06-20-lifestyles-of-poor-and-adventurous/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Lifestyles of the Poor and Adventurous
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 20, 2016
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2016-06-16-some-fellhold-random-encounter-tables/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Some Fellhold Random Encounter Tables
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 16, 2016
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2016-06-13-places-of-interest-in-fellhold/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Places of Interest in Fellhold
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 13, 2016
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2016-02-25-exhaustion-is-terrifying/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Exhaustion is Terrifying
+                        </div>
+                        <div class="post-item-meta">
+                            Feb 25, 2016
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2016-01-31-how-to-make-anything-gameable-ask-what/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            How to Make Anything Gameable: Ask What Three Times
+                        </div>
+                        <div class="post-item-meta">
+                            Jan 31, 2016
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2015-11-14-fellhold-reboot-in-25-words/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Reboot in 25 Words
+                        </div>
+                        <div class="post-item-meta">
+                            Nov 14, 2015
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2015-07-13-review-of-pale-lady-and-squid-cabal-and/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            &#34;Review of The Pale Lady&#34; and &#34;The Squid, the Cabal, and the Old Man&#34;
+                        </div>
+                        <div class="post-item-meta">
+                            Jul 13, 2015
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2015-06-29-lets-talk-about-campaign-settings-iv/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Let&#39;s Talk About Campaign Settings IV: What Can We Learn For Our Own Settings?
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 29, 2015
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2015-06-22-lets-talk-about-campaign-settings-iii/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Let&#39;s Talk About Campaign Settings III: OSR Settings
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 22, 2015
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2015-06-16-speaking-of-campaign-settings-leon/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Speaking of Campaign Settings: Leon Chain Letter
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 16, 2015
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2015-06-16-lets-talk-about-campaign-settings-ii/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Let&#39;s Talk About Campaign Settings II: Second Edition Settings Analysis
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 16, 2015
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2015-06-15-lets-talk-about-campaign-settings-i/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Let&#39;s Talk About Campaign Settings I: Introduction
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 15, 2015
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2015-05-12-weapon-characteristics-ammo-and/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Weapon Characteristics, Ammo, and Bleeding Out for Heresies Without Number
+                        </div>
+                        <div class="post-item-meta">
+                            May 12, 2015
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2015-04-03-equipment-tables-for-stars-without/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Equipment Tables for Stars Without Number, Dark Heresy, and Warband
+                        </div>
+                        <div class="post-item-meta">
+                            Apr 3, 2015
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2015-03-30-emperor-forgive-us/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Emperor Forgive Us
+                        </div>
+                        <div class="post-item-meta">
+                            Mar 30, 2015
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2015-03-29-factions-reputation-and-acquisition-for/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Factions, Reputation, and Acquisition for Heresies Without Number
+                        </div>
+                        <div class="post-item-meta">
+                            Mar 29, 2015
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2015-03-15-quirks-and-sanity/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Quirks and Sanity
+                        </div>
+                        <div class="post-item-meta">
+                            Mar 15, 2015
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2015-01-27-red-pleasant-land-layout-review/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Red &amp; Pleasant Land Layout Review
+                        </div>
+                        <div class="post-item-meta">
+                            Jan 27, 2015
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2015-01-14-memory-some-world-building-notes/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Memory: Some World Building Notes
+                        </div>
+                        <div class="post-item-meta">
+                            Jan 14, 2015
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-12-15-how-to-business-part-iv-strategery/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            How to Business Part IV: Strategery
+                        </div>
+                        <div class="post-item-meta">
+                            Dec 15, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-11-03-how-to-business-part-iii-negotiations/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            How to Business Part III: Negotiations
+                        </div>
+                        <div class="post-item-meta">
+                            Nov 3, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-10-24-how-to-business-aside-call-for-cases/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            How to Business Aside: Call for Cases
+                        </div>
+                        <div class="post-item-meta">
+                            Oct 24, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-10-14-how-to-business-part-ii-marketing/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            How to Business Part II: Marketing &amp; Pricing
+                        </div>
+                        <div class="post-item-meta">
+                            Oct 14, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-10-08-how-to-business-part-i-basic-cash/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            How to Business Part I: Basic Cash Accounting
+                        </div>
+                        <div class="post-item-meta">
+                            Oct 8, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-10-07-how-to-business-primer-for-gamers/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            How to Business: a Primer for Gamers
+                        </div>
+                        <div class="post-item-meta">
+                            Oct 7, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-09-10-call-of-cthulhu-character-creation/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Call of Cthulhu Character Creation Resources
+                        </div>
+                        <div class="post-item-meta">
+                            Sep 10, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-08-17-adventuring-companies-expeditions-and/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Adventuring Companies Expeditions and Sites of Interest
+                        </div>
+                        <div class="post-item-meta">
+                            Aug 17, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-08-11-crapsack-goblin-referee-screen/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Crapsack Goblin Referee Screen
+                        </div>
+                        <div class="post-item-meta">
+                            Aug 11, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-07-31-psa-this-post-is-full-of-lies-and/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            PSA: The Linked Post is Full of Lies and Misinformation
+                        </div>
+                        <div class="post-item-meta">
+                            Jul 31, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-07-20-wtf-is-that-goblin-wearing/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            WTF is that Goblin Wearing?
+                        </div>
+                        <div class="post-item-meta">
+                            Jul 20, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-07-19-lost-mine-of-phandelver-review-and/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Lost Mine of Phandelver: Review and Changes
+                        </div>
+                        <div class="post-item-meta">
+                            Jul 19, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-07-01-purchases-and-acquisitions/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Purchases and Acquisitions
+                        </div>
+                        <div class="post-item-meta">
+                            Jul 1, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-06-30-the-joint-stock-corporation/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            The Joint Stock Corporation
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 30, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-06-26-adventuring-company-voyages/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Adventuring Company Voyages
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 26, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-06-25-adventuring-companies-colonies/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Adventuring Companies: Colonies
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 25, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-06-24-crapsack-goblins-home-game-report/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Crapsack Goblins Home Game Report
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 24, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-05-27-adventuring-companies-characteristics/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Adventuring Companies Characteristics
+                        </div>
+                        <div class="post-item-meta">
+                            May 27, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-05-05-adventuring-companies-working-table-of/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Adventuring Companies Working Table of Contents
+                        </div>
+                        <div class="post-item-meta">
+                            May 5, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-05-04-adventuring-company-expeditions-and/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Adventuring Company Expeditions and Modularity
+                        </div>
+                        <div class="post-item-meta">
+                            May 4, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-05-01-vornheiming-middenheim-final-product/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Vornheiming Middenheim: The Final Product
+                        </div>
+                        <div class="post-item-meta">
+                            May 1, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-04-04-hello-dungeon-dozen-fans/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Hello Dungeon Dozen Fans
+                        </div>
+                        <div class="post-item-meta">
+                            Apr 4, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-02-03-militant-random-encounter-pop-o-matic/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Militant Random Encounter Pop-o-Matic Chart
+                        </div>
+                        <div class="post-item-meta">
+                            Feb 3, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-02-01-saturday-pretty-pretty-picture-post/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            (Saturday) Pretty Pretty Picture Post
+                        </div>
+                        <div class="post-item-meta">
+                            Feb 1, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-01-30-hireling-orientation/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Hireling Orientation
+                        </div>
+                        <div class="post-item-meta">
+                            Jan 30, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-01-29-dwarves-as-germanic-sumerians/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Dwarves as Germanic Sumerians
+                        </div>
+                        <div class="post-item-meta">
+                            Jan 29, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-01-28-tuesday-reaction-roll-filler-post/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Tuesday Reaction Roll Filler Post
+                        </div>
+                        <div class="post-item-meta">
+                            Jan 28, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-01-27-fashion-is-danger/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fashion is Danger
+                        </div>
+                        <div class="post-item-meta">
+                            Jan 27, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-01-24-pretty-pretty-picture-friday_24/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Pretty Pretty Picture Friday
+                        </div>
+                        <div class="post-item-meta">
+                            Jan 24, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-01-23-rumor-has-it/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Rumor Has It
+                        </div>
+                        <div class="post-item-meta">
+                            Jan 23, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-01-23-vornheiming-middenheim-epilogue/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Vornheiming Middenheim: Epilogue - Building a Mystery
+                        </div>
+                        <div class="post-item-meta">
+                            Jan 23, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-01-21-vornheiming-middenheim-xvi-wrapping-up/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Vornheiming Middenheim XVI: Wrapping Up
+                        </div>
+                        <div class="post-item-meta">
+                            Jan 21, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-01-20-vornheiming-middenheim-part-xv/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Vornheiming Middenheim Part XV: Job/Mission Generator Options
+                        </div>
+                        <div class="post-item-meta">
+                            Jan 20, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-01-17-pretty-pretty-picture-friday/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Pretty Pretty Picture Friday
+                        </div>
+                        <div class="post-item-meta">
+                            Jan 17, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-01-17-vornheiming-middenheim-xiv-procedural/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Vornheiming Middenheim XIV: Procedural NPC Relationship Map Generation
+                        </div>
+                        <div class="post-item-meta">
+                            Jan 17, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-01-15-vornheiming-middenheim-part-xiii-npc/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Vornheiming Middenheim Part XIII: The NPC Generator
+                        </div>
+                        <div class="post-item-meta">
+                            Jan 15, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-01-15-situation-based-adventure-design/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Situation Based Adventure Design
+                        </div>
+                        <div class="post-item-meta">
+                            Jan 15, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-01-13-vornheiming-middenheim-part-xii-last-of/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Vornheiming Middenheim Part XII: The Last of the District Write-Ups
+                        </div>
+                        <div class="post-item-meta">
+                            Jan 13, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-01-10-dungeon-dozen-mix-tape-contest/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Dungeon Dozen Mix-Tape Contest
+                        </div>
+                        <div class="post-item-meta">
+                            Jan 10, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-01-10-dungeon-dozen-fan-index-finished/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Dungeon Dozen Fan Index Finished
+                        </div>
+                        <div class="post-item-meta">
+                            Jan 10, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-01-08-vornheiming-middenheim-part-xi-altmarkt/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Vornheiming Middenheim Part XI: Altmarkt-Altquartier and Southgate-Ostwald
+                        </div>
+                        <div class="post-item-meta">
+                            Jan 8, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-01-07-vornheiming-middenheim-x-ulricsmund/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Vornheiming Middenheim X: Ulricsmund
+                        </div>
+                        <div class="post-item-meta">
+                            Jan 7, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-01-06-dungeon-dozen-fan-index/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Dungeon Dozen Fan Index
+                        </div>
+                        <div class="post-item-meta">
+                            Jan 6, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-01-03-vornheiming-middenheim-part-ix/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Vornheiming Middenheim Part IX: Grafsmund-Nordgarten and the Law
+                        </div>
+                        <div class="post-item-meta">
+                            Jan 3, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-01-02-crapsack-goblin-game-idea/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Crapsack Goblin Game Idea
+                        </div>
+                        <div class="post-item-meta">
+                            Jan 2, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-01-01-keeping-habit/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Keeping the Habit
+                        </div>
+                        <div class="post-item-meta">
+                            Jan 1, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-12-31-vornheiming-middenheim-part-viii-great/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Vornheiming Middenheim Part VIII: The Great Park 
+                        </div>
+                        <div class="post-item-meta">
+                            Dec 31, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-12-30-vornheiming-middenheim-part-vii-palast/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Vornheiming Middenheim Part VII: The Palast District
+                        </div>
+                        <div class="post-item-meta">
+                            Dec 30, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-12-29-saturday-special-weird-taboo-generator/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Sunday Special: Weird Taboo Generator
+                        </div>
+                        <div class="post-item-meta">
+                            Dec 29, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-12-27-vornheiming-middenheim-part-vi-cults/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Vornheiming Middenheim Part VI: Cults and Intrigue
+                        </div>
+                        <div class="post-item-meta">
+                            Dec 27, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-12-26-vornheiming-middenheim-part-v-powers/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Vornheiming Middenheim Part V: The Powers that Be
+                        </div>
+                        <div class="post-item-meta">
+                            Dec 26, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-12-25-self-indulgent-year-end-post/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Self Indulgent Year-End Post
+                        </div>
+                        <div class="post-item-meta">
+                            Dec 25, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-12-24-vornheiming-middenheim-part-iv-contacts/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Vornheiming Middenheim Part IV: Contacts and the City Gates
+                        </div>
+                        <div class="post-item-meta">
+                            Dec 24, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-12-23-vornheiming-middenheim-part-iii-some/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Vornheiming Middenheim Part III: Some City-Wide Resources
+                        </div>
+                        <div class="post-item-meta">
+                            Dec 23, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-12-19-vornheiming-middenheim-part-ii-outline/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Vornheiming Middenheim Part II: The Outline
+                        </div>
+                        <div class="post-item-meta">
+                            Dec 19, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-12-19-vornheiming-middenheim-part-i/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Vornheiming Middenheim Part I
+                        </div>
+                        <div class="post-item-meta">
+                            Dec 19, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-12-18-summoning-up-courage/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Summoning Up the Courage
+                        </div>
+                        <div class="post-item-meta">
+                            Dec 18, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-12-17-off-screen-factions-part-ii-combat/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Off Screen Factions Part II: Combat
+                        </div>
+                        <div class="post-item-meta">
+                            Dec 17, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-12-16-a-procedure-for-off-screen-faction/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            A Procedure for Off-Screen Faction Interaction
+                        </div>
+                        <div class="post-item-meta">
+                            Dec 16, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-12-13-some-spells/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Some Spells
+                        </div>
+                        <div class="post-item-meta">
+                            Dec 13, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-12-12-the-granularity-of-megadungeons/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            The Granularity of Megadungeons
+                        </div>
+                        <div class="post-item-meta">
+                            Dec 12, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-12-11-high-level-fighters-whats-going-on/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            High Level Fighters, What&#39;s Going On?
+                        </div>
+                        <div class="post-item-meta">
+                            Dec 11, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-12-05-occult-magic-for-fellhold/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            [UPDATE] Occult Magic for Fellhold
+                        </div>
+                        <div class="post-item-meta">
+                            Dec 5, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-11-06-new-to-me-blogs/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            New (to me) Blogs
+                        </div>
+                        <div class="post-item-meta">
+                            Nov 6, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-07-28-seclusium-construction-worksheets/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Seclusium Construction Worksheets
+                        </div>
+                        <div class="post-item-meta">
+                            Jul 28, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-07-25-planet-of-lost/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Planet of the Lost
+                        </div>
+                        <div class="post-item-meta">
+                            Jul 25, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-07-09-fellhold-session-36-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 36 Recap
+                        </div>
+                        <div class="post-item-meta">
+                            Jul 9, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-07-03-every-version-of-d-part-iv-underworld/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Every Version of D&amp;D Part IV: The Underworld &amp; Wilderness Adventures
+                        </div>
+                        <div class="post-item-meta">
+                            Jul 3, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-07-02-fellhold-session-35-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 35 Recap
+                        </div>
+                        <div class="post-item-meta">
+                            Jul 2, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-06-28-every-version-of-d-part-iii-monsters/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Every Version of D&amp;D Part III: Monsters and Treasure
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 28, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-06-26-fellhold-session-34-recap-and/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 34 Recap and Supplemental Optional Library Rules
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 26, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-06-23-a-new-home/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            A New Home
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 23, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-06-19-review-of-than-any-man-and-mercenary/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Review of &#34;Better than Any Man&#34; and Mercenary Group Recruitment
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 19, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-06-16-free-rpg-day/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Free RPG Day
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 16, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-06-11-fellhold-session-32-and-33-recap-and/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 32 and 33 Recap and Quick and Dirty Mass Combat Rules
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 11, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-05-28-rpg-may-blog-carnival-campaigns-i-like/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            RPG May Blog Carnival: Campaigns I&#39;d Like to Run
+                        </div>
+                        <div class="post-item-meta">
+                            May 28, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-05-22-fellhold-session-31-recap-and-rules-for/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 31 Recap (and rules for clerics of Hrokr)
+                        </div>
+                        <div class="post-item-meta">
+                            May 22, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-05-16-runic-magic-in-fellhold/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Runic Magic in Fellhold
+                        </div>
+                        <div class="post-item-meta">
+                            May 16, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-05-16-how-to-make-sweet-d100-tables-for-fun/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            How to Make Sweet D100 Tables for Fun and Profit
+                        </div>
+                        <div class="post-item-meta">
+                            May 16, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-05-15-fellhold-session-30-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 30 Recap
+                        </div>
+                        <div class="post-item-meta">
+                            May 15, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-05-09-ray-harryhausen-tribute/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Ray Harryhausen Tribute
+                        </div>
+                        <div class="post-item-meta">
+                            May 9, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-05-08-fellhold-session-29-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 29 Recap
+                        </div>
+                        <div class="post-item-meta">
+                            May 8, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-05-07-requiescat-in-pace-mr-harryhausen/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Requiescat In Pace Mr. Harryhausen
+                        </div>
+                        <div class="post-item-meta">
+                            May 7, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-05-01-fellhold-session-28-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 28 Recap
+                        </div>
+                        <div class="post-item-meta">
+                            May 1, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-04-30-every-version-of-d-part-ii-men-magic/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Every Version of D&amp;D Part II: Men &amp; Magic
+                        </div>
+                        <div class="post-item-meta">
+                            Apr 30, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-04-25-a-problem/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            A Problem
+                        </div>
+                        <div class="post-item-meta">
+                            Apr 25, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-04-24-adventurer-as-meta-class/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Adventurer as a Meta-Class
+                        </div>
+                        <div class="post-item-meta">
+                            Apr 24, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-04-23-every-version-of-d-part-i-introduction/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Every Version of D&amp;D Part I: Introduction
+                        </div>
+                        <div class="post-item-meta">
+                            Apr 23, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-04-23-a-brief-interlude-on-rule-systems/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            A Brief Interlude on Rule Systems
+                        </div>
+                        <div class="post-item-meta">
+                            Apr 23, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-04-17-swords-wizardry-appreciation-day/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Swords &amp; Wizardry Appreciation Day!
+                        </div>
+                        <div class="post-item-meta">
+                            Apr 17, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-04-17-humanoids-of-fellhold/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Humanoids of Fellhold
+                        </div>
+                        <div class="post-item-meta">
+                            Apr 17, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-04-10-the-long-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            The Long Recap
+                        </div>
+                        <div class="post-item-meta">
+                            Apr 10, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-12-12-fellhold-sessions-13-14-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Sessions 13 &amp; 14 Recap
+                        </div>
+                        <div class="post-item-meta">
+                            Dec 12, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-11-27-fellhold-session-12-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 12 Recap
+                        </div>
+                        <div class="post-item-meta">
+                            Nov 27, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-11-19-fellhold-session-11-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 11 Recap
+                        </div>
+                        <div class="post-item-meta">
+                            Nov 19, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-11-19-first-fellhold-rules-post/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            First Fellhold Rules Post
+                        </div>
+                        <div class="post-item-meta">
+                            Nov 19, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-11-13-porting-dungeon-world-gming-rules-part-4/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Porting Dungeon World&#39;s GMing Rules, Part 4
+                        </div>
+                        <div class="post-item-meta">
+                            Nov 13, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-11-12-fellhold-session-10-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 10 Recap
+                        </div>
+                        <div class="post-item-meta">
+                            Nov 12, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-11-06-fellhold-session-9-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 9 Recap
+                        </div>
+                        <div class="post-item-meta">
+                            Nov 6, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-10-30-fellhold-session-8-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 8 Recap
+                        </div>
+                        <div class="post-item-meta">
+                            Oct 30, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-10-23-fellhold-session-7-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 7 Recap
+                        </div>
+                        <div class="post-item-meta">
+                            Oct 23, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-10-16-fellhold-session-6-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 6 Recap
+                        </div>
+                        <div class="post-item-meta">
+                            Oct 16, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-10-15-porting-dungeon-world-gm-rules-part-3/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Porting Dungeon World&#39;s GM Rules, Part 3
+                        </div>
+                        <div class="post-item-meta">
+                            Oct 15, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-10-09-some-challenges-in-judgement/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Some Challenges in Judgement
+                        </div>
+                        <div class="post-item-meta">
+                            Oct 9, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-10-09-fellhold-session-5-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 5 Recap
+                        </div>
+                        <div class="post-item-meta">
+                            Oct 9, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-10-04-fellhold-session-4-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 4 Recap
+                        </div>
+                        <div class="post-item-meta">
+                            Oct 4, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-09-28-a-bit-of-fellhold-flavor/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            A Bit of Fellhold Flavor
+                        </div>
+                        <div class="post-item-meta">
+                            Sep 28, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-09-26-porting-dungeon-world-gming-rules-to_26/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Porting Dungeon World&#39;s GMing Rules to Swords &amp; Wizardry WhiteBox Part 2
+                        </div>
+                        <div class="post-item-meta">
+                            Sep 26, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-09-24-fellhold-session-3-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 3 Recap
+                        </div>
+                        <div class="post-item-meta">
+                            Sep 24, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-09-21-a-brief-sci-fi-aside/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            A Brief Sci-Fi Aside
+                        </div>
+                        <div class="post-item-meta">
+                            Sep 21, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-09-20-have-to-put-in-work/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            &#34;You Have to Put in the Work&#34;
+                        </div>
+                        <div class="post-item-meta">
+                            Sep 20, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-09-18-fellhold-session-2-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 2 Recap
+                        </div>
+                        <div class="post-item-meta">
+                            Sep 18, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-09-16-dungeon-world-echo-resounding/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Dungeon World, An Echo, Resounding, Refereeing and You
+                        </div>
+                        <div class="post-item-meta">
+                            Sep 16, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-09-13-a-point-of-similarity/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            A Point of Similarity
+                        </div>
+                        <div class="post-item-meta">
+                            Sep 13, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-09-11-a-note-about-rules/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            A Note about Rules
+                        </div>
+                        <div class="post-item-meta">
+                            Sep 11, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-09-10-fellhold-session-1/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 1
+                        </div>
+                        <div class="post-item-meta">
+                            Sep 10, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-09-06-prep-is-fun/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Prep is Fun!
+                        </div>
+                        <div class="post-item-meta">
+                            Sep 6, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-08-29-a-wild-campaign-appears/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            A Wild Campaign Appears!
+                        </div>
+                        <div class="post-item-meta">
+                            Aug 29, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-07-03-the-old-school-is-so-cool/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            The Old School is So Cool
+                        </div>
+                        <div class="post-item-meta">
+                            Jul 3, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-10-22-what-paradigm-and-why-is-it-shifting/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            What&#39;s a Paradigm? And why is it shifting?
+                        </div>
+                        <div class="post-item-meta">
+                            Oct 22, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-09-02-book-of-threes-revision-sneak-preview/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Book of Threes Revision Sneak Preview
+                        </div>
+                        <div class="post-item-meta">
+                            Sep 2, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-08-18-book-of-threes-best-interests/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Book of Threes Best Interests
+                        </div>
+                        <div class="post-item-meta">
+                            Aug 18, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-07-11-book-of-threes-alpha-test-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Book of Threes Alpha Test Recap
+                        </div>
+                        <div class="post-item-meta">
+                            Jul 11, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-06-29-i-tought-i-taw-puddy-tat/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            I Tought I Taw a Puddy Tat
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 29, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-06-26-sagas-of-icelanders/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Sagas of the Icelanders
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 26, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-06-21-apocalypse-now/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Apocalypse Now!
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 21, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-06-10-shootin-stuff/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Shootin&#39; Stuff
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 10, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-06-10-necromunda-skirmish-redux/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Necromunda Skirmish Redux
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 10, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-06-05-ninjaspectres/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            nINjaSpectres
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 5, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-06-01-smash-it-up-smash-it-up/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Smash it up, Smash it up!
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 1, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-05-24-a-quick-playtest-update/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            A Quick Playtest Update
+                        </div>
+                        <div class="post-item-meta">
+                            May 24, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-05-19-a-quick-update/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            A Quick Update
+                        </div>
+                        <div class="post-item-meta">
+                            May 19, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-05-15-online-playtest/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Online Playtest
+                        </div>
+                        <div class="post-item-meta">
+                            May 15, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-05-15-revised-conflict-resolution/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Revised Conflict Resolution
+                        </div>
+                        <div class="post-item-meta">
+                            May 15, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-05-12-ragonarok/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Ragonarok!
+                        </div>
+                        <div class="post-item-meta">
+                            May 12, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-05-10-otherkind-dice/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Otherkind Dice
+                        </div>
+                        <div class="post-item-meta">
+                            May 10, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-05-10-return-of-conflict-resolution/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Return of Conflict Resolution
+                        </div>
+                        <div class="post-item-meta">
+                            May 10, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-05-08-conflict-resolution/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Conflict Resolution
+                        </div>
+                        <div class="post-item-meta">
+                            May 8, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-05-07-do-wave/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Do the Wave
+                        </div>
+                        <div class="post-item-meta">
+                            May 7, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-05-06-name-day/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Name Day
+                        </div>
+                        <div class="post-item-meta">
+                            May 6, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-05-05-these-are-neat/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            These are Neat
+                        </div>
+                        <div class="post-item-meta">
+                            May 5, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-05-04-insert-title-here/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Insert Title Here
+                        </div>
+                        <div class="post-item-meta">
+                            May 4, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-05-01-initial-design-thoughts/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Initial Design Thoughts
+                        </div>
+                        <div class="post-item-meta">
+                            May 1, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-05-01-that-will-remain-nameless-at-this-time/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            That Will Remain Nameless at this Time
+                        </div>
+                        <div class="post-item-meta">
+                            May 1, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-04-26-a-tale-that-grows-in-telling/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            A Tale that Grows in the Telling
+                        </div>
+                        <div class="post-item-meta">
+                            Apr 26, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-04-22-excitement/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Excitement!
+                        </div>
+                        <div class="post-item-meta">
+                            Apr 22, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-04-17-a-new-direction-for-now/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            A New Direction for Now
+                        </div>
+                        <div class="post-item-meta">
+                            Apr 17, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-04-10-what-has-come-before/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            What has Come Before
+                        </div>
+                        <div class="post-item-meta">
+                            Apr 10, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-04-04-social-contract/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Social Contract
+                        </div>
+                        <div class="post-item-meta">
+                            Apr 4, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-04-02-the-secret-ingredient/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            The Secret Ingredient
+                        </div>
+                        <div class="post-item-meta">
+                            Apr 2, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-03-29-magic-and-obligations/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Magic and Obligations
+                        </div>
+                        <div class="post-item-meta">
+                            Mar 29, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-03-29-spirit-of-century/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Spirit of the Century
+                        </div>
+                        <div class="post-item-meta">
+                            Mar 29, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-03-29-in-wicked-age/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            In a Wicked Age
+                        </div>
+                        <div class="post-item-meta">
+                            Mar 29, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-03-18-agon/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Agon
+                        </div>
+                        <div class="post-item-meta">
+                            Mar 18, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-03-18-dogs-in-vineyard/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Dogs in the Vineyard
+                        </div>
+                        <div class="post-item-meta">
+                            Mar 18, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-02-05-a-matter-of-taste/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            A Matter of Taste
+                        </div>
+                        <div class="post-item-meta">
+                            Feb 5, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-02-05-setting-vs-genre/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Setting vs Genre
+                        </div>
+                        <div class="post-item-meta">
+                            Feb 5, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-02-05-rules-and-roleplaying/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Rules and Roleplaying
+                        </div>
+                        <div class="post-item-meta">
+                            Feb 5, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-02-05-the-rp-in-rpg/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            The RP in RPG
+                        </div>
+                        <div class="post-item-meta">
+                            Feb 5, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-02-05-dungeons-and-teenagers-from-outer-space/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Dungeons and Teenagers from Outer Space
+                        </div>
+                        <div class="post-item-meta">
+                            Feb 5, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-01-31-starter-rpg-project/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Starter RPG Project
+                        </div>
+                        <div class="post-item-meta">
+                            Jan 31, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2010-01-29-greetings/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Greetings!
+                        </div>
+                        <div class="post-item-meta">
+                            Jan 29, 2010
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a></div>
+</div>
+
+            </div>
+
+<div class="pagination">
+    
+    <a class="pagination-action" href="/categories/gaming/page/3/" style="opacity:1">
+    
+        <i class="material-icons pagination-action-icon">
+            chevron_left
+        </i>
+    </a>
+
+        <div class="pagination-indicator">
+            <span>4/9</span>
+        </div>
+
+        
+        <a class="pagination-action" href="/categories/gaming/page/5/"
+           style="opacity:1">
+        
+                <i class="material-icons pagination-action-icon">
+                    chevron_right
+                </i>
+            </a>
+</div>
+
+
+<div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

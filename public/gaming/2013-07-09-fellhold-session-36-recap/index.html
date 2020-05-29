@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html><head>
+<title>Fellhold Session 36 Recap</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Fellhold Session 36 Recap
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2013-07-09 19:32
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/dampd">Damp;D</a>
+                                &nbsp;
+                            
+                                <a href="/tags/osr">OSR</a>
+                                &nbsp;
+                            
+                                <a href="/tags/new-rules">New Rules</a>
+                                &nbsp;
+                            
+                                <a href="/tags/fellhold">Fellhold</a>
+                                &nbsp;
+                            
+                                <a href="/tags/recap">Recap</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>Last night we wrapped up “Season 1” of Fellhold.  Not Season 1 in some pre-planned plot arc sense, heavens no! Rather, starting next week we’re switching to the new game I mentioned last time, and it just so happened that a lot of shit hit the fan this session and we ended at a good cliffhanger. Serendipitous!    <a href="http://2.bp.blogspot.com/-HPwn9_8hb-s/UdzEn8DreoI/AAAAAAAAASY/DgUJnxz4lw0/s1600/darksteel.jpg"><img src="http://2.bp.blogspot.com/-HPwn9_8hb-s/UdzEn8DreoI/AAAAAAAAASY/DgUJnxz4lw0/s320/darksteel.jpg" alt=""></a></p>
+<p>So, shit and fan hitting: we returned to Gurgu smashing pillars in his summoning area, most of the party hiding, and Bryni leading Bjergmund and a few priests and initiates down to see the “miracle” of Gurgu summoned, with the hopes of gently guiding them to the worship of Volsungr or some other proper god (but they figured Volsungr would be the best fit).  Varian tried to reestablish control by going back into line of sight, but Gurgu just kept smashing.  Unbeknownst to the players, Gurgu had always had a chance of going mad per round, but it hadn’t come up during the big fight with the trollkin and their beasts.  Unfortunately, it did come up while they were playing around with Gurgu to see that they could control him and coming up with their plan.  It was an insanely lucky coincidence that he went mad a) while they were having him smash stuff anyway, and b) right at the end of the last session.  So, Bjergmund and his priests see a rampaging Gurgu, and they rush into the main summoning area, beseeching him to spare them his wrath, professing their faith, and otherwise being model worshippers. Gurgu returned the favor by flinging chunks of the smashed pillars at them, crushing to death 4 initiates (teenagers, basically) and two of the priests.  Bjergmund was reduced to one hit point by sheer luck, and I decided he’d been pinned under rocks and his leg was broken.  There was a lot of dramatic “Gurgu nooooooo! Why have you forsaken meeeeeee ::squelch::” going on.   <a href="http://2.bp.blogspot.com/-Y6fftBzVzVs/UdzGJgr7IWI/AAAAAAAAASo/RVEoF2m7FGc/s1600/Lava_Elemental_Comic.jpg"><img src="http://2.bp.blogspot.com/-Y6fftBzVzVs/UdzGJgr7IWI/AAAAAAAAASo/RVEoF2m7FGc/s320/Lava_Elemental_Comic.jpg" alt=""></a></p>
+<p>The party shared a “Well, that went well” moment and then took a minute to figure out a plan of action.  Yllgrad charged the maddened lava being to distract it while Earn and Varian rushed to help Bjergmund and Bryni and his followers let fly with bows.  There was some speculation that the exposed gem might be a Zelda-like weak point, but the party unanimously agreed that there was no point to all this nonsense if they destroyed the Heart of the Mountain.    Yllgrad’s attack was ineffective, but Gurgu’s return blows were terrifically powerful.  His dwarvish protection against giant sized enemies likely saved his life, halving the damage taken.  Bryni and crew’s ranged attacks were mostly ineffective, except that his ranger follower scored a hit for a measly two damage. Fortunately, Earn and Varian managed to push the pillar fragments off of Bjergmund and get him to his feet.   llgrad figured he had done his part and proceeded to flee, straight up the path around the central shaft of the mountain.  Bjergmund directed Varian and Earn to help him in the other direction, and towards stairs up.  Gurgu turned and hurled more rocks in the direction of Bryni’s group and struck Dag for a tremendous amount of damage, but fortunately he’s as tough as Yllgrad and survived.  Bryni and his men decided to follow Yllgrad up and out of the mountain, while Gurgu pursued Varian, Earn and Bjergmund, trying to smash his way through archways and doors too small.  They slowed him down enough that everyone made it out of the temple safely, where they conferred.  Outside of the temple, they tried to sell a cockamamie story to Bjergmund that a “dark wizard” had summoned Gurgu for his own ends, and Gurgu had destroyed him in his wrath, but Bjergmund refused to believe that one of the unfaithful could summon Gurgu, and said that Gurgu must have manifested on his own to punish the sacrilege in his temple.  The group broke down and told him that they had summoned him, that anybody could, and that Gurgu wasn’t a god, just an elemental, that the library told them.  Again, Bjergmund refused to believe them and angrily headed for town.  In the town square, Bjergmund tried to stir up the people to ignore these foreign unbelievers and to come with him back to the temple to show their faith and beseech Gurgu to show mercy.  Bryni argued that such foolishness would just get everyone killed.  He brought up the fact that they had already risked their lives to save the village, and that they’d do it again.  In the end, his skills at inspiration and negotiation won out over Bjergmund’s position, and about 2/3 of the village agreed to evacuate to boats, under the direction of Oluf, the innkeeper.    <a href="http://1.bp.blogspot.com/-AHg0SrhntX8/UdzG0iJvIfI/AAAAAAAAASw/83z8bjdTRKM/s1600/dar_priest.jpg"><img src="http://1.bp.blogspot.com/-AHg0SrhntX8/UdzG0iJvIfI/AAAAAAAAASw/83z8bjdTRKM/s320/dar_priest.jpg" alt=""></a>  <em>I don&rsquo;t think Bjergmund is quite this ugly</em></p>
+<p>The remaining 1/3, however, including their seven children, began to follow Bjergmund up the mountain to placate Gurgu.  After some feeble attempts to sway them further, they called in Ash to cast sleep on the group, and it was very effective in downing most of the adults, including Bjergmund.  Bryni instructed Oluf to get them to safety while they came up with a plan for dealing with Gurgu. Right about then, a glowing, giant, angry form was seen leaving the temple entrance up on the mountain, and the island shook as smoke began to come from the top of the mountain and the usually sedate flow of lava out a tube in the side began to spurt and rush.  The group sent Ash, as the quickest and least encumbered (and being out of spells) to try to taunt Gurgu into following him as the group made their way up to the secondary entrance shown some of them after their initiation into the faith.  The plan was to lure Gurgu into the main pump room or the storage pool for the hot baths, and to hope that dousing him in enough water would cause him to be extinguished.  And so, with Gurgu chasing Ash up the mountain towards the shrine entrance, the rest of the party hoofing it for the secondary entrance, and the mountain shaking and spewing smoke, we called it an evening and will resolve their plan when we return to the Fellhold campaign.  As a quick refereeing note, it’s amazing how much easier it is to run things when one problem leads to another and everything is just falling apart.  I think it also helped that a lot of the prep I had done had had time to get engrained, so I knew how to react to the players without much deliberation.  After the game, though, I had a fairly long talk with Bryni’s player about the rules revisions I’m planning while Fellhold is on sabbatical, and we also talked about running games more generally.  I was interested to hear him say that in the very short (one session) game of Apocalypse World I ran for him and Caleb’s player in person, the NPCs had been way more interesting than any of them in this months long campaign.  I was struck, because at least at first, I tried to keep a lot of AW’s good NPC advice in mind as I ran, but the only thing I can figure is that in AW, especially in the first session, the NPCs are the main “moving part” the GM has to worry about.  In the Fellhold game, though, there are a lot of “moving parts” – treasure exchange rates, restocking the dungeon, coming up with adventure locations for the map, creating the city around the players, monster stats, running fights, et cetera, et cetera. Or maybe it’s just that running a much bigger group, and online at that, takes a lot more effort that saps my ability to make interesting NPCs. I’ll think on it some more.  Experimental Ranged Weapon Ammunition Rule  <a href="http://4.bp.blogspot.com/-_NCkNSVSSK8/UdzHmf06V_I/AAAAAAAAAS8/w48A9FbuC1o/s1600/300FC-00009.jpg"><img src="http://4.bp.blogspot.com/-_NCkNSVSSK8/UdzHmf06V_I/AAAAAAAAAS8/w48A9FbuC1o/s320/300FC-00009.jpg" alt=""></a></p>
+<p>I haven’t had a chance to try this out yet, and for all I know someone else has already invented it, but here’s a compromise between tracking every single arrow/bolt/bullet and just handwaving an infinite supply of ammo:  Characters with ranged weapons must buy ammunition “units” in order to operate their ranged weapon.  This might be a magazine, a clutch of arrows, or whatever.  The exact size isn’t important, but you can figure that out if you want.  Any time a character uses their ranged weapon, they roll an ammo saving throw.  Roll 1d20, add the number of ammo units purchased, and if the score is greater than or equal to 20, then they are fine.  If it is lower, they lose one unit of ammo.  When a character reaches zero ammo units, they are out of ammo and can no longer operate their ranged weapon.  You could have the saving throw be per round or after a complete combat, or only when you make a fumble or critical hit, or whenever seems like an appropriate frequency.  This is at least somewhat inspired by ammo checks in Necromunda, and it might be similar to how Dungeon World resolves things, but I can’t remember.</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2013-07-09</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2013-07-25-planet-of-lost/">
+                    Next<br>Planet of the Lost
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2013-07-03-every-version-of-d-part-iv-underworld/">
+                    Previous<br>Every Version of D&amp;D Part IV: The Underworld &amp; Wilderness Adventures
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

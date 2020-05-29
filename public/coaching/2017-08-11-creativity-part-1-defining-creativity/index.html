@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html><head>
+<title>Creativity Part 1 - Defining Creativity</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Creativity Part 1 - Defining Creativity
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2017-08-11 00:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Coaching]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/creativity">Creativity</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>When I sat down to write a post about innovation, I quickly realized we had an unwieldy topic on our hands. So, instead of a single post on innovation and the future, I’ve decided to kick off a short series on creativity. To begin with, I’ll provide my favorite definition of creativity and step through each piece of it and what it implies for applications down the road.</p>
+<p>Just about anyone you talk to wants to be “more creative,”  but what does that really mean? There are <a href="http://www.copyblogger.com/define-creativity/">lots</a> of <a href="http://www.basadur.com/insightsresearch/OurThoughtsonCreativityandInnovation/tabid/80/Default.aspx">different</a> ways to <a href="http://www.dictionary.com/browse/creativity">define</a> <a href="https://en.wikipedia.org/wiki/Creativity">creativity</a>, and some of them are maddeningly vague or fluffy. Often, we associate creativity only with “artsy” pursuits like painting or poetry and assume that it doesn’t apply to more hard-nosed disciplines. I think that nothing could be farther from the truth. So I’ve cobbled together various definitions in a way that is equally useful whether you are creating art or building a business: the ability to make useful new connections between concepts.</p>
+<p>Let’s start unpacking that definition, beginning with the core: making connections. We like to idealize creativity as conjuring something out of nothing, but really, to have new ideas, you have to have raw material. That’s one reason why creativity requires voraciously <a href="https://www.youtube.com/watch?v=g2pre2xnA1M">reading, watching, and listening to interesting and diverse material</a>. No one argues that being creative is just knowing about a bunch of different stuff, though. You gotta connect that stuff. That’s one reason games, randomizers, and “oracles” can be so <a href="http://blog.creativethink.com/2007/01/use_a_random_id.html">useful for spurring creativity</a> - they force connections where none existed previously.</p>
+<p>Okay, so if creativity is about making connections, the thing that makes those connections “creative” is that they are new. The <a href="https://en.wikipedia.org/wiki/Taxonomy_(biology)">first time</a> someone noticed that cats and people and elephants have something in common with each other that they don’t with snakes and lizards, that was creative. Noticing it today is not. We are all standing on the shoulders of everyone who has come before us, extending the network of associations further and further into conceptual space.  At first this can seem a bit intimidating, like everything really worthwhile has already been figured out. Here’s the thing, though: because this network of connections that has been made, we have exponentially more raw material to work with than anyone else in the history of humanity. That’s pretty awesome if you ask me. We’re going to dive more into how lucky we really are when we talk about practical ways to be more creative in our own lives.</p>
+<p>Finally, our new connections must also be useful. As we’ll discuss later when we talk about specific techniques, it can actually hinder your ability to come up with stuff if start out too focused on “what’s useful.” That’s just a phase in the process though, and the difference between <a href="http://blog.ted.com/40-idioms-that-cant-be-translated-literally/">brilliant and silly</a> is how much value people get out of the connection you have made for them. As we’ll see when we dive into more “how to” later in the series, one of the most challenging things to do can be to allow ourselves to be silly at one phase while ruthlessly <a href="http://www.slate.com/blogs/browbeat/2013/10/18/_kill_your_darlings_writing_advice_what_writer_really_said_to_murder_your.html">killing our darlings</a> later on.</p>
+<p>We’ve stepped through why creativity is about connections, how those connections have to be new, and why they need to be useful to qualify as “creative”. With this definition in mind, our future posts will get to the good stuff: practical advice to get you on the path to more creativity in your life and work.</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2017-08-11</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/coaching/2017-08-18-the-building-blocks-of-creativity/">
+                    Next<br>The Building Blocks of Creativity - Creativity Part 2
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/coaching/2017-07-27-the-gleeful-iconoclasm-of-zhuangzi/">
+                    Previous<br>The Gleeful Iconoclasm of Zhuangzi
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

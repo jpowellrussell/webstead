@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html><head>
+<title>Virtual Mentors</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Virtual Mentors
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2017-09-22 00:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Coaching]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/thinking-tools">Thinking Tools</a>
+                                &nbsp;
+                            
+                                <a href="/tags/creativity">Creativity</a>
+                                &nbsp;
+                            
+                                <a href="/tags/tools">Tools</a>
+                                &nbsp;
+                            
+                                <a href="/tags/mentors">Mentors</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>High performers frequently emphasize the importance of quality mentors, and we’ve all experienced the value of learning from people who have been there and done that. Finding a great mentor can be a big challenge, though. Luckily, you can benefit from the wisdom of impressive people with  “virtual mentors”.</p>
+<p>Let’s talk about why to bother with this technique: finding and building a relationship with a top notch mentor is a big challenge. For one thing, there aren’t that many people at the top of their field to go around- that’s what <a href="https://www.youtube.com/watch?v=8gXCCBmTvBI">special means</a>. Secondly, top performers tend to be pretty darn busy, so even if they <a href="https://www.tonyrobbins.com/events/date-with-destiny/">industrialize</a> helping people, they can only reach so many. Finally, talented people are gifted in different ways - you might want to ask <a href="https://en.wikipedia.org/wiki/Woody_Allen">Woody Allen</a> for advice on filmmaking, but not so much for parenting. The good news is that we can bypass these limitations by learning a simple technique.</p>
+<p>We start by taking advantage of a quirk in our neurology. It turns out that consciousness might work by <a href="http://slatestarcodex.com/2017/09/05/book-review-surfing-uncertainty/">simulating the world around us and constantly testing our simulation against sensory inputs</a>. As social animals, a ridiculous amount of that simulation bandwidth is dedicated to <a href="https://plato.stanford.edu/entries/folkpsych-simulation/">what other people are thinking, feeling, and will do</a>. Unless you are on the <a href="https://en.wikipedia.org/wiki/Autism_spectrum">autism spectrum</a>, by virtue of being a neurotypical human, you are already stupendously good at imagining what other people might say or do, and how they would look and sound doing it. Here’s the upshot: if you want advice from someone, you probably know enough about them to imagine a darn good model.</p>
+<p>Here’s what I recommend: select a handful of people you admire to be your personal board of directors. Stick with no more than three to five keep things manageable. Find experts in the areas of your life that are most challenging. Most folks will choose areas of interest like personal finance, exercise, and career. For a particularly important field, consider picking two people with differing viewpoints so you can compare them. You know the best part? Your virtual mentors don’t have to be alive. They don’t even have to be real. Go right ahead and ask yourself “what would Gandalf do?” if that’s how you roll.</p>
+<p>As an example, let me share my own virtual mentors. A lot of these names will sound familiar from my <a href="https://www.jeffrussellcoaching.com/coaching-blog/2017/7/14/my-operating-manuals-for-life">Operating Manuals</a> and books of the week. When I need to get tougher, I turn to <a href="http://jockopodcast.com/">Jocko Willink</a>. If I’m dealing with emotional turmoil, I wonder what <a href="https://en.wikipedia.org/wiki/Seneca_the_Younger">Seneca</a> would write to me. For a question of focus, learning, or quality, I imagine <a href="http://www.joshwaitzkin.com/">Josh Waitzkin</a>. When thinking about investment and risk, I imagine <a href="http://www.fooledbyrandomness.com/">Nasim Taleb’s</a> no-doubt snarky advice. Your list will differ, of course, but I want to point to a common thread uniting these figures - each of them is incredibly distinctive. Their strong personalities and clear styles make them easier to imagine vividly, which enhances the accuracy of your simulation.</p>
+<p>Okay, now that you’ve got your mentors lined up, let’s talk about how you use them. The quickest version is just a quick “what would ______ do?” With this approach, you aren’t taking much advantage of your brain’s ability to simulate, but you can get guidance in moments. If you have a bit more time, take a  step in the concrete direction and ask yourself “what advice would ______ give me here?” Framing your question this way helps you to imagine an actual conversation, which will likely draw more on your subconscious knowledge of your mentor. For maximum effect, you want to really rev up the virtual reality generator you carry around in your head. First, close your eyes and visualize your mentor as clearly as you can. Focus not only on their face, but also on other details - what is their posture? What does their voice sound like? Are they close or far? Sitting or standing? Keeping your eyes closed, tell them about your situation and ask them what they think you should do. If you’re by yourself, you can say this out loud if it helps, but probably not if there are people around. As you imagine their response, really try to hear and see them giving it to you - the stronger the visualization, the more you will perceive your mentor as “someone else” and less just the usual voice in your head doing impressions. Hash it out as much as you need to until you’re happy with the result.</p>
+<p>Now, sure, there are limitations here, but it has some real value. This technique is most effective when you already know what you need to do but you just can’t find the motivation, or when choosing between multiple attractive options. There are mornings where I have only gotten out of bed and worked out because I imagined Jocko Willink telling me to “be tougher”. In instances like this, the main power comes in reminding yourself how someone you admire thinks and acts. Even in less straightforward situations, though, this technique can help you to dredge things up from your subconscious. There isn’t anything spooky or magic about this, so clearly you’re not going to get anything that isn’t already in your head somewhere, but you might be surprised at what you didn’t know you knew.</p>
+<p>I know that all of this sounds a bit silly - I mean, I basically just recommended you get some imaginary friends. If you’re willing to give it a go, though, you might be surprised at how useful it can be. If nothing else, motivating yourself past resistance with a well placed “what would ______  do here?” can be a game changer for habit formation. I hope that you find wonderful live mentors, but even with them, virtual mentors make a great supplement.</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2017-09-22</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/coaching/2017-09-29-depth-before-breadth-why-you-should-learn-one-thing-at-a-time/">
+                    Next<br>Depth Before Breadth - Why You Should Learn One Thing at a Time
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/reading/the-origin-of-consciousness-in-the-breakdown-of-the-bicameral-mind/">
+                    Previous<br>The Origin of Consciousness in the Breakdown of the Bicameral Mind
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

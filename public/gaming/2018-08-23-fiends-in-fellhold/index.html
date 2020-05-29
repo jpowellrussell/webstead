@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html><head>
+<title>Fellhold Fiend Race, Class, and Magic</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#fiends-in-fellhold" v-on:click="closeDrawer" id="fiends-in-fellhold-nav">
+										 Fiends in Fellhold
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#fiends-as-a-race" v-on:click="closeDrawer" id="fiends-as-a-race-nav">
+										 Fiends as a Race
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#fiends" v-on:click="closeDrawer" id="fiends-nav">
+										 Fiends
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#special" v-on:click="closeDrawer" id="special-nav">
+										 Special
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#fiends-as-a-class" v-on:click="closeDrawer" id="fiends-as-a-class-nav">
+										 Fiends as a Class
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#fiend-class" v-on:click="closeDrawer" id="fiend-class-nav">
+										 Fiend Class
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#fiendish-magic" v-on:click="closeDrawer" id="fiendish-magic-nav">
+										 Fiendish Magic
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#fiends-in-fellhold" v-on:click="closeDrawer" id="fiends-in-fellhold-nav">
+										 Fiends in Fellhold
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#fiends-as-a-race" v-on:click="closeDrawer" id="fiends-as-a-race-nav">
+										 Fiends as a Race
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#fiends" v-on:click="closeDrawer" id="fiends-nav">
+										 Fiends
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#special" v-on:click="closeDrawer" id="special-nav">
+										 Special
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#fiends-as-a-class" v-on:click="closeDrawer" id="fiends-as-a-class-nav">
+										 Fiends as a Class
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#fiend-class" v-on:click="closeDrawer" id="fiend-class-nav">
+										 Fiend Class
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#fiendish-magic" v-on:click="closeDrawer" id="fiendish-magic-nav">
+										 Fiendish Magic
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Fellhold Fiend Race, Class, and Magic
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2018-08-23 12:21
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <!-- raw HTML omitted -->
+<p>Man, who doesn&rsquo;t like demons? They are awesome, and from the moment I started the Fellhold reboot, I knew they&rsquo;d play a big role. Please find below Fiends as a Race, Fiends as a Class, and Fiendish Magic. But first, a quick intro on just what a Fiend is in Fellhold.</p>
+<h3 id="fiends-in-fellhold">Fiends in Fellhold</h3>
+<p>As I said in <a href="http://blessingsofthedicegods.blogspot.com/2018/06/the-soul-economy-in-fellhold.html">this post</a>, fiends in Fellhold were born when the gods were killed and their blood rained down on the dumb things of the earth. As such, fiends are somewhat like nature spirits or Kami, bound to plants, or animals, or inanimate objects. On the other hand, because they were born out of an act of sorcerous malice, they are twisted and malicious, so they are also somewhat like Chaos Demons. Finally, because they come from divine blood, they have an inborn need for lawfulness and keeping agreements along with a yearning for the true life denied them, and so they are also somewhat like Christian Devils. </p>
+<p>So, basically they&rsquo;re a bunch of assholes. Guess what the most popular PC race is in my home campaign so far?</p>
+<!-- raw HTML omitted -->
+<h3 id="fiends-as-a-race">Fiends as a Race</h3>
+<p>Fellhold uses split race and class. If you use a race-as-class game, I would recommend smashing this together with the Fiend class below, as the class assumes the restrictions and benefits of this race.</p>
+<h4 id="fiends">Fiends</h4>
+<p>Fiends are the warped and wicked remnants of the world’s nature spirits. They vary greatly in both power and form from minor animalistic sprites of rocks and saplings to mighty humanoid powers worshiped as gods. A player character fiend is far more powerful than many of these minor beings, but is still pretty far down the ladder. Fiends thrive on souls and worship, and most turn all of their doing towards those goals.</p>
+<h4 id="special">Special</h4>
+<p>Every fiend must have a stead, a place or thing that it is bound to. The fiend cannot move farther away from it than its level in miles (or level in districts, if more useful). Steads can be carried with fiends of the PC’s size and power, but if a  stead is destroyed, the fiend truly dies. If otherwise killed, the fiend will reform at its stead in 1d4 urbancrawl turns (weeks). If a fiend swears an oath or signs a contract, it cannot willingly break that deal (but of course, the word of the deal, not necessarily the spirit). If the fiend involuntarily breaks a deal or oath, it takes D6xLevel damage. Fiends can also be summoned, compelled, and bound as NPC fiends. Fiends must have a Use Name, Greater Name, and True Name. </p>
+<!-- raw HTML omitted -->
+<h3 id="fiends-as-a-class">Fiends as a Class</h3>
+<p>This one was a lot of fun to design - it was one of the first ideas I had for the reboot, but getting it to work right took a long time and exposure to some cool new ideas. This class is mostly derivative, smashing together Mateo&rsquo;s <a href="http://gloomtrain.blogspot.com/2015/03/cult-class.html">Godling</a>, Skerples&rsquo;s <a href="https://coinsandscrolls.blogspot.com/2018/03/osr-class-sorcerer.html">Sorcerer</a> and <a href="https://coinsandscrolls.blogspot.com/2018/08/osr-class-witch-coven.html">Witch Coven</a>, and Joseph Manola&rsquo;s/Skerples&rsquo;s <a href="http://udan-adan.blogspot.com/2016/09/bx-class-extras.html">Extras/</a><a href="https://coinsandscrolls.blogspot.com/2018/04/osr-class-many-goblins.html">Many Goblins</a>. I will say that I&rsquo;m pretty pleased with how the <em>Soul Hoarder</em> class feature worked out, though - that one&rsquo;s mine, as is the <em>Possess</em> feature, though that&rsquo;s certainly based on other stuff I&rsquo;ve seen before. </p>
+<p>This class is maybe super powerful? I haven&rsquo;t had a chance to playtest it yet, but I suspect that the starting crappiness combined with the hefty strain dice cost will keep there from being too many shenanigans. See the Fiendish magic section below for more on the buying souls thing.</p>
+<p>Also note that my starting equipment is extremely stingy, because I do random equipment by class <a href="http://blessingsofthedicegods.blogspot.com/2018/07/money-equipment-in-fellhold.html">here</a>.</p>
+<p>&ldquo;Base Class&rdquo; below is for those folks who don&rsquo;t use the <a href="http://goblinpunch.blogspot.com/2016/05/the-glog.html">GLOG</a>. Just take that class for experience, saves, gear restrictions, and so forth, and then apply these powers at levels that seem appropriate.</p>
+<h4 id="fiend-class">Fiend Class</h4>
+<p>Fiends as a class are tiny beings that wish to grow their power by gathering souls and worshippers.</p>
+<p><strong>Prime Ability</strong>: Soul Hoarder<br>
+<strong>Per Template</strong>: +1 Casting Die<br>
+<strong>Starting Equipment</strong>: Stead<br>
+<strong>A</strong> Word <strong>B</strong> Ghost Talk, Possess <strong>C</strong> Fools <strong>D</strong> Second Word</p>
+<p>RESTRICTIONS  You cannot take templates in the Fiend Class unless your first template is “Fiend”.  You cannot take souls by force or steal them, you must buy all souls and bits thereof by coming to an agreement, and as a Fiend, you are bound to follow that deal to the letter.</p>
+<p>PERKS  You can turn insubstantial at will (can only interact with the physical world through sense and speaking).  You can disappear and reform at your Stead in 1d3 rounds at will.  You can grow or shrink to any size from that of a mouse to your maximum (1 Size up from Tiny per 6 Con, rounded down)</p>
+<p>CLASS FEATURES<br>
+<em>Soul Hoarder</em>  You begin play Tiny (~2’ tall) and barely substantial, and your Strength, Dexterity, and constitution begin at 1 (roll other stats normally). You have disadvantage on any physical attacks or other rolls against larger foes. You can improve your stats by buying soul bits. You lose any benefits if you lose the associated soul bits. </p>
+<p><em>Word</em>  You have power over one random fiendish word and can cast fiendish spells using it. See Fiendish Magic in the Magic section.</p>
+<p><em>Ghost Talk</em>  You can talk to ghosts at will, but not any other kind dead that you wouldn’t normally be able to speak with. Most ghosts are somewhat faded or mad, and might not have much useful to say, but some might be willing to make deals. Note that ghosts are made up of soul bits.</p>
+<p><em>Possess</em>  You can strive to take over living beings. To do so, choose a number of casting dice to roll. Add [SUM] to your Wisdom and make an opposed Wisdom save (both sides roll, highest roll that still passes wins). Take Strain Dice as usual. You are now in control for a number of rounds equal to your level. Retest at the end of each interval. Three failed rolls in a row change the duration to “Concentrate&rdquo;.  When you leave the body you are possessing, you reappear at your stead. You may not take the body further from your stead than you can normally go.     <em>Fools</em>  You gain a gaggle of worshippers convinced that you will grant them power, wealth, fame, and so forth in exchange for their devotion. They are not skilled, clever, or hardy, but they are very loyal. You may whisper in their minds at any time. The number seems to vary from time to time and place to place, and they stay together as a group, taking up roughly 20’x20’.  If you must know the precise number, there are 1d12+6, but this will vary every time you check. They will strongly prefer to remain within 10’ of you, and their ability to follow complex instructions decreases dramatically if you are not within sight. </p>
+<p>When they are within 10’ of you, any ranged attacks targeting you will hit them instead. Treat all fools as one hireling, with a shared pool of HP at one HD less than you and one action per round. When they lose HP, that number of fools die in a background sort of way. Area of effect spells only affect them once. If reduced to zero HP, they lay on the ground moaning and wounded, and if reduced below zero HP, they die in a tragicomic fashion. New fools will be drawn to you in 1d3 weeks. </p>
+<p>Fools cannot be trusted with any gear, and so have no gear slots and will never fight with anything more than shivs and bites and scratches (1d6, Close).</p>
+<p>If put to work, Fools count as 10 workers for the first hour, 5 for the next, and give up after that without specific threats, promises, or gifts.</p>
+<p>Fools may perform a ritual to call on your power. It takes two full rounds (automatically act last in second round) of chanting and waving their arms about and grants 1 Casting Die toward a use of your Word. You may not invest further casting dice in this spell, but you also take no Strain Dice.</p>
+<p><em>Second Word</em>  You gain a second Word that you use just like your first, or even put them together for new effects. </p>
+<p>SPELL LIST</p>
+<ol>
+<li>Air</li>
+<li>Beasts</li>
+<li>Bone</li>
+<li>Craft</li>
+<li>Dark</li>
+<li>Death</li>
+<li>Earth</li>
+<li>Envy</li>
+<li>Fire</li>
+<li>Flesh</li>
+<li>Greed</li>
+<li>Hunger</li>
+<li>Hiding</li>
+<li>Lies</li>
+<li>Lore</li>
+<li>Luck</li>
+<li>Lust</li>
+<li>Might</li>
+<li>Pride</li>
+<li>Riches</li>
+<li>Rot</li>
+<li>Secrets</li>
+<li>Sickness</li>
+<li>Sloth</li>
+<li>Strength</li>
+<li>Strife</li>
+<li>Tinker</li>
+<li>Water</li>
+<li>Wood</li>
+<li>Wrath</li>
+</ol>
+<p>FIEND MISHAPS</p>
+<ol>
+<li>Gain 1 Strain Die</li>
+<li>Take 1d6 damage</li>
+<li>Effect targets random person or thing</li>
+<li>Lose 1 Casting Die</li>
+<li>Insubstantial 1d6 rounds (can’t interact with physical world, except to sense and speak)</li>
+<li>Lose your physical form. Reform at your stead in 1d3 hours</li>
+</ol>
+<p>FIEND DOOMS</p>
+<ol>
+<li>Unstable: lose your physical form. Reform at your stead in 1d3 hours.</li>
+<li>Unreal: you are insubstantial for 3 days. Cannot interact with the physical world at all except to sense and speak.</li>
+<li>Rejected by the World: reality no longer allows your intrusion, your stead is a mundane item, and you are trapped in the ghost world. </li>
+</ol>
+<p>BASE CLASS<br>
+Elf. (Magic-User if Elf is not a class).</p>
+<!-- raw HTML omitted -->
+<h3 id="fiendish-magic">Fiendish Magic</h3>
+<p>As with the rest of this stuff, this magic system is based on Arnold&rsquo;s <a href="http://goblinpunch.blogspot.com/2016/09/the-glog-wizards.html">GLOG stuff</a>, but with a heavy influence from Skerples&rsquo;s <a href="https://coinsandscrolls.blogspot.com/2018/03/osr-class-sorcerer.html">sorcerer</a>. I also checked out <a href="https://www.drivethrurpg.com/product/185959/Godbound-A-Game-of-Divine-Heroes-Free-Edition">Godbound</a> by <a href="https://www.drivethrurpg.com/browse/pub/3482/Sine-Nomine-Publishing">Kevin Crawford</a>, but other than some inspiration on which words to use, I ended up not using much of that system - it&rsquo;s neat, but I think it works better in a game where that&rsquo;s the whole point, rather than one class&rsquo;s powers. </p>
+<p>I haven&rsquo;t run this yet, so I&rsquo;m not sure how creative players will be or how much of a pain in the ass it will be to GM. Half the reason fiends work this way is that I&rsquo;m too lazy to write spell lists if I can avoid it.</p>
+<p>Oh, and see above for Word List, Mishaps, and Dooms.</p>
+<p>Fiendish Magic  Fiends are made of the stuff of magic, and so can wield powers over a broad range of things related to the kind of magic they’re made of. As such, they have open-ended powers related to a word (or two for higher level fiends). </p>
+<p>WORDS<br>
+<em>Using Words</em>  You are a being with power over one random word from the list below, which will be clearly reflected in your nature. When you wish to shape the world through your word, describe to the GM what you wish to do, who will give you a TN. Roll a number of casting dice of your choice and compare [SUM] to the TN along with your full pool of <em>Strain Dice</em> (see below). The GM will describe what has actually happened. </p>
+<p><em>Guidelines</em>  Setting Target Numbers and assigning Strain Dice are up to the GM, but the below guidelines might prove useful.</p>
+<p>Easy: 3  Challenging: 7  Hard: 10  Mind-Blowing: 14</p>
+<p>Damage: [SUM] + [DICE]  Effect Permanent: Requires 4 CD</p>
+<p>Each Use of Power: +1 SD  More Targets: +1 SD  Area the size of a wagon: +1 SD  Area the size of an apartment: +2 SD  Area the size of a building: +3 SD  Effect lasts [DICE] minutes: +1 SD  Effect lasts [DICE] hours: +1 SD  Effect lasts [DICE] days: +1 SD  Create Something Tangible: +1 SD  Each Step of Size of Thing Created Above Tiny: +1 SD</p>
+<p>EXHAUSTION AND STRAIN DICE<br>
+Unlike other spellcasters, Fiends never exhaust their Casting Dice. Instead, every time they make a casting roll, they add a number of <strong>Strain Dice</strong> to their dice pool determined by the use. Use a different color of dice. Whenever the Fiend casts, they must roll all Strain dice. They do not count for [SUM] or [DICE], but do count for doubles or triples to determine mishaps and Dooms. Strain dice disappear at the witching hour or can be removed through rituals performed by the Fiend’s worshippers. </p>
+<p>WORSHIP<br>
+A fiend’s Fools can perform rituals to grant the fiend more power when casting a single spell or to remove strain dice. Rituals last a number of hours equal to the total number of casting dice to be used or Strain Dice to be removed. If used to cast a spell, the ritual grants one additional casting die, to a maximum number of dice equal to the Fiend’s level (maximum of five casting dice ever). If used to remove Strain Dice, it removes a number equal to the number of hours spent, to a maximum of the Fiend’s level.</p>
+<p>BUYING &amp; SELLING SOUL BITS<br>
+A person may sell one or more of their Soul Bits, either while living, or upon their death. Fiends may buy souls in order to gain specific effects. Anyone else buying a soul or a soul bit simply has the right to do as they please with that bit.</p>
+<!-- raw HTML omitted -->
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2018-08-23</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2019-02-12-removing-support-from-zak-smith/">
+                    Next<br>Removing Support from Zak Smith
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2018-08-22-managing-living-world-with-flexible/">
+                    Previous<br>Managing a Living World with Flexible Reaction Rolls
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

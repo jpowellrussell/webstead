@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html><head>
+<title>Dungeon World, An Echo, Resounding, Refereeing and You</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Dungeon World, An Echo, Resounding, Refereeing and You
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2012-09-16 18:36
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/osr">OSR</a>
+                                &nbsp;
+                            
+                                <a href="/tags/fellhold">Fellhold</a>
+                                &nbsp;
+                            
+                                <a href="/tags/fellhold-campaign">Fellhold Campaign</a>
+                                &nbsp;
+                            
+                                <a href="/tags/rpgs">RPGs</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p><em>(ed: in my original post, I said that Swords &amp; Wizardry WhiteBox was shared under a Creative Commons License, but this was incorrect. It is, in fact, shared under the Open Game License. I&rsquo;ve edited the text below to reflect this)</em></p>
+<p>So, I&rsquo;ve been reading through the ever-excellent Kevin Crawford&rsquo;s <em><a href="http://rpg.drivethrustuff.com/product/99063/An-Echo,-Resounding%3A-A-Sourcebook-for-Lordship-and-War">An Echo, Resounding</a></em>, as well as Sage LaTorra&rsquo;s totally sweet <em><a href="http://www.dungeon-world.com/">Dungeon World</a></em>, switching back and forth between the two of them, and I think there&rsquo;s something really powerful to be made between them.</p>
+<p>For starters, don&rsquo;t get me wrong: both are awesome and great on their own. The sandbox GMing advice in <em><a href="http://www.rpgnow.com/product/89888/Red-Tide%3A-Campaign-Sourcebook-and-Sandbox-Toolkit">Red Tide</a></em> and <em>An Echo, Resounding</em> is useful, flexible, and imminently playable. Where it touches on the specific campaign setting it is evocative enough to get me to want to read more about it despite my firm intention not to play in it. On the other hand, it is light enough and tied enough into standard D&amp;D tropes that any setting-specific content can be easily excised or repurposed. Just about the only thing I&rsquo;m finding a little bit difficult is that some of the assumptions in the Domain Play rules in <em>An Echo, Resounding</em> assume a technology level and social organization consistent with Imperial China/Shogun era Japan. In a more European flavored milieu, some of the social structures described imply a higher technology level/later historical analog. Since I am going for a Iron Age/Dark Age Scandinavian feel (predominantly) with scattered and primitive bits of &ldquo;civilization&rdquo;, assuming that domains can dispatch &ldquo;magistrates&rdquo; or that there are organized mercantile forces pushes in some different directions than I have in mind. Fortunately, I&rsquo;ve done some thinking about bronze/iron age social and economic structure rules, as that is <em>the entire point</em> of my <em>Book of Threes</em> game.</p>
+<p>Which segues me nicely into <em>Dungeon World</em>, given <em>Book of Threes&rsquo;</em> current status as an AW hack. Ever since <a href="http://tonydowler.com/">Tony Dowler</a> threw together some playbooks and GM advice for &ldquo;Apocalypse D&amp;D&rdquo;, I&rsquo;ve been enamored of the implementation of <a href="http://apocalypse-world.com/"><em>Apocalypse World</em></a>&lsquo;s rules to Dungeons and Dragons. Imagine my chagrin when I discovered the <em>Dungeon World</em> kickstarter a week after it was successfully funded. Poop. Fortunately, if you&rsquo;re willing to do some work with InDesign, the rules are available as open source (I had to import XML, since my CS4 InDesign won&rsquo;t open the included InDesign files, and my student discount isn&rsquo;t <em>that</em> good on CS6). At any rate, they&rsquo;ll be getting my money just as soon as the make the book/pdf available for purchase. It really is a fantastic way to get a lot of what is great about D&amp;D and a lot of what is great about these new-fangled story games/story now games/indie games/whatever in the same package. Reading through the rules makes me want to play it/run it like whoah.</p>
+<p>But I&rsquo;ve taken to heart <a href="http://grognardia.blogspot.com/">Mr. Maliszewski&rsquo;s</a> advice on gamer ADD to heart, and I&rsquo;m already having a great time with my <a href="ww.swordsandwizardry.com/?page_id=6">S&amp;WWB</a> Old School campaign, so I&rsquo;m mostly resisting the urge. Mostly. But as I opened the post with, I think there is a lot of use to be found in <em>Dungeon World</em> that can be ported to D&amp;D without too much pain, especially since I loves me some kit-bashing, whether with models or with rules systems. So, following are my thoughts on what I plan to do with <em>Dungeon World</em> while still running a game I can call S&amp;WWB with a straight face.</p>
+<p>First off, I won&rsquo;t be importing any player moves. I thought long and hard about importing some for areas that aren&rsquo;t &ldquo;skills&rdquo; - stuff like &ldquo;Last Breath&rdquo; and &ldquo;When you Make a Perilous Journey&rdquo;. If I ever do import any player moves, it&rsquo;ll be ones like those - stuff that is not a substitute for or supplement to player observation or description of action, but rather a system for covering something that would otherwise purely be me making decisions out of the blue. Because that&rsquo;s where I think <em>Dungeon World</em> has the most to bring to Old School D&amp;D, at least in my case. I don&rsquo;t have nearly 40 years of good Old School Refing practice to fall back on. I do have buy-in to the underlying principles, and I have read through a lot of OSR posts, and I can look back on a fair number of play experiences as emblematic of Old School play, but it&rsquo;s just not automatic to me. So, AW style agendas, principles, and moves are a great way to give myself reminders of how to Old School ref. Fortunately <strong>most</strong> of what&rsquo;s in the <em>Dungeon World</em> GMing sections is congruent with if not representative of Old School refing. What doesn&rsquo;t match up, I&rsquo;m going to tweak.</p>
+<p>Where these tweaks will take shape is in the reference file I&rsquo;m creating for myself. I&rsquo;m taking the Creative Commons Licensed <em>Dungeon World</em> material and chopping it up in InDesign to export into a PDF of just the stuff I want for my current D&amp;D game. With a little more effort I may actually combine it with some of the stuff from <em>Red Tide</em> and <em>An Echo, Resounding</em>, but that stuff is <em>not</em> CCL, so if I do, that would not be quite as releasable as  a fan supplement. If I get <strong>really</strong> ambitious, I just might even take the White Box rules (Open Game License, which is similar to CCL) and combine them with the various Ref aids I end up using, and make a one volume Fellhold Edition ruleset for my own use (or to be shared if anybody cares and if I can wrangle a legal version).</p>
+<p>Now, I think that the traits system (like the tags system in <a href="http://rpg.drivethrustuff.com/product_info.php?products_id=86467&amp;src=SNP_SWN_ImageLink&amp;affiliate_id=323031%20">Stars Without Number</a>, Kevin Crawford&rsquo;s excellent and <strong>free</strong> sci-fi game) in <em>Red Tide</em> and <em>An Echo, Resounding</em> along with the Location rules and Campaign Region rules more generally could have some really awesome interactions with Fronts, Dangers, and Tags from <em>Dungeon World</em>. I&rsquo;m not sure what those interactions are just yet, but they both are modular and evocative in a way that supports individual referee decisions while still making the work easier, and I like that a lot. They also both tie directly into how to make those decisions matter in play and to help in moment-to-moment running of the game, which I definitely appreciate. Again, I&rsquo;ll probably post here when I think of something more concrete about how to merge these systems that are both getting my engine going.</p>
+<p>In the meantime, check out some of those links I included above if you&rsquo;re not already familiar, they are well worth your time if you&rsquo;re at all interested in RPGs of any stripe.</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2012-09-16</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2012-09-17-porting-dungeon-world-gming-rules-to/">
+                    Next<br>Porting Dungeon World&#39;s GMing Rules to White Box, Part 1
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2012-09-13-a-point-of-similarity/">
+                    Previous<br>A Point of Similarity
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

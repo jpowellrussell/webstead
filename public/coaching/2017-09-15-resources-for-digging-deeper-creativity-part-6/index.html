@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html><head>
+<title>Resources for Digging Deeper - Creativity Part 6</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#books" v-on:click="closeDrawer" id="books-nav">
+										 Books
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#strategic-creativity" v-on:click="closeDrawer" id="strategic-creativity-nav">
+										 Strategic Creativity
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#active-divergence" v-on:click="closeDrawer" id="active-divergence-nav">
+										 Active Divergence
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#active-convergence" v-on:click="closeDrawer" id="active-convergence-nav">
+										 Active Convergence
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#focus-concentration-and-mindset" v-on:click="closeDrawer" id="focus-concentration-and-mindset-nav">
+										 Focus, Concentration, and Mindset
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#miscellaneous-tips-and-tricks" v-on:click="closeDrawer" id="miscellaneous-tips-and-tricks-nav">
+										 Miscellaneous Tips and Tricks
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#videos-and-podcasts" v-on:click="closeDrawer" id="videos-and-podcasts-nav">
+										 Videos and Podcasts
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#courses" v-on:click="closeDrawer" id="courses-nav">
+										 Courses
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#conclusion" v-on:click="closeDrawer" id="conclusion-nav">
+										 Conclusion
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#books" v-on:click="closeDrawer" id="books-nav">
+										 Books
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#strategic-creativity" v-on:click="closeDrawer" id="strategic-creativity-nav">
+										 Strategic Creativity
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#active-divergence" v-on:click="closeDrawer" id="active-divergence-nav">
+										 Active Divergence
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#active-convergence" v-on:click="closeDrawer" id="active-convergence-nav">
+										 Active Convergence
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#focus-concentration-and-mindset" v-on:click="closeDrawer" id="focus-concentration-and-mindset-nav">
+										 Focus, Concentration, and Mindset
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#miscellaneous-tips-and-tricks" v-on:click="closeDrawer" id="miscellaneous-tips-and-tricks-nav">
+										 Miscellaneous Tips and Tricks
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#videos-and-podcasts" v-on:click="closeDrawer" id="videos-and-podcasts-nav">
+										 Videos and Podcasts
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#courses" v-on:click="closeDrawer" id="courses-nav">
+										 Courses
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#conclusion" v-on:click="closeDrawer" id="conclusion-nav">
+										 Conclusion
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Resources for Digging Deeper - Creativity Part 6
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2017-09-15 00:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Coaching]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/creativity">Creativity</a>
+                                &nbsp;
+                            
+                                <a href="/tags/reading">Reading</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>This is our last installment in the current series on creativity, but don’t expect it to be the last you hear about creativity in this space. Now that we’ve gone through <a href="https://www.jeffrussellcoaching.com/coaching-blog/2017/8/11/creativity-part-1-defining-creativity">definitions</a>, <a href="https://www.jeffrussellcoaching.com/coaching-blog/2017/8/17/the-building-blocks-of-creativity">building blocks</a>, <a href="https://www.jeffrussellcoaching.com/coaching-blog/2017/8/25/practicing-divergent-convergent-thinking-creativity-part-3">divergence and convergence exercises</a>, <a href="https://www.jeffrussellcoaching.com/coaching-blog/2017/9/1/two-creativity-frameworks-creativity-part-4">frameworks</a>, and <a href="https://www.jeffrussellcoaching.com/coaching-blog/2017/9/8/maximize-the-value-of-your-creative-inputs-creativity-part-4">inputs</a>, I want to provide a list of resources you can use to continue to explore on your own.</p>
+<h2 id="books">Books</h2>
+<p>As will surprise no one, I read a lot of books, so today’s list is heavy on books. Here are some of my favorites and my thoughts on them. I’ve divided them up into categories based on what part of the creative process they’ll help out the most with.</p>
+<h3 id="strategic-creativity">Strategic Creativity</h3>
+<p>These books focus on the higher level questions associated with creativity: what problems do you apply your creative process to? what habits do you cultivate for improved creativity in the long term? what conceptual models do you bring to your efforts?</p>
+<p><a href="https://smile.amazon.com/Art-Learning-Journey-Pursuit-Excellence-ebook/dp/B000QCQ970/ref=sr_1_1?ie=UTF8&amp;qid=1505443400&amp;sr=8-1&amp;keywords=the+art+of+learning">The Art of Learning</a></p>
+<p>I’ve mentioned this book before as one of my <a href="https://www.jeffrussellcoaching.com/coaching-blog/2017/7/14/my-operating-manuals-for-life">Operating Manuals</a>, but today I want to emphasize its advice on cultivating a commitment to quality and building in structures of ebb and flow, stress and relaxation, into your life. On first read through, this book comes off as a bit esoteric and hard to apply, but that is because it provides principles important enough to span multiple disciplines, and you will have to figure out how to apply them to your areas of concern. When you do, though, the payoff is pretty great. Read this book if you are especially interested in deeply mastering a field or if you want to improve your ability both to “turn it on” and “turn it off”.</p>
+<p><a href="https://smile.amazon.com/Technique-Producing-Ideas-James-Young-ebook/dp/B00N33OYPI/ref=sr_1_1?ie=UTF8&amp;qid=1505445424&amp;sr=8-1&amp;keywords=a+technique+for+producing+ideas">A Technique for Producing Ideas</a></p>
+<p>We covered this in detail in a <a href="https://www.jeffrussellcoaching.com/coaching-blog/2017/9/1/two-creativity-frameworks-creativity-part-4">previous post</a> in this series, but it really is worth including again. Of all the books in this section, this one is the most straightforwardly actionable - it provides a step by step framework to use. The scope of the framework, though, is broad enough that I think it appropriately fits into the realm of the strategic. Read this book if you need advice on how to structure your work when presented with a problem that calls for creativity.</p>
+<p><a href="https://smile.amazon.com/Where-Good-Ideas-Steven-Johnson-ebook/dp/B003ZK58TA/ref=sr_1_1?s=digital-text&amp;ie=UTF8&amp;qid=1505445448&amp;sr=1-1&amp;keywords=where+good+ideas+come+from">Where Good Ideas Come From</a></p>
+<p>I have wanted to talk about this book in this series so many times, but all I’ve been able to swing is a mention here and there. It is a fascinating and entertaining look at the commonalities between innovators in fields as diverse as biology, literature, and air conditioning invention. From a practical standpoint, it gives guidance on how to cultivate those commonalities in your life - such as living and interacting with “liquid networks”, taking notes in a way that lets you develop “slow hunches”, and allowing “fuzzy connection making”. Read this book if you want structure your life in a way that maximizes your potential to innovate.</p>
+<p><a href="https://smile.amazon.com/Zero-One-Notes-Startups-Future-ebook/dp/B00J6YBOFQ/ref=sr_1_1?s=digital-text&amp;ie=UTF8&amp;qid=1505445474&amp;sr=1-1&amp;keywords=zero+to+one">Zero to One</a></p>
+<p>Though it focuses on building a start up, the core thesis of this book is that start ups are near perfect vehicles for world-changing innovation, but to make that happen, you have to think about the world in certain ways. The most provocative way this book recommends is to seek out “secrets” - things that you know or suspect and the rest of the world either doesn’t know or thinks is ridiculous - and then use those secrets to build a monopoly in a field.  To find such secrets, Thiel suggests that you ask yourself “what are things that I believe that everyone else thinks are ridiculous?” Read this book if you are trying to figure out why creativity matters or how you can change the world with it.</p>
+<h3 id="active-divergence">Active Divergence</h3>
+<p>The core habit for active divergence - practicing idea generation - is extremely simple and will take you far, but if you are looking for more resources on how to stretch your brain to have more and different ideas, these books will help.</p>
+<p><a href="https://smile.amazon.com/Become-Idea-Machine-Because-Currency/dp/B00UG9DWKK/ref=sr_1_1?s=digital-text&amp;ie=UTF8&amp;qid=1505445505&amp;sr=1-1&amp;keywords=become+an+idea+machine">Become an Idea Machine</a></p>
+<p>This small book takes the idea generation practice I encountered in <a href="https://smile.amazon.com/Choose-Yourself-Guide-Wealth-ebook/dp/B00U7IS4S0/ref=sr_1_1?ie=UTF8&amp;qid=1505441181&amp;sr=8-1&amp;keywords=choose+yourself+guide+to+wealth">The Choose Yourself Guide to Wealth</a> and recommended in <a href="https://www.jeffrussellcoaching.com/coaching-blog/2017/8/25/practicing-divergent-convergent-thinking-creativity-part-3">my post</a> and provides you with a bunch of prompts to get you going. In addition to specific prompts it also provides some advice on how to make sure you’re still stretching yourself with your practice and what to do when you want to start moving from having a lot of ideas to having good ideas with techniques like “idea sex” and “10 things I learned from _____”. Read this book if you feel intimidated by getting started in active divergence or you feel like you’ve hit a plateau.</p>
+<p><a href="https://smile.amazon.com/Lateral-Thinking-Creativity-Step-ebook/dp/B003V1WTLI/ref=sr_1_1?s=digital-text&amp;ie=UTF8&amp;qid=1505445608&amp;sr=1-1&amp;keywords=lateral+thinking">Lateral Thinking</a></p>
+<p>A classic in the creativity field for a reason, in addition to a wonderful definition of what lateral thinking is and how it complements linear reasoning, it contains dozens of exercises designed for teachers to use with their students. The good news is that the activities are not particularly age-specific, so you can use them yourself, no teacher required! Read this book if you want more of the theoretical underpinning of why divergence is important, or if you need more diverse exercises.</p>
+<p><a href="https://smile.amazon.com/Whack-Side-Head-More-Creative-ebook/dp/B005DO9TW8/ref=sr_1_1?s=digital-text&amp;ie=UTF8&amp;qid=1505445626&amp;sr=1-1&amp;keywords=a+whack+on+the+side+of+the+head">A Whack on the Side of the Head</a></p>
+<p>This delightfully irreverent book focuses on using playfulness and the unexpected to generate novel solutions. My favorite suggestion from the book is its recommendation to use “oracles” - something that provides arbitrary responses which you have to apply to your current situation. Read this book if you are looking for ways to get unstuck in your divergence process or if you want to inject some fun into your creative process.</p>
+<h3 id="active-convergence">Active Convergence</h3>
+<p><a href="https://smile.amazon.com/Gamestorming-Playbook-Innovators-Rulebreakers-Changemakers-ebook/dp/B003XDUCLS/ref=sr_1_1?s=digital-text&amp;ie=UTF8&amp;qid=1505445647&amp;sr=1-1&amp;keywords=gamestorming">Gamestorming</a></p>
+<p>This book contains a number of group facilitation tips and tricks that will be familiar to most consultants but might be totally new in other fields. While it includes exercises that facilitate divergence as well, I have found it most useful for its suggestions on different ways to converge - from affinity mapping to dot voting, this book has a ton of interactive group activities that can help you sift through your ideas and find the good ones. Read this book if you are looking for ways to help your team identify what’s valuable.</p>
+<h3 id="focus-concentration-and-mindset">Focus, Concentration, and Mindset</h3>
+<p><a href="https://smile.amazon.com/Deep-Work-Focused-Success-Distracted-ebook/dp/B00X47ZVXM/ref=sr_1_1?s=digital-text&amp;ie=UTF8&amp;qid=1505445663&amp;sr=1-1&amp;keywords=deep+work">Deep Work</a></p>
+<p>Another one of my <a href="https://www.jeffrussellcoaching.com/coaching-blog/2017/7/14/my-operating-manuals-for-life">Operating Manuals</a>, in this book Cal Newport lays out how to focus on work that really matters and build a career based on quality and insight. It includes advice on how to structure your time dedicated to deep work based on the requirements of your career, how to negotiate a shallow work budget with your boss, and a method for weighing the pros and cons of digital tools for your life and work. My single favorite technique from the book is to practice being bored, so that you can learn to work through roadblocks in your creative process. Read this book if you want to tune out distractions and think hard about things to improve the quality of your insights.</p>
+<p><a href="https://smile.amazon.com/War-Art-Steven-Pressfield-ebook/dp/B007A4SDCG/ref=sr_1_1?s=digital-text&amp;ie=UTF8&amp;qid=1505445678&amp;sr=1-1&amp;keywords=war+of+art">The War of Art</a></p>
+<p>You may be sensing a theme, here, but creativity is a critical aspect of how I try to run my life, so we have yet another Operating Manual. This short book is a dose of strong, bracing medicine - Steven Pressfield takes the hardass logic of a Marine and applies it to creative endeavors. Not feeling inspired? Tough, do the work. How do you guarantee creative output? Sit your ass down and work every day. Read this book if you need a dose of equal parts tough love and inspiration to work on that important project you keep putting off.</p>
+<h3 id="miscellaneous-tips-and-tricks">Miscellaneous Tips and Tricks</h3>
+<p><a href="https://smile.amazon.com/Mind-Performance-Hacks-Tools-Overclocking-ebook/dp/B0043D2EN6/ref=sr_1_1?s=digital-text&amp;ie=UTF8&amp;qid=1505445702&amp;sr=1-1&amp;keywords=mind+performance+hacks">Mind Performance Hacks</a></p>
+<p>I first read this book years ago in college, and I absolutely love it. The author’s stated intent is to help you be more like a <a href="https://en.wikipedia.org/wiki/Mentat">mentat</a>, which is just fine with me. It covers a diversity of topics from improving memory to mental clarity to, yes, creativity. This book served as my exposure to topics that would later become deeply important to me like meditation, breathing exercises, and the link between physical and mental fitness. Published by <a href="https://www.oreilly.com/">O’Reilly</a> it has the easy referenceability of a well-executed technical manual. I also discovered while working on this post that the author has a <a href="https://smile.amazon.com/Mindhacker-Tips-Tricks-Games-Level-ebook/dp/B005LGUMKQ/ref=sr_1_2?s=digital-text&amp;ie=UTF8&amp;qid=1505445702&amp;sr=1-2&amp;keywords=mind+performance+hacks">new book</a> out on similar topics that I am eager to check out. Read this book if you want to get excited about all of the ways you can improve your brain.</p>
+<p><a href="https://smile.amazon.com/Tools-Titans-Billionaires-World-Class-Performers-ebook/dp/B01HSMRWNU/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1505445877&amp;sr=1-1&amp;keywords=tools+of+titans">Tools of Titans</a></p>
+<p>Okay, last Operating Manual, I promise. This book has so much high quality stuff, but most of what will be directly relevant to creativity will be in the Wealthy and Wise sections. Robert Rodriguez’s chapter in particular was an unexpected gem on the subject. Josh Waitzkin’s chapter also presents a lot of what is in <a href="https://smile.amazon.com/Art-Learning-Journey-Pursuit-Excellence-ebook/dp/B000QCQ970/ref=sr_1_1?ie=UTF8&amp;qid=1505443400&amp;sr=8-1&amp;keywords=the+art+of+learning">The Art of Learning</a> in a compressed way if you want to get a taste. “Testing the ‘Impossible’: 17 Questions that Changed My Life” is available as a <a href="https://tim.blog/2016/12/07/testing-the-impossible-17-questions-that-changed-my-life/">podcast</a> and presents a useful set of lenses by which to re-assess a situation, which can lead to some great creative insights. Read this book if you want a relentless focus on practical advice that incorporates creativity into a wider goal of achievement and fulfillment.</p>
+<h2 id="videos-and-podcasts">Videos and Podcasts</h2>
+<p>Not everybody shares my predilection for books, and many process information better by <a href="http://academic.udayton.edu/lawrenceulrich/LeaderArticles/Drucker%20Managing%20Oneself.pdf">listening rather than reading</a>. If you are one of these people, I think you’ll enjoy the some of these videos, talks, and podcasts.</p>
+<p><a href="https://unmistakablecreative.com/">Unmistakable Creative</a></p>
+<p>This delightful podcast interviews high performers in a variety of fields and focuses on the creative aspects of what they do. While the episodes stop short of digging in as much as the Tim Ferriss Show, they are also much shorter. I tend to use this as a way to be exposed to people and fields I wouldn’t otherwise have looked into. Listen to this podcast if you want to get inside the heads of a diverse group of high performing creative people.</p>
+<p><a href="https://tim.blog/podcast/">Tim Ferriss Show</a></p>
+<p>I owe this show a huge debt for introducing me to a lot of the best stuff that has contributed to my thinking on creativity, including Josh Waitzkin and James Altucher. Tim gets an unbelievably diverse set of people from <a href="https://tim.blog/2015/02/02/arnold-schwarzenegger/">governators</a> to <a href="https://tim.blog/2015/05/30/chris-sacca/">billionaires</a> to <a href="https://tim.blog/2015/09/07/the-iceman-wim-hof/">crazy dutchmen</a>. I am always pleasantly surprised by how much I get out of episodes that initially sound uninteresting to me - like most of the diet and exercise focused ones, for example. Listen to this podcast if you want to go way deep with some amazing people or if <a href="https://smile.amazon.com/Tools-Titans-Billionaires-World-Class-Performers-ebook/dp/B01HSMRWNU/ref=sr_1_1?ie=UTF8&amp;qid=1505443713&amp;sr=8-1&amp;keywords=tools+of+titans">Tools of Titans</a> sounds great, but you’re not much of a reader.</p>
+<p><a href="https://www.ted.com/talks">TED Talks</a></p>
+<p>There are lots of great TED talks out there, and big surprise, several of them are about creativity. This <a href="http://motto.time.com/4256296/ted-talks-creativity/">article</a> breaks down some of the best. I can vouch for Eilzabeth Gilbert’s <a href="https://www.ted.com/talks/elizabeth_gilbert_on_genius">talk</a>. She talks about how useful it is for writers (and other creatives) to view inspiration as an external force coming from a muse outside of their control - because it removes the pressure of trying to be great. Instead, you just have to show up and do the work, and when the muse wants to visit, she does. It does a lot of the same work as War of Art above. Watch this talk if you keep putting off starting that creative pursuit because you’re afraid it won’t be good enough.</p>
+<p><a href="http://www.thejohncleese.com/">John Cleese</a> </p>
+<p>A few years back, I went down a rabbit hole of googling “John Cleese on creativity” and discovered that after his illustrious career in comedy following founding <a href="https://en.wikipedia.org/wiki/Monty_Python%27s_Flying_Circus">Monty Python’s Flying Circus</a>, he has spent the last several years as a creativity consultant of sorts, and he has given a number of talks and appeared on shows and the like. My favorite concept is where he talks about giving yourself <a href="https://www.youtube.com/watch?v=Pb5oIIPO62g">time and an appropriate environment to be creative</a> (oh, and humor helps too) - which will sound familiar to readers of <a href="https://smile.amazon.com/Deep-Work-Focused-Success-Distracted-ebook/dp/B00X47ZVXM/ref=sr_1_1?ie=UTF8&amp;qid=1505444434&amp;sr=8-1&amp;keywords=deep+work">Deep Work</a>. Some other good choices are <a href="https://www.youtube.com/watch?v=DMpdPrm6Ul4">here</a> and <a href="https://www.youtube.com/watch?v=L6Mqw1aY0cs">here</a>. Watch these videos if you want good, solid advice on creativity from someone who has been there and done that delivered in a charming English accent.</p>
+<h2 id="courses">Courses</h2>
+<p>Finally, creativity is all about practice and one of the best investments you can make is in a course. We’ve covered a chunk of the <a href="http://www.basadur.com/">Basadur Applied Creativity process</a>, but a day long course will be literally life-changing. Unless you practice, you can’t really internalize a rigorous step-by-step approach to problem solving, and we all make mistakes when learning. A course solves that problem by including a skilled facilitator who knows where people are most likely to fall back on old habits and how to step in and address them. Also, you’ll get to explore your <a href="https://www.basadurprofile.com/default.aspx">problem solving profile</a>, which will blow you away when you start seeing how relevant it is in the workplace. I’m sure there are lots of valuable creativity classes and events to attend, but I can whole heartedly endorse this one from experience, and I hope you get the chance to do so as well.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>This brings us to the end of our current series on creativity, but we’ll continue to explore creativity here in the future. Creativity is vitally important in our fast changing world, and can’t be safely relegated to scruffy “creatives” in some other building - we all need it. I hope that this series has already helped you be more creative and given you some great areas to look more deeply into.</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2017-09-15</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/reading/extreme-ownership/">
+                    Next<br>Extreme Ownership
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/reading/ego-is-the-enemy/">
+                    Previous<br>Ego is the Enemy
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

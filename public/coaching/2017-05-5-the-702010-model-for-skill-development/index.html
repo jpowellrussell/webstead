@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html><head>
+<title>The 70/20/10 Model for Skill Development</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    The 70/20/10 Model for Skill Development
+                    
+                    <div class="post-meta">
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Coaching]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/learning">Learning</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>If you spend any time around corporate learning and development types, you will likely run into the “70/20/10 Rule”. Today we’re going to talk about what it is and what it isn’t, some important cautions in making use of it, why it can be a useful heuristic, and what each component of the ratio is and how it applies to learning valuable skills. If you’re not familiar, I hope you find it a new and useful tool, and if you are, I hope to shed some new light on the subject.</p>
+<p>First off, let’s put some important caveats on the table. Everyone has different <a href="https://www.bowdoin.edu/baldwin-program/student-resources/learning-styles.shtml">learning preferences</a> and these <a href="https://www.scotthyoung.com/blog/2014/08/10/7-principles-learn-better-science/"><em>might</em></a> translate into easier times learning any topic when translated into your preferred preference (more on that another time). So different people’s balances of these ratios might differ. Also, through hard work and smart strategizing you can <a href="https://www.scotthyoung.com/blog/2016/07/28/ultralearn-diy-1/">develop techniques</a> to to learn <a href="https://www.scotthyoung.com/blog/2016/08/02/ultralearning-diy-2/">more efficiently</a> than the norm that may or may not follow the split described by this theory. Finally, the 70/20/10 “rule” itself was the empirical, <em>descriptive</em> finding of a self-reported survey of several executives looking back on how they had learned what they knew (with all of the <a href="http://www.sciencebrainwaves.com/the-dangers-of-self-report/">problems inherent</a> in self-reported data of any kind), and its authors claim it was <a href="https://www.td.org/Publications/Blogs/Science-of-Learning-Blog/2014/07/70-20-10-Where-Is-the-Evidence">never meant to be used prescriptively</a>.</p>
+<p>With those out of the way, I want to get into a few reasons why I still think the 70/20/10 rule works as a useful heuristic. First off, it acknowledges the unpleasant reality that most of us don’t have as much time to dedicate to “pure” learning as we would like. I, for one, would love to be able to read and attend classes all the time, but that’s not the situation most of us find ourselves in day to day. Instead, the model helps us perform a bit of mental ju jitsu, flipping “just working” over into the biggest opportunity for learning we have every day. Secondly, it explicitly calls out the role of <a href="http://www.iwillteachyoutoberich.com/blog/how-to-get-the-attention-of-your-favorite-expert-new-detailed-post/">finding a good mentor</a> and gives you a pretty good indication of how much you should be bothering them versus figuring stuff out on your own. Finally, I like the way that it unifies classroom learning, guidance from mentors, and on the job experience into a cohesive whole - you need all of these things to turn a concept into something you deeply internalize.</p>
+<p>So, according to this model, seventy percent of your learning is going to be “on the job” or “learn by doing”. As any of us who have spent much time in the workplace know, time spent working on a subject is a necessary but not sufficient component for mastery. I think it’s important to emphasize the role <a href="http://jamesclear.com/deliberate-practice-theory">deliberate practice</a> plays here. There is, of course, a whole spectrum between being physically but not mentally present versus practicing with the intensity of a <a href="http://www.joshwaitzkin.com/">Chess Master</a>, but the central idea is twofold: 1) doing the right things for learning, and 2) doing them with intent and feedback. In some ways the first point is easier: as much as you can, steer your work towards those skills and abilities you want to improve. This can prove challenging in a corporate job, especially early on in your career, so you may have to create some excuses for practice of your own: start freelancing, write a blog, or begin a project that forces you to practice.</p>
+<p>The second point is quite challenging. For true <em>deliberate</em> practice, you need to have a specific, narrowly defined piece of skill you’re pursuing, and you need immediate feedback if you’re getting it right - for example, you could be trying to reduce ums, uhs, and other filler words from your speech. So you would start extemporaneous speech of some kind and record yourself, then go back and listen to when you did it. And then repeat. Over and over again. Most folks can only achieve this level of focused concentration for a max of an hour or so a day, up to four for truly dedicated, long-practicing <a href="http://projects.ict.usc.edu/itw/gel/EricssonDeliberatePracticePR93.pdf">masters of learning</a>. So I recommend you reserve that level of study for the top one thing you are serious about mastering right now.</p>
+<p>After on the job training, the next biggest component of this rule is mentorship and guidance from more experienced people in your field. This is a critical area, but I want to emphasize a slightly counter-intuitive point: look how <em>small</em> this part is. Twenty percent. If you are bugging your boss for every little thing, you’re doing it wrong. Much of your learning will come from making a start and only <em>then</em> reviewing it with your mentor. You will also build stronger relationships with them if you show yourself to be someone who gets things done on your own whenever you can and only comes for help after putting in good, honest effort. That being said, there will be times that you are literally stumped, and it’s a better use of everyone’s time for you to “<a href="https://www.youtube.com/watch?v=iyFijjikkeM">phone home</a>”. I also want to emphasize that not every mentor has to work for your company, live in your town, or even be alive. You can learn a hell of a lot of great stuff from <a href="http://www.stevenpressfield.com/">authors</a>, <a href="https://en.wikipedia.org/wiki/Seneca_the_Younger">philosophers</a>, <a href="https://www.tonyrobbins.com/documentary/">gurus</a>, and <a href="https://smile.amazon.com/Tools-Titans-Billionaires-World-Class-Performers-ebook/dp/B01HSMRWNU/ref=sr_1_1?ie=UTF8&amp;qid=1493938485&amp;sr=8-1&amp;keywords=tools+of+titans">accomplished people of all sorts</a> through books and films. Don’t discount this one-way mentoring! It might <a href="https://www.usna.edu/Ethics/_files/documents/stoicism1.pdf">save your life</a>. That being said, living, breathing mentors are a fantastic resource, and you should build strong relationships with people more experienced than yourself as much as possible. Just remember to always focus on bringing <em>them</em> value - <a href="http://www.iwillteachyoutoberich.com/blog/why-successful-people-dont-want-to-mentor-you/">not on all the ways they can help you</a>.</p>
+<p>Finally, clocking in at only ten percent, we have what most of us think of when we hear the word “learning” - formal instruction and tutorials. As I said, I’m a huge fan of this particular piece, but I’ve had to learn that there’s some danger there. Learning can be a <a href="http://tim.blog/2015/12/19/25-great-things-i-learned-from-podcast-guests-in-2015/">“virtuous” way to procrastinate</a>. Assuming we’re not just binging on seminars and courses like junkies, I like the perspective this model brings: the course is just the tiny tip of the iceberg. You have to put in the work to make it real by applying it in your everyday life and seeking perspectives outside your own to put it in context. If you’re really going to get the most out of a course, when you get your certificate or walk out the door, you’re <em>just getting started</em>. This is yet another great lesson in learning to <a href="https://www.goodreads.com/quotes/1394795-you-have-the-right-to-work-but-for-the-work-s">love the process</a>. The 70/20/10 model gives you a pretty reasonable estimate to use as a starting point in figuring out how much additional time and effort you need to plan on for incorporating what you learn from any given course, book, or event.</p>
+<p>So, as we mentioned, this “rule” is by no means a hard and fast fact of neuroscience or pedagogy, but is instead a useful tool to add to your kit. Do you find yourself consuming a lot of learning content but not practicing? Maybe you need to put more focus on applying what you learn to day-to-day activities. Feel like you’ve plateaued  in connecting conceptual material to your day job? Ask someone with more experience for some perspective. Enjoying challenging work and a supportive mentor, but there&rsquo;s nothing new? Might be time for some new coursework. If nothing else, remember that learning is a holistic effort that isn’t confined to classrooms and textbooks, but is the effort of your whole life.</p>
+
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/coaching/2017-11-3-storytelling-part-2-structure/">
+                    Next<br>Storytelling Part 2 - Structure
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/coaching/2018-02-5-the-bliss-of-a-bizarro-book-club/">
+                    Previous<br>The Bliss of a Bizarro Book Club
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

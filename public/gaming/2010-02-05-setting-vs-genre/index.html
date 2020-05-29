@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html><head>
+<title>Setting vs Genre</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Setting vs Genre
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2010-02-05 03:52
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/rpgs">RPGs</a>
+                                &nbsp;
+                            
+                                <a href="/tags/theory">Theory</a>
+                                &nbsp;
+                            
+                                <a href="/tags/projects">Projects</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>Right now I want to talk about a distinction I recently came up with between setting and genre. Both get used pretty interchangeably with respect to RPGs, with setting usually having a slightly narrower focus. And either one is usually considered fairly separate from rules issues. But in a discussion of whether it was better to have specific rules for every game setting, or to have a great set of generic rules to use in whatever setting, I realized something about the interaction of the game rules and the game world that I think warrants a distinction in terms.</p>
+<p>I realized that game rules have more to do with what the people in the world can do, and what sorts of things are likely to happen. More focused on the action and tone than on the physical places, objects and people. Pretty arbitrarily, I decided &lsquo;genre&rsquo; fits this category.</p>
+<p>Separate from genre, then, is setting. By setting here, I mean the actual physical characteristics. The scenery, the playable races, the technology level, and so forth.</p>
+<p>Of course, these two categories interact and overlap to a fair degree, but some examples might help to clarify what I mean, and then I&rsquo;ll go into why I think rules affect genre more than setting.</p>
+<p>Let&rsquo;s say you have two games with similar settings. Both take place over many planets, have people and aliens with spaceships and guns, and include faster than light travel, lasers, and psychic powers. But in one of these settings, psychic powers come from tapping into a dangerous and largely hostile alternate dimension, humanity is xenophobic and backwards, technology is little understood and maintained by a semi-mystical priesthood, and there is only war. In the other, psychic powers represent the next step in evolution, humans interact with aliens in a number of ways, including trade, diplomacy, and war, technology is basically an extrapolation of what is currently understood, and one piece of it is the last, best hope for peace.</p>
+<p>As you can see, the physical elements of both settings have little to distinguish them, but what those worlds <em>do</em> with these things makes all the difference in the world. While both have &lsquo;space&rsquo; as a setting, one has a genre of &lsquo;gothic science fantasy&rsquo; while the other might be called &lsquo;hard science political drama&rsquo; (or, you might call one &lsquo;Warhammer 40,000&rsquo; and the other &lsquo;Babylon 5&rsquo;, but you get the idea).</p>
+<p>It is my suspicion that game rules have more influence on genre than they do on setting. I&rsquo;m pretty sure that if you made a space game with minimally modified D&amp;D rules, it would still &lsquo;feel&rsquo; like heroic fantasy, even though your barbarian has chain axes and your space elf has a laser bow, or whatever. Or else you get Spelljammer. That would also explain why you have had for a long time a number of campaign settings for D&amp;D with minimal rules tweaks, but those that change the genre significantly from heroic fantasy have had the most significant rules changes (like horror in Ravenloft or post-apocalyptic survival in Dark Sun).</p>
+<p>A good rule of thumb for finding the difference between setting and genre is to take a game world (or movie world or whatever) and see if you can describe it as some cliche or familiar genre in X (where X describes a difference in physical location). Some example might include:</p>
+<ul>
+<li>
+<p><em>&ldquo;It&rsquo;s a western in Space&rdquo;</em></p>
+</li>
+<li>
+<p><em>&ldquo;It&rsquo;s like cyberpunk in the wild west, but with steam power&rdquo;</em></p>
+</li>
+<li>
+<p><em>&ldquo;It&rsquo;s like a medieval x-files&rdquo;</em></p>
+</li>
+</ul>
+<p>So, where all this gets me is that the goal of rules design is to come up with rules that reinforce the genre of a game rather than trying to capture aspects of the setting. If your setting has elves, that&rsquo;s cool and all, but if they&rsquo;re just tall, pretty people they don&rsquo;t really need different rules. But if elven culture causes them to act in very different ways, or if subtle differences in their physiology makes them move differently, then rules can reinforce that.</p>
+<p>Agon does an amazing job of defining its genre through rules, and even suggests multiple settings in addition to the default of ancient Greek mythology that would use the same genre.</p>
+<p>So, is this a useful distinction? Or is it splitting hairs?</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2010-02-05</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2010-02-05-a-matter-of-taste/">
+                    Next<br>A Matter of Taste
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2010-02-05-rules-and-roleplaying/">
+                    Previous<br>Rules and Roleplaying
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

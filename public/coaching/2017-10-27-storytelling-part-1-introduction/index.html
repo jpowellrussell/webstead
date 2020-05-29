@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html><head>
+<title>Storytelling Part 1 - Introduction</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Storytelling Part 1 - Introduction
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2017-10-27 00:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Coaching]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/storytelling">Storytelling</a>
+                                &nbsp;
+                            
+                                <a href="/tags/creativity">Creativity</a>
+                                &nbsp;
+                            
+                                <a href="/tags/communication">Communication</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>Anyone who wants to communicate with other humans needs storytelling, but most folks have no idea what it really is, much less how to improve it. Some people even have the misguided notion that storytelling is worthless fluff. With this series, we’ll clear up that misconception and then cover the best techniques for improving your storytelling.</p>
+<p>As we did with <a href="https://www.jeffrussellcoaching.com/coaching-blog/2017/8/11/creativity-part-1-defining-creativity">creativity</a>, let’s begin by defining “storytelling”. You’ve probably heard it used in a number of contexts. Some folks use it to mean the ancient tradition of <a href="http://www.houstonstorytellers.org/">oral storytelling</a> - like you do around a campfire. Others use it to refer to the craft of <a href="http://www.storygrid.com/">writing</a> or making <a href="http://www.indiewire.com/2013/09/pixars-22-rules-of-storytelling-presented-with-film-stills-from-pixar-films-34932/">movies</a> or even <a href="http://scottmccloud.com/2-print/1-uc/">comics</a>. Personally, I define storytelling in a way common to all of these media: the synthesis of structure, content, and delivery used to convey meaning. Now let’s break that down into its component parts. Structure is how you organize the elements of your story, content is the information and impressions  conveyed, and delivery is the combination of methods relevant to your medium. When you bring all of these things together, you get a story, whatever your vehicle.</p>
+<p>Now that we know what storytelling is, why do we care? Most of us don’t get paid to make movies or write novels, so what do we need with hoity-toity storytelling? It turns out, anyone who ever needs to get other humans to understand or remember something needs storytelling. People are more likely to <a href="https://hbr.org/2014/10/why-your-brain-loves-good-storytelling">pay attention</a> to stories and more likely to <a href="https://womensleadership.stanford.edu/stories">remember</a> them, even on the scale of <a href="http://longnow.org/seminars/02015/jun/09/how-stories-last/">generations</a>. Our brains love narratives so much that we even <a href="https://wiki.lesswrong.com/wiki/Narrative_fallacy">invent them where they don’t exist</a>. Heck, forget about other people - you can even use storytelling to help yourself <a href="https://www.mindtools.com/pages/article/newTIM_01.htm">remember things better</a>. The good news is that you can secure these benefits in any field that requires communicating with other people by improving your storytelling.</p>
+<p>Many people see storytelling as a nice extra at best, and at worst as <a href="https://www.quora.com/What-are-good-storytelling-techniques-for-startup-pitches">useless embellishment</a> that distracts from what matters. Even if you accept that storytelling is useful, you might see it as a mysterious knack that some people just have. Fortunately, when you take a look at storytelling, you discover that it can get results and can be practiced. Notice that above we included content as one of the building blocks of storytelling: you can’t tell a good story without material suited to its purpose.</p>
+<p>The amount and kind of content required by a story will vary based on what you’re doing with it. A <a href="https://www.mcsweeneys.net/articles/pirate-riddles-for-sophisticates">joke</a> can be pretty light on content, because the humor comes from the structure and delivery. On the other hand, if you try to ask for a huge investment with nothing but pretty slides well-ordered buzzwords, you’re gonna have a bad time. Since content is going to be specific to what stories you decide to tell, we’re not going to talk about it so much here. I’m assuming that you’re good on the content you want to share, but looking at storytelling’s other two components points the way to improving: master the structures and delivery techniques relevant to your chosen field of storytelling.</p>
+<p>We’ll focus on the <a href="https://en.wikipedia.org/wiki/Pareto_principle">80/20</a> of storytelling by covering three foundational skills: structure, practice, and delivery. On each topic I’ll detail the efforts that will have <a href="https://breakingmuscle.com/fitness/what-is-the-minimum-effective-dose-my-tim-ferriss-obsession-confession">the biggest impact for the least effort necessary</a>. We’ll go over techniques relevant to written, spoken, and visual storytelling. Even though this series will only present foundational approaches, we’ll close with a list of resources that you can dive into if you really catch the storytelling bug.</p>
+<p>Now that we’ve arrived at a better understanding of what storytelling is and why it matters, I hope you’re as excited as I am to jump into ways to get better. Improving my storytelling has had unexpected and exciting ripple effects throughout my life, and I can’t wait to hear about how you experience the same.</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2017-10-27</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/reading/the-story-grid/">
+                    Next<br>The Story Grid
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/coaching/2017-10-20-make-decisions-like-a-boss/">
+                    Previous<br>Make Decisions Like a Boss
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

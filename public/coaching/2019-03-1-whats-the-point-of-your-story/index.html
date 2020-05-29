@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html><head>
+<title>What&#39;s the Point of Your Story?</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    What&#39;s the Point of Your Story?
+                    
+                    <div class="post-meta">
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Coaching]</a>
+                                &nbsp;
+                        
+
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>When we think of storytelling, we tend to focus on <a href="https://www.jeffrussellcoaching.com/coaching-blog/2017/11/20/storytelling-part-4-delivery">delivery</a>, or maybe even <a href="https://www.jeffrussellcoaching.com/coaching-blog/2017/11/3/storytelling-part-2-structure">structure</a>, but the first thing we need to nail is why you’re telling the story in the first place. I’ve mentioned Dan Roam’s excellent book <a href="https://smile.amazon.com/Show-Tell-Everybody-Extraordinary-Presentations-ebook/dp/B00IDD8WHE/ref=tmm_kin_swatch_0?_encoding=UTF8&amp;qid=1551462468&amp;sr=8-1">Show and Tell</a> before, and I’ve shared <a href="https://drive.google.com/open?id=1nrcrrwBMQaJSZiCxi6K8OwQNMaFCRqsbUjNcv3BwuL8">a tool</a> for using his four PUMA templates, but today I want to talk through what these four different approaches to storytelling are and what differentiates them: what are you trying to change about your audience?</p>
+<p>The most basic point your story can have is to give someone information they didn’t have before: “I went to the store, it was raining, so you might want an umbrella when you go out.” Not very exciting, but helpful. Dan Roam calls this kind of story a <em>report</em>. While the other types of stories are more likely to grab your audience’s attention, reports are often needed, and you can do a lot to make them more interesting. Your job is to show your audience why they care, which you do by taking the bare facts you’re sharing and putting them into context. You’ve probably heard of the <a href="https://en.wikipedia.org/wiki/Five_Ws">“5 W’s (plus H)”</a>, but Dan Roam recommends “6-Mode Thinking”: 1) Who and what?, 2) Where?, 3) When?, 4) How much?, 5) How?, 6) Why? Of these, you usually want to start with “Why,” as it provides the most interest, which will help your audience connect more to the other information you share. A truly great report will help the audience make a new connection, or understand why the facts matter in a new way. Sometimes bare facts are what you need, and when you do, make the best report you can, but before you start, always ask if one of the points below might do more for your audience.</p>
+<p>The next thing you can do with a story is change your audience’s knowledge or abilities, which calls for an <em>explanation</em>. Remember how a good report puts the information into context? Well, the most useful context is <em>something you can do</em> with the information - for which an explanation is custom-crafted. With an explanation, you begin with what you’re going to cover, share an overview of what that will look like, and then take your audience through each step, checking in frequently to make sure they’re still with you. The key is to break what you’re teaching down into small, easily grasped pieces, and to sequence them in a way that they build on each other. These stories can be very engaging, <em>if</em> your audience can see why learning this stuff matters to them. If you start teaching the PUMA to someone at a party, expect some awkward fidgeting. On the other hand, when your audience cares about the knowledge you’re sharing, a story that lays it out understandably will be very compelling.</p>
+<p>Very often, if you are telling someone a story, it’s because you want them to <em>do</em> something, and for that you go with the <em>pitch</em>. For a pitch, you have to understand some problem that your audience cares about, and show that you get it well enough to share in the problem. Then you show them a way past the problem, how and why it will work, and close with an added benefit. The thing to remember is that most of the time you’re on the same team as whoever you’re pitching - everyone wants a great outcome. You’ll get the best results if you put yourself in your listeners’ shoes and help them solve a problem that they care deeply about. This is one of the most engaging types of stories you can tell in business, so whenever you are thinking of a report or an explanation, ask yourself whether you can tweak it to focus on changing actions instead.</p>
+<p>The final goal your story might have is to change your listeners’ emotions or beliefs, and we do that with a <em>drama</em>. These are the stories most likely to hold our audience’s attention. Sound tough? Well, you’ve been hearing this kind of story since your bedtime stories as a kid. The same structure underlies every myth, novel, movie, TV show, and TED talk that has ever moved you. So you already know the basics deep down in your bones, but let’s bring them up to the surface. A drama follows the “Hero’s Journey,” researched and spelled out by <a href="https://en.wikipedia.org/wiki/Joseph_Campbell">Joseph Campbell</a>, perhaps best known for influencing George Lucas when he wrote <em>Star Wars</em>. You start with someone being called to something out of ordinary (“adventure”). Then they go into a strange and challenging world and almost certainly come very close to failure or death. Then they find a way out and return to their world better than ever, with things to share about what they learned. The more harrowing the danger faced and the more profound the helpful truth brought back, the more powerful your drama will be. While it is hard to find opportunities for a drama presentation in business, this ought to be your go-to for personal stories. Chances are good that any story you’ve felt compelled to tell more than once roughly follows this outline, but you might be able to tighten it up by working through it on purpose. Most of all, think about what feeling or belief you want your listeners to get from your story - is it about pushing through challenges, seeing the world for what it really is, the importance of helping others, or what? If you’re stuck, try to ask yourself what <em>you</em> took away from the story or the situation it’s based on, and try to generalize it.</p>
+<p>Your stories will only be as powerful as the goals they have, so make sure to make them good. Not every story will be a blockbuster TED talk, but with some care given to who you are speaking to and what good you might do for them, you can tell gripping stories that stick with your listeners.</p>
+
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/coaching/2017-10-6-what-i-learned-at-forefront-2017/">
+                    Next<br>What I Learned at Forefront 2017
+                </a>
+                
+                
+                
+                <a class="older-posts">
+                    Previous<br>No older posts.
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

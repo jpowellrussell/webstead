@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html><head>
+<title>Review of &#34;Better than Any Man&#34; and Mercenary Group Recruitment</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Review of &#34;Better than Any Man&#34; and Mercenary Group Recruitment
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2013-06-19 16:29
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/dampd">Damp;D</a>
+                                &nbsp;
+                            
+                                <a href="/tags/osr">OSR</a>
+                                &nbsp;
+                            
+                                <a href="/tags/reviews">Reviews</a>
+                                &nbsp;
+                            
+                                <a href="/tags/rpgs">RPGs</a>
+                                &nbsp;
+                            
+                                <a href="/tags/lotfp">LotFP</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>So, after my enthusiastic blurb the other day, I figured “<a href="http://www.kickstarter.com/projects/1939191852/lotfp-2013-free-rpg-day-adventure">Better than Any Man</a>” warranted a full review after I finished reading it last night. So, here that review is.</p>
+<p><a href="http://dicegods.files.wordpress.com/2013/06/better-than-any-man-safe-pr.jpg"><img src="http://dicegods.files.wordpress.com/2013/06/better-than-any-man-safe-pr.jpg?w=211" alt="Better-Than-Any-Man-SAFE-pr"></a></p>
+<p>First off, for those that might not know, what is “Better than Any Man” (hereafter referred to as BTAM)?  BTAM is a meaty adventure/mini-sandbox written by James Raggi for his <a href="http://www.lotfp.com/RPG/products">Lamentations of the Flame Princess Adventures line</a> and specifically for “<a href="http://www.freerpgday.com/">Free RPG Day 2013</a>”.  It intentionally flies in the face of the Free RPG Day guidelines, and is about 1000 times better on account of it.</p>
+<p>For those odd few not familiar with Raggi, he does a better job establishing what he’s about than I ever could, so allow me to quote from his “Author’s Notes” to set the tone:</p>
+<p>*&ldquo;Welcome to LotFP&rsquo;s Free RPG Day adventure! It isn&rsquo;t what it is supposed to be. *</p>
+<p><em>We were told &ldquo;Include quickstarter rules!&rdquo; We were advised to create a short introductory/teaser adventure.  We were warned to make it suitable for all audiences.</em></p>
+<p><em>We didn&rsquo;t do that. You know why?</em></p>
+<p><em><strong>0.</strong></em></p>
+<p><em>That is the amount of fucks we give about what we&rsquo;re supposed to do.&quot;</em></p>
+<p>I was glad to have made the drive to the Friendly Not-Quite Local Game Store to pick this up after having read just that.</p>
+<p>Now, before I get into the adventure itself, let me clarify my relationship as a referee to Raggi’s work.  Honestly, I find most of his stuff too weird/horrific/game-changing to want to include it in my regular campaign as is.  That being said, I’d say that his published adventures are possibly the most useful I’ve bought because they force me to think in different ways and expose me to fantastically weird ideas I would never have on my own. Also, Raggi’s style of adventures and excellent referee advice in Lamentations of the Flame Princess: Weird Fantasy Roleplaying (LotFP) have helped me develop the crucial referee skill of not softballing my players.  Sometimes you gotta pull the trigger, and sometimes that trigger is a save or die trap.  While I’ve wholesale lifted more material from adventures by others (Gygax, Matt Finch, and so forth), Raggi’s stuff has done far more to push me out of my referee comfort zone, and that’s all to the good.</p>
+<p>With all that out of the way, let’s talk about BTAM itself, cos that’s why you’re here, right? As mentioned, this thing is <em>big</em>.  96 pages in an A5 format, with teeny double column text, so there’s a lot of content there.  A lot a lot of content.  New monsters, spells, some seriously creepy NPCs, a fully statted out town, half a dozen sketched out towns, each with something of interest mentioned, something like 5 mapped and keyed adventure locations, even some surprisingly compact and functional firearms rules squeezed into a box in a corner. Oh yeah, and one hell of a time pressure creator in the form of the Swedish Army behind King Gustavus Adolphus.</p>
+<p><a href="http://dicegods.files.wordpress.com/2013/06/220px-gustav_ii_of_sweden.jpg"><img src="http://dicegods.files.wordpress.com/2013/06/220px-gustav_ii_of_sweden.jpg?w=218" alt="220px-Gustav_II_of_Sweden"></a></p>
+<p>If you haven’t been checking out Raggi’s recent stuff, this whole “Swedish” and “Firearms” business is probably freaking you out.  From the get go, LotFP has had a decidedly early modern flavor, but Raggi’s been pushing it even more recently, and has even taken to writing most of his material for the real world.  Initially I found this extremely off-putting.  Like, “why would I even buy that?” off-putting. After reading some positive reviews, and thinking about, and letting an extant interest in the early modern period percolate some more, though, I’ve come around.  Here’s the rationale: A) It’s super easy to translate real-world stuff into fantasy equivalents if you want to, since that’s where about 90% of fantasy content comes from anyway, B) as a game with a horror focus, it is a cheap but super effective short cut to create the necessary “grounding” to contrast with the real horror, C) All of that boring background and setting detailing <em>is totally already done and available</em> and D) It turns out the early modern period is a pretty good fit for standard D&amp;D assumptions: lots of war, small, scattered states, superstition and magic, vast unexplored tracts of land peopled by dangerous intelligent humanoids (in this case actual humans), and even professional adventurers who do nothing but travel the world looking for ways to get valuable through violence and craft.</p>
+<p>Basically, I’ve gone from finding the idea of a historical early modern game of D&amp;D completely awful to finding it extremely compelling.  I’m way more likely to incorporate early modern elements into some other fantasy world, but I would actually consider running a historical game at this point. BTAM is the product that actually convinced me of it.</p>
+<p>Speaking of which, good Lord am I talking about a lot of tangential stuff and not the adventure itself.  So, the cover of the adventure is not attached, and inside of it is a lovely color map showing the keyed locations and the surrounding terrain.  It depicts a part of Lower Franconia (Holy Roman Empire = crazy confusing.  Just think “basically Germany” for now) that may or may not be geographically accurate, I don’t know.  But there’s plenty or space to wander around in, some really high quality random wilderness encounters, and the seeds of ideas for some of the less-detailed towns.  The adventure has a fair number of these “you make it up, you’re the referee!” which I think is pretty great.  I mean, I’m so unlikely to run the adventure “straight” as is, that the prospect of embellishing some other things on my own is no big deal.</p>
+<p>The items and spells have the typical Raggi flavor of “serious consequences for magic use”.  I found more of these to be potentially actually useful rather than straight up “you are screwed for even considering using magic, dummy”, which some of the magic items I’ve seen in his adventures previously come across as (I’m looking at you, everything from Devan’ku). In this adventure, I think the consequences are either rare enough or live-withable enough to instead present a compelling picture of “magic has a cost, but it works”.  There’s still the odd screw job to remind players that it really is kind of shitty to rob graves and callously kill everybody and steal things, but overall, it’s a little more adventure and a little less “we’re here to see how much awful stuff you will do/put up with”.</p>
+<p>BTAM also does an admirable job of setting up a few “reveals” without having a “plot” per se.  This is done by seeding bits of information in different locations, such that no matter how you approach them, you’ll get a slowly growing picture of what’s going on, rather than requiring specific clues or investigative techniques.</p>
+<p>Finally, BTAM possesses a quality I’ve been thinking about a lot lately, and that is modularity.  Now, I don’t mean in the sense that the whole adventure is a module you can drop in to any campaign world with minimal fuss (though it’s pretty decent for that too, if you can substitute in an appropriate invading army).  What I mean is that each element is highly useful by itself.  The elements fit together into an interesting and flavorful whole, with lots of links, but you don’t have to use all of them to use any of them.  The spells given could be found in any suitably creepy wizard’s spellbook.  The Shrine to the Insect God could go just about anywhere, the town of Karlstadt and its unique rulership could be dropped into most places, the monsters could appear on their own, et cetera.  So BTAM, besides being an interesting and well done adventure is also a pretty jam-packed toolkit.  I would venture that just about any referee/GM/DM/whatever will find at least one thing they would like to use in their game unchanged, and at least a dozen more that might take some minor tweaking, and who knows how much that serves as rough inspiration for something pretty different.</p>
+<p>Long story short: if you weren’t lucky enough to get a backer copy for kickstarting this (like me) or to pick one up at Free RPG Day (unlike me) totally buy the PDF when it comes out.  Raggi has mentioned <a href="https://plus.google.com/112262093672917983853/posts/bPZMtmKPJPX">on Google+</a> that it will feature some upgrades (more printer and e-reader friendly, “loosened up” layout, stuff like that).  And don’t forget that the <a href="http://www.rpgnow.com/product/115059/LotFP-Rules-%26-Magic-Free-Version">complete LotFP rules</a> are available without art for free from RPGNow.  Even if you aren’t into the weird fantasy/horrific angle, they’re a pretty robust version of D&amp;D with some good encumbrance and wilderness/overseas travel rules.</p>
+<p>Rating: 5/5 – Enthusiastic Recommendation, especially if you don’t think you’d like it</p>
+<p><em><strong>Recruiting Groups of Mercenaries for an expedition</strong></em></p>
+<p><em><strong>This is the first installment (well, second if you count the mass combat rules) of the modular rules I&rsquo;m developing for an adventuring company expedition set of rules.  The idea is that you can plug it into a lot of different systems, or use the whole thing as its own setting/game variant.</strong></em></p>
+<p><em><strong>When you hire a group of otherwise nondescript mercenaries for an expedition, you can use one of the following options:</strong></em></p>
+<p><em><strong>1) Randomly generate each and every individual and keep track of them as separate hirelings, as you would for any standard adventure. This works best with normal sized expeditions (say, no more than 1o or 12, and when a high level of detail in play is desired) where all players are together, so that a lot of detail isn&rsquo;t leaving anybody out.</strong></em></p>
+<p><em><strong>2) Treat the group of hirelings/mercenaries as one &ldquo;individual&rdquo;.  For the sake of ease, every ability score is equal to 8+1d4 (these are thoroughly average people), but randomly determine one ability and add 1d6 to it for every 6 members of the group (there&rsquo;s one exceptional individual).  HP are equal to the number of members&rsquo; HD, and all members must be equipped identically.  If using a skill system of some sort, give the group one advance past starting, but otherwise consider it to have default levels.  Additional advances can be bought using whatever system is appropriate.</strong></em></p>
+<p><em><strong>3) Use a skirmish rules system of your choice to keep track of groups of mercenaries/hirelings (Mordheim is a natural choice as it was a large inspiration for these rules in the first place)</strong></em></p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2013-06-19</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2013-06-23-a-new-home/">
+                    Next<br>A New Home
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2013-06-16-free-rpg-day/">
+                    Previous<br>Free RPG Day
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

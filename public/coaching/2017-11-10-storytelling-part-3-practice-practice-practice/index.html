@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html><head>
+<title>Storytelling Part 3 - Practice, Practice, Practice</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Storytelling Part 3 - Practice, Practice, Practice
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2017-11-10 00:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Coaching]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/storytelling">Storytelling</a>
+                                &nbsp;
+                            
+                                <a href="/tags/communication">Communication</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>However you choose to share your stories with the world, you’ll have to practice to make them look effortless and beautiful. You’ll need to tell more stories and tell each of your stories more times to improve your craft and your tales. To make those repetitions useful, you’ll need feedback as fast as possible, and the best feedback comes from a caring but objective partner. After I dig into each of these topics, I’ll give you a specific playbook for preparing for a speech.</p>
+<p>We’ve all seen storytelling naturals that just toss off something amazing without trying. <a href="https://www.ted.com/talks/steve_jobs_how_to_live_before_you_die">Steve Jobs</a>, <a href="https://www.youtube.com/watch?v=iZAcRJafmD4">Genndy Tartakovsky</a>, <a href="https://www.youtube.com/watch?v=6YDTfEhChgw">Jim Gaffigan</a>. We sit enthralled by their effortless execution and marvel at their inborn talent. Anybody who has ever gotten worse after practicing a presentation a few times knows how this goes - obviously those people must be uniquely gifted. These naturals, though? Turns out they’re not. Every single gifted storyteller has practiced a ton to craft the right story and perfect their delivery. This is fantastic news - it means that any of us can become “naturals&rdquo; if we just put in the work.</p>
+<p>You need practice to achieve mastery in any field, but paradoxically, it is especially important for achieving “effortless” poise. Pretty early on I noticed the effect I just mentioned: I would practice a formal presentation, get more stilted, and conclude I was better off winging it. What a shame! I wasted years telling mediocre stories when I could have been improving dramatically. My “aha!” moment hit me in business school, when I had to prepare a final presentation for my marketing class. It was for a big chunk of my grade, I had teammates relying on me, and the teacher had coached us on presentations, which included lots of dry runs. So I followed his advice, and you know what? My presentation kicked ass. Random classmates told me how compelling I had been - which, frankly, shocked me, because I thought it was just another presentation.</p>
+<p>When I reflected on it, though, I remembered something from my drama geek days in high school: when learning a new play, actors begin by acting out the scenes with script in hand, reading the lines as they go. Once they memorize their lines and put down the scripts, at first they get less emotive, less convincing. They get worse. But when was the last time you saw a movie full of scripts? After this initial dip, the actors got way, way better - they internalized the lines until remembering them was easy and they could focus on the hard work of being someone else. Business presentations are the same way - your baseline comfort is likely better than the cognitively demanding task of trying to reproduce something you prepared a little. On the other hand, if you prepare a lot, remembering becomes easy, and you can focus on all the stuff that contributes to doing a great job in the moment. There’s an <a href="https://en.wikipedia.org/wiki/Uncanny_valley">uncanny valley</a> of story preparation that can only be spanned with practice, <a href="https://www.youtube.com/watch?v=cDfqwHck2Qg">and lots of it</a>.</p>
+<p>When it comes to storytelling, there are two levels of preparation, one strategic and the other tactical - practicing your craft and practicing your story. At the strategic level, you need to tell a lot of stories to raise your baseline level of skill. Tactically, practicing each story you tell before you let it into the wild ensures you tell the best story you can right now. As an example, think about a writer - they not only need to write a lot of pieces before their best seller, but that work will also require a lot of drafts. Both rely on repetition, but at different scales.</p>
+<p>Whatever the scale of your practice, it requires feedback to be effective. The tighter you can make your feedback loops, the better your results. This is true for two reasons: first off, with immediate feedback, you more accurately associate the behavior with the feedback.  It’s the same principle as when you’re training a dog - <a href="https://clickertraining.com/15tips">the more closely you associate the event with the reinforcement, the faster the learning</a>. Faster feedback loops also give you more meaningful repetitions within the same timeframe. I say meaningful because a repetition only matters if you learn something from it. A short repetition with quality feedback will improve your story infinitely more than a thorough repetition with no feedback.</p>
+<p>Now, I’m not saying that there’s no place for longer form repetitions (I like reading novels as well as short stories!). Instead, you should use your longer practices more intentionally. Such full-length repetitions help you to understand how the pieces come together as a whole, so I recommend you put them at the beginning and at the end of your total practice time. For the bulk of your practice, though, zoom in to relevant chunks and evaluate just that chunk for more immediate feedback. In a presentation, that would mean talking through a single section as if you were presenting it live. For writing, this would mean editing a <a href="http://www.storygrid.com/the-scene/">scene</a>, and for a comic it would mean sketching out different compositions and forms to see which works.</p>
+<p>A live human being that cares about you and also willing to tell hard truths sets the gold standard for feedback. It’s well worth cultivating these kinds of relationships in any field where you want to excel, but essential for storytelling. Writers need editors, public speakers need coaches, and artists need critics with a discerning eye. As much as possible, do your short form practice in front of these kinds of people. If you do not have access to someone like this at the moment, the next best thing is to find a way to step outside of your normal perception. This is easiest with public speaking: just film yourself and then watch it. You’ll get a completely different perspective (literally!) on what’s working or not. For art, you can do things like turn your work upside down, look only at silhouettes, try negative space exercises and so forth. Writing’s trickier, but you can practice adopting different mindsets - you have your “writer hat” and your “editor hat”, and depending on which one you’re wearing, you think differently. This is a hard skill, but very useful. In all of these cases, time will help you get some distance and objectivity, but it will slow down your feedback process, which is what makes a trusted partner so valuable.</p>
+<p>Now let’s apply these principles to my favorite kind of storytelling: public speaking. First, we have strategic practice, and for this I recommend you seek out more opportunities to speak in public - you could try <a href="https://www.toastmasters.org/">Toastmasters</a> or a <a href="https://www.dalecarnegie.com/events/dale_carnegie_course/">Dale Carnegie Public Speaking class</a>, or just let your boss know that you’d like to give more presentations. Now we get into the tactical level: for any one of those presentations, try your hardest to find a partner - this is usually  easy for school or work projects, but harder for working solo. Next, you want to practice enough to get past the uncanny valley of inadequate preparation. Start out with one or two complete run throughs so that you know how it fits together. If you can, give these presentations in front of your partner, but at least record yourself. Review each presentation after you’re done and identify the most critical and/or challenging areas as your focus for practice. When I say “chunk” I mean a section in your table of contents - think back to the <a href="https://www.jeffrussellcoaching.com/coaching-blog/2017/11/3/storytelling-part-2-structure">spine of your PUMA</a>. For each chunk, deliver just that section and get feedback. Repeat until you’re happy with the section. You can even zoom your repetitions in tighter and tighter as you figure out what concept, phrase, or transition specifically is tripping you up. For each repetition, get feedback from your partner or the recording. Once you’ve run through all of your chunks, do one more end-to-end presentation to weld everything together. Ideally, you want to give these final run throughs in the actual space you’ll be presenting. Once you go through this process, you’ll feel incredibly confident and relaxed on stage, because you know you’re ready.</p>
+<p>Practice is the unsexy reality behind any slick presentation, gorgeous movie, or gripping novel you’ve ever encountered. It is the hidden difference between amateurs and masters. Using practice to improve your craft turns out to be very easy: you make sure you have both strategic and tactical practice, you do it enough to push through the uncanny valley, you incorporate quality feedback, and you tighten up your feedback loops as much as possible. Get a trusted partner to help you prepare and you’re really cooking with gas. In the next post, we’ll cover just what that feedback should be focused on: storytelling delivery.</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2017-11-10</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/reading/turning-pro/">
+                    Next<br>Turning Pro
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/reading/show-and-tell-how-everybody-can-make-extraordinary-presentation/">
+                    Previous<br>Show and Tell: How Everybody Can Make Extraordinary Presentation
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

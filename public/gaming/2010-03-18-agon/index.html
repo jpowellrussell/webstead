@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html><head>
+<title>Agon</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Agon
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2010-03-18 12:46
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/rpgs">RPGs</a>
+                                &nbsp;
+                            
+                                <a href="/tags/projects">Projects</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>In this installment, I will continue my reviews of &ldquo;Indie RPGs&rdquo; that have recently made an impression on me. Today I&rsquo;ll be talking about &ldquo;<a href="http://www.agon-rpg.com">Agon</a>&quot;, a game of mythical Greek heroes. First off, &ldquo;Agon&rdquo; is awesome. I absolutely love it, and if I had like minded players around me, I would run a game tomorrow. It is simple but rich, and it captures the feel of Greek mythology and the whole Greek ethos masterfully. And I&rsquo;m not just talking out of my ass when I say that, as I have a degree in Classics, so consider it my semi-expert opinion that this game is very &ldquo;Greek&rdquo; in feel.</p>
+<p>The way it achieves this feel is right there in the title: &ldquo;Agon&rdquo; is the Greek world for struggle or competition, but the meaning was much wider than either of those English words. In the ancient Greek mindset, everything was a competition, and it was the struggle for glory between men that the gods found most pleasing. Inherent to the Greek worldview was that everything could be done with more or less arete, or excellence, whether that was mending a shoe or killing a rival warrior, and that the only way to judge a person&rsquo;s arete was through direct competition to see who came out on top. Who made the most beautiful tapestry? Who sang the best song? Who fought with the greatest valor? These questions, and the implicit question behind them, namely &ldquo;Who is the better man (or woman)?&quot;, could only be answered by directly striving against one another. Whoever achieved more rightfully gained more glory and was accorded better status.</p>
+<p>This sets the stage for the key philosophical difference between &ldquo;Agon&rdquo; and other roleplaying games. In most RPGs, the player characters cooperate against foes and threats presented by the game master and succeed or fail as a group, pooling resources and winnings and gaining experience as a whole, divvied up evenly. In &ldquo;Agon&rdquo;, you still have a game master (the &ldquo;antagonist&rdquo;) and a group of PCs who help each other achieve quests, but the PCs are really vying against one another to be the best and most glorious. They don&rsquo;t fight one another, but each player wants to make sure his character kills the Gorgon, steals the treasure, or wins the maiden, so that he gets the most glory. And the game tracks glory and unabashedly uses it as a scoreboard for which hero is winning. The analogy presented by the author, John Harper, is that it&rsquo;s like a black jack game. The antagonist is the dealer, and the PCs are the players at the table. Everybody is competing against the dealer, but the real competition is against the other players. But like a card game among friends, since everyone comes to the table knowing they&rsquo;re trying to beat the pants off of each other, there&rsquo;s no hard feelings. I think this spirit of friendly competition is helped by the fact that the player heroes never directly fight each other, instead they do help each other fight, but they&rsquo;re still trying to each achieve the most individually.</p>
+<p>Getting into the game, the antagonist doesn&rsquo;t have to worry about ambiguity of what the players need to accomplish, as the default way of setting up adventure is for a god to literally descend from the heavens and impart a quest upon the heroes. Sure, it lacks subtlety, but it lets the players get right into what they&rsquo;re there for: heroic exploits! Also, it&rsquo;s entirely in keeping with the Greek mythological flavor, and the game makes no bones about not being about subtle character development or complex storylines. That being said, some adventures available for free from Ben Robbins, the author of the <a href="http://arsludi.lamemage.com">Ars Ludi</a> game design blog I&rsquo;ve mentioned before, do a good job of showing that stories can be straight forward and still have plenty of flavor and interest.   The quest system also comes with defined objectives that the antagonist determines for the quest (usually 3-5 per quest). These aren&rsquo;t necessarily laid out at the beginning of the quest, allowing for some roleplaying and investigation opportunities, but there&rsquo;s some solid GM advice given here that is repeated in &ldquo;Spirt of the Century&rdquo;, to be reviewed later: the GM&rsquo;s job is not to hide information from players or keep secrets, it is to provide exciting situations for them to interact with. In other words, you should give more than enough clues for players who are trying at all to find out what they should be doing and where. There&rsquo;s another reason for the codified quest and objective system that allows the fiercely competitive nature of Agon to be fair: strife.</p>
+<p>Strife is a pretty cool innovation. In most games, the GM has total fiat over everything that isn&rsquo;t directly under a player character&rsquo;s control. His only restraint is the real-world social restriction of ending up with no players if he abuses his in-game authority. In Agon, however, the GM has a budget called &ldquo;Strife&rdquo;. If you&rsquo;re familiar with wargaming, strife works a lot like points systems in many games. The GMing rules provide costs for using strife to create obstacles, NPCs, and villains. During game play, he can also use left-over strife on the fly to make given conflicts more difficult. Having a budget like this gives the GM license to be as tough as possible on the players, because the game is designed so that he only gets as much strife as the players can theoretically handle (though it will be challenging). The flip side of the coin is that the harder the GM makes any villain or situation, the more glory the players win for beating it. This whole notion of restraints on the GM fits into the similar ethos present in &ldquo;Dogs in the Vineyard&rdquo; and &ldquo;In a Wicked Age&rdquo; where traditional player/GM roles are questioned and modified, usually giving more in-game power and responsibility to the players. I&rsquo;m all for such changes, as even if you decide you still like a more traditional roleplaying format, having played games like this will make you better at being either a player or a GM.</p>
+<p>Now, if it hasn&rsquo;t become apparent by now, Agon is a heavily rules-dependent game. Almost everything that happens in the game from an argument to GM NPC creation, is governed by defined rules rather than loose guidelines.This would have the potential to be stifling, except that the rules are admirably straight forward and the competitive philosophy of the game is straightforwardly and unashamedly presented everywhere to remind you <em>why</em> the rules are so stressed. This brings up one of the guidelines of the game, notable in the use of strife: nobody gets anything for free. Any time there&rsquo;s a conflict of interest, the dice come out. Nothing happens because &ldquo;it should&rdquo; or &ldquo;it&rsquo;d be good for the story&rdquo;. No rewards are free, but then neither are any challenges free for the GM. This guideline also seems to me to be a helpful rule of thumb to keep in mind for less competitive or rules-focused games on when to break out the dice and when not to: dice are for conflicts of interest. Any time there&rsquo;s not a conflict of interest, don&rsquo;t bother with dice. But when there are, it&rsquo;s probably more satisfying to the group to have the dice decide it, unless you&rsquo;re purposely playing a game with a more communal storytelling feel to it.</p>
+<p>Okay, so, having said that the rules are very important, let&rsquo;s shakedown the core mechanic. Stats are listed as dice, from d4 up to d12, with d4 being &lsquo;not very good at&rsquo; and d12 being &lsquo;legendary/divine&rsquo;, and d6 being average. For a conflict you roll all relevant dice (usually 2 or 3) and whoever has the highest single number showing wins. Ties go to the aggressor. And that&rsquo;s it! See what I mean about simplicity? Now, of course there are wrinkles to make the game interesting, such as being able to spend divine favor points for extra dice or rerolls, but as with &ldquo;Dogs in the Vineyard&rdquo; the scale of dice means that bigger dice are more likely to win, but not guaranteed. Unlike &ldquo;Dogs in the Vineyard&rdquo; you don&rsquo;t have as much leeway with rolling more of a lower die rather than fewer dice with more sides.  I like the fact that ties go to the aggressor, as this is a subtle but useful incentive to players to do things decisively, as befits Greek heroes.</p>
+<p>Another way that larger sided dice come in, besides giving you a better probability of winning is that for every 4 points you beat your opponent by, you gain a &ldquo;victory&rdquo;, and additional victories are useful in various ways. In combat, they provide more injuries, and in other situations they determine with how much flair you&rsquo;ve overcome your opponent or an obstacle. In situations where all heroes are rolling against the same challenge (like fording a raging river) the one with the most victories does it best/fastest and gets a bonus glory point!</p>
+<p>A cool factor is that your &ldquo;base die&rdquo; that is used in all rolls is your &ldquo;name die&rdquo;. Mortals start with a d6, half divine characters start with a d8. In addition to your name, you choose an epithet (fleet-footed, clever-eyed, et cetera) that grants you bonuses to certain kinds of rolls as appropriate. This is a subtle but awesome way to hammer home the Greek/Heroic flavor, making your name have in-game effect.  All of your stats are divided into 4 categories of 4 stats each. Arete includes Insight, Grace, Might, and Spirit. Craft includes Lore, Music, Orate, and Heal. Sport has Athletics, Cunning, Hunt, and Wrestle. Battle includes Aim, Shield, Spear, and Sword. And that&rsquo;s it on stats. You don&rsquo;t have any skills in addition to stats, rather different situations are modeled by combining different stats, and more complicated weapons rules are avoided by combining two facts: one, the weapons listed (bows, javelins, spears, swords, shields) were pretty much the only weapons used by heroic Bronze Age Greeks, and two, you can pretty much &lsquo;map&rsquo; other weapons onto the existing weapons without too much trouble because the combat is tactical but somewhat abstract. So it doesn&rsquo;t really matter if you roll exactly the same thing for a javelin as for a &lsquo;furious charge&rsquo;, since the only parts that matter in game are range and damage. This makes creating monsters really easy as whatever nutty natural attacks they have, they just count as bows, javelins, spears, swords, or shields.</p>
+<p>The four categories of stats are important because you can trade around &lsquo;points&rsquo; in each category to get different dice. For example, within &ldquo;Arete&rdquo;, if you want to up Insight from a D6 to a D8, you can lower Grace from a D6 to a D4. But you couldn&rsquo;t trade a die from the &ldquo;Craft&rdquo; category to up Insight in the  &ldquo;Arete&rdquo; category. Also, in some types of non-combat conflict, the categories are important.</p>
+<p>An aspect of character creation that I really like is the &ldquo;achievements/oaths&rdquo; method. In this, at character creation, every character engages in a simple contest with each other character. When it&rsquo;s your turn to go around to each character, you get to pick what the contest is, but then that person will get a chance to choose a contest with you. These can either be direct like &ldquo;we wrestle each other&rdquo; or less direct like &ldquo;we both engage in stealth to see who is more successful at sneaking into the enemy camp back in the war&rdquo;. Whoever wins the contest gets an &ldquo;oath&rdquo; from the other player. Oaths are an actual mechanic whereby a player owes another player direct in-game help of a mechanical nature. The player holding the oath can choose any time to call in the favor. This system is neat for two reasons. For one thing, the little vignettes of each contest give the heroes a built-in history, explaining why they&rsquo;re traveling together killing monsters and liberating maidens and such. Secondly, it creates a mechanically-reinforced mutual dependence between players. Oaths can force cooperation that might be held back, but you have to deal with the shame of needing help on something (and you have to share the glory when you call in oaths). Also, as the game goes on, oaths are the primary currency in inter-player bargaining (or even bargaining with NPCs). You can say &ldquo;okay, I&rsquo;ll rid your village of these pesky harpies, but you owe me three oaths for it&rdquo; or you can be like &ldquo;hey, heal me in this break, and I&rsquo;ll give you an oath&rdquo;. This encourages at the same time friendly competition as well as cooperation (even if grudging cooperation).</p>
+<p>Now, going back to the core notion that any time someone has a conflict of interest or seeks an advantage a contest happens, it is important for players to clearly state their goals whenever they take an action. This allows the antagonist to determine if it would gain the hero an advantage or come into conflict with some other entity. If not, the action happens, no problem. If it does, then a contest happens. There are two types of contests, simple, and battle. Battle is not necessarily physical combat, as you can have a rhetoric battle or a lute playing battle, or an involved wrestling match, or whatever. But obviously the most common more in-depth contest is actual fighting. Simple contests are where all involved parties roll the relevant dice, compare results, and you&rsquo;re done. Any heroes participating who succeed gain glory, but the winner gets an extra glory. Battles are more involved affairs with a series of exchanges between opponents and usually have more at stake than simple contests. A neat feature of the rules, though, is that player characters reserve the right to &ldquo;Invoke Hubris&rdquo; after any simple contest. This escalates a simple contest into a battle, and the loser of the simple contest goes into the battle with a number of wounds equal to the victories rolled by the winner of the simple contest.</p>
+<p>I won&rsquo;t do a play by play of the battle system here, but essentially it&rsquo;s a series of simple contests with the addition of an initiative system and an abstracted range rule (you have a vertical strip divided into zones. On your turn you can move either yourself or an opponent a certain number of zones closer or farther. Different weapons work optimally at different ranges) that allows a surprising amount of tactical interest while remaining quite simple.   With any contest, simple or battle, things are at stake. Something tangible, besides glory points, always comes out of a contest, whether that&rsquo;s an advantage against a foe in an upcoming battle, or an impairment for the loser or vital information (don&rsquo;t look at the medusa or you&rsquo;ll be turned to stone, or you have to burn the heads off the hydra, or whatever). Impairment is where one of your abilities goes down by a die level, and the first level of impairment is always against the stat used in the contest. In a contest, either the antagonist will dictate which ability is used, or the players will be able to phrase what they&rsquo;re doing in a manner to make it clear what ability applies. A neat exception, though, is that you can opt to use a &ldquo;creative ability&rdquo; to add an extra die to your roll. All you have to do is describe adequately how the ability is being used in the contest. If you use an extra ability, though, it gets impaired afterwards win or lose (all that extra effort!). So, for example, say a foot race calls for a name + athletics roll. But you explain that your character is going to use his cunning to find a short cut, while I explain that my character will use hunting to find a deer trail through the dense woods. So you&rsquo;d roll name + athletics + cunning, while I&rsquo;d roll name + athletics + hunting, but afterwards no matter how we did on the contest, your cunning would be impaired as would my hunting.</p>
+<p>Now, the one semi-exception to the &lsquo;nothing happens just because it should&rsquo; rule is with &lsquo;obstacle contests&rsquo;. In these contests, the outcome will happen one way or another, but winning allows the heroes to do it easily and with style, while losing makes them tired and struggle harder. Examples include things like crossing a river or purchasing from a hard-driving merchant. It would be boring for the hero to be stuck on one side of the river or not to acquire the necessary item, but if he wins he swims across easily and without danger or strikes a good deal with the guy, but if he loses he wears himself out crossing or gets cheated. Either way he&rsquo;s across the river or in possession of the object, but the in-game effect doesn&rsquo;t come for free. Contests can also be &lsquo;dangerous&rsquo; where losing causes wounds in addition to impairment, but heroes gain extra glory for beating them, and antagonists must spend strife to make them dangerous.</p>
+<p>As I said, I&rsquo;m not going to go into the battle system, but I&rsquo;ll summarize by saying that it&rsquo;s relatively simple but detailed enough to be interesting. Also, since glory is awarded based on individual action, there is an inherent tension in needing to cooperate to defeat foes, but wanting to prevent the other heroes from doing better than you. In addition to being the game&rsquo;s &ldquo;scoreboard&rdquo;, glory works as the experience of the game. 10 glory = 1 advance, and advances buy you bigger dice at a rate equal to half the sides of the current die. So, to go from a d6 to a d8, you&rsquo;d pay 3 advances. From a d8 to a d10 would be 4 advances, and so on. You must advance to each die in turn, you can&rsquo;t skip any. Each advance also ups your &lsquo;legend&rsquo; which is the scoreboard of the game. The hero with the highest legend gets to add +2 to any orate rolls to determine who makes decisions for the hero band (yup, you even roll who&rsquo;s the leader!).</p>
+<p>In addition to glory, you have another tracker called &ldquo;Fate&rdquo;. Mortals start with 0, but half-divine heroes start at 8. Fate only goes up, never down. Your fate goes up when your hero is defeated in a battle, when you complete a quest successfully, or when you challenge a god to a contest in order to resist their demand that you go on a quest. In addition to these, you can chose to up your fate for in game benefits like not taking damage from an attack. or to get rid of impairment. Also, as your fate goes up, your name die increases to a d8, d10, and d12. Here&rsquo;s the catch, though. Fate is quite literally a ticking clock on your heroic career. When your fate is filled up (16 boxes, so half-divine characters start out more powerful but have half the time to be glorious) your hero is done. You can look at a handy little chart to see how your final legend score means you meet your end (glorious battle, horrible shame, or old and fat and happy). Once your hero retires or is dead, you get to create a new hero who&rsquo;s a little more powerful (based on how many quests your prior hero completed, so no running up the fate on purpose to get to a better hero!) than your old hero was to start. I rather like the tension between cost and benefit and various trade-offs here, and I think it&rsquo;s a nifty game mechanic.</p>
+<p>The whole game, really, is all about cost/benefit trade-offs. GMs have to spend strife to make challenges. Players end up giving the GM more strife whenever they rest to heal and recover. Players may expect oaths if they help you out. And so forth. It makes for interesting decision making and gives yet another thing to be competitive over.   Like with the town creation in &ldquo;Dogs in the Vineyard&rdquo;, &ldquo;Agon&rdquo; has a really nifty island creation system. It can be used randomly or you can choose elements from the various tables (terrain types, residents, monsters, et cetera) to your taste. But it provides ready made sources of quests and conflict to get involved in. I fully plan on taking the idea of rich, interesting random setting generation and adding it into my toolbox for pick-up games that have to be created on the fly. Other elements of the GMing chapter I really appreciated were really good minion rules for mowing through hordes of lesser enemies, and the advice on NPC creation. It says that you should remember that the PCs are the stars of the show, but that doesn&rsquo;t mean NPCs should be flat or boring. Rather, you should ensure that your NPCs have motivations that will create interest <em>through</em> the characters. Whether it&rsquo;s someone who thinks the heroes will solve all his problems or someone who thinks killing them will solve all his problems, his focus of action should lead to the PCs so that he remains relevant and interesting to the group and keeps the focus on the players.</p>
+<p>Finally, at the back of the book, the author provides a list of suggested variants and what rules changes would be necessary. He points out that a Norse variant would require almost no mechanical changes and only really flavor ones. This idea struck me as so cool that I&rsquo;m working on a Norse variant. I emailed Mr. Harper about permission to do this and any restraints he wanted on distribution, and he gave me the go ahead on making it and distributing it however I like, so expect to see it here when I finish! I&rsquo;m equally excited about either running a straight-up Greek Agon game or the Norse variant once I get it hammered out.</p>
+<p>That being said, I don&rsquo;t think Agon would be the best starter game for new RPG players. I don&rsquo;t want my players&rsquo; first experience with RPGs to be in competition with each other, since most games do not operate that way, and it can in fact be quite rude to be actively competitive with your fellow party members in some games. I feel like a better method of development would be to get used to cooperating and then learn to compete in a friendly fashion rather than the other way around. Also, Agon is less narratively/story focused than I&rsquo;d like to start players out on for reasons discussed in some of my other posts. Still, with the right group of players (maybe ones more used to strategy board games than RPGs) this might be just the ticket, as you&rsquo;re still competing against your friends, but you&rsquo;re controlling a single hero rather than armies or gathering resources or what have you. As always, questions, comments, and even attacks are all welcome.</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2010-03-18</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2010-03-29-in-wicked-age/">
+                    Next<br>In a Wicked Age
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2010-03-18-dogs-in-vineyard/">
+                    Previous<br>Dogs in the Vineyard
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

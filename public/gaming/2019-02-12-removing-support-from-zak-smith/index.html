@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html><head>
+<title>Removing Support from Zak Smith</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Removing Support from Zak Smith
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2019-02-12 15:51
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/osr">OSR</a>
+                                &nbsp;
+                            
+                                <a href="/tags/drama">Drama</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>[UPDATE February 14th, 2019: Zak has issued a statement responding <a href="https://officialzsannouncements.blogspot.com/2019/02/the-statement.html">here</a>. I am not convinced to change my position below, but it introduces some doubt. I may have further thoughts as more information comes out, but I encourage you to read and evaluate it for yourself.   UPDATE February 16th 2019: I reworded the bit about what it would take to change my stance to include adequate evidence that the claims were false, rather than only saying evidence of growth on Zak&rsquo;s part would do it.]</p>
+<p>Well, shit.</p>
+<p>As anyone reading this has likely already seen, Zak Smith/Sabbath&rsquo;s longtime girlfriend Mandy Morbid has posted that Zak has done some rather awful stuff to her and others. I came across it as re-shared (with permission) over on <a href="https://dungeonsdonuts.tumblr.com/post/182722330779/mandy-morbid-comes-forward-about-zak-s-violence">Dungeons &amp; Donuts by Kiel Chenier</a>.</p>
+<p>I then read Patrick Stuart&rsquo;s response to the news here on <a href="http://falsemachine.blogspot.com/2019/02/you-should-read-this.html">False Machine</a>.</p>
+<p>Here&rsquo;s why I have chosen to believe these claims:</p>
+<ul>
+<li>Two folks who I have had enough online interaction with to find sane
+and credible are saying their claims are consistent</li>
+<li>The claims are to specific instances and patterns of behavior by an
+individual, rather than relying on rhetorical dirty tricks, like
+saying an <a href="http://esr.ibiblio.org/?p=2122">unwillingness to admit to guilt is evidence of
+guilt</a>, or arguing based on group
+membership rather than individual action</li>
+<li>I cannot discern any gain or motivation for lying about these
+claims, except perhaps to hurt Zak to &ldquo;get back&rdquo; for hurt done, but
+see above for why I don&rsquo;t think that&rsquo;s the case</li>
+</ul>
+<p>To change my mind, I&rsquo;d need to be presented with some pretty damn compelling counter-evidence that goes beyond the usual standards of internet-proof (something like a video of someone involved saying &ldquo;I made that shit up&rdquo; or &ldquo;Let&rsquo;s take down Zak whatever the cost&rdquo; or the findings of a court of law).</p>
+<p>This news makes me rather sad. I have admired Zak&rsquo;s work and his critical judgement and explanation of works of art for a long time now. He introduced me via his blog and Google+ to most of my favorite RPG creators and helped provide the impetus for a number of awesome collaborations. I still think &ldquo;DIY&rdquo; is a better rallying ethic than &ldquo;Old School&rdquo; (but continue to use &ldquo;OSR&rdquo; as a more helpful, if vague, label for the sort of D&amp;D and sort of blogs I find most interesting). I have found his assertions about the Socratic method, the importance of truth, and the need to have and enforce standards in creative communities to be helpful in shaping my own thinking, even when I have disagreed with parts. Unfortunately, now he gets to help me by providing another example of a creative person who makes great stuff but seems to be personally reprehensible, leaving all of us to figure out how to make use (or not) of their work.</p>
+<p>Until and unless I am presented with credible evidence of major personal development and change on Zak&rsquo;s behalf [NEW 2/16/19: or evidence of the sort mentioned above that the claims are baseless], I will take the following actions:</p>
+<ul>
+<li>I will not direct future attention or money to Zak, as the
+personality and behavioral problems described by Mandy and Patrick
+and others are pervasive and poisonous enough to make all of his
+discourse suspect, and I wish to help provide consequences for such
+behavior - concretely, this means I&rsquo;m removing him from my blog
+roll, unsubscribing from his Patreon, and will not buy things in a
+way that will benefit him</li>
+<li>As for gaming works already bought and blog posts already read, I
+will continue to use and enjoy them, but with perhaps a more
+critical eye to any implicit beliefs that may be in them</li>
+<li>As I go over any elements of my own thinking and view of the world,
+if it comes up that it was influenced by Zak, I&rsquo;ll have to
+re-evaluate with a more critical eye - for example, at the moment I
+still believe in the value of a commitment to truth over &ldquo;niceness&rdquo;,
+and the socratic method as a way of finding truth, but I&rsquo;m
+re-thinking some of the more abrasive implementations of it that Zak
+had convinced me might be worthwhile, if painful</li>
+<li>I will not be removing my past posts on Zak&rsquo;s material here on the
+blog, including reviews and the &ldquo;<a href="http://blessingsofthedicegods.blogspot.com/search/label/Middenheim">Vornheiming
+Middenheim</a>&rdquo;
+series, but I will post a link to this post at the top of them to
+give anyone encountering him for the first time the chance to decide
+for themselves how to approach his work (or not)</li>
+<li>On my <a href="http://blessingsofthedicegods.blogspot.com/2014/07/psa-this-post-is-full-of-lies-and.html">old post publicly supporting him against negative
+claims</a>,
+I have added a more explicit retraction, but I am leaving it on the
+site in the interest of transparency on what I have believed in the
+past</li>
+</ul>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2019-02-12</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/coaching/2019-03-15-level-up-your-process-to-learn-better-faster-learning-overview-part-1/">
+                    Next<br>Level Up Your Process to Learn Better, Faster (Learning Overview Part 1)
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2018-08-23-fiends-in-fellhold/">
+                    Previous<br>Fellhold Fiend Race, Class, and Magic
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html><head>
+<title>Rumor Has It</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Rumor Has It
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2014-01-23 23:38
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/osr">OSR</a>
+                                &nbsp;
+                            
+                                <a href="/tags/theory">Theory</a>
+                                &nbsp;
+                            
+                                <a href="/tags/dd">D&amp;D</a>
+                                &nbsp;
+                            
+                                <a href="/tags/wfrp">WFRP</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p><a href="http://3.bp.blogspot.com/-B8R0KUesZi4/UuIGWNhj3KI/AAAAAAAAAmI/6wlkdkUislo/s1600/640x640_9423_Meleen_s_Silver_Tongue_2d_fantasy_tavern_legends_of_norrath_picture_image_digital_art.jpg">http://3.bp.blogspot.com/-B8R0KUesZi4/UuIGWNhj3KI/AAAAAAAAAmI/6wlkdkUislo/s1600/640x640_9423_Meleen_s_Silver_Tongue_2d_fantasy_tavern_legends_of_norrath_picture_image_digital_art.jpg</a></p>
+<p>So, in writing the <a href="http://blessingsofthedicegods.blogspot.com/search/label/Middenheim">Middenheim series</a>, I really came to love the use of rumors as a way to convey both setting information as well as adventure hooks.  Thanks to <a href="https://plus.google.com/106896777766399569820">+Brendan S</a> and <a href="https://plus.google.com/103053201970014740893">+Pearce Shea</a> , I had some further discussion of rumors and why I like them and what they do, and I wanted to expand those thoughts some here.</p>
+<p>The first and perhaps most obvious virtue of rumors is their dubious veracity.  This permeates through everything else I want to bring up about rumors, so it deserves to go first and I&rsquo;ll get to reference back to it.  The fact that rumors are, by definition, suspect information at best combines with the usually random way they&rsquo;re determined to give rumors a nice indeterminacy.  The referee doesn&rsquo;t know what he&rsquo;s going to tell the players until it happens, and the players don&rsquo;t know what of that information is important, and they lack meta-information on how important it is.  More on the different roles rumors play for players and referee in a bit.  You can amp up that indeterminacy by putting different sets of rumors in different places, making rumors that contradict each other, and the old stand-by of mixing up truthful and straight up false rumors.</p>
+<p>Rumors can do different things when you write them for your own adventures and when you write them for the use of other people.  If you&rsquo;re writing rumors for your home game, you probably have some idea of which ones are true and which ones are exaggeration and which ones are poppycock.  Now, many published adventures do the same, which can be helpful in the same way it is for home adventures: setting tone and prompting certain player/character behavior.  If you throw in a lot of rumors of dangerous monsters, players will likely be more careful at first.  If you instead have half the rumors say &ldquo;way dangerous&rdquo; and half say &ldquo;the place is harmless&rdquo;, then other factors will drive the players&rsquo; decision-making more.  Providing the veracity of the rumors helps the referee know how to convey them and how to deal with the elements in the adventure related to those rumors.</p>
+<p>What I have come to think is a more interesting approach for an adventure or setting intended for others is to provide rumors <em>as rumors</em>.  In other words, the truth or falsity of all rumors is left to the referee&rsquo;s discretion.  When you present rumors this way, you can get a number of pretty cool effects.  For one, it is fantastically efficient.  You don&rsquo;t have to waste words with &ldquo;it is said&rdquo; or &ldquo;in some quarters people believe&rdquo; or the like.  No time spent explaining how a particular misunderstanding came to be common.  But you still get the same effects on the players.  Part of that efficiency is that you can convey a general feel both with the nature of individual rumors, and with the rumor table as a whole.  It also simplifies a referee&rsquo;s job of weeding out what content he doesn&rsquo;t want to incorporate while keeping it useful. Say a referee sees a rumor that is a thinly veiled reference to the plot of Dracula and he thinks that&rsquo;s silly.  He&rsquo;s still got a preposterous rumor to put in the mouths of people who maybe shouldn&rsquo;t be trusted.</p>
+<p>Which gets a bit to what I alluded to earlier about the different uses of rumors for players and referees.  This idea was spurred by some comments by Pearce Shea about some rules being more player-facing and others being more referee-faces.  Rumors get to be both, but do something different each way.  To referees, they convey a complete(ish) picture of what&rsquo;s going on and an overall feel.  Where and how to give them out provides tools for shaping the players&rsquo; experience.  For the players, rumors provide valuable but unreliable information, indications of tone and approach, and spurs to unexpected action.  Players can decide which rumors to investigate and follow up on, what decisions to draw from them, and how to incorporate them into future evidence.</p>
+<p>Finally, an aspect of rumors I got to explore a little bit in Middenheim, but I really want to develop more in my own games and future projects, is the way that rumors can be tied to people and places. Not only can places have a different feel or tone, they can be useful to players in different ways.  Maybe one place has more reliable information but it&rsquo;s more dangerous or expensive.  Or if you want rumors about the sea you go to the dockside taverns.  With people you develop a reason for players to want to meet new people or develop existing relationships.  This can also enhance the other features of rumors.  You can make things like social class and nationality matter by having them provide different information.  You can make contradictory rumors have different levels of trustworthiness based on where they were heard.  All of these things can enhance engagement and agency.</p>
+<p>Altogether, a pretty hefty load for twelve or so entries to pull.</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2014-01-23</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2014-01-24-pretty-pretty-picture-friday_24/">
+                    Next<br>Pretty Pretty Picture Friday
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2014-01-23-vornheiming-middenheim-epilogue/">
+                    Previous<br>Vornheiming Middenheim: Epilogue - Building a Mystery
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html><head>
+<title>OSR Classes: The Mastermind and the Rook</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    OSR Classes: The Mastermind and the Rook
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2018-07-18 08:08
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/fellhold-reboot">Fellhold Reboot</a>
+                                &nbsp;
+                            
+                                <a href="/tags/urbancrawl">Urbancrawl</a>
+                                &nbsp;
+                            
+                                <a href="/tags/osr">OSR</a>
+                                &nbsp;
+                            
+                                <a href="/tags/new-rules">New Rules</a>
+                                &nbsp;
+                            
+                                <a href="/tags/fellhold">Fellhold</a>
+                                &nbsp;
+                            
+                                <a href="/tags/rpgs">RPGs</a>
+                                &nbsp;
+                            
+                                <a href="/tags/dd">D&amp;D</a>
+                                &nbsp;
+                            
+                                <a href="/tags/world-building">World Building</a>
+                                &nbsp;
+                            
+                                <a href="/tags/world-building">World Building</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>After my last post on <a href="http://blessingsofthedicegods.blogspot.com/2018/07/flexible-reaction-rolls.html">Flexible Reaction Rolls</a>, I found myself thinking about how to build Character Classes that fit with the schemey, urban style of play I&rsquo;m shooting for with Fellhold. The trouble for me until now was that I couldn&rsquo;t think of ways to get that stuff without impinging on the Old School playstyle I enjoy. What cracked it for me was turning the Reaction Roll into a mechanic with more knobs to play with. From there I also realized that Advantage/Disadvantage opened up a lot of new possibilities, and so I built one class on each of those realizations.</p>
+<p><a href="https://2.bp.blogspot.com/-V0v1CmEJWQk/W09SgXeKcPI/AAAAAAAAG80/cDAOvhNljqsyNz_Hr5fn2njlNZvHDxvhQCLcBGAs/s1600/johnhannibalsmith.jpg"><img src="https://2.bp.blogspot.com/-V0v1CmEJWQk/W09SgXeKcPI/AAAAAAAAG80/cDAOvhNljqsyNz_Hr5fn2njlNZvHDxvhQCLcBGAs/s320/johnhannibalsmith.jpg" alt=""></a></p>
+<p>The <strong>Mastermind</strong> is the classic brains behind the operation. It struck me that advantage/disadvantage are a pretty great way to model careful planning without having to go full-on storygame metagame city. Their first level ability <em>Forethought</em> can potentially be quite powerful, but requires clever thinking and skill on the player&rsquo;s part. Their final ability (&ldquo;I Love It When A Plan Comes Together&rdquo;) <em>does</em> get awfully close to the storygamey end of things, and might in reality just be &ldquo;use in case of boss fight&rdquo; - but I&rsquo;ll test it. The class also serves as a secondary adventure hook generator through the extra contacts, their starting gear, and their second level class ability (&ldquo;A Little Bird Told Me&rdquo;).</p>
+<p><a href="https://3.bp.blogspot.com/-JJ_pVBuIi4E/W09S0CswnBI/AAAAAAAAG88/1zmU_pQ4h5c_UM0jU5rrowlssU0n9O-ZwCLcBGAs/s1600/Dirk-benedict-the-a-team.jpg"><img src="https://3.bp.blogspot.com/-JJ_pVBuIi4E/W09S0CswnBI/AAAAAAAAG88/1zmU_pQ4h5c_UM0jU5rrowlssU0n9O-ZwCLcBGAs/s320/Dirk-benedict-the-a-team.jpg" alt=""></a></p>
+<p>The <strong>Rook</strong> is &ldquo;the face&rdquo; - hyper-sociable, built around understanding and tweaking NPC reactions. Getting +1 to reaction rolls per two templates is <em>huge</em> (especially when combined with the class features) and kind of guarantees this character will speak for the party all the time - I haven&rsquo;t decided if that means I need to remove it or if that&rsquo;s awesome. This class pretty much has super powers in one area that has very little to do with fighting, which right now seems pretty cool. Someone with 4 levels in Rook becomes a best-friend factory and basically gives the party an off-switch for combat with anybody even possibly open to parley.</p>
+<p>(Incidentally, if you&rsquo;re following the classic trinity of group dynamics, I figure PCs will collectively provide the <a href="https://www.youtube.com/watch?v=MYtjpIwamos">wild card</a>).</p>
+<p>Starting equipment is stingier than in <a href="http://goblinpunch.blogspot.com/2016/05/the-glog.html">Arnold&rsquo;s</a> or <a href="https://coinsandscrolls.blogspot.com/2017/10/the-index.html">Skerples&rsquo;s</a> classes, but that&rsquo;s because I plan on building them into my <a href="http://blessingsofthedicegods.blogspot.com/2018/07/money-equipment-in-fellhold.html">Equipment Tables</a>.</p>
+<p>Multi-classing 2/2 with these two classes might be terrifyingly powerful in social situations, but I think I&rsquo;m okay with that, given the usual lack of options for that sort of thing in OSR classes.</p>
+<p><strong>A Note on Mechanics</strong>   If you&rsquo;re not familiar, <a href="http://goblinpunch.blogspot.com/2016/05/the-glog.html">Arnold K&rsquo;s GLOG</a> is his homebrew/Philosopher&rsquo;s Stone, and I rather like it. See the link if the format below doesn&rsquo;t make any sense to you.</p>
+<p>If you do not use this most excellent modification, fear not! The classes below have a &ldquo;base class&rdquo; - use this for XP, HD, Saves, Attack Bonus, gear restrictions, and so on. As for the class abilities, you have a few options:   - Follow the same steep, ultimately low power curve of the GLOG and give one template per level up to 4   - For a more spaced out progression that assumes 10th level is about as high as you go, give the prime ability at level 1 and then a template every odd level (1, 3, 5, 7, 9)   - Look at the templates and eyeball when to give them to the character to match the power level of your other classes</p>
+<p>Enough intro, here are the classes.</p>
+<!-- raw HTML omitted -->
+<p>Mastermind  Clever folks who think ahead and help their team get things done.</p>
+<p>(Base Class: Thief)  Prime Ability: Meddlesome  Per Template: +1 Willpower Save, +1 Contact  Starting Equipment: Disguise Kit, Incriminating Letter  A Forethought  B A Little Bird Told Me  C True Sight  D I Love It When a Plan Comes Together</p>
+<p>Class Features  MEDDLESOME  Once per day, you may give another character (PC or NPC) advice. If they follow it, you may decide to give them either <em>Advantage</em> or <em>Disadvantage</em> on one roll related to the advice. To give <em>Advantage</em>, the advice must be sound and something that either you or your character know enough about to advise on. To give <em>Disadvantage</em>, they must believe it to be good, but there must be something wrong with it (convincing bullshit counts).</p>
+<p>FORETHOUGHT  Choose one or more of the following: activity, place, being, conditions. For each that you specify, gain one use of <em>Advantage</em> on rolls that meet all of the criteria. For example, if you said “Hand to hand fighting in an alley with humans while its raining”, you would get advantage on four rolls involving hand-to-hand fighting with humans in an alley in the rain. The GM may rule that any of the criteria are too broad and require more specificity. </p>
+<p>A LITTLE BIRD TOLD ME  Once per week, choose one: 1) Name a known NPC and the GM will tell you one true secret about them, which might be boring,  2) Learn a juicy rumor about a previously unknown NPC - might be true, might not, and the identity might be unclear.</p>
+<p>TRUE SIGHT  As long as you can see their face, you always know when someone is lying to you - not necessarily about what <em>specifically</em>, just that there is untruth there.</p>
+<p>I LOVE IT WHEN A PLAN COMES TOGETHER  Once per adventure or dungeon, you can declare that you’ve been planning for this very situation all along. Everyone in the group gets advantage on every roll this round. Gain an extra round of this if you come up with an especially convincing narrative of how you influenced prior actions to lead to this outcome.</p>
+<!-- raw HTML omitted -->
+<p>Rook  Affable folks that know how to say just what others want to hear.</p>
+<p>(Base Class Thief, or Bard if You Have It)   Prime Ability: Read Folks  Per Template: +1 to Reaction Rolls for every <em>two</em> templates, rounded down, +1 Contact  Starting Equipment: Flattering Clothes, Disguise Kit, Invitation to a Shindig  A Well Read  B Likable  C Tempting  D Charming</p>
+<p>Class Features  READ FOLKS  You have an uncanny knack for seeing what folks are thinking and feeling. Once per a meeting, you can ask the GM what the NPC die will be on the next reaction roll if you take a certain approach, make a given argument, and so forth.</p>
+<p>WELL READ  You know lots of interesting things to talk about. Any time you make a knowledge-based test in a social situation, you count as having the skill at rank 3. Note that you only know enough to talk <em>about</em> these things, not to <em>do</em> anything with them. You could have a wonderful conversation about quadratic equations with a mathematician, but you could not then plot ballistic parabola.</p>
+<p>LIKABLE  When the GM makes a reaction roll where you are the spokesman, your PC die will be one step higher. </p>
+<p>TEMPTING  If you put the moves on someone amenable to your advances, and a reaction roll comes up middling or better, they are very attracted to you, which will color their reactions to you (improved reaction rolls, more willing to hear you out, and so forth). Note that it does not guarantee they will <em>like</em> you, just want you.</p>
+<p>CHARMING  Once per week, you can declare you are laying the charm on thick before a reaction roll is rolled. If the roll comes up pretty good or better, they are affected as <em>Charm Person</em>. If after a week you haven’t done anything to push them away or piss them off, the friendship becomes genuine. Add them as a contact.</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2018-07-18</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2018-08-06-the-sages-say-monster-generator/">
+                    Next<br>&#34;The Sages Say&#34; Monster Generator
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2018-07-16-flexible-reaction-rolls/">
+                    Previous<br>Flexible Reaction Rolls
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

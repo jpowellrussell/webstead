@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html><head>
+<title>First Aid for Stress - Self Care Part 3</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    First Aid for Stress - Self Care Part 3
+                    
+                    <div class="post-meta">
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Coaching]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/wellness">Wellness</a>
+                                &nbsp;
+                            
+                                <a href="/tags/stress">Stress</a>
+                                &nbsp;
+                            
+                                <a href="/tags/self-care">Self Care</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>We’ve discussed <a href="https://www.jeffrussellcoaching.com/coaching-blog/2017/5/18/the-bathtub-model-of-stress-self-care-part-1">what stress is and how to think of it</a>, as well as ways to <a href="https://www.jeffrussellcoaching.com/coaching-blog/2017/5/26/preventative-maintenance-self-care-part-2">improve your ability to handle it</a> in a systematic way, but sometimes even the best prepared feel more than the usual amount of stress. Today we’re going to talk about what you can do immediately when you find yourself feeling stressed out.</p>
+<p>The very first thing you should do is stop and breathe. Breathing is one of the few <a href="https://www.unm.edu/~lkravitz/Article%20folder/Breathing.html">interfaces your conscious mind has with your autonomic processes</a>. On its own, your breath just happens, and when you get stressed, you begin breathing fast in your upper-chest. Here’s the crazy thing. though: the causality can go both ways, and you can take the reins by breathing consciously and calmly. When you do, you actually turn on the calming, relaxing parts of your brain and and <a href="http://www.health.harvard.edu/mind-and-mood/relaxation-techniques-breath-control-helps-quell-errant-stress-response">turn down the stressed parts freaking out</a>.</p>
+<p>To effectively control your breath, focus on two core concepts: place and timing. By place, I mean the part of your body you feel moving when you breathe - your throat, your chest, or your diaphragm? You want to use your diaphragm to relax, which is where you feel your belly move instead of your ribs. If you&rsquo;re having trouble, try this exercise from <a href="https://smile.amazon.com/Deskbound-Standing-Up-Sitting-World-ebook/dp/B01E1HDJ64/ref=tmm_kin_swatch_0?_encoding=UTF8&amp;qid=1496344900&amp;sr=8-1">Deskbound</a>: lay on the ground and pull your feet towards your butt, then breathe in and focus on pulling your belly button towards the ceiling. That&rsquo;s what a good diaphragmatic breath feels like.</p>
+<p>Once you&rsquo;re taking good, deep breaths into your belly, the next component is timing. You breathe rapidly in emergencies, so when you let yourself breathe fast, you’re confirming to your subconscious that this really is a crisis. Just as in a crowd, panic is contagious inside your body. To squelch that panic, I like to use a method called &ldquo;<a href="https://books.google.com/books?id=m5vQHbj2Vi0C&amp;pg=PA233&amp;lpg=PA233&amp;dq=four+fold+breath&amp;source=bl&amp;ots=ZqJjLV4X-u&amp;sig=IhTtpCcYcagvVHwmSiCtwgRRIhE&amp;hl=en&amp;sa=X&amp;ved=0ahUKEwj4xOmOsJ3UAhXCNiYKHXqcCSgQ6AEIWDAJ#v=onepage&amp;q=four%20fold%20breath&amp;f=false">The Fourfold Breath</a>,” also known as “<a href="http://www.med.navy.mil/sites/nmcphc/Documents/health-promotion-wellness/psychological-emotional-wellbeing/Combat-Tactical-Breathing.pdf">Tactical Breathing</a>.&rdquo; I first discovered it in <a href="https://smile.amazon.com/Mind-Performance-Hacks-Tools-Overclocking-ebook/dp/B0043D2EN6/ref=sr_1_1?ie=UTF8&amp;qid=1496345266&amp;sr=8-1&amp;keywords=mind+performance+hacks">Mind Performance Hacks</a>, but it is a form of <a href="https://en.wikipedia.org/wiki/Pranayama">Pranayama</a> breathing used in Yoga. I’ve used this technique to calm down in situations ranging from having an argument with my wife to preparing to jump out of an airplane.</p>
+<p>Performing he Fourfold Breath is simple. Inhale slowly (with your belly) to a count of four. Then hold your breath in your lungs an equal amount of time. Exhale to the same count, and then hold your lungs empty for the same amount of time. So talking yourself through it would look like this:</p>
+<p>&ldquo;In one thousand, two thousand, three thousand, four thousand.</p>
+<p>Hold one thousand, two thousand, three thousand, four thousand.  </p>
+<p>Out one thousand, two thousand, three thousand, four thousand.  </p>
+<p>Hold one thousand, two thousand, three thousand, four thousand. “ </p>
+<p>Repeat this as many times as you need to get a handle on yourself. There are some variations in timing between the inhale/exhale and the holds, how long each phase is, and so on, but I’ve presented the simplest to get started with.</p>
+<p>All by itself, the Fourfold Breath is a remarkably powerful intervention and wonderful tool to have in your kit bag. It will get you out of a panicked, reactionary mode and putt you back into a calm, rational headspace. Once there, your job is to avoid dropping right back into your stressed state by asking yourself the following questions:</p>
+<p><img src="https://images.squarespace-cdn.com/content/v1/588fac99f5e231608e25ebd0/1496352269476-BWIJBG1IF7WXSMT4OSDP/ke17ZwdGBToddI8pDm48kLgVGMx6fPuITWBSg8B9VoVZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpyjzZwvqgkHP4h-JgDDRHgFwgWqtkbRiosDEiEqVJAWZzsVf_PkkhRg42gYLfi689s/image-asset.png" alt=""></p>
+<p>If you answer &ldquo;no&rdquo; to any of these, your new mission in life is to address them, in the order listed. You&rsquo;ll notice that this <a href="https://smile.amazon.com/Checklist-Manifesto-How-Things-Right-ebook/dp/B0030V0PEW/ref=sr_1_1?ie=UTF8&amp;qid=1496346302&amp;sr=8-1&amp;keywords=checklist+manifesto">checklist</a> covers the maintenance activities <a href="https://www.jeffrussellcoaching.com/coaching-blog/2017/5/26/preventative-maintenance-self-care-part-2">we covered before</a> - nine times out of ten, feeling stressed stems from a failure of one of your maintenance routines. On the rare tenth time that something truly bad happens, like wolves chasing you, your stress reaction will be working hard to save your life and you should just get out of its way.</p>
+<p>If you still feel worked up after taking care of the checklist above, it’s time for a bigger intervention. One excellent option is to engage in some especially vigorous exercise - something that significantly elevates your heart rate and makes you break a real sweat. If you’re angry, you might even find it useful to do something safely and constructively violent - box, chop some wood, wail on a plastic trash can with a stick, that sort of thing.</p>
+<p>Another good option if you have the time is cold exposure. I take a cold shower every morning for its various <a href="https://selfhacked.com/2016/10/19/12-reasons-embrace-cold/">health and psychological benefits</a>, but for an immediate response to acute stress, consider hopping in an ice bath. I like to use Tim Ferriss’s <a href="https://www.youtube.com/watch?v=jCU2qENWMnA">protocol</a>. If you&rsquo;re new to cold exposure, be careful! If you find yourself getting dizzy or feeling pain, get out. Cold showers are a great place to start, and I highly recommend Wim Hof&rsquo;s <a href="https://www.wimhofmethod.com/">course</a> for a systematic program gradually and safely build your tolerance. It sounds nuts, but ten minutes of cold exposure can leave you with a feeling of euphoria that&rsquo;s pretty great. If nothing else, I guarantee you won’t be thinking about anything besides how cold it is for a few minutes.</p>
+<p>Finally, I’ve got to acknowledge that sometimes stuff in your life sucks and you can’t chase it away by having a snack or jumping in a cold shower. While these physiological approaches help more often than you might suspect, they’re not a cure all. At times like these, look for support from your friends and family, keep up your maintenance behaviors, and focus on how you <a href="https://smile.amazon.com/Mans-Search-Meaning-Viktor-Frankl-ebook/dp/B009U9S6FI/ref=sr_1_1?ie=UTF8&amp;qid=1496347390&amp;sr=8-1&amp;keywords=victor+frankl+man%27s+search+for+meaning">interpret</a> the source of your stress, rather than fixating on what sucks about it. You’re in it for the long haul, and you can get through it.</p>
+<p>Over the past few posts, we’ve come a long way in discussing stress and tools for dealing with it. As we&rsquo;ve seen, stress is inevitable and even beneficial in the right doses. We can proactively improve our ability to handle it through a smart combination of ongoing routines for maintenance and specific interventions for flare ups. Ultimately, we can’t control all the sources of stress in our life, but we can train and prepare ourselves to control what we do about it.</p>
+
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/thinking/2020-05-26-khs_series_intro/">
+                    Next<br>Building a Knowledge Handling Set Up - Part 1 - Introduction
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/coaching/2017-12-4-journaling-as-thinking/">
+                    Previous<br>Journaling as Thinking
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

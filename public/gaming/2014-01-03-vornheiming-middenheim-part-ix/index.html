@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html><head>
+<title>Vornheiming Middenheim Part IX: Grafsmund-Nordgarten and the Law</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Vornheiming Middenheim Part IX: Grafsmund-Nordgarten and the Law
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2014-01-03 11:52
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/sbvd">SBVD</a>
+                                &nbsp;
+                            
+                                <a href="/tags/osr">OSR</a>
+                                &nbsp;
+                            
+                                <a href="/tags/rules">Rules</a>
+                                &nbsp;
+                            
+                                <a href="/tags/wfrp">WFRP</a>
+                                &nbsp;
+                            
+                                <a href="/tags/middenheim">Middenheim</a>
+                                &nbsp;
+                            
+                                <a href="/tags/projects">Projects</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p><a href="http://2.bp.blogspot.com/-46ZhRIlx8XA/UsZxbekqh9I/AAAAAAAAAfE/03AyW7-T3uU/s1600/user2252_1161397188.jpg"><img src="https://2.bp.blogspot.com/-46ZhRIlx8XA/UsZxbekqh9I/AAAAAAAAAfE/03AyW7-T3uU/s320/user2252_1161397188.jpg" alt=""></a></p>
+<p>[UPDATE 2/12/19: I no longer support spending money on products that benefit Zak S, or giving him positive attention and connection. The short version is that I find credible claims that he has engaged in unacceptable behavior and not made up for it. For more detail, see <a href="%7B%7B%20site.baseurl%20%7D%7D%7B%25%20post_url%202019-02-12-removing-support-from-zak-smith%20%25%7D">here</a>. Please consider these claims and make your own decision on their validity, and the implications thereof, before supporting Zak in any way.]</p>
+<p>Okay, so I&rsquo;m trying to hammer out the district write-ups and not drag this thing out too much past the original target of a few days ago. I&rsquo;m afraid that the &ldquo;Locations&rdquo; entries are getting a little too much into &ldquo;stuff to look up&rdquo; territory. Right now I figure I will leave them in there to fulfill the secondary goal of making this a useful reference for running the city &ldquo;as intended&rdquo;, though I do take some liberties with the encounters and rumors as I present them.</p>
+<p>I&rsquo;m also noodling around with a further addition to the contacts system presented earlier. It might be complexity for the sake of cute mechanics, though. Basically, I really like that contacts in different districts get you different information. I&rsquo;ve started trying to think how to have &ldquo;juicier&rdquo; rumors be more accessible from &ldquo;better&rdquo; contacts. Something like a contact rank that modifies their likelihood to know what you&rsquo;re asking if you&rsquo;re in the right district, or ordering the rumors so that ones that only some people would be privy to are higher numbers, and you add the rank when you roll on the rumor table.</p>
+<p>But I think that that goes against the main spirit of what I&rsquo;m trying to do here. For one, keeping secrets based more on dice rolls than on player ingenuity isn&rsquo;t very cool, it&rsquo;s better to supply information that leads to interesting situations than it is to try to create lame mysteries and reveals. Secondly, I&rsquo;ve intentionally been playing fast and loose with what I put in the rumors and presenting them all with the same lack of confirmation of veracity, whether it&rsquo;s &ldquo;officially true&rdquo; or not. I think that ordering the rumors would be counter to that, and I really like the efficiency of presenting interesting and/or weird stuff as potentially but unreliably true. So, at this point, it looks like I&rsquo;ve talked myself out of that new contacts idea for now, but maybe consider it shelved for a specifically conspiracy/detectivey game.</p>
+<p>I have also included a quick system for resolving trials. The original book has a pretty involved subsystem chock full of modifiers and specific charges and severity ratings and mitigating factors and so forth. I liked the concept of an &ldquo;off-screen&rdquo; way to handle trials, but I wanted to streamline it some. So I took out most of the specific modifiers, gave some guidelines on applying your own, and converted it to a 3d6 system for some sweet, sweet bell curve action. Also, I have an irrational distaste for the eminently reasonable percentile system. The system is weighted more towards lots of bribery and heavy penalties to encourage player action in the form of bribes and breakout attempts. If you&rsquo;re more looking for a simple &ldquo;you&rsquo;re fined for pickpocketing&rdquo; result, you should probably just make that call and move on. If you want high-participation trials, I recommend <a href="http://www.rpgnow.com/product/91110/Vornheim-The-Complete-City-Kit">Vornheim</a>.</p>
+<p>4. Grafsmund-Nordgarten  Activity  Day</p>
+<ul>
+<li>
+<p>Hardly anyone travels the well-cobbled streets running between large
+houses set in their own grounds</p>
+</li>
+<li>
+<p>The watch discourages any sort of street performers or hawkers and
+quickly  sends them on their way so as not to disturb their betters</p>
+</li>
+<li>
+<p>Other than the odd luxurious carriage, the only business on the
+streets is servants and flunkies running errands or delivering
+messages</p>
+</li>
+</ul>
+<p>Night</p>
+<ul>
+<li>
+<p>Young rakes and dandies stroll arrogantly to the various high class
+hostelries in the neighborhood</p>
+</li>
+<li>
+<p>Frequent watch patrols keep the streets relatively calm and safe</p>
+</li>
+</ul>
+<p>Locations  The Prospect</p>
+<ul>
+<li>
+<p>Superbly luxurious hostelry, one of the finest in the city</p>
+</li>
+<li>
+<p>A favorite starting point for young blades out for a night on the
+town</p>
+</li>
+<li>
+<p>Owned by Rudolf and Sigrid Buffler, genteel, respectable, and
+haughty in the way that only the top servants of the very rich can
+be</p>
+</li>
+</ul>
+<p>The Graf’s Repose</p>
+<ul>
+<li>
+<p>Another luxurious hostelry, but quieter than The Prospect</p>
+</li>
+<li>
+<p>Run by Rolf and Ulrike Steinmeyer, an obsequious couple who like
+nothing more than to bow and scrape to nobility</p>
+</li>
+<li>
+<p>The burly, mute doorman Boris doesn’t admit “troublemakers” in order
+to maintain the quiet atmosphere</p>
+</li>
+</ul>
+<p>The Harvest Goose</p>
+<ul>
+<li>
+<p>The finest restaurant in Middenheim, known for its Elven cook
+Fanamis Shassaran</p>
+</li>
+<li>
+<p>Its namesake is its specialty dish, a succulently roasted goose
+stuffed with special herbs and fruits</p>
+</li>
+<li>
+<p>The fine menu is rivaled only by the extensive and exorbitantly
+priced wine cellar</p>
+</li>
+</ul>
+<p>Encounters  No random encounters in the day. 1 in 6 chance per hour at night</p>
+<ul>
+<li>
+<p>A bored watch patrol looking for an excuse to mix it up with some
+rich folks</p>
+</li>
+<li>
+<p>Some bored rich folks confident they can treat poor folks however
+they like</p>
+</li>
+<li>
+<p>A group of drunk young blades. Roll 1d4: 1 - Angry drunks 2 -
+Melancholy drunks 3 - Stumbling, incoherent drunks 4 - Actually
+wounded from being on the wrong end of a duel</p>
+</li>
+<li>
+<p>A nervous looking servant hurrying somewhere with a heavy and
+awkward package</p>
+</li>
+<li>
+<p>A lone nobleman, stumblingly drunk asks for assistance getting home
+and waves a purse full of coin around rather obviously</p>
+</li>
+<li>
+<p>Was that a man on the roof? There he goes!</p>
+</li>
+</ul>
+<p>Rumors</p>
+<!-- raw HTML omitted -->
+<p>The Law</p>
+<p>Below is a process for handling the trial of a character arrested or otherwise suspected of a crime.  The emphasis is on simplicity and ease of use, but feel free to add in modifiers for other factors, such as the social class of perpetrator and victim, hiring a lawyer, or others. It is recommended that whether characters are caught and arrested, and by whom, be handled through the normal course of play, and then bring these rules into play once they are held.  Court  1.  Civil: “normal” crimes. Double effectiveness of bribes, double
+severity if lower class</p>
+<ol start="2">
+<li>
+<p>Religious: specifically religious crimes, crimes against members of
+churches. Double severity rating of crimes involving heresy, +3 for
+devout followers of Ulric</p>
+</li>
+<li>
+<p>Military: crimes committed by or against those in the military. +3
+to all rolls, but punishment is more likely physical or forced labor</p>
+</li>
+</ol>
+<p>Severity of the Accused Crime  1.  Misdemeanor (0): things like stealing petty amounts, fighting,
+insubordination, et cetera</p>
+<ol start="2">
+<li>
+<p>Felony (-3): serious “normal” crimes like murder, arson, rape, or
+desertion</p>
+</li>
+<li>
+<p>Heresy (-6): Fundamentally going against the society, mostly
+religious. Things like worshipping chaos gods, practicing
+necromancy, or harboring mutants</p>
+</li>
+</ol>
+<p>Time Rotting in a Cell before Trial  1.  2d6 - severity - (10 x gold spent on bribes) weeks  2.  Gold must be spent before roll  3.  Minimum of 1 night held  Trial and Sentencing  Roll 3d6 - severity + (1 per 1000 Gold spent on bribes) +/- Court Modifiers</p>
+<ul>
+<li>
+<p>3 or Less: Absolutely Atrocious! Death through horrible means,
+possible banishment, some very serious and very permanent penalty</p>
+</li>
+<li>
+<p>4-5: Guilty! Sold into slavery, mutilated, or other serious
+permament penalty</p>
+</li>
+<li>
+<p>6-8: Guilty! Pay a hefty fine, spend some time as a pit fighter,
+temporary slavery, or other serious penalty</p>
+</li>
+<li>
+<p>9-12: Guilty. Pay a fine, spend some time in the stocks, do some
+minor labor, or other relatively light penalty</p>
+</li>
+<li>
+<p>13-15: Not Guilty. You are free to go, but you have a record</p>
+</li>
+<li>
+<p>16-17: Not Guilty! You are free to go, and the charges are expunged
+from all public record</p>
+</li>
+<li>
+<p>18 or higher: Apologies! The plaintiff will pay a penalty of 1,000
+gold per level of severity to the accused</p>
+</li>
+</ul>
+<p>Time to Sentence  1.  If Guilty, sentence will be carried out in 1d6 days</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2014-01-03</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2014-01-06-dungeon-dozen-fan-index/">
+                    Next<br>Dungeon Dozen Fan Index
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2014-01-02-crapsack-goblin-game-idea/">
+                    Previous<br>Crapsack Goblin Game Idea
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

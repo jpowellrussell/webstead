@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html><head>
+<title>A Matter of Taste</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    A Matter of Taste
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2010-02-05 03:58
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/rpgs">RPGs</a>
+                                &nbsp;
+                            
+                                <a href="/tags/theory">Theory</a>
+                                &nbsp;
+                            
+                                <a href="/tags/projects">Projects</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>So, before we go into how to encourage a particular genre with the rules, there is the question of what genre to shoot for. If my whole contention is that the real draw of RPGs is the non-mechanical aspects, then a good starter RPG needs to have a genre with wide appeal and plenty of material to fire the imagination. I&rsquo;ll run through a brief list of some popular settings/genres and my thoughts on them, but this is an area where personal taste could cloud my judgement extraordinarily easily, so I would very much appreciate comments on what flavors are good choices for players new to roleplaying.</p>
+<p><strong>Heroic Fantasy</strong>: By &lsquo;Heroic Fantasy&rsquo;, I basically mean Dungeons and Dragons. I&rsquo;ll include the grittier Sword and Sorcery flavor under this umbrella to keep things brief. In a heroic fantasy game, the players take on the roles of gifted individuals in a fantastic world (usually pseudo-medieval) and fight monsters and villains with magic, blades, and bows (again, usually. Star Wars has a lot of &lsquo;heroic fantasy&rsquo; elements, despite being in space). Settings frequently come from mythology, popular fantasy books (like Lord of the Rings), or historical/pseudo-historical sources (like &lsquo;7th Sea&rsquo;, which is roughly based on Age of Exploration Europe, but is a made up world with its own history). Benefits include that it is a familiar genre/setting to just about everyone, wide flexibility in the sorts of characters that are helpful, and just plain imagination firing fantastic elements. Negatives are that many folks have negative stereotypes associated with the genre (it&rsquo;s nerdy, it&rsquo;s for kids, it&rsquo;s the work of Satan, et cetera), and that many of the things you can do (magic, sword fights, lots of monsters running around) lend themselves to more complex rules.</p>
+<p><strong>Space Opera</strong>: Yes, the Star Wars genre. As mentioned above, it has a lot in common with heroic fantasy, and considering both have ancestors in the late 19th and early 20th century pulp writers, this is unsurprising. Space Operas are characterized by, well, space, as well as a usually &lsquo;fuzzy&rsquo; approach to science and technology, a wealth of alien species and cultures, and a generally swashbuckling approach to problems. Benefits include wide knowledge and acceptance of (at least for Star Wars) which gives you players who already have a &lsquo;buy in&rsquo; to the setting, the excuse to come up with just about any situation you want for adventures (on this newly discovered planet. . .), and the fact that you get to use laser guns. Downsides could include many of those listed for heroic fantasy, as well as the potential to need to handle multiple scales of conflict - human scale as well as space ship scale, for example.</p>
+<p><strong>Hard Science Fiction</strong>: Hard science fiction is a setting where the technology all either exists or else is based on extrapolations from current knowledge that are all consistent with modern knowledge of physics and science. A frequent &lsquo;freebie&rsquo; is to assume some newly discovered aspect of the physical world that allows faster than light travel, and then treat everything else more rigorously. The emphasis on gritty realism of technology usually spills over into other venues, with realistic politics and gritty challenges based on the hard realities of space being popular sources of drama. Babylon 5, Jovian Chronicles, and Starship Troopers (the book, not the movie) are all &lsquo;hard&rsquo; sci-fi to some degree or another. While the grittier drama and more serious tone of the game might appeal to some players, in reality this is even more of a niche genre than Space Opera or Heroic Fantasy. I love it so, but I don&rsquo;t think it&rsquo;s a good choice as a default for a starter game.</p>
+<p><strong>Pulp!</strong>: As alluded to earlier, pulp writing covers a fairly large range of genres, from HP Lovecraft to H Rider Haggard to Edgar Rice Burroughs and beyond. Spirit of the Century does an excellent job of marking out a &lsquo;default&rsquo; pulp setting that focuses on early 20th century adventure with hints of the weird creeping in (rather like Indiana Jones) and an emphasis on the saving power of Science! I like to think of pulp as a genre &lsquo;overlay&rsquo;. Since a huge variety of pulp magazines published a multitude of genres from historical fiction to weird horror, you can easily pick some other more general genre, and &lsquo;pulp it&rsquo;. In pulping a genre, expect to up the action, up the melodrama, make the main characters a little larger than life, make the extras a little more two dimensional, and to keep the pace frenetic. Benefits of the default roaring 20s pulp setting or the wider pulp genre umbrella include emphasis on action, a purposefully simple approach to the world, and a flexibility in what sort of elements to incorporate. Downsides are that a lot of the original pulp sources are, well, written for adolescent boys in the 20s and 30s (or even before), and so tend to be sexist and occasionally racist. That doesn&rsquo;t mean your game needs to bring those elements in, but your players may have existing baggage about the setting. That being said, I&rsquo;m leaning pretty strongly towards a pulp &lsquo;flavor&rsquo; to whatever genre I pick, and Spirit of the Century is already an excellent quick to pick up game with a delightful roaring 20s pulp setting in the vein of Doc Savage or Johnny Quest.</p>
+<p><strong>Horror/Supernatural</strong>: For ease, I&rsquo;m rolling together all the different flavors of horror and games about things that bump in the night. Vampire, Call of Cthulhu (pulp horror!), or whatever else, all of these games have a strong focus on either being scary, or at least on dark subject matter. As with the hard sci-fi, this darker subject matter may appeal to certain folks, especially those wishing their games to have a consciously more &lsquo;mature&rsquo; theme. While I love this genre, I have a few issues with it as a starter game. For one, it&rsquo;s really hard to establish genuine horror in an RPG, and I imagine struggling to remember new rules and how this whole roleplaying thing works can&rsquo;t contribute to a feeling of dread. Likewise, by its nature, horror tends to touch on disturbing and unpleasant subject matter, and one of the ways RPGs make those themes especially immediate is to thrust the players into dealing with them directly via their characters. I think a starter game should be way more concerned with making players comfortable than with pushing their boundaries. So, with a heavy sigh, I&rsquo;m going to put aside the sanity points and save them for when my novice roleplayers are hungry for more depth.</p>
+<p>(a potential exception: a game on or around Halloween, when everybody&rsquo;s in a spooky-stuff mood anyway)</p>
+<p><strong>Westerns</strong>: Here&rsquo;s a genre with even wider appeal than the Space Opera or Heroic Fantasy settings. Not everybody loves westerns, but it&rsquo;s pretty rare to find someone who is entirely opposed to the idea. You have plenty of opportunity for action, violence, heists, and otherwise living outside the comfortable reach of the law or social norms. Unfortunately, being based on a fairly recent and well-known historical period gives you less room to play with things. Alternate history is a good way to get around this, and &ldquo;<a href="http://www.lumpley.com/dogsources.html">Dogs in the Vineyard&rdquo;</a> does an amazing job of keeping a rock-solid western feel while allowing plenty of flexibility in making the game world suit your group. Some problems that could come out of a totally historical western are things like gender roles, race relations, and the interference of actual historical personages. I would give Samurai settings their own entry, but if Kurosawa and his influence on latter-day westerns didn&rsquo;t convince you, most of the issues and benefits apply equally to Samurai settings as they do to westerns, except that in America, it&rsquo;s a narrower interest than westerns.</p>
+<p><strong>Action (the Ah-nahld genre)</strong>: By &lsquo;Action&rsquo;, I here mean the genre of popcorn munching action movies. I don&rsquo;t remember the name of it, but I played a pick up game based on action movies where the more ridiculous and cinematic your described action, the <em>easier</em> it was to succeed. Suffice to say, it was entertaining and people went over the top. This is a fun and easy to get into genre with loads of cultural context to fit it into. On the other hand, it doesn&rsquo;t by nature focus very much on the roleplaying aspect of things, being defined instead by the aspects of the game most usually revolving around dice and mechanics. My personal take is that Action is a genre better mined for content to throw into other genres/settings than one to host a game all by itself.</p>
+<p>Some other genres I have less experience with (Gaming-wise) and thus less to say, but thought I should throw out there are:</p>
+<ul>
+<li><em>Super Heroes</em></li>
+<li><em>Cops</em></li>
+<li><em>Pirates</em></li>
+<li><em>Kung Fu</em></li>
+<li><em>Super Spies</em> (maybe a subgenre of Action!)</li>
+<li><em>Humorous</em> (see my entry <a href="http://dicegods.wordpress.com/2010/02/05/dungeons-and-t%E2%80%A6om-outer-space/">Dungeons and Teenagers from
+Outerspace</a>)</li>
+</ul>
+<p>As I said at the get go, I&rsquo;d love the hear your thoughts on various roleplaying genres and their utility for introducing new players.</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2010-02-05</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2010-03-18-dogs-in-vineyard/">
+                    Next<br>Dogs in the Vineyard
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2010-02-05-setting-vs-genre/">
+                    Previous<br>Setting vs Genre
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html><head>
+<title>Every Version of D&amp;D Part IV: The Underworld &amp; Wilderness Adventures</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Every Version of D&amp;D Part IV: The Underworld &amp; Wilderness Adventures
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2013-07-03 12:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/dampd">Damp;D</a>
+                                &nbsp;
+                            
+                                <a href="/tags/every-version-of-dampd">Every Version of Damp;D</a>
+                                &nbsp;
+                            
+                                <a href="/tags/projects">Projects</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p><a href="http://1.bp.blogspot.com/-dcS7-rcqCDs/UdOW3H2tqWI/AAAAAAAAAQk/d1GTH1gLK7E/s1600/Underworld&amp;WildernessAdventures.png"><img src="http://1.bp.blogspot.com/-dcS7-rcqCDs/UdOW3H2tqWI/AAAAAAAAAQk/d1GTH1gLK7E/s320/Underworld&amp;WildernessAdventures.png" alt=""></a></p>
+<p>So, as I come to the last of the original Little Brown Books, I have to give a bit of background.   When I was getting into D&amp;D as an impatient and overconfident adolescent, I initially gave the DMG something of a pass.  It was actually the last of the core rulebooks I bought, and if I remember correctly, I ran my first campaign for quite a while without it.  I basically figured I knew what was up, and the Player’s Handbook had “the real rules” (a.k.a. character creation and combat).  By the time I did get around to reading the AD&amp;D 2E DMG, while I found it awesome and inspiring, I viewed it very much as broad guidelines and figured I could safely ignore any specifics on how to go about things.  But that’s getting ahead of myself and this series by a huge number of posts.  My basic point is that I have held the misguided belief that DMGs are glorified advice handbooks for a very long time, and only in re-approaching D&amp;D with a conscious attitude of using all the rules as presented until play makes changes necessary have I come to realize the full extent of my error.  And the first book to disabuse me of that notion was this little guy, “The Underworld and Wilderness Adventures”.  This book is <em>jam-packed</em> with useful stuff.  It even seems to reverse my younger misapprehension: Men &amp; Magic and Monsters &amp; Treasure are mere reference works, whereas <em>the game</em> is held in this book.  Here is where Gygax and Arneson were able to tell their wargaming audience “okay, we know this all sounded pretty much like the same stuff only with fantasy guys, but this right here is why this game is good and different.” <em>This</em> book is the nucleus around which all future D&amp;D accreted and grew, despite the rules and description carry-over from the prior two.  It begins with the eminently practical advice on how to construct a dungeon. This game <em>is</em> “Dungeons and Dragons” after all.  What I really appreciate is the specificity and the granularity.  With later editions, there seems to be a growing sense of “you will use a module” or else “you know how to make a dungeon”.  As someone with the chutzpah to want almost entirely self-created dungeon content but without the years of experience in creating it, this is refreshingly welcome.  Tons of great blog posts have covered the finer points of dungeon creation, but definite rules on room placement and stocking, advice on how to draw those rooms and connect them up and so forth are all quite welcome.  I won’t dwell on some of the peculiarities better highlighted in <a href="http://www.grey-elf.com/philotomy.pdf">Philotomy’s Musings</a>, but doors that must be forced open and close automatically, changing monsters and passages when characters return, and infravision only working for monsters that live there all point to the dungeon as a tool for playing a fun game rather than a meticulously realized fictional world.  Given all of the later “Gygaxian Naturalism”, I have to wonder how much of this came from Gygax and how much from Arneson.  I’m sure more informed people than me will know.  Getting into the rules on monsters, I actually really like the wandering monster table as presented here.  I’d have to sit down and work out the probabilities, but I imagine later systems with normally distributed results could give a similar breakdown of monster level by level underground, but I feel like the breakout tables given here could very easily be tweaked by dungeon/megadungeon level/area to give a different feel for what high or low level monsters you encounter in any given area.  I also like that specific rules are given for avoiding and running away from monsters.    <a href="http://4.bp.blogspot.com/-dJOJJJFJx38/UdObS_h7pYI/AAAAAAAAAQ0/4mpMSCLhVrU/s220/Monster+Plain.png">http://4.bp.blogspot.com/-dJOJJJFJx38/UdObS_h7pYI/AAAAAAAAAQ0/4mpMSCLhVrU/s220/Monster+Plain.png</a>  <em>Get it?</em></p>
+<p>Hmmm, moving into “The Wilderness” section, there’s a passage that catches my attention that I haven’t noticed before:   “Off-hand adventures in the wilderness are made on the OUTDOOR SURVIVAL playing board (explained below).  Exploratory journies[sic], such as expeditions to find land suitable for a castle or in search of some legendary treasure are handled in an entirely different manner.”  So, rather than “Outdoor Survival” being the ‘default’ immediate surroundings, does this imply that you should use that on the fly, but if you have time and effort you should come up with your own map and fit them together? That’s kind of cool.  I’ve gotta admit, the outdoor survival map just doesn’t hold the same appeal to me as it does for a lot of folks, though I can freely admit its usefulness, it looks a bit awkwardly artificial to my senses. Heresy, I’m sure, but there it is.  I initially found the rules about castles and their residents to be bizarrely specific and meddlesome, but re-reading, I notice that they’re set up to spur on adventure. Either you fight the residents of the castle (or run away) or they send you on a quest somewhere, or you have a sweet tournament and get a temporary base of operations.  In particular, I admire the ring of influence (encounter on 1-3 in hex, encounter on 1-2 1 hex away, encounter on a 1 2 hexes away) and I’ve seen a similar approach taken to monsters/adventure sites over on Rolls, Rules, and Roles here.  Because sandbox exploration is already so freeform and open, I really find mechanized processes especially helpful there.  The wilderness monster charts are enjoyably wacky.  I especially like that Burroughs’ Mars gets a shoutout as default terrain type.  And some great Old School advice:   “Animals will generally be of the giant variety, although the referee might prefer to have small spiders, for example, which attack the party when they are asleep.”  The evasion and wilderness encounter rules provide a nice cost to large parties for which I can definitely see the wisdom.  My group has a ridiculously huge entourage, and considering my setting is meant to be pretty sparsely inhabited, this means that they usually scare off any run of the mill wandering monsters and make chop suey out of most keyed encounters. Time to throw in some immune to normal weapons, level-draining undead, probably.  Or I could just follow rules like those given here so that there are real tactical and strategic choices to be made about rolling deep or rolling quiet.  I really like all of the stronghold and hireling/retainer rules.  When I first read about hirelings in 2E, the concept seemed kind of dumb, what with my being accustomed to the “heroic fantasy” flavor of D&amp;D.  Now that I’m older and possibly wiser, the idea that the way your character becomes powerful on a different scale is to build a small empire is way more appealing to me than that your character gains demi-god-like or god-like powers and starts cruising the planes beating up cosmic forces or whatever.  I think I’ve said it before, but what I like best about this approach is that it inherently creates connection with the world.  If you want to build a stronghold, you have to find out about the area.  If you want allies and enemies, you have to know who is powerful.  If you want armies, you have to keep your peasants happy, which means you have to pay attention what’s going on in your domain, et cetera.  Adventurer, Conqueror, King System (ACKS) does a really super job of detailing all of this stuff in a workable system, but there’s plenty to work with right here in good ole “The Underworld and Wilderness Adventures”.    <a href="http://1.bp.blogspot.com/-_auE0mPMGhk/UdObl1yeulI/AAAAAAAAAQ8/Y2YCQz84K-s/s300/397_henchmen.jpg">http://1.bp.blogspot.com/-_auE0mPMGhk/UdObl1yeulI/AAAAAAAAAQ8/Y2YCQz84K-s/s300/397_henchmen.jpg</a>  <em>Don&rsquo;t worry, I&rsquo;ve got your back</em></p>
+<p>Aerial combat is fairly detailed, but I’ve honestly never run an aerial fight in any version of D&amp;D.  Probably my loss.  I also haven’t ever used boats for more than getting from place to place, and I should probably fix that as well.  In general, as I mentioned above, I am pleasantly surprised by how much content is squeezed into such small space.  LotFP or ACKS or the like may have more clearly stated and easier referenced rules for running this sort of thing, but it’s all here in basic form for those willing to interpolate as necessary, and that’d pretty great.  The afterward is justly appreciated and well known in Old School circles, and I take its DIY ethos to heart.  I’d say it was no boast that all of the essentials are here in an ample framework, given everything that came after and was built on this sparse but sturdy frame.  </p>
+<p>Next up we’ll do a quick survey of the Supplements (I-iV), which will be new to me, other than familiarity with references to them.</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2013-07-03</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2013-07-09-fellhold-session-36-recap/">
+                    Next<br>Fellhold Session 36 Recap
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2013-07-02-fellhold-session-35-recap/">
+                    Previous<br>Fellhold Session 35 Recap
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

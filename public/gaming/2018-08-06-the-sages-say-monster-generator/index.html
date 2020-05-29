@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html><head>
+<title>&#34;The Sages Say&#34; Monster Generator</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#how-i-got-here--this-all-started-because-i-was-trying-to-think-up-monsters-for-fellholdhttpblessingsofthedicegodsblogspotcomsearchlabelfellholdand-im-kind-of-bad-at-that-the-monster-forgehttpwwwthewinglesscomforgeforgehtm-is-awesome-but-still-puts-most-of-the-heavy-lifting-on-me-so-i-started-looking-through-various-monster-manuals-to-get-ideas-as-i-took-notes-it-struck-me-that-i-could-decompose-what-i-found-cool-about-monsters-that-caught-my-attention-into-elements-of-some-kind-then-id-be-able-to-create-a-generator-so-i-switched-my-notes-over-to-excel-i-arbitrarily-picked-six-things-i-had-to-write-down-about-each-monster-and-purposely-did-not-create-categories-until-after-i-had-gone-through-all-the-monsters-in-my-list-then-i-took-each-line-item-and-copypasted-it-into-a-column-if-i-felt-like-they-went-togetherhttpsgeneralassemblydesignuser-experience-designaffinity-mapping-once-everything-had-a-home-i-smashed-some-columns-together-removed-others-and-ended-up-labeling-each-of-them" v-on:click="closeDrawer" id="how-i-got-here--this-all-started-because-i-was-trying-to-think-up-monsters-for-fellholdhttpblessingsofthedicegodsblogspotcomsearchlabelfellholdand-im-kind-of-bad-at-that-the-monster-forgehttpwwwthewinglesscomforgeforgehtm-is-awesome-but-still-puts-most-of-the-heavy-lifting-on-me-so-i-started-looking-through-various-monster-manuals-to-get-ideas-as-i-took-notes-it-struck-me-that-i-could-decompose-what-i-found-cool-about-monsters-that-caught-my-attention-into-elements-of-some-kind-then-id-be-able-to-create-a-generator-so-i-switched-my-notes-over-to-excel-i-arbitrarily-picked-six-things-i-had-to-write-down-about-each-monster-and-purposely-did-not-create-categories-until-after-i-had-gone-through-all-the-monsters-in-my-list-then-i-took-each-line-item-and-copypasted-it-into-a-column-if-i-felt-like-they-went-togetherhttpsgeneralassemblydesignuser-experience-designaffinity-mapping-once-everything-had-a-home-i-smashed-some-columns-together-removed-others-and-ended-up-labeling-each-of-them-nav">
+										 How I Got Here This all started because I was trying to think up monsters for Fellhold and I’m kind of bad at that. The Monster Forge is awesome, but still puts most of the heavy lifting on me. So I started looking through various monster manuals to get ideas. As I took notes, it struck me that I could decompose what I found cool about monsters that caught my attention into elements of some kind, then I’d be able to create a generator. So I switched my notes over to excel. I arbitrarily picked six “things” I had to write down about each monster and purposely did not create categories until after I had gone through all the monsters in my list. Then I took each line item and copy/pasted it into a column if I felt like they “went together&#34;. Once everything had a home, I smashed some columns together, removed others, and ended up labeling each of them. 
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#design-notes" v-on:click="closeDrawer" id="design-notes-nav">
+										 Design Notes
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#how-i-got-here--this-all-started-because-i-was-trying-to-think-up-monsters-for-fellholdhttpblessingsofthedicegodsblogspotcomsearchlabelfellholdand-im-kind-of-bad-at-that-the-monster-forgehttpwwwthewinglesscomforgeforgehtm-is-awesome-but-still-puts-most-of-the-heavy-lifting-on-me-so-i-started-looking-through-various-monster-manuals-to-get-ideas-as-i-took-notes-it-struck-me-that-i-could-decompose-what-i-found-cool-about-monsters-that-caught-my-attention-into-elements-of-some-kind-then-id-be-able-to-create-a-generator-so-i-switched-my-notes-over-to-excel-i-arbitrarily-picked-six-things-i-had-to-write-down-about-each-monster-and-purposely-did-not-create-categories-until-after-i-had-gone-through-all-the-monsters-in-my-list-then-i-took-each-line-item-and-copypasted-it-into-a-column-if-i-felt-like-they-went-togetherhttpsgeneralassemblydesignuser-experience-designaffinity-mapping-once-everything-had-a-home-i-smashed-some-columns-together-removed-others-and-ended-up-labeling-each-of-them" v-on:click="closeDrawer" id="how-i-got-here--this-all-started-because-i-was-trying-to-think-up-monsters-for-fellholdhttpblessingsofthedicegodsblogspotcomsearchlabelfellholdand-im-kind-of-bad-at-that-the-monster-forgehttpwwwthewinglesscomforgeforgehtm-is-awesome-but-still-puts-most-of-the-heavy-lifting-on-me-so-i-started-looking-through-various-monster-manuals-to-get-ideas-as-i-took-notes-it-struck-me-that-i-could-decompose-what-i-found-cool-about-monsters-that-caught-my-attention-into-elements-of-some-kind-then-id-be-able-to-create-a-generator-so-i-switched-my-notes-over-to-excel-i-arbitrarily-picked-six-things-i-had-to-write-down-about-each-monster-and-purposely-did-not-create-categories-until-after-i-had-gone-through-all-the-monsters-in-my-list-then-i-took-each-line-item-and-copypasted-it-into-a-column-if-i-felt-like-they-went-togetherhttpsgeneralassemblydesignuser-experience-designaffinity-mapping-once-everything-had-a-home-i-smashed-some-columns-together-removed-others-and-ended-up-labeling-each-of-them-nav">
+										 How I Got Here This all started because I was trying to think up monsters for Fellhold and I’m kind of bad at that. The Monster Forge is awesome, but still puts most of the heavy lifting on me. So I started looking through various monster manuals to get ideas. As I took notes, it struck me that I could decompose what I found cool about monsters that caught my attention into elements of some kind, then I’d be able to create a generator. So I switched my notes over to excel. I arbitrarily picked six “things” I had to write down about each monster and purposely did not create categories until after I had gone through all the monsters in my list. Then I took each line item and copy/pasted it into a column if I felt like they “went together&#34;. Once everything had a home, I smashed some columns together, removed others, and ended up labeling each of them. 
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+				
+				
+					
+						
+						
+							<ul>
+						
+							<ul>
+						
+							<ul>
+						
+						
+								<li>
+				 					<a href="#design-notes" v-on:click="closeDrawer" id="design-notes-nav">
+										 Design Notes
+									</a>
+								</li>
+						
+							</ul>
+						
+							</ul>
+						
+							</ul>
+						
+					
+				
+			
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    &#34;The Sages Say&#34; Monster Generator
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2018-08-06 10:40
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/fellhold-reboot">Fellhold Reboot</a>
+                                &nbsp;
+                            
+                                <a href="/tags/osr">OSR</a>
+                                &nbsp;
+                            
+                                <a href="/tags/new-rules">New Rules</a>
+                                &nbsp;
+                            
+                                <a href="/tags/fellhold">Fellhold</a>
+                                &nbsp;
+                            
+                                <a href="/tags/rpgs">RPGs</a>
+                                &nbsp;
+                            
+                                <a href="/tags/rules">Rules</a>
+                                &nbsp;
+                            
+                                <a href="/tags/dd">D&amp;D</a>
+                                &nbsp;
+                            
+                                <a href="/tags/world-building">World Building</a>
+                                &nbsp;
+                            
+                                <a href="/tags/world-building">World Building</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <!-- raw HTML omitted -->
+<p>I made a thing that makes monsters. I&rsquo;m terribly pleased with it right now, but let me know what you think. If the embed below is giving you weird formatting (on a phone or tablet, say), or if you just want to mess with it, check out the sheet <a href="https://docs.google.com/spreadsheets/d/10IPuObMhs2Tajf79ewc5tUKsfOrwG0fCdLS_T62U7ZU/edit?usp=sharing">here</a>.</p>
+<p>I used Brendan&rsquo;s excellent <a href="http://www.necropraxis.com/2018/07/22/random-table-format-wars/">methodology</a> to build it in Google Sheets. Every time you refresh this page, you should get a new result. If you open it up as a sheet, you&rsquo;ll get a new result whenever you refresh the page. If you make a copy for yourself that you can edit, you&rsquo;ll get a new result whenever you make a change.</p>
+<!-- raw HTML omitted -->
+<h3 id="how-i-got-here--this-all-started-because-i-was-trying-to-think-up-monsters-for-fellholdhttpblessingsofthedicegodsblogspotcomsearchlabelfellholdand-im-kind-of-bad-at-that-the-monster-forgehttpwwwthewinglesscomforgeforgehtm-is-awesome-but-still-puts-most-of-the-heavy-lifting-on-me-so-i-started-looking-through-various-monster-manuals-to-get-ideas-as-i-took-notes-it-struck-me-that-i-could-decompose-what-i-found-cool-about-monsters-that-caught-my-attention-into-elements-of-some-kind-then-id-be-able-to-create-a-generator-so-i-switched-my-notes-over-to-excel-i-arbitrarily-picked-six-things-i-had-to-write-down-about-each-monster-and-purposely-did-not-create-categories-until-after-i-had-gone-through-all-the-monsters-in-my-list-then-i-took-each-line-item-and-copypasted-it-into-a-column-if-i-felt-like-they-went-togetherhttpsgeneralassemblydesignuser-experience-designaffinity-mapping-once-everything-had-a-home-i-smashed-some-columns-together-removed-others-and-ended-up-labeling-each-of-them">How I Got Here  This all started because I was trying to think up monsters for <a href="http://blessingsofthedicegods.blogspot.com/search/label/Fellhold">Fellhold</a> and I&rsquo;m kind of bad at that. The <a href="http://www.thewingless.com/forge/forge.htm">Monster Forge</a> is awesome, but still puts most of the heavy lifting on me. So I started looking through various monster manuals to get ideas. As I took notes, it struck me that I could decompose what I found cool about monsters that caught my attention into elements of some kind, then I&rsquo;d be able to create a generator. So I switched my notes over to excel. I arbitrarily picked six &ldquo;things&rdquo; I had to write down about each monster and purposely did not create categories until after I had gone through all the monsters in my list. Then I took each line item and copy/pasted it into a column if I felt like they &ldquo;<a href="https://generalassemb.ly/design/user-experience-design/affinity-mapping">went together</a>&quot;. Once everything had a home, I smashed some columns together, removed others, and ended up labeling each of them. </h3>
+<p>Somewhere around here I recalled David McGrogan&rsquo;s epic <em><a href="http://monstersandmanuals.blogspot.com/2014/05/housekeeping.html">Let&rsquo;s Read the 2E Monstrous Manual</a></em> thread and <em><a href="http://www.lulu.com/shop/patrick-stuart-and-scrap-princess/fire-on-the-velvet-horizon/paperback/product-23550253.html">Fire on the Velvet Horizon</a></em> by <a href="http://falsemachine.blogspot.com/">Patrick</a> and <a href="http://monstermanualsewnfrompants.blogspot.com/">Scrap</a>. Both make much of &ldquo;the sages&rdquo; that tell us things in monster manuals and how it&rsquo;s a really weird but very effective way to write about stuff in a book that is simultaneously giving you the god-like &ldquo;truth&rdquo; of the world but also trying to inspire you. So I figured that I&rsquo;d arrange the generator into a natural language sentence flavored as if a sage were telling you about this thing.</p>
+<p>The great thing about this approach was that it let me hit a sweet spot between providing enough concrete detail to get your imagination going but also enough vagueness that it&rsquo;s psychologically easier to ignore or massage any outright contradictory or uncool stuff that happens to come up. </p>
+<p>I also wanted this to be fairly usable, though, so after I got the natural language bit worked out, I went back and added some stats. I had grand ideas about tying these into all of the abilities and behaviors, but a) that&rsquo;s not all that helpful, as thinking up stats once you have the idea isn&rsquo;t too hard, and b) I couldn&rsquo;t figure out how to do it at all cleanly. So, what we ended up with was size affecting HD and AC, and whether some kind of humanoid came up in the type putting a lower limit on intelligence and animals shouldn&rsquo;t get weapons as attack types, but other than that, the stats are randomly determined.</p>
+<!-- raw HTML omitted -->
+<h3 id="design-notes">Design Notes</h3>
+<ul>
+<li>The core of the description is one or sometimes two monster or
+animal base types - I did this to maximize the
+<a href="http://dndwithpornstars.blogspot.com/2009/10/imaginable-monsters-sci-fi-monsters-etc.html?zx=14c3c88963fb2fde">imaginability</a>,
+but also because I wanted something a little more naturalistic than
+James Raggi&rsquo;s (excellent, but super random) <em><a href="http://www.drivethrurpg.com/product/58916/Random-Esoteric-Creature-Generator-for-Classic-Fantasy-RolePlaying-Games-and-their-Modern-Simulacra">Random Esoteric
+Creature
+Generator</a></em></li>
+<li>Also, it&rsquo;s not as comprehensive as it might be, because my input
+monsters were all ones that I felt would fit in Fellhold, which is
+pretty aesthetically restricted compared to &ldquo;kitchen sink&rdquo; D&amp;D - I
+ended up adding a few things in that wouldn&rsquo;t necessarily &ldquo;fit&rdquo; in
+Fellhold, but I didn&rsquo;t try to capture all of D&amp;D</li>
+<li>That being said, it should be pretty easy to adapt this to your own
+game world by changing up which origins, animal types, abilities,
+behaviors, and so forth are in the random tables - feel free to
+contact me if any of the formulas are unclear for customizing</li>
+<li>Many of the entries (size, intelligence, combat stats) have
+normal(ish) distributions, so you&rsquo;re a little less likely to get
+totally gonzo stuff</li>
+<li>For the stats, I normalized them around a B/X Grizzly Bear,
+following Jack Shear&rsquo;s
+<a href="http://talesofthegrotesqueanddungeonesque.blogspot.com/2016/08/just-use-bears.html">advice</a>,
+so you might need to beef up a solo monster for 5E or higher levels,
+or reduce stats if you&rsquo;re going for an organized and intelligent
+monster</li>
+<li>I totally pulled the No. Appearing numbers out of my hat</li>
+<li>I used descending AC cos that&rsquo;s how I roll - I figure we&rsquo;re all used
+to converting back and forth by now</li>
+<li>Most of the monsters that come out will be somewhat unpleasant and
+hostile, so this isn&rsquo;t a great generator for coming up with more
+sympathetic or neutral creatures. If you want that sort of thing,
+just ignore the motivations/internal state and maybe the behavior
+and come up with your own</li>
+<li>Anything of human level intelligence or more is more likely to have
+weapons listed as attacks than animal-type attacks, which may give
+some weird results - as with everything else, ignore if necessary</li>
+</ul>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2018-08-06</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2018-08-09-creative-problem-solving-types-in-d/">
+                    Next<br>Creative Problem Solving Types in D&amp;D
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2018-07-18-osr-classes-mastermind-and-rook/">
+                    Previous<br>OSR Classes: The Mastermind and the Rook
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html><head>
+<title>Fellhold</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<style>
+  .toc{
+    display: none !important;
+  }
+</style>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+        
+            <div class="pagination-indicator">
+                <span style="text-align: center">
+                    2<br><div style="display: inline-block; transform: rotate(-28deg)">-</div><br>3
+                </span>
+            </div>
+            
+            
+            <a class="pagination-action" href="/tags/fellhold/">
+                <i class="material-icons pagination-action-icon">
+                    chevron_left
+                </i>
+            </a>
+            
+
+            
+            <a class="pagination-action" href="/tags/fellhold/page/3/">
+                <i class="material-icons pagination-action-icon">
+                    chevron_right
+                </i>
+            </a>
+            
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post-item-wrapper post-item-wrapper-no-hover">
+            <div class="post-item post-item-no-gaps">
+                <div class="post-item-info-wrapper">
+                    <div class="post-item-title  post-item-title-small">
+                        <a href="/">Home</a> / Fellhold
+                    </div>
+                </div>
+            </div>
+        </div><a href="/gaming/2018-08-06-the-sages-say-monster-generator/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            &#34;The Sages Say&#34; Monster Generator
+                        </div>
+                        <div class="post-item-meta">
+                            Aug 6, 2018
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2018-07-18-osr-classes-mastermind-and-rook/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            OSR Classes: The Mastermind and the Rook
+                        </div>
+                        <div class="post-item-meta">
+                            Jul 18, 2018
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2018-07-16-flexible-reaction-rolls/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Flexible Reaction Rolls
+                        </div>
+                        <div class="post-item-meta">
+                            Jul 16, 2018
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2018-07-10-money-equipment-in-fellhold/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Money &amp; Equipment in Fellhold
+                        </div>
+                        <div class="post-item-meta">
+                            Jul 10, 2018
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2018-06-29-the-soul-economy-in-fellhold/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            The Soul Economy in Fellhold
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 29, 2018
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2016-09-19-by-our-powers-combined-fellhold-has/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            By Our Powers Combined: Fellhold has an Artist!
+                        </div>
+                        <div class="post-item-meta">
+                            Sep 19, 2016
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2016-08-11-call-for-fellhold-artist-to-conquer-diy/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Call for Fellhold Artist to Conquer the DIY D&amp;D World
+                        </div>
+                        <div class="post-item-meta">
+                            Aug 11, 2016
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2016-07-26-restaurant-and-coffee-house-generators/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Restaurant and Coffee House Generators
+                        </div>
+                        <div class="post-item-meta">
+                            Jul 26, 2016
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2016-07-11-fine-dining-carousing-table/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fine Dining Carousing Table
+                        </div>
+                        <div class="post-item-meta">
+                            Jul 11, 2016
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2016-07-08-conspiracy-generator-for-fellhold/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Conspiracy Generator for Fellhold
+                        </div>
+                        <div class="post-item-meta">
+                            Jul 8, 2016
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2016-07-05-vendors-and-merchants-of-fellhold/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Vendors and Merchants of Fellhold
+                        </div>
+                        <div class="post-item-meta">
+                            Jul 5, 2016
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2016-06-28-books-and-libraries-in-fellhold/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Books and Libraries in Fellhold
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 28, 2016
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2016-06-27-sages-and-their-petty-rivalries-in/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Sages and Their Petty Rivalries in Fellhold
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 27, 2016
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2016-06-22-what-do-you-do-in-city-default/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            What Do you Do in the City? Default Urbancrawl Actions
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 22, 2016
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2016-06-20-lifestyles-of-poor-and-adventurous/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Lifestyles of the Poor and Adventurous
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 20, 2016
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2016-06-16-some-fellhold-random-encounter-tables/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Some Fellhold Random Encounter Tables
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 16, 2016
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2016-06-13-places-of-interest-in-fellhold/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Places of Interest in Fellhold
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 13, 2016
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2016-01-31-how-to-make-anything-gameable-ask-what/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            How to Make Anything Gameable: Ask What Three Times
+                        </div>
+                        <div class="post-item-meta">
+                            Jan 31, 2016
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2015-11-14-fellhold-reboot-in-25-words/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Reboot in 25 Words
+                        </div>
+                        <div class="post-item-meta">
+                            Nov 14, 2015
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-02-03-militant-random-encounter-pop-o-matic/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Militant Random Encounter Pop-o-Matic Chart
+                        </div>
+                        <div class="post-item-meta">
+                            Feb 3, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-01-29-dwarves-as-germanic-sumerians/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Dwarves as Germanic Sumerians
+                        </div>
+                        <div class="post-item-meta">
+                            Jan 29, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-01-24-pretty-pretty-picture-friday_24/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Pretty Pretty Picture Friday
+                        </div>
+                        <div class="post-item-meta">
+                            Jan 24, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-01-17-pretty-pretty-picture-friday/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Pretty Pretty Picture Friday
+                        </div>
+                        <div class="post-item-meta">
+                            Jan 17, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2014-01-01-keeping-habit/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Keeping the Habit
+                        </div>
+                        <div class="post-item-meta">
+                            Jan 1, 2014
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-12-19-vornheiming-middenheim-part-i/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Vornheiming Middenheim Part I
+                        </div>
+                        <div class="post-item-meta">
+                            Dec 19, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-12-18-summoning-up-courage/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Summoning Up the Courage
+                        </div>
+                        <div class="post-item-meta">
+                            Dec 18, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-12-17-off-screen-factions-part-ii-combat/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Off Screen Factions Part II: Combat
+                        </div>
+                        <div class="post-item-meta">
+                            Dec 17, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-12-16-a-procedure-for-off-screen-faction/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            A Procedure for Off-Screen Faction Interaction
+                        </div>
+                        <div class="post-item-meta">
+                            Dec 16, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-12-13-some-spells/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Some Spells
+                        </div>
+                        <div class="post-item-meta">
+                            Dec 13, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-12-12-the-granularity-of-megadungeons/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            The Granularity of Megadungeons
+                        </div>
+                        <div class="post-item-meta">
+                            Dec 12, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-12-11-high-level-fighters-whats-going-on/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            High Level Fighters, What&#39;s Going On?
+                        </div>
+                        <div class="post-item-meta">
+                            Dec 11, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-12-05-occult-magic-for-fellhold/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            [UPDATE] Occult Magic for Fellhold
+                        </div>
+                        <div class="post-item-meta">
+                            Dec 5, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-07-09-fellhold-session-36-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 36 Recap
+                        </div>
+                        <div class="post-item-meta">
+                            Jul 9, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-07-02-fellhold-session-35-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 35 Recap
+                        </div>
+                        <div class="post-item-meta">
+                            Jul 2, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-06-26-fellhold-session-34-recap-and/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 34 Recap and Supplemental Optional Library Rules
+                        </div>
+                        <div class="post-item-meta">
+                            Jun 26, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-05-22-fellhold-session-31-recap-and-rules-for/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 31 Recap (and rules for clerics of Hrokr)
+                        </div>
+                        <div class="post-item-meta">
+                            May 22, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-05-16-runic-magic-in-fellhold/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Runic Magic in Fellhold
+                        </div>
+                        <div class="post-item-meta">
+                            May 16, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-05-15-fellhold-session-30-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 30 Recap
+                        </div>
+                        <div class="post-item-meta">
+                            May 15, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-05-08-fellhold-session-29-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 29 Recap
+                        </div>
+                        <div class="post-item-meta">
+                            May 8, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-05-01-fellhold-session-28-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 28 Recap
+                        </div>
+                        <div class="post-item-meta">
+                            May 1, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-04-25-a-problem/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            A Problem
+                        </div>
+                        <div class="post-item-meta">
+                            Apr 25, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-04-24-adventurer-as-meta-class/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Adventurer as a Meta-Class
+                        </div>
+                        <div class="post-item-meta">
+                            Apr 24, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-04-23-every-version-of-d-part-i-introduction/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Every Version of D&amp;D Part I: Introduction
+                        </div>
+                        <div class="post-item-meta">
+                            Apr 23, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-04-23-a-brief-interlude-on-rule-systems/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            A Brief Interlude on Rule Systems
+                        </div>
+                        <div class="post-item-meta">
+                            Apr 23, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-04-17-swords-wizardry-appreciation-day/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Swords &amp; Wizardry Appreciation Day!
+                        </div>
+                        <div class="post-item-meta">
+                            Apr 17, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-04-17-humanoids-of-fellhold/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Humanoids of Fellhold
+                        </div>
+                        <div class="post-item-meta">
+                            Apr 17, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-04-10-the-long-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            The Long Recap
+                        </div>
+                        <div class="post-item-meta">
+                            Apr 10, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2013-04-10-so-again-with-absence-of-blogging-thing/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            
+                        </div>
+                        <div class="post-item-meta">
+                            Apr 10, 2013
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-12-12-fellhold-sessions-13-14-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Sessions 13 &amp; 14 Recap
+                        </div>
+                        <div class="post-item-meta">
+                            Dec 12, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-11-27-fellhold-session-12-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 12 Recap
+                        </div>
+                        <div class="post-item-meta">
+                            Nov 27, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-11-19-fellhold-session-11-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 11 Recap
+                        </div>
+                        <div class="post-item-meta">
+                            Nov 19, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-11-19-first-fellhold-rules-post/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            First Fellhold Rules Post
+                        </div>
+                        <div class="post-item-meta">
+                            Nov 19, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-11-13-porting-dungeon-world-gming-rules-part-4/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Porting Dungeon World&#39;s GMing Rules, Part 4
+                        </div>
+                        <div class="post-item-meta">
+                            Nov 13, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-11-12-fellhold-session-10-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 10 Recap
+                        </div>
+                        <div class="post-item-meta">
+                            Nov 12, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-11-06-fellhold-session-9-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 9 Recap
+                        </div>
+                        <div class="post-item-meta">
+                            Nov 6, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-10-30-fellhold-session-8-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 8 Recap
+                        </div>
+                        <div class="post-item-meta">
+                            Oct 30, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-10-23-fellhold-session-7-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 7 Recap
+                        </div>
+                        <div class="post-item-meta">
+                            Oct 23, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-10-16-fellhold-session-6-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 6 Recap
+                        </div>
+                        <div class="post-item-meta">
+                            Oct 16, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-10-15-porting-dungeon-world-gm-rules-part-3/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Porting Dungeon World&#39;s GM Rules, Part 3
+                        </div>
+                        <div class="post-item-meta">
+                            Oct 15, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-10-09-into-wilderness-porting-dungeon-world/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Into the Wilderness (Porting Dungeon World&#39;s GM Rules, part 2)
+                        </div>
+                        <div class="post-item-meta">
+                            Oct 9, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-10-09-some-challenges-in-judgement/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Some Challenges in Judgement
+                        </div>
+                        <div class="post-item-meta">
+                            Oct 9, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-10-09-fellhold-session-5-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 5 Recap
+                        </div>
+                        <div class="post-item-meta">
+                            Oct 9, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-09-28-a-bit-of-fellhold-flavor/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            A Bit of Fellhold Flavor
+                        </div>
+                        <div class="post-item-meta">
+                            Sep 28, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-09-26-porting-dungeon-world-gming-rules-to_26/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Porting Dungeon World&#39;s GMing Rules to Swords &amp; Wizardry WhiteBox Part 2
+                        </div>
+                        <div class="post-item-meta">
+                            Sep 26, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-09-24-fellhold-session-3-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 3 Recap
+                        </div>
+                        <div class="post-item-meta">
+                            Sep 24, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-09-20-have-to-put-in-work/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            &#34;You Have to Put in the Work&#34;
+                        </div>
+                        <div class="post-item-meta">
+                            Sep 20, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-09-18-fellhold-session-2-recap/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 2 Recap
+                        </div>
+                        <div class="post-item-meta">
+                            Sep 18, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-09-17-porting-dungeon-world-gming-rules-to/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Porting Dungeon World&#39;s GMing Rules to White Box, Part 1
+                        </div>
+                        <div class="post-item-meta">
+                            Sep 17, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-09-16-dungeon-world-echo-resounding/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Dungeon World, An Echo, Resounding, Refereeing and You
+                        </div>
+                        <div class="post-item-meta">
+                            Sep 16, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-09-13-a-point-of-similarity/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            A Point of Similarity
+                        </div>
+                        <div class="post-item-meta">
+                            Sep 13, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-09-11-how-i-learned-to-stop-worrying-and-love/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            How I learned to Stop Worrying and Love the Random
+                        </div>
+                        <div class="post-item-meta">
+                            Sep 11, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-09-11-a-note-about-rules/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            A Note about Rules
+                        </div>
+                        <div class="post-item-meta">
+                            Sep 11, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-09-10-fellhold-session-1/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Fellhold Session 1
+                        </div>
+                        <div class="post-item-meta">
+                            Sep 10, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-09-06-prep-is-fun/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            Prep is Fun!
+                        </div>
+                        <div class="post-item-meta">
+                            Sep 6, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a><a href="/gaming/2012-08-29-a-wild-campaign-appears/" class="a-block">
+            <div class="post-item-wrapper">
+                <div class="post-item post-item-no-gaps">
+                    <div class="post-item-info-wrapper">
+                        <div class="post-item-title">
+                            A Wild Campaign Appears!
+                        </div>
+                        <div class="post-item-meta">
+                            Aug 29, 2012
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a></div>
+</div>
+
+            </div>
+
+<div class="pagination">
+    
+    <a class="pagination-action" href="/tags/fellhold/" style="opacity:1">
+    
+        <i class="material-icons pagination-action-icon">
+            chevron_left
+        </i>
+    </a>
+
+        <div class="pagination-indicator">
+            <span>2/3</span>
+        </div>
+
+        
+        <a class="pagination-action" href="/tags/fellhold/page/3/"
+           style="opacity:1">
+        
+                <i class="material-icons pagination-action-icon">
+                    chevron_right
+                </i>
+            </a>
+</div>
+
+
+<div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

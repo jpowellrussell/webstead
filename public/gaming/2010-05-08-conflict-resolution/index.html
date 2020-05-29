@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html><head>
+<title>Conflict Resolution</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Conflict Resolution
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2010-05-08 09:08
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/the-book-of-threes">The Book of Threes</a>
+                                &nbsp;
+                            
+                                <a href="/tags/rpgs">RPGs</a>
+                                &nbsp;
+                            
+                                <a href="/tags/projects">Projects</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>Okay, so, I&rsquo;ve been posting some stuff about the game over at this <a href="http://www.indie-rpgs.com/forum/index.php?topic=29764.0">thread</a> on the Forge, both to try to target some hard-core design oriented folks and to draw traffic towards the blog and game :) At any rate, a commenter over there pointed out a glaring deficiency with the conflict resolution rules as written, and then proposed a great solution for one part of it, and some potential solutions for the other, that I wanted to hash out here.</p>
+<p>Okay, so first off, the easy part. It was brought to my attention that the &lsquo;aggressor&rsquo; despite his name, actually usually gets little to do in the conflict, and has little effect on the direction of the conflict unless his roll is super good. Which is lame. So, I probably need to change the whole &lsquo;only put forward your highest die&rsquo; thing. That&rsquo;s the hard part I&rsquo;m gonna get onto next. But whatever change I make to that, there&rsquo;s a simpler and I think better way to handle &lsquo;the aggressor&rsquo;. Usually, a conflict is gonna have one party or another who says &ldquo;okay, let&rsquo;s do this! No more pussy footing around, I want to force the issue!&rdquo; That guy&rsquo;s gonna be the aggressor. I might need to put in something for if two guys both simultaneously say they want to go for it, but I think that&rsquo;s gonna be pretty rare. So the aggressor is whoever initiates the conflict in round one, and thereafter whoever scores a partial success is the aggressor in the next round. Easy, and it makes sense. It also keeps the &lsquo;back and forth&rsquo; feel I wanted to get.</p>
+<p>Now the hard part. So, as alluded to above, right now it sucks to be the aggressor. Rolling the highest die, especially against an opponent with a dice pool of any size, makes it really easy to get hosed. So, I think the aggressor needs to have the option to a) put forward more than 1 die, and b) decide which dice go out there. I don&rsquo;t want it to just be &lsquo;as many dice as you want&rsquo; as it currently is with the responder, because then an aggressor with larger dice can just decide the contest in round one by putting forward gobs of high dice. I also think that the current responder rules prioritize super committing in round one to get a decisive outcome, rather than the tactical use of dice over multiple rounds like I want to have.</p>
+<p>So, I see three (heh) options here right now. I would love to hear more if y&rsquo;all have some suggestions.</p>
+<ul>
+<li>First, assign an arbitrary value of dice you can use per round (3 is
+tempting)</li>
+<li>Second, you can assign 1 die per person on your side</li>
+<li>Third, some value based on a characteristic. I&rsquo;m leaning towards
+your current &lsquo;wealth&rsquo; value to give it some in-game use as a static
+value</li>
+</ul>
+<p>Okay, with the arbitrary value, this muzzles large groups somewhat, and I think would give more power to larger dice size than currently exists (3d12 are usually going to be higher than 3d8). This might fit the &lsquo;uphill fight&rsquo; against stronger traits that I want to have, but it also might make using lower traits darn near impossible to actually gain anything.</p>
+<p>With 1 die per person, we have the opposite effect. Larger groups of minimally skilled guys become more effective than small groups of skilled guys. Which might be okay, but I don&rsquo;t know. It would also mess with my &lsquo;minion&rsquo; rules where you just have a named NPC and his goons represented as &lsquo;an ability&rsquo;. It would, however, emphasize the role of allies somewhat more, which is a core concept for the design.</p>
+<p>Finally, with a characteristic, this adds a bit more &lsquo;crunch&rsquo; to the character traits/resources/abilities/whatever. Loyalty and glory both have something to do in conflicts, and I kind of wanted Wealth to have a more direct effect than just buying abilities. This would also give your wealth sitting there on your sheet something to do besides bribe other characters and save up for ability purchasing at the end of the chapter. It doesn&rsquo;t really have any flavor justification at all (all of the armbands and rings I have make me super effective!) but from a resource-interaction standpoint, it has some appeal.</p>
+<p>Finally, d4s might just be totally worthless. That same commenter pointed out that a d4 is half a d8, but a d8 is two thirds of a d12, so there&rsquo;s an uneven spread there. On the other hand, d6 might be too close. Curse you Euclidean space for not allowing a d9!</p>
+<p>So, I end this post with a question: which method makes sense to you? Or do you have a better suggestion?</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2010-05-08</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2010-05-10-return-of-conflict-resolution/">
+                    Next<br>Return of Conflict Resolution
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2010-05-07-do-wave/">
+                    Previous<br>Do the Wave
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

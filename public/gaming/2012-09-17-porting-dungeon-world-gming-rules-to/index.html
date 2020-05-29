@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html><head>
+<title>Porting Dungeon World&#39;s GMing Rules to White Box, Part 1</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Porting Dungeon World&#39;s GMing Rules to White Box, Part 1
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2012-09-17 16:46
+                        </time>
+                        
+
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/osr">OSR</a>
+                                &nbsp;
+                            
+                                <a href="/tags/fellhold">Fellhold</a>
+                                &nbsp;
+                            
+                                <a href="/tags/fellhold-campaign">Fellhold Campaign</a>
+                                &nbsp;
+                            
+                                <a href="/tags/rpgs">RPGs</a>
+                                &nbsp;
+                            
+                                <a href="/tags/dungeon-world">Dungeon World</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>So, as mentioned in my previous post, I think that the GMing rules from <a href="http://www.dungeon-world.com/index.php/adventurers-guild/">Dungeon World</a>/<a href="http://apocalypse-world.com/">AW</a> are those which can most profitably be ported into an Old School D&amp;D game (<a href="http://www.swordsandwizardry.com/?page_id=6">Swords &amp; Wizardry WhiteBox</a> in my case). With that in mind, I&rsquo;m going to start by going through the <em>Dungeon World</em> <strong>Agendas, Principles</strong> and <strong>Moves</strong>, as well as the <strong>Always Say</strong> guidelines, and discuss/tweak to the &lsquo;Old School&rsquo; refing style I am using in my game.</p>
+<p>As a quick aside to those unfamiliar with these: the concepts of **Always Say, Agendas, Principles, **and <strong>Moves</strong> comes from Vincent Baker&rsquo;s Apocalypse World and are a way to codify and make rules good GMing practice for a particular way to run games. They aren&rsquo;t fluffy &ldquo;advice&rdquo; nor are they nitty-gritty &ldquo;use monsters of X challenge value against characters of Y level&rdquo; mechanics. They are honest to God game rules, ones you can point to and say &ldquo;He&rsquo;s not GMing the game by the rules if he doesn&rsquo;t do this&rdquo;. All that being said, the particular style of play Dungeon World&rsquo;s GM procedures point to is close to but not identical to the style of play I&rsquo;m shooting for with Fellhold, hence the tweaks coming up. Well, let&rsquo;s roll up our sleeves and get to work, shall we?</p>
+<p><strong>Always Say</strong></p>
+<p>As a Dungeon World GM you always say these things (<strong>in bold -</strong> followed by my commentary in regular text):</p>
+<p>**What the rules demand - **This one is pretty consistent with my refing philosophy for an Old School game anyhow. I had already decided to follow <a href="http://grognardia.blogspot.com">Mr. Maliszewski&rsquo;s</a> example and make all rolls out in the open and to have a firm &ldquo;no fudging&rdquo; policy. On the other hand, one of the &ldquo;rules&rdquo; is my judgement as referee (which I am attempting to regularize somewhat with this post) and sometimes the &ldquo;rule&rdquo; will be that I roll a die and figure something out based on whether it&rsquo;s high or low. Overall, though, I don&rsquo;t think this one needs any tweaking.</p>
+<p>**What the adventure demands - **Again, this one is fairly straightforward, and pretty close to old school principles. Though it doesn&rsquo;t need to be said to those familiar with Old School or Story Now methods, &ldquo;the adventure&rdquo; in this  instance emphatically does <strong>not</strong> mean &ldquo;pre-planned story&rdquo;. Rather, this is a reminder to insure that the world&rsquo;s internal consistency informs what I say, and not to hold anything back.</p>
+<p>**What honesty demands - **Building off the &ldquo;not to hold anything back&rdquo; idea above is this notion not to hoard information or keep secrets for dramatic/plot based purposes. If a player pokes the canvas cover of a pit trap with his 10&rsquo; pole, he found it, the end. If the wandering monster check brought up something scary right when the party is wounded and retreating, well, damn, there it is. Once again, totally consistent with an old school approach as I understand it.</p>
+<p>**What the principles demand - **Here&rsquo;s one that is usually not spelled out in Old School games, but I think there is some precedent for the concept. I read somewhere recently someone saying that the OSR relies mostly on &ldquo;tribal knowledge&rdquo; and &ldquo;best practices&rdquo; to achieve what games like <em>Dungeon World</em> and <em>Apocalypse World</em> have codified in GMing rules, but that both embrace the idea that there is a right way to GM/Ref a game for a particular approach. I&rsquo;m making some of my indie sympathies obvious with this very post, and it&rsquo;s partially because I don&rsquo;t have much experience with actually running in an Old School style.</p>
+<p><strong>Agenda</strong></p>
+<p>Your agenda is what you sit down at the table to do:</p>
+<p>**Make the world fantastic - **Not much to say here, describing everything to present a coherent fantasy world is definitely one of my goals.</p>
+<p>**Fill the characters’ lives with adventure - **I think this one has potentially the greatest room for differences, but isn&rsquo;t fundamentally different. The agenda as stated and implemented in <em>Apocalypse World</em>/<em>Dungeon World</em> calls for the GM to actively craft threats that target things that are important to the characters, while the Old School approach tends to go more for scattering a number of potential dangers/adventurers around, see what the players engage with, and then run with that. I don&rsquo;t have any problem with bringing in a focus on targeting what the players/their characters establish as important to them, but I think I will strongly filter it through the idea that I just make things that the characters interact with, and that I don&rsquo;t try to get at certain &ldquo;issues&rdquo; or themes.</p>
+<p>**Play to find out What Happens - **This is the agenda that most struck me as a point of similarity between Old School refing and Apocalypse Engine GMing. Old School GMing expresses it via random tables and constructing locations and environments based on their internal logic and ecology rather than on a story line or specific challenge levels. Apocalypse derived games express it by having stakes and questions in Fronts and strongly reminding the GM not to pre-plan outcomes. I might even point to this agenda as the heart of <em>my</em> in-play enjoyment, whereas the other two have more to do with how I help the players have fun (although, <strong>Make the World Fantastic</strong> ties right into my lonely-fun prepping between sessions).</p>
+<p>I can&rsquo;t think of any agendas that need to be added, although my particular version of **Play to Find out What Happens, **includes a little more of &ldquo;test the players&rsquo; skill&rdquo; than a straight up story now focused game. Here&rsquo;s why I don&rsquo;t think this will result in incoherence: the focus on player skill has practically zero to do with system mastery and more to do with player creativity and initiative. I view seeing the ways players get around puzzles and traps or think up outlandish tactics as part of what I&rsquo;m playing to find out, and since finding that out doesn&rsquo;t have an impact on the rules the way, say, min/maxing would, I think the other principles and moves will mostly hold.</p>
+<p><strong>Principles</strong></p>
+<p>**Draw maps, leave blanks - **If anything, Old School play has more focus on maps, but I think it tends to interpret &ldquo;blanks&rdquo; more abstractly. Rather than leaving sections of the map literally blank, Old School approaches tend to concretely map out the physical location (dungeon complex, mountains, town, whatever) and then to intentionally leave areas &ldquo;blank&rdquo; to be investigated in play. In particular I&rsquo;m discovering the joy of random dungeon stocking tables, and I&rsquo;m going to experiment with doing more on the fly once I really have my in-play reference hammered out.</p>
+<p>**Address the characters, not the players - **This one is probably one of the bigger departures. There&rsquo;s much more of a tendency in Old School play to view your character as &ldquo;your guy&rdquo; that you control, rather than a &ldquo;persona&rdquo; you get into the headspace of. This makes sense given the high rate of lethality for low level characters. I&rsquo;ve somewhat consciously <strong>avoided</strong> this principle in the sessions so far in order to play up the fact that players <strong>can&rsquo;t</strong> expect plot immunity. As characters grow and develop (and survive) I might start doing this more.</p>
+<p>**Embrace the fantastic - **No problems here, although I&rsquo;ve been trying to force myself to be open minded about &ldquo;the fantastic&rdquo; than my own narrow sense of what is &ldquo;right&rdquo; for the setting. So I think I&rsquo;ll keep this as a reminder to relax and remember the free wheeling pulp source material.</p>
+<p>**Make a move that follows - **Obviously, this one is built on the idea that you are using &ldquo;moves&rdquo;, but I think the core idea that what you decide to do as a GM/ref should logically follow from what came before fictionally, and perhaps more importantly, that you have &ldquo;permission&rdquo; to do hard/bad things if it makes sense fictionally is very Old School. That&rsquo;s part of why I think incorporating &ldquo;moves&rdquo; into my thinking will help encourage me to make interesting and exciting decisions about the fiction.</p>
+<p>**Never speak the name of your move - **Here&rsquo;s one that doesn&rsquo;t come up very strongly in most Old School play, but the idea of &ldquo;embellishing&rdquo; the nuts and bolts explanation is an old one. I might embrace this one and stop saying things like &ldquo;the monster rolls to hit&rdquo;, even if it&rsquo;s obvious that that&rsquo;s what&rsquo;s happening. I think that will help focus things back on the fiction, which is the whole idea here.</p>
+<p>**Give every monster life - **Here&rsquo;s one that I think was present in very early Old School play and the renaissance, but that maybe got de-emphasized pretty early on. If you look at the Little Brown Books, you can see that there&rsquo;s an expectation that monsters are more than piles of hit points and attacks sitting on top of treasure. There are rules for capturing dragons for sale, recruiting monsters as followers, and seeing what sort of reaction monsters would have to you in a social situation. This one I definitely want to embrace.</p>
+<p>**Name every person - **I think Old School best practices follow this one, and I&rsquo;ve definitely embraced it whole-heartedly, making good use of random name lists and quick NPC creation tables. Something alluded to in the <em>Dungeon World</em> rules that I think will be interesting to see in play is that sometimes <em>monsters</em> become <em>persons</em>, and how they&rsquo;re interacted with will change how the rules treat them.</p>
+<p><strong>Ask questions and use the answers -</strong> This is fundamental to the Old School way of running things, especially in any sort of rules light game. &ldquo;You search for traps? Okay, how?&rdquo; One thing that AW derived games are more open about that I&rsquo;m keen to embrace is sharing some of the game world&rsquo;s authorship (though there are some excellent examples of this in the <a href="http://grognardia.blogspot.com/search/label/dwimmermount">Dwimmermount Campaign</a> over at Grognardia).</p>
+<p>**Be a fan of the characters - **Though the <em>Dungeon World</em> rules stress that this does not mean root for the Player Characters to win, I think a cultivated attitude of impartiality is more the approach of the Old School. Perhaps a more specifically Old School restatement would be &ldquo;<strong>Never Treat the Characters as your Enemies&rdquo;.</strong></p>
+<p><strong>Think Dangerous</strong> - The Old School is <strong>so</strong> on the same page here. I think DW&rsquo;s broadening of said dangerous thinking from just the characters out to the world&rsquo;s institutions and NPCs and so forth is a worthwhile and consistent  expansion.</p>
+<p>**Begin and end with the fiction - **Yup, another point of strong kinship here. While Old School games have historically not had all of the links between the fiction and the rules as clear as would be ideal, the strong emphasis on the fiction as what matters is definitely there. Hell, I&rsquo;d argue that rules that started to distance the fiction and game mechanics (thief skills, generic skill sets, et cetera) are what started Old School games on the path away from the Old School.</p>
+<p>**Think offscreen, too - **This one&rsquo;s a staple of good sandbox campaign play, and is also reflected in modules and supplements that presented dungeons as living places (like the various humanoid tribes abandoning the Caves of Chaos after an attack in Keep on the Borderlands). So, I think it&rsquo;s a great idea to put this up as a reminder.</p>
+<p>**Moves **</p>
+<p>There&rsquo;s going to be significantly less overlap with established Old School procedures in some of these moves, I think a lot are just formalized versions of what Old School Refs do all the time.</p>
+<p>**Use a monster, danger, or location move - **Things like this tend to be covered by special attacks, spells, or the like. The big difference that comes immediately to mind is that most Old School games have an implicit assumption that the monsters follow the same rules or variations of the same rules as the characters (HD as analog for levels, rolling to hit and to damage, et cetera). The idea of having mechanical moves that are <em>not</em> based on the player rules is intriguing, and I&rsquo;m going to have to think about well I think they&rsquo;ll mesh.</p>
+<p>**Reveal an unwelcome truth - **One word here: traps. That being said, thinking of this as a general move to be applied to multiple situations ought to be useful in an Old School context.</p>
+<p><strong>Show signs of an approaching threat -</strong> A lot of this will get pre-loaded in a module, and the Old School will often rely on the characters asking about it as the prompt to supply it, but I know that in my own design of my megadungeon, I&rsquo;ve felt compelled to include indications of the really nasty stuff to be found rather than just springing it out of nowhere.</p>
+<p>**Deal damage - **Pretty obviously in the Old School Ref&rsquo;s repertoire.</p>
+<p><strong>Use up their resources -</strong> This tends to be more systematized and by the rules in the Old School, but it is definitely a strong focus. I particularly like some of Dungeon World&rsquo;s examples of thinking broadly about &ldquo;resources&rdquo; and emphasizing it can be temporary (like the example of a sword skittering across the room out of reach during a fight).</p>
+<p>**Turn their move back on them - **I think the canonical Old School example of this move would be the critical miss/fumble, but it should be fun to keep it in mind with a broader definition of player &ldquo;moves&rdquo; as well.</p>
+<p>**Separate them - **Here&rsquo;s one that is less popular with the Old School, if only because of logistical reasons. Never split the party and all that.</p>
+<p>**Give an opportunity that fits a class’ abilities - **I&rsquo;m not sure how much I&rsquo;ll use this one in play, on the fly, as it seems to go against the idea of the world as a place of its own that the characters interact with, rather than as something designed for the characters. Certainly I try to put a variety of situations with opportunities for all different ways to solve them, but I don&rsquo;t know if I&rsquo;ll look at my notes and go &ldquo;right about here we need something for the mage to do&rdquo;.</p>
+<p>**Show a downside to their class, race, or equipment - **And here&rsquo;s exactly why you don&rsquo;t take polearms into cramped underground tunnels. I very much plan for this to be one of the ways I make their lives interesting besides throwing monsters their way.</p>
+<p><strong>Offer an opportunity, with or without cost</strong> - This one&rsquo;s a pretty basic GMing/Refing thing to do, so yep.</p>
+<p><strong>Put someone in a spot -</strong> See above. Yep.</p>
+<p>**Tell them the requirements or consequences and ask - **Here&rsquo;s one that I think is especially important with so much depending on the referee&rsquo;s judgement. It takes a lot of sting out of arbitrary decisions when you make sure the players have buy in to what the outcome of that arbitrary decision might be. I definitely already use this one and will continue to do so.</p>
+<p>So, all of that was a somewhat lengthy way to arrive at the fact that it looks like the **Agendas, Principles, Moves, **and <strong>Always Say</strong> of *Dungeon World *map pretty closely to how I intend to continue to run my Old School campaign. I may think of some additions/modifications as I go, and if I do, I&rsquo;ll post them here. If anybody with more Old School experience takes issue with any of my comparisons, let me know.</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2012-09-17</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2012-09-18-fellhold-session-2-recap/">
+                    Next<br>Fellhold Session 2 Recap
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2012-09-16-dungeon-world-echo-resounding/">
+                    Previous<br>Dungeon World, An Echo, Resounding, Refereeing and You
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

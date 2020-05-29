@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html><head>
+<title>Summoning Up the Courage</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Summoning Up the Courage
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2013-12-18 07:24
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/osr">OSR</a>
+                                &nbsp;
+                            
+                                <a href="/tags/fellhold">Fellhold</a>
+                                &nbsp;
+                            
+                                <a href="/tags/rules">Rules</a>
+                                &nbsp;
+                            
+                                <a href="/tags/dd">D&amp;D</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <!-- raw HTML omitted -->
+<p>So, I really really like LotFP&rsquo;s summon spell (not exactly an original sentiment, there).  I like it&rsquo;s &ldquo;enough rope to hang yourself&rdquo; approach that makes a potentially super powerful spell available at level 1 with the caveat that it&rsquo;s highly random and unstable.  And for LotFP&rsquo;s weird fantasy milieu, I even like the bizarre otherworldly results.  But for Fellhold, I wanted something a little more thematically coherent, so I reworked it to work for my game.  If anyone has already created a more demonic/Warhammery feeling summon spell, I&rsquo;d sure love to see it, because I feel like mine is lacking some flavor.  In the meantime, my version of the full spell is below the break, and here are some highlights:</p>
+<ul>
+<li>Less specific and less varied forms, which is a bummer, but seems
+necessary for what I have in mind</li>
+<li>Slightly streamlined power generation (might end up creating way
+more powers, not sure yet!)</li>
+<li>Slightly simplified and reworked dominance/mastery rolls and results</li>
+<li>No Abstract Concepts (sorry, they&rsquo;re awesome, but not fitting for
+where I&rsquo;m going with Fellhold)</li>
+<li>Chances to gain corruption points and to cause <strong>other</strong> risky spell
+outcomes baked in using the risky spellcasting system</li>
+<li>Original powers list left in because thinking of something original
+with the same alien sense of variety would be really really hard
+(maybe someday, but not yet)</li>
+</ul>
+<p><em><strong>Summon</strong></em>  **  <em>The wizard opens a way for something from outside to do his bidding.  Outsiders are treacherous and dangerous, and summoning them without careful preparation is wildly risky. To cast the Summon spell, the wizard does the following:</em>  **  <em>- Roll Cast the Bones: attempting to summon something is <strong>always</strong> risky, doom points can be used to modify the roll</em>  <em>- Chooses the Intended Power Level of Thing Summoned</em>  <em>- Makes a saving throw versus spell, modified by Intelligence</em>  <em>- Randomly determines the Thing’s form</em>  <em>- Randomly determines the Thing’s powers</em>  <em>- Attempts to master the thing</em>  *   *  <em><strong>Step 1: Choose Target Power Level</strong></em>  <em>The wizard chooses a number of HD to attempt to summon up to twice his Doom Dice total.  This maximum can be increased by appropriate ritual preparation, described below. Spend one doom point per HD of intended power level.</em>  *   *  <em><strong>Step 2: Save versus Spell</strong></em>  <em>The wizard rolls a save versus spell, modified by his intelligence.  If he fails the roll, the Thing will come out more powerful than intended, and the wizard gains a number of corruption points equal to the HD of whatever comes through.</em>  *   *  <em>If the save is failed, add or subtract (50/50 chance of each) 1d3 HD from the thing (minimum 1HD).</em>  *   *  <em><strong>Step 3: Determine Thing’s Type, Form and Powers</strong></em>  <em>The Thing that comes through will have starting default statistics equal to:</em>  *AC 9, 1 Attack for 1d6 damage, Move 12, and Morale of 10.  *  *   *  <em>If the wizard made his save, roll 1d12, if he failed, roll 1d20 to determine the Thing’s type:</em>  *   *  <em>1: Plant</em>   <em>2: Fungal</em>   <em>3: Animal</em>   <em>4: Fire</em>   <em>5: Air</em>   <em>6: Earth</em>  <em>7: Water</em>   <em>8: Other Elemental</em>   <em>9: Ghost</em>  <em>10-11: Demonic</em>  <em>12+: Completely Alien Form (see LotFP summon spell or Warhammer chaos spawn for inspiration)</em>  *   *  <em>After determining its type, the wizard determines it’s features by rolling 1d6</em>  <em>1: Basically normal for its type</em>  <em>2: Roughly Humanoid</em>  <em>3: Hybrid. Roll a second type, it is a mix of these</em>  <em>4: Extra Limbs/appendages typical to type (like a six armed elemental)</em>  <em>5: Extra Limbs/appendages not typical to type (like a fungus with ghost limbs or something)</em>  <em>6: Looks identical to the caster plus 1d4 infernal taints, but retains its type</em>  *   *  *After determining the type and features, roll for powers.  *  *   *  <em>Roll 1d10. If the number is equal to or less than the number of HD actually summoned, roll a power.  Repeat until either a 10 or a number higher than the thing’s HD is rolled.</em>  **  *   *  (currently using the standard LotFP summon powers, but I&rsquo;d like to come up with something better)    <em>1. AC +2d6</em>  <em>2. AC +1d10</em>  <em>3. AC +1d12</em>  <em>4. AC +1d12, immune to normal weapons</em>  <em>5. AC +1d20</em>  <em>6. AC +1d4</em>  <em>7. AC +1d6</em>  <em>8. AC +1d6, immune to normal weapons</em>  <em>9. AC +1d8</em>  <em>10. AC +1d8, immune to normal weapons</em>  <em>11. Animate Dead (at will)</em>  <em>12. Blurred (always on, first attack against creature always misses, otherwise +2 AC)</em>  <em>13. Bonus Attack (if initial attack hits, opportunity for another attack)</em>  <em>14. Bonus Damage on Great Hit (does one greater die damage if hits by 5 or more, or rolls a natural 20)</em>  <em>15. Chaos (at will, one at a time)</em>  <em>16. Cloudkill (at will, one at a time)</em>  <em>17. Cold Attack (ranged, HDd6 damage)</em>  <em>18. Confusion (on a successful hit)</em>  <em>19. Continuing Damage (after a hit, victim takes one die less damage each Round until creature leaves or is killed)</em>  <em>20. Damage Sphere (all within 15&rsquo; take 1d6 damage per Round)</em>  <em>21. Darkness (at will, one at a time)</em>  <em>22. Detect Invisibility (always on)</em>  <em>23. Drain Ability Score (on a successful hit)</em>  <em>24. Duo-Dimension (always on, but does not take extra damage)</em>  <em>25. Electrical Attack (ranged, HDd6 damage)</em>  <em>26. Energy Drain (on a successful hit)</em>  <em>27. ESP (always on)</em>  <em>28. Explosion</em>  <em>29. Feeblemind (on a successful hit)</em>  <em>30. Fire Attack (ranged, HDd6 damage)</em>  <em>31. Gaseous Form (at will)</em>  <em>32. Globe of Invulnerability (always on self)</em>  <em>33. Grapple (+5 to rolls involving grappling)</em>  <em>34. Haste (always on self)</em>  <em>35. Immune to Cold</em>  <em>36. Immune to Electricity</em>  <em>37. Immune to Fire</em>  <em>38. Immune to Magic</em>  <em>39. Immune to Metal</em>  <em>40. Immune to Normal Weapons</em>  <em>41. Immune to Physical Attacks</em>  <em>42. Immune to Wood</em>  <em>43. Impregnates (victims hit must save versus Poison or carry a thing)</em>  <em>44. Incendiary Cloud (at will, one at a time)</em>  <em>45. Lost Dweomer</em>  <em>46. Magic Drain (on a successful hit)</em>  <em>47. Maze (on a successful hit)</em>  <em>48. Memory Wipe (on a successful hit, but no other damage)</em>  <em>49. Mimicry (can duplicate sounds and voices it has heard)</em>  <em>50. Mind Control (at will, one at a time)</em>  <em>51. Mirror Image (always on)</em>  <em>52. Move Earth (at will)</em>  <em>53. Multiple Attacks (additional 1d3 attacks)</em>  <em>54. Paralysis (on a successful hit)</em>  <em>55. Pernicious Wounds (do not naturally heal)</em>  <em>56. Phantasmal Force (at will, one at a time)</em>  <em>57. Phantasmal Psychedelia (at will, one at a time)</em>  <em>58. Phantasmal Supergoria (at will, one at a time)</em>  <em>59. Phasing (can move through solid objects)</em>  <em>60. Plant Death (all vegetation dies within 10&rsquo; x HD)</em>  <em>61. Poison (on a successful hit)</em>  <em>62. Polymorph Other (on a successful hit)</em>  <em>63. Prismatic Sphere (at will)</em>  <em>64. Prismatic Spray (at will)</em>  <em>65. Prismatic Wall (at will, one at a time)</em>  <em>66. Psionic Attack (auto-hit, 1d6 damage)</em>  <em>67. Psionic Scream (auto hit in 30&rsquo; radius area, 1d6 damage + victims must save versus Magic or be Slowed)</em>  <em>68. Radiation Attack</em>  <em>69. Radioactive</em>  <em>70. Ranged Attack</em>  <em>71. Regenerate (regains 1d3 hp a Round)</em>  <em>72. Reverse Gravity (at will, one at a time)</em>  <em>73. Silence (always on in 15&rsquo; area)</em>  <em>74. Slow (once every ten Rounds)</em>  <em>75. Spell Turning (always on)</em>  <em>76. Spellcasting (as Magic-User of 2d6 levels – random spells)</em>  <em>77. Spore Cloud (all in area must save versus Poison or become infested)</em>  <em>78. Stinking Cloud (continuous around creature)</em>  <em>79. Stone Shape (at will)</em>  <em>80. Summon (as per this spell, no miscast, creatures under control of this creature, not original caster)</em>  <em>81. Swallow Whole (on a natural 20 or hitting by 10 or more)</em>  <em>82. Symbol (one type, randomly determined, at will)</em>  <em>83. Telekinesis (at will)</em>  <em>84. Teleportation (at will)</em>  <em>85. Time Stop</em>  <em>86. Transmute Flesh to Stone (on successful hit)</em>  <em>87. Transmute Rock to Mud (at will)</em>  <em>88. Valuable Innards (worth 500 sp × HD)</em>  <em>89. Ventriloquism (at will)</em>  <em>90. Victims Rise as Undead</em>  <em>91. Vulnerable to Cold (takes +1 damage per die)</em>  <em>92. Vulnerable to Cold Iron (takes +1 damage per die)</em>  <em>93. Vulnerable to Electricity (takes +1 damage per die)</em>  <em>94. Vulnerable to Fire (takes +1 damage per die)</em>  <em>95. Vulnerable to Metal (takes +1 damage per die)</em>  <em>96. Vulnerable to Physical Attacks (takes +1 damage per die)</em>  <em>97. Vulnerable to Silver (takes +1 damage per die)</em>  <em>98. Vulnerable to Wood (takes +1 damage per die)</em>  <em>99. Wall of Fire (at will, one at a time)</em>  <em>100. Web (at will, one at a time)</em>  *</p>
+<ul>
+<li><em><strong>Step 4: Mastery Roll</strong></em>  <em>The wizard and the thing each roll 1d20. The wizard modifies his roll by the number of doom points spent and bonuses for ritual preparation and sacrifices. The Thing modifies its roll by HD and the number of special powers it has.  The degree by which either side wins determines the outcome:</em>  *   *  <em>Wizard Wins: Wizard controls the Thing</em>   <em>Wizard Wins by 5 + Thing’s HD + Number of Thing’s Powers: Greater Control</em>  <em>Wizard Wins by 19 or More: Total Mastery</em>  <em>Thing Wins: Rage</em>  <em>Thing wins by 5+ Thing’s HD + Number of Thing’s Powers: Control of Wizard</em>  <em>Thing Wins by 19 or More: Greater Control of Wizard</em>  * *  <em>Control: Roll 1d10 x margin of victory for the number of rounds the wizard can control the Thing with direct concentration required the entire time.  Any break in concentration results in a new mastery roll with the only outcomes being continued control or Rage on the part of the thing.</em>  <em>Greater Control: The wizard can demand a term of service that is clearly and succinctly defined and somehow finite and need not directly concentrate on the thing.  Outsiders are known for bending the spirit of an arrangement as much as possible within the letter of it.</em>  <em>Total Mastery: The thing has been permanently bound to this world under the wizard’s control, with no concentration necessary, though it is probably not happy about this.</em>  *   *  <em>Rage: The thing will simply lash out and attack whatever is nearest in blind rage for d10 x margin of victory number of rounds, minimum number of rounds equal to its HD before it becomes unstable and returns to its own reality.</em>  *   *  <em>Control of Wizard: The creature remains in this world for margin of victory x d10 rounds and can direct the actions of the wizard for this time.  It will seek to create as much discord as possible, whether that is by attempting to kill as many present as possible, summon more outsiders, or letting someone dangerous escape.</em>  *   *  <em>Greater Control of Wizard: Roll on the following table:</em>  <em>1: The thing takes the wizard’s soul back with it to wherever it came from. It is not pleasant.</em>  <em>2: Possessed.  The thing takes control of the wizard’s body, banishing his soul to elsewhere. It becomes an NPC and will work to spread chaos and suffering in the world.  It retains the HD and powers it was summoned with along with the wizard’s powers</em>  <em>3: Friends.  The thing holds open the portal for 1d10 more creatures of random HD up to the original thing’s own.  All will be enraged and will remain for the same amount of time as the original thing</em>  <em>4: Touch of Outside: nothing comes through the hole in reality but warping magic-stuff.  Everyone within 10 ft of the caster takes one corruption point per doom point spent on the summoning spell.</em>  <em>5: Bound.  The thing allows the wizard to keep his identity and his life, at the cost of his soul.  The thing is now his patron and he is bound to follow the thing’s orders.  The thing can obliterate the wizard’s physical form and abduct his soul any time the wizard disobeys it.</em>  <em>6: Feedback. The thing forces the magical energy used to summon it back into the wizard, creating massive dissonance.  The wizard explodes, dealing an amount of damage equal to his current doom points to everyone within 10 feet.  Anyone damaged gains 1d4 corruption points.</em>  *   *  <em><strong>Ritual Preparation</strong></em>  <em>The wizard may prepare elaborate ritual protective circles that bind and weaken summoned things.  For every 500 sp spent in materials and hour spent preparing these circles, the wizard may <strong>either</strong> increase the intended HD of the summoned thing by 1 above his normal max <strong>or</strong> add +1 to his mastery roll.</em>  *   *  <em>Sacrifices also grant the same options for each HD of the creature sacrificed.  An extra option for sentient creatures, and a further option for creatures of the same species as the wizard. So, for example, a human wizard sacrificing another human could increase the maximum intended HD to summon by 3, or by 2 with +1 on the mastery roll, or some other combination.</em>  *   *  <em>Knowing the true name of the specific being to be summoned grants +5 on the mastery roll, but makes the powers, form, and abilities of the thing summoned a decision on the referee’s part rather than a random roll.</em></li>
+</ul>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2013-12-18</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2013-12-19-vornheiming-middenheim-part-i/">
+                    Next<br>Vornheiming Middenheim Part I
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2013-12-17-off-screen-factions-part-ii-combat/">
+                    Previous<br>Off Screen Factions Part II: Combat
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html><head>
+<title>What Do you Do in the City? Default Urbancrawl Actions</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    What Do you Do in the City? Default Urbancrawl Actions
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2016-06-22 06:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/fellhold-reboot">Fellhold Reboot</a>
+                                &nbsp;
+                            
+                                <a href="/tags/urbancrawl">Urbancrawl</a>
+                                &nbsp;
+                            
+                                <a href="/tags/osr">OSR</a>
+                                &nbsp;
+                            
+                                <a href="/tags/fellhold">Fellhold</a>
+                                &nbsp;
+                            
+                                <a href="/tags/dd">D&amp;D</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p><a href="http://digitalcollections.lib.washington.edu/utils/ajaxhelper/?CISOROOT=boydBraas&amp;CISOPTR=83&amp;action=2&amp;DMSCALE=90&amp;DMWIDTH=369&amp;DMHEIGHT=460&amp;DMX=0&amp;DMY=0&amp;DMTEXT=&amp;DMROTATE=0">http://digitalcollections.lib.washington.edu/utils/ajaxhelper/?CISOROOT=boydBraas&amp;CISOPTR=83&amp;action=2&amp;DMSCALE=90&amp;DMWIDTH=369&amp;DMHEIGHT=460&amp;DMX=0&amp;DMY=0&amp;DMTEXT=&amp;DMROTATE=0</a></p>
+<p>Ever since I decided that the rebooted Fellhold is a massive dungeon-city/city-dungeon, I have been giving a lot of thought to Urbancrawling rules. <a href="http://thealexandrian.net/wordpress/36473/roleplaying-games/thinking-about-urbancrawls">This series</a> of posts at the Alexandrian covered the topic in a lot of detail, and helped me to organize my thinking, including the core idea of having a &ldquo;default action&rdquo;. And Paolo&rsquo;s discussion of his game <em><a href="https://tsojcanth.wordpress.com/2015/09/08/gangs-bullshit-the-gang/">Gangs &amp; Bullshit</a></em> introduced the idea of structuring how you &ldquo;zoom in&rdquo; versus &ldquo;zoom out&rdquo;, and when I smashed the two ideas together, I felt a tremendous &ldquo;A-ha!&rdquo; moment, but I was probably just slow in putting together something obvious.</p>
+<p>The core idea is that players have a default &ldquo;turn&rdquo; where they do highly abstracted, easily resolved stuff, but that when things go wrong, you zoom into traditional RPG resolution. Making this work, especially with lots of players pursuing different things and getting different complications, might take some skilled refereeing - I haven&rsquo;t tested this yet.</p>
+<p>The goal for players is to have a clear set of options of &ldquo;what can I do?&rdquo; when that isn&rsquo;t clear. For referees, I want something flexible enough to handle whatever is happening in their game, but with enough structure to help figure out how to make things interesting if it&rsquo;s not obvious. The part I&rsquo;m most pleased with is the ease with which you can slot this into different time length &ldquo;turns&rdquo; - I assume a default of a week as long enough to help time pass and encourage longer-term thinking, but short enough to be easy to go &ldquo;well, while you&rsquo;re in the  middle of fixing up your hideout, that broker you stiffed walks in with 5 goons&rdquo;.</p>
+<p>My chief concern with the rules as presented is that there might be too many options for urbancrawl actions and that the <em>Apocalypse World</em> inspired mechanic (6 under equals bad fail, 7- 9 = success with complications, and 10+ = Great Success) might produce too many complications for the urbancrawl actions to be meaningful, or for enough time to pass to accomplish longer term goals. I&rsquo;m also not sure how hard it will get having 4+ people running around doing different actions each.</p>
+<p><a href="https://1.bp.blogspot.com/-Go5t-nScZ3M/TYM72GmKwfI/AAAAAAAABJk/5IykczBQ6sY/s1600/Clocks_0001_NEW.jpg"><img src="https://1.bp.blogspot.com/-Go5t-nScZ3M/TYM72GmKwfI/AAAAAAAABJk/5IykczBQ6sY/s320/Clocks_0001_NEW.jpg" alt=""></a></p>
+<p><strong>Time Scales</strong>  The referee may make use of any or all of these timescales for urbancrawl actions as needed. One week is the suggested default amount of time, but different campaigns may have different needs. Even with a default length &ldquo;turn&rdquo;, referees may occasionally find it useful to make use of other scales - such as moving from a default of one week turns to watch-long turns while the party prepares a heist.</p>
+<p>Since several other urbancrawl rules use “the urbancrawl action” as their timescale, they may need to be adjusted occasionally due to the nature of the activity, or due to the actions of other player characters. If one player character is trying to make friends and another is staking out a house, you may need to adjust how you resolve one or the other depending on what timescale you choose.  *   *  <strong>Weeks</strong>  The default timescale for urbancrawl actions, it&rsquo;s enough time to get some stuff done, but granular enough that it&rsquo;s easy to zoom in on and coordinate between different players&rsquo; activities.  *   *  <strong>Days</strong>  Some actions would just be a bit ridiculous to take an entire week to pursue (talking to one person, for example), in which case, the referee can &ldquo;zoom in&rdquo; to a scale of days. </p>
+<p>For example, while for some groups it may be appropriate for carousing to be resolved as week-long benders, for others it will make much more sense to resolve as one evening and its aftereffects  *   *  <strong>Watches</strong>  Watches fill a role somewhere between a standard exploration turn and a day - they are eight hour chunks, or one third of the day. </p>
+<p>This scale is useful for detailed (but mostly uncontested) exploration, movement over large amounts of space, or for stake outs and other situations with long bouts of nothing happening but the potential for something important to happen at any time  *   *  <strong>RPG Time</strong>  This scale is the standard way time is handled in most RPGSs - long stretches of fairly unstructured time, sometimes moment by moment, other times skipping hours or days, punctuated by intensely tracked round by round time for situations involving danger and high stakes. This scale is recommended for traditional &ldquo;adventures&rdquo;, and for resolving many of the complications arising out of the urbancrawl actions (otherwise known as &ldquo;where the game is&rdquo;). The urbancrawl action is not invoked here, and instead the referee should use the rules and procedures appropriate to their game.</p>
+<p><a href="http://www.maltwood.uvic.ca/spalding/images/industry/0006.jpg">http://www.maltwood.uvic.ca/spalding/images/industry/0006.jpg</a></p>
+<p><strong>Resolving the Urbancrawl Action</strong>  <strong>Rolling</strong>  To resolve an urbancrawl action, the player taking it rolls 2d6 and adds any relevant modifiers determined by the referee. By default, a roll of 6 or less means a failure with complications, 7 - 9 means a success with complications, and a 10 or higher means a smooth success with no complications.</p>
+<p>Please note that just because an action is listed below does not mean that it must be resolved as an Urbancrawl Action - sometimes shopping can just be shopping. Using the urbancrawl action is meant to generate hooks for interesting play, so only use the action when you want something to be a potential trigger for play.</p>
+<p><em>Alternate Resolution</em>  If your rules set makes use of a skill system, you can certainly replace the 2d6 roll with a skill check on some relevant skill. If you do so, consider a method to still allow for &ldquo;complicated success&rdquo;, so that the players have a chance to get what they&rsquo;re after while still creating interesting gameable situations.</p>
+<p>You’ll notice that the 2d6 roll makes “complicated success” the default, which you may or may not wish to emulate. More successes means more time will pass and more will be accomplished at the urbancrawl level of abstraction. Getting more done at the scale of urbancrawl actions lends itself well to games that are more concerned with organizations and large territory - the city equivalent of the “domain game”. Creating more complications lends itself to more standard adventures and zooming in to a greater level.</p>
+<p>Tweak the resolution to suit your table’s tastes.</p>
+<p><strong>Modifiers</strong>  The Urbancrawl Action can be modified based on the referee&rsquo;s discretion and the player&rsquo;s ingenuity, due to ability score modifiers, relevant expertise, or level of familiarity with the person or locale being engaged with. Players should always be made aware of the total modifiers before they commit to taking a particular course of action. If using the 2d6 method, modifiers should be capped at plus or minus three,   **   **  <strong>Complications</strong>  Any time an urbancrawl action fails or succeeds with complications, the referee will determine what they are. Common complications include only getting some of what you were after, extra costs, or other parties becoming interested in the character. Typically, complications should be more severe when accompanying a failure than a complicated success, or when associated with an activity that has been subject to previous complications, but this is not a hard and fast rule. </p>
+<p>Some small complications can be resolved with a brief interaction or quick roll - such as a merchant demanding extra money for something.</p>
+<p>The main point of complications, however, is to produce hooks for the game - this is where the interesting stuff is, and what usually causes a zoom in to &ldquo;RPG Time&rdquo;.</p>
+<p>As a rough guide, zoom in on complications that can bring in the whole party, and more quickly resolve complications that can only involve one person, unless it&rsquo;s just <em>that</em> good. If your group wants to act at a bigger scale, resolve more complications abstractly, but if it wants to use the urbancrawl action more as a random adventure seed generator, zoom in on more complications.</p>
+<p>The referee is encouraged to come up with their own complications, and especially to find ways to tie complications to existing contacts, factions, rumors, and conspiracies, but each urbancrawl action option below includes six sample complications if the referee is feeling stuck.</p>
+<p><a href="https://s-media-cache-ak0.pinimg.com/236x/6a/82/ef/6a82efadadbc29b6fa1f2bd026ca3173.jpg">https://s-media-cache-ak0.pinimg.com/236x/6a/82/ef/6a82efadadbc29b6fa1f2bd026ca3173.jpg</a></p>
+<p><strong>Example Types of Urbancrawl Actions</strong>  The choices below are by no means the only options, but they are meant to provide a useful starting point and a &ldquo;menu&rdquo; of options if players aren&rsquo;t sure what to pursue.</p>
+<p><em>- Investigate a . . .</em></p>
+<ul>
+<li>Conspiracy</li>
+<li>Person</li>
+<li>District   </li>
+<li>Faction</li>
+<li>Ruined District</li>
+</ul>
+<p> - <em>Look for a Job</em>   *- Train/Research/Get Buff *   <em>- Petty Crime</em>   <em>- Do Your Damn Day Job</em>   <em>- Shopping</em>   <em>- Carouse</em>   <em>- Make Friends</em>   <em>- Other</em></p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2016-06-22</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2016-06-27-sages-and-their-petty-rivalries-in/">
+                    Next<br>Sages and Their Petty Rivalries in Fellhold
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2016-06-20-lifestyles-of-poor-and-adventurous/">
+                    Previous<br>Lifestyles of the Poor and Adventurous
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

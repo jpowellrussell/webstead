@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html><head>
+<title>Float On - My First Experience with a Flotation Tank</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Float On - My First Experience with a Flotation Tank
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2017-04-21 00:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Coaching]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/wellness">Wellness</a>
+                                &nbsp;
+                            
+                                <a href="/tags/meditation">Meditation</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>Today I want to talk about something a little different - my first experience with a float tank session. Also known as flotation tanks or sensory deprivation tanks, I first <a href="http://jeffrussellcoaching.us15.list-manage.com/track/click?u=df2d4a2d24de687c5851d6fb7&amp;id=64ff13e88f&amp;e=a21731beeb">heard about them via Tim Ferriss</a>, and he discusses them in his latest book <a href="http://jeffrussellcoaching.us15.list-manage2.com/track/click?u=df2d4a2d24de687c5851d6fb7&amp;id=254b9de57e&amp;e=a21731beeb">Tools of Titans</a>, but apparently Joe Rogan is also <a href="http://jeffrussellcoaching.us15.list-manage.com/track/click?u=df2d4a2d24de687c5851d6fb7&amp;id=f1a193875c&amp;e=a21731beeb">a huge proponent of them</a>, and has some great stuff to say about using them in a regular practice. I’m going to go through some of the benefits attributed to float sessions, talk about my own experience, where things fell a touch short, and things I plan on doing differently next time. </p>
+<p>First off, why would you want to float around naked in the dark for an hour? There are a number of studies on the benefits, many of them focusing on therapeutic applications, such as <a href="http://jeffrussellcoaching.us15.list-manage.com/track/click?u=df2d4a2d24de687c5851d6fb7&amp;id=949fe54860&amp;e=a21731beeb">treating addiction, insomnia, and depression</a>. Beginning shortly after their invention back in the 1950’s, they have also been studied <a href="http://jeffrussellcoaching.us15.list-manage.com/track/click?u=df2d4a2d24de687c5851d6fb7&amp;id=573a51abb0&amp;e=a21731beeb">in connection with creativity and concentration</a>. Other studies have shown <a href="http://jeffrussellcoaching.us15.list-manage1.com/track/click?u=df2d4a2d24de687c5851d6fb7&amp;id=293469ed2a&amp;e=a21731beeb">an improvement in “mindful presence”</a> versus a control group, along with many of the associated benefits usually linked with a regular meditation practice. Some folks report having major emotional breakthroughs, spiritual insights, or even <a href="http://jeffrussellcoaching.us15.list-manage.com/track/click?u=df2d4a2d24de687c5851d6fb7&amp;id=3ead042f09&amp;e=a21731beeb">psychedelic experiences</a> including feelings of transcendence and hallucinations, though these seem to be less common and are not very likely outside of very long sessions. Just about everyone agrees that at a minimum they are <a href="http://jeffrussellcoaching.us15.list-manage1.com/track/click?u=df2d4a2d24de687c5851d6fb7&amp;id=2ccf100cc7&amp;e=a21731beeb">deeply relaxing</a> and positively affect stress by reducing cortisol levels and blood pressure.</p>
+<p><img src="https://images.squarespace-cdn.com/content/v1/588fac99f5e231608e25ebd0/1492807889449-NVJ936F05GDDKQ6F23GA/ke17ZwdGBToddI8pDm48kLBXYxPb51fd_w-qJv5zy4t7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0prfa1Z6IeUrCPboCAmmHZnxLA1LmtQWLdQZ0EFuAlmmrheQ_YgjG5FLADfkTWtzfw/SCFC%2BFront%2BDesk.jpeg" alt="SCFC+Front+Desk.jpeg"></p>
+<p>So I went into my session with some pretty high hopes. Turns out I thoroughly enjoyed my session and the time afterwards! It was extremely relaxing, and <a href="http://jeffrussellcoaching.us15.list-manage.com/track/click?u=df2d4a2d24de687c5851d6fb7&amp;id=aad59a3333&amp;e=a21731beeb">Space City Float</a> did an amazing job of creating a peaceful ambience and experience.</p>
+<p><img src="https://images.squarespace-cdn.com/content/v1/588fac99f5e231608e25ebd0/1492807987983-GZJJ23031VIY3YPWJUGH/ke17ZwdGBToddI8pDm48kKu7wfkKCGSXycJlFNmeSER7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UYsUTjZSl38MHFC61Z4vVekjLE3R5euVlU0coA5eoL7_Ql-ZUrVfrc-q7qzhmWj5iw/image-asset.jpeg" alt=""></p>
+<p>When I arrived, I was shown to the changing room, furnished with slippers and a nice, soft robe. With my stuff stowed in the locker, I went to the “Space Room”, where I was seated in a massage chair. As the chair reclined and started whirring and pushing, I had a few visions of Final Destination gruesomeness, but I quickly settled into it and relaxed.</p>
+<p><img src="https://images.squarespace-cdn.com/content/v1/588fac99f5e231608e25ebd0/1492808050729-P1Y8DULQ3L5MH241P17Y/ke17ZwdGBToddI8pDm48kNKU_v8gJAcxDrmB-soKvj1Zw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVH7wdpQi_gwH_-rfgB8xc3aCDYU5QsKfHvKofLxtwAwA5XleA9PsoOHujT9UMkA80c/image-asset.jpeg" alt=""></p>
+<p>The room is named for the projected “stars” on the ceiling - green pinpoint lights that move slowly and a blue nebula-looking shape. I watched that for awhile but eventually closed my eyes and enjoyed the massage. From there I was led to the actual float room, and based on some of the photos I had seen, I was a bit surprised by the size of the tank. The attendant was very helpful, explained what to expect and gave me a few specific tips on how to proceed. Then he stepped out to let me shower and get into the tank. I had been worried I wouldn’t float, given my poor track record floating in pools and even the ocean, but they put a hell of a lot of epsom salt in the water, and I couldn’t have sunk on purpose.</p>
+<p><img src="https://images.squarespace-cdn.com/content/v1/588fac99f5e231608e25ebd0/1492808072663-9LHSOYGK6BYJ5DKN6REQ/ke17ZwdGBToddI8pDm48kJK4Mm1kch8SFO9ZNkN1NT97gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmFk_H6M1tkD9NpL7mXac0oVSXdFfjxR5AjcLwGSebOiGBsFzzcw3xKxvyC_6CFFG_/image-asset.jpeg" alt=""></p>
+<p>During the flotation session itself, I was a bit unsure how to proceed - should I meditate? Just lay there, let my mind wander, and see what happens? Open eyes or closed? Following the attendant’s advice, I counted down from 100 in time with my breaths, a meditation tank I was familiar with. After the countdown, I mostly focused on my breathing, trying to be mindful, but my mind definitely wandered a bit and I might have drifted off to sleep somewhere there in the middle. Other than some sparkly blues and greens near the beginning, I didn’t really see anything whether my eyes were open or closed. Towards the end, my neck was a little sore, but nothing too distracting. At the end of the hour, a light came on in the tank and some soft music played, and I got out, showered again, and headed to the tea lounge, where some pleasant mint green tea was waiting and some relaxing “spiritual” music was playing. I chuckled a bit at the reading selection, featuring a fairly typical “spiritual” mixture of Christian, Buddhist, and new age books, but hey, nothing wrong there, it’s just not my speed. Instead, I opted to read the <a href="http://jeffrussellcoaching.us15.list-manage.com/track/click?u=df2d4a2d24de687c5851d6fb7&amp;id=1eb2625afd&amp;e=a21731beeb">Völuspá</a> <a href="http://jeffrussellcoaching.us15.list-manage.com/track/click?u=df2d4a2d24de687c5851d6fb7&amp;id=a232ef2a97&amp;e=a21731beeb">from the Poetic Edda</a> that I had brought myself and enjoyed both my tea and the residual feeling of relaxation. </p>
+<p>Where I really noticed an effect, though, was afterwards. I headed to a coffee shop to get some work done, and I found myself feeling very “still” for lack of a better word. It wasn’t much more profound than I have experienced after a good meditation session, but it definitely lasted longer, and now a week later, I’m still feeling little flashes of the same feeling. Some of the harsher music that I normally enjoy, like heavy metal, was jarring and felt like stimulus overload. Other, softer music was more emotionally affecting, as was poetry, and I had a noticeable tendency to stare off into space and not think about anything in particular. It was easier to concentrate and feel mindful about activities like writing or drawing dividing lines in my journal. If you’ve ever done the exercises from <a href="http://jeffrussellcoaching.us15.list-manage.com/track/click?u=df2d4a2d24de687c5851d6fb7&amp;id=11992a5994&amp;e=a21731beeb">Drawing on the Right Side of the Brain</a>, it felt a bit like the “R-Mode” they help you achieve. Plus, my coffee tasted especially good - but that might have just been the brew. While perhaps not as profound or life-altering as I might have secretly hoped, there was a definite effect and I enjoyed it.</p>
+<p>While it was overall a very positive experience, and I’m definitely going to do it again, I had a few minor nits to pick. First off, as I said, during the float, I did not experience any particularly profound or novel psychological states, and certainly nothing approaching the <a href="http://jeffrussellcoaching.us15.list-manage1.com/track/click?u=df2d4a2d24de687c5851d6fb7&amp;id=6f5f5ddc78&amp;e=a21731beeb">psychedelic experiences reported by some</a>. Some of the mood-setting at Space City Float was a bit New Agey for my personal tastes, but only a touch. As I mentioned above, I declined to use the provided neck pillow and experienced some discomfort midway to late in the float. I also was sleepy and probably took a short nap. There were occasional mechanical noises from the tank that detracted from the total sensory deprivation intended. Finally, I haven’t yet noticed any insights or boosts in creativity that I can attribute to the tank session. Altogether, these are minor quibbles, and all can be mitigated or addressed.</p>
+<p>Next time I do this, I’m going to learn from my first experience and do a few things differently. First off, I’m going to make sure I’m well rested for the few days before my session - I was sleepy due to little sleep in this case. That way when I’m seeking deep psychological breakthroughs and the mysteries of the universe I’ll avoid a needed but unwelcome nap. I’ll also use the neck pillow to eliminate distracting discomfort. While floating, I will also more deliberately meditate, using techniques I have practiced in other settings. More structurally, I would like to integrate the session into a deliberate creative process of some kind. After my session, I had the feeling that I could have very effectively engaged in a creative activity, but instead I mostly focused on habitual tasks before taking a call. I am inspired to combine some of the method of James Fadiman’s <a href="http://jeffrussellcoaching.us15.list-manage.com/track/click?u=df2d4a2d24de687c5851d6fb7&amp;id=f01968642d&amp;e=a21731beeb">experiment</a> described in his <a href="http://jeffrussellcoaching.us15.list-manage.com/track/click?u=df2d4a2d24de687c5851d6fb7&amp;id=2b44f21683&amp;e=a21731beeb">episode of the Tim Ferriss Show</a> and that of James Webb Young in <a href="http://jeffrussellcoaching.us15.list-manage1.com/track/click?u=df2d4a2d24de687c5851d6fb7&amp;id=f182278fa5&amp;e=a21731beeb">A Technique for Producing Ideas</a>. Essentially, I want to select a creative project, work on it intensively to the point of mental exhaustion for the day or two before the session, put it completely out of my mind for the session, and then revisit it while feeling the immediate after effects. Perhaps its a cockamamie idea, but I want to give it a go. <br>
+ <br>
+Floating was definitely an interesting experience that I can’t wait to try again. Unless something goes seriously wrong the next time, I plan to make it a somewhat regular practice. I believe it already has and will continue to have a profound impact not only on my fulfillment thanks to the relaxation and clarity, but also on achievement due to its positive impact on creativity and concentration. If you’re interested in giving it a try, here’s a <a href="http://jeffrussellcoaching.us15.list-manage.com/track/click?u=df2d4a2d24de687c5851d6fb7&amp;id=ec03c178b2&amp;e=a21731beeb">couple</a> of <a href="http://jeffrussellcoaching.us15.list-manage1.com/track/click?u=df2d4a2d24de687c5851d6fb7&amp;id=d206b4b077&amp;e=a21731beeb">resources</a> for finding a float center for you - alternatively, just Google “[Your City] Float Tank” or “[Your City] Flotation”. If you’ve ever tried floating, let me know how it went for you!</p>
+<p>Did you enjoy the post? Want to get more stuff like it every week delivered straight to your inbox? Sign up for my newsletter below.</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2017-04-21</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/coaching/2017-04-27-the-lazy-mans-guide-to-exercise/">
+                    Next<br>The Lazy Man&#39;s Guide to Exercise
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/coaching/2017-04-14-get-outta-my-head-and-into-my-/">
+                    Previous<br>Get Outta My Head and Into My. . .
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

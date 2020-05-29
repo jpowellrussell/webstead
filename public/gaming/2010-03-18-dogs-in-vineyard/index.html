@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html><head>
+<title>Dogs in the Vineyard</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Dogs in the Vineyard
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2010-03-18 12:16
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Gaming]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/rpgs">RPGs</a>
+                                &nbsp;
+                            
+                                <a href="/tags/projects">Projects</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>Okay, long time, no post. I apologize, and will try to make with the regular updates!</p>
+<p>For the moment, I&rsquo;m going to set aside my more general and theoretical speculation about RPGs and discuss some concrete examples. Of course, I plan to sneak general applicability into my discussion, but I&rsquo;ve recently become acquainted with some games that get me very excited, and I want to talk about why. This is still going to be a part of my &lsquo;starter RPG&rsquo; series, because I approached these rules not only as potentially fun games in and of themselves, but with a critical eye towards innovations and techniques worth steeling, with ease of use by new players as the lens through which I viewed these innovations.</p>
+<p>My first game to discuss is going to be &ldquo;<a href="http://www.lumpley.com/dogsources.html">Dogs in the Vineyard</a>&quot;. I mentioned this game in my last post as an example of a just barely alternate history western. No steam powered airships or undead gunmen, just lots of pseudo-Mormons. That being said, the game purposely leaves the setting vague and invites you to experiment and switch things around to your and your players&rsquo; tastes. This game also has the distinction of being one of two on my list by the same creator, D. Vincent Baker. His games were highly recommended throughout the online RPG community as great examples of what &ldquo;Indie Games&rdquo; can and should be, and I&rsquo;ve taken to them like a weasel to a bag full of suet.</p>
+<p>As a general introduction to the game, players take on the role of &lsquo;Dogs&rsquo;, the colloquial name for protectors of the faithful. &ldquo;The Faith&rdquo; is purposely left vague, but as presented in the game is basically early Mormonism. The Dogs journey from town to town and see to the spiritual ills of the communities. But they&rsquo;re not priests in the normal sense, as their job is to see only to those spiritual troubles that have spilled into concrete actions, like spite, jealousy, and murder. With that established, you basically have a reason for a group of people to go from town to town and get into conflicts in good wild west fashion.</p>
+<p>The first interesting feature of the DITV rules is that dice are used as stats, from D4s up through D10s. Stats can also be a mix, e.g. 2D6 1D4, which would mean that stat has all three of those dice to put towards a conflict. More on how the dice are used in conflict resolution in a moment. What&rsquo;s cool here is that higher numbers beat out lower numbers, so while a D6 gives you a better probability of beating a D4, a 3 beats a 1 whatever die it&rsquo;s rolled on.  You&rsquo;ll also see that the number of dice versus the value of the dice (i.e. having 2D6 rather than 1D8) has more effect than just smoothing out your probability. I like this feature because D&amp;D tricks a lot of us into the default position of &ldquo;die roll plus number vs difficulty&rdquo;, or if you&rsquo;re more old school &ldquo;die roll versus number, roll lower&rdquo; to succeed. Not that there&rsquo;s anything wrong with a roll + stat (+ skill) type approach, but it&rsquo;s refreshing to be reminded that this isn&rsquo;t the only way to do it. Of course, another popular system, Storyteller is similar, where your stats and skills are basically the number of D10s you roll vs a target number, and then you see how many successes you have, but the introduction of multiple dice types adds some subtlety. Plus all those crazy dice are cool.</p>
+<p>What&rsquo;s really cool, though, is not that you use dice for stats, but how those dice factor into conflict resolution. First off, you determine what&rsquo;s &ldquo;at stake&rdquo; in a conflict. At the end of the conflict, whoever is left will get to decide what happens to what&rsquo;s at stake. Then you figure out the specifics of where it&rsquo;s taking place (anything that might be important like who&rsquo;s watching, chairs that could be smashed, exits that could be escaped through, et cetera). Then you figure out who&rsquo;s participating. At this point, everybody participating takes up the relevant dice and throws them all at once. The dice you roll depend on what category the conflict starts out in: Just talking, physical, physical fighting, and gunplay. If a character has a relationship at stake, or has relationship dice representing his opponent in the conflict, he rolls the relevant relationship dice (relationship dice can cover the obvious like brother, uncle, or what have you, as well as less obvious like &lsquo;the town drunk I helped home one time&rsquo;). That&rsquo;s it for the initial dice. Dice for traits and things come up when and if they&rsquo;re used.</p>
+<p>So, everybody involved has their dice rolled and out on the table. Whoever&rsquo;s opening the conflict starts out by picking two dice to use as his first &ldquo;raise&rdquo;. You can choose any two of your dice, and as you put them forward, you must describe what action those dice represent. The action is something your opponent can&rsquo;t ignore, and must fit the scope of the conflict you&rsquo;re currently at (so if you&rsquo;re just talking, you can&rsquo;t describe your action as punching a guy in the face, you have to escalate to physical conflict for that).</p>
+<p>Your opponent will then attempt to &lsquo;see&rsquo; your raise. He can put forward, one, two, or more dice to see. If he can match your raise with only one die, he has &ldquo;reversed the blow&rdquo; and takes no negative effect, and in fact reverses it against you. He gets to keep that die to use when it&rsquo;s his turn to raise. If he uses two dice to see, he has somehow negated the effect of your action with no negative effect to either of you. If it takes 3 or more dice to see, your opponent &ldquo;takes the blow&rdquo;, which means he&rsquo;s still in the conflict, but he takes a negative effect for your action. After the conflict is resolved, he&rsquo;ll take a number of fallout dice equal to how many dice he had to see with. The size of the fallout dice increases depending on the type of conflict (each fallout die from just talking is a d4, while fallout dice from shooting are d10s). Finally, if an opponent can&rsquo;t or won&rsquo;t see a raise, he can &lsquo;give&rsquo;, which means he&rsquo;s out of the conflict, but he doesn&rsquo;t take any further fallout dice.</p>
+<p>Players then take turns raising and seeing. If there are more than two opponents, one player will raise, each other affected by your action will see, then the next player will raise and each other will see, and so on. Now, let&rsquo;s say you run out of dice to see or raise, but you&rsquo;re not happy with where the conflict is ending, what do you do? You escalate! This is where you go from, say, just talking to making a break for it, or throwing a punch, or drawing a gun. When you escalate, you look at what stats are appropriate to the new type of conflict and roll those dice. You can only ever roll a stat, trait, or thing once in a conflict, so if you&rsquo;ve already used one stat for a lesser type of conflict, you don&rsquo;t reroll it when you escalate. Likewise, once you&rsquo;ve introduced a trait or item, you don&rsquo;t get to roll it again no matter how many times you use that trait or thing. Eventually, somebody gives by choice or by being out of things they can roll, and whoever is left in the conflict decides what happens with what&rsquo;s at stake.</p>
+<p>After the conflict, those fallout dice mentioned get rolled, and depending on what&rsquo;s rolled, you get experience, short term effects, long term effects, minor injuries, serious injuries, or you&rsquo;re dying. Note that due to the size of dice associated with different types of conflict, you can&rsquo;t get injured from a conflict that never escalates past &lsquo;just talking&rsquo; and you can&rsquo;t end up &lsquo;dying&rsquo; unless guns come into the picture (a bit of dramatic license here, since obviously stabbing or severe beating could kill someone, but the game is set up so that such unglamorous things won&rsquo;t off your character unless you want them to for dramatic reasons).</p>
+<p>That&rsquo;s a really rough outline of the conflict resolution, and examples make it much clearer, but I don&rsquo;t want to reproduce too much of the rules here. The point is that the rules are heavily narratively focused, and they give a lot of narrative power to the players, since if they win the conflict, they dictate how it ends and what effects it has. A lot of the &lsquo;fallout&rsquo; also isn&rsquo;t necessarily bad, as even ostensibly negative effects can help you have more say in narrative events (for example, you might do something like gain relationship dice of &lsquo;hated foe&rsquo; with the guy who kicked your ass, which could be used any time you&rsquo;re in conflict with him from then on). I also like the back and forth nature of conflict resolution. One of the subtler points of the system is that it quietly encourages both the players and the GMs to escalate conflicts while still allowing meaningful resolution without escalation.</p>
+<p>The system for traits and things is extremely open ended. You&rsquo;re given a certain number of dice to assign, and you can make up whatever traits or things you want with those dice. While some obviously useful things can be chosen like &ldquo;Good Shot&rdquo;, you can also go for potentially more interesting approaches, like having a trait &ldquo;I love my gun&rdquo;. Sure, the first one would come up whenever you need to shoot well, but the second one might have more scope, but still might help out when making a shot with your particular gun. Even seemingly non-useful things like &ldquo;I&rsquo;m a drunk&rdquo; can give you more say in certain conflicts, but in others your opponent gets to use them. I wouldn&rsquo;t recommend this system to extremely munchkiny players, as the only limit on &lsquo;min/maxing&rsquo; is the combined opinion of GM and players. With a group sufficiently dedicated to narrative play, however, it is an extremely flexible and empowering tool for coming up with and resolving in-game conflicts.   Which leads me to perhaps the most abstract benefit of these rules I gleaned, namely the focus on conflict. You&rsquo;ll see the same thing when I review &ldquo;In a Wicked Age&rdquo; by the same designer. In both games he elucidates that the key source of interest in an RPG is conflict in which the players participate. This is usually most obviously represented by the strong focus on combat in most RPGs, but it supports a conclusion I discovered on my own years ago with one of my first forays into game design. Around about 6th and 7th grade, a few friends of mine and I tooled around with on-the fly games in order to play in settings for which we had no game system at the time (which was pretty much everything except D&amp;D - we played a Final Fantasy III RPG, a Middle Earth RPG, and numerous others). After a while, I got bored with doing nothing but proceeding from fight to fight and sought the opposite extreme of a game with no fighting. I created a game based on running your own business and only ever ran a session or two with a friend of mine as the only player. Pretty quickly the reason for fights in games became evident: it was awfully boring. Strangely enough, my friend who I was running for enjoyed it and requested to play it for some time after, but I&rsquo;d always put him off because I got bored running it with no fights to design and run. What I had failed to grasp was that conflict is what provides excitement and drama, and at the time I was too inexperienced and unknowledgeable to create conflict that wasn&rsquo;t fighting. Both &ldquo;Dogs in the Vineyard&rdquo; and &ldquo;In a Wicked Age&rdquo; do an excellent job of pointing out that conflict comes in many forms and providing rules for handling all those forms consistently.</p>
+<p>Finally, one of the most useful parts of the rules is its system for town generation. Not simply a system for coming up with what buildings and businesses exist in a town, it starts with the assumption that the players wouldn&rsquo;t go there, or at least play time wouldn&rsquo;t be used, if there were no conflicts there. So, the system also creates ready made conflicts for the players to walk into the middle of. It&rsquo;s one of the best ways I&rsquo;ve ever seen to quickly and easily create a dynamic and engaging environment for gameplay, and it provides for rich roleplaying and decision making without any sort of overarching storyline or plot. In fact, in this game as well as in &ldquo;In a Wicked Age&rdquo;, D. Vincent Baker discourages the GM from having set storylines in mind, saying that this takes away agency from the players and results in something less like a game and more like a &lsquo;choose your own adventure&rsquo; book with the GM as the author. This is a valuable point to keep in mind, because most GMs, myself included, love creating intricate worlds and epic storylines (it&rsquo;s a large part of why we want to GM instead of play). The trouble is that your job as GM is not to provide novel-worthy plots or history book worthy detailed settings, it is to facilitate your players having a good time, and if your players don&rsquo;t want to explore the plot or world details that you&rsquo;ve painstakingly created, it&rsquo;s not fun to railroad them into it anyway. Fortunately, both of his RPGs I&rsquo;ve read do an amazingly job of providing resources to come up with interesting, rich roleplaying situations on the fly that allow tons of room for player ownership and involvement.</p>
+<p>So, I&rsquo;ll close with an analysis of what I do and don&rsquo;t want to take away from these rules for a starter RPG and why I don&rsquo;t think I&rsquo;ll use it &ldquo;as is&rdquo; and instead will continue with designing my own. To address the last point first, I have to admit that part of the reason for designing my own game is because I like designing games. I&rsquo;m trying to not let that be the leading reason, as having a fully home grown game that is less readily available than some other already created game inherently limits its usefulness and options, as any players that get used to it will only be able to play it with me running it or with our circle of gamers. So I&rsquo;m trying to keep an open mind about finding more widely popular games that adequately address all of the issues I want to see covered in a starter RPG. That being said, while I think &ldquo;Dogs in the Vineyard&rdquo; is an excellent game that I would love to run or play, I don&rsquo;t think it&rsquo;s the best choice for a brand new group. First off, it demands a lot of its players as well as its GM. I feel like the level of player control of narrative and responsibility in choosing traits and things for character development reasons rather than concrete benefit might be a little much for people first introduced to gaming. On the other hand, maybe setting the bar high on such levels of player responsibility and involvement would be inculcating good habits. I also feel that the core mechanic, while elegant and flavorful, is a bit much to explain to complete neophytes, though the popularity of poker makes the rounds of &lsquo;raises&rsquo; and &lsquo;sees&rsquo; perhaps more accessible. Also, the game lends itself to weighty moral questions and dramatic situations rather than the easier pleasures of high adventure and heroics. Plus, I&rsquo;m pretty sure I&rsquo;d like there to be some elements of the fantastical in my starter game so that there&rsquo;s something to grab the imagination. As always, I look forward to your thoughts on all of my conclusions. Next up I&rsquo;ll discuss a game that has grabbed me so strong I&rsquo;m working on an expansion for it!</p>
+
+                    
+                    <HR width="100%" id="EOF">
+                    <p style="color:#777;">Last modified on 2010-03-18</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/gaming/2010-03-18-agon/">
+                    Next<br>Agon
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/gaming/2010-02-05-a-matter-of-taste/">
+                    Previous<br>A Matter of Taste
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

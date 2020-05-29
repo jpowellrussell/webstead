@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html><head>
+<title>Rethinking Risk with Antifragile</title>
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<script src="/vendor/js/jquery.min.js" ></script>
+<script src="/vendor/js/popper.min.js" ></script>
+<script src="/vendor/js/bootstrap.min.js" ></script>
+<script src="/vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<script src="/vendor/js/vue.min.js" ></script>
+
+
+
+
+<link rel="stylesheet" href="/scss/journal.min.56b67b8b01d7cd1015ed14414fd2fc33ebfb2e8413dcbc47c5cd734544c92cd7.css" integrity="sha256-VrZ7iwHXzRAV7RRBT9L8M&#43;v7LoQT3LxHxc1zRUTJLNc=" media="screen">
+
+
+
+<link rel="stylesheet" href="/scss/dark-mode.min.5a2bbd1758c83affd639a91fbfd5cc681b1a5574df99442825c444dd40504b13.css" integrity="sha256-Wiu9F1jIOv/WOakfv9XMaBsaVXTfmUQoJcRE3UBQSxM=" media="screen">
+
+
+<script src="/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+<script src="/js/table.js"></script>
+
+
+
+
+<script src="/js/toc.js"></script>
+
+
+
+
+
+
+
+
+</head><body>
+    	<div id="app"><div ref="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="/">
+    
+        <div class="nav-title">
+            Jeff Russell&#39;s Webstead
+        </div>
+        
+        <div class="nav-subtitle">
+            My little corner of the web
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/thinking">
+                Thinking
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/reading">
+                Reading
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/gaming">
+                Gaming
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/coaching">
+                Coaching
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/leaves">
+                Leaves
+            </a>
+            
+        
+    </div>
+
+
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	
+    </div>
+
+</div>
+<div ref="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a class="pagination-action" v-on:click="toggleDarkMode">
+            <i class="material-icons pagination-action-icon" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons pagination-action-icon" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </a>
+        
+        
+    </div>
+</div><div class="single-column-drawer-container" ref="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/thinking">
+                    Thinking
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/reading">
+                    Reading
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/gaming">
+                    Gaming
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/coaching">
+                    Coaching
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/leaves">
+                    Leaves
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div ref="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a ref="navTitle" class="navbar-brand" href="">
+            Jeff Russell&#39;s Webstead
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
+            <i class="material-icons" v-if="isDarkMode">
+                brightness_4
+            </i>
+            <i class="material-icons" v-else="isDarkMode">
+                brightness_7
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" ref="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="">
+        <div class="single-column-header-title">Jeff Russell&#39;s Webstead</div>
+        
+        <div class="single-column-header-subtitle">My little corner of the web</div>
+        
+
+    </a>
+</div>
+            <div id="content">
+<div ref="streamContainer" class="stream-container">
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Rethinking Risk with Antifragile
+                    
+                    <div class="post-meta">
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[Coaching]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/deep-thinking">Deep Thinking</a>
+                                &nbsp;
+                            
+                                <a href="/tags/risk">Risk</a>
+                                &nbsp;
+                            
+                                <a href="/tags/finance">Finance</a>
+                                &nbsp;
+                            
+                                <a href="/tags/wellness">Wellness</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                <div class="post-body">
+                    <p>Risk fundamentally shapes some of our most critical decisions, but most of us don’t think very deeply or clearly about it. <a href="http://www.fooledbyrandomness.com/">Nassim Taleb</a> is not like most of us. he has thought long, hard, and with great rigor about risk and randomness, and he presents that thinking most usefully and straightforwardly in <a href="https://smile.amazon.com/Antifragile-Things-That-Disorder-Incerto-ebook/dp/B0083DJWGO/ref=sr_1_1?ie=UTF8&amp;qid=1496961948&amp;sr=8-1&amp;keywords=antifragile">Antifragile</a>. That being said, while his writing and storytelling are superb, it’s not exactly light beach reading. Below we’re going to talk about just one of the many useful concepts presented in the book, which is a fundamentally different way to think about and evaluate risk.</p>
+<p>I’ve been listening to his <a href="https://soundcloud.com/4orcemajeure/the-james-altucher-show-ep-45-nassim-taleb-why-you-should-embrace-uncertainty">interview with James Altucher</a> recently, and I was surprised to realize I haven’t written about this book yet. You see, it lives on my shelf of “personal operating manuals” along with <a href="https://smile.amazon.com/Deep-Work-Focused-Success-Distracted-ebook/dp/B00X47ZVXM/ref=sr_1_1?ie=UTF8&amp;qid=1496977477&amp;sr=8-1&amp;keywords=deep+work">Deep Work</a>, <a href="https://smile.amazon.com/Letters-Stoic-Epistulae-Morales-Lucilium-ebook/dp/B005NC0MGW/ref=sr_1_1?ie=UTF8&amp;qid=1496977510&amp;sr=8-1&amp;keywords=letters+from+a+stoic">Letters from a Stoic</a>, <a href="https://smile.amazon.com/Tools-Titans-Billionaires-World-Class-Performers-ebook/dp/B01HSMRWNU/ref=sr_1_1?ie=UTF8&amp;qid=1496977538&amp;sr=8-1&amp;keywords=tools+of+titans">Tools of Titans</a>, and a few others. I am pretty sure that Antifragile is the “80/20” book of his <a href="https://smile.amazon.com/Incerto-4-Book-Bundle-Randomness-Antifragile-ebook/dp/B00K5190LE/ref=sr_1_1?ie=UTF8&amp;qid=1496977589&amp;sr=8-1&amp;keywords=incerto+nassim+taleb">Incerto</a> series - it covers the key concepts, ways to apply them to your life, and just enough of the underlying math to let you know it’s serious (there’s more in the appendix if that gets you going).</p>
+<p>Understanding Antifragile requires rethinking the term “risk.” First off, Taleb asserts that there is no such thing as a satisfactory definition of “risk.” Risk as usually defined or described conflates three separate factors - the likelihood of an event, a party’s exposure to that likelihood, and how that party feels about that exposure. Usually you’ll see risk <a href="http://www.businessdictionary.com/definition/risk.html">defined</a> as something like “the likelihood of a negative outcome times its severity.”</p>
+<p>One problem with this is that “negative outcome” and “severity” can vary enormously depending on the entity experiencing the event. If your coffee cup is knocked off the counter, it’s going to have a bad time. If your cat falls off the counter, it’ll be fine. In both cases the objective event (falling off the counter) is identical, but the entities experiencing it are differently exposed to negative outcomes. When you add in rational thought, you get the further wrinkle that “negative” is a judgment call. While you might think something like “losing money” is intrinsically negative, it’s not so simple. What if I lose money daily but get a huge payout once a year and I’m okay with that? Or what if I decide I’m okay losing the money to have a good time (like a Vegas trip)? </p>
+<p>There’s an even thornier challenge besides those above, though: outside of certain fairly constrained bounds, we can’t even accurately model the likelihood of events (we think we can, but we’re very bad at it). Artificial environments that involve chance (like rolling dice or drawing cards) have relatively easy to model probabilities, as do large classes of natural phenomena that <a href="https://www.quora.com/Do-most-natural-phenomena-when-observed-randomly-tend-to-converge-to-a-normal-distribution-curve-If-so-can-this-be-used-as-a-hypothesis-to-claim-that-nature-follows-a-certain-pattern">fit pretty well</a> into normal distributions. But several classes of events that matter very much to our lives (financial instruments, catastrophic disasters, terrorist attacks, et cetera) <a href="https://www.youtube.com/watch?v=3e6UKCJt-g8">cannot have their probability modeled in any meaningful, non-deceiving way</a>.</p>
+<p>So where does that leave us for how to think about risk in our own lives? Well, the good news is that while we can’t really nail down a scientific definition of “risk” for the whole wide world, we can do just fine in assessing risk for ourselves. To do so, we need to look at two main factors: how we feel about the outcomes and our exposure to those outcomes taking place. For example, I would very much like to continue living and would find getting killed unambiguously negative. Certain activities, like smoking, riding motorcycles, or going to dangerous neighborhoods dramatically increase my exposure to the outcome of getting killed. I don’t have to have a good model of how likely or unlikely those outcomes are to simply avoid my exposure to that risk.</p>
+<p>In terms of personal finance, I keep a lot more cash savings than most investing professionals would advise, because savings help make me more robust - I can be more indifferent to the volatility of the world around me. Air conditioning stops working? Cool, I’ve got cash in the bank. Surprise! Nail in your tire - cash. You get the picture. Now, this works the other way as well - you can take some amount of money that you’re okay with losing and invest it in things with a low chance of paying off but with potentially unlimited returns, like out of the money options or start ups or your own entrepreneurial ventures. Taleb calls this the “<a href="http://www.investopedia.com/articles/investing/013114/barbell-investment-strategy.asp?lgl=myfinance-layout-no-ads">barbell method</a>” of investing, because he advocates having heavily safe and heavily risky investments, rather than an averaged portfolio like a business school finance class would teach you to go for.</p>
+<p>This may come as a shock to you, but I also find Tim Ferriss’s definition of risk instructive to combine here - he looks at risk by asking whether or not something irreversible and/or massively negative may happen. By using <a href="http://tim.blog/2017/05/15/fear-setting/">fear setting</a> to mitigate what you can of the likelihood and alter your perception of the negatives, you will often find that very few actions have truly irreversible massive negative outcomes. This attitude can make it easier to expose yourself to the possible upsides of volatility, such as by encouraging you to build your own business or invest a prudent amount in a highly speculative company.</p>
+<p>So how do you apply these concepts? We’ve talked about a few in our examples above, but here’s my top pics for most useful ways to re-think your approach to risk in your life:</p>
+<p>Career: Corporate jobs are generally viewed as “safe” because there is very little volatility in your paycheck. Until it’s totally gone. Maybe you get laid off, or maybe you happened to be working for Enron. If this happens when you’re 23, it’s not such a big deal, but if it happens right before retirement, it can be devestating. Compare this with a skilled individual worker or independent consultant, and their pay is much more variable day to day and month to month, but they have a much tighter feedback loop: as long as you keep getting clients, you’re doing something valuable. When you start losing your ability to find them, it’s a sign you need to move on and find a new gig.</p>
+<p>Investing: Before we get into this, please bear in mind I am not an investment advisor of any sort, and this does not constitute specific financial advice - this paragraph is just a recommendation on where to look to learn more, not specific investment strategies. As mentioned above, a traditionally balanced portfolio basically says “let’s get rid of all the volatility except what’s inherent in the market.” The trouble is, there’s a whole damn lot of volatility inherent in the market, especially when you are looking only at equity. Much better to figure out however much money you need to not be ruined and protect it from volatility the best you can (Inflation-protected Treasuries or the like) and take whatever is left over and put it into things where you have exposure to the potential for massive upside - investing in your friend’s genius start up, opening a restaurant, writing a novel, out of the money options, whatever.</p>
+<p>Health and Behavior: There are some things that can greatly affect our exposure to negative health outcomes - like the previously mentioned smoking or engaging in dangerous stunts. Many of these you can completely opt out of and face no risk - which is the approach recommended by Taleb. You’ll have to decide for yourself if a non-zero chance of horrible death is worth the benefits of doing things like motorcycle riding or sky diving. On the more positive side, doing things like lifting heavy weights and walking frequently have close to zero downside (some chance of injury with weight lifting), but potentially tremendous upside to your health long term.</p>
+<p>This is just the tip of the iceberg with Taleb’s material, and I strongly recommend you check out not only Antifragile, but the rest of the Incerto series. We haven’t even gotten into just what “Antifragility” is, but I wanted to cover the basic approach to risk and provide some tangible ways to use it first. Let me know if you’re interested in diving deeper on this topic, and we’ll make a series of it.</p>
+
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/coaching/2017-09-8-maximize-the-value-of-your-creative-inputs-creativity-part-4/">
+                    Next<br>Maximize the Value of Your Creative Inputs - Creativity Part 5
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/leaves/russell_house_rules_master/">
+                    Previous<br>Russell House Rules
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2019 Jeff Russell&#39;s Webstead
+	</div>
+    	</div>
+    <script src="/js/journal.js"></script>
+    </body>
+</html>
