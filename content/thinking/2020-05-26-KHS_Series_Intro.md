@@ -1,8 +1,9 @@
 ---
 layout: default
 title: "Building a Knowledge Handling Set Up - Part 1 - Introduction"
-date: 2020-05-29 0948
+date: '2020-05-29'
 author: Jeff Russell
+description: "Today I'm kicking off a series on building a *Knowledge Handling Set Up* (KHS). There are many tools, frameworks, and ways of working out there for learning and holding onto knowledge, and it can be hard to fit them together into a whole that works for you, what I call a KHS."
 categories:
 - Thinking
 tags:
@@ -10,8 +11,6 @@ tags:
 - Learning
 - KHS
 ---
-
-# Building a Knowledge Handling Set Up - Part 1 - Introduction
 
 ## Intro
 
