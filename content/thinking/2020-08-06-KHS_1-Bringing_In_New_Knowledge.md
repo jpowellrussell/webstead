@@ -1,8 +1,9 @@
 ---
 layout: default
 title: "KHS Series Part 1: Bringing In New Knowledge"
-date: 2020-08-06 1048
-author: Jeff Russell
+date: '2020-08-06 1048'
+author: "Jeff Russell"
+description: "By definition, to learn, you have to find stuff you don't already know. This post is all about that step."
 categories:
 - Thinking
 tags:
